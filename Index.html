@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Mobile Header Demo</title>
+  <!-- Aquí conectas tu archivo CSS -->
+  <link rel="stylesheet" href="estilos-header2.css" />
+  <!-- ====================================================== -->
+  <!-- CONEXIÓN A GOOGLE FONTS PARA LA TIPOGRAFÍA 'INTER'     -->
+  <!-- ====================================================== -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <!-- ====================================================== -->
+</head>
+<body>
+  <!-- INICIA HEADER MOBILE -->
+  <!-- Mobile Header -->
+<header class="kpem-header-mobile" role="banner">
+  <!-- El Logo y el Botón de Hamburguesa se quedan aquí -->
+  <div class="contenedor-logo">
+    <a href="#" aria-label="Go to homepage">
+      <img 
+          src="LOGO.png"
+          alt="Kelowna Pro-Tech Elite Logo"
+          loading="eager"
+          decoding="async"
+      />
+    </a>
+  </div>
+  <button class="kpem-menu-trigger" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false">
+    &#9776;
+  </button>
+</header> <!-- El header ahora se cierra aquí, sin el <nav> adentro -->
+
+<!-- LA PIEZA AHORA VIVE AQUÍ, FUERA Y DESPUÉS DEL HEADER -->
+<nav id="mobile-navigation" class="mobile-menu">
+  <button class="menu-close-button" aria-label="Close menu">&times;</button>
+  <ul>
+    <li><a href="#client-stories">Client Stories</a></li>
+    <li><a href="#why-us">Why Us</a></li>
+    <li><a href="#coverage">Coverage</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+</nav>
+
+  <!-- FINALIZA HEADER MOBILE -->
+  <!--
+==========================================================================
+COMPONENTE: SECCIÓN HERO ("OUR PROMISE")
+==========================================================================
+-->
+<main>
+  <section id="our-promise" class="hero-section">
+    <div class="hero-content">
+      <h1 class="hero-headline">Minimize Your Downtime. Maximize Your Profit.</h1>
+      <p class="hero-subheadline">
+        <div style="height: 800px; background: #EEE; border: 1px solid #DDD; margin: 30px 0;">Prueba de contenido para scroll</div>
+        We are a Expert on-site repair for heavy-duty equipment and commercial fleets in Kelowna. We get your machinery back to work, fast.
+      </p>
+      <a href="tel:+12505550199" class="hero-cta-button">Request On-Site Service</a>
+    </div>
+  </section>
+</main>
+
+
+<!-- Conecta tu archivo JavaScript. 'defer' asegura que se ejecute después de que el HTML sea procesado. -->
+<script src="scripts.js" defer></script>
+</body>
+</html>
+<!--
+==========================================================================
+COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
+==========================================================================
+-->
+<div class="floating-cta-container">
+  <!-- Opciones de contacto (inicialmente ocultas) -->
+  <div class="cta-options">
+    <a href="https://wa.me/12505550199" class="cta-option" target="_blank">WhatsApp</a>
+    <a href="sms:+12505550199" class="cta-option">SMS</a>
+    <a href="tel:+12505550199" class="cta-option">Call Now</a>
+  </div>
+
+  <!-- Botón Principal (ahora solo texto) -->
+  <button id="main-cta-button" class="main-cta-button" aria-label="Request Inspection Now">
+    Request Inspection Now
+  </button>
+</div>

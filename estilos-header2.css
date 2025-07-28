@@ -1,0 +1,417 @@
+/***** HEADER MOBILE - VERSIÓN FINAL *****/
+body {
+  font-family: 'Inter', sans-serif; /* Aplica 'Inter' a todo el sitio */
+  -webkit-font-smoothing: antialiased; /* Mejora el renderizado en Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale; /* Mejora el renderizado en Firefox */
+}
+.kpem-header-mobile {
+  width: 100%;
+  padding: 12px 20px;
+  background: #fff;
+  box-sizing: border-box;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  
+  /* --- REFUERZO ESTRUCTURAL (SOLUCIÓN PROPUESTA) --- */
+  /* Esta línea fuerza al navegador a crear una nueva capa de renderizado,
+     solucionando el conflicto de apilamiento en WebKit (Safari). */
+  transform: translateZ(0);
+}
+
+.contenedor-logo {
+  flex-grow: 0;
+}
+
+.kpem-header-mobile .contenedor-logo img {
+  width: 140px;
+  height: auto;
+  display: block;
+}
+
+.menu-trigger {
+  font-size: 30px;
+  background: none;
+  border: none;
+  color: #212121;
+  cursor: pointer;
+  outline: none;
+  padding: 0 8px;
+  flex-shrink: 0;
+}
+
+.menu-trigger:focus {
+  outline: 2px solid #005fcc;
+  outline-offset: 2px;
+}
+
+/*
+==========================================================================
+COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
+==========================================================================
+*/
+
+/* ----- 1. Contenedor Principal del Menú (Overlay) ----- */
+.mobile-menu {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(17, 24, 39, 0.98); /* Fondo oscuro semi-transparente */
+  backdrop-filter: blur(5px); /* Efecto de desenfoque para el fondo */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1010; /* Por encima del header para cubrirlo */
+
+  /* --- Estado por defecto: Oculto con transición --- */
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(-20px);
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+/* ----- 2. Estilo para Mostrar el Menú ----- */
+/* (Se activa con JavaScript añadiendo la clase 'menu-is-open' al <body>) */
+body.menu-is-open .mobile-menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+
+/* ----- 3. Lista de Enlaces ----- */
+.mobile-menu ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+}
+
+.mobile-menu li {
+  margin: 20px 0;
+}
+
+/* ----- 4. Estilo de los Enlaces Individuales ----- */
+.mobile-menu a {
+  color: white;
+  text-decoration: none;
+  font-size: 22px ;
+  font-weight: 600;
+  letter-spacing: -0.5px; /* La herramienta de precisión que faltaba */
+  transition: color 0.2s ease;
+}
+
+.mobile-menu a:hover {
+  color: #D97706; /* Color de acento de la marca */
+}
+
+/* ----- 5. Botón de Cierre (la 'X') ----- */
+.menu-close-button {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: none;
+  border: none;
+  color: white;
+  font-size: 40px;
+  cursor: pointer;
+  line-height: 1; /* Asegura que la 'X' esté bien centrada */
+}
+/*
+==========================================================================
+COMPONENTE: SECCIÓN HERO ("OUR PROMISE")
+==========================================================================
+*/
+
+/* ----- 1. Contenedor Principal de la Sección ----- */
+.hero-section {
+  background-color: #111827; /* Un gris oscuro, profesional y moderno */
+  color: #ffffff; /* Texto blanco para alto contraste */
+  padding: 80px 20px; /* Espaciado interno generoso (arriba/abajo, lados) */
+  text-align: center; /* Centra todo el contenido */
+}
+
+/* ----- 2. Contenedor del Contenido Interno ----- */
+.hero-content {
+  max-width: 800px; /* Evita que el texto se estire demasiado en pantallas grandes */
+  margin: 0 auto; /* Centra el contenedor de contenido horizontalmente */
+}
+
+/* ----- 3. Titular Principal (H1) ----- */
+.hero-headline {
+  font-size: 2.5rem; /* 40px - Un tamaño de letra grande e impactante */
+  font-weight: 700; /* Letra en negrita */
+  line-height: 1.2; /* Espacio entre líneas para mejor legibilidad */
+  margin-bottom: 16px; /* Espacio debajo del titular */
+}
+
+/* ----- 4. Subtítulo (Párrafo) ----- */
+.hero-subheadline {
+  font-size: 1.125rem; /* 18px - Ligeramente más grande que el texto normal */
+  line-height: 1.6;
+  margin-bottom: 32px; /* Espacio generoso antes del botón */
+  opacity: 0.9; /* Hace el texto un poco más sutil que el titular */
+}
+
+/* ----- 5. Botón de Llamada a la Acción (CTA) ----- */
+.hero-cta-button {
+  display: inline-block; /* Permite aplicar padding y lo trata como un bloque */
+  background-color: #D97706; /* Un color ámbar/dorado que resalta */
+  color: #ffffff;
+  font-size: 1rem; /* 16px */
+  font-weight: 700;
+  text-decoration: none; /* Quita el subrayado del enlace */
+  padding: 14px 28px; /* Espaciado interno del botón */
+  border-radius: 8px; /* Bordes redondeados */
+  transition: background-color 0.3s ease; /* Transición suave para el efecto hover */
+}
+
+.hero-cta-button:hover {
+  background-color: #B45309; /* Un tono más oscuro al pasar el ratón */
+}
+
+/* ----- 6. Ajustes para Pantallas Pequeñas (Móviles) ----- */
+@media (max-width: 768px) {
+  .hero-headline {
+    font-size: 2rem; /* 32px - Un poco más pequeño en móviles para mejor ajuste */
+  }
+
+  .hero-subheadline {
+    font-size: 1rem; /* 16px */
+  }
+}
+/*
+==========================================================================
+COMPONENTE: SECCIÓN HERO ("OUR PROMISE")
+==========================================================================
+*/
+/*
+ * INSTRUCCIÓN: Este bloque de código va al final de tu archivo
+ * "estilos-v2.css".
+*/
+
+/* ----- 1. Contenedor Principal de la Sección ----- */
+.hero-section {
+  background-color: #ffffff; /* Fondo blanco puro, como pediste */
+  color: #111827; /* Texto oscuro para máximo contraste y legibilidad */
+  padding: 100px 20px;
+  text-align: center;
+}
+
+.hero-content {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.hero-headline {
+  font-size: 2.5rem;
+  font-weight: 700;
+  line-height: 1.2;
+  margin-bottom: 24px;
+}
+
+.hero-subheadline {
+  font-size: 1.125rem;
+  line-height: 1.6;
+  color: #4B5563; /* Un gris sutil para el subtítulo */
+  margin-bottom: 40px;
+  max-width: 650px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.hero-cta-button {
+  display: inline-block;
+  background-color: #111827; /* Botón negro */
+  color: #ffffff; /* Texto blanco de contraste */
+  border: 2px solid #D97706; /* Bisel dorado, como especificaste */
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  padding: 14px 30px; /* Ajuste de padding */
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+}
+
+.hero-cta-button:hover {
+  background-color: #D97706; /* El fondo se vuelve dorado */
+  color: #111827; /* El texto se vuelve oscuro */
+  transform: translateY(-3px);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+}
+
+/*
+----------------------------------------------------------------------
+COMPONENTE: SECCIÓN DE SERVICIOS PRINCIPALES
+----------------------------------------------------------------------
+*/
+
+.services-section {
+  background-color: #ffffff; /* Fondo blanco puro para unificar el diseño */
+  padding: 80px 20px;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.section-title {
+  font-size: 2.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 48px;
+}
+
+.services-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 32px;
+  text-align: left;
+}
+
+.service-card {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 12px;
+  border: 1px solid #e5e7eb; /* Borde sutil para definir las tarjetas sobre el fondo blanco */
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.07);
+}
+
+.service-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  background-color: #111827; /* Iconos con fondo negro */
+  color: #FBBF24; /* Icono (SVG) en color dorado brillante */
+  border-radius: 50%;
+  margin-bottom: 24px;
+}
+
+.service-icon svg {
+  width: 28px;
+  height: 28px;
+}
+
+.service-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111827;
+  margin-bottom: 12px;
+}
+
+.service-description {
+  font-size: 1rem;
+  color: #4B5563;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.service-link {
+  color: #D97706;
+  font-weight: 600;
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.service-link:hover {
+  color: #111827;
+}
+/*
+==========================================================================
+COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
+==========================================================================
+*/
+
+/* ----- 1. Contenedor Principal ----- */
+/* Este contenedor es la clave para el posicionamiento "flotante" */
+.floating-cta-container {
+  position: fixed; /* Lo saca del flujo normal y lo fija en la pantalla */
+  bottom: 20px;    /* 20px desde la parte inferior */
+  right: 20px;     /* 20px desde la parte derecha */
+  z-index: 1001;   /* Se asegura de que esté por encima de otros elementos */
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+/* ----- 2. Botón Principal ("Contact Us") ----- */
+/* ----- 3. Contenedor de Opciones (WhatsApp, SMS, Call) ----- */
+.main-cta-button {
+  background-color: #111827;
+  color: #fff;
+  border: 2px solid #FFD700;         /* Gold, premium */
+  padding: 10px 2px;                /* Less “inflated” */
+  border-radius: 25px;               /* Elegant, not too rounded */
+  font-weight: 700;                  /* More premium feel */
+  font-size: 1rem;
+  font-family: 'Inter', sans-serif;
+  box-shadow: 0 3px 16px rgba(44,35,14,0.09); /* Subtler shadow */
+  cursor: pointer;
+  transition: 
+    background 0.23s cubic-bezier(.4,0,.2,1), 
+    color 0.23s cubic-bezier(.4,0,.2,1), 
+    box-shadow 0.23s cubic-bezier(.4,0,.2,1),
+    border-color 0.23s cubic-bezier(.4,0,.2,1);
+  max-width: 95vw;
+  min-width: 140px;
+  text-align: center;
+  display: inline-block;
+  line-height: 1.3;
+}
+
+.main-cta-button:hover, .main-cta-button:focus {
+  background: #FFD700;
+  color: #111827;
+  border-color: #FFD700;
+  box-shadow: 0 7px 32px rgba(44,35,14,0.12);
+  outline: none;
+}
+.cta-options {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  margin-bottom: 15px;
+
+  /* --- Estado por defecto: Oculto con transición --- */
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(10px);
+  transition: all 0.3s ease;
+}
+
+/* ----- 4. Estilo para Mostrar las Opciones ----- */
+/* (Se activa con JavaScript añadiendo la clase 'active' al contenedor) */
+.floating-cta-container.active .cta-options {
+  visibility: visible;
+  opacity: 1;
+  transform: translateY(0);
+}
+@media (max-width: 480px) {
+  .main-cta-button {
+    font-size: 0.92rem;
+    padding: 8px 12px;
+  }
+}
+
+/*
+==========================================================================
+COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
+==========================================================================
+*/
+
