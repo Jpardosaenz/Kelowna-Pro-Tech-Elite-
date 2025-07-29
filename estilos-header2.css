@@ -1,3 +1,60 @@
+/*
+ * ==================================================================
+ * RESET DE CSS MODERNO Y NORMALIZACIÓN
+ * ==================================================================
+ * Este bloque de código se coloca al principio de todo el CSS
+ * para eliminar las inconsistencias entre navegadores (Chrome, Safari, etc.).
+ * Asegura que nuestro diseño se vea igual en todas las plataformas.
+*/
+
+/* 1. box-sizing: border-box en todos los elementos. */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 2. Eliminar márgenes por defecto. */
+body,
+h1,
+p,
+figure,
+blockquote,
+dl,
+dd {
+  margin: 0;
+}
+
+/* 3. Mejorar la renderización de fuentes. */
+html {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* 4. Mejorar el comportamiento de las imágenes. */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 5. Eliminar estilos de input heredados. */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 6. Asegurar que los saltos de línea sean predecibles. */
+p,
+h1 {
+  overflow-wrap: break-word;
+}
+
 /***** HEADER MOBILE - VERSIÓN FINAL *****/
 body {
   font-family: 'Inter', sans-serif; /* Aplica 'Inter' a todo el sitio */
@@ -123,128 +180,118 @@ body.menu-is-open .mobile-menu {
   cursor: pointer;
   line-height: 1; /* Asegura que la 'X' esté bien centrada */
 }
+
 /*
-==========================================================================
-COMPONENTE: SECCIÓN HERO ("OUR PROMISE")
-==========================================================================
+ * ==================================================================
+ * Componente 3: Estilos para la Sección Hero ("Our Promise")
+ * ==================================================================
+ * Implementa el diseño "Asimétrico y Tecnológico".
+ * Filosofía: Mobile-First.
 */
 
-/* ----- 1. Contenedor Principal de la Sección ----- */
+/* Estilos para el contenedor de toda la sección */
 .hero-section {
-  background-color: #111827; /* Un gris oscuro, profesional y moderno */
-  color: #ffffff; /* Texto blanco para alto contraste */
-  padding: 80px 20px; /* Espaciado interno generoso (arriba/abajo, lados) */
-  text-align: center; /* Centra todo el contenido */
+  background-color: #f8fafc; /* Fondo gris claro profesional */
+  padding: 2rem 0.5rem 3rem;      /* Espaciado interno (48px arriba/abajo, 24px a los lados) */
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* ----- 2. Contenedor del Contenido Interno ----- */
-.hero-content {
-  max-width: 800px; /* Evita que el texto se estire demasiado en pantallas grandes */
-  margin: 0 auto; /* Centra el contenedor de contenido horizontalmente */
+/* Contenedor que limita el ancho del contenido en la página */
+.hero-container {
+  max-width: 1200px; /* Ancho máximo para pantallas grandes */
+  margin: 0 auto;    /* Centra el contenedor */
 }
 
-/* ----- 3. Titular Principal (H1) ----- */
-.hero-headline {
-  font-size: 2.5rem; /* 40px - Un tamaño de letra grande e impactante */
-  font-weight: 700; /* Letra en negrita */
-  line-height: 1.2; /* Espacio entre líneas para mejor legibilidad */
-  margin-bottom: 16px; /* Espacio debajo del titular */
-}
-
-/* ----- 4. Subtítulo (Párrafo) ----- */
-.hero-subheadline {
-  font-size: 1.125rem; /* 18px - Ligeramente más grande que el texto normal */
-  line-height: 1.6;
-  margin-bottom: 32px; /* Espacio generoso antes del botón */
-  opacity: 0.9; /* Hace el texto un poco más sutil que el titular */
-}
-
-/* ----- 5. Botón de Llamada a la Acción (CTA) ----- */
-.hero-cta-button {
-  display: inline-block; /* Permite aplicar padding y lo trata como un bloque */
-  background-color: #D97706; /* Un color ámbar/dorado que resalta */
-  color: #ffffff;
-  font-size: 1rem; /* 16px */
-  font-weight: 700;
-  text-decoration: none; /* Quita el subrayado del enlace */
-  padding: 14px 28px; /* Espaciado interno del botón */
-  border-radius: 8px; /* Bordes redondeados */
-  transition: background-color 0.3s ease; /* Transición suave para el efecto hover */
-}
-
-.hero-cta-button:hover {
-  background-color: #B45309; /* Un tono más oscuro al pasar el ratón */
-}
-
-/* ----- 6. Ajustes para Pantallas Pequeñas (Móviles) ----- */
-@media (max-width: 768px) {
-  .hero-headline {
-    font-size: 2rem; /* 32px - Un poco más pequeño en móviles para mejor ajuste */
-  }
-
-  .hero-subheadline {
-    font-size: 1rem; /* 16px */
-  }
-}
-/*
-==========================================================================
-COMPONENTE: SECCIÓN HERO ("OUR PROMISE")
-==========================================================================
+/* * Cuadrícula (Grid) para el layout de dos columnas.
+ * En móvil, es una sola columna por defecto.
 */
-/*
- * INSTRUCCIÓN: Este bloque de código va al final de tu archivo
- * "estilos-v2.css".
-*/
+.hero-grid {
+  display: grid;
+  grid-template-columns: 1fr; /* Por defecto, una sola columna para móvil */
+  gap: 1rem;                  /* Espacio entre elementos */
+  align-items: center;        /* Centra verticalmente los elementos */
+}
 
-/* ----- 1. Contenedor Principal de la Sección ----- */
-.hero-section {
-  background-color: #ffffff; /* Fondo blanco puro, como pediste */
-  color: #111827; /* Texto oscuro para máximo contraste y legibilidad */
-  padding: 100px 20px;
+/* Contenedor del texto */
+.hero-text-content {
+  text-align: center; /* Texto centrado en móvil */
+}
+
+/* Estilos para la línea introductoria */
+.hero-intro {
+  font-family: 'Inter', sans-serif;
+  /* TAMAÑO LIGERAMENTE REDUCIDO */
+  font-size: 0.7rem; /* 13px, para un look más refinado */
+  font-weight: 400;
+  color: #475569;
+  margin-bottom: 1rem;
+  /* ALINEACIÓN CENTRADA AÑADIDA */
   text-align: center;
 }
 
-.hero-content {
-  max-width: 800px;
-  margin: 0 auto;
-}
-
+/* Estilos para el Título Principal (H1) */
 .hero-headline {
-  font-size: 2.5rem;
+  font-family: 'Inter', sans-serif;
+  /* TAMAÑO DE FUENTE NUEVAMENTE REDUCIDO para una mejor estética móvil */
+  font-size: clamp(1rem, 5vw, 2rem); /* Antes: clamp(1.75rem, 7vw, 2.5rem) */
   font-weight: 700;
-  line-height: 1.2;
-  margin-bottom: 24px;
+    /* ALTURA DE LÍNEA AUMENTADA: Para un look más "expandido" y legible */
+    line-height: 1.25;
+  letter-spacing: -0.9px;
+  color: #1e293b;
+  padding: 0;
+  /* ANCHO MÁXIMO AJUSTADO: Para un mejor control del salto de línea */
+  max-width: 50rem; /* Aprox. 304px */
+  /* CENTRADO GARANTIZADO: Centra el bloque y el texto interno */
+  margin: 0 auto 1.5rem;
+  text-align: center;
 }
 
-.hero-subheadline {
-  font-size: 1.125rem;
+
+/* Estilos para el texto de apoyo */
+.hero-support-text {
+  font-family: 'Inter', sans-serif;
+  font-size: 0.7rem;
   line-height: 1.6;
-  color: #4B5563; /* Un gris sutil para el subtítulo */
-  margin-bottom: 40px;
-  max-width: 650px;
+  color: #334155; /* Gris oscuro para fácil lectura */
+  max-width: 600px;
+  /* ASEGURA EL CENTRADO DEL BLOQUE DE TEXTO */
   margin-left: auto;
   margin-right: auto;
+  /* ASEGURA EL CENTRADO DEL TEXTO INTERNO */
+  text-align: center;
 }
 
-.hero-cta-button {
-  display: inline-block;
-  background-color: #111827; /* Botón negro */
-  color: #ffffff; /* Texto blanco de contraste */
-  border: 2px solid #D97706; /* Bisel dorado, como especificaste */
-  font-size: 1rem;
-  font-weight: 700;
-  text-decoration: none;
-  padding: 14px 30px; /* Ajuste de padding */
-  border-radius: 8px;
-  transition: all 0.3s ease;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+.hero-support-text strong {
+  color: #1e293b; /* Da más peso a la frase de precios justos */
 }
 
-.hero-cta-button:hover {
-  background-color: #D97706; /* El fondo se vuelve dorado */
-  color: #111827; /* El texto se vuelve oscuro */
-  transform: translateY(-3px);
-  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.2);
+/* --- Media Queries para Diseño en Pantallas Grandes (Desktop) --- */
+
+@media (min-width: 768px) {
+  .hero-section {
+    padding: 6rem 2rem; /* Más espaciado en desktop */
+  }
+
+  .hero-grid {
+    /* Creamos dos columnas en pantallas grandes */
+    grid-template-columns: repeat(2, 1fr);
+    gap: 4rem; /* Aumentamos el espacio entre columnas */
+  }
+
+  .hero-text-content {
+    /* Alineamos el texto a la izquierda */
+    text-align: left;
+  }
+
+  .hero-headline {
+    font-size: clamp(3rem, 5vw, 3.75rem); /* Título más grande en desktop */
+  }
+
+  .hero-support-text {
+    margin: 0; /* Quitamos el centrado automático */
+  }
 }
 
 /*
@@ -414,4 +461,3 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
 COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 ==========================================================================
 */
-
