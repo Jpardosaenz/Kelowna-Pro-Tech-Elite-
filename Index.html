@@ -3,7 +3,6 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   
   <title>Kelowna Pro-Tech Elite – On-Site Diagnostic Mechanic</title>
   <meta name="description" content="Car won’t start? Don’t waste time towing—call a professional mechanic who comes to you. We solve it in your driveway—fast, clear, and without guessing." />
@@ -27,75 +26,81 @@
   <!-- ====================================================== -->
 </head>
 <body>
-  <!-- INICIA HEADER MOBILE -->
+  <!-- INICIO HEADER MOBILE -->
   <!-- Mobile Header -->
-<header class="kpem-header-mobile" role="banner">
-  <!-- El Logo y el Botón de Hamburguesa se quedan aquí -->
-  <div class="contenedor-logo">
-    <a href="#" aria-label="Go to homepage">
-      <img 
-          src="LOGO.png"
-          alt="Kelowna Pro-Tech Elite Logo"
-          loading="eager"
-          decoding="async"
-      />
-    </a>
-  </div>
-  <button class="kpem-menu-trigger" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false">
-    &#9776;
-  </button>
-</header> <!-- El header ahora se cierra aquí, sin el <nav> adentro -->
-
-<!-- LA PIEZA AHORA VIVE AQUÍ, FUERA Y DESPUÉS DEL HEADER -->
-<nav id="mobile-navigation" class="mobile-menu">
-  <button class="menu-close-button" aria-label="Close menu">&times;</button>
-  <ul>
-    <li><a href="#client-stories">Client Stories</a></li>
-    <li><a href="#why-us">Why Us</a></li>
-    <li><a href="#coverage">Coverage</a></li>
-    <li><a href="#contact">Contact</a></li>
-  </ul>
-</nav>
-
-  <!-- FINALIZA HEADER MOBILE -->
-  <!--
-==========================================================================
-COMPONENTE: SECCIÓN HERO ("OUR PROMISE")
-==========================================================================
--->
-<main>
-  <section id="our-promise" class="hero-section">
-    <div class="hero-content">
-      <h1 class="hero-headline">Minimize Your Downtime. Maximize Your Profit.</h1>
-      <p class="hero-subheadline">
-        <div style="height: 800px; background: #EEE; border: 1px solid #DDD; margin: 30px 0;">Prueba de contenido para scroll</div>
-        We are a Expert on-site repair for heavy-duty equipment and commercial fleets in Kelowna. We get your machinery back to work, fast.
-      </p>
-      <a href="tel:+12505550199" class="hero-cta-button">Request On-Site Service</a>
+  <header class="kpem-header-mobile" role="banner">
+    <!-- El Logo y el Botón de Hamburguesa se quedan aquí -->
+    <div class="contenedor-logo">
+      <a href="#" aria-label="Go to homepage">
+        <img 
+            src="LOGO.png"
+            alt="Kelowna Pro-Tech Elite Logo"
+            loading="eager"
+            decoding="async"
+        />
+      </a>
     </div>
+    <button class="kpem-menu-trigger" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false">
+      &#9776;
+    </button>
+  </header> <!-- El header ahora se cierra aquí, sin el <nav> adentro -->
+
+  <!-- LA PIEZA AHORA VIVE AQUÍ, FUERA Y DESPUÉS DEL HEADER -->
+  <nav id="mobile-navigation" class="mobile-menu" role="navigation" aria-label="Mobile Navigation">
+    <button class="menu-close-button" aria-label="Close menu">&times;</button>
+    <ul>
+      <li><a href="#client-stories">Client Stories</a></li>
+      <li><a href="#why-us">Why Us</a></li>
+      <li><a href="#coverage">Coverage</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+  <!-- FIN HEADER MOBILE -->
+
+  <!-- Componente 3: Sección Hero ("Our Promise") -->
+  <section id="our-promise" class="hero-section">
+      <div class="hero-container">
+          
+          <!-- Línea Introductoria -->
+          <p class="hero-intro">
+            Car won’t start? Tired of wasting time and guessing what’s wrong?
+          </p>
+          
+          <!-- Título Principal (H1) -->
+          <h1 class="hero-headline">
+              Kelowna’s On-Site Mechanic. Real Answers, Right Where You Are.
+          </h1>
+          
+          <!-- Texto de Apoyo -->
+          <p class="hero-support-text">
+              Over 15 years helping drivers avoid towing, save time, and fix it right the first time. We come to your home or office. Diagnostic cost is fully credited toward your repair.
+          </p>
+  
+      </div>
   </section>
-</main>
 
+  <!-- Conecta tu archivo JavaScript. 'defer' asegura que se ejecute después de que el HTML sea procesado. -->
+  <script src="scripts.js" defer></script>
 
-<!-- Conecta tu archivo JavaScript. 'defer' asegura que se ejecute después de que el HTML sea procesado. -->
-<script src="scripts.js" defer></script>
+  <!--
+  ==========================================================================
+  COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
+  ==========================================================================
+  -->
+  <!-- INICIO BOTÓN FLOTANTE CTA -->
+  <div class="floating-cta-container" role="region" aria-label="Call to Action">
+    <!-- Opciones de contacto (inicialmente ocultas) -->
+    <div class="cta-options">
+      <a href="https://wa.me/12505550199" class="cta-option" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="sms:+12505550199" class="cta-option">SMS</a>
+      <a href="tel:+12505550199" class="cta-option">Call Now</a>
+    </div>
+
+    <!-- Botón Principal (ahora solo texto) -->
+    <button id="main-cta-button" class="main-cta-button" aria-label="Request Inspection Now">
+      Request Inspection Now
+    </button>
+  </div>
+  <!-- FIN BOTÓN FLOTANTE CTA -->
 </body>
 </html>
-<!--
-==========================================================================
-COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
-==========================================================================
--->
-<div class="floating-cta-container">
-  <!-- Opciones de contacto (inicialmente ocultas) -->
-  <div class="cta-options">
-    <a href="https://wa.me/12505550199" class="cta-option" target="_blank">WhatsApp</a>
-    <a href="sms:+12505550199" class="cta-option">SMS</a>
-    <a href="tel:+12505550199" class="cta-option">Call Now</a>
-  </div>
-
-  <!-- Botón Principal (ahora solo texto) -->
-  <button id="main-cta-button" class="main-cta-button" aria-label="Request Inspection Now">
-    Request Inspection Now
-  </button>
-</div>
