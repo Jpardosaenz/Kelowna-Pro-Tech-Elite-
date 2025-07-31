@@ -23,6 +23,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
   <!-- ====================================================== -->
 </head>
 <body>
@@ -59,6 +60,15 @@
 
   <!-- Componente 3: Sección Hero ("Our Promise") -->
   <section id="our-promise" class="hero-section">
+    <img
+    src="https://raw.githubusercontent.com/Jpardosaenz/Kelowna-Pro-Tech-Elite-/refs/heads/main/Hero-Image.webp"
+    alt="Mobile hero image – diagnostic mechanic"
+    class="hero-image"
+    width="400"
+    height="300"
+    loading="lazy"
+    decoding="async"
+  />
       <div class="hero-container">
           
           <!-- Línea Introductoria -->
@@ -91,9 +101,9 @@
   <div class="floating-cta-container" role="region" aria-label="Call to Action">
     <!-- Opciones de contacto (inicialmente ocultas) -->
     <div class="cta-options">
-      <a href="https://wa.me/12505550199" class="cta-option" target="_blank" rel="noopener noreferrer">WhatsApp</a>
-      <a href="sms:+12505550199" class="cta-option">SMS</a>
-      <a href="tel:+12505550199" class="cta-option">Call Now</a>
+      <a href="https://wa.me/12508595467" class="cta-option" target="_blank" rel="noopener noreferrer">WhatsApp</a>
+      <a href="sms:+12508595467" class="cta-option">SMS</a>
+      <a href="tel:+12508595467" class="cta-option">Call Now</a>
     </div>
 
     <!-- Botón Principal (ahora solo texto) -->
@@ -102,5 +112,14 @@
     </button>
   </div>
   <!-- FIN BOTÓN FLOTANTE CTA -->
+
+<!-- Floating Action Buttons: WhatsApp, SMS, Call -->
+<!-- Floating Action Menu Mejorado -->
+<div class="floating-action-menu" aria-label="Floating Action Menu">
+  <a href="https://wa.me/12508595467" target="_blank" rel="noopener" class="action-btn">WhatsApp</a>
+  <a href="sms:+12508595467" class="action-btn">SMS</a>
+  <a href="tel:+12508595467" class="action-btn">Call Now</a>
+</div>
+<script src="cta-toggle.js"></script>
 </body>
 </html>
