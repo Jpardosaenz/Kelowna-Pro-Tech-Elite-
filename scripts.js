@@ -50,9 +50,33 @@ document.addEventListener('DOMContentLoaded', () => {
   const options = document.querySelector(".cta-options");
 
   if (mainButton && options) {
+    // Evento: Abrir/Cerrar menú al hacer clic en el botón CTA
     mainButton.addEventListener("click", function (e) {
       e.preventDefault();
-      options.classList.toggle("show-options");
+
+      // Cierra otros menús antes de abrir este
+      document.querySelectorAll(".cta-options").forEach(menu => {
+        if (menu !== options) {
+          menu.classList.remove("show-options");
+        }
+      });
+
+      // Alternar visibilidad del menú actual (solo uno abierto a la vez)
+      if (options.classList.contains("show-options")) {
+        options.classList.remove("show-options");
+      } else {
+        document.querySelectorAll(".cta-options").forEach(menu => menu.classList.remove("show-options"));
+        options.classList.add("show-options");
+      }
+    });
+
+    // Evento: Cerrar menú si se hace clic fuera de él
+    document.addEventListener("click", function (event) {
+      const isClickInside = mainButton.contains(event.target) || options.contains(event.target);
+
+      if (!isClickInside) {
+        options.classList.remove("show-options");
+      }
     });
   }
 
