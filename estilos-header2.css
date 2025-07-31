@@ -390,7 +390,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
 .floating-cta-container {
   position: fixed; /* Lo saca del flujo normal y lo fija en la pantalla */
   bottom: 20px;    /* 20px desde la parte inferior */
-  right: 20px;     /* 20px desde la parte derecha */
+  right: 60px !important;     /* 20px desde la parte derecha */
   z-index: 1001;   /* Se asegura de que esté por encima de otros elementos */
   display: flex;
   flex-direction: column;
@@ -403,10 +403,10 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
   background-color: #111827;
   color: #fff;
   border: 2px solid #FFD700;         /* Gold, premium */
-  padding: 10px 2px;                /* Less “inflated” */
+  padding: 0.25rem 1rem !important; 
   border-radius: 25px;               /* Elegant, not too rounded */
-  font-weight: 700;                  /* More premium feel */
-  font-size: 1rem;
+  font-weight: 600;                  /* More premium feel */
+  font-size: 0.6rem !important;
   font-family: 'Inter', sans-serif;
   box-shadow: 0 3px 16px rgba(44,35,14,0.09); /* Subtler shadow */
   cursor: pointer;
@@ -430,18 +430,43 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
   outline: none;
 }
 .cta-options {
-  display: flex;
+  display: none;
+  position: fixed;
+  bottom: 90px;
+  right: 20px;
   flex-direction: column;
   align-items: flex-end;
-  margin-bottom: 15px;
-
-  /* --- Estado por defecto: Oculto con transición --- */
-  visibility: hidden;
+  gap: 10px;
+  background: white;
+  padding: 12px;
+  border-radius: 12px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transition: opacity 0.3s ease, transform 0.3s ease;
   opacity: 0;
   transform: translateY(10px);
-  transition: all 0.3s ease;
 }
 
+.cta-options.show-options {
+  display: flex;
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.cta-options a {
+  text-decoration: none;
+  font-size: 16px;
+  font-weight: 600;
+  color: #333;
+  background-color: #f1f1f1;
+  padding: 10px 16px;
+  border-radius: 8px;
+  transition: background-color 0.2s ease;
+}
+
+.cta-options a:hover {
+  background-color: #ddd;
+}
 /* ----- 4. Estilo para Mostrar las Opciones ----- */
 /* (Se activa con JavaScript añadiendo la clase 'active' al contenedor) */
 .floating-cta-container.active .cta-options {
@@ -461,3 +486,44 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
 COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 ==========================================================================
 */
+/* === Mobile Hero Layout === */
+.hero.mobile-hero {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 1.25rem;
+  text-align: center;
+  background-color: #fff; /* optional */
+}
+
+.hero-image {
+  width: 100%;
+  max-width: 450px;
+  height: auto;
+  border-radius: 12px;
+  margin-bottom: 1rem;
+}
+
+.hero-text h1 {
+  font-size: 1.75rem;
+  margin: 0.5rem 0;
+}
+
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+.cta-button {
+  background-color: #dc2626;
+  color: white;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  font-weight: bold;
+  font-size: 0.25rem !important;
+  text-decoration: none;
+}
+.cta-options.show-options {
+  display: flex;
+}
