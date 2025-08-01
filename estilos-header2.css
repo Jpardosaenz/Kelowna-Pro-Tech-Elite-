@@ -529,7 +529,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   margin: 0.5rem auto;                  /* Espacio vertical + centrado horizontal */
   font-family: 'Inter', sans-serif;     /* Usa la fuente del diseño del sitio */
   text-align: center;                   /* Centra el texto en todos los niveles */
-  margin-bottom: 140px; /* ✅ Añade espacio para que el botón no lo tape */
+  margin-bottom: 10px; /* ✅ Añade espacio para que el botón no lo tape */
 }
 
 
@@ -562,4 +562,38 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 .review-text {
   font-size: 15px;                     /* Tamaño legible y ligero */
   color: #111;                         /* Gris oscuro para buena lectura sobre fondo claro */
+}
+/* inicia achievements */
+.elite-achievements {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  margin: 1rem auto;
+  margin-bottom: 130px; /* 🟡 Espacio inferior entre los logros y lo siguiente */
+  padding: 0.75rem 1rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  max-width: 95%;
+  text-align: center;
+}
+
+.achievement-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  color: #111;
+  gap: 4px;
+}
+
+.icon-achievement {
+  stroke: #111;
+  margin-bottom: 4px;
+  transition: stroke 0.3s ease;
+}
+
+.icon-achievement:hover {
+  stroke: #ffd700;
 }
