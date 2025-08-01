@@ -521,16 +521,6 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   margin-bottom: 1rem;
   color: #333;
 }
-
-.cta-button {
-  background-color: #dc2626;
-  color: white;
-  padding: 0.75rem 1.5rem;
-  border-radius: 8px;
-  font-weight: bold;
-  font-size: 0.25rem !important;
-  text-decoration: none;
-}
 /* === Review Badge: Contenedor principal === */
 .review-badge {
   display: flex;                         /* Usa Flexbox para alinear los elementos */
@@ -539,7 +529,9 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   margin: 0.5rem auto;                  /* Espacio vertical + centrado horizontal */
   font-family: 'Inter', sans-serif;     /* Usa la fuente del diseño del sitio */
   text-align: center;                   /* Centra el texto en todos los niveles */
+  margin-bottom: 140px; /* ✅ Añade espacio para que el botón no lo tape */
 }
+
 
 /* === Caras de clientes === */
 .review-faces {
