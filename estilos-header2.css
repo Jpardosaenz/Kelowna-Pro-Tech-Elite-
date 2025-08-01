@@ -531,3 +531,43 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   font-size: 0.25rem !important;
   text-decoration: none;
 }
+/* === Review Badge: Contenedor principal === */
+.review-badge {
+  display: flex;                         /* Usa Flexbox para alinear los elementos */
+  flex-direction: column;               /* Apila los elementos en columna (verticalmente) */
+  align-items: center;                  /* Centra horizontalmente todos los hijos */
+  margin: 0.5rem auto;                  /* Espacio vertical + centrado horizontal */
+  font-family: 'Inter', sans-serif;     /* Usa la fuente del diseño del sitio */
+  text-align: center;                   /* Centra el texto en todos los niveles */
+}
+
+/* === Caras de clientes === */
+.review-faces {
+  display: flex;                        /* Alinea las imágenes una al lado de otra */
+  justify-content: center;             /* Centra horizontalmente el grupo de caras */
+  gap: 0;
+  margin-left: -12px;                   /* 👈 Aplica superposición horizontal */
+  margin-bottom: 3px;                  /* Espacio entre las caras y las estrellas */
+}
+
+.review-faces img {
+  width: 20px;                          /* Ancho fijo para cada cara */
+  height: 20px;                         /* Altura igual para mantener proporción 1:1 */
+  border-radius: 50%;                  /* Hace la imagen completamente circular */
+  border: 2px solid #fff;              /* Borde blanco fino alrededor de la imagen */
+  box-shadow: 0 0 0 2px #000;          /* Contorno negro externo: resalta las fotos */
+  object-fit: cover;                   /* Asegura que la imagen rellene sin deformarse */
+}
+
+/* === Estrellas === */
+.review-stars {
+  font-size: 10px;                     /* Tamaño grande para que se vean claras */
+  color: #FFD700;                      /* Amarillo oro (estilo estrella de Google) */
+  margin-bottom: 4px;                  /* Espacio inferior hacia el texto */
+}
+
+/* === Texto de puntuación y reviews === */
+.review-text {
+  font-size: 15px;                     /* Tamaño legible y ligero */
+  color: #111;                         /* Gris oscuro para buena lectura sobre fondo claro */
+}

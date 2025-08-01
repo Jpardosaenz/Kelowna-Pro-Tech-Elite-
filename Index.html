@@ -60,16 +60,25 @@
 
   <!-- Componente 3: Sección Hero ("Our Promise") -->
   <section id="our-promise" class="hero-section">
-    <img
-    src="https://raw.githubusercontent.com/Jpardosaenz/Kelowna-Pro-Tech-Elite-/refs/heads/main/Hero-Image.webp"
-    alt="Mobile hero image – diagnostic mechanic"
-    class="hero-image"
-    width="400"
-    height="300"
-    loading="lazy"
-    decoding="async"
-  />
-      <div class="hero-container">
+<img
+  src="https://kelownaprotechmobilemech.com/Web%20Site%20Imagenes/Hero-Image.webp"
+  alt="Professional mechanic inspecting car on-site"
+  class="hero-image"
+/>
+
+<style>
+  .hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+</style>
+<div class="hero-container">
           
           <!-- Línea Introductoria -->
           <p class="hero-intro">
@@ -88,7 +97,27 @@
   
       </div>
   </section>
+<!-- ⭐ Review Badge - Estilo Google Style -->
+<div class="review-badge"> <!-- Contenedor general del bloque de reseñas (fotos + estrellas + texto) -->
 
+  <div class="review-faces"> <!-- Contenedor de las imágenes de los clientes (testimonios visuales) -->
+
+    <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Review 1" /> <!-- Foto 1: cliente masculino -->
+    <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Review 2" /> <!-- Foto 2: cliente femenina -->
+    <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Review 3" /> <!-- Foto 3: cliente femenina -->
+    <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Review 4" /> <!-- Foto 4: cliente masculino -->
+
+  </div> <!-- Fin del bloque de imágenes -->
+
+  <div class="review-stars"> <!-- Sección visual para mostrar las estrellas -->
+    ★ ★ ★ ★ ★ <!-- Estrellas en texto plano, puedes reemplazarlas por SVG para más diseño -->
+  </div>
+
+  <div class="review-text"> <!-- Texto de soporte que refuerza la puntuación -->
+    <strong>4.9</strong> from 20+ reviews <!-- Número destacado + prueba social -->
+  </div>
+
+</div> <!-- Fin del contenedor general -->
   <!-- Conecta tu archivo JavaScript. 'defer' asegura que se ejecute después de que el HTML sea procesado. -->
   <script src="scripts.js" defer></script>
 
