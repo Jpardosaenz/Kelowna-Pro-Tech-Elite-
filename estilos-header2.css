@@ -501,6 +501,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   padding: 1.25rem;
   text-align: center;
   background-color: #fff; /* optional */
+  margin-top: 10px;
 }
 
 .hero-image {
@@ -512,14 +513,17 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .hero-text h1 {
-  font-size: 1.75rem;
+  font-size: 2rem;
   margin: 0.5rem 0;
 }
 
 .hero-text p {
-  font-size: 1rem;
+  font-size: 1.8rem;       /* Aumenta legibilidad móvil */
+  margin-top: 1.25rem;     /* Separa del h1 o de la imagen */
   margin-bottom: 1rem;
-  color: #333;
+  color: #222;
+  line-height: 1.6;
+  font-weight: 400;
 }
 /* === Review Badge: Contenedor principal === */
 .review-badge {
