@@ -228,6 +228,7 @@ body.menu-is-open .mobile-menu {
   margin-bottom: 1rem;
   /* ALINEACIÓN CENTRADA AÑADIDA */
   text-align: center;
+    margin-top: 1.5rem; /* crea espacio visual desde la imagen hacia este texto */
 }
 
 /* Estilos para el Título Principal (H1) */
