@@ -605,11 +605,11 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 @media only screen and (max-width: 767px) {
   /* Logo más grande */
   .kpem-header-mobile .contenedor-logo img {
-    width: 180px;
+    width: 250px;
   }
 
   /* Menú hamburguesa proporcional al logo */
   .menu-trigger {
-    font-size: 64px; /* antes 50px */
+    font-size: 150px; /* antes 50px */
   }
 }
