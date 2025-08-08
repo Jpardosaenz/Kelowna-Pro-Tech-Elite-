@@ -548,8 +548,8 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .review-faces img {
-  width: 20px;                          /* Ancho fijo para cada cara */
-  height: 20px;                         /* Altura igual para mantener proporción 1:1 */
+  width: 18px;                          /* Ancho fijo para cada cara */
+  height: 18px;                         /* Altura igual para mantener proporción 1:1 */
   border-radius: 50%;                  /* Hace la imagen completamente circular */
   border: 2px solid #fff;              /* Borde blanco fino alrededor de la imagen */
   box-shadow: 0 0 0 2px #000;          /* Contorno negro externo: resalta las fotos */
