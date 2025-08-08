@@ -1,82 +1,157 @@
+/* ========= ESTILOS PARA LA SECCIÓN DE TESTIMONIOS ========= */
 
-
-.testimonial-section {
-  max-width: 750px;
-  margin: 0 auto;
-  padding: 1.5rem 1rem;
-  font-family: 'Inter', sans-serif;
-  background-color: #f9fafb;
-  color: #111827;
+/* ===== Variables y Estilos Base ===== */
+/* Define los colores y estilos fundamentales. 
+  La fuente 'Inter' debe estar importada en tu HTML.
+*/
+:root{
+  --radius: 12px;
+  --bg: #f8fafc; /* slate-50 */
+  --card: #ffffff;
+  --text: #1e293b;         /* slate-800 */
+  --muted: #64748b;        /* slate-500 */
+  --line: rgba(17,24,39,.08);
+  --accent: #f59e0b;       /* amber-500 (estrellas) */
+  --brand: #2563eb;        /* blue-600 */
+  --ring: rgba(37,99,235,.2);
+  --shadow: 0 4px 12px rgba(0,0,0,.05);
+}
+html{
+  scroll-behavior: smooth;
+}
+body{
+  margin: 0;
+  font-family: Inter, system-ui, -apple-system, Segoe UI, Roboto, 'Helvetica Neue', Arial, sans-serif;
+  background: var(--bg);
+  color: var(--text);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.wrap{
+  max-width: 840px;
+  margin: clamp(24px, 5vw, 64px) auto;
+  padding: 0 16px 48px;
 }
 
-.testimonial-heading {
+/* ===== Encabezado de la Sección ===== */
+.t-head{
+  display: grid;
+  gap: .5rem;
   text-align: center;
-  font-size: 0.9rem;           /* mantiene un tamaño moderado para mobile */
-  font-weight: 700;          /* más bold para fuerza visual */
-  margin-bottom: 0.6rem;     /* menos separación abajo */
-  line-height: 1.15;         /* texto más compacto */
-  letter-spacing: -0.3px;    /* ligera compresión para elegancia */
-  color: #0f172a;            /* tono más oscuro para contraste */
-  text-transform: capitalize;
+  margin-bottom: 32px;
 }
-.google-link {
+.t-title{
+  color: #0f172a; /* slate-950 */
+  font-weight: 800;
+  letter-spacing: -.03em;
+  line-height: 1.1;
+  font-size: clamp(1.75rem, 6vw, 2.75rem);
+}
+.t-subtitle {
+  color: #334155; /* slate-700 */
+  font-size: clamp(1rem, 2.5vw, 1.125rem);
+  line-height: 1.6;
+  max-width: 600px;
+  margin: 8px auto 0;
+}
+
+/* ===== Testimonio Principal (Héroe) ===== */
+.t-hero-card {
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: 0 10px 30px rgba(0,0,0,.07);
+  padding: 24px;
+  border-radius: var(--radius);
+  margin-bottom: 24px;
+}
+.t-hero-quote {
+  color: #0f172a; /* slate-950 */
+  border-left: 3px solid var(--brand);
+  font-size: clamp(1.25rem, 3vw, 1.75rem);
+  font-weight: 600;
+  line-height: 1.4;
+  letter-spacing: -0.02em;
+  padding-left: 20px;
+  margin-bottom: 16px;
+}
+.t-hero-full-text {
+  color: var(--text);
+  margin-bottom: 20px;
+  padding-left: 23px; /* Alinea con el texto de la cita */
+}
+.t-hero-meta {
   display: flex;
   align-items: center;
-  justify-content: center;
-  gap: 0.4rem;
-  text-decoration: none;
-  color: #111827;
-  font-size: 0.6rem;
-  margin-bottom: 1.5rem;
+  gap: 12px;
+  padding-left: 23px;
 }
 
-.google-icon {
-  width: 15px;
-  height: 15px;
-  flex-shrink: 0;
+/* ===== Testimonios de Apoyo (Ejército) ===== */
+.t-grid{
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+}
+/* Cambia a 3 columnas en pantallas más grandes */
+@media (min-width:760px){
+  .t-grid{grid-template-columns:1fr 1fr 1fr}
 }
 
-.testimonial-card {
-  background-color: #fff;
-  border-radius: 0.8rem;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
-  padding: 1rem;
-  margin-bottom: 1rem;
+.t-card{
+  background: var(--card);
+  border: 1px solid var(--line);
+  box-shadow: var(--shadow);
   display: flex;
-  gap: 0.8rem;
-  transition: transform 0.3s ease;
+  flex-direction: column;
+  gap: 12px;
+  padding: 20px;
+  border-radius: var(--radius);
+  transition: transform .25s ease, box-shadow .25s ease, border-color .25s ease;
 }
-
-.testimonial-card:hover {
-  transform: translateY(-3px);
+.t-card:hover{
+  transform: translateY(-4px);
+  border-color: rgba(37,99,235,.4);
+  box-shadow: 0 10px 25px rgba(0,0,0,.08);
 }
-
-.testimonial-photo {
-  width: 25px;
-  height: 25px;
+.t-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar{
+  width: 48px;
+  height: 48px;
   border-radius: 50%;
   object-fit: cover;
+  border: 2px solid rgba(17,24,39,.06);
 }
-
-.testimonial-content {
-  flex: 1;
+.t-meta{
+  display: grid;
+  gap: 4px;
 }
-
-.testimonial-rating {
-  color: #facc15;
-  font-size: 0.7rem;
-  margin-bottom: 0.3rem;
+.t-name{
+  font-weight: 700;
+  font-size: 1.05rem;
 }
-
-.testimonial-text {
-  font-size: 0.6rem;
-  line-height: 1.4;
-  margin-bottom: 0.4rem;
-  color: #334155;
-}
-
-.testimonial-author {
-  font-size: 0.6rem;
+.t-service{
+  color: #1d4ed8; /* blue-700 */
+  background: #dbeafe; /* blue-100 */
+  font-size: .75rem;
   font-weight: 600;
-  color: #0f172a;
+  padding: 3px 8px;
+  border-radius: 999px;
+  width: fit-content;
+}
+.t-text{
+  color: #334155; /* slate-700 */
+  font-size: .95rem;
+  line-height: 1.6;
+  flex-grow: 1; /* Asegura que las tarjetas en una fila tengan la misma altura */
+}
+.t-rating{
+  color: var(--accent);
+  margin-top: auto; /* Empuja las estrellas al final de la tarjeta */
+  padding-top: 12px;
+  font-size: .9rem;
+  letter-spacing: .08em;
 }
