@@ -85,13 +85,13 @@ body {
 }
 
 .kpem-header-mobile .contenedor-logo img {
-  width: 140px;
+  width: 180px;
   height: auto;
   display: block;
 }
 
 .menu-trigger {
-  font-size: 30px;
+  font-size: 50px;
   background: none;
   border: none;
   color: #212121;
@@ -601,4 +601,15 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 
 .icon-achievement:hover {
   stroke: #ffd700;
+}
+@media only screen and (max-width: 767px) {
+  /* Logo más grande */
+  .kpem-header-mobile .contenedor-logo img {
+    width: 180px;
+  }
+
+  /* Menú hamburguesa proporcional al logo */
+  .menu-trigger {
+    font-size: 64px; /* antes 50px */
+  }
 }
