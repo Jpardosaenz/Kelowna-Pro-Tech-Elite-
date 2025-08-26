@@ -1,0 +1,261 @@
+/* === Service Tiles Section === */
+:root {
+  --brand: #111827;
+  --ink: #111827;
+  --muted: #6b7280;
+  --card: #ffffff;
+  --line: #e5e7eb;
+  --radius: 16px;
+  --shadow: 0 6px 14px rgba(0, 0, 0, 0.06);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+#service-tiles {
+  padding: 24px 16px;
+  max-width: 1200px;
+  margin: auto;
+  margin-top: 32px;
+  padding-top: 16px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 64px; /* offset para sticky header */
+}
+/* === Fix: centrar cabecera de la sección de servicios === */
+#service-tiles .section-head {
+  text-align: center;
+  margin: 0 16px; /* respiro lateral en mobile */
+}
+
+#service-tiles .section-head h2 {
+  font-size: 28px; /* tamaño más cómodo en mobile */
+  line-height: 1.2;
+  margin: 0 auto 4px; /* centra el H2 */
+}
+
+#service-tiles .section-head .lead {
+  max-width: 600px; /* ancho legible del subtítulo */
+  margin: 0 auto; /* centra el párrafo */
+}
+#service-tiles .eyebrow {
+  display: inline-block;
+  font-size: 13px; /* ↑ antes 12px — mejor legibilidad */
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--muted);
+  font-weight: 700;
+  margin-bottom: 8px;
+}
+#service-tiles h2 {
+  font-size: 20px;
+  line-height: 1.3;
+  margin: 0;
+}
+#service-tiles p.lead {
+  margin: 8px auto 0;
+  color: var(--muted);
+  font-size: 16px;
+  max-width: 600px;
+}
+
+/* Rejilla */
+.tiles {
+  display: grid;
+  gap: 16px;
+  margin-top: 24px;
+}
+
+/* Tarjeta */
+.tile {
+  display: flex;
+  flex-direction: column;
+  text-decoration: none;
+  background: var(--card);
+  border: 1px solid var(--line);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  position: relative;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  overflow: hidden;
+
+  /* NUEVO: mejora performance al hacer scroll de muchas tarjetas */
+  content-visibility: auto; /* NUEVO */
+  contain-intrinsic-size: 300px; /* NUEVO: altura estimada para reservar espacio */
+}
+.tile:hover {
+  border-color: var(--brand);
+  transform: translateY(-4px);
+  box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Accesibilidad foco */
+.tile:focus {
+  outline: none;
+}
+.tile:focus-visible {
+  /* NUEVO: foco visible solo cuando procede */
+  outline: 3px solid rgba(17, 24, 39, 0.5);
+  outline-offset: 2px;
+}
+
+/* Imagen: reserva de espacio y estabilidad */
+.tile .image-container {
+  width: 100%;
+  height: 160px;
+  background-color: #f3f4f6;
+  aspect-ratio: 16 / 10; /* NUEVO: evita saltos (CLS) */
+}
+.tile .image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Texto */
+.tile .copy {
+  padding: 20px;
+  display: grid;
+  gap: 4px;
+  flex-grow: 1;
+}
+.tile .title {
+  font-size: 18px;
+  font-weight: 800;
+  color: var(--ink);
+  margin: 0;
+  line-height: 1.3;
+}
+.tile .hint {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.4;
+}
+
+/* Flecha CTA */
+.tile .cta-arrow {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 24px;
+  color: var(--muted);
+  transition: transform 0.2s ease, color 0.2s ease;
+}
+.tile:hover .cta-arrow {
+  color: var(--brand);
+  transform: translateX(4px);
+}
+
+/* Etiqueta */
+.tile .tag {
+  position: absolute;
+  top: 12px;
+  left: 12px;
+  background: rgba(17, 24, 39, 0.78); /* ↑ ligerísimo para contraste */
+  backdrop-filter: blur(4px);
+  color: #fff;
+  font-size: 11px; /* ↑ antes 10px — legible en móviles */
+  font-weight: 700;
+  padding: 4px 8px;
+  border-radius: 20px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+/* Respeto a usuarios con reduce‑motion */
+@media (prefers-reduced-motion: reduce) {
+  .tile,
+  .tile .cta-arrow {
+    transition: none; /* NUEVO */
+  }
+}
+
+/* Desktop */
+@media (min-width: 768px) {
+  #service-tiles {
+    padding: 48px 24px;
+  }
+  #service-tiles h2 {
+    font-size: 32px;
+  }
+  .tiles {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .tile .title {
+    font-size: 20px;
+  }
+}
+/* ===== Desktop layout for Service Tiles (>=1024px) ===== */
+@media (min-width: 1024px) {
+  /* contenedor general */
+  #service-tiles {
+    max-width: 1200px;
+    padding: 56px 24px;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  /* encabezado de sección */
+  #service-tiles .section-head {
+    text-align: center;
+    margin-bottom: 24px;
+  }
+
+  #service-tiles .section-head .eyebrow {
+    font-size: 12px;
+    letter-spacing: 0.12em;
+  }
+
+  #service-tiles h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin: 6px 0 8px;
+  }
+
+  #service-tiles .lead {
+    font-size: 16px;
+    max-width: 720px;
+    margin-left: auto;
+    margin-right: auto;
+    color: var(--muted);
+  }
+
+  /* rejilla a 3 columnas */
+  #service-tiles .tiles {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 24px;
+    margin-top: 28px;
+  }
+
+  /* tarjetas: aspecto y micro‑interacción */
+  #service-tiles .tile {
+    border-radius: var(--radius);
+    box-shadow: var(--shadow);
+    transition: transform 0.2s ease, box-shadow 0.2s ease,
+      border-color 0.2s ease;
+  }
+
+  #service-tiles .tile:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    border-color: var(--brand);
+  }
+
+  /* imagen con altura mayor en desktop */
+  #service-tiles .image-container {
+    height: 220px;
+  }
+
+  /* texto */
+  #service-tiles .title {
+    font-size: 20px;
+  }
+
+  #service-tiles .hint {
+    font-size: 14px;
+  }
+}

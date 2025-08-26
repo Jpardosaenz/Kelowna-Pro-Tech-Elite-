@@ -25,6 +25,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="service-tiles.css">
   <!-- ====================================================== -->
 <!-- Structured Data for Home Page -->
  <!-- ====== Structured Data: Client Stories Page ====== -->
@@ -35,7 +36,7 @@
   "@type": ["WebPage", "AutoRepair"],
   "@id": "https://www.google.com/maps?cid=15158851769671529299",
   "name": "Kelowna Pro-Tech Elite – On-Site Professional Mechanic",
-  "url": "https://www.kelownaprotechmobilemech.com/",
+  "url": "https://kelownaprotechmobilemech.com/",
   "description": "Car won’t start? Strange sounds? Don’t waste time towing—call a professional mechanic who comes to you. At Kelowna Pro-Tech Elite, we solve mechanical problems directly in your driveway—fast, clear, and without guessing.",
   "image": "https://kelownaprotechmobilemech.com/Web%20Site%20Imagenes/Logo.webp",
   "telephone": "+1-250-859-5467",
@@ -56,7 +57,7 @@
     {
       "@type": "OpeningHoursSpecification",
       "dayOfWeek": [
-        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday", "dayOfWeek"
+        "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"
       ],
       "opens": "08:00",
       "closes": "20:00"
@@ -145,6 +146,71 @@
       </p>
     </div>
   </section>
+  <!-- Services / Mobile-first -->
+<section id="service-tiles" aria-labelledby="services-heading">
+  <header class="section-head">
+    <span class="eyebrow">Your Personal Mobile Mechanics</span>
+    <h2 id="services-heading">Mobile Mechanic Services  Expert Repairs Delivered to Your Door</h2>
+    <p class="lead">Same-day help from our two-mechanic team. The shop comes to you.</p>
+  </header>
+
+  <ul class="tiles" role="list">
+    <!-- Card 1: On-site Diagnostic -->
+    <li class="tile" role="listitem">
+      <a class="tile-link" href="/diagnostic/" aria-label="On-site diagnostic service details">
+        <figure class="image-container">
+          <img
+            src="images/diagnostic-repairs.webp"
+            alt="Mobile mechanic running an advanced diagnostic scan under the hood in a driveway."
+            loading="eager" decoding="async"
+            width="800" height="534" />
+        </figure>
+        <div class="copy">
+          <h3 class="title">On-Site Diagnostic — Clear Answers Today</h3>
+          <p class="hint">We come to your location and find the root cause fast. No tow, no waiting, no guessing.</p>
+        </div>
+        <span class="tag" aria-hidden="true">Most Popular</span>
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+
+    <!-- Card 2: Pre-Purchase Inspection -->
+    <li class="tile" role="listitem">
+      <a class="tile-link" href="/pre-purchase-inspection/" aria-label="Pre-purchase car inspection details">
+        <figure class="image-container">
+          <img
+            src="images/pre-purchase.webp"
+            alt="Mechanic inspecting a used car before purchase with a detailed checklist."
+            loading="lazy" decoding="async"
+            width="800" height="534" />
+        </figure>
+        <div class="copy">
+          <h3 class="title">Pre-Purchase Inspection — Buy with Confidence</h3>
+          <p class="hint">We uncover hidden issues before they become your expensive problem.</p>
+        </div>
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+
+    <!-- Card 3: Preventive Maintenance -->
+    <li class="tile" role="listitem">
+      <a class="tile-link" href="/preventive-maintenance/" aria-label="Preventive maintenance service details">
+        <figure class="image-container">
+          <img
+            src="images/maintenance-3v.webp"
+            alt="Premium filters and synthetic oil prepared for an on-site maintenance service."
+            loading="lazy" decoding="async"
+            width="800" height="534" />
+        </figure>
+        <div class="copy">
+          <h3 class="title">Preventive Maintenance — Keep It Running Strong</h3>
+          <p class="hint">Convenient on-site maintenance that prevents future repairs and keeps you on the road.</p>
+        </div>
+        <span class="cta-arrow" aria-hidden="true">→</span>
+      </a>
+    </li>
+  </ul>
+</section>
 <!-- ⭐ Review Badge - Estilo Google Style -->
 <div class="review-badge"> <!-- Contenedor general del bloque de reseñas (fotos + estrellas + texto) -->
 
