@@ -57,7 +57,7 @@ h1 {
 
 /***** HEADER MOBILE - VERSIÓN FINAL *****/
 body {
-  font-family: 'Inter', sans-serif; /* Aplica 'Inter' a todo el sitio */
+  font-family: "Inter", sans-serif; /* Aplica 'Inter' a todo el sitio */
   -webkit-font-smoothing: antialiased; /* Mejora el renderizado en Safari/Chrome */
   -moz-osx-font-smoothing: grayscale; /* Mejora el renderizado en Firefox */
 }
@@ -69,11 +69,11 @@ body {
   position: sticky;
   top: 0;
   z-index: 1000;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
   display: flex;
   align-items: center;
   justify-content: space-between;
-  
+
   /* --- REFUERZO ESTRUCTURAL (SOLUCIÓN PROPUESTA) --- */
   /* Esta línea fuerza al navegador a crear una nueva capa de renderizado,
      solucionando el conflicto de apilamiento en WebKit (Safari). */
@@ -158,14 +158,14 @@ body.menu-is-open .mobile-menu {
 .mobile-menu a {
   color: white;
   text-decoration: none;
-  font-size: 22px ;
+  font-size: 22px;
   font-weight: 600;
   letter-spacing: -0.5px; /* La herramienta de precisión que faltaba */
   transition: color 0.2s ease;
 }
 
 .mobile-menu a:hover {
-  color: #D97706; /* Color de acento de la marca */
+  color: #d97706; /* Color de acento de la marca */
 }
 
 /* ----- 5. Botón de Cierre (la 'X') ----- */
@@ -192,7 +192,7 @@ body.menu-is-open .mobile-menu {
 /* Estilos para el contenedor de toda la sección */
 .hero-section {
   background-color: #f8fafc; /* Fondo gris claro profesional */
-  padding: 2rem 0.5rem 3rem;      /* Espaciado interno (48px arriba/abajo, 24px a los lados) */
+  padding: 2rem 0.5rem 3rem; /* Espaciado interno (48px arriba/abajo, 24px a los lados) */
   width: 100%;
   box-sizing: border-box;
 }
@@ -200,7 +200,7 @@ body.menu-is-open .mobile-menu {
 /* Contenedor que limita el ancho del contenido en la página */
 .hero-container {
   max-width: 1200px; /* Ancho máximo para pantallas grandes */
-  margin: 0 auto;    /* Centra el contenedor */
+  margin: 0 auto; /* Centra el contenedor */
 }
 
 /* * Cuadrícula (Grid) para el layout de dos columnas.
@@ -209,8 +209,8 @@ body.menu-is-open .mobile-menu {
 .hero-grid {
   display: grid;
   grid-template-columns: 1fr; /* Por defecto, una sola columna para móvil */
-  gap: 1rem;                  /* Espacio entre elementos */
-  align-items: center;        /* Centra verticalmente los elementos */
+  gap: 1rem; /* Espacio entre elementos */
+  align-items: center; /* Centra verticalmente los elementos */
 }
 
 /* Contenedor del texto */
@@ -220,7 +220,7 @@ body.menu-is-open .mobile-menu {
 
 /* Estilos para la línea introductoria */
 .hero-intro {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   /* TAMAÑO LIGERAMENTE REDUCIDO */
   font-size: 1rem; /* 13px, para un look más refinado */
   font-weight: 400;
@@ -228,17 +228,21 @@ body.menu-is-open .mobile-menu {
   margin-bottom: 1rem;
   /* ALINEACIÓN CENTRADA AÑADIDA */
   text-align: center;
-    margin-top: 1.5rem; /* crea espacio visual desde la imagen hacia este texto */
+  margin-top: 1.5rem; /* crea espacio visual desde la imagen hacia este texto */
 }
 
 /* Estilos para el Título Principal (H1) */
 .hero-headline {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   /* TAMAÑO DE FUENTE NUEVAMENTE REDUCIDO para una mejor estética móvil */
-  font-size: clamp(1.7rem, 5vw, 1.7rem); /* Antes: clamp(1.75rem, 7vw, 2.5rem) */
+  font-size: clamp(
+    1.7rem,
+    5vw,
+    1.7rem
+  ); /* Antes: clamp(1.75rem, 7vw, 2.5rem) */
   font-weight: 700;
-    /* ALTURA DE LÍNEA AUMENTADA: Para un look más "expandido" y legible */
-    line-height: 1.25;
+  /* ALTURA DE LÍNEA AUMENTADA: Para un look más "expandido" y legible */
+  line-height: 1.25;
   letter-spacing: -0.9px;
   color: #1e293b;
   padding: 0;
@@ -249,10 +253,9 @@ body.menu-is-open .mobile-menu {
   text-align: center;
 }
 
-
 /* Estilos para el texto de apoyo */
 .hero-support-text {
-  font-family: 'Inter', sans-serif;
+  font-family: "Inter", sans-serif;
   font-size: 0.9rem;
   line-height: 1.6;
   color: #334155; /* Gris oscuro para fácil lectura */
@@ -346,7 +349,7 @@ COMPONENTE: SECCIÓN DE SERVICIOS PRINCIPALES
   width: 56px;
   height: 56px;
   background-color: #111827; /* Iconos con fondo negro */
-  color: #FBBF24; /* Icono (SVG) en color dorado brillante */
+  color: #fbbf24; /* Icono (SVG) en color dorado brillante */
   border-radius: 50%;
   margin-bottom: 24px;
 }
@@ -365,13 +368,13 @@ COMPONENTE: SECCIÓN DE SERVICIOS PRINCIPALES
 
 .service-description {
   font-size: 1rem;
-  color: #4B5563;
+  color: #4b5563;
   line-height: 1.6;
   margin-bottom: 24px;
 }
 
 .service-link {
-  color: #D97706;
+  color: #d97706;
   font-weight: 600;
   text-decoration: none;
   transition: color 0.2s ease;
@@ -390,9 +393,9 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
 /* Este contenedor es la clave para el posicionamiento "flotante" */
 .floating-cta-container {
   position: fixed; /* Lo saca del flujo normal y lo fija en la pantalla */
-  bottom: 20px;    /* 20px desde la parte inferior */
-  right: 60px !important;     /* 20px desde la parte derecha */
-  z-index: 1001;   /* Se asegura de que esté por encima de otros elementos */
+  bottom: 20px; /* 20px desde la parte inferior */
+  right: 60px !important; /* 20px desde la parte derecha */
+  z-index: 1001; /* Se asegura de que esté por encima de otros elementos */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -403,19 +406,18 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
 .main-cta-button {
   background-color: #111827;
   color: #fff;
-  border: 2px solid #FFD700;         /* Gold, premium */
-  padding: 0.25rem 1rem !important; 
-  border-radius: 25px;               /* Elegant, not too rounded */
-  font-weight: 600;                  /* More premium feel */
+  border: 2px solid #ffd700; /* Gold, premium */
+  padding: 0.25rem 1rem !important;
+  border-radius: 25px; /* Elegant, not too rounded */
+  font-weight: 600; /* More premium feel */
   font-size: 1.3rem !important;
-  font-family: 'Inter', sans-serif;
-  box-shadow: 0 3px 16px rgba(44,35,14,0.09); /* Subtler shadow */
+  font-family: "Inter", sans-serif;
+  box-shadow: 0 3px 16px rgba(44, 35, 14, 0.09); /* Subtler shadow */
   cursor: pointer;
-  transition: 
-    background 0.23s cubic-bezier(.4,0,.2,1), 
-    color 0.23s cubic-bezier(.4,0,.2,1), 
-    box-shadow 0.23s cubic-bezier(.4,0,.2,1),
-    border-color 0.23s cubic-bezier(.4,0,.2,1);
+  transition: background 0.23s cubic-bezier(0.4, 0, 0.2, 1),
+    color 0.23s cubic-bezier(0.4, 0, 0.2, 1),
+    box-shadow 0.23s cubic-bezier(0.4, 0, 0.2, 1),
+    border-color 0.23s cubic-bezier(0.4, 0, 0.2, 1);
   max-width: 95vw;
   min-width: 250px;
   text-align: center;
@@ -441,40 +443,43 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
   transition: opacity 0.3s ease, transform 0.3s ease;
 }
 
-.main-cta-button:hover, .main-cta-button:focus {
-  background: #FFD700;
+.main-cta-button:hover,
+.main-cta-button:focus {
+  background: #ffd700;
   color: #111827;
-  border-color: #FFD700;
-  box-shadow: 0 7px 32px rgba(44,35,14,0.12);
+  border-color: #ffd700;
+  box-shadow: 0 7px 32px rgba(44, 35, 14, 0.12);
   outline: none;
 }
 .cta-option {
-  display: inline-block;          /* Permite usar width y height en elementos <a> y aplicar márgenes */
-  width: 150px;                   /* Ancho fijo del botón: lo hace consistente y alineado */
-  height: 30px;                   /* Altura total del botón (más elegante y legible que 25px) */
-  line-height: 32px;              /* Centra verticalmente el texto dentro del botón */
-  font-size: 20px;                /* Tamaño del texto: buena legibilidad en móviles y escritorio */
-  font-weight: 600;               /* Grosor del texto: transmite autoridad visual */
-  text-align: center;             /* Centra el texto horizontalmente */
-  color: #fff;                    /* Color del texto blanco para contraste sobre fondo oscuro */
-  background-color: #000;         /* Fondo negro: da fuerza visual y percepción premium */
-  border: 1px solid #fff;         /* Borde blanco de 1px para destacar sobre el fondo */
-  border-radius: 12px;            /* Bordes redondeados: más amigable y moderno visualmente */
-  text-decoration: none;          /* Elimina subrayado del enlace (<a>) */
-  margin: 4px auto;               /* Espacio vertical entre botones REDUCIDO + centrado horizontal */
-  box-shadow: 0 2px 6px rgba(0,0,0,0.2);  /* Sombra sutil para profundidad y enfoque visual */
-  transition: all 0.3s ease;      /* Transiciones suaves cuando se pasa el mouse (hover) */
+  display: inline-block; /* Permite usar width y height en elementos <a> y aplicar márgenes */
+  width: 150px; /* Ancho fijo del botón: lo hace consistente y alineado */
+  height: 30px; /* Altura total del botón (más elegante y legible que 25px) */
+  line-height: 32px; /* Centra verticalmente el texto dentro del botón */
+  font-size: 20px; /* Tamaño del texto: buena legibilidad en móviles y escritorio */
+  font-weight: 600; /* Grosor del texto: transmite autoridad visual */
+  text-align: center; /* Centra el texto horizontalmente */
+  color: #fff; /* Color del texto blanco para contraste sobre fondo oscuro */
+  background-color: #000; /* Fondo negro: da fuerza visual y percepción premium */
+  border: 1px solid #fff; /* Borde blanco de 1px para destacar sobre el fondo */
+  border-radius: 12px; /* Bordes redondeados: más amigable y moderno visualmente */
+  text-decoration: none; /* Elimina subrayado del enlace (<a>) */
+  margin: 4px auto; /* Espacio vertical entre botones REDUCIDO + centrado horizontal */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidad y enfoque visual */
+  transition: all 0.3s ease; /* Transiciones suaves cuando se pasa el mouse (hover) */
 }
 
 .cta-option:hover {
-  box-shadow: 0 4px 10px rgba(0,0,0,0.35);  /* Aumenta la sombra al hacer hover para efecto flotante */
-  transform: scale(1.03);                  /* Ligeramente más grande al pasar el mouse (feedback visual) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35); /* Aumenta la sombra al hacer hover para efecto flotante */
+  transform: scale(
+    1.03
+  ); /* Ligeramente más grande al pasar el mouse (feedback visual) */
 }
 .cta-options.show-options {
   display: flex;
   opacity: 1;
   transform: translateY(0);
-} 
+}
 /* ----- 4. Estilo para Mostrar las Opciones ----- */
 /* (Se activa con JavaScript añadiendo la clase 'active' al contenedor) */
 .floating-cta-container.active .cta-options {
@@ -519,8 +524,8 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .hero-text p {
-  font-size: 1.8rem;       /* Aumenta legibilidad móvil */
-  margin-top: 1.25rem;     /* Separa del h1 o de la imagen */
+  font-size: 1.8rem; /* Aumenta legibilidad móvil */
+  margin-top: 1.25rem; /* Separa del h1 o de la imagen */
   margin-bottom: 1rem;
   color: #222;
   line-height: 1.6;
@@ -528,45 +533,44 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 /* === Review Badge: Contenedor principal === */
 .review-badge {
-  display: flex;                         /* Usa Flexbox para alinear los elementos */
-  flex-direction: column;               /* Apila los elementos en columna (verticalmente) */
-  align-items: center;                  /* Centra horizontalmente todos los hijos */
-  margin: 0.5rem auto;                  /* Espacio vertical + centrado horizontal */
-  font-family: 'Inter', sans-serif;     /* Usa la fuente del diseño del sitio */
-  text-align: center;                   /* Centra el texto en todos los niveles */
+  display: flex; /* Usa Flexbox para alinear los elementos */
+  flex-direction: column; /* Apila los elementos en columna (verticalmente) */
+  align-items: center; /* Centra horizontalmente todos los hijos */
+  margin: 0.5rem auto; /* Espacio vertical + centrado horizontal */
+  font-family: "Inter", sans-serif; /* Usa la fuente del diseño del sitio */
+  text-align: center; /* Centra el texto en todos los niveles */
   margin-bottom: 10px; /* ✅ Añade espacio para que el botón no lo tape */
 }
 
-
 /* === Caras de clientes === */
 .review-faces {
-  display: flex;                        /* Alinea las imágenes una al lado de otra */
-  justify-content: center;             /* Centra horizontalmente el grupo de caras */
+  display: flex; /* Alinea las imágenes una al lado de otra */
+  justify-content: center; /* Centra horizontalmente el grupo de caras */
   gap: 0;
-  margin-left: -12px;                   /* 👈 Aplica superposición horizontal */
-  margin-bottom: 3px;                  /* Espacio entre las caras y las estrellas */
+  margin-left: -12px; /* 👈 Aplica superposición horizontal */
+  margin-bottom: 3px; /* Espacio entre las caras y las estrellas */
 }
 
 .review-faces img {
-  width: 18px;                          /* Ancho fijo para cada cara */
-  height: 18px;                         /* Altura igual para mantener proporción 1:1 */
-  border-radius: 50%;                  /* Hace la imagen completamente circular */
-  border: 2px solid #fff;              /* Borde blanco fino alrededor de la imagen */
-  box-shadow: 0 0 0 2px #000;          /* Contorno negro externo: resalta las fotos */
-  object-fit: cover;                   /* Asegura que la imagen rellene sin deformarse */
+  width: 18px; /* Ancho fijo para cada cara */
+  height: 18px; /* Altura igual para mantener proporción 1:1 */
+  border-radius: 50%; /* Hace la imagen completamente circular */
+  border: 2px solid #fff; /* Borde blanco fino alrededor de la imagen */
+  box-shadow: 0 0 0 2px #000; /* Contorno negro externo: resalta las fotos */
+  object-fit: cover; /* Asegura que la imagen rellene sin deformarse */
 }
 
 /* === Estrellas === */
 .review-stars {
-  font-size: 10px;                     /* Tamaño grande para que se vean claras */
-  color: #FFD700;                      /* Amarillo oro (estilo estrella de Google) */
-  margin-bottom: 4px;                  /* Espacio inferior hacia el texto */
+  font-size: 10px; /* Tamaño grande para que se vean claras */
+  color: #ffd700; /* Amarillo oro (estilo estrella de Google) */
+  margin-bottom: 4px; /* Espacio inferior hacia el texto */
 }
 
 /* === Texto de puntuación y reviews === */
 .review-text {
-  font-size: 15px;                     /* Tamaño legible y ligero */
-  color: #111;                         /* Gris oscuro para buena lectura sobre fondo claro */
+  font-size: 15px; /* Tamaño legible y ligero */
+  color: #111; /* Gris oscuro para buena lectura sobre fondo claro */
 }
 /* inicia achievements */
 .elite-achievements {
@@ -611,5 +615,34 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   /* Menú hamburguesa proporcional al logo */
   .menu-trigger {
     font-size: 150px; /* antes 50px */
+  }
+}
+/* ===== Service breadcrumb (arriba, claro pero discreto) ===== */
+.service-nav {
+  max-width: 980px;
+  margin: 8px auto 12px;
+  padding: 10px 16px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 14px;
+  line-height: 1.2;
+}
+.service-nav .home-link {
+  font-weight: 700; /* negrita visible */
+  text-decoration: none;
+  color: #111827; /* ink/brand */
+}
+.service-nav .home-link:hover,
+.service-nav .home-link:focus {
+  text-decoration: underline; /* feedback claro sin competir con el CTA */
+}
+
+/* Compacto en móvil */
+@media (max-width: 768px) {
+  .service-nav {
+    margin: 6px auto 8px;
+    padding: 8px 12px;
+    font-size: 13px;
   }
 }
