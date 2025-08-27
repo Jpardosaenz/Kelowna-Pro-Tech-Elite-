@@ -1,4 +1,16 @@
-www.kelownaprotechmobilemech.com/*  https://kelownaprotechmobilemech.com/:splat  301!
-/services/diagnostic      /services/diagnostic/index.html      200
-/services/pre-purchase    /services/pre-purchase/index.html    200
-/services/maintenance     /services/maintenance/index.html     200
+# 1) Forzar HTTPS y sin www
+http://www.kelownaprotechmobilemech.com/*   https://kelownaprotechmobilemech.com/:splat   301!
+https://www.kelownaprotechmobilemech.com/*  https://kelownaprotechmobilemech.com/:splat   301!
+
+# 2) Aliases cortos → URL canónica de servicios
+/diagnostic        /services/diagnostic/        301
+/pre-purchase      /services/pre-purchase/      301
+/maintenance       /services/maintenance/       301
+
+# 3) Servir pretty URLs con y sin “/” (evita 404)
+/services/diagnostic       /services/diagnostic/index.html       200
+/services/diagnostic/      /services/diagnostic/index.html       200
+/services/pre-purchase     /services/pre-purchase/index.html     200
+/services/pre-purchase/    /services/pre-purchase/index.html     200
+/services/maintenance      /services/maintenance/index.html      200
+/services/maintenance/     /services/maintenance/index.html      200
