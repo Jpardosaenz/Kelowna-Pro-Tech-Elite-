@@ -199,7 +199,35 @@
           {
             "@type": "Service",
             "name": "On-Site Vehicle Diagnostic",
-            "provider": { "@type": "LocalBusiness", "name": "Pro-Tech Elite" },
+            "provider": {
+              "@type": "LocalBusiness",
+              "name": "Pro-Tech Elite",
+              "telephone": "+1-250-859-5467",
+              "address": {
+                "@type": "PostalAddress",
+                "streetAddress": "773 Glenmore Rd",
+                "addressLocality": "Kelowna",
+                "addressRegion": "BC",
+                "postalCode": "V1V 3B7",
+                "addressCountry": "CA"
+              },
+              "openingHoursSpecification": [
+                {
+                  "@type": "OpeningHoursSpecification",
+                  "dayOfWeek": [
+                    "Monday",
+                    "Tuesday",
+                    "Wednesday",
+                    "Thursday",
+                    "Friday",
+                    "Saturday",
+                    "Sunday"
+                  ],
+                  "opens": "08:00",
+                  "closes": "20:00"
+                }
+              ]
+            },
             "areaServed": { "@type": "City", "name": "Kelowna" },
             "serviceType": "Mobile mechanic diagnostic",
             "description": "Same-day on-site diagnostic to find the root cause without towing.",
@@ -257,8 +285,7 @@
         <div>
           <h1>On-Site Car Diagnostic in Kelowna</h1>
           <p class="byline">
-            <strong>Pro-Tech Elite</strong> — Kelowna’s certified mobile
-            mechanic.
+            <strong>Pro-Tech Elite</strong> — Kelowna’s Expert Mobile mechanic.
           </p>
           <p class="lead">
             Check-engine light, no-start, or strange noise? We come to your
@@ -266,7 +293,7 @@
             guessing.
           </p>
           <div class="badges">
-            <span>✓ Certified Mobile Mechanic</span>
+            <span>✓ Expert Mobile Mechanic</span>
             <span>✓ Same-Day Service</span>
             <span>✓ 4.9★ Reviews</span>
           </div>
@@ -337,6 +364,31 @@
           <div>Same-day in most of Kelowna. Call +1-250-859-5467.</div>
         </details>
       </section>
+      <!-- NAP visible -->
+      <footer class="site-nap" aria-label="Business info">
+        <div class="site-nap__wrap">
+          <strong class="site-nap__brand"
+            >Pro‑Tech Elite — Mobile Mechanic Kelowna</strong
+          >
+          <address class="site-nap__addr">
+            773 Glenmore Rd, Kelowna, BC V1V 3B7
+          </address>
+          <div class="site-nap__contact">
+            Phone:
+            <a href="tel:+12508595467" class="site-nap__tel" rel="nofollow"
+              >+1‑250‑859‑5467</a
+            >
+          </div>
+          <div class="site-nap__hours">
+            Hours: <time>Mon–Sun 08:00–20:00</time>
+          </div>
+          <p class="site-nap__coverage">
+            <a href="/#coverage" class="site-nap__link"
+              >See Coverage & Areas Served →</a
+            >
+          </p>
+        </div>
+      </footer>
     </main>
   </body>
 </html>
