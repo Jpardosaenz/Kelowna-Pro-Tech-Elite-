@@ -758,3 +758,11 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
+
+/* Accessible focus for service CTAs */
+.main-cta-button:focus-visible,
+.page .cta:focus-visible {
+  outline: 3px solid #ffd700;   /* gold brand */
+  outline-offset: 2px;
+  box-shadow: 0 0 0 2px #111827; /* dark halo for contrast */
+}
