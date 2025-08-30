@@ -656,3 +656,105 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   object-fit: cover;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
 }
+
+/* ================================================================
+   Service Pages — Base styles (shared across service pages)
+   Applies lightweight layout and card styling used by services.
+   Keep minimal to avoid collisions with other sections.
+================================================================ */
+
+/* Page container */
+.page {
+  max-width: 980px;
+  margin: 0 auto;
+  padding: 24px 16px;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+  font-size: 12px;
+  color: var(--muted, #6b7280);
+  margin: 8px 0 16px;
+}
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Hero helpers (generic) — the detailed hero layout is handled by
+   .hero-section/.hero-grid above; these keep typography consistent */
+.page .byline {
+  color: var(--muted, #6b7280);
+}
+.page .lead {
+  color: var(--muted, #6b7280);
+  margin: 8px 0 0;
+  max-width: 64ch;
+}
+.badges {
+  display: flex;
+  gap: 12px;
+  align-items: center;
+  flex-wrap: wrap;
+  margin: 16px 0;
+  color: var(--muted, #6b7280);
+  font-size: 14px;
+}
+
+/* Sections */
+.section {
+  margin-top: 32px;
+}
+.section h2 {
+  font-size: 20px;
+  margin: 0 0 8px;
+}
+
+/* Benefit cards */
+.benefits {
+  display: grid;
+  gap: 12px;
+  grid-template-columns: 1fr;
+  margin-top: 12px;
+}
+.card {
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 16px;
+  padding: 16px;
+  background: #fff;
+}
+.card h3 {
+  font-size: 16px;
+  margin: 0 0 4px;
+}
+
+/* Call-to-action button (scoped to service pages) */
+.page .cta {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 16px;
+  border-radius: 999px;
+  background: #111827;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+}
+
+/* FAQ */
+.faq details {
+  border: 1px solid var(--line, #e5e7eb);
+  border-radius: 12px;
+  padding: 12px 14px;
+  background: #fff;
+}
+.faq summary {
+  cursor: pointer;
+  font-weight: 700;
+}
+
+@media (min-width: 900px) {
+  .benefits {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}

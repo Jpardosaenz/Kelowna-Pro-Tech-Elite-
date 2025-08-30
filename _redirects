@@ -4,7 +4,6 @@ https://www.kelownaprotechmobilemech.com/*  https://kelownaprotechmobilemech.com
 
 # 2) Aliases cortos → URL canónica de servicios
 /diagnostic        /services/diagnostic/        301
-/pre-purchase      /services/pre-purchase/      301
 /maintenance       /services/maintenance/       301
 
 # 3) Servir pretty URLs con y sin “/” (evita 404)
@@ -14,3 +13,4 @@ https://www.kelownaprotechmobilemech.com/*  https://kelownaprotechmobilemech.com
 /services/pre-purchase/    /services/pre-purchase/index.html     200
 /services/maintenance      /services/maintenance/index.html      200
 /services/maintenance/     /services/maintenance/index.html      200
+/pre-purchase   /services/pre-purchase/   301!
