@@ -63,7 +63,8 @@ body {
 }
 .kpem-header-mobile {
   width: 100%;
-  padding: 12px 20px;
+  height: 64px;
+  padding: 4px 16px;
   background: #fff;
   box-sizing: border-box;
   position: sticky;
@@ -85,8 +86,8 @@ body {
 }
 
 .kpem-header-mobile .contenedor-logo img {
-  width: 180px; /* tamaño original */
-  height: auto;
+  height: 56px;
+  width: auto;
   display: block;
 }
 
@@ -608,10 +609,11 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 @media only screen and (max-width: 767px) {
   .kpem-header-mobile .contenedor-logo img {
-    width: 250px; /* tamaño original en móvil */
+    height: 56px;
+    width: auto;
   }
   .menu-trigger {
-    font-size: 50px; /* mantenemos botón compacto */
+    font-size: 50px;
   }
 }
 /* ===== Service breadcrumb (arriba, claro pero discreto) ===== */
