@@ -63,7 +63,9 @@ body {
 }
 .kpem-header-mobile {
   width: 100%;
-  padding: 12px 20px;
+  height: 68px;
+  padding: 0 16px;
+  padding-top: 20px; /* Ajusta el valor "10px" a tu gusto */
   background: #fff;
   box-sizing: border-box;
   position: sticky;
@@ -82,25 +84,43 @@ body {
 
 .contenedor-logo {
   flex-grow: 0;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  line-height: 0; /* evita empuje por baseline (Safari) */
 }
 
 .kpem-header-mobile .contenedor-logo img {
-  width: 180px;
-  height: auto;
+  height: 66px;
+  width: auto;
   display: block;
 }
 
-.menu-trigger {
-  font-size: 50px;
+.kpem-menu-trigger {
+  /* --- Propiedades Clave para Compatibilidad --- */
+  display: flex; /* 1. Define el botón como un contenedor flexible. */
+  align-items: center; /* 2. Centra el ícono verticalmente. */
+  justify-content: center; /* 3. Centra el ícono horizontalmente. */
+  line-height: 1; /* 4. Elimina la altura de línea conflictiva. */
+
+  /* --- Tu Estilo (con !important para asegurar que gane) --- */
+  font-size: 40px !important; /* Ajusta los 40px a tu gusto. */
+  padding: 12px;
+
+  /* --- Código Original --- */
   background: none;
   border: none;
   color: #212121;
   cursor: pointer;
   outline: none;
-  padding: 0 8px;
   flex-shrink: 0;
-}
 
+  /* --- Importante para Safari --- */
+  /* Desactiva la apariencia nativa del botón en iOS/Safari */
+  -webkit-appearance: none;
+  appearance: none;
+  border-radius: 0; /* Safari a veces añade un borde redondeado por defecto */
+}
 .menu-trigger:focus {
   outline: 2px solid #005fcc;
   outline-offset: 2px;
@@ -607,14 +627,16 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   stroke: #ffd700;
 }
 @media only screen and (max-width: 767px) {
-  /* Logo más grande */
-  .kpem-header-mobile .contenedor-logo img {
-    width: 250px;
+  .kpem-header-mobile {
+    height: 80px; /* header ligeramente mayor que el logo (200) */
   }
-
-  /* Menú hamburguesa proporcional al logo */
+  .kpem-header-mobile .contenedor-logo img {
+    height: 250px; /* deja que el contenedor mande */
+    max-height: 100%; /* nunca más alto que el header */
+    width: auto;
+  }
   .menu-trigger {
-    font-size: 150px; /* antes 50px */
+    font-size: 50px;
   }
 }
 /* ===== Service breadcrumb (arriba, claro pero discreto) ===== */
@@ -762,7 +784,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 /* Accessible focus for service CTAs */
 .main-cta-button:focus-visible,
 .page .cta:focus-visible {
-  outline: 3px solid #ffd700;   /* gold brand */
+  outline: 3px solid #ffd700; /* gold brand */
   outline-offset: 2px;
   box-shadow: 0 0 0 2px #111827; /* dark halo for contrast */
 }
