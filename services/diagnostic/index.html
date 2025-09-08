@@ -175,7 +175,33 @@
         "@context": "https://schema.org",
         "@graph": [
           {
+            "@type": "Organization",
+            "@id": "https://kelownaprotechmobilemech.com/#org",
+            "name": "Kelowna Protech Elite Mobile Mechanic",
+            "url": "https://kelownaprotechmobilemech.com/"
+          },
+          {
+            "@type": "WebSite",
+            "@id": "https://kelownaprotechmobilemech.com/#website",
+            "url": "https://kelownaprotechmobilemech.com/",
+            "name": "Kelowna Protech Elite Mobile Mechanic",
+            "publisher": { "@id": "https://kelownaprotechmobilemech.com/#org" }
+          },
+          {
+            "@type": "WebPage",
+            "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#webpage",
+            "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
+            "name": "On-Site Diagnostic",
+            "isPartOf": {
+              "@id": "https://kelownaprotechmobilemech.com/#website"
+            },
+            "breadcrumb": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#breadcrumb"
+            }
+          },
+          {
             "@type": "BreadcrumbList",
+            "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#breadcrumb",
             "itemListElement": [
               {
                 "@type": "ListItem",
@@ -185,85 +211,9 @@
               },
               {
                 "@type": "ListItem",
-                "position": 3,
-                "name": "On-Site Diagnostic"
-              }
-            ]
-          },
-          {
-            "@type": "Service",
-            "name": "On-Site Vehicle Diagnostic",
-            "areaServed": [
-              { "@type": "City", "name": "Kelowna" },
-              { "@type": "City", "name": "Vernon" },
-              { "@type": "City", "name": "Lake Country" },
-              { "@type": "City", "name": "Peachland" },
-              { "@type": "City", "name": "Penticton" },
-              { "@type": "AdministrativeArea", "name": "Okanagan Valley" }
-            ],
-            "provider": {
-              "@type": "LocalBusiness",
-              "name": "Kelowna Protech Elite Mobile Mechanic",
-              "telephone": "+1-250-859-5467",
-              "address": {
-                "@type": "PostalAddress",
-                "addressLocality": "Kelowna",
-                "addressRegion": "BC",
-                "addressCountry": "CA"
-              },
-              "openingHoursSpecification": [
-                {
-                  "@type": "OpeningHoursSpecification",
-                  "dayOfWeek": [
-                    "Monday",
-                    "Tuesday",
-                    "Wednesday",
-                    "Thursday",
-                    "Friday",
-                    "Saturday",
-                    "Sunday"
-                  ],
-                  "opens": "08:00",
-                  "closes": "20:00"
-                }
-              ]
-            },
-            "serviceType": "Mobile mechanic diagnostic",
-            "description": "Same-day on-site diagnostic to find the root cause without towing.",
-            "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
-            "image": "https://kelownaprotechmobilemech.com/images/diagnostic-repairs.webp",
-            "offers": {
-              "@type": "Offer",
-              "priceCurrency": "CAD",
-              "availability": "https://schema.org/InStock"
-            }
-          },
-          {
-            "@type": "FAQPage",
-            "mainEntity": [
-              {
-                "@type": "Question",
-                "name": "What do you check in a diagnostic?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "We scan the ECU, test battery/charging, fuel/air, sensors and wiring to pinpoint the root cause."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "Do I need a tow?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "No. We come to your location—home, work, or roadside—so you avoid towing and save time."
-                }
-              },
-              {
-                "@type": "Question",
-                "name": "How fast can you arrive?",
-                "acceptedAnswer": {
-                  "@type": "Answer",
-                  "text": "Same-day in most of Kelowna. Text or call +1-250-859-5467 for availability."
-                }
+                "position": 2,
+                "name": "On-Site Diagnostic",
+                "item": "https://kelownaprotechmobilemech.com/services/diagnostic/"
               }
             ]
           }
@@ -281,10 +231,16 @@
       <!-- HERO -->
       <section class="hero" id="top">
         <div>
-          <h1 class="services-heading">Kelowna Protech Elite Mobile Mechanic</h1>
-          <h2 class="services-subheading">Mobile Mechanic Kelowna — Same-Day On-Site Diagnostics & Clear Answers</h2>
+          <h1 class="services-heading">
+            Kelowna Protech Elite Mobile Mechanic
+          </h1>
+          <h2 class="services-subheading">
+            Mobile Mechanic Kelowna — Same-Day On-Site Diagnostics & Clear
+            Answers
+          </h2>
           <p class="byline">
-            <strong>Kelowna Protech Elite Mobile Mechanic</strong> — Kelowna’s Expert Mobile mechanic.
+            <strong>Kelowna Protech Elite Mobile Mechanic</strong> — Kelowna’s
+            Expert Mobile mechanic.
           </p>
           <p class="lead">
             Check-engine light, no-start, or strange noise? We come to your
@@ -296,7 +252,6 @@
             <span>✓ Same-Day Service</span>
             <span>✓ 4.9★ Reviews</span>
           </div>
-          <a class="cta" href="tel:+12508595467">Call +1-250-859-5467</a>
         </div>
         <figure>
           <img
@@ -369,7 +324,10 @@
           <strong class="site-nap__brand"
             >Kelowna Protech Elite Mobile Mechanic</strong
           >
-          <div class="site-nap__area">Service area: Kelowna, Vernon, Lake Country, Peachland, Penticton, Okanagan Valley</div>
+          <div class="site-nap__area">
+            Service area: Kelowna, Vernon, Lake Country, Peachland, Penticton,
+            Okanagan Valley
+          </div>
           <div class="site-nap__contact">
             Phone:
             <a href="tel:+12508595467" class="site-nap__tel" rel="nofollow"
