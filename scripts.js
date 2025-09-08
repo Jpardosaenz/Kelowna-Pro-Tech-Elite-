@@ -4,39 +4,38 @@ SECCIÓN: LÓGICA JAVASCRIPT
 ==========================================================================
 */
 
-document.addEventListener('DOMContentLoaded', () => {
-
+document.addEventListener("DOMContentLoaded", () => {
   /*
   ----------------------------------------------------------------------
   FUNCIONALIDAD 1: Menú de Navegación Móvil
   ----------------------------------------------------------------------
   */
 
-  const menuTrigger = document.querySelector('.kpem-menu-trigger');
-  const menuCloseButton = document.querySelector('.menu-close-button');
+  const menuTrigger = document.querySelector(".kpem-menu-trigger");
+  const menuCloseButton = document.querySelector(".menu-close-button");
 
   function openMenu() {
-    document.body.classList.add('menu-is-open');
-    menuTrigger.setAttribute('aria-expanded', 'true');
+    document.body.classList.add("menu-is-open");
+    menuTrigger.setAttribute("aria-expanded", "true");
   }
 
   function closeMenu() {
-    document.body.classList.remove('menu-is-open');
-    menuTrigger.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove("menu-is-open");
+    menuTrigger.setAttribute("aria-expanded", "false");
   }
 
   if (menuTrigger) {
-    menuTrigger.addEventListener('click', openMenu);
+    menuTrigger.addEventListener("click", openMenu);
   }
 
   if (menuCloseButton) {
-    menuCloseButton.addEventListener('click', closeMenu);
+    menuCloseButton.addEventListener("click", closeMenu);
   }
 
-  const mobileMenu = document.querySelector('#mobile-navigation');
+  const mobileMenu = document.querySelector("#mobile-navigation");
   if (mobileMenu) {
-    mobileMenu.querySelectorAll('a').forEach(link => {
-      link.addEventListener('click', closeMenu);
+    mobileMenu.querySelectorAll("a").forEach((link) => {
+      link.addEventListener("click", closeMenu);
     });
   }
 
@@ -55,7 +54,7 @@ document.addEventListener('DOMContentLoaded', () => {
       e.preventDefault();
 
       // Cierra otros menús antes de abrir este
-      document.querySelectorAll(".cta-options").forEach(menu => {
+      document.querySelectorAll(".cta-options").forEach((menu) => {
         if (menu !== options) {
           menu.classList.remove("show-options");
         }
@@ -65,19 +64,21 @@ document.addEventListener('DOMContentLoaded', () => {
       if (options.classList.contains("show-options")) {
         options.classList.remove("show-options");
       } else {
-        document.querySelectorAll(".cta-options").forEach(menu => menu.classList.remove("show-options"));
+        document
+          .querySelectorAll(".cta-options")
+          .forEach((menu) => menu.classList.remove("show-options"));
         options.classList.add("show-options");
       }
     });
 
     // Evento: Cerrar menú si se hace clic fuera de él
     document.addEventListener("click", function (event) {
-      const isClickInside = mainButton.contains(event.target) || options.contains(event.target);
+      const isClickInside =
+        mainButton.contains(event.target) || options.contains(event.target);
 
       if (!isClickInside) {
         options.classList.remove("show-options");
       }
     });
   }
-
 });
