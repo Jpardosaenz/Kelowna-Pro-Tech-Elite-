@@ -33,22 +33,30 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": ["WebPage", "AutoRepair"],
-  "@id": "https://www.google.com/maps?cid=15158851769671529299",
-  "name": "Kelowna Protech Elite Mobile Mechanic – On-Site Professional Mechanic",
+  "@type": "AutoRepair",
+  "@id": "https://kelownaprotechmobilemech.com/#organization",
+  "name": "Kelowna Protech Elite Mobile Mechanic",
   "url": "https://kelownaprotechmobilemech.com/",
   "description": "Car won’t start? Strange sounds? Don’t waste time towing—call a professional mechanic who comes to you. At Kelowna Protech Elite Mobile Mechanic, we solve mechanical problems directly in your driveway—fast, clear, and without guessing.",
   "image": "/images/logo-kelowna-protech-eliteV1.webp",
+  "aggregateRating": {
+  "@type": "AggregateRating",
+  "ratingValue": "4.8",
+  "reviewCount": "20"
+},
   "telephone": "+1-250-859-5467",
   "address": {
     "@type": "PostalAddress",
     "addressRegion": "BC",
     "addressCountry": "CA"
   },
-  "areaServed": {
-    "@type": "Place",
-    "name": "Kelowna, BC and surrounding areas"
-  },
+  "areaServed": [
+  { "@type": "City", "name": "Kelowna" },
+  { "@type": "City", "name": "West Kelowna" },
+  { "@type": "Neighborhood", "name": "East Kelowna" },
+  { "@type": "Neighborhood", "name": "South Kelowna" },
+  { "@type": "City", "name": "Lake Country" }
+],
   "priceRange": "$$",
   "openingHoursSpecification": [
     {
