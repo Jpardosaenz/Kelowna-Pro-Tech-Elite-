@@ -15,3 +15,6 @@ https://www.kelownaprotechmobilemech.com/*  https://kelownaprotechmobilemech.com
 /services/maintenance      /services/maintenance/index.html      200
 /services/maintenance/     /services/maintenance/index.html      200
 /pre-purchase   /services/pre-purchase/   301!
+
+/our-promise/        /                       301
+/elite-services/     /services/diagnostic/   301
