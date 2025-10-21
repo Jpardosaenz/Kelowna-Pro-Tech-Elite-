@@ -1,6 +1,8 @@
 # 1) Forzar HTTPS y sin www
 http://www.kelownaprotechmobilemech.com/*   https://kelownaprotechmobilemech.com/:splat   301!
 https://www.kelownaprotechmobilemech.com/*  https://kelownaprotechmobilemech.com/:splat   301!
+http://kelownaprotechmobilemech.com/*   https://kelownaprotechmobilemech.com/:splat   301!
+
 
 # 2) Aliases cortos → URL canónica de servicios
 /diagnostic        /services/diagnostic/        301
@@ -18,9 +20,6 @@ https://www.kelownaprotechmobilemech.com/*  https://kelownaprotechmobilemech.com
 /elite-services/     /services/diagnostic/   301
 
 
-http://kelownaprotechmobilemech.com/          https://kelownaprotechmobilemech.com/     301
-http://www.kelownaprotechmobilemech.com/      https://kelownaprotechmobilemech.com/     301
-https://www.kelownaprotechmobilemech.com/     https://kelownaprotechmobilemech.com/     301
 
 /client-stories.html   /   301
 /client-stories        /   301
