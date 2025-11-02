@@ -788,3 +788,149 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   outline-offset: 2px;
   box-shadow: 0 0 0 2px #111827; /* dark halo for contrast */
 }
+
+/* === Testimonials layout (client-stories section) === */
+.wrap {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 48px 16px 56px;
+  display: grid;
+  gap: 32px;
+}
+.t-head {
+  text-align: center;
+  display: grid;
+  gap: 12px;
+}
+.t-title {
+  margin: 0;
+  font-size: 1.75rem;
+  font-weight: 700;
+  line-height: 1.25;
+  color: #0f172a;
+}
+.t-subtitle {
+  margin: 0 auto;
+  max-width: 680px;
+  font-size: 1rem;
+  line-height: 1.65;
+  color: #475569;
+}
+.t-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 20px;
+}
+.t-card {
+  background: #ffffff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  padding: 28px;
+  display: grid;
+  gap: 18px;
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.t-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+}
+.t-card–hero {
+  border: 1px solid rgba(59, 130, 246, 0.18);
+  background: #f8fbff;
+  box-shadow: 0 18px 50px rgba(59, 130, 246, 0.12);
+  padding: 30px;
+  gap: 20px;
+}
+.t-hero-quote {
+  margin: 0;
+  font-size: 1.35rem;
+  font-weight: 700;
+  line-height: 1.35;
+  color: #0f172a;
+}
+.t-hero-full-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+}
+.t-hero-meta {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+.avatar {
+  width: 52px;
+  height: 52px;
+  border-radius: 50%;
+  object-fit: cover;
+  flex-shrink: 0;
+  box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
+}
+.t-meta {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+.t-name {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #0f172a;
+}
+.t-service {
+  font-size: 0.9rem;
+  color: #64748b;
+}
+.t-rating {
+  font-size: 1rem;
+  color: #facc15;
+  letter-spacing: 0.08em;
+}
+.t-text {
+  margin: 0;
+  font-size: 1rem;
+  line-height: 1.7;
+  color: #334155;
+}
+@media (prefers-reduced-motion: reduce) {
+  .t-card {
+    transition: none;
+  }
+}
+@media (min-width: 640px) {
+  .wrap {
+    padding: 60px 24px 72px;
+    gap: 36px;
+  }
+  .t-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+  }
+  .t-card {
+    padding: 32px;
+  }
+  .t-card–hero {
+    grid-column: span 2;
+    padding: 36px;
+  }
+  .t-hero-quote {
+    font-size: 1.45rem;
+  }
+}
+@media (min-width: 1024px) {
+  .t-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+  }
+  .t-card–hero {
+    grid-column: span 2;
+    align-self: stretch;
+  }
+  .t-card {
+    padding: 36px;
+  }
+  .t-hero-quote {
+    font-size: 1.5rem;
+  }
+}
