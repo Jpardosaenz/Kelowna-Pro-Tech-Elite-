@@ -107,11 +107,13 @@
 ## 14) Do / Don't de marca y contenido
 
 **Do**
+
 - Usar la marca escrita: `Kelowna Protech Elite Mobile Mechanic` o `Kelowna Protech Elite` (sin guion ni siglas).
 - Mantener tono profesional y directo, resaltando experiencia y beneficio inmediato.
 - Sincronizar siempre el contenido visible con JSON-LD/metadata antes de publicar.
 
 **Don't**
+
 - No publicar precios ni tarifas estimadas.
 - No introducir jerga técnica compleja o “shop talk” sin explicación.
 - No lanzar CTAs nuevos sin confirmar canales permitidos (WhatsApp, SMS, llamada, formulario).
@@ -133,9 +135,11 @@
 
 ## 17) Risk log (vivo)
 
-| ID   | Descripción                                                                 | Estado  | Rama/PR | Fecha |
-|------|------------------------------------------------------------------------------|---------|---------|-------|
-| R-001 | Reemplazar guion unicode en `.t-card–hero` por doble guion estándar.        | Abierto | —       | TBD   |
-| R-002 | `index.html` referencia `styles.css` inexistente (riesgo de consola 404).   | Abierto | —       | TBD   |
-| R-003 | CTA flotante no respeta por completo `prefers-reduced-motion`.              | Abierto | —       | TBD   |
-| R-004 | Idle de CTA podría ocultar botón cuando el usuario lo necesita.            | Abierto | —       | TBD   |
+| ID    | Descripción                                                               | Estado  | Rama/PR | Fecha |
+| ----- | ------------------------------------------------------------------------- | ------- | ------- | ----- |
+| R-001 | Reemplazar guion unicode en `.t-card–hero` por doble guion estándar.      | Abierto | —       | TBD   |
+| R-002 | `index.html` referencia `styles.css` inexistente (riesgo de consola 404). | Abierto | —       | TBD   |
+| R-003 | CTA flotante no respeta por completo `prefers-reduced-motion`.            | Abierto | —       | TBD   |
+| R-004 | Idle de CTA podría ocultar botón cuando el usuario lo necesita.           | Abierto | —       | TBD   |
+
+si pe
