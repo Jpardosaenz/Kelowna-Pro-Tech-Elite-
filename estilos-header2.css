@@ -910,7 +910,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   .t-card {
     padding: 32px;
   }
-  .t-card–hero {
+  .t-card--hero {
     grid-column: span 2;
     padding: 36px;
   }
@@ -923,7 +923,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
   }
-  .t-card–hero {
+  .t-card--hero {
     grid-column: span 2;
     align-self: stretch;
   }
