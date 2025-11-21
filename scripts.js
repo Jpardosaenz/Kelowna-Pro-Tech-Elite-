@@ -60,13 +60,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     floatingCtaContainer.style.transition = baseTransition;
     floatingCtaContainer.style.display = "none";
-    floatingCtaContainer.style.opacity = "0";
-    floatingCtaContainer.style.transform = "translateY(12px)";
-
-    const threshold = 400;
-    const idleDelay = 2000;
+    const threshold = 100;
     let isVisible = false;
     let idleTimer = null;
+    const idleDelay = 2000;
 
     const showCTA = () => {
       if (!isVisible) {
@@ -77,6 +74,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         isVisible = true;
       } else {
+        // Ensure it's fully visible if it was dimmed
         floatingCtaContainer.style.opacity = "1";
         floatingCtaContainer.style.transform = "translateY(0)";
       }
@@ -105,9 +103,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const resetIdleTimer = () => {
       if (!isVisible) return;
+      // Always restore full visibility on interaction
       floatingCtaContainer.style.opacity = "1";
       floatingCtaContainer.style.transform = "translateY(0)";
       clearTimeout(idleTimer);
+      
       idleTimer = setTimeout(dimCTA, idleDelay);
     };
 
@@ -122,57 +122,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
-    ["mouseenter", "focusin"].forEach((eventName) => {
-      floatingCtaContainer.addEventListener(eventName, () => {
-        if (!isVisible) return;
-        floatingCtaContainer.style.opacity = "1";
-        floatingCtaContainer.style.transform = "translateY(0)";
-        clearTimeout(idleTimer);
-      });
-    });
-
-    ["mouseleave", "focusout"].forEach((eventName) => {
-      floatingCtaContainer.addEventListener(eventName, () => {
-        resetIdleTimer();
-      });
-    });
-  }
-
-  const mainButton = document.querySelector(".main-cta-button");
-  const options = document.querySelector(".cta-options");
-
-  if (mainButton && options) {
-    // Evento: Abrir/Cerrar menú al hacer clic en el botón CTA
-    mainButton.addEventListener("click", function (e) {
-      e.preventDefault();
-
-      // Cierra otros menús antes de abrir este
-      document.querySelectorAll(".cta-options").forEach((menu) => {
-        if (menu !== options) {
-          menu.classList.remove("show-options");
-        }
-      });
-
-      // Alternar visibilidad del menú actual (solo uno abierto a la vez)
-      if (options.classList.contains("show-options")) {
-        options.classList.remove("show-options");
-      } else {
-        document
-          .querySelectorAll(".cta-options")
-          .forEach((menu) => menu.classList.remove("show-options"));
-        options.classList.add("show-options");
-      }
-    });
-
-    // Evento: Cerrar menú si se hace clic fuera de él
-    document.addEventListener("click", function (event) {
-      const isClickInside =
-        mainButton.contains(event.target) || options.contains(event.target);
-
-      if (!isClickInside) {
-        options.classList.remove("show-options");
-      }
+    
+    // Reset timer on interaction
+    ["touchstart", "click"].forEach(evt => {
+        floatingCtaContainer.addEventListener(evt, resetIdleTimer);
     });
   }
 });
+

@@ -1,6 +1,6 @@
 ## Immutable Workflow Rules (Permanent)
 
-1) No bulk changes or bulk commits.
+1) No bulk changes or bulk commits. One thing at a time.
 2) Do not modify `main` directly; all work happens in feature/test branches.
 3) Every suggestion must be reviewed and approved before execution.
 4) Always state WHY and WHAT FOR; triage: urgent → important → strategic.
