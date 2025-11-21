@@ -1,3 +1,12 @@
+## Immutable Workflow Rules (Permanent)
+
+1) No bulk changes or bulk commits. One thing at a time.
+2) Do not modify `main` directly; all work happens in feature/test branches.
+3) Every suggestion must be reviewed and approved before execution.
+4) Always state WHY and WHAT FOR; triage: urgent → important → strategic.
+5) Strictly follow the Bitácora and AGENTS.md as the source of truth.
+6) Tools/stack: VS Code with Codex and Gemini 3.
+
 # Agents — Contexto del Proyecto
 
 ## 1) Identidad y objetivos
@@ -137,8 +146,8 @@
 
 | ID    | Descripción                                                               | Estado  | Rama/PR | Fecha |
 | ----- | ------------------------------------------------------------------------- | ------- | ------- | ----- |
-| R-001 | Reemplazar guion unicode en `.t-card–hero` por doble guion estándar.      | Abierto | —       | TBD   |
-| R-002 | `index.html` referencia `styles.css` inexistente (riesgo de consola 404). | Abierto | —       | TBD   |
+| R-001 | Reemplazar guion unicode en `.t-card–hero` por doble guion estándar. (solo mención en docs; código limpio) | Cerrado | fix/close-risk-log-r001-r002 | 2025-11-20 |
+| R-002 | `index.html` referencia `styles.css` inexistente (verificado ausente en todo el repositorio).                  | Cerrado | fix/close-risk-log-r001-r002 | 2025-11-20 |
 | R-003 | CTA flotante no respeta por completo `prefers-reduced-motion`.            | Abierto | —       | TBD   |
 | R-004 | Idle de CTA podría ocultar botón cuando el usuario lo necesita.           | Abierto | —       | TBD   |
 

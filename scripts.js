@@ -14,9 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuTrigger = document.querySelector(".kpem-menu-trigger");
   const menuCloseButton = document.querySelector(".menu-close-button");
 
+  console.log("DEBUG: Estado inicial del menú", { 
+    botonHamburguesa: menuTrigger, 
+    botonCerrar: menuCloseButton 
+  });
+
   function openMenu() {
+    console.log("DEBUG: openMenu() ejecutado. Añadiendo clase...");
     document.body.classList.add("menu-is-open");
     menuTrigger.setAttribute("aria-expanded", "true");
+    console.log("DEBUG: Clase 'menu-is-open' debería estar en body:", document.body.classList.contains("menu-is-open"));
   }
 
   function closeMenu() {
@@ -25,7 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (menuTrigger) {
+    console.log("DEBUG: Listener de click añadido al botón hamburguesa");
     menuTrigger.addEventListener("click", openMenu);
+  } else {
+    console.error("DEBUG: ERROR - No se encontró .kpem-menu-trigger en el DOM");
   }
 
   if (menuCloseButton) {
@@ -60,13 +70,10 @@ document.addEventListener("DOMContentLoaded", () => {
 
     floatingCtaContainer.style.transition = baseTransition;
     floatingCtaContainer.style.display = "none";
-    floatingCtaContainer.style.opacity = "0";
-    floatingCtaContainer.style.transform = "translateY(12px)";
-
-    const threshold = 400;
-    const idleDelay = 2000;
+    const threshold = 100;
     let isVisible = false;
     let idleTimer = null;
+    const idleDelay = 2000;
 
     const showCTA = () => {
       if (!isVisible) {
@@ -77,6 +84,7 @@ document.addEventListener("DOMContentLoaded", () => {
         });
         isVisible = true;
       } else {
+        // Ensure it's fully visible if it was dimmed
         floatingCtaContainer.style.opacity = "1";
         floatingCtaContainer.style.transform = "translateY(0)";
       }
@@ -105,9 +113,11 @@ document.addEventListener("DOMContentLoaded", () => {
 
     const resetIdleTimer = () => {
       if (!isVisible) return;
+      // Always restore full visibility on interaction
       floatingCtaContainer.style.opacity = "1";
       floatingCtaContainer.style.transform = "translateY(0)";
       clearTimeout(idleTimer);
+      
       idleTimer = setTimeout(dimCTA, idleDelay);
     };
 
@@ -122,57 +132,59 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-
-    ["mouseenter", "focusin"].forEach((eventName) => {
-      floatingCtaContainer.addEventListener(eventName, () => {
-        if (!isVisible) return;
-        floatingCtaContainer.style.opacity = "1";
-        floatingCtaContainer.style.transform = "translateY(0)";
-        clearTimeout(idleTimer);
-      });
-    });
-
-    ["mouseleave", "focusout"].forEach((eventName) => {
-      floatingCtaContainer.addEventListener(eventName, () => {
-        resetIdleTimer();
-      });
+    
+    // Reset timer on interaction
+    ["touchstart", "click"].forEach(evt => {
+        floatingCtaContainer.addEventListener(evt, resetIdleTimer);
     });
   }
+});
 
-  const mainButton = document.querySelector(".main-cta-button");
-  const options = document.querySelector(".cta-options");
 
-  if (mainButton && options) {
-    // Evento: Abrir/Cerrar menú al hacer clic en el botón CTA
-    mainButton.addEventListener("click", function (e) {
-      e.preventDefault();
+/*
+==========================================================================
+SECCIÓN: LEAD CAPTURE MODAL
+==========================================================================
+*/
 
-      // Cierra otros menús antes de abrir este
-      document.querySelectorAll(".cta-options").forEach((menu) => {
-        if (menu !== options) {
-          menu.classList.remove("show-options");
-        }
-      });
+function openLeadCapture() {
+  const modal = document.getElementById('leadCaptureModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  }
+}
 
-      // Alternar visibilidad del menú actual (solo uno abierto a la vez)
-      if (options.classList.contains("show-options")) {
-        options.classList.remove("show-options");
-      } else {
-        document
-          .querySelectorAll(".cta-options")
-          .forEach((menu) => menu.classList.remove("show-options"));
-        options.classList.add("show-options");
-      }
-    });
+function closeLeadCapture() {
+  const modal = document.getElementById('leadCaptureModal');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scroll
+  }
+}
 
-    // Evento: Cerrar menú si se hace clic fuera de él
-    document.addEventListener("click", function (event) {
-      const isClickInside =
-        mainButton.contains(event.target) || options.contains(event.target);
+function handleLeadSubmit(event) {
+  event.preventDefault();
+  
+  const formData = new FormData(event.target);
+  const name = formData.get('name');
+  const phone = formData.get('phone');
+  const issue = formData.get('issue');
+  
+  console.log('Lead captured:', { name, phone, issue });
+  
+  // TODO: Send data to your CRM/email service here
+  // For now, just initiate the call
+  window.location.href = 'tel:+12508595467';
+  
+  closeLeadCapture();
+}
 
-      if (!isClickInside) {
-        options.classList.remove("show-options");
-      }
-    });
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLeadCapture();
   }
 });
