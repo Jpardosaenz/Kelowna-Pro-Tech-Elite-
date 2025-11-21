@@ -126,80 +126,165 @@ body {
   outline-offset: 2px;
 }
 
+/* --- MOBILE: Restaurar overlay completo --- */
+/* --- MOBILE: Restaurar overlay completo --- */
+@media (max-width: 1023px) {
+  /* Restaurar overlay de pantalla completa */
+  .mobile-menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 24, 39, 0.98);
+    backdrop-filter: blur(5px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 1010;
+    padding: 0;
+
+    /* Oculto por defecto */
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(-20px);
+    transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+  }
+
+  /* Mostrar cuando está abierto (clase en body) */
+  body.menu-is-open .mobile-menu {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+  }
+  
+  /* Enlaces verticales en mobile */
+  .mobile-menu ul {
+    flex-direction: column;
+    gap: 30px;
+    align-items: center;
+  }
+  
+  /* Texto grande y blanco en mobile */
+  .mobile-menu a {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 500;
+  }
+  
+  /* Asegurar que el botón de cierre sea visible */
+  .menu-close-button {
+    display: block;
+  }
+}
+
+
+/* --- Media Query para Desktop (SOLO LOGO) --- */
+@media (min-width: 1024px) {
+  .kpem-header-mobile {
+    height: 100px;
+    padding: 20px 40px 10px 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+  }
+
+  .kpem-header-mobile .contenedor-logo img {
+    height: 300px !important;
+    max-height: 100%;
+    width: auto;
+  }
+
+  /* Ocultar hamburguesa en desktop */
+  .kpem-menu-trigger {
+    display: none;
+  }
+
+  /* Reposicionar y mostrar menú */
+  .mobile-menu {
+    position: static;
+    width: auto;
+    height: auto;
+    background: none;
+    backdrop-filter: none;
+    opacity: 1;
+    visibility: visible;
+    transform: none;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    padding: 0;
+    z-index: auto;
+    flex-direction: row;
+    flex-grow: 1;
+  }
+
+  /* Menú horizontal */
+  .mobile-menu ul {
+    display: flex;
+    gap: 32px;
+    align-items: center;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .mobile-menu li {
+    margin: 0;
+  }
+
+  .mobile-menu a {
+    color: #1f2937 !important;
+    font-size: 16px;
+    font-weight: 500;
+    text-decoration: none;
+    position: relative;
+    padding-bottom: 4px;
+    transition: color 0.3s ease;
+  }
+
+  /* Línea dorada animada al hover */
+  .mobile-menu a::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 0;
+    height: 2px;
+    background: #ffd700;
+    transition: width 0.3s ease;
+  }
+
+  .mobile-menu a:hover::after {
+    width: 100%;
+  }
+
+  .mobile-menu a:hover {
+    color: #111827;
+  }
+
+  /* Ocultar botón de cierre */
+  .menu-close-button {
+    display: none;
+  }
+}
+
+
+/*
 /*
 ==========================================================================
 COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
 ==========================================================================
 */
 
-/* ----- 1. Contenedor Principal del Menú (Overlay) ----- */
-.mobile-menu {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background-color: rgba(17, 24, 39, 0.98); /* Fondo oscuro semi-transparente */
-  backdrop-filter: blur(5px); /* Efecto de desenfoque para el fondo */
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  z-index: 1010; /* Por encima del header para cubrirlo */
+/*
+ * NOTA: Los estilos del menú móvil se han movido dentro de los media queries
+ * correspondientes para evitar conflictos de cascada.
+ * - Mobile: @media (max-width: 1023px)
+ * - Desktop: @media (min-width: 1024px)
+ */
 
-  /* --- Estado por defecto: Oculto con transición --- */
-  opacity: 0;
-  visibility: hidden;
-  transform: translateY(-20px);
-  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
-}
-
-/* ----- 2. Estilo para Mostrar el Menú ----- */
-/* (Se activa con JavaScript añadiendo la clase 'menu-is-open' al <body>) */
-body.menu-is-open .mobile-menu {
-  opacity: 1;
-  visibility: visible;
-  transform: translateY(0);
-}
-
-/* ----- 3. Lista de Enlaces ----- */
-.mobile-menu ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  text-align: center;
-}
-
-.mobile-menu li {
-  margin: 20px 0;
-}
-
-/* ----- 4. Estilo de los Enlaces Individuales ----- */
-.mobile-menu a {
-  color: white;
-  text-decoration: none;
-  font-size: 22px;
-  font-weight: 600;
-  letter-spacing: -0.5px; /* La herramienta de precisión que faltaba */
-  transition: color 0.2s ease;
-}
-
-.mobile-menu a:hover {
-  color: #d97706; /* Color de acento de la marca */
-}
-
-/* ----- 5. Botón de Cierre (la 'X') ----- */
-.menu-close-button {
-  position: absolute;
-  top: 20px;
-  right: 20px;
-  background: none;
-  border: none;
-  color: white;
-  font-size: 40px;
-  cursor: pointer;
-  line-height: 1; /* Asegura que la 'X' esté bien centrada */
-}
 
 /*
  * ==================================================================
@@ -1088,3 +1173,139 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
     padding: 20px 56px 48px 120px;
   }
 }
+
+/* Desktop: show nav beside logo (surgical) */
+@media (min-width:1024px){
+  .kpem-header-mobile{display:flex;align-items:center;justify-content:space-between}
+  #mobile-navigation{display:flex;flex:1;justify-content:center}
+  #mobile-navigation>ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+}
+
+/* Mobile menu — Fullscreen Overlay (User's Design - Safe Version) */
+@media (max-width:1023px){
+  /* 1. Estilos Base (Siempre aplicados, pero ocultos por defecto) */
+  #mobile-navigation {
+    position: fixed !important; top: 0 !important; left: 0 !important;
+    width: 100vw !important; height: 100vh !important;
+    background: #111827 !important; z-index: 10000 !important;
+    display: flex !important; flex-direction: column !important;
+    align-items: center !important; justify-content: center !important;
+    
+    /* Estado inicial: Oculto */
+    opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+    transition: opacity 0.3s ease !important;
+  }
+
+  /* 2. Estilos de Contenido (Lista y Botón) */
+  #mobile-navigation > ul {
+    display: flex !important; flex-direction: column !important; gap: 24px !important;
+    list-style: none !important; margin: 0 !important; padding: 0 !important; 
+    color: #fff !important;
+  }
+  #mobile-navigation .menu-close-button {
+    display: block !important; position: fixed !important; top: 20px !important; right: 20px !important;
+    z-index: 10001 !important; background: transparent !important; border: 0 !important;
+    font-size: 32px !important; color: #fff !important; cursor: pointer !important;
+  }
+
+  /* 3. Estado ABIERTO (Solo cuando body tiene la clase) */
+  body.menu-is-open #mobile-navigation {
+    opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+  }
+}
+
+/* ================================================================
+   Premium Header CTA Styles (Hormozi + Patel Best Practices)
+   ================================================================ */
+.header-cta {
+  display: inline-flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 3px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  border: 2px solid #ffd700;
+  border-radius: 10px;
+  box-shadow: 
+    0 6px 16px rgba(0,0,0,0.25),
+    0 0 12px rgba(255,215,0,0.15);
+  text-decoration: none;
+  transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
+  white-space: nowrap;
+  position: relative;
+}
+
+.cta-main {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.2px;
+  font-family: "Inter", sans-serif;
+  line-height: 1.2;
+}
+
+.cta-sub {
+  font-size: 0.875rem;
+  color: #cbd5e1;
+  font-weight: 500;
+  font-family: "Inter", sans-serif;
+  line-height: 1.2;
+}
+
+.header-cta:hover {
+  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+  transform: translateY(-3px);
+  box-shadow: 
+    0 8px 24px rgba(255,215,0,0.35),
+    0 0 20px rgba(255,215,0,0.25);
+}
+
+.header-cta:hover .cta-main,
+.header-cta:hover .cta-sub {
+  color: #111827;
+}
+
+.header-cta:active {
+  transform: translateY(-1px);
+  box-shadow: 
+    0 4px 12px rgba(255,215,0,0.25),
+    0 0 10px rgba(255,215,0,0.15);
+}
+
+
+/* ================================================================
+   CTA Visibility Rules (Desktop/Mobile)
+   ================================================================ */
+
+/* Desktop (≥1024px): show header CTA, hide floating CTA */
+@media (min-width:1024px){
+  .floating-cta-container { display: none !important; }
+  .header-cta { display: inline-flex !important; }
+}
+
+/* Mobile (≤1023px): HIDE header CTA completely, show floating CTA */
+@media (max-width:1023px){
+  .header-cta { 
+    display: none !important; 
+    visibility: hidden !important;
+    opacity: 0 !important;
+    pointer-events: none !important;
+  }
+  .floating-cta-container{
+    position: fixed; 
+    bottom: calc(16px + env(safe-area-inset-bottom)); 
+    right: 16px; 
+    z-index: 1000;
+    min-width: 44px; 
+    min-height: 44px;
+  }
+}
+
+/* Accessibility: respect reduced motion */
+@media (prefers-reduced-motion: reduce){
+  .header-cta,
+  .floating-cta-container { 
+    transition: none !important; 
+  }
+}
+

@@ -14,9 +14,16 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuTrigger = document.querySelector(".kpem-menu-trigger");
   const menuCloseButton = document.querySelector(".menu-close-button");
 
+  console.log("DEBUG: Estado inicial del menú", { 
+    botonHamburguesa: menuTrigger, 
+    botonCerrar: menuCloseButton 
+  });
+
   function openMenu() {
+    console.log("DEBUG: openMenu() ejecutado. Añadiendo clase...");
     document.body.classList.add("menu-is-open");
     menuTrigger.setAttribute("aria-expanded", "true");
+    console.log("DEBUG: Clase 'menu-is-open' debería estar en body:", document.body.classList.contains("menu-is-open"));
   }
 
   function closeMenu() {
@@ -25,7 +32,10 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (menuTrigger) {
+    console.log("DEBUG: Listener de click añadido al botón hamburguesa");
     menuTrigger.addEventListener("click", openMenu);
+  } else {
+    console.error("DEBUG: ERROR - No se encontró .kpem-menu-trigger en el DOM");
   }
 
   if (menuCloseButton) {
@@ -130,3 +140,51 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 });
 
+
+/*
+==========================================================================
+SECCIÓN: LEAD CAPTURE MODAL
+==========================================================================
+*/
+
+function openLeadCapture() {
+  const modal = document.getElementById('leadCaptureModal');
+  if (modal) {
+    modal.style.display = 'flex';
+    modal.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden'; // Prevent background scroll
+  }
+}
+
+function closeLeadCapture() {
+  const modal = document.getElementById('leadCaptureModal');
+  if (modal) {
+    modal.style.display = 'none';
+    modal.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = ''; // Restore scroll
+  }
+}
+
+function handleLeadSubmit(event) {
+  event.preventDefault();
+  
+  const formData = new FormData(event.target);
+  const name = formData.get('name');
+  const phone = formData.get('phone');
+  const issue = formData.get('issue');
+  
+  console.log('Lead captured:', { name, phone, issue });
+  
+  // TODO: Send data to your CRM/email service here
+  // For now, just initiate the call
+  window.location.href = 'tel:+12508595467';
+  
+  closeLeadCapture();
+}
+
+// Close modal on Escape key
+document.addEventListener('keydown', (e) => {
+  if (e.key === 'Escape') {
+    closeLeadCapture();
+  }
+});
