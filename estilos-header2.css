@@ -1309,3 +1309,280 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   }
 }
 
+
+/* ================================================================
+   PHASE 1: CRO URGENT FIXES - Hero CTA & Social Proof
+   ================================================================ */
+
+/* Subheadline Brand (below H1) */
+.hero-subheadline-brand {
+  font-family: "Inter", sans-serif;
+  font-size: 1rem;
+  font-weight: 500;
+  color: #475569;
+  margin-bottom: 1rem;
+  text-align: center;
+}
+
+@media (min-width: 768px) {
+  .hero-subheadline-brand {
+    text-align: left;
+  }
+}
+
+/* Hero CTA Container */
+.hero-cta-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.5rem;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-container {
+    flex-direction: row;
+    align-items: center;
+    gap: 1.5rem;
+  }
+}
+
+/* Hero CTA Button - Prominent Call Now */
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #16a34a;
+  color: #fff;
+  font-family: "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  padding: 1rem 2rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+  width: 100%;
+  max-width: 320px;
+}
+
+.hero-cta-button:hover,
+.hero-cta-button:focus {
+  background-color: #15803d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.5);
+  outline: none;
+}
+
+.hero-cta-button .cta-icon {
+  font-size: 1.5rem;
+}
+
+.hero-cta-button .cta-text {
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-button {
+    width: auto;
+    max-width: none;
+  }
+}
+
+/* Hero Social Proof Badge */
+.hero-social-proof {
+  display: flex;
+  align-items: center;
+}
+
+.google-badge-inline {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  background: #fff;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+  border: 1px solid #e5e7eb;
+}
+
+.google-badge-inline svg {
+  flex-shrink: 0;
+}
+
+.google-badge-inline .rating-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.9rem;
+  color: #1f2937;
+}
+
+.google-badge-inline .rating-text strong {
+  font-weight: 700;
+  color: #111827;
+}
+
+/* ================================================================
+   PHASE 1 v2: CTA Button (Black + Gold) & Trophy Social Proof Card
+   ================================================================ */
+
+/* Hero CTA Button - Black + Gold Style (matching floating CTA) */
+.hero-cta-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  background-color: #111827;
+  color: #fff;
+  border: 2px solid #FFD700;
+  font-family: "Inter", sans-serif;
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding: 0.875rem 1.5rem;
+  border-radius: 50px;
+  text-decoration: none;
+  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.25);
+  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  width: 100%;
+  max-width: 340px;
+}
+
+.hero-cta-button:hover,
+.hero-cta-button:focus {
+  background-color: #FFD700;
+  color: #111827;
+  border-color: #FFD700;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 24px rgba(255, 215, 0, 0.35);
+  outline: none;
+}
+
+.hero-cta-button .cta-icon {
+  font-size: 1.25rem;
+}
+
+.hero-cta-button .cta-text {
+  white-space: nowrap;
+}
+
+@media (min-width: 768px) {
+  .hero-cta-button {
+    width: auto;
+    max-width: none;
+    font-size: 1.15rem;
+    padding: 1rem 2rem;
+  }
+}
+
+/* Trophy Social Proof Card */
+.hero-social-proof-card {
+  background: #fff;
+  border-radius: 16px;
+  padding: 1.25rem 1.5rem;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  border: 1px solid #e5e7eb;
+  text-align: center;
+  max-width: 320px;
+  width: 100%;
+}
+
+.social-proof-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  margin-bottom: 0.5rem;
+}
+
+.social-proof-header .google-logo {
+  flex-shrink: 0;
+}
+
+.rating-display {
+  display: flex;
+  align-items: baseline;
+  gap: 0.25rem;
+}
+
+.rating-number {
+  font-family: "Inter", sans-serif;
+  font-size: 1.75rem;
+  font-weight: 800;
+  color: #111827;
+  line-height: 1;
+}
+
+.rating-stars {
+  font-size: 1.25rem;
+  color: #FFD700;
+  letter-spacing: 1px;
+}
+
+.social-proof-text {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  color: #4b5563;
+  margin: 0.5rem 0;
+  font-weight: 500;
+}
+
+/* Customer Avatars */
+.customer-avatars {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0.75rem 0;
+}
+
+.avatar-img {
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  margin-left: -10px;
+  object-fit: cover;
+}
+
+.avatar-img:first-child {
+  margin-left: 0;
+}
+
+.avatar-more {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  background: #111827;
+  color: #FFD700;
+  font-size: 0.75rem;
+  font-weight: 700;
+  margin-left: -10px;
+  border: 2px solid #fff;
+}
+
+/* Read Reviews Link */
+.read-reviews-link {
+  display: inline-block;
+  font-family: "Inter", sans-serif;
+  font-size: 0.85rem;
+  color: #4285F4;
+  font-weight: 600;
+  text-decoration: none;
+  margin-top: 0.5rem;
+  transition: color 0.2s ease;
+}
+
+.read-reviews-link:hover {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+@media (min-width: 768px) {
+  .hero-social-proof-card {
+    max-width: none;
+    padding: 1rem 1.5rem;
+  }
+}
