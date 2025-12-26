@@ -57,15 +57,20 @@ h1 {
 
 /***** HEADER MOBILE - VERSIÓN FINAL *****/
 body {
-  font-family: "Inter", sans-serif; /* Aplica 'Inter' a todo el sitio */
-  -webkit-font-smoothing: antialiased; /* Mejora el renderizado en Safari/Chrome */
-  -moz-osx-font-smoothing: grayscale; /* Mejora el renderizado en Firefox */
+  font-family: "Inter", sans-serif;
+  /* Aplica 'Inter' a todo el sitio */
+  -webkit-font-smoothing: antialiased;
+  /* Mejora el renderizado en Safari/Chrome */
+  -moz-osx-font-smoothing: grayscale;
+  /* Mejora el renderizado en Firefox */
 }
+
 .kpem-header-mobile {
   width: 100%;
   height: 68px;
   padding: 0 16px;
-  padding-top: 20px; /* Ajusta el valor "10px" a tu gusto */
+  padding-top: 20px;
+  /* Ajusta el valor "10px" a tu gusto */
   background: #fff;
   box-sizing: border-box;
   position: sticky;
@@ -87,7 +92,8 @@ body {
   height: 100%;
   display: flex;
   align-items: center;
-  line-height: 0; /* evita empuje por baseline (Safari) */
+  line-height: 0;
+  /* evita empuje por baseline (Safari) */
 }
 
 .kpem-header-mobile .contenedor-logo img {
@@ -98,13 +104,18 @@ body {
 
 .kpem-menu-trigger {
   /* --- Propiedades Clave para Compatibilidad --- */
-  display: flex; /* 1. Define el botón como un contenedor flexible. */
-  align-items: center; /* 2. Centra el ícono verticalmente. */
-  justify-content: center; /* 3. Centra el ícono horizontalmente. */
-  line-height: 1; /* 4. Elimina la altura de línea conflictiva. */
+  display: flex;
+  /* 1. Define el botón como un contenedor flexible. */
+  align-items: center;
+  /* 2. Centra el ícono verticalmente. */
+  justify-content: center;
+  /* 3. Centra el ícono horizontalmente. */
+  line-height: 1;
+  /* 4. Elimina la altura de línea conflictiva. */
 
   /* --- Tu Estilo (con !important para asegurar que gane) --- */
-  font-size: 40px !important; /* Ajusta los 40px a tu gusto. */
+  font-size: 40px !important;
+  /* Ajusta los 40px a tu gusto. */
   padding: 12px;
 
   /* --- Código Original --- */
@@ -119,8 +130,10 @@ body {
   /* Desactiva la apariencia nativa del botón en iOS/Safari */
   -webkit-appearance: none;
   appearance: none;
-  border-radius: 0; /* Safari a veces añade un borde redondeado por defecto */
+  border-radius: 0;
+  /* Safari a veces añade un borde redondeado por defecto */
 }
+
 .menu-trigger:focus {
   outline: 2px solid #005fcc;
   outline-offset: 2px;
@@ -129,6 +142,7 @@ body {
 /* --- MOBILE: Restaurar overlay completo --- */
 /* --- MOBILE: Restaurar overlay completo --- */
 @media (max-width: 1023px) {
+
   /* Restaurar overlay de pantalla completa */
   .mobile-menu {
     position: fixed;
@@ -158,21 +172,21 @@ body {
     visibility: visible;
     transform: translateY(0);
   }
-  
+
   /* Enlaces verticales en mobile */
   .mobile-menu ul {
     flex-direction: column;
     gap: 30px;
     align-items: center;
   }
-  
+
   /* Texto grande y blanco en mobile */
   .mobile-menu a {
     color: #fff;
     font-size: 24px;
     font-weight: 500;
   }
-  
+
   /* Asegurar que el botón de cierre sea visible */
   .menu-close-button {
     display: block;
@@ -296,16 +310,19 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
 
 /* Estilos para el contenedor de toda la sección */
 .hero-section {
-  background-color: #f8fafc; /* Fondo gris claro profesional */
-  padding: 2rem 0.5rem 3rem; /* Espaciado interno (48px arriba/abajo, 24px a los lados) */
+  background-color: #f8fafc;
+  padding: 4rem 1rem 5rem;
+  /* Increased padding for better whitespace */
   width: 100%;
   box-sizing: border-box;
 }
 
 /* Contenedor que limita el ancho del contenido en la página */
 .hero-container {
-  max-width: 1200px; /* Ancho máximo para pantallas grandes */
-  margin: 0 auto; /* Centra el contenedor */
+  max-width: 1200px;
+  /* Ancho máximo para pantallas grandes */
+  margin: 0 auto;
+  /* Centra el contenedor */
 }
 
 /* * Cuadrícula (Grid) para el layout de dos columnas.
@@ -313,80 +330,77 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
 */
 .hero-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Por defecto, una sola columna para móvil */
-  gap: 1rem; /* Espacio entre elementos */
-  align-items: center; /* Centra verticalmente los elementos */
+  grid-template-columns: 1fr;
+  /* Por defecto, una sola columna para móvil */
+  gap: 1rem;
+  /* Espacio entre elementos */
+  align-items: center;
+  /* Centra verticalmente los elementos */
 }
 
 /* Contenedor del texto */
 .hero-text-content {
-  text-align: center; /* Texto centrado en móvil */
+  text-align: center;
+  /* Texto centrado en móvil */
 }
 
 /* Estilos para la línea introductoria */
+/* Estilos para la línea introductoria (Eyebrow) */
 .hero-intro {
   font-family: "Inter", sans-serif;
-  /* TAMAÑO LIGERAMENTE REDUCIDO */
-  font-size: 1rem; /* 13px, para un look más refinado */
-  font-weight: 400;
-  color: #475569;
-  margin-bottom: 1rem;
-  /* ALINEACIÓN CENTRADA AÑADIDA */
+  font-size: 0.813rem;
+  /* 13px */
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  color: #64748b;
+  /* Slate 500 */
+  margin-bottom: 0.75rem;
   text-align: center;
-  margin-top: 1.5rem; /* crea espacio visual desde la imagen hacia este texto */
+  display: block;
 }
 
 /* Estilos para el Título Principal (H1) */
 .hero-headline {
   font-family: "Inter", sans-serif;
-  /* TAMAÑO DE FUENTE NUEVAMENTE REDUCIDO para una mejor estética móvil */
-  font-size: clamp(
-    1.7rem,
-    5vw,
-    3.75rem
-  ); /* Antes: clamp(1.75rem, 7vw, 2.5rem) */
-  font-weight: 700;
-  /* ALTURA DE LÍNEA AUMENTADA: Para un look más "expandido" y legible */
-  line-height: 1.25;
-  letter-spacing: -0.9px;
-  color: #1e293b;
-  padding: 0;
-  /* ANCHO MÁXIMO AJUSTADO: Para un mejor control del salto de línea */
-  max-width: 50rem; /* Aprox. 304px */
-  /* CENTRADO GARANTIZADO: Centra el bloque y el texto interno */
+  font-size: clamp(2rem, 7vw, 3.5rem);
+  font-weight: 900;
+  text-transform: uppercase;
+  line-height: 1.05;
+  letter-spacing: -0.02em;
+  color: #0f172a;
+  /* Slate 900 - Máxima autoridad */
+  max-width: 900px;
   margin: 0 auto 1.5rem;
   text-align: center;
 }
 
-/* Estilos para el texto de apoyo */
+/* Estilos para el texto de apoyo (H2/Support) */
 .hero-support-text {
   font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: #334155; /* Gris oscuro para fácil lectura */
-  max-width: 600px;
-  /* ASEGURA EL CENTRADO DEL BLOQUE DE TEXTO */
-  margin-left: auto;
-  margin-right: auto;
-  /* ASEGURA EL CENTRADO DEL TEXTO INTERNO */
+  font-size: 1.125rem;
+  line-height: 1.7;
+  color: #475569;
+  /* Slate 600 - Lectura amable */
+  max-width: 650px;
+  margin: 0 auto 2.5rem;
   text-align: center;
-}
-
-.hero-support-text strong {
-  color: #1e293b; /* Da más peso a la frase de precios justos */
+  font-weight: 400;
 }
 
 /* --- Media Queries para Diseño en Pantallas Grandes (Desktop) --- */
 
 @media (min-width: 768px) {
   .hero-section {
-    padding: 6rem 2rem; /* Más espaciado en desktop */
+    padding: 6rem 2rem;
+    /* Más espaciado en desktop */
   }
 
   .hero-grid {
     /* Creamos dos columnas en pantallas grandes */
     grid-template-columns: repeat(2, 1fr);
-    gap: 4rem; /* Aumentamos el espacio entre columnas */
+    gap: 4rem;
+    /* Aumentamos el espacio entre columnas */
   }
 
   .hero-text-content {
@@ -395,11 +409,13 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
   }
 
   .hero-headline {
-    font-size: clamp(3rem, 5vw, 3.75rem); /* Título más grande en desktop */
+    font-size: clamp(3rem, 5vw, 3.75rem);
+    /* Título más grande en desktop */
   }
 
   .hero-support-text {
-    margin: 0; /* Quitamos el centrado automático */
+    margin: 0;
+    /* Quitamos el centrado automático */
   }
 }
 
@@ -410,7 +426,8 @@ COMPONENTE: SECCIÓN DE SERVICIOS PRINCIPALES
 */
 
 .services-section {
-  background-color: #ffffff; /* Fondo blanco puro para unificar el diseño */
+  background-color: #ffffff;
+  /* Fondo blanco puro para unificar el diseño */
   padding: 80px 20px;
 }
 
@@ -438,7 +455,8 @@ COMPONENTE: SECCIÓN DE SERVICIOS PRINCIPALES
   background-color: #ffffff;
   padding: 32px;
   border-radius: 12px;
-  border: 1px solid #e5e7eb; /* Borde sutil para definir las tarjetas sobre el fondo blanco */
+  border: 1px solid #e5e7eb;
+  /* Borde sutil para definir las tarjetas sobre el fondo blanco */
   transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
@@ -453,8 +471,10 @@ COMPONENTE: SECCIÓN DE SERVICIOS PRINCIPALES
   justify-content: center;
   width: 56px;
   height: 56px;
-  background-color: #111827; /* Iconos con fondo negro */
-  color: #fbbf24; /* Icono (SVG) en color dorado brillante */
+  background-color: #111827;
+  /* Iconos con fondo negro */
+  color: #fbbf24;
+  /* Icono (SVG) en color dorado brillante */
   border-radius: 50%;
   margin-bottom: 24px;
 }
@@ -488,6 +508,7 @@ COMPONENTE: SECCIÓN DE SERVICIOS PRINCIPALES
 .service-link:hover {
   color: #111827;
 }
+
 /*
 ==========================================================================
 COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
@@ -497,10 +518,14 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
 /* ----- 1. Contenedor Principal ----- */
 /* Este contenedor es la clave para el posicionamiento "flotante" */
 .floating-cta-container {
-  position: fixed; /* Lo saca del flujo normal y lo fija en la pantalla */
-  bottom: 20px; /* 20px desde la parte inferior */
-  right: 60px !important; /* 20px desde la parte derecha */
-  z-index: 9999; /* Se asegura de que esté por encima de otros elementos */
+  position: fixed;
+  /* Lo saca del flujo normal y lo fija en la pantalla */
+  bottom: 20px;
+  /* 20px desde la parte inferior */
+  right: 60px !important;
+  /* 20px desde la parte derecha */
+  z-index: 9999;
+  /* Se asegura de que esté por encima de otros elementos */
   display: flex;
   flex-direction: column;
   align-items: flex-end;
@@ -518,13 +543,17 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
 .main-cta-button {
   background-color: #111827;
   color: #fff;
-  border: 2px solid #ffd700; /* Gold, premium */
+  border: 2px solid #ffd700;
+  /* Gold, premium */
   padding: 0.25rem 1rem !important;
-  border-radius: 25px; /* Elegant, not too rounded */
-  font-weight: 600; /* More premium feel */
+  border-radius: 25px;
+  /* Elegant, not too rounded */
+  font-weight: 600;
+  /* More premium feel */
   font-size: 1.3rem !important;
   font-family: "Inter", sans-serif;
-  box-shadow: 0 3px 16px rgba(44, 35, 14, 0.09); /* Subtler shadow */
+  box-shadow: 0 3px 16px rgba(44, 35, 14, 0.09);
+  /* Subtler shadow */
   cursor: pointer;
   transition: background 0.23s cubic-bezier(0.4, 0, 0.2, 1),
     color 0.23s cubic-bezier(0.4, 0, 0.2, 1),
@@ -563,35 +592,53 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
   box-shadow: 0 7px 32px rgba(44, 35, 14, 0.12);
   outline: none;
 }
+
 .cta-option {
-  display: inline-block; /* Permite usar width y height en elementos <a> y aplicar márgenes */
-  width: 150px; /* Ancho fijo del botón: lo hace consistente y alineado */
-  height: 30px; /* Altura total del botón (más elegante y legible que 25px) */
-  line-height: 32px; /* Centra verticalmente el texto dentro del botón */
-  font-size: 20px; /* Tamaño del texto: buena legibilidad en móviles y escritorio */
-  font-weight: 600; /* Grosor del texto: transmite autoridad visual */
-  text-align: center; /* Centra el texto horizontalmente */
-  color: #fff; /* Color del texto blanco para contraste sobre fondo oscuro */
-  background-color: #000; /* Fondo negro: da fuerza visual y percepción premium */
-  border: 1px solid #fff; /* Borde blanco de 1px para destacar sobre el fondo */
-  border-radius: 12px; /* Bordes redondeados: más amigable y moderno visualmente */
-  text-decoration: none; /* Elimina subrayado del enlace (<a>) */
-  margin: 4px auto; /* Espacio vertical entre botones REDUCIDO + centrado horizontal */
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2); /* Sombra sutil para profundidad y enfoque visual */
-  transition: all 0.3s ease; /* Transiciones suaves cuando se pasa el mouse (hover) */
+  display: inline-block;
+  /* Permite usar width y height en elementos <a> y aplicar márgenes */
+  width: 150px;
+  /* Ancho fijo del botón: lo hace consistente y alineado */
+  height: 30px;
+  /* Altura total del botón (más elegante y legible que 25px) */
+  line-height: 32px;
+  /* Centra verticalmente el texto dentro del botón */
+  font-size: 20px;
+  /* Tamaño del texto: buena legibilidad en móviles y escritorio */
+  font-weight: 600;
+  /* Grosor del texto: transmite autoridad visual */
+  text-align: center;
+  /* Centra el texto horizontalmente */
+  color: #fff;
+  /* Color del texto blanco para contraste sobre fondo oscuro */
+  background-color: #000;
+  /* Fondo negro: da fuerza visual y percepción premium */
+  border: 1px solid #fff;
+  /* Borde blanco de 1px para destacar sobre el fondo */
+  border-radius: 12px;
+  /* Bordes redondeados: más amigable y moderno visualmente */
+  text-decoration: none;
+  /* Elimina subrayado del enlace (<a>) */
+  margin: 4px auto;
+  /* Espacio vertical entre botones REDUCIDO + centrado horizontal */
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.2);
+  /* Sombra sutil para profundidad y enfoque visual */
+  transition: all 0.3s ease;
+  /* Transiciones suaves cuando se pasa el mouse (hover) */
 }
 
 .cta-option:hover {
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35); /* Aumenta la sombra al hacer hover para efecto flotante */
-  transform: scale(
-    1.03
-  ); /* Ligeramente más grande al pasar el mouse (feedback visual) */
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.35);
+  /* Aumenta la sombra al hacer hover para efecto flotante */
+  transform: scale(1.03);
+  /* Ligeramente más grande al pasar el mouse (feedback visual) */
 }
+
 .cta-options.show-options {
   display: flex;
   opacity: 1;
   transform: translateY(0);
 }
+
 /* ----- 4. Estilo para Mostrar las Opciones ----- */
 /* (Se activa con JavaScript añadiendo la clase 'active' al contenedor) */
 .floating-cta-container.active .cta-options {
@@ -599,6 +646,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
   opacity: 1;
   transform: translateY(0);
 }
+
 @media (max-width: 480px) {
   .main-cta-button {
     font-size: 0.92rem;
@@ -618,7 +666,8 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   align-items: center;
   padding: 1.25rem;
   text-align: center;
-  background-color: #fff; /* optional */
+  background-color: #fff;
+  /* optional */
   margin-top: 10px;
 }
 
@@ -636,66 +685,92 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .hero-text p {
-  font-size: 1.8rem; /* Aumenta legibilidad móvil */
-  margin-top: 1.25rem; /* Separa del h1 o de la imagen */
+  font-size: 1.8rem;
+  /* Aumenta legibilidad móvil */
+  margin-top: 1.25rem;
+  /* Separa del h1 o de la imagen */
   margin-bottom: 1rem;
   color: #222;
   line-height: 1.6;
   font-weight: 400;
 }
+
 /* === Review Badge: Contenedor principal === */
 .review-badge {
-  display: flex; /* Usa Flexbox para alinear los elementos */
-  flex-direction: column; /* Apila los elementos en columna (verticalmente) */
-  align-items: center; /* Centra horizontalmente todos los hijos */
-  margin: 0.5rem auto; /* Espacio vertical + centrado horizontal */
-  font-family: "Inter", sans-serif; /* Usa la fuente del diseño del sitio */
-  text-align: center; /* Centra el texto en todos los niveles */
-  margin-bottom: 10px; /* ✅ Añade espacio para que el botón no lo tape */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 3rem auto;
+  /* More space */
+  font-family: "Inter", sans-serif;
+  text-align: center;
+  padding: 1.5rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.04);
+  max-width: fit-content;
 }
 
 /* === Caras de clientes === */
 .review-faces {
-  display: flex; /* Alinea las imágenes una al lado de otra */
-  justify-content: center; /* Centra horizontalmente el grupo de caras */
+  display: flex;
+  /* Alinea las imágenes una al lado de otra */
+  justify-content: center;
+  /* Centra horizontalmente el grupo de caras */
   gap: 0;
-  margin-left: -12px; /* 👈 Aplica superposición horizontal */
-  margin-bottom: 3px; /* Espacio entre las caras y las estrellas */
+  margin-left: -12px;
+  /* 👈 Aplica superposición horizontal */
+  margin-bottom: 3px;
+  /* Espacio entre las caras y las estrellas */
 }
 
 .review-faces img {
-  width: 18px; /* Ancho fijo para cada cara */
-  height: 18px; /* Altura igual para mantener proporción 1:1 */
-  border-radius: 50%; /* Hace la imagen completamente circular */
-  border: 2px solid #fff; /* Borde blanco fino alrededor de la imagen */
-  box-shadow: 0 0 0 2px #000; /* Contorno negro externo: resalta las fotos */
-  object-fit: cover; /* Asegura que la imagen rellene sin deformarse */
+  width: 18px;
+  /* Ancho fijo para cada cara */
+  height: 18px;
+  /* Altura igual para mantener proporción 1:1 */
+  border-radius: 50%;
+  /* Hace la imagen completamente circular */
+  border: 2px solid #fff;
+  /* Borde blanco fino alrededor de la imagen */
+  box-shadow: 0 0 0 2px #000;
+  /* Contorno negro externo: resalta las fotos */
+  object-fit: cover;
+  /* Asegura que la imagen rellene sin deformarse */
 }
 
 /* === Estrellas === */
 .review-stars {
-  font-size: 10px; /* Tamaño grande para que se vean claras */
-  color: #ffd700; /* Amarillo oro (estilo estrella de Google) */
-  margin-bottom: 4px; /* Espacio inferior hacia el texto */
+  font-size: 10px;
+  /* Tamaño grande para que se vean claras */
+  color: #ffd700;
+  /* Amarillo oro (estilo estrella de Google) */
+  margin-bottom: 4px;
+  /* Espacio inferior hacia el texto */
 }
 
 /* === Texto de puntuación y reviews === */
 .review-text {
-  font-size: 15px; /* Tamaño legible y ligero */
-  color: #111; /* Gris oscuro para buena lectura sobre fondo claro */
+  font-size: 15px;
+  /* Tamaño legible y ligero */
+  color: #111;
+  /* Gris oscuro para buena lectura sobre fondo claro */
 }
+
 /* inicia achievements */
 .elite-achievements {
   display: flex;
   justify-content: space-around;
   align-items: center;
-  margin: 1rem auto;
-  margin-bottom: 130px; /* 🟡 Espacio inferior entre los logros y lo siguiente */
-  padding: 0.75rem 1rem;
-  background: #fff;
-  border-radius: 12px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
-  max-width: 95%;
+  margin: 2rem auto;
+  margin-bottom: 150px;
+  /* Space for fixed CTA on mobile */
+  padding: 1.25rem;
+  background: #f8fafc;
+  border-radius: 16px;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.03);
+  max-width: 90%;
   text-align: center;
 }
 
@@ -718,19 +793,26 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 .icon-achievement:hover {
   stroke: #ffd700;
 }
+
 @media only screen and (max-width: 767px) {
   .kpem-header-mobile {
-    height: 80px; /* header ligeramente mayor que el logo (200) */
+    height: 80px;
+    /* header ligeramente mayor que el logo (200) */
   }
+
   .kpem-header-mobile .contenedor-logo img {
-    height: 250px; /* deja que el contenedor mande */
-    max-height: 100%; /* nunca más alto que el header */
+    height: 250px;
+    /* deja que el contenedor mande */
+    max-height: 100%;
+    /* nunca más alto que el header */
     width: auto;
   }
+
   .menu-trigger {
     font-size: 50px;
   }
 }
+
 /* ===== Service breadcrumb (arriba, claro pero discreto) ===== */
 .service-nav {
   max-width: 980px;
@@ -742,14 +824,19 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   font-size: 14px;
   line-height: 1.2;
 }
+
 .service-nav .home-link {
-  font-weight: 700; /* negrita visible */
+  font-weight: 700;
+  /* negrita visible */
   text-decoration: none;
-  color: #111827; /* ink/brand */
+  color: #111827;
+  /* ink/brand */
 }
+
 .service-nav .home-link:hover,
 .service-nav .home-link:focus {
-  text-decoration: underline; /* feedback claro sin competir con el CTA */
+  text-decoration: underline;
+  /* feedback claro sin competir con el CTA */
 }
 
 /* Compacto en móvil */
@@ -760,6 +847,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
     font-size: 13px;
   }
 }
+
 .hero-image {
   width: 100%;
   height: auto;
@@ -790,6 +878,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   color: var(--muted, #6b7280);
   margin: 8px 0 16px;
 }
+
 .breadcrumb a {
   color: inherit;
   text-decoration: none;
@@ -800,11 +889,13 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 .page .byline {
   color: var(--muted, #6b7280);
 }
+
 .page .lead {
   color: var(--muted, #6b7280);
   margin: 8px 0 0;
   max-width: 64ch;
 }
+
 .badges {
   display: flex;
   gap: 12px;
@@ -819,6 +910,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 .section {
   margin-top: 32px;
 }
+
 .section h2 {
   font-size: 20px;
   margin: 0 0 8px;
@@ -831,12 +923,14 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   grid-template-columns: 1fr;
   margin-top: 12px;
 }
+
 .card {
   border: 1px solid var(--line, #e5e7eb);
   border-radius: 16px;
   padding: 16px;
   background: #fff;
 }
+
 .card h3 {
   font-size: 16px;
   margin: 0 0 4px;
@@ -862,6 +956,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   padding: 12px 14px;
   background: #fff;
 }
+
 .faq summary {
   cursor: pointer;
   font-weight: 700;
@@ -876,9 +971,11 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 /* Accessible focus for service CTAs */
 .main-cta-button:focus-visible,
 .page .cta:focus-visible {
-  outline: 3px solid #ffd700; /* gold brand */
+  outline: 3px solid #ffd700;
+  /* gold brand */
   outline-offset: 2px;
-  box-shadow: 0 0 0 2px #111827; /* dark halo for contrast */
+  box-shadow: 0 0 0 2px #111827;
+  /* dark halo for contrast */
 }
 
 /* === Testimonials layout (client-stories section) === */
@@ -889,11 +986,13 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   display: grid;
   gap: 32px;
 }
+
 .t-head {
   text-align: center;
   display: grid;
   gap: 12px;
 }
+
 .t-title {
   margin: 0;
   font-size: 1.75rem;
@@ -901,6 +1000,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   line-height: 1.25;
   color: #0f172a;
 }
+
 .t-subtitle {
   margin: 0 auto;
   max-width: 680px;
@@ -908,11 +1008,13 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   line-height: 1.65;
   color: #475569;
 }
+
 .t-grid {
   display: grid;
   grid-template-columns: 1fr;
   gap: 20px;
 }
+
 .t-card {
   background: #ffffff;
   border: 1px solid rgba(15, 23, 42, 0.08);
@@ -923,17 +1025,35 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   box-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
   transition: transform 0.2s ease, box-shadow 0.2s ease;
 }
+
 .t-card:hover {
   transform: translateY(-4px);
   box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
 }
+
 .t-card--hero {
-  border: 1px solid rgba(59, 130, 246, 0.18);
-  background: #f8fbff;
-  box-shadow: 0 18px 50px rgba(59, 130, 246, 0.12);
+  border: 1px solid rgba(37, 99, 235, 0.2);
+  background: linear-gradient(135deg, #f0f7ff 0%, #ffffff 100%);
+  box-shadow: 0 20px 50px rgba(37, 99, 235, 0.1);
   padding: 30px;
   gap: 20px;
+  position: relative;
+  overflow: hidden;
 }
+
+.t-card--hero::before {
+  content: "Top Rated";
+  position: absolute;
+  top: 12px;
+  right: -30px;
+  background: #fbbf24;
+  color: #000;
+  font-size: 0.75rem;
+  font-weight: 800;
+  padding: 4px 40px;
+  transform: rotate(45deg);
+}
+
 .t-hero-quote {
   margin: 0;
   font-size: 1.35rem;
@@ -941,17 +1061,20 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   line-height: 1.35;
   color: #0f172a;
 }
+
 .t-hero-full-text {
   margin: 0;
   font-size: 1rem;
   line-height: 1.7;
   color: #334155;
 }
+
 .t-hero-meta {
   display: flex;
   align-items: center;
   gap: 12px;
 }
+
 .avatar {
   width: 52px;
   height: 52px;
@@ -960,68 +1083,83 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   flex-shrink: 0;
   box-shadow: 0 6px 16px rgba(15, 23, 42, 0.15);
 }
+
 .t-meta {
   display: flex;
   flex-direction: column;
   gap: 2px;
 }
+
 .t-name {
   font-size: 1rem;
   font-weight: 700;
   color: #0f172a;
 }
+
 .t-service {
   font-size: 0.9rem;
   color: #64748b;
 }
+
 .t-rating {
   font-size: 1rem;
   color: #facc15;
   letter-spacing: 0.08em;
 }
+
 .t-text {
   margin: 0;
   font-size: 1rem;
   line-height: 1.7;
   color: #334155;
 }
+
 @media (prefers-reduced-motion: reduce) {
   .t-card {
     transition: none;
   }
 }
+
 @media (min-width: 640px) {
   .wrap {
     padding: 60px 24px 72px;
     gap: 36px;
   }
+
   .t-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
     gap: 24px;
   }
+
   .t-card {
     padding: 32px;
   }
+
   .t-card--hero {
     grid-column: span 2;
     padding: 36px;
   }
+
   .t-hero-quote {
     font-size: 1.45rem;
   }
 }
+
 @media (min-width: 1024px) {
   .t-grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 28px;
   }
+
   .t-card--hero {
     grid-column: span 2;
     align-self: stretch;
   }
-.t-card {
+
+  .t-card {
     padding: 36px;
   }
+
   .t-hero-quote {
     font-size: 1.5rem;
   }
@@ -1101,19 +1239,23 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .faq-item {
-  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  border-radius: 26px;
+  overflow: hidden;
+  border: 1px solid transparent;
 }
 
-.faq-item:hover,
-.faq-item:focus-visible {
-  transform: translateY(-4px);
-  box-shadow: 0 22px 45px rgba(15, 23, 42, 0.12);
+.faq-item:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 30px 60px rgba(15, 23, 42, 0.15);
+  border-color: rgba(37, 99, 235, 0.1);
 }
 
 .faq-item:active {
   transform: translateY(-2px);
-  box-shadow: 0 18px 32px rgba(15, 23, 42, 0.10);
+  box-shadow: 0 20px 40px rgba(15, 23, 42, 0.1);
 }
+
 .faq-wrap dd:hover,
 .faq-wrap dd:focus-visible {
   transform: translateY(-4px);
@@ -1175,42 +1317,81 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 /* Desktop: show nav beside logo (surgical) */
-@media (min-width:1024px){
-  .kpem-header-mobile{display:flex;align-items:center;justify-content:space-between}
-  #mobile-navigation{display:flex;flex:1;justify-content:center}
-  #mobile-navigation>ul{display:flex;gap:20px;list-style:none;margin:0;padding:0}
+@media (min-width:1024px) {
+  .kpem-header-mobile {
+    display: flex;
+    align-items: center;
+    justify-content: space-between
+  }
+
+  #mobile-navigation {
+    display: flex;
+    flex: 1;
+    justify-content: center
+  }
+
+  #mobile-navigation>ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+    margin: 0;
+    padding: 0
+  }
 }
 
 /* Mobile menu — Fullscreen Overlay (User's Design - Safe Version) */
-@media (max-width:1023px){
+@media (max-width:1023px) {
+
   /* 1. Estilos Base (Siempre aplicados, pero ocultos por defecto) */
   #mobile-navigation {
-    position: fixed !important; top: 0 !important; left: 0 !important;
-    width: 100vw !important; height: 100vh !important;
-    background: #111827 !important; z-index: 10000 !important;
-    display: flex !important; flex-direction: column !important;
-    align-items: center !important; justify-content: center !important;
-    
+    position: fixed !important;
+    top: 0 !important;
+    left: 0 !important;
+    width: 100vw !important;
+    height: 100vh !important;
+    background: #111827 !important;
+    z-index: 10000 !important;
+    display: flex !important;
+    flex-direction: column !important;
+    align-items: center !important;
+    justify-content: center !important;
+
     /* Estado inicial: Oculto */
-    opacity: 0 !important; visibility: hidden !important; pointer-events: none !important;
+    opacity: 0 !important;
+    visibility: hidden !important;
+    pointer-events: none !important;
     transition: opacity 0.3s ease !important;
   }
 
   /* 2. Estilos de Contenido (Lista y Botón) */
-  #mobile-navigation > ul {
-    display: flex !important; flex-direction: column !important; gap: 24px !important;
-    list-style: none !important; margin: 0 !important; padding: 0 !important; 
+  #mobile-navigation>ul {
+    display: flex !important;
+    flex-direction: column !important;
+    gap: 24px !important;
+    list-style: none !important;
+    margin: 0 !important;
+    padding: 0 !important;
     color: #fff !important;
   }
+
   #mobile-navigation .menu-close-button {
-    display: block !important; position: fixed !important; top: 20px !important; right: 20px !important;
-    z-index: 10001 !important; background: transparent !important; border: 0 !important;
-    font-size: 32px !important; color: #fff !important; cursor: pointer !important;
+    display: block !important;
+    position: fixed !important;
+    top: 20px !important;
+    right: 20px !important;
+    z-index: 10001 !important;
+    background: transparent !important;
+    border: 0 !important;
+    font-size: 32px !important;
+    color: #fff !important;
+    cursor: pointer !important;
   }
 
   /* 3. Estado ABIERTO (Solo cuando body tiene la clase) */
   body.menu-is-open #mobile-navigation {
-    opacity: 1 !important; visibility: visible !important; pointer-events: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    pointer-events: auto !important;
   }
 }
 
@@ -1226,9 +1407,9 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
   border: 2px solid #ffd700;
   border-radius: 10px;
-  box-shadow: 
-    0 6px 16px rgba(0,0,0,0.25),
-    0 0 12px rgba(255,215,0,0.15);
+  box-shadow:
+    0 6px 16px rgba(0, 0, 0, 0.25),
+    0 0 12px rgba(255, 215, 0, 0.15);
   text-decoration: none;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
@@ -1255,9 +1436,9 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 .header-cta:hover {
   background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
   transform: translateY(-3px);
-  box-shadow: 
-    0 8px 24px rgba(255,215,0,0.35),
-    0 0 20px rgba(255,215,0,0.25);
+  box-shadow:
+    0 8px 24px rgba(255, 215, 0, 0.35),
+    0 0 20px rgba(255, 215, 0, 0.25);
 }
 
 .header-cta:hover .cta-main,
@@ -1267,9 +1448,9 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 
 .header-cta:active {
   transform: translateY(-1px);
-  box-shadow: 
-    0 4px 12px rgba(255,215,0,0.25),
-    0 0 10px rgba(255,215,0,0.15);
+  box-shadow:
+    0 4px 12px rgba(255, 215, 0, 0.25),
+    0 0 10px rgba(255, 215, 0, 0.15);
 }
 
 
@@ -1278,34 +1459,41 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
    ================================================================ */
 
 /* Desktop (≥1024px): show header CTA, hide floating CTA */
-@media (min-width:1024px){
-  .floating-cta-container { display: none !important; }
-  .header-cta { display: inline-flex !important; }
+@media (min-width:1024px) {
+  .floating-cta-container {
+    display: none !important;
+  }
+
+  .header-cta {
+    display: inline-flex !important;
+  }
 }
 
 /* Mobile (≤1023px): HIDE header CTA completely, show floating CTA */
-@media (max-width:1023px){
-  .header-cta { 
-    display: none !important; 
+@media (max-width:1023px) {
+  .header-cta {
+    display: none !important;
     visibility: hidden !important;
     opacity: 0 !important;
     pointer-events: none !important;
   }
-  .floating-cta-container{
-    position: fixed; 
-    bottom: calc(16px + env(safe-area-inset-bottom)); 
-    right: 16px; 
+
+  .floating-cta-container {
+    position: fixed;
+    bottom: calc(16px + env(safe-area-inset-bottom));
+    right: 16px;
     z-index: 1000;
-    min-width: 44px; 
+    min-width: 44px;
     min-height: 44px;
   }
 }
 
 /* Accessibility: respect reduced motion */
-@media (prefers-reduced-motion: reduce){
+@media (prefers-reduced-motion: reduce) {
+
   .header-cta,
-  .floating-cta-container { 
-    transition: none !important; 
+  .floating-cta-container {
+    transition: none !important;
   }
 }
 
@@ -1347,113 +1535,36 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   }
 }
 
-/* Hero CTA Button - Prominent Call Now */
+/* Hero CTA Button - Premium Black+Gold */
 .hero-cta-button {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  gap: 0.5rem;
-  background-color: #16a34a;
-  color: #fff;
-  font-family: "Inter", sans-serif;
-  font-size: 1.25rem;
-  font-weight: 700;
-  padding: 1rem 2rem;
-  border-radius: 50px;
-  text-decoration: none;
-  box-shadow: 0 4px 14px rgba(22, 163, 74, 0.4);
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
-  width: 100%;
-  max-width: 320px;
-}
-
-.hero-cta-button:hover,
-.hero-cta-button:focus {
-  background-color: #15803d;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 20px rgba(22, 163, 74, 0.5);
-  outline: none;
-}
-
-.hero-cta-button .cta-icon {
-  font-size: 1.5rem;
-}
-
-.hero-cta-button .cta-text {
-  white-space: nowrap;
-}
-
-@media (min-width: 768px) {
-  .hero-cta-button {
-    width: auto;
-    max-width: none;
-  }
-}
-
-/* Hero Social Proof Badge */
-.hero-social-proof {
-  display: flex;
-  align-items: center;
-}
-
-.google-badge-inline {
-  display: inline-flex;
-  align-items: center;
-  gap: 0.5rem;
-  background: #fff;
-  padding: 0.5rem 1rem;
-  border-radius: 8px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-  border: 1px solid #e5e7eb;
-}
-
-.google-badge-inline svg {
-  flex-shrink: 0;
-}
-
-.google-badge-inline .rating-text {
-  font-family: "Inter", sans-serif;
-  font-size: 0.9rem;
-  color: #1f2937;
-}
-
-.google-badge-inline .rating-text strong {
-  font-weight: 700;
-  color: #111827;
-}
-
-/* ================================================================
-   PHASE 1 v2: CTA Button (Black + Gold) & Trophy Social Proof Card
-   ================================================================ */
-
-/* Hero CTA Button - Black + Gold Style (matching floating CTA) */
-.hero-cta-button {
-  display: inline-flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.5rem;
-  background-color: #111827;
-  color: #fff;
-  border: 2px solid #FFD700;
+  gap: 0.75rem;
+  background: #111827;
+  color: #ffd700;
   font-family: "Inter", sans-serif;
   font-size: 1.1rem;
-  font-weight: 600;
-  padding: 0.875rem 1.5rem;
+  font-weight: 700;
+  padding: 1rem 1.75rem;
   border-radius: 50px;
   text-decoration: none;
-  box-shadow: 0 4px 16px rgba(17, 24, 39, 0.25);
-  transition: background-color 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease;
+  border: 2px solid #ffd700;
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.15);
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
   width: 100%;
-  max-width: 340px;
+  max-width: 380px;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
 }
 
 .hero-cta-button:hover,
 .hero-cta-button:focus {
-  background-color: #FFD700;
+  background: #ffd700;
   color: #111827;
-  border-color: #FFD700;
-  transform: translateY(-2px);
-  box-shadow: 0 6px 24px rgba(255, 215, 0, 0.35);
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 215, 0, 0.25);
   outline: none;
 }
 
@@ -1462,7 +1573,15 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .hero-cta-button .cta-text {
-  white-space: nowrap;
+  text-align: center;
+}
+
+@media (max-width: 480px) {
+  .hero-cta-button {
+    font-size: 0.95rem;
+    padding: 0.9rem 1rem;
+    letter-spacing: 0;
+  }
 }
 
 @media (min-width: 768px) {
@@ -1470,9 +1589,96 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
     width: auto;
     max-width: none;
     font-size: 1.15rem;
-    padding: 1rem 2rem;
+    padding: 1.1rem 2.25rem;
   }
 }
+
+/* Hero Testimonial Carousel - Minimalist & Mobile Optimized */
+.hero-testimonial-carousel {
+  max-width: 380px;
+  width: 100%;
+  margin-top: 2rem;
+  overflow: hidden;
+  position: relative;
+  background: #ffffff;
+  border-radius: 16px;
+  padding: 1.25rem;
+  border: 1px solid #e2e8f0;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.03);
+}
+
+.carousel-track {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  scrollbar-width: none;
+  /* Hide scrollbar Firefox */
+  gap: 1.5rem;
+  padding-bottom: 0.5rem;
+}
+
+.carousel-track::-webkit-scrollbar {
+  display: none;
+  /* Hide scrollbar Chrome/Safari */
+}
+
+.carousel-item {
+  flex: 0 0 100%;
+  scroll-snap-align: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.carousel-quote {
+  font-family: "Inter", sans-serif;
+  font-size: 0.95rem;
+  font-style: italic;
+  line-height: 1.5;
+  color: #334155;
+  margin-bottom: 0.75rem;
+}
+
+.carousel-author {
+  font-family: "Inter", sans-serif;
+  font-size: 0.813rem;
+  font-weight: 700;
+  color: #64748b;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.carousel-indicators {
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.carousel-indicators .dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #e2e8f0;
+  transition: background 0.3s ease;
+}
+
+.carousel-indicators .dot.active {
+  background: #2563eb;
+}
+
+@media (min-width: 768px) {
+  .hero-testimonial-carousel {
+    max-width: 350px;
+  }
+}
+
+/* ================================================================
+   PHASE 1 v2: CTA Button (Black + Gold) & Trophy Social Proof Card
+   ================================================================ */
+
+
 
 /* Trophy Social Proof Card */
 .hero-social-proof-card {
@@ -1539,7 +1745,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   height: 36px;
   border-radius: 50%;
   border: 2px solid #fff;
-  box-shadow: 0 2px 4px rgba(0,0,0,0.15);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.15);
   margin-left: -10px;
   object-fit: cover;
 }
@@ -1584,5 +1790,230 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   .hero-social-proof-card {
     max-width: none;
     padding: 1rem 1.5rem;
+  }
+}
+
+/*
+==========================================================================
+COMPONENTE: MULTI-STEP AI DIAGNOSTIC MODAL
+==========================================================================
+*/
+
+.diag-modal-overlay {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(15, 23, 42, 0.9);
+  backdrop-filter: blur(8px);
+  z-index: 10000;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+.diag-modal-content {
+  background: #fff;
+  width: 100%;
+  max-width: 500px;
+  border-radius: 24px;
+  padding: 40px 30px;
+  position: relative;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  animation: diagSlideUp 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+@keyframes diagSlideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.diag-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  background: #f1f5f9;
+  border: none;
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: #64748b;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s;
+}
+
+.diag-close:hover {
+  background: #e2e8f0;
+  color: #0f172a;
+}
+
+.diag-step {
+  text-align: center;
+}
+
+.diag-title {
+  font-size: 1.5rem;
+  font-weight: 800;
+  color: #0f172a;
+  margin-bottom: 8px;
+  line-height: 1.2;
+}
+
+.diag-subtitle {
+  color: #64748b;
+  font-size: 0.95rem;
+  margin-bottom: 24px;
+}
+
+.diag-input-group {
+  margin-bottom: 16px;
+}
+
+.diag-modal-content input,
+.diag-modal-content textarea,
+.diag-modal-content select {
+  width: 100%;
+  padding: 14px 18px;
+  border: 2px solid #e2e8f0;
+  border-radius: 12px;
+  font-family: inherit;
+  font-size: 1rem;
+  transition: border-color 0.2s;
+  outline: none;
+  background: #f8fafc;
+}
+
+.diag-modal-content input:focus,
+.diag-modal-content textarea:focus,
+.diag-modal-content select:focus {
+  border-color: #ffd700;
+  background: #fff;
+}
+
+.diag-modal-content textarea {
+  height: 100px;
+  resize: none;
+}
+
+.diag-next-btn {
+  width: 100%;
+  background: #111827;
+  color: #fff;
+  border: 2px solid #ffd700;
+  padding: 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  cursor: pointer;
+  margin-top: 8px;
+  transition: all 0.2s;
+}
+
+.diag-next-btn:hover {
+  background: #ffd700;
+  color: #111827;
+}
+
+.diag-privacy {
+  font-size: 0.75rem;
+  color: #94a3b8;
+  margin-top: 16px;
+}
+
+/* Step 3 Styles */
+.diag-success-icon {
+  font-size: 40px;
+  margin-bottom: 16px;
+}
+
+.diag-result-box {
+  background: #f8fafc;
+  border-left: 4px solid #ffd700;
+  padding: 20px;
+  border-radius: 8px;
+  text-align: left;
+  margin: 20px 0;
+}
+
+.diag-result-box p {
+  color: #334155;
+  font-size: 0.95rem;
+  line-height: 1.6;
+}
+
+.diag-cta-text {
+  font-weight: 700;
+  color: #0f172a;
+  margin-bottom: 16px;
+}
+
+.diag-action-container {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.diag-call-btn,
+.diag-sms-btn {
+  display: block;
+  text-decoration: none;
+  padding: 16px;
+  border-radius: 50px;
+  font-weight: 700;
+  font-size: 1.05rem;
+  transition: all 0.2s;
+  text-align: center;
+}
+
+.diag-call-btn {
+  background: #111827;
+  color: #fff;
+  border: 2px solid #ffd700;
+}
+
+.diag-call-btn:hover {
+  background: #ffd700;
+  color: #111827;
+}
+
+.diag-sms-btn {
+  background: #fff;
+  color: #0f172a;
+  border: 2px solid #e2e8f0;
+}
+
+.diag-sms-btn:hover {
+  border-color: #ffd700;
+  background: #f8fafc;
+}
+
+@media (min-width: 480px) {
+  .diag-action-container {
+    flex-direction: row;
+  }
+
+  .diag-call-btn,
+  .diag-sms-btn {
+    flex: 1;
+  }
+}
+
+@media (max-width: 480px) {
+  .diag-modal-content {
+    padding: 30px 20px;
+    border-radius: 20px;
   }
 }
