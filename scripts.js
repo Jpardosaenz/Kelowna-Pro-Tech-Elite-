@@ -188,3 +188,27 @@ document.addEventListener('keydown', (e) => {
     closeLeadCapture();
   }
 });
+
+/*
+==========================================================================
+SECCIÓN: GA4 CONVERSION SENSOR (Track calls and SMS)
+==========================================================================
+*/
+
+document.addEventListener('click', (event) => {
+  // Captura clics en cualquier <a> que empiece con tel: o sms:
+  const communicationLink = event.target.closest('a[href^="tel:"], a[href^="sms:"]');
+
+  if (communicationLink) {
+    // Verificar si gtag está definido para evitar errores en consola
+    if (typeof gtag === 'function') {
+      gtag('event', 'contact_click', {
+        'method': 'phone_or_sms',
+        'event_category': 'conversion',
+        'value': 1.0
+      });
+      console.log('GA4: Conversion contact_click tracked for:', communicationLink.getAttribute('href'));
+    }
+  }
+});
+
