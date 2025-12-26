@@ -135,60 +135,47 @@
           alt="Expert mobile mechanic diagnosing a vehicle on-site in Kelowna with professional equipment"
           class="hero-image" loading="eager" decoding="async" fetchpriority="high" />
         <div class="hero-text-content">
-          <!-- Línea Introductoria -->
+          <!-- Eyebrow (Top Line) -->
           <p class="hero-intro">
-            Car won’t start? Tired of wasting time and guessing what’s wrong?
+            MOBILE MECHANIC KELOWNA
           </p>
-          <!-- Título Principal (H1) -->
-          <h1 class="hero-headline">We Come to You — Fast.</h1>
-          <!-- Subheadline / Brand Authority -->
-          <p class="hero-subheadline-brand"><strong>Kelowna Protech Elite Mobile Mechanic</strong></p>
-          <!-- Texto de Apoyo -->
+          <!-- Main Headline (H1) -->
+          <h1 class="hero-headline">DON’T LET A BROKEN CAR STEAL YOUR WEEK.</h1>
+          <!-- Support Text (H2 Equivalent) -->
           <p class="hero-support-text">
-            Over 15 years helping drivers avoid towing, save time, and fix it right the first time. We come to your home
-            or office. Diagnostic cost is fully credited toward your repair.
+            Master-level diagnostics in your driveway. Join 100+ families who trust the smart alternative to the shop.
           </p>
 
           <!-- Phase 1: Prominent CTA Button (SMS Action, Black+Gold Style) -->
           <div class="hero-cta-container">
-            <a href="sms:+12508595467" class="hero-cta-button" aria-label="Text a mechanic for help">
-              <span class="cta-icon">💬</span>
-              <span class="cta-text">Text a Mechanic — Get Help Today</span>
+            <a href="javascript:void(0)" onclick="openDiagnosticModal()" class="hero-cta-button"
+              aria-label="Start Free AI Diagnostic">
+              <span class="cta-icon">🤖</span>
+              <span class="cta-text">Free AI Diagnostic — See What's Wrong Now</span>
             </a>
 
-            <!-- Social Proof Badge - Trophy Card Design -->
-            <div class="hero-social-proof-card">
-              <div class="social-proof-header">
-                <svg class="google-logo" width="28" height="28" viewBox="0 0 24 24" fill="none">
-                  <path
-                    d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"
-                    fill="#4285F4" />
-                  <path
-                    d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"
-                    fill="#34A853" />
-                  <path
-                    d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"
-                    fill="#FBBC05" />
-                  <path
-                    d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"
-                    fill="#EA4335" />
-                </svg>
-                <div class="rating-display">
-                  <span class="rating-number">4.9</span>
-                  <span class="rating-stars">★★★★★</span>
+            <!-- Minimalist Testimonial Carousel (Mobile Optimized) -->
+            <div class="hero-testimonial-carousel">
+              <div class="carousel-track">
+                <div class="carousel-item">
+                  <p class="carousel-quote">"Master-level skill right in my driveway."</p>
+                  <p class="carousel-author">— Mark T.</p>
+                </div>
+                <div class="carousel-item">
+                  <p class="carousel-quote">"Saved me a whole day at the shop. Fixed by lunch!"</p>
+                  <p class="carousel-author">— Sarah L.</p>
+                </div>
+                <div class="carousel-item">
+                  <p class="carousel-quote">"Expert diagnostics. Finally, a mechanic I can trust."</p>
+                  <p class="carousel-author">— James D.</p>
                 </div>
               </div>
-              <p class="social-proof-text">27 Happy Drivers in Kelowna</p>
-              <div class="customer-avatars">
-                <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Customer" class="avatar-img" />
-                <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Customer" class="avatar-img" />
-                <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Customer" class="avatar-img" />
-                <span class="avatar-more">+24</span>
+              <!-- Subtle indicators -->
+              <div class="carousel-indicators">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
               </div>
-              <a href="https://www.google.com/maps/place/Kelowna+Protech+Elite+Mobile+Mechanic" target="_blank"
-                rel="noopener noreferrer" class="read-reviews-link">
-                Read Reviews on Google →
-              </a>
             </div>
           </div>
 
@@ -257,55 +244,37 @@
       </li>
     </ul>
   </section>
-  <!-- ⭐ Review Badge - Estilo Google Style -->
-  <div class="review-badge"> <!-- Contenedor general del bloque de reseñas (fotos + estrellas + texto) -->
-
-    <div class="review-faces"> <!-- Contenedor de las imágenes de los clientes (testimonios visuales) -->
-
-      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Review 1" /> <!-- Foto 1: cliente masculino -->
-      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Review 2" /> <!-- Foto 2: cliente femenina -->
-      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Review 3" /> <!-- Foto 3: cliente femenina -->
-      <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Review 4" /> <!-- Foto 4: cliente masculino -->
-
-    </div> <!-- Fin del bloque de imágenes -->
-
-    <div class="review-stars"> <!-- Sección visual para mostrar las estrellas -->
-      ★ ★ ★ ★ ★ <!-- Estrellas en texto plano, puedes reemplazarlas por SVG para más diseño -->
+  <!-- ⭐ Review Badge - Estilo Google Style
+  <div class="review-badge"> 
+    <div class="review-faces"> 
+      <img src="https://randomuser.me/api/portraits/men/32.jpg" alt="Review 1" /> 
+      <img src="https://randomuser.me/api/portraits/women/45.jpg" alt="Review 2" /> 
+      <img src="https://randomuser.me/api/portraits/women/65.jpg" alt="Review 3" /> 
+      <img src="https://randomuser.me/api/portraits/men/76.jpg" alt="Review 4" /> 
+    </div> 
+    <div class="review-stars"> 
+      ★ ★ ★ ★ ★ 
     </div>
-
-    <div class="review-text"> <!-- Texto de soporte que refuerza la puntuación -->
-      <strong>4.9</strong> from 20+ reviews <!-- Número destacado + prueba social -->
+    <div class="review-text"> 
+      <strong>4.9</strong> from 20+ reviews 
     </div>
-
-  </div> <!-- Fin del contenedor general -->
-  <!-- ========= INICIO DE LA SECCIÓN DE TESTIMONIOS ========= -->
-  <!-- 
-  Usa la etiqueta <section> o <div> según la estructura de tu página.
-  El id="client-stories" es útil para enlaces de anclaje (ej. /#client-stories).
-  La clase "wrap" controla el ancho máximo y el espaciado.
--->
+  </div> 
+  -->
+  <!-- ========= INICIO DE LA SECCIÓN DE TESTIMONIOS =========
   <section class="wrap" id="client-stories">
-
-    <!-- ===== Encabezado de la Sección ===== -->
     <header class="t-head" aria-labelledby="t-title">
       <h2 id="t-title" class="t-title">Expert On-Site Mechanic in Kelowna</h2>
       <p class="t-subtitle">Why wait weeks for a shop? We bring dealership-level diagnostics & expert repairs to you,
         saving you time and money.</p>
     </header>
-
-    <!-- ===== Rejilla Principal de Testimonios ===== -->
-    <!-- NOTA: Este contenedor AHORA envuelve a TODAS las tarjetas. -->
     <div class="t-grid" aria-label="Customer reviews">
-
-      <!-- Testimonio Principal (Héroe) -->
-      <!-- NOTA: Esta es la primera tarjeta DENTRO de la rejilla. Tiene la clase extra "t-card--hero". -->
       <article class="t-card t-card--hero">
         <blockquote class="t-hero-quote">
           "Quicker than we could even get an appointment in a shop."
         </blockquote>
         <p class="t-hero-full-text t-text">
           "Service was great! They completed diagnostic and repairs in our garage, quicker than we could even get an
-          appointment in a shop. Jose and Miguel were great to work with."
+          appointment in a shop. Joseph and Miguel were great to work with."
         </p>
         <div class="t-hero-meta">
           <img class="avatar" src="https://placehold.co/96x96/dbeafe/1e293b?text=GC" alt="Photo of Gabe Carter"
@@ -316,8 +285,6 @@
           </div>
         </div>
       </article>
-
-      <!-- Testimonio de Apoyo #2 -->
       <article class="t-card">
         <div class="t-card-header">
           <img class="avatar" src="https://placehold.co/96x96/dbeafe/1e293b?text=GT" alt="Logo of Growit Trucking"
@@ -333,8 +300,6 @@
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
-
-      <!-- Testimonio de Apoyo #3 -->
       <article class="t-card">
         <div class="t-card-header">
           <img class="avatar" src="https://placehold.co/96x96/dbeafe/1e293b?text=MS" alt="Photo of Matt Sankey"
@@ -349,8 +314,6 @@
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
-
-      <!-- Testimonio de Apoyo #4 -->
       <article class="t-card">
         <div class="t-card-header">
           <img class="avatar" src="https://placehold.co/96x96/dbeafe/1e293b?text=AS" alt="Photo of Abe Salmon"
@@ -361,15 +324,13 @@
           </div>
         </div>
         <p class="t-text">
-          "Great service and great results. Fully recommend Jose as the guy!"
+          "Great service and great results. Fully recommend Joseph as the guy!"
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
-
     </div>
-
   </section>
-  <!-- ========= FIN DE LA SECCIÓN DE TESTIMONIOS ========= -->
+  ========= FIN DE LA SECCIÓN DE TESTIMONIOS ========= -->
   <!-- Conecta tu archivo JavaScript. 'defer' asegura que se ejecute después de que el HTML sea procesado. -->
   <section id="commercial-faq" aria-labelledby="commercial-faq-heading">
     <div class="faq-wrap">
@@ -498,14 +459,73 @@
   COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
   ==========================================================================
   -->
-  <!-- INICIO BOTÓN FLOTANTE CTA -->
-  <div class="floating-cta-container" role="region" aria-label="Call to Action">
-    <!-- Botón Principal (Enlace directo de llamada) -->
-    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Speak to a Mechanic">
-      Speak to a Mechanic
+  <!-- INICIO BOTÓN FLOTANTE CTA (RESTAURADO PARA CONTACTO DIRECTO) -->
+  <div class="floating-cta-container" role="region" aria-label="Quick Contact">
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call an Expert Mechanic Now">
+      Speak with an Expert Mechanic
     </a>
   </div>
   <!-- FIN BOTÓN FLOTANTE CTA -->
+
+  <!-- MODAL DEL EMBUDO DE DIAGNÓSTICO AI -->
+  <div id="diag-modal" class="diag-modal-overlay" aria-hidden="true">
+    <div class="diag-modal-content">
+      <button class="diag-close" onclick="closeDiagModal()" aria-label="Close diagnostic tool">&times;</button>
+
+      <!-- Paso 1: Lead (Hook + Contact) -->
+      <div id="diag-step-1" class="diag-step">
+        <h2 class="diag-title">Step 1: Contact Details</h2>
+        <p class="diag-subtitle">Where should we send your results?</p>
+        <div class="diag-input-group">
+          <input type="text" id="diag-name" placeholder="Your Name" required>
+        </div>
+        <div class="diag-input-group">
+          <input type="text" id="diag-contact" placeholder="Phone or Email" required>
+        </div>
+        <button class="diag-next-btn" onclick="diagNext(2)">Next: Vehicle Info →</button>
+        <p class="diag-privacy">We only use this to send your diagnostic report.</p>
+      </div>
+
+      <!-- Paso 2: Investigación (Vehicle & Symptoms) -->
+      <div id="diag-step-2" class="diag-step" style="display:none;">
+        <h2 class="diag-title">Step 2: Vehicle & Symptoms</h2>
+        <div class="diag-input-group">
+          <input type="text" id="diag-vehicle" placeholder="Year / Make / Model (e.g., 2018 Ford F-150)">
+        </div>
+        <div class="diag-input-group">
+          <textarea id="diag-symptoms"
+            placeholder="Tell us what's happening (e.g., ticking noise, won't start, warning light...)"></textarea>
+        </div>
+        <div class="diag-input-group">
+          <select id="diag-urgency">
+            <option value="flexible">Urgency: Flexible</option>
+            <option value="24h">Need help within 24h</option>
+            <option value="emergency">Emergency / Broken Down</option>
+          </select>
+        </div>
+        <button class="diag-next-btn" onclick="diagNext(3)">Analyze Now — Get Results →</button>
+      </div>
+
+      <!-- Paso 3: Valor (Result & WhatsApp) -->
+      <div id="diag-step-3" class="diag-step" style="display:none;">
+        <div class="diag-success-icon">🤖</div>
+        <h2 class="diag-title">AI Analysis in Progress...</h2>
+        <div class="diag-result-box">
+          <p id="diag-result-placeholder">
+            Based on your description, our Master Mechanic Joseph is reviewing your case. We specialize in mobile
+            on-site
+            repairs and can likely solve this today without a tow.
+          </p>
+        </div>
+        <p class="diag-cta-text">To get an instant repair quote:</p>
+        <div class="diag-action-container">
+          <a href="tel:+12508595467" class="diag-call-btn">Call an Expert Now</a>
+          <a href="sms:+12508595467" class="diag-sms-btn">Text an Expert Instead</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
   <!-- ⭐ Trust Bar - Logros de Confianza -->
   <!-- 🔰 Trusted Achievements – Versión Premium -->
   <!-- 🎖️ Trusted Achievements - Versión Pro Mobile -->
