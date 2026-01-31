@@ -377,3 +377,61 @@ function generateAIHypothesis(symptoms) {
 }
 
 
+/*
+==========================================================================
+HERO TESTIMONIAL CAROUSEL - Auto-rotating con pausa en hover/touch
+==========================================================================
+*/
+(function() {
+  const carouselItems = document.querySelectorAll('.carousel-item');
+  const carouselLink = document.querySelector('.hero-carousel-link');
+
+  if (carouselItems.length === 0 || !carouselLink) return;
+
+  let currentIndex = 0;
+  let intervalId = null;
+  let isPaused = false;
+
+  function showNextTestimonial() {
+    if (isPaused) return;
+
+    // Remove active class from current
+    carouselItems[currentIndex].classList.remove('active');
+
+    // Move to next (loop back to 0 if at end)
+    currentIndex = (currentIndex + 1) % carouselItems.length;
+
+    // Add active class to new current
+    carouselItems[currentIndex].classList.add('active');
+  }
+
+  // Start auto-rotation every 4 seconds
+  function startRotation() {
+    if (!intervalId) {
+      intervalId = setInterval(showNextTestimonial, 4000);
+    }
+  }
+
+  // Pause on hover (desktop)
+  carouselLink.addEventListener('mouseenter', function() {
+    isPaused = true;
+  });
+
+  carouselLink.addEventListener('mouseleave', function() {
+    isPaused = false;
+  });
+
+  // Pause on touch/click (mobile)
+  carouselLink.addEventListener('touchstart', function() {
+    isPaused = true;
+  });
+
+  carouselLink.addEventListener('touchend', function() {
+    setTimeout(function() {
+      isPaused = false;
+    }, 2000); // Resume after 2 seconds
+  });
+
+  // Start the rotation
+  startRotation();
+})();

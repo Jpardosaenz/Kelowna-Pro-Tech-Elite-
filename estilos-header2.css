@@ -397,25 +397,56 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
   }
 
   .hero-grid {
-    /* Creamos dos columnas en pantallas grandes */
-    grid-template-columns: repeat(2, 1fr);
+    /* Creamos dos columnas en pantallas grandes - 50% EXACTO cada una */
+    grid-template-columns: 1fr 1fr;
     gap: 4rem;
-    /* Aumentamos el espacio entre columnas */
+    align-items: stretch;
+    /* CRITICAL: This makes both columns equal height */
+  }
+
+  /* Imagen del hero - MÁS GRANDE */
+  .hero-image {
+    width: 100%;
+    max-width: none;
+    height: 100%;
+    /* Fills the entire left column height */
+    min-height: 600px;
+    /* Force a minimum height to make it "BIG" */
+    object-fit: cover;
+    object-position: center center;
+    border-radius: 20px;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.25);
   }
 
   .hero-text-content {
     /* Alineamos el texto a la izquierda */
     text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* Center content vertically in the column */
+    gap: 1.5rem;
   }
 
   .hero-headline {
-    font-size: clamp(3rem, 5vw, 3.75rem);
-    /* Título más grande en desktop */
+    font-size: clamp(2.5rem, 4vw, 3.2rem);
+    line-height: 1.1;
   }
 
   .hero-support-text {
     margin: 0;
-    /* Quitamos el centrado automático */
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Right column CTA Layout */
+  .hero-cta-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Center horizontally in right column */
+    width: 100%;
+    margin-top: 1rem;
   }
 }
 
@@ -660,39 +691,41 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 ==========================================================================
 */
 /* === Mobile Hero Layout === */
-.hero.mobile-hero {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  padding: 1.25rem;
-  text-align: center;
-  background-color: #fff;
-  /* optional */
-  margin-top: 10px;
-}
+@media (max-width: 767px) {
+  .hero.mobile-hero {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 1.25rem;
+    text-align: center;
+    background-color: #fff;
+    /* optional */
+    margin-top: 10px;
+  }
 
-.hero-image {
-  width: 100%;
-  max-width: 450px;
-  height: auto;
-  border-radius: 12px;
-  margin-bottom: 1rem;
-}
+  .hero-image {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    border-radius: 12px;
+    margin-bottom: 1rem;
+  }
 
-.hero-text h1 {
-  font-size: 2rem;
-  margin: 0.5rem 0;
-}
+  .hero-text h1 {
+    font-size: 2rem;
+    margin: 0.5rem 0;
+  }
 
-.hero-text p {
-  font-size: 1.8rem;
-  /* Aumenta legibilidad móvil */
-  margin-top: 1.25rem;
-  /* Separa del h1 o de la imagen */
-  margin-bottom: 1rem;
-  color: #222;
-  line-height: 1.6;
-  font-weight: 400;
+  .hero-text p {
+    font-size: 1.8rem;
+    /* Aumenta legibilidad móvil */
+    margin-top: 1.25rem;
+    /* Separa del h1 o de la imagen */
+    margin-bottom: 1rem;
+    color: #222;
+    line-height: 1.6;
+    font-weight: 400;
+  }
 }
 
 /* === Review Badge: Contenedor principal === */
@@ -848,15 +881,17 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   }
 }
 
-.hero-image {
-  width: 100%;
-  height: auto;
-  max-height: 720px;
-  border-radius: 12px;
-  display: block;
-  margin: 0 auto;
-  object-fit: cover;
-  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+@media (max-width: 767px) {
+  .hero-image {
+    width: 100%;
+    height: auto;
+    max-height: 720px;
+    border-radius: 12px;
+    display: block;
+    margin: 0 auto;
+    object-fit: cover;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
 }
 
 /* ================================================================
@@ -2015,5 +2050,718 @@ COMPONENTE: MULTI-STEP AI DIAGNOSTIC MODAL
   .diag-modal-content {
     padding: 30px 20px;
     border-radius: 20px;
+  }
+}
+
+/*
+==========================================================================
+PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
+==========================================================================
+*/
+
+/* --- 1. Premium CTA Button - LARGE & CLEAR (CRO 2026) --- */
+.hero-cta-button-premium {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: #ffd700;
+  color: #0f172a;
+  padding: 1.5rem 3rem;
+  border-radius: 16px;
+  text-decoration: none;
+  box-shadow: 0 8px 24px rgba(255, 215, 0, 0.3);
+  transition: all 0.25s ease;
+  width: auto;
+  max-width: 100%;
+  margin: 0;
+  border: 2px solid #eab308;
+  font-family: 'Inter', sans-serif;
+}
+
+.hero-cta-button-premium:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 32px rgba(255, 215, 0, 0.4);
+  background: #ffed4e;
+}
+
+.cta-content {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  width: 100%;
+}
+
+/* Phone Icon */
+.hero-cta-button-premium .cta-icon-svg {
+  width: 32px;
+  height: 32px;
+  stroke-width: 2.5;
+  color: #0f172a;
+  flex-shrink: 0;
+}
+
+/* Single Line Text - Large & Clear */
+.cta-text-single {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #0f172a;
+  white-space: nowrap;
+  letter-spacing: 0.2px;
+}
+
+/* Mobile: Responsive text size */
+@media (max-width: 600px) {
+  .hero-cta-button-premium {
+    padding: 1.25rem 1.5rem;
+    width: 100%;
+  }
+
+  .cta-text-single {
+    font-size: 1.15rem;
+  }
+
+  .hero-cta-button-premium .cta-icon-svg {
+    width: 26px;
+    height: 26px;
+  }
+}
+
+/* Desktop right column adjustment */
+@media (min-width: 768px) {
+  .hero-grid {
+    /* 2 Columns: Image (Left) - Text (Right) */
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+    /* Center vertical alignment for image/text balance */
+  }
+
+  /* LEFT COLUMN WRAPPER & IMAGE */
+  .hero-visual-column {
+    display: block;
+    width: 100%;
+  }
+
+  .hero-image {
+    width: 100%;
+    max-width: none;
+    height: auto;
+    max-height: 400px;
+    object-fit: cover;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  }
+
+  /* RIGHT COLUMN: Text Only */
+  .hero-text-content {
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1.5rem;
+  }
+
+  .hero-headline {
+    font-size: 4.5rem;
+    /* Massive, high-impact headline */
+    line-height: 1.05;
+    margin: 0;
+    font-weight: 800;
+    letter-spacing: -0.02em;
+  }
+
+  .hero-support-text {
+    font-size: 1.5rem;
+    /* Large, easy-to-read secondary text */
+    line-height: 1.4;
+    color: #374151;
+    max-width: 100%;
+  }
+
+  .hero-intro {
+    font-size: 1.15rem;
+    /* Increased from base/small size */
+    font-weight: 700;
+    letter-spacing: 2px;
+    color: #6b7280;
+    /* Muted gray to not compete too much with H1 */
+    margin-bottom: 0.5rem;
+  }
+
+  /* --- BOTTOM CTA FOOTER (CENTERED) --- */
+  .hero-cta-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    /* Strictly Center Everything */
+    gap: 1.25rem;
+    margin-top: 3rem;
+    /* Push below the grid */
+    padding-top: 2rem;
+    border-top: 1px solid #f1f5f9;
+    /* Subtle separator optional */
+  }
+
+  /* Wide Action Bar Button */
+  .hero-cta-button-premium {
+    max-width: 600px;
+    /* Stylized Wide */
+    margin: 0 auto;
+  }
+
+  /* Centered Carousel */
+  .hero-social-proof-premium {
+    max-width: 550px;
+    margin: 0 auto;
+  }
+
+  .hero-trust-badges {
+    justify-content: center;
+    width: 100%;
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 767px) {
+  .hero-visual-column {
+    display: flex;
+    flex-direction: column;
+  }
+
+  .hero-cta-container {
+    margin-top: 1.5rem;
+    gap: 1rem;
+    border-top: none;
+    padding-top: 0;
+  }
+
+  .hero-cta-button-premium {
+    padding: 1.25rem 1.5rem;
+    max-width: 100%;
+    width: 100%;
+    margin: 0 auto;
+  }
+}
+
+
+/* --- 2. Social Proof / Carousel Container (ELONGATED / HORIZONTAL) --- */
+.hero-social-proof-premium {
+  display: flex;
+  flex-direction: row;
+  /* Horizontal layout */
+  align-items: center;
+  justify-content: flex-start;
+  gap: 1rem;
+  padding: 1rem 1.5rem;
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  width: 100%;
+  max-width: 600px;
+  margin: 0 auto;
+  cursor: pointer;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.hero-social-proof-premium:hover {
+  box-shadow: 0 6px 24px rgba(0, 0, 0, 0.12);
+  transform: translateY(-2px);
+}
+
+/* Avatars Row - Compact */
+.proof-avatars {
+  display: flex;
+  margin: 0;
+  margin-right: 12px;
+}
+
+.proof-avatar {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  border: 2px solid #fff;
+  margin-left: -10px;
+}
+
+.proof-avatar:first-child {
+  margin-left: 0;
+}
+
+/* Carousel Horizontal Logic */
+.carousel-testimonials {
+  flex-grow: 1;
+  /* Take up remaining space */
+  text-align: left;
+  /* Align text left */
+  min-height: auto;
+  display: block;
+  /* Allow block for carousel content */
+  overflow: hidden;
+}
+
+/* Hide all items by default */
+.hero-social-proof-premium .carousel-item {
+  display: none !important;
+  flex-direction: row;
+  /* Horizontal inner */
+  align-items: center;
+  width: 100%;
+  gap: 8px;
+  animation: slideLeft 0.5s ease-out;
+}
+
+/* Show only active item */
+.hero-social-proof-premium .carousel-item.active {
+  display: flex !important;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(5px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes slideLeft {
+  from {
+    opacity: 0;
+    transform: translateX(10px);
+  }
+
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+/* Carousel Inner Elements */
+.proof-stars {
+  color: #fbbf24;
+  /* Amber-400 for stars */
+  font-size: 1rem;
+  margin: 0;
+  white-space: nowrap;
+}
+
+.proof-quote {
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: #1e293b;
+  /* Slate-800 */
+  font-weight: 500;
+  line-height: 1.4;
+  white-space: normal;
+  margin: 0;
+}
+
+.proof-author {
+  color: #64748b;
+  /* Slate-500 */
+  font-weight: 400;
+  font-size: 0.85rem;
+  margin-left: 4px;
+}
+
+/* Google hint - clickable indicator */
+.carousel-google-hint {
+  font-size: 0.8rem;
+  color: #4285F4;
+  font-weight: 600;
+  white-space: nowrap;
+  margin-left: auto;
+  padding-left: 1rem;
+  transition: color 0.2s ease;
+}
+
+.hero-social-proof-premium:hover .carousel-google-hint {
+  color: #1a73e8;
+  text-decoration: underline;
+}
+
+/* ================================================================
+   CRO 2026: Dual CTA Buttons Layout
+   ================================================================ */
+.hero-cta-buttons {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1.25rem;
+  width: 100%;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+}
+
+@media (min-width: 700px) {
+  .hero-cta-buttons {
+    flex-direction: row;
+    justify-content: center;
+    gap: 1.5rem;
+    padding: 0;
+  }
+}
+
+/* Secondary CTA - Text Us - Large & Clear */
+.hero-cta-button-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  background: #fff;
+  color: #0f172a;
+  padding: 1.5rem 2.5rem;
+  border-radius: 16px;
+  text-decoration: none;
+  border: 2px solid #0f172a;
+  font-family: 'Inter', sans-serif;
+  font-size: 1.25rem;
+  font-weight: 700;
+  transition: all 0.25s ease;
+  min-width: 180px;
+}
+
+.hero-cta-button-secondary:hover {
+  background: #0f172a;
+  color: #fff;
+  transform: translateY(-3px);
+  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.25);
+}
+
+.hero-cta-button-secondary .cta-icon-svg {
+  width: 28px;
+  height: 28px;
+  transition: stroke 0.25s ease;
+}
+
+.hero-cta-button-secondary:hover .cta-icon-svg {
+  stroke: #fff;
+}
+
+/* Mobile: Full width buttons stacked */
+@media (max-width: 699px) {
+  .hero-cta-button-secondary {
+    width: 100%;
+    max-width: 400px;
+    padding: 1.25rem 2rem;
+    font-size: 1.15rem;
+  }
+}
+
+/* ================================================================
+   CRO 2026: Premium Social Proof Card - LARGE & CLEAR
+   ================================================================ */
+.hero-social-proof-card-2026 {
+  display: flex;
+  align-items: center;
+  gap: 1.75rem;
+  padding: 1.5rem 2rem;
+  background: #fff;
+  border-radius: 20px;
+  box-shadow: 0 6px 30px rgba(0, 0, 0, 0.08);
+  border: 1px solid #e2e8f0;
+  text-decoration: none;
+  width: 100%;
+  max-width: 700px;
+  margin: 1.5rem auto 0;
+  cursor: pointer;
+  transition: all 0.25s ease;
+}
+
+.hero-social-proof-card-2026:hover {
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.12);
+  transform: translateY(-4px);
+  border-color: #ffd700;
+}
+
+/* Rating Block - Large & Prominent */
+.proof-rating-block {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding-right: 1.75rem;
+  border-right: 2px solid #f1f5f9;
+  flex-shrink: 0;
+}
+
+.proof-rating-number {
+  font-family: 'Inter', sans-serif;
+  font-size: 3rem;
+  font-weight: 900;
+  color: #0f172a;
+  line-height: 1;
+}
+
+.proof-rating-stars {
+  font-size: 1.1rem;
+  color: #fbbf24;
+  letter-spacing: 2px;
+  margin: 6px 0;
+}
+
+.proof-rating-count {
+  font-size: 0.9rem;
+  color: #64748b;
+  font-weight: 600;
+}
+
+/* Testimonial Block - Clear & Readable */
+.proof-testimonial-block {
+  flex: 1;
+  min-width: 0;
+  overflow: hidden;
+}
+
+.proof-context {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: #059669;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 0.75rem;
+}
+
+.hero-social-proof-card-2026 .carousel-testimonials {
+  min-height: 60px;
+}
+
+.hero-social-proof-card-2026 .carousel-item {
+  display: none;
+  animation: fadeSlide 0.4s ease;
+}
+
+.hero-social-proof-card-2026 .carousel-item.active {
+  display: block;
+}
+
+@keyframes fadeSlide {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.hero-social-proof-card-2026 .proof-quote {
+  font-family: 'Inter', sans-serif;
+  font-size: 1.2rem;
+  font-weight: 500;
+  color: #1e293b;
+  line-height: 1.5;
+  margin: 0;
+  font-style: italic;
+}
+
+.hero-social-proof-card-2026 .proof-author {
+  font-size: 1rem;
+  color: #64748b;
+  font-weight: 600;
+  margin-top: 6px;
+  display: block;
+}
+
+/* Google Badge - Clear */
+.proof-google-badge {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding-left: 1.5rem;
+  flex-shrink: 0;
+}
+
+.proof-google-badge .google-icon {
+  width: 32px;
+  height: 32px;
+}
+
+.proof-google-badge span {
+  font-size: 0.8rem;
+  color: #64748b;
+  font-weight: 700;
+}
+
+/* Mobile adjustments - Still Large & Clear */
+@media (max-width: 600px) {
+  .hero-social-proof-card-2026 {
+    flex-direction: column;
+    gap: 1.25rem;
+    padding: 1.5rem;
+    text-align: center;
+  }
+
+  .proof-rating-block {
+    flex-direction: row;
+    gap: 1rem;
+    padding-right: 0;
+    padding-bottom: 1rem;
+    border-right: none;
+    border-bottom: 2px solid #f1f5f9;
+    width: 100%;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .proof-rating-number {
+    font-size: 2.5rem;
+  }
+
+  .proof-rating-stars {
+    font-size: 1rem;
+  }
+
+  .proof-testimonial-block {
+    width: 100%;
+  }
+
+  .proof-context {
+    text-align: center;
+  }
+
+  .hero-social-proof-card-2026 .proof-quote {
+    font-size: 1.1rem;
+  }
+
+  .proof-google-badge {
+    flex-direction: row;
+    padding-left: 0;
+    padding-top: 1rem;
+    border-top: 1px solid #f1f5f9;
+    width: 100%;
+    justify-content: center;
+  }
+}
+
+.carousel-hint {
+  display: none;
+  /* Hide hint for cleaner look, or make it an arrow */
+}
+
+/* --- 4. Availability Indicator --- */
+.hero-availability {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+  color: #059669;
+  /* Green 600 */
+  font-weight: 600;
+  padding: 6px 12px;
+  background: #ecfdf5;
+  border-radius: 20px;
+  border: 1px solid #d1fae5;
+  width: fit-content;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* --- Trust Row (Availability & Badges) --- */
+.hero-trust-row {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 0.5rem;
+}
+
+.hero-availability {
+  margin: 0;
+  /* Left align */
+  width: 100%;
+  justify-content: center;
+  /* Or left? Center looks balanced under button */
+  background: transparent;
+  padding: 0;
+  border: none;
+}
+
+.availability-text {
+  color: #059669;
+  font-weight: 700;
+}
+
+
+.availability-dot {
+  width: 8px;
+  height: 8px;
+  background: #10b981;
+  border-radius: 50%;
+  box-shadow: 0 0 0 2px #d1fae5;
+  animation: pulseDot 2s infinite;
+}
+
+@keyframes pulseDot {
+  0% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0.7);
+  }
+
+  70% {
+    box-shadow: 0 0 0 6px rgba(16, 185, 129, 0);
+  }
+
+  100% {
+    box-shadow: 0 0 0 0 rgba(16, 185, 129, 0);
+  }
+}
+
+
+/* --- 5. Trust Badges --- */
+.hero-trust-badges {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 0.75rem 1.25rem;
+  margin-top: 1.25rem;
+  width: 100%;
+}
+
+.trust-badge {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.85rem;
+  color: #475569;
+  font-weight: 500;
+}
+
+.badge-icon {
+  width: 16px;
+  height: 16px;
+  color: #059669;
+  /* Green checkmark */
+  stroke-width: 3;
+}
+
+/* Desktop Alignment Overrides */
+@media (min-width: 768px) {
+
+  .hero-social-proof-premium,
+  .hero-cta-button-premium,
+  .hero-availability {
+    /* Align left on desktop if parent is aligned left */
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .hero-trust-badges {
+    justify-content: center;
+  }
+
+  .hero-social-proof-premium {
+    max-width: 600px;
+    align-items: center;
   }
 }
