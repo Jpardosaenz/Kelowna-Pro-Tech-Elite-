@@ -2119,7 +2119,16 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
   }
 
   .cta-text-single {
-    font-size: 1.15rem;
+    font-size: 1.1rem;
+    white-space: normal;
+    text-align: center;
+    line-height: 1.3;
+  }
+
+  .cta-content {
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.5rem;
   }
 
   .hero-cta-button-premium .cta-icon-svg {
