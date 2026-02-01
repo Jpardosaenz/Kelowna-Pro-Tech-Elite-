@@ -2101,8 +2101,9 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
   flex-shrink: 0;
 }
 
-/* Single Line Text - Large & Clear */
-.cta-text-single {
+/* CTA Text - Responsive Show/Hide */
+.cta-text-mobile,
+.cta-text-desktop {
   font-family: 'Inter', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
@@ -2111,29 +2112,46 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
   letter-spacing: 0.2px;
 }
 
+/* Mobile: Show short text, hide phone number */
+.cta-text-desktop {
+  display: none;
+}
+
+.cta-text-mobile {
+  display: inline;
+}
+
+/* Desktop: Show full text with phone number */
+@media (min-width: 601px) {
+  .cta-text-desktop {
+    display: inline;
+  }
+
+  .cta-text-mobile {
+    display: none;
+  }
+}
+
 /* Mobile: Responsive text size */
 @media (max-width: 600px) {
   .hero-cta-button-premium {
-    padding: 1.25rem 1.5rem;
-    width: 100%;
+    padding: 1rem 1.75rem;
+    width: auto;
+    max-width: 100%;
   }
 
-  .cta-text-single {
-    font-size: 1.1rem;
-    white-space: normal;
-    text-align: center;
-    line-height: 1.3;
+  .cta-text-mobile {
+    font-size: 1.15rem;
   }
 
   .cta-content {
-    flex-wrap: wrap;
     justify-content: center;
-    gap: 0.5rem;
+    gap: 0.6rem;
   }
 
   .hero-cta-button-premium .cta-icon-svg {
-    width: 26px;
-    height: 26px;
+    width: 24px;
+    height: 24px;
   }
 }
 
@@ -2248,9 +2266,9 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
   }
 
   .hero-cta-button-premium {
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.75rem;
     max-width: 100%;
-    width: 100%;
+    width: auto;
     margin: 0 auto;
   }
 }
