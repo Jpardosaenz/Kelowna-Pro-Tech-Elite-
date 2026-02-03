@@ -435,3 +435,81 @@ HERO TESTIMONIAL CAROUSEL - Auto-rotating con pausa en hover/touch
   // Start the rotation
   startRotation();
 })();
+
+
+/*
+==========================================================================
+TRACKING: PHONE & SMS CLICKS (GA4 Conversion Events)
+==========================================================================
+Tracks all tel: and sms: link clicks across the entire site.
+Critical for measuring conversion sources (Website vs GMB).
+*/
+
+document.addEventListener('DOMContentLoaded', function() {
+  // Track all tel: links (phone clicks)
+  const telLinks = document.querySelectorAll('a[href^="tel:"]');
+
+  telLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const phoneNumber = this.getAttribute('href');
+      const linkText = this.textContent.trim();
+      const linkClass = this.className;
+
+      // Send event to GA4
+      if (typeof gtag === 'function') {
+        gtag('event', 'phone_click', {
+          'event_category': 'conversion',
+          'event_label': linkText || 'Phone Click',
+          'phone_number': phoneNumber,
+          'link_class': linkClass,
+          'page_location': window.location.pathname
+        });
+      }
+
+      // Console log for debugging
+      console.group('📞 PHONE CLICK TRACKED');
+      console.log('Number:', phoneNumber);
+      console.log('Link Text:', linkText);
+      console.log('Page:', window.location.pathname);
+      console.log('Class:', linkClass);
+      console.groupEnd();
+    });
+  });
+
+  // Track all sms: links (SMS clicks)
+  const smsLinks = document.querySelectorAll('a[href^="sms:"]');
+
+  smsLinks.forEach(link => {
+    link.addEventListener('click', function() {
+      const phoneNumber = this.getAttribute('href');
+      const linkText = this.textContent.trim();
+      const linkClass = this.className;
+
+      // Send event to GA4
+      if (typeof gtag === 'function') {
+        gtag('event', 'sms_click', {
+          'event_category': 'conversion',
+          'event_label': linkText || 'SMS Click',
+          'phone_number': phoneNumber,
+          'link_class': linkClass,
+          'page_location': window.location.pathname
+        });
+      }
+
+      // Console log for debugging
+      console.group('💬 SMS CLICK TRACKED');
+      console.log('Number:', phoneNumber);
+      console.log('Link Text:', linkText);
+      console.log('Page:', window.location.pathname);
+      console.log('Class:', linkClass);
+      console.groupEnd();
+    });
+  });
+
+  // Summary log on page load
+  console.group('🎯 CONVERSION TRACKING INITIALIZED');
+  console.log(`Phone links tracked: ${telLinks.length}`);
+  console.log(`SMS links tracked: ${smsLinks.length}`);
+  console.log('Events will be sent to GA4 on click');
+  console.groupEnd();
+});
