@@ -16,9 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuTrigger = document.querySelector(".kpem-menu-trigger");
   const menuCloseButton = document.querySelector(".menu-close-button");
 
-  console.log("DEBUG: Estado inicial del menú", { 
-    botonHamburguesa: menuTrigger, 
-    botonCerrar: menuCloseButton 
+  console.log("DEBUG: Estado inicial del menú", {
+    botonHamburguesa: menuTrigger,
+    botonCerrar: menuCloseButton
   });
 
   function openMenu() {
@@ -72,7 +72,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
     floatingCtaContainer.style.transition = baseTransition;
     floatingCtaContainer.style.display = "none";
-    
+
     const threshold = 300; // Only show after scrolling past the Hero
     let isVisible = false;
     let idleTimer = null;
@@ -132,9 +132,9 @@ document.addEventListener("DOMContentLoaded", () => {
 
     window.addEventListener("scroll", handleScroll);
     handleScroll();
-    
+
     ["touchstart", "click"].forEach(evt => {
-        floatingCtaContainer.addEventListener(evt, resetIdleTimer);
+      floatingCtaContainer.addEventListener(evt, resetIdleTimer);
     });
   }
 });
@@ -153,18 +153,20 @@ let currentLead = {
   urgency: ''
 };
 
-function openDiagnosticModal() {
+function openDiagModal() {
   const modal = document.getElementById('diag-modal');
   if (modal) {
     modal.style.display = 'flex';
     modal.setAttribute('aria-hidden', 'false');
     document.body.style.overflow = 'hidden';
 
-    // GA4 Tracking
+    // Enhanced GA4 Tracking - Modal Opened
     if (typeof gtag === 'function') {
-      gtag('event', 'diagnostic_start', {
-        'event_category': 'engagement',
-        'event_label': 'AI_Diagnostic_Button'
+      gtag('event', 'widget_clicked', {
+        'event_category': 'Lead Generation',
+        'event_label': 'Red Side Widget - Ask a Mechanic',
+        'widget_position': 'side_right',
+        'funnel_step': 'modal_open'
       });
     }
   }
@@ -173,41 +175,86 @@ function openDiagnosticModal() {
 function closeDiagModal() {
   const modal = document.getElementById('diag-modal');
   if (modal) {
+    // Track abandonment before closing
+    const currentStep = document.querySelector('.diag-step[style*="display: block"], .diag-step:not([style*="display: none"])');
+    const stepNumber = currentStep ? currentStep.id.replace('diag-step-', '') : '1';
+
+    const hasName = currentLead.name ? 'yes' : 'no';
+    const hasVehicle = currentLead.vehicle ? 'yes' : 'no';
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'form_abandon', {
+        'event_category': 'Lead Generation',
+        'event_label': `Abandoned at Step ${stepNumber}`,
+        'funnel_step': `step_${stepNumber}_abandon`,
+        'has_contact_info': hasName,
+        'has_vehicle_info': hasVehicle
+      });
+    }
+
     modal.style.display = 'none';
     modal.setAttribute('aria-hidden', 'true');
     document.body.style.overflow = '';
   }
 }
 
-function diagNext(step) {
+async function diagNext(step) {
   // Capture current step data
   if (step === 2) {
     currentLead.name = document.getElementById('diag-name').value;
     currentLead.contact = document.getElementById('diag-contact').value;
-    
+
     if (!currentLead.name || !currentLead.contact) {
       alert("Please provide your name and contact info to continue.");
       return;
     }
-    
-    // ENVIAR LEAD AL INSTANTE (Captura temprana antes de que cierren el modal)
-    sendLeadToAdmin({
+
+    // LEAD PARCIAL: Captura contacto básico (importante para follow-up si abandonan el formulario)
+    const result = await sendLeadToAdmin({
       name: currentLead.name,
       contact: currentLead.contact,
-      type: "Early Lead (Step 1 Complete)"
+      type: "🟡 PARTIAL LEAD - Contact Only (May not complete form)"
     });
+
+    // GA4 Tracking - Partial Lead Captured
+    if (typeof gtag === 'function') {
+      gtag('event', 'generate_lead', {
+        'event_category': 'Lead Generation',
+        'event_label': 'Partial Lead - Step 1 Complete',
+        'funnel_step': 'step_1_complete',
+        'lead_type': 'partial',
+        'email_sent': result.success ? 'yes' : 'no'
+      });
+    }
+
+    // Mostrar feedback discreto
+    showLeadFeedback(result.success);
+
   } else if (step === 3) {
     currentLead.vehicle = document.getElementById('diag-vehicle').value;
     currentLead.symptoms = document.getElementById('diag-symptoms').value;
     currentLead.urgency = document.getElementById('diag-urgency').value;
-    
+
     // Iniciar Análisis (Async)
     const placeholder = document.getElementById('diag-result-placeholder');
     if (placeholder) {
       placeholder.innerHTML = "<em>Procesando diagnóstico experto...</em>";
     }
-    
+
     fetchAIAnalysis(currentLead);
+
+    // LEAD COMPLETO: Toda la información capturada (listo para cotizar)
+    const result = await sendLeadToAdmin({
+      name: currentLead.name,
+      contact: currentLead.contact,
+      vehicle: currentLead.vehicle,
+      symptoms: currentLead.symptoms,
+      urgency: currentLead.urgency,
+      type: "✅ COMPLETE LEAD - Full Info (Ready to Quote)"
+    });
+
+    // Mostrar feedback visual de envío
+    showLeadFeedback(result.success);
 
     // TRACKING DETALLADO: Enviar datos completos a GA4 y Consola
     console.group("🚀 NUEVO LEAD CAPTURADO");
@@ -216,14 +263,26 @@ function diagNext(step) {
     console.log("Vehículo:", currentLead.vehicle);
     console.log("Síntomas:", currentLead.symptoms);
     console.log("Urgencia:", currentLead.urgency);
+    console.log("Email enviado:", result.success ? "✅ Sí" : "❌ No");
     console.groupEnd();
 
+    // GA4 Tracking - Complete Lead (High-Value Conversion)
     if (typeof gtag === 'function') {
-      gtag('event', 'lead_form_submitted', {
-        'event_category': 'conversion',
-        'event_label': 'AI_Diagnostic_Funnel',
-        'user_name': currentLead.name,
-        'user_contact': currentLead.contact
+      gtag('event', 'generate_lead', {
+        'event_category': 'Lead Generation',
+        'event_label': 'Complete Lead - Step 2 Complete',
+        'funnel_step': 'step_2_complete',
+        'lead_type': 'complete',
+        'urgency': currentLead.urgency,
+        'email_sent': result.success ? 'yes' : 'no',
+        'value': 150  // Estimated value of a complete lead in CAD
+      });
+
+      // Also send as conversion event for easier tracking
+      gtag('event', 'conversion', {
+        'event_category': 'Lead Generation',
+        'event_label': 'Complete Diagnostic Lead',
+        'send_to': 'G-1GDM77733G'
       });
     }
   }
@@ -231,7 +290,7 @@ function diagNext(step) {
   // Visual transition between steps
   const steps = document.querySelectorAll('.diag-step');
   steps.forEach(s => s.style.display = 'none');
-  
+
   const nextStep = document.getElementById(`diag-step-${step}`);
   if (nextStep) {
     nextStep.style.display = 'block';
@@ -239,21 +298,96 @@ function diagNext(step) {
 }
 
 /**
- * Captura el lead de forma inmediata para que Jose Edwin no pierda el contacto.
- * Próximo paso: Conectar con Google Sheets o EmailJS.
+ * Envía el lead capturado por email usando FormSubmit.co
+ * Los emails llegan directamente a info@kelownaprotechmobilemech.com
  */
-function sendLeadToAdmin(data) {
-  console.group("📬 LEAD ENVIADO AL ADMINISTRADOR (Simulación)");
-  console.log("Fecha:", new Date().toLocaleString());
+async function sendLeadToAdmin(data) {
+  const timestamp = new Date().toLocaleString();
+
+  console.group("📬 ENVIANDO LEAD AL ADMINISTRADOR");
+  console.log("Fecha:", timestamp);
   console.log("Nombre:", data.name);
   console.log("Contacto:", data.contact);
   console.log("Estado:", data.type || "Lead Completo");
   console.groupEnd();
 
-  // Guardar en una lista persistente de la sesión por si acaso
+  // Guardar en localStorage como backup
   const history = JSON.parse(localStorage.getItem('kpem_leads_history') || "[]");
   history.push({ ...data, timestamp: new Date().toISOString() });
   localStorage.setItem('kpem_leads_history', JSON.stringify(history));
+
+  // Preparar datos para FormSubmit
+  const formData = {
+    name: data.name || 'No proporcionado',
+    contact: data.contact || 'No proporcionado',
+    vehicle: data.vehicle || 'No proporcionado',
+    symptoms: data.symptoms || 'No proporcionado',
+    urgency: data.urgency || 'No especificado',
+    leadType: data.type || 'Lead Completo',
+    timestamp: timestamp,
+    _subject: `🚗 Nuevo Lead: ${data.name} - ${data.type || 'Diagnóstico Completo'}`,
+    _template: 'table',
+    _captcha: 'false'
+  };
+
+  try {
+    const response = await fetch('https://formsubmit.co/info@kelownaprotechmobilemech.com', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Accept': 'application/json'
+      },
+      body: JSON.stringify(formData)
+    });
+
+    if (response.ok) {
+      console.log('✅ Lead enviado exitosamente por email');
+      return { success: true };
+    } else {
+      console.error('⚠️ Error al enviar lead:', response.status);
+      return { success: false, error: 'Error del servidor' };
+    }
+  } catch (error) {
+    console.error('❌ Error de red al enviar lead:', error);
+    return { success: false, error: error.message };
+  }
+}
+
+/**
+ * Muestra feedback visual discreto del envío del lead
+ */
+function showLeadFeedback(success) {
+  // Crear o obtener elemento de feedback
+  let feedbackEl = document.getElementById('lead-feedback');
+
+  if (!feedbackEl) {
+    feedbackEl = document.createElement('div');
+    feedbackEl.id = 'lead-feedback';
+    feedbackEl.className = 'lead-feedback-toast';
+    document.body.appendChild(feedbackEl);
+  }
+
+  // Configurar mensaje y estilo
+  if (success) {
+    feedbackEl.textContent = '✅ Information sent successfully';
+    feedbackEl.className = 'lead-feedback-toast success';
+  } else {
+    feedbackEl.textContent = '⚠️ Saved locally - we\'ll follow up';
+    feedbackEl.className = 'lead-feedback-toast warning';
+  }
+
+  // Mostrar y ocultar después de 3 segundos
+  feedbackEl.style.display = 'block';
+  setTimeout(() => {
+    feedbackEl.style.opacity = '1';
+  }, 10);
+
+  setTimeout(() => {
+    feedbackEl.style.opacity = '0';
+    setTimeout(() => {
+      feedbackEl.style.display = 'none';
+    }, 300);
+  }, 3000);
 }
 
 /**
@@ -288,7 +422,7 @@ async function fetchAIAnalysis(data) {
 
     const result = await response.json();
     let aiText = result[0]?.generated_text || result.generated_text || "";
-    
+
     if (aiText.includes("[ANS]")) {
       aiText = aiText.split("[ANS]").pop().trim();
     }
@@ -326,7 +460,7 @@ function displayExpertText(text) {
  */
 function generateAIHypothesis(symptoms) {
   const text = symptoms.toLowerCase();
-  
+
   // Función ultra-sensible (maneja typos extremos como 'sart', 'art', 'stat', 'stert')
   const match = (keys) => keys.some(k => text.includes(k));
 
@@ -344,7 +478,7 @@ function generateAIHypothesis(symptoms) {
   else if (match(["art", "start", "stat", "prend", "bater", "battery", "crank"])) {
     hypothesis = "Since the vehicle <strong>won't start</strong>, our primary focus is the starting circuit. We can perform a professional load test on your battery and starter right in your driveway today.";
   }
-// ... rest of cases stay similar but with matched keys updated ...
+  // ... rest of cases stay similar but with matched keys updated ...
   // CASO 4: Ruidos mecánicos
   else if (match(["noise", "ruido", "clicking", "ticking", "knock", "thump", "golpe"])) {
     hypothesis = "A <strong>mechanical noise</strong> often points to internal engine timing elements, accessory belt drive components, or suspension wear. We can perform a pinpoint test to find the exact source.";
@@ -382,7 +516,7 @@ function generateAIHypothesis(symptoms) {
 HERO TESTIMONIAL CAROUSEL - Auto-rotating con pausa en hover/touch
 ==========================================================================
 */
-(function() {
+(function () {
   const carouselItems = document.querySelectorAll('.carousel-item');
   const carouselLink = document.querySelector('.hero-carousel-link');
 
@@ -413,21 +547,21 @@ HERO TESTIMONIAL CAROUSEL - Auto-rotating con pausa en hover/touch
   }
 
   // Pause on hover (desktop)
-  carouselLink.addEventListener('mouseenter', function() {
+  carouselLink.addEventListener('mouseenter', function () {
     isPaused = true;
   });
 
-  carouselLink.addEventListener('mouseleave', function() {
+  carouselLink.addEventListener('mouseleave', function () {
     isPaused = false;
   });
 
   // Pause on touch/click (mobile)
-  carouselLink.addEventListener('touchstart', function() {
+  carouselLink.addEventListener('touchstart', function () {
     isPaused = true;
   });
 
-  carouselLink.addEventListener('touchend', function() {
-    setTimeout(function() {
+  carouselLink.addEventListener('touchend', function () {
+    setTimeout(function () {
       isPaused = false;
     }, 2000); // Resume after 2 seconds
   });
@@ -445,12 +579,12 @@ Tracks all tel: and sms: link clicks across the entire site.
 Critical for measuring conversion sources (Website vs GMB).
 */
 
-document.addEventListener('DOMContentLoaded', function() {
+document.addEventListener('DOMContentLoaded', function () {
   // Track all tel: links (phone clicks)
   const telLinks = document.querySelectorAll('a[href^="tel:"]');
 
   telLinks.forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       const phoneNumber = this.getAttribute('href');
       const linkText = this.textContent.trim();
       const linkClass = this.className;
@@ -480,7 +614,7 @@ document.addEventListener('DOMContentLoaded', function() {
   const smsLinks = document.querySelectorAll('a[href^="sms:"]');
 
   smsLinks.forEach(link => {
-    link.addEventListener('click', function() {
+    link.addEventListener('click', function () {
       const phoneNumber = this.getAttribute('href');
       const linkText = this.textContent.trim();
       const linkClass = this.className;
@@ -512,4 +646,44 @@ document.addEventListener('DOMContentLoaded', function() {
   console.log(`SMS links tracked: ${smsLinks.length}`);
   console.log('Events will be sent to GA4 on click');
   console.groupEnd();
+});
+
+
+/*
+==========================================================================
+DIAGNOSTIC WIDGET FLOTANTE - Show/Hide based on scroll
+==========================================================================
+Similar to floating CTA, but specific for diagnostic modal trigger
+*/
+
+document.addEventListener('DOMContentLoaded', function () {
+  const widget = document.getElementById('diagnostic-widget-btn');
+
+  if (!widget) return;
+
+  const threshold = 400; // Show after scrolling 400px
+  let isVisible = false;
+
+  function checkScroll() {
+    if (window.scrollY > threshold && !isVisible) {
+      widget.style.display = 'flex';
+      requestAnimationFrame(() => {
+        widget.style.opacity = '1';
+        widget.style.transform = 'translateY(0) scale(1)';
+      });
+      isVisible = true;
+    } else if (window.scrollY <= threshold && isVisible) {
+      widget.style.opacity = '0';
+      widget.style.transform = 'translateY(20px) scale(0.8)';
+      isVisible = false;
+      setTimeout(() => {
+        if (!isVisible) widget.style.display = 'none';
+      }, 300);
+    }
+  }
+
+  // WIDGET IS NOW ALWAYS VISIBLE - Scroll logic removed for "Ask a Mechanic" side button
+  // window.addEventListener('scroll', checkScroll);
+  // checkScroll(); // Check on load
+  checkScroll(); // Check on load
 });
