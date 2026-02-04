@@ -2198,57 +2198,107 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
     font-weight: 800;
     letter-spacing: -0.02em;
   }
+}
 
-  .hero-support-text {
-    font-size: 1.5rem;
-    /* Large, easy-to-read secondary text */
-    line-height: 1.4;
-    color: #374151;
-    max-width: 100%;
-  }
+/* 
+========================================================================== 
+RED SIDE WIDGET (ASK A MECHANIC) - Wrench.com Style
+Fixed vertical button on right side - ALWAYS VISIBLE
+========================================================================== 
+*/
+.side-ask-mechanic-btn {
+  position: fixed;
+  right: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  background-color: #FF4444;
+  /* Bright Red */
+  color: #FFFFFF;
+  border: none;
+  padding: 16px 8px;
+  /* Vertical padding larger */
+  border-radius: 6px 0 0 6px;
+  cursor: pointer;
+  z-index: 9999;
+  box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 700;
+  font-size: 16px;
+  writing-mode: vertical-rl;
+  /* Text vertical */
+  text-orientation: mixed;
+  letter-spacing: 0.05em;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
 
-  .hero-intro {
-    font-size: 1.15rem;
-    /* Increased from base/small size */
-    font-weight: 700;
-    letter-spacing: 2px;
-    color: #6b7280;
-    /* Muted gray to not compete too much with H1 */
-    margin-bottom: 0.5rem;
-  }
+.side-ask-mechanic-btn:hover {
+  background-color: #E63946;
+  /* Slightly darker red */
+  transform: translateY(-50%) translateX(-2px);
+}
 
-  /* --- BOTTOM CTA FOOTER (CENTERED) --- */
-  .hero-cta-container {
-    width: 100%;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    /* Strictly Center Everything */
-    gap: 1.25rem;
-    margin-top: 3rem;
-    /* Push below the grid */
-    padding-top: 2rem;
-    border-top: 1px solid #f1f5f9;
-    /* Subtle separator optional */
-  }
+.side-ask-mechanic-btn:active {
+  transform: translateY(-50%) translateX(0);
+}
 
-  /* Wide Action Bar Button */
-  .hero-cta-button-premium {
-    max-width: 600px;
-    /* Stylized Wide */
-    margin: 0 auto;
+@media (max-width: 600px) {
+  .side-ask-mechanic-btn {
+    padding: 12px 6px;
+    font-size: 14px;
+    right: 0;
   }
+}
 
-  /* Centered Carousel */
-  .hero-social-proof-premium {
-    max-width: 550px;
-    margin: 0 auto;
-  }
+.hero-support-text {
+  font-size: 1.5rem;
+  /* Large, easy-to-read secondary text */
+  line-height: 1.4;
+  color: #374151;
+  max-width: 100%;
+}
 
-  .hero-trust-badges {
-    justify-content: center;
-    width: 100%;
-  }
+.hero-intro {
+  font-size: 1.15rem;
+  /* Increased from base/small size */
+  font-weight: 700;
+  letter-spacing: 2px;
+  color: #6b7280;
+  /* Muted gray to not compete too much with H1 */
+  margin-bottom: 0.5rem;
+}
+
+/* --- BOTTOM CTA FOOTER (CENTERED) --- */
+.hero-cta-container {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /* Strictly Center Everything */
+  gap: 1.25rem;
+  margin-top: 3rem;
+  /* Push below the grid */
+  padding-top: 2rem;
+  border-top: 1px solid #f1f5f9;
+  /* Subtle separator optional */
+}
+
+/* Wide Action Bar Button */
+.hero-cta-button-premium {
+  max-width: 600px;
+  /* Stylized Wide */
+  margin: 0 auto;
+}
+
+/* Centered Carousel */
+.hero-social-proof-premium {
+  max-width: 550px;
+  margin: 0 auto;
+}
+
+.hero-trust-badges {
+  justify-content: center;
+  width: 100%;
+}
 }
 
 /* Mobile Adjustments */
@@ -2575,28 +2625,68 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
     opacity: 0;
     transform: translateY(8px);
   }
+
   to {
     opacity: 1;
     transform: translateY(0);
   }
 }
 
+/* Enhanced Review Layout with Avatars */
+.review-with-avatar {
+  display: flex;
+  gap: 12px;
+  align-items: flex-start;
+  width: 100%;
+}
+
+.review-avatar {
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-weight: 700;
+  font-size: 14px;
+  flex-shrink: 0;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+}
+
+.review-content {
+  flex: 1;
+  min-width: 0;
+}
+
 .hero-social-proof-card-2026 .proof-quote {
   font-family: 'Inter', sans-serif;
-  font-size: 1.2rem;
+  font-size: 0.95rem;
   font-weight: 500;
   color: #1e293b;
   line-height: 1.5;
-  margin: 0;
+  margin: 0 0 8px 0;
   font-style: italic;
 }
 
+.review-meta {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  flex-wrap: wrap;
+}
+
 .hero-social-proof-card-2026 .proof-author {
-  font-size: 1rem;
-  color: #64748b;
+  font-size: 0.9rem;
+  color: #1e293b;
   font-weight: 600;
-  margin-top: 6px;
-  display: block;
+  margin: 0;
+}
+
+.review-service {
+  font-size: 0.85rem;
+  color: #64748b;
+  font-weight: 500;
 }
 
 /* Google Badge - Clear */
@@ -2653,12 +2743,22 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
     width: 100%;
   }
 
-  .proof-context {
-    text-align: center;
+  .review-with-avatar {
+    text-align: left;
+  }
+
+  .review-avatar {
+    width: 36px;
+    height: 36px;
+    font-size: 12px;
   }
 
   .hero-social-proof-card-2026 .proof-quote {
-    font-size: 1.1rem;
+    font-size: 0.9rem;
+  }
+
+  .review-service {
+    font-size: 0.8rem;
   }
 
   .proof-google-badge {
@@ -2790,5 +2890,48 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
   .hero-social-proof-premium {
     max-width: 600px;
     align-items: center;
+  }
+}
+
+/*
+==========================================================================
+LEAD FEEDBACK TOAST - Confirmación visual de envío
+==========================================================================
+*/
+.lead-feedback-toast {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+  z-index: 10000;
+  display: none;
+  padding: 12px 20px;
+  border-radius: 8px;
+  font-family: 'Inter', system-ui, sans-serif;
+  font-size: 14px;
+  font-weight: 600;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  pointer-events: none;
+}
+
+.lead-feedback-toast.success {
+  background-color: #10b981;
+  color: white;
+}
+
+.lead-feedback-toast.warning {
+  background-color: #f59e0b;
+  color: white;
+}
+
+@media (max-width: 600px) {
+  .lead-feedback-toast {
+    top: 10px;
+    right: 10px;
+    left: 10px;
+    font-size: 13px;
+    padding: 10px 16px;
+    text-align: center;
   }
 }
