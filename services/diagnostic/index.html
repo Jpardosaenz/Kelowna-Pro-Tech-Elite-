@@ -47,6 +47,11 @@
       --brand: #111827;
       --accent: #dc2626;
       --line: #e5e7eb;
+      /* PREMIUM ENGINEERING AUTHORITY COLORS */
+      --premium-dark: #0f172a;
+      --premium-gold: #fbbf24;
+      --premium-blue: #1e40af;
+      --premium-light: #f8fafc;
     }
 
     .page {
@@ -126,13 +131,40 @@
       display: inline-block;
       margin-top: 20px;
       margin-right: 12px;
-      padding: 12px 16px;
-      border-radius: 999px;
-      background: var(--accent);
+      padding: 16px 32px;
+      border-radius: 8px;
+      background: var(--premium-dark);
       color: #fff;
+      border: 2px solid var(--premium-gold);
       text-decoration: none;
       font-weight: 700;
-      box-shadow: 0 6px 14px rgba(220, 38, 38, 0.25);
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25), 0 0 0 0 rgba(251, 191, 36, 0.4);
+      transition: all 0.3s ease;
+    }
+
+    .cta:hover {
+      background: linear-gradient(135deg, var(--premium-dark) 0%, var(--premium-blue) 100%);
+      transform: translateY(-2px);
+      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35), 0 0 20px rgba(251, 191, 36, 0.6);
+    }
+
+    .cta-secondary {
+      display: inline-block;
+      margin-top: 20px;
+      margin-right: 12px;
+      padding: 16px 32px;
+      border-radius: 8px;
+      background: transparent;
+      color: var(--premium-dark);
+      border: 2px solid var(--premium-dark);
+      text-decoration: none;
+      font-weight: 600;
+      transition: all 0.3s ease;
+    }
+
+    .cta-secondary:hover {
+      background: var(--premium-dark);
+      color: #fff;
     }
 
     @media (min-width: 900px) {
@@ -181,27 +213,38 @@
       font-weight: 700;
     }
 
-    /* Grand Slam Offer Box */
+    /* Grand Slam Offer Box - Premium Style */
     .offer-box {
-      background: #fdf2f2;
-      border-left: 4px solid var(--accent);
-      padding: 20px;
+      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+      border-left: 4px solid var(--premium-gold);
+      padding: 24px;
       margin: 24px 0;
-      border-radius: 0 8px 8px 0;
+      border-radius: 0 12px 12px 0;
+      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
     }
 
     .offer-title {
+      display: inline-block;
+      background: var(--premium-gold);
+      color: var(--premium-dark);
       font-weight: 700;
-      color: var(--accent);
+      font-size: 11px;
       text-transform: uppercase;
-      font-size: 14px;
-      display: block;
-      margin-bottom: 4px;
+      letter-spacing: 0.1em;
+      padding: 4px 12px;
+      border-radius: 4px;
+      margin-bottom: 8px;
     }
 
     .offer-text {
-      font-size: 16px;
-      line-height: 1.4;
+      font-size: 17px;
+      line-height: 1.5;
+      color: var(--premium-dark);
+      margin: 0;
+    }
+
+    .offer-text strong {
+      color: var(--premium-blue);
     }
 
     /* Forced Red CTAs (Engineering Urgency) */
@@ -326,18 +369,29 @@
         </p>
 
         <div class="offer-box">
-          <span class="offer-title">The Diagnostic That Pays For Itself:</span>
+          <span class="offer-title">✓ 100% Diagnostic Fee Credited to Your Repair</span>
           <p class="offer-text">
-            <strong>Same-day on-site diagnostic with dealer-level tools.</strong>
-            100% of the diagnostic fee is credited toward your repair. You only pay for the solution, not the
-            investigation.
+            <strong>Engineering-grade mobile diagnostic with dealer-level tools.</strong>
+            Pay $0 for the diagnostic when you approve the repair. We credit the full fee — you only pay for the solution, not the investigation.
           </p>
         </div>
 
+        <!-- Premium CTA System -->
+        <div style="margin: 24px 0;">
+          <a class="cta" href="tel:+12508595467"
+            aria-label="Book engineering-grade diagnostic — 100% fee credited to repair">
+            Book Diagnostic — 100% Fee Credited ✓
+          </a>
+          <a class="cta-secondary" href="sms:+12508595467"
+            aria-label="Text for quick diagnostic quote — 2 minute response">
+            Text for Quote (2-Min Response)
+          </a>
+        </div>
+
         <div class="badges">
-          <span>✓ Expert Mobile Mechanic</span>
-          <span>✓ Same-Day Service</span>
-          <span>✓ 4.9★ Reviews</span>
+          <span>✓ Engineering-Grade Tools</span>
+          <span>✓ Same-Day Available</span>
+          <span>✓ 4.9★ (100+ Reviews)</span>
         </div>
       </div>
       <figure>
@@ -419,14 +473,22 @@
       </div>
     </section>
 
-    <!-- CTA secundaria -->
+    <!-- CTA Mid-Page Premium -->
     <section class="section">
-      <h2>Ready to diagnose?</h2>
+      <h2>Engineering-Grade Diagnostic. Dealer-Level Tools. Your Location.</h2>
       <p class="lead">
-        Text or call now. If you already tried a shop, bring us their
-        report—we’ll verify the root cause.
+        We bring precision diagnostic equipment to your driveway, workplace, or roadside. <strong>100% of the diagnostic fee is credited when you approve the repair.</strong> Already tried a shop? Bring us their report — we'll verify the root cause with engineering-grade analysis.
       </p>
-      <a class="cta" href="sms:+12508595467">Book Same-Day Diagnostic — 100% Credited to Repair ✓</a>
+      <div style="margin-top: 24px;">
+        <a class="cta" href="tel:+12508595467"
+          aria-label="Call to book same-day diagnostic — 100% credited to repair">
+          Book Same-Day Diagnostic — 100% Credited ✓
+        </a>
+        <a class="cta-secondary" href="sms:+12508595467"
+          aria-label="Text for diagnostic quote — 2 minute response guaranteed">
+          Text for Quote (2-Min Response)
+        </a>
+      </div>
     </section>
 
     <!-- FAQ visible (coincide con JSON-LD) -->
@@ -470,10 +532,12 @@
     </footer>
   </main>
 
-  <!-- FLOATING CTA -->
+  <!-- FLOATING CTA - Premium Engineering Authority -->
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
-    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Get Same-Day Diagnostic — 100% Credited">
-      Get Same-Day Diagnostic — 100% Credited ✓
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button"
+      style="background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%) !important; border: 2px solid #fbbf24 !important; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4), 0 0 20px rgba(251, 191, 36, 0.3) !important;"
+      aria-label="Book Engineering-Grade Diagnostic — 100% Fee Credited">
+      Book Diagnostic — 100% Credited ✓
     </a>
   </div>
 
@@ -526,10 +590,10 @@
             on-site repairs and can likely solve this today without a tow.
           </p>
         </div>
-        <p class="diag-cta-text">To get an instant repair quote:</p>
+        <p class="diag-cta-text">To book your engineering-grade diagnostic:</p>
         <div class="diag-action-container">
-          <a href="tel:+12508595467" class="diag-call-btn">Call for Same-Day Diagnostic ✓</a>
-          <a href="sms:+12508595467" class="diag-sms-btn">Text for Quick Quote (2-Min Response)</a>
+          <a href="tel:+12508595467" class="diag-call-btn" style="background: #0f172a !important; border: 2px solid #fbbf24 !important;">Call for Same-Day Service ✓</a>
+          <a href="sms:+12508595467" class="diag-sms-btn" style="background: transparent !important; border: 2px solid #0f172a !important; color: #0f172a !important;">Text for Quote (2-Min)</a>
         </div>
       </div>
     </div>
