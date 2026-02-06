@@ -198,9 +198,11 @@ body {
 @media (min-width: 1024px) {
   .kpem-header-mobile {
     height: 100px;
-    padding: 20px 40px 10px 40px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    /* Ensures logo and nav are pushed apart */
     gap: 40px;
   }
 
@@ -212,7 +214,7 @@ body {
 
   /* Ocultar hamburguesa en desktop */
   .kpem-menu-trigger {
-    display: none;
+    display: none !important;
   }
 
   /* Reposicionar y mostrar menú */
@@ -228,10 +230,8 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0;
-    z-index: auto;
-    flex-direction: row;
     flex-grow: 1;
+    /* Pushes the CTA to the right */
   }
 
   /* Menú horizontal */
@@ -319,10 +319,12 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
 
 /* Contenedor que limita el ancho del contenido en la página */
 .hero-container {
-  max-width: 1200px;
-  /* Ancho máximo para pantallas grandes */
+  max-width: 1400px;
+  /* Ancho máximo expandido para usar todo el espacio disponible */
   margin: 0 auto;
   /* Centra el contenedor */
+  padding: 0 20px;
+  /* Padding lateral para que no toque los bordes */
 }
 
 /* * Cuadrícula (Grid) para el layout de dos columnas.
@@ -399,7 +401,8 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
   .hero-grid {
     /* Creamos dos columnas en pantallas grandes - 50% EXACTO cada una */
     grid-template-columns: 1fr 1fr;
-    gap: 4rem;
+    gap: 2rem;
+    /* Optimized gap for better space utilization */
     align-items: stretch;
     /* CRITICAL: This makes both columns equal height */
   }
@@ -848,9 +851,9 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 
 /* ===== Service breadcrumb (arriba, claro pero discreto) ===== */
 .service-nav {
-  max-width: 980px;
+  max-width: 1400px;
   margin: 8px auto 12px;
-  padding: 10px 16px;
+  padding: 10px 40px;
   display: flex;
   align-items: center;
   gap: 6px;
@@ -902,9 +905,10 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 
 /* Page container */
 .page {
-  max-width: 980px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 24px 40px 250px;
+  /* Massive bottom padding to prevent CTA overlap on all devices */
 }
 
 /* Breadcrumb */
@@ -1439,12 +1443,13 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   align-items: center;
   gap: 3px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
-  border: 2px solid #ffd700;
+  background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%) !important;
+  border: 2px solid #fbbf24;
   border-radius: 10px;
   box-shadow:
-    0 6px 16px rgba(0, 0, 0, 0.25),
-    0 0 12px rgba(255, 215, 0, 0.15);
+    0 8px 20px rgba(15, 23, 42, 0.45),
+    0 0 20px rgba(251, 191, 36, 0.35),
+    inset 0 1px 0 rgba(255, 255, 255, 0.1);
   text-decoration: none;
   transition: all 0.35s cubic-bezier(0.4, 0, 0.2, 1);
   white-space: nowrap;
@@ -1469,16 +1474,19 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .header-cta:hover {
-  background: linear-gradient(135deg, #ffd700 0%, #ffed4e 50%, #ffd700 100%);
+  background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 50%, #1e40af 100%);
   transform: translateY(-3px);
   box-shadow:
-    0 8px 24px rgba(255, 215, 0, 0.35),
-    0 0 20px rgba(255, 215, 0, 0.25);
+    0 12px 32px rgba(59, 130, 246, 0.5),
+    0 0 30px rgba(251, 191, 36, 0.6),
+    inset 0 1px 0 rgba(255, 255, 255, 0.2);
+  border-color: #fcd34d;
 }
 
 .header-cta:hover .cta-main,
 .header-cta:hover .cta-sub {
-  color: #111827;
+  color: #ffffff;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
 }
 
 .header-cta:active {
@@ -2211,7 +2219,7 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #FF4444;
+  background-color: #dc2626;
   /* Bright Red */
   color: #FFFFFF;
   border: none;
@@ -2241,11 +2249,9 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   transform: translateY(-50%) translateX(0);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .side-ask-mechanic-btn {
-    padding: 12px 6px;
-    font-size: 14px;
-    right: 0;
+    display: none !important;
   }
 }
 
@@ -2298,7 +2304,6 @@ Fixed vertical button on right side - ALWAYS VISIBLE
 .hero-trust-badges {
   justify-content: center;
   width: 100%;
-}
 }
 
 /* Mobile Adjustments */
