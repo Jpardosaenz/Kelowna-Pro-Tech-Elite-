@@ -198,9 +198,11 @@ body {
 @media (min-width: 1024px) {
   .kpem-header-mobile {
     height: 100px;
-    padding: 20px 40px 10px 40px;
+    padding: 20px 40px;
     display: flex;
     align-items: center;
+    justify-content: space-between;
+    /* Ensures logo and nav are pushed apart */
     gap: 40px;
   }
 
@@ -212,7 +214,7 @@ body {
 
   /* Ocultar hamburguesa en desktop */
   .kpem-menu-trigger {
-    display: none;
+    display: none !important;
   }
 
   /* Reposicionar y mostrar menú */
@@ -228,10 +230,8 @@ body {
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    padding: 0;
-    z-index: auto;
-    flex-direction: row;
     flex-grow: 1;
+    /* Pushes the CTA to the right */
   }
 
   /* Menú horizontal */
@@ -904,7 +904,8 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 .page {
   max-width: 980px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 24px 16px 250px;
+  /* Massive bottom padding to prevent CTA overlap on all devices */
 }
 
 /* Breadcrumb */
@@ -1439,7 +1440,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   align-items: center;
   gap: 3px;
   padding: 14px 28px;
-  background: linear-gradient(135deg, #1e293b 0%, #334155 50%, #475569 100%);
+  background: linear-gradient(135deg, #dc2626 0%, #ef4444 50%, #dc2626 100%);
   border: 2px solid #ffd700;
   border-radius: 10px;
   box-shadow:
@@ -2211,7 +2212,7 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   right: 0;
   top: 50%;
   transform: translateY(-50%);
-  background-color: #FF4444;
+  background-color: #dc2626;
   /* Bright Red */
   color: #FFFFFF;
   border: none;
@@ -2241,11 +2242,9 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   transform: translateY(-50%) translateX(0);
 }
 
-@media (max-width: 600px) {
+@media (max-width: 767px) {
   .side-ask-mechanic-btn {
-    padding: 12px 6px;
-    font-size: 14px;
-    right: 0;
+    display: none !important;
   }
 }
 
@@ -2298,7 +2297,6 @@ Fixed vertical button on right side - ALWAYS VISIBLE
 .hero-trust-badges {
   justify-content: center;
   width: 100%;
-}
 }
 
 /* Mobile Adjustments */
