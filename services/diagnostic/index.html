@@ -63,6 +63,7 @@
         --ink: #111827;
         --muted: #6b7280;
         --brand: #111827;
+        --accent: #dc2626;
         --line: #e5e7eb;
       }
       .page {
@@ -133,11 +134,11 @@
         margin-top: 20px;
         padding: 12px 16px;
         border-radius: 999px;
-        background: #111827;
+        background: var(--accent);
         color: #fff;
         text-decoration: none;
         font-weight: 700;
-        box-shadow: 0 6px 14px rgba(0, 0, 0, 0.12);
+        box-shadow: 0 6px 14px rgba(220, 38, 38, 0.25);
       }
       @media (min-width: 900px) {
         .hero {
@@ -177,6 +178,27 @@
       .faq summary {
         cursor: pointer;
         font-weight: 700;
+      }
+
+      /* Grand Slam Offer Box */
+      .offer-box {
+        background: #fdf2f2;
+        border-left: 4px solid var(--accent);
+        padding: 20px;
+        margin: 24px 0;
+        border-radius: 0 8px 8px 0;
+      }
+      .offer-title {
+        font-weight: 700;
+        color: var(--accent);
+        text-transform: uppercase;
+        font-size: 14px;
+        display: block;
+        margin-bottom: 4px;
+      }
+      .offer-text {
+        font-size: 16px;
+        line-height: 1.4;
       }
     </style>
 
@@ -284,6 +306,15 @@
             location and find the root cause fast—no towing, no waiting, no
             guessing.
           </p>
+
+          <div class="offer-box">
+            <span class="offer-title">The Diagnostic That Pays For Itself:</span>
+            <p class="offer-text">
+              <strong>Same-day on-site diagnostic with dealer-level tools.</strong>
+              100% of the diagnostic fee is credited toward your repair. You only pay for the solution, not the investigation.
+            </p>
+          </div>
+
           <div class="badges">
             <span>✓ Expert Mobile Mechanic</span>
             <span>✓ Same-Day Service</span>
@@ -323,6 +354,48 @@
               Avoid towing and lost time. We come to your driveway, workplace,
               or roadside.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <!-- CASE STUDY: Gabe's No-Start Crisis -->
+      <section class="section"
+        style="background: var(--ink); color: white; border-radius: 24px; padding: 60px 40px; margin-top: 40px;">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <span
+            style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 14px;">Real
+            Client Story</span>
+          <h2 style="color: white; font-size: 38px; margin: 12px 0 24px;">Gabe's No-Start Crisis: <br>Diagnosed in His
+            Garage, Fixed Before Lunch.</h2>
+          <p style="font-size: 18px; line-height: 1.6; color: #cbd5e1; margin-bottom: 32px;">
+            Most shops in Kelowna told Gabe to tow his car in and wait 2 weeks for an appointment. We had a different
+            approach: bring the shop to him.
+          </p>
+
+          <div
+            style="background: rgba(255,255,255,0.05); padding: 32px; border-radius: 16px; border-left: 4px solid var(--accent);">
+            <h3 style="color: var(--accent); margin-bottom: 12px;">The Situation</h3>
+            <p style="font-style: italic; color: white; font-size: 17px; line-height: 1.6;">
+              "My car wouldn't start on a Monday morning. I called three shops—all said they couldn't even look at it for
+              a week or more. I called Kelowna Protech Elite, and Joseph arrived at 11 AM. By 11:30, he diagnosed a failed
+              starter relay using his dealer-level scanner. He sourced the part immediately and had me driving by 4 PM.
+              All done in my garage—no tow truck, no rental car, no stress. When I asked how much, he credited the
+              diagnostic fee toward the labor. I only paid for the solution."
+            </p>
+            <strong style="display: block; margin-top: 20px; color: #94a3b8; text-transform: uppercase; font-size: 13px; letter-spacing: 0.05em;">—
+              Gabe Carter, Kelowna</strong>
+          </div>
+
+          <div class="benefits" style="grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;">
+            <div>
+              <h4 style="color: white; margin-bottom: 8px;">✓ Same-Day Resolution</h4>
+              <p style="color: #94a3b8; font-size: 14px;">While other shops were "booking appointments," Gabe was back on
+                the road.</p>
+            </div>
+            <div>
+              <h4 style="color: white; margin-bottom: 8px;">✓ No Tow, No Wait</h4>
+              <p style="color: #94a3b8; font-size: 14px;">We brought dealer-level tools to his driveway. Zero downtime.</p>
+            </div>
           </div>
         </div>
       </section>
