@@ -16,16 +16,9 @@ document.addEventListener("DOMContentLoaded", () => {
   const menuTrigger = document.querySelector(".kpem-menu-trigger");
   const menuCloseButton = document.querySelector(".menu-close-button");
 
-  console.log("DEBUG: Estado inicial del menú", {
-    botonHamburguesa: menuTrigger,
-    botonCerrar: menuCloseButton
-  });
-
   function openMenu() {
-    console.log("DEBUG: openMenu() ejecutado. Añadiendo clase...");
     document.body.classList.add("menu-is-open");
     menuTrigger.setAttribute("aria-expanded", "true");
-    console.log("DEBUG: Clase 'menu-is-open' debería estar en body:", document.body.classList.contains("menu-is-open"));
   }
 
   function closeMenu() {
@@ -34,10 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (menuTrigger) {
-    console.log("DEBUG: Listener de click añadido al botón hamburguesa");
     menuTrigger.addEventListener("click", openMenu);
-  } else {
-    console.error("DEBUG: ERROR - No se encontró .kpem-menu-trigger en el DOM");
   }
 
   if (menuCloseButton) {
@@ -646,6 +636,23 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log(`SMS links tracked: ${smsLinks.length}`);
   console.log('Events will be sent to GA4 on click');
   console.groupEnd();
+
+  // Track service card clicks
+  document.querySelectorAll('#service-tiles .tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      const serviceTitle = tile.querySelector('.title')?.textContent || 'Unknown Service';
+      const isMostPopular = tile.querySelector('.tag') !== null;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'service_card_click', {
+          'event_category': 'Engagement',
+          'event_label': serviceTitle,
+          'service_section': 'service_tiles',
+          'is_featured': isMostPopular
+        });
+      }
+    });
+  });
 });
 
 

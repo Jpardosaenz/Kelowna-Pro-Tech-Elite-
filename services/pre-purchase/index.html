@@ -10,9 +10,10 @@
 
       gtag('config', 'G-1GDM77733G');
     </script>
-  <link rel="canonical" href="https://kelownaprotechmobilemech.com/services/pre-purchase/" />
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
 
     <title>
       Pre‑Purchase Inspection in Kelowna | Mobile Mechanic | Kelowna Protech
@@ -138,7 +139,6 @@
             "offers": {
               "@type": "Offer",
               "priceCurrency": "CAD",
-              "priceRange": "150-250",
               "availability": "https://schema.org/InStock"
             },
             "serviceOutput": {
@@ -208,6 +208,32 @@
     <link rel="stylesheet" href="/service-tiles.css" />
   </head>
   <body>
+  <!-- HEADER MOBILE -->
+  <header class="kpem-header-mobile" role="banner">
+    <div class="contenedor-logo">
+      <a href="/" aria-label="Go to homepage">
+        <img src="/images/logo-kelowna-protech-eliteV1.webp" alt="Kelowna Protech Elite Mobile Mechanic logo"
+          loading="eager" decoding="async" width="85" height="85" class="logo-mobile" />
+      </a>
+    </div>
+    <nav id="mobile-navigation" class="mobile-menu" role="navigation" aria-label="Main Navigation">
+      <button class="menu-close-button" aria-label="Close menu">&times;</button>
+      <ul>
+        <li><a href="/#client-stories">Client Stories</a></li>
+        <li><a href="/#why-us">Why Us</a></li>
+        <li><a href="/#service-tiles">Services</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:+12508595467" class="header-cta" aria-label="Call expert mechanic for same-day service">
+      <span class="cta-main">Call Expert Mechanic</span>
+      <span class="cta-sub">Same-Day Service • 15+ Years</span>
+    </a>
+    <button class="kpem-menu-trigger" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false">
+      &#9776;
+    </button>
+  </header>
+
     <main class="page" id="main">
       <!-- Breadcrumb visible (sin enlace a /services/ para evitar 404) -->
       <nav class="breadcrumb" aria-label="Breadcrumb">
@@ -348,5 +374,78 @@
         </div>
       </footer>
     </main>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta-container" role="region" aria-label="Quick Contact">
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call an Expert Mechanic Now">
+      Speak with an Expert Mechanic
+    </a>
+  </div>
+
+  <!-- MODAL DEL EMBUDO DE DIAGNÓSTICO AI -->
+  <div id="diag-modal" class="diag-modal-overlay" aria-hidden="true">
+    <div class="diag-modal-content">
+      <button class="diag-close" onclick="closeDiagModal()" aria-label="Close diagnostic tool">&times;</button>
+
+      <!-- Paso 1: Lead (Hook + Contact) -->
+      <div id="diag-step-1" class="diag-step">
+        <h2 class="diag-title">Step 1: Contact Details</h2>
+        <p class="diag-subtitle">Where should we send your results?</p>
+        <div class="diag-input-group">
+          <input type="text" id="diag-name" placeholder="Your Name" required>
+        </div>
+        <div class="diag-input-group">
+          <input type="text" id="diag-contact" placeholder="Phone or Email" required>
+        </div>
+        <button class="diag-next-btn" onclick="diagNext(2)">Next: Vehicle Info →</button>
+        <p class="diag-privacy">We only use this to send your diagnostic report.</p>
+      </div>
+
+      <!-- Paso 2: Investigación (Vehicle & Symptoms) -->
+      <div id="diag-step-2" class="diag-step" style="display:none;">
+        <h2 class="diag-title">Step 2: Vehicle & Symptoms</h2>
+        <div class="diag-input-group">
+          <input type="text" id="diag-vehicle" placeholder="Year / Make / Model (e.g., 2018 Ford F-150)">
+        </div>
+        <div class="diag-input-group">
+          <textarea id="diag-symptoms"
+            placeholder="Tell us what's happening (e.g., ticking noise, won't start, warning light...)"></textarea>
+        </div>
+        <div class="diag-input-group">
+          <select id="diag-urgency">
+            <option value="flexible">Urgency: Flexible</option>
+            <option value="24h">Need help within 24h</option>
+            <option value="emergency">Emergency / Broken Down</option>
+          </select>
+        </div>
+        <button class="diag-next-btn" onclick="diagNext(3)">Analyze Now — Get Results →</button>
+      </div>
+
+      <!-- Paso 3: Valor (Result & WhatsApp) -->
+      <div id="diag-step-3" class="diag-step" style="display:none;">
+        <div class="diag-success-icon">🤖</div>
+        <h2 class="diag-title">AI Analysis in Progress...</h2>
+        <div class="diag-result-box">
+          <p id="diag-result-placeholder">
+            Based on your description, our Master Mechanic Joseph is reviewing your case. We specialize in mobile
+            on-site repairs and can likely solve this today without a tow.
+          </p>
+        </div>
+        <p class="diag-cta-text">To get an instant repair quote:</p>
+        <div class="diag-action-container">
+          <a href="tel:+12508595467" class="diag-call-btn">Call an Expert Now</a>
+          <a href="sms:+12508595467" class="diag-sms-btn">Text an Expert Instead</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RED SIDE WIDGET (ASK A MECHANIC) -->
+  <button id="side-ask-mechanic" class="side-ask-mechanic-btn" onclick="openDiagModal()"
+    aria-label="Ask a Mechanic - Free Diagnostic">
+    <span class="widget-text">Ask a Mechanic</span>
+  </button>
+
+  <script src="/scripts.js" defer></script>
   </body>
 </html>
