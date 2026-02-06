@@ -646,6 +646,23 @@ document.addEventListener('DOMContentLoaded', function () {
   console.log(`SMS links tracked: ${smsLinks.length}`);
   console.log('Events will be sent to GA4 on click');
   console.groupEnd();
+
+  // Track service card clicks
+  document.querySelectorAll('#service-tiles .tile').forEach(tile => {
+    tile.addEventListener('click', () => {
+      const serviceTitle = tile.querySelector('.title')?.textContent || 'Unknown Service';
+      const isMostPopular = tile.querySelector('.tag') !== null;
+
+      if (typeof gtag === 'function') {
+        gtag('event', 'service_card_click', {
+          'event_category': 'Engagement',
+          'event_label': serviceTitle,
+          'service_section': 'service_tiles',
+          'is_featured': isMostPopular
+        });
+      }
+    });
+  });
 });
 
 
