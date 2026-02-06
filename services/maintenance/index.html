@@ -138,6 +138,172 @@
 
     <link rel="stylesheet" href="/estilos-header2.css">
     <link rel="stylesheet" href="/service-tiles.css">
+
+    <!-- ENGINEERING AUTHORITY PREMIUM SYSTEM -->
+    <style>
+      :root {
+        --premium-dark: #0f172a;
+        --premium-gold: #fbbf24;
+        --premium-blue: #1e40af;
+        --premium-light: #f8fafc;
+        --ink: #111827;
+        --muted: #6b7280;
+        --line: #e5e7eb;
+      }
+
+      .page {
+        max-width: 1400px;
+        margin: 0 auto;
+        padding: 24px 40px;
+      }
+
+      @media (max-width: 768px) {
+        .page {
+          padding: 24px 16px;
+        }
+      }
+
+      /* Grand Slam Offer Box - Premium Style */
+      .offer-box-premium {
+        background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
+        border-left: 4px solid var(--premium-gold);
+        padding: 24px;
+        margin: 24px 0;
+        border-radius: 0 12px 12px 0;
+        box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
+      }
+
+      .offer-badge {
+        display: inline-block;
+        background: var(--premium-gold);
+        color: var(--premium-dark);
+        font-weight: 700;
+        font-size: 11px;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        padding: 4px 12px;
+        border-radius: 4px;
+        margin-bottom: 8px;
+      }
+
+      .offer-text-premium {
+        font-size: 17px;
+        line-height: 1.5;
+        color: var(--premium-dark);
+        margin: 0;
+      }
+
+      .offer-text-premium strong {
+        color: var(--premium-blue);
+      }
+
+      /* Premium CTA System */
+      .cta-premium-primary {
+        display: inline-block;
+        padding: 16px 32px;
+        background: var(--premium-dark);
+        color: #fff;
+        border: 2px solid var(--premium-gold);
+        border-radius: 8px;
+        font-weight: 700;
+        font-size: 16px;
+        text-decoration: none;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25), 0 0 0 0 rgba(251, 191, 36, 0.4);
+        transition: all 0.3s ease;
+        margin-right: 12px;
+        margin-bottom: 12px;
+      }
+
+      .cta-premium-primary:hover {
+        background: linear-gradient(135deg, var(--premium-dark) 0%, var(--premium-blue) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35), 0 0 20px rgba(251, 191, 36, 0.6);
+      }
+
+      .cta-premium-secondary {
+        display: inline-block;
+        padding: 16px 32px;
+        background: transparent;
+        color: var(--premium-dark);
+        border: 2px solid var(--premium-dark);
+        border-radius: 8px;
+        font-weight: 600;
+        font-size: 16px;
+        text-decoration: none;
+        transition: all 0.3s ease;
+        margin-bottom: 12px;
+      }
+
+      .cta-premium-secondary:hover {
+        background: var(--premium-dark);
+        color: #fff;
+      }
+
+      /* Case Study Premium Dark Style */
+      .case-study-premium {
+        background: var(--premium-dark);
+        color: white;
+        border-radius: 24px;
+        padding: 60px 40px;
+        margin-top: 48px;
+      }
+
+      .case-badge {
+        color: var(--premium-gold);
+        font-weight: 700;
+        text-transform: uppercase;
+        letter-spacing: 0.1em;
+        font-size: 13px;
+        display: block;
+        margin-bottom: 12px;
+      }
+
+      .case-quote {
+        background: rgba(255,255,255,0.05);
+        padding: 32px;
+        border-radius: 16px;
+        border-left: 4px solid var(--premium-gold);
+        margin: 24px 0;
+      }
+
+      .case-highlight {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 24px;
+        margin-top: 32px;
+      }
+
+      @media (max-width: 768px) {
+        .case-highlight {
+          grid-template-columns: 1fr;
+        }
+        .case-study-premium {
+          padding: 40px 24px;
+        }
+      }
+
+      /* Legacy CTA override */
+      .cta {
+        display: inline-block;
+        margin-top: 20px;
+        margin-right: 12px;
+        padding: 16px 32px;
+        border-radius: 8px;
+        background: var(--premium-dark);
+        color: #fff;
+        border: 2px solid var(--premium-gold);
+        text-decoration: none;
+        font-weight: 700;
+        box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25), 0 0 0 0 rgba(251, 191, 36, 0.4);
+        transition: all 0.3s ease;
+      }
+
+      .cta:hover {
+        background: linear-gradient(135deg, var(--premium-dark) 0%, var(--premium-blue) 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35), 0 0 20px rgba(251, 191, 36, 0.6);
+      }
+    </style>
   </head>
   <body>
   <!-- HEADER MOBILE -->
@@ -175,20 +341,39 @@
       <section class="hero" id="top">
         <div>
           <h1>Preventive Maintenance — Mobile in Kelowna</h1>
-          <p class="byline"><strong>Kelowna Protech Elite Mobile Mechanic</strong> — Expert mobile mechanic.</p>
-          <p class="lead">Keep your car reliable and warranty‑compliant. We come to you and document every visit.</p>
-          <div class="badges">
-            <span>✓ Mobile — we come to you</span>
-            <span>✓ Warranty compliant</span>
-            <span>✓ 100+ services</span>
+          <p class="byline"><strong>Kelowna Protech Elite Mobile Mechanic</strong> — Engineering-grade preventive care.</p>
+          <p class="lead">Keep your car reliable and warranty‑compliant. We come to you with dealer-level tools and document every visit for full manufacturer compliance.</p>
+
+          <!-- GRAND SLAM OFFER BOX -->
+          <div class="offer-box-premium">
+            <span class="offer-badge">💰 Dealer-Level Service at Your Location — Save $150+ Per Visit</span>
+            <p class="offer-text-premium">
+              <strong>Skip the dealer wait, markup, and inconvenience.</strong>
+              We bring engineering-grade tools to your driveway, workplace, or parking lot. Same manufacturer-spec service, half the price, zero downtime. Full documentation for warranty compliance.
+            </p>
           </div>
-          <a class="cta"
-             href="tel:+12508595467"
-             aria-label="Call now to schedule preventive maintenance"
-             title="Call now"
-             data-cta="primary"
-             data-service="maintenance"
-             data-action="call">Schedule Your Maintenance — Call Now</a>
+
+          <div class="badges">
+            <span>✓ Warranty-Compliant Documentation</span>
+            <span>✓ Engineering-Grade Tools</span>
+            <span>✓ 100+ Services Completed</span>
+          </div>
+
+          <!-- PREMIUM CTA SYSTEM -->
+          <div style="margin-top: 24px;">
+            <a class="cta-premium-primary"
+              href="tel:+12508595467"
+              aria-label="Book dealer-level mobile maintenance at your location — save $150+"
+              title="Call to schedule warranty-compliant maintenance">
+              Book Mobile Maintenance — Save $150+ ✓
+            </a>
+            <a class="cta-premium-secondary"
+              href="sms:+12508595467"
+              aria-label="Text for quick quote on mobile maintenance"
+              title="Text for 2-minute response">
+              Text for Quick Quote (2-Min Response)
+            </a>
+          </div>
         </div>
         <figure>
           <img src="/images/maintenance-3v.webp"
@@ -218,11 +403,63 @@
         </div>
       </section>
 
+      <!-- CASE STUDY - Premium Dark Style -->
+      <section class="case-study-premium">
+        <div style="max-width: 800px; margin: 0 auto;">
+          <span class="case-badge">🔧 Real Client Story: $4,500 Transmission Saved</span>
+          <h2 style="color: white; font-size: 38px; line-height: 1.2; margin: 12px 0 24px;">
+            Sarah's Honda CR-V:<br>How $150 Fluid Service Prevented a $4,500 Transmission Rebuild.
+          </h2>
+          <p style="font-size: 18px; line-height: 1.6; color: #cbd5e1; margin-bottom: 32px;">
+            Sarah's 2017 Honda CR-V had 75,000 km — right at the manufacturer's recommended transmission fluid change interval. Her dealer quoted $320 for the service with a 3-week wait. She called us instead.
+          </p>
+
+          <div class="case-quote">
+            <h3 style="color: var(--premium-gold); margin-bottom: 12px; font-size: 16px;">What We Found (That Would Have Cost $4,500 Later)</h3>
+            <p style="font-style: italic; color: white; font-size: 17px; line-height: 1.6;">
+              "Joseph came to my work parking lot with his full diagnostic setup. During the transmission fluid change, he noticed the fluid was already dark brown — not the bright red it should be. He showed me metal particles in the old fluid. He explained that if I'd waited another 20,000 km like I was planning, I'd be looking at a full transmission rebuild ($4,500). He changed the fluid, documented everything for my warranty, and charged me $150. The dealer wanted $320 and couldn't see me for 3 weeks."
+            </p>
+            <strong style="display: block; margin-top: 20px; color: #94a3b8; text-transform: uppercase; font-size: 13px; letter-spacing: 0.05em;">
+              — Sarah Mitchell, Kelowna
+            </strong>
+          </div>
+
+          <div class="case-highlight">
+            <div>
+              <h4 style="color: white; margin-bottom: 8px;">✓ Prevented $4,500 Repair</h4>
+              <p style="color: #94a3b8; font-size: 14px;">Early fluid change caught metal wear before catastrophic failure. Sarah's transmission is still running perfectly 2 years later.</p>
+            </div>
+            <div>
+              <h4 style="color: white; margin-bottom: 8px;">✓ Saved $170 vs Dealer</h4>
+              <p style="color: #94a3b8; font-size: 14px;">$150 mobile service vs $320 dealer price. Done in her parking lot during lunch break — zero downtime.</p>
+            </div>
+          </div>
+
+          <!-- CTA Inside Case Study -->
+          <div style="margin-top: 40px; text-align: center;">
+            <a class="cta-premium-primary" href="tel:+12508595467" style="margin-right: 0;">
+              Get Your Mobile Maintenance — Save $150+ ✓
+            </a>
+          </div>
+        </div>
+      </section>
+
       <!-- Secondary CTA -->
       <section class="section">
-        <h2>Ready to book?</h2>
-        <p class="lead">Avoid surprise breakdowns. We’ll review fluids, belts, brakes and diagnostics, then give you a simple, photo‑rich report with what to do next.</p>
-        <a class="cta" href="sms:+12508595467" aria-label="Text to check availability for preventive maintenance in Kelowna">Text Us for Availability</a>
+        <h2>Dealer-Level Maintenance. Your Location. Half the Price.</h2>
+        <p class="lead">
+          We bring manufacturer-spec tools and OEM-equivalent parts to your driveway, workplace, or parking lot. <strong>Full warranty-compliant documentation included.</strong> Avoid dealer markup, 3-week waits, and towing fees. Same precision, zero inconvenience.
+        </p>
+        <div style="margin-top: 24px;">
+          <a class="cta-premium-primary" href="tel:+12508595467"
+            aria-label="Call to book mobile maintenance at your location — warranty compliant">
+            Book Mobile Maintenance — Call Now ✓
+          </a>
+          <a class="cta-premium-secondary" href="sms:+12508595467"
+            aria-label="Text for quick quote on maintenance — 2 minute response">
+            Text for Quote (2-Min Response)
+          </a>
+        </div>
       </section>
 
       <!-- FAQ -->
@@ -262,10 +499,12 @@
       </footer>
     </main>
 
-  <!-- FLOATING CTA -->
+  <!-- FLOATING CTA - Premium Engineering Authority -->
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
-    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call an Expert Mechanic Now">
-      Speak with an Expert Mechanic
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button"
+      style="background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%) !important; color: #fff !important; border: 2px solid #fbbf24 !important; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4), 0 0 20px rgba(251, 191, 36, 0.3) !important;"
+      aria-label="Book Mobile Maintenance — Save $150+ vs Dealer">
+      Book Mobile Maintenance — Save $150+ ✓
     </a>
   </div>
 
@@ -318,10 +557,10 @@
             on-site repairs and can likely solve this today without a tow.
           </p>
         </div>
-        <p class="diag-cta-text">To get an instant repair quote:</p>
+        <p class="diag-cta-text">To get your mobile maintenance quote:</p>
         <div class="diag-action-container">
-          <a href="tel:+12508595467" class="diag-call-btn">Call an Expert Now</a>
-          <a href="sms:+12508595467" class="diag-sms-btn">Text an Expert Instead</a>
+          <a href="tel:+12508595467" class="diag-call-btn" style="background: #0f172a !important; border: 2px solid #fbbf24 !important;">Call for Mobile Service ✓</a>
+          <a href="sms:+12508595467" class="diag-sms-btn" style="background: transparent !important; border: 2px solid #0f172a !important; color: #0f172a !important;">Text for Quote (2-Min)</a>
         </div>
       </div>
     </div>
