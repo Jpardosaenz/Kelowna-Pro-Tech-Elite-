@@ -271,9 +271,15 @@
   --line: #e5e7eb;
 }
 main.page {
-  max-width: 980px;
+  max-width: 1400px;
   margin: 0 auto;
-  padding: 24px 16px;
+  padding: 24px 40px;
+}
+
+@media (max-width: 768px) {
+  main.page {
+    padding: 24px 16px;
+  }
 }
 .breadcrumb {
   font-size: 12px;
@@ -286,8 +292,14 @@ main.page {
 }
 .hero {
   display: grid;
-  gap: 16px;
+  gap: 32px;
   align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .hero {
+    gap: 60px;
+  }
 }
 .hero h1 {
   font-size: 28px;

@@ -55,9 +55,15 @@
     }
 
     .page {
-      max-width: 980px;
+      max-width: 1400px;
       margin: 0 auto;
-      padding: 24px 16px;
+      padding: 24px 40px;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 24px 16px;
+      }
     }
 
     .breadcrumb {
@@ -246,20 +252,6 @@
     .offer-text strong {
       color: var(--premium-blue);
     }
-
-    /* Forced Red CTAs (Engineering Urgency) */
-    body .cta {
-      background-color: var(--accent) !important;
-      color: #fff !important;
-      box-shadow: 0 6px 14px rgba(220, 38, 38, 0.4) !important;
-    }
-
-    body .main-cta-button {
-      background-color: var(--accent) !important;
-      color: #fff !important;
-      border: 2px solid #ffd700 !important;
-      box-shadow: 0 8px 20px rgba(220, 38, 38, 0.5) !important;
-    }
   </style>
 
   <!-- JSON-LD: Breadcrumb + Service + FAQ -->
@@ -369,18 +361,18 @@
         </p>
 
         <div class="offer-box">
-          <span class="offer-title">✓ 100% Diagnostic Fee Credited to Your Repair</span>
+          <span class="offer-title">⚡ Same-Day Diagnostic — No Towing, No Waiting, No Dealer Delays</span>
           <p class="offer-text">
-            <strong>Engineering-grade mobile diagnostic with dealer-level tools.</strong>
-            Pay $0 for the diagnostic when you approve the repair. We credit the full fee — you only pay for the solution, not the investigation.
+            <strong>Dealer-level diagnostic equipment brought to your location.</strong>
+            Skip the 2-week dealer wait. We come to you with engineering-grade tools and pinpoint the problem in hours, not weeks. Same precision, zero downtime.
           </p>
         </div>
 
         <!-- Premium CTA System -->
         <div style="margin: 24px 0;">
           <a class="cta" href="tel:+12508595467"
-            aria-label="Book engineering-grade diagnostic — 100% fee credited to repair">
-            Book Diagnostic — 100% Fee Credited ✓
+            aria-label="Book same-day engineering-grade diagnostic at your location">
+            Book Same-Day Diagnostic — Skip Dealer Wait ✓
           </a>
           <a class="cta-secondary" href="sms:+12508595467"
             aria-label="Text for quick diagnostic quote — 2 minute response">
@@ -477,12 +469,12 @@
     <section class="section">
       <h2>Engineering-Grade Diagnostic. Dealer-Level Tools. Your Location.</h2>
       <p class="lead">
-        We bring precision diagnostic equipment to your driveway, workplace, or roadside. <strong>100% of the diagnostic fee is credited when you approve the repair.</strong> Already tried a shop? Bring us their report — we'll verify the root cause with engineering-grade analysis.
+        We bring precision diagnostic equipment to your driveway, workplace, or roadside. <strong>Same dealer-level precision without the 2-week wait or towing fees.</strong> Already tried a shop? Bring us their report — we'll verify the root cause with engineering-grade analysis.
       </p>
       <div style="margin-top: 24px;">
         <a class="cta" href="tel:+12508595467"
-          aria-label="Call to book same-day diagnostic — 100% credited to repair">
-          Book Same-Day Diagnostic — 100% Credited ✓
+          aria-label="Call to book same-day diagnostic at your location">
+          Book Same-Day Diagnostic — No Dealer Wait ✓
         </a>
         <a class="cta-secondary" href="sms:+12508595467"
           aria-label="Text for diagnostic quote — 2 minute response guaranteed">
@@ -536,8 +528,8 @@
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
     <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button"
       style="background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%) !important; border: 2px solid #fbbf24 !important; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4), 0 0 20px rgba(251, 191, 36, 0.3) !important;"
-      aria-label="Book Engineering-Grade Diagnostic — 100% Fee Credited">
-      Book Diagnostic — 100% Credited ✓
+      aria-label="Book Engineering-Grade Same-Day Diagnostic">
+      Book Same-Day Diagnostic ✓
     </a>
   </div>
 
