@@ -2336,10 +2336,10 @@ Fixed vertical button on right side - ALWAYS VISIBLE
 .brand-item img {
   max-width: 110px;
   max-height: 35px;
-  filter: grayscale(1) brightness(1);
-  /* Full brightness for maximum visibility */
-  opacity: 0.85;
-  /* Increased to 0.85 for strong visibility while maintaining premium look */
+  filter: none;
+  /* REMOVED GRAYSCALE - full color for testing */
+  opacity: 1;
+  /* 100% opacity for maximum visibility */
   transition: all 0.4s ease;
 }
 
