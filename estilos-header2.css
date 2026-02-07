@@ -2310,9 +2310,9 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   padding: 40px 0;
   background: transparent;
   position: relative;
-  /* Gradient masks for smooth fading at edges */
-  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
-  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  /* Gradient masks for smooth fading at edges - reduced fade zones for better visibility */
+  mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
   margin-top: 2rem;
 }
 
@@ -2336,10 +2336,10 @@ Fixed vertical button on right side - ALWAYS VISIBLE
 .brand-item img {
   max-width: 110px;
   max-height: 35px;
-  filter: grayscale(1) brightness(0.7);
-  /* Premium dark slate look - increased from 0.4 for visibility */
-  opacity: 0.6;
-  /* Increased from 0.3 for better visibility while maintaining subtlety */
+  filter: grayscale(1) brightness(1);
+  /* Full brightness for maximum visibility */
+  opacity: 0.85;
+  /* Increased to 0.85 for strong visibility while maintaining premium look */
   transition: all 0.4s ease;
 }
 
