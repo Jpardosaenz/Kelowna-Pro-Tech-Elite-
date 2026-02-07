@@ -2301,6 +2301,70 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   margin: 0 auto;
 }
 
+/* ==========================================================================
+   COMPONENTE: CARRUSEL DE MARCAS (INFINITE SCROLL)
+   ========================================================================== */
+.hero-brand-carousel {
+  width: 100%;
+  overflow: hidden;
+  padding: 40px 0;
+  background: transparent;
+  position: relative;
+  /* Gradient masks for smooth fading at edges */
+  mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  -webkit-mask-image: linear-gradient(to right, transparent, black 15%, black 85%, transparent);
+  margin-top: 2rem;
+}
+
+.brand-track {
+  display: flex;
+  width: calc(200px * 28);
+  /* 14 items * 2 (duplicated) */
+  animation: scroll-brands 40s linear infinite;
+}
+
+.brand-item {
+  width: 200px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 0 30px;
+  flex-shrink: 0;
+}
+
+.brand-item img {
+  max-width: 110px;
+  max-height: 35px;
+  filter: grayscale(1) brightness(0.7);
+  /* Premium dark slate look - increased from 0.4 for visibility */
+  opacity: 0.6;
+  /* Increased from 0.3 for better visibility while maintaining subtlety */
+  transition: all 0.4s ease;
+}
+
+.brand-item:hover img {
+  filter: grayscale(0) brightness(1);
+  /* Reveal original colors on hover */
+  opacity: 1;
+  transform: scale(1.1);
+}
+
+@keyframes scroll-brands {
+  0% {
+    transform: translateX(0);
+  }
+
+  100% {
+    transform: translateX(calc(-200px * 14));
+  }
+}
+
+/* Pause animation on hover */
+.hero-brand-carousel:hover .brand-track {
+  animation-play-state: paused;
+}
+
 .hero-trust-badges {
   justify-content: center;
   width: 100%;
