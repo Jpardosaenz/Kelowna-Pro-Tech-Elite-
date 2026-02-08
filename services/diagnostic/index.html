@@ -387,9 +387,13 @@
         </div>
       </div>
       <figure>
-        <img src="/images/diagnostic-repairs.webp"
-          alt="Mobile mechanic running an advanced diagnostic scan under the hood." width="800" height="534"
-          loading="eager" decoding="async" />
+        <picture>
+          <source srcset="/images/diagnostic-repairs-400w.webp" media="(max-width: 640px)">
+          <source srcset="/images/diagnostic-repairs-800w.webp" media="(max-width: 1024px)">
+          <img src="/images/diagnostic-repairs.webp"
+            alt="Mobile mechanic running an advanced diagnostic scan under the hood." width="800" height="534"
+            loading="eager" decoding="async" />
+        </picture>
       </figure>
     </section>
 

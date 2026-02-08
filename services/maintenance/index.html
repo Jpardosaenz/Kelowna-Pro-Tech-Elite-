@@ -376,11 +376,15 @@
           </div>
         </div>
         <figure>
-          <img src="/images/maintenance-3v.webp"
-               class="hero-image"
-               alt="On-site preventive car maintenance service in Kelowna."
-               width="1600" height="900"
-               fetchpriority="high" decoding="async">
+          <picture>
+            <source srcset="/images/maintenance-3v-400w.webp" media="(max-width: 640px)">
+            <source srcset="/images/maintenance-3v-800w.webp" media="(max-width: 1024px)">
+            <img src="/images/maintenance-3v.webp"
+                 class="hero-image"
+                 alt="On-site preventive car maintenance service in Kelowna."
+                 width="1600" height="900"
+                 fetchpriority="high" decoding="async">
+          </picture>
         </figure>
       </section>
 
