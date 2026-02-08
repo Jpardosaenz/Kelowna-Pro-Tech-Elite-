@@ -190,7 +190,8 @@
   <link rel="preload" as="image" href="/images/pre-purchase-400w.webp" media="(max-width: 640px)" type="image/webp">
   <link rel="preload" as="image" href="/images/pre-purchase-800w.webp" media="(min-width: 641px) and (max-width: 1024px)" type="image/webp">
   <link rel="stylesheet" href="/estilos-header2.css" />
-  <link rel="stylesheet" href="/service-tiles.css" />
+  <link rel="stylesheet" href="/service-tiles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/service-tiles.css" /></noscript>
 
   <!-- ENGINEERING AUTHORITY PREMIUM SYSTEM -->
   <style>

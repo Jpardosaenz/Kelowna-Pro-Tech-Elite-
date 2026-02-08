@@ -38,7 +38,8 @@
   <link rel="preload" as="image" href="/images/diagnostic-repairs-800w.webp" media="(min-width: 641px) and (max-width: 1024px)" type="image/webp">
   <!-- CSS ya existente del sitio -->
   <link rel="stylesheet" href="/estilos-header2.css" />
-  <link rel="stylesheet" href="/service-tiles.css" />
+  <link rel="stylesheet" href="/service-tiles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/service-tiles.css" /></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
