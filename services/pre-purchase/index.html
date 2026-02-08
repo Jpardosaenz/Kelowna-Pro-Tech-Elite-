@@ -394,9 +394,13 @@
           </div>
 
           <figure>
-            <img src="/images/pre-purchase.webp" class="hero-image"
-              alt="Mobile mechanic inspecting a car before purchase in Kelowna." width="1200" height="800"
-              fetchpriority="high" decoding="async" />
+            <picture>
+              <source srcset="/images/pre-purchase-400w.webp" media="(max-width: 640px)">
+              <source srcset="/images/pre-purchase-800w.webp" media="(max-width: 1024px)">
+              <img src="/images/pre-purchase.webp" class="hero-image"
+                alt="Mobile mechanic inspecting a car before purchase in Kelowna." width="1200" height="800"
+                fetchpriority="high" decoding="async" />
+            </picture>
           </figure>
         </div>
       </div>
