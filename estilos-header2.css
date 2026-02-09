@@ -57,8 +57,8 @@ h1 {
 
 /***** HEADER MOBILE - VERSIÓN FINAL *****/
 body {
-  font-family: "Inter", sans-serif;
-  /* Aplica 'Inter' a todo el sitio */
+  font-family: "Inter", 'Inter Fallback', sans-serif;
+  /* Aplica 'Inter' con fallback ajustado para evitar CLS */
   -webkit-font-smoothing: antialiased;
   /* Mejora el renderizado en Safari/Chrome */
   -moz-osx-font-smoothing: grayscale;
@@ -349,7 +349,7 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
 /* Estilos para la línea introductoria */
 /* Estilos para la línea introductoria (Eyebrow) */
 .hero-intro {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 0.813rem;
   /* 13px */
   font-weight: 800;
@@ -364,7 +364,7 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
 
 /* Estilos para el Título Principal (H1) */
 .hero-headline {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: clamp(2rem, 7vw, 3.5rem);
   font-weight: 900;
   text-transform: uppercase;
@@ -379,7 +379,7 @@ COMPONENTE: NAVEGACIÓN MÓVIL (MENÚ DESPLEGABLE)
 
 /* Estilos para el texto de apoyo (H2/Support) */
 .hero-support-text {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 1.125rem;
   line-height: 1.7;
   color: #475569;
@@ -585,7 +585,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA)
   font-weight: 600;
   /* More premium feel */
   font-size: 1.3rem !important;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   box-shadow: 0 3px 16px rgba(44, 35, 14, 0.09);
   /* Subtler shadow */
   cursor: pointer;
@@ -738,7 +738,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   align-items: center;
   margin: 3rem auto;
   /* More space */
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   text-align: center;
   padding: 1.5rem;
   background: #fff;
@@ -1461,7 +1461,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   font-weight: 700;
   color: #ffffff;
   letter-spacing: 0.2px;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   line-height: 1.2;
 }
 
@@ -1469,7 +1469,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   font-size: 0.875rem;
   color: #cbd5e1;
   font-weight: 500;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   line-height: 1.2;
 }
 
@@ -1547,7 +1547,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 
 /* Subheadline Brand (below H1) */
 .hero-subheadline-brand {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 1rem;
   font-weight: 500;
   color: #475569;
@@ -1586,7 +1586,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   gap: 0.75rem;
   background: #111827;
   color: #ffd700;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 1.1rem;
   font-weight: 700;
   padding: 1rem 1.75rem;
@@ -1675,7 +1675,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .carousel-quote {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 0.95rem;
   font-style: italic;
   line-height: 1.5;
@@ -1684,7 +1684,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .carousel-author {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 0.813rem;
   font-weight: 700;
   color: #64748b;
@@ -1754,7 +1754,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .rating-number {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 1.75rem;
   font-weight: 800;
   color: #111827;
@@ -1768,7 +1768,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 }
 
 .social-proof-text {
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 0.95rem;
   color: #4b5563;
   margin: 0.5rem 0;
@@ -1815,7 +1815,7 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 /* Read Reviews Link */
 .read-reviews-link {
   display: inline-block;
-  font-family: "Inter", sans-serif;
+  font-family: "Inter", 'Inter Fallback', sans-serif;
   font-size: 0.85rem;
   color: #4285F4;
   font-weight: 600;
@@ -2083,7 +2083,7 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
   max-width: 100%;
   margin: 0;
   border: 2px solid #eab308;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
 }
 
 .hero-cta-button-premium:hover {
@@ -2112,7 +2112,7 @@ PHASE 2: PREMIUM CTA & CAROUSEL STYLES (RESTORED & FIXED)
 /* CTA Text - Responsive Show/Hide */
 .cta-text-mobile,
 .cta-text-desktop {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   font-size: 1.5rem;
   font-weight: 700;
   color: #0f172a;
@@ -2229,7 +2229,7 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   cursor: pointer;
   z-index: 9999;
   box-shadow: -2px 0 12px rgba(0, 0, 0, 0.15);
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
   font-weight: 700;
   font-size: 16px;
   writing-mode: vertical-rl;
@@ -2436,7 +2436,7 @@ Fixed vertical button on right side - ALWAYS VISIBLE
 }
 
 .proof-quote {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   font-size: 1rem;
   color: #1e293b;
   /* Slate-800 */
@@ -2505,7 +2505,7 @@ Fixed vertical button on right side - ALWAYS VISIBLE
   border-radius: 16px;
   text-decoration: none;
   border: 2px solid #0f172a;
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   font-size: 1.25rem;
   font-weight: 700;
   transition: all 0.25s ease;
@@ -2576,7 +2576,7 @@ Fixed vertical button on right side - ALWAYS VISIBLE
 }
 
 .proof-rating-number {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   font-size: 3rem;
   font-weight: 900;
   color: #0f172a;
@@ -2665,7 +2665,7 @@ Fixed vertical button on right side - ALWAYS VISIBLE
 }
 
 .hero-social-proof-card-2026 .proof-quote {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', 'Inter Fallback', sans-serif;
   font-size: 0.95rem;
   font-weight: 500;
   color: #1e293b;
@@ -2911,7 +2911,7 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
   display: none;
   padding: 12px 20px;
   border-radius: 8px;
-  font-family: 'Inter', system-ui, sans-serif;
+  font-family: 'Inter', 'Inter Fallback', system-ui, sans-serif;
   font-size: 14px;
   font-weight: 600;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
