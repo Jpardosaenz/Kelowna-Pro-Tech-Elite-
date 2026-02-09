@@ -50,8 +50,10 @@
   <link rel="preload" as="image" href="images/hero-mechanic-800w.webp" media="(min-width: 641px) and (max-width: 1024px)" type="image/webp">
   <!-- Critical CSS: inline ATF styles to unblock FCP (header + hero + CTAs + social proof) -->
   <style>
+    @font-face{font-family:'Inter Fallback';src:local('Arial'),local('Helvetica Neue'),local('Helvetica');size-adjust:107%;ascent-override:90%;descent-override:23%;line-gap-override:0%}
     *,*::before,*::after{box-sizing:border-box}body,h1,p,figure,blockquote,dl,dd{margin:0}html{-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}img,picture,video,canvas,svg{display:block;max-width:100%}input,button,textarea,select{font:inherit}p,h1{overflow-wrap:break-word}
-    body{font-family:"Inter",sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    body{font-family:"Inter",'Inter Fallback',sans-serif;-webkit-font-smoothing:antialiased;-moz-osx-font-smoothing:grayscale}
+    .hero-image{aspect-ratio:800/437;width:100%;height:auto}
     .kpem-header-mobile{width:100%;height:68px;padding:0 16px;padding-top:20px;background:#fff;box-sizing:border-box;position:sticky;top:0;z-index:1000;box-shadow:0 2px 8px rgba(0,0,0,.05);display:flex;align-items:center;justify-content:space-between;transform:translateZ(0)}
     .contenedor-logo{flex-grow:0;height:100%;display:flex;align-items:center;line-height:0}
     .kpem-header-mobile .contenedor-logo img{height:66px;width:auto;display:block}
@@ -68,27 +70,27 @@
       .floating-cta-container{position:fixed;bottom:calc(16px + env(safe-area-inset-bottom));right:16px;z-index:1000;min-width:44px;min-height:44px}
     }
     .header-cta{display:inline-flex;flex-direction:column;align-items:center;gap:3px;padding:14px 28px;background:linear-gradient(135deg,#0f172a 0%,#1e3a8a 50%,#0f172a 100%)!important;border:2px solid #fbbf24;border-radius:10px;box-shadow:0 8px 20px rgba(15,23,42,.45),0 0 20px rgba(251,191,36,.35),inset 0 1px 0 rgba(255,255,255,.1);text-decoration:none;transition:all .35s cubic-bezier(.4,0,.2,1);white-space:nowrap;position:relative}
-    .cta-main{font-size:1.125rem;font-weight:700;color:#fff;letter-spacing:.2px;font-family:"Inter",sans-serif;line-height:1.2}
-    .cta-sub{font-size:.875rem;color:#cbd5e1;font-weight:500;font-family:"Inter",sans-serif;line-height:1.2}
+    .cta-main{font-size:1.125rem;font-weight:700;color:#fff;letter-spacing:.2px;font-family:"Inter",'Inter Fallback',sans-serif;line-height:1.2}
+    .cta-sub{font-size:.875rem;color:#cbd5e1;font-weight:500;font-family:"Inter",'Inter Fallback',sans-serif;line-height:1.2}
     .hero-section{background-color:#f8fafc;padding:4rem 1rem 5rem;width:100%;box-sizing:border-box}
     .hero-container{max-width:1400px;margin:0 auto;padding:0 20px}
     .hero-grid{display:grid;grid-template-columns:1fr;gap:1rem;align-items:center}
     .hero-text-content{text-align:center}
-    .hero-intro{font-family:"Inter",sans-serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#6b7280;margin-bottom:.5rem;text-align:center;display:block}
-    .hero-headline{font-family:"Inter",sans-serif;font-size:clamp(2rem,7vw,3.5rem);font-weight:900;text-transform:uppercase;line-height:1.05;letter-spacing:-.02em;color:#0f172a;max-width:900px;margin:0 auto 1.5rem;text-align:center}
-    .hero-support-text{font-family:"Inter",sans-serif;font-size:1.5rem;line-height:1.4;color:#374151;max-width:100%;margin:0 auto 2.5rem;text-align:center;font-weight:400}
+    .hero-intro{font-family:"Inter",'Inter Fallback',sans-serif;font-size:1.15rem;font-weight:700;text-transform:uppercase;letter-spacing:2px;color:#6b7280;margin-bottom:.5rem;text-align:center;display:block}
+    .hero-headline{font-family:"Inter",'Inter Fallback',sans-serif;font-size:clamp(2rem,7vw,3.5rem);font-weight:900;text-transform:uppercase;line-height:1.05;letter-spacing:-.02em;color:#0f172a;max-width:900px;margin:0 auto 1.5rem;text-align:center}
+    .hero-support-text{font-family:"Inter",'Inter Fallback',sans-serif;font-size:1.5rem;line-height:1.4;color:#374151;max-width:100%;margin:0 auto 2.5rem;text-align:center;font-weight:400}
     .hero-cta-container{width:100%;display:flex;flex-direction:column;align-items:center;gap:1.25rem;margin-top:3rem;padding-top:2rem;border-top:1px solid #f1f5f9}
     .hero-cta-buttons{display:flex;flex-direction:column;align-items:center;gap:1.25rem;width:100%;max-width:100%;margin:0 auto;padding:0 1rem}
-    .hero-cta-button-premium{display:flex;align-items:center;justify-content:center;background:#ffd700;color:#0f172a;padding:1.5rem 3rem;border-radius:16px;text-decoration:none;box-shadow:0 8px 24px rgba(255,215,0,.3);transition:all .25s ease;width:auto;max-width:600px;margin:0 auto;border:2px solid #eab308;font-family:'Inter',sans-serif}
+    .hero-cta-button-premium{display:flex;align-items:center;justify-content:center;background:#ffd700;color:#0f172a;padding:1.5rem 3rem;border-radius:16px;text-decoration:none;box-shadow:0 8px 24px rgba(255,215,0,.3);transition:all .25s ease;width:auto;max-width:600px;margin:0 auto;border:2px solid #eab308;font-family:'Inter','Inter Fallback',sans-serif}
     .cta-content{display:flex;align-items:center;justify-content:center;gap:1rem;width:100%}
     .hero-cta-button-premium .cta-icon-svg{width:32px;height:32px;stroke-width:2.5;color:#0f172a;flex-shrink:0}
-    .cta-text-mobile,.cta-text-desktop{font-family:'Inter',sans-serif;font-size:1.5rem;font-weight:700;color:#0f172a;white-space:nowrap;letter-spacing:.2px}
+    .cta-text-mobile,.cta-text-desktop{font-family:'Inter','Inter Fallback',sans-serif;font-size:1.5rem;font-weight:700;color:#0f172a;white-space:nowrap;letter-spacing:.2px}
     .cta-text-desktop{display:none}.cta-text-mobile{display:inline}
-    .hero-cta-button-secondary{display:flex;align-items:center;justify-content:center;gap:.75rem;background:#fff;color:#0f172a;padding:1.5rem 2.5rem;border-radius:16px;text-decoration:none;border:2px solid #0f172a;font-family:'Inter',sans-serif;font-size:1.25rem;font-weight:700;transition:all .25s ease;min-width:180px}
+    .hero-cta-button-secondary{display:flex;align-items:center;justify-content:center;gap:.75rem;background:#fff;color:#0f172a;padding:1.5rem 2.5rem;border-radius:16px;text-decoration:none;border:2px solid #0f172a;font-family:'Inter','Inter Fallback',sans-serif;font-size:1.25rem;font-weight:700;transition:all .25s ease;min-width:180px}
     .hero-cta-button-secondary .cta-icon-svg{width:28px;height:28px;transition:stroke .25s ease}
     .hero-social-proof-card-2026{display:flex;align-items:center;gap:1.75rem;padding:1.5rem 2rem;background:#fff;border-radius:20px;box-shadow:0 6px 30px rgba(0,0,0,.08);border:1px solid #e2e8f0;text-decoration:none;width:100%;max-width:700px;margin:1.5rem auto 0;cursor:pointer;transition:all .25s ease}
     .proof-rating-block{display:flex;flex-direction:column;align-items:center;padding-right:1.75rem;border-right:2px solid #f1f5f9;flex-shrink:0}
-    .proof-rating-number{font-family:'Inter',sans-serif;font-size:3rem;font-weight:900;color:#0f172a;line-height:1}
+    .proof-rating-number{font-family:'Inter','Inter Fallback',sans-serif;font-size:3rem;font-weight:900;color:#0f172a;line-height:1}
     .proof-rating-stars{font-size:1.1rem;color:#fbbf24;letter-spacing:2px;margin:6px 0}
     .proof-rating-count{font-size:.9rem;color:#64748b;font-weight:600}
     .proof-testimonial-block{flex:1;min-width:0;overflow:hidden}
@@ -99,7 +101,7 @@
     .review-with-avatar{display:flex;gap:12px;align-items:flex-start;width:100%}
     .review-avatar{width:42px;height:42px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:#fff;font-weight:700;font-size:14px;flex-shrink:0;box-shadow:0 2px 8px rgba(0,0,0,.12)}
     .review-content{flex:1;min-width:0}
-    .hero-social-proof-card-2026 .proof-quote{font-family:'Inter',sans-serif;font-size:.95rem;font-weight:500;color:#1e293b;line-height:1.5;margin:0 0 8px 0;font-style:italic}
+    .hero-social-proof-card-2026 .proof-quote{font-family:'Inter','Inter Fallback',sans-serif;font-size:.95rem;font-weight:500;color:#1e293b;line-height:1.5;margin:0 0 8px 0;font-style:italic}
     .review-meta{display:flex;align-items:center;gap:4px;flex-wrap:wrap}
     .hero-social-proof-card-2026 .proof-author{font-size:.9rem;color:#1e293b;font-weight:600;margin:0}
     .review-service{font-size:.85rem;color:#64748b;font-weight:500}
@@ -114,7 +116,7 @@
     .hero-trust-badges{display:flex;flex-wrap:wrap;justify-content:center;gap:.75rem 1.25rem;margin-top:1.25rem;width:100%}
     .trust-badge{display:flex;align-items:center;gap:6px;font-size:.85rem;color:#475569;font-weight:500}
     .badge-icon{width:16px;height:16px;color:#059669;stroke-width:3}
-    .main-cta-button{background-color:#111827;color:#fff;border:2px solid #ffd700;padding:.25rem 1rem;border-radius:25px;font-weight:600;font-size:1.3rem;font-family:"Inter",sans-serif;box-shadow:0 3px 16px rgba(44,35,14,.09);cursor:pointer;max-width:95vw;min-width:250px;text-align:center;display:inline-block;text-decoration:none;line-height:1.3}
+    .main-cta-button{background-color:#111827;color:#fff;border:2px solid #ffd700;padding:.25rem 1rem;border-radius:25px;font-weight:600;font-size:1.3rem;font-family:"Inter",'Inter Fallback',sans-serif;box-shadow:0 3px 16px rgba(44,35,14,.09);cursor:pointer;max-width:95vw;min-width:250px;text-align:center;display:inline-block;text-decoration:none;line-height:1.3}
     @media(max-width:600px){
       .hero-cta-button-premium{padding:1rem 1.75rem;width:auto;max-width:100%}.cta-text-mobile{font-size:1.15rem}.cta-content{justify-content:center;gap:.6rem}.hero-cta-button-premium .cta-icon-svg{width:24px;height:24px}
       .hero-social-proof-card-2026{flex-direction:column;gap:1.25rem;padding:1.5rem;text-align:center}.proof-rating-block{flex-direction:row;gap:1rem;padding-right:0;padding-bottom:1rem;border-right:none;border-bottom:2px solid #f1f5f9;width:100%;justify-content:center;align-items:center}.proof-rating-number{font-size:2.5rem}.proof-rating-stars{font-size:1rem}.proof-testimonial-block{width:100%}.review-with-avatar{text-align:left}.review-avatar{width:36px;height:36px;font-size:12px}.hero-social-proof-card-2026 .proof-quote{font-size:.9rem}.review-service{font-size:.8rem}.proof-google-badge{flex-direction:row;padding-left:0;padding-top:1rem;border-top:1px solid #f1f5f9;width:100%;justify-content:center}
@@ -252,7 +254,8 @@
             <source srcset="images/hero-mechanic-800w.webp" media="(max-width: 1024px)">
             <img src="images/Gemini_Generated_Image_l9q0lql9q0lql9q0.webp"
               alt="Joseph from Kelowna Protech Elite diagnosing a Subaru on-site in winter - mobile mechanic service"
-              class="hero-image" loading="eager" decoding="async" fetchpriority="high" />
+              class="hero-image" loading="eager" decoding="async" fetchpriority="high"
+              width="800" height="437" />
           </picture>
         </div>
 
