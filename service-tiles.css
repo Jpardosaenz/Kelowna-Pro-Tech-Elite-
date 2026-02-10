@@ -103,9 +103,8 @@
 /* Imagen: reserva de espacio y estabilidad */
 .tile .image-container {
   width: 100%;
-  height: 160px;
+  height: 180px;
   background-color: #f3f4f6;
-  aspect-ratio: 16 / 10; /* NUEVO: evita saltos (CLS) */
 }
 .tile .image-container img {
   width: 100%;
@@ -188,6 +187,9 @@
   .tiles {
     grid-template-columns: repeat(3, minmax(0, 1fr));
     gap: 24px;
+  }
+  .tile .image-container {
+    aspect-ratio: 16 / 10;
   }
   .tile .title {
     font-size: 20px;
@@ -437,6 +439,10 @@ main.page {
 }
 
 @media (max-width: 767px) {
+  .tile .copy {
+    margin-top: 63px; /* 126px - 50% adicional = 63px total (~65% reducción del gap original) */
+  }
+
   .tile .cta-button {
     padding: 14px 20px;
   }
