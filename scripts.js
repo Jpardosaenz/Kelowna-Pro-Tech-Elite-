@@ -1,5 +1,3 @@
-const HF_TOKEN = "PASTE_YOUR_TOKEN_HERE";
-
 /*
 ==========================================================================
 SECCIÓN: LÓGICA JAVASCRIPT
@@ -231,7 +229,7 @@ async function diagNext(step) {
       placeholder.innerHTML = "<em>Procesando diagnóstico experto...</em>";
     }
 
-    fetchAIAnalysis(currentLead);
+    displayExpertText(generateAIHypothesis(currentLead.symptoms));
 
     // LEAD COMPLETO: Toda la información capturada (listo para cotizar)
     const result = await sendLeadToAdmin({
@@ -378,55 +376,6 @@ function showLeadFeedback(success) {
       feedbackEl.style.display = 'none';
     }, 300);
   }, 3000);
-}
-
-/**
- * Fetches higher-authority analysis from Hugging Face Inference API.
- * Includes a 5-second timeout and CORS fallback.
- */
-async function fetchAIAnalysis(data) {
-  const placeholder = document.getElementById('diag-result-placeholder');
-  const API_URL = "https://api-inference.huggingface.co/models/mistralai/Mistral-7B-Instruct-v0.2";
-
-  // Timeout para evitar esperas infinitas
-  const controller = new AbortController();
-  const timeoutId = setTimeout(() => controller.abort(), 5000);
-
-  try {
-    const response = await fetch(API_URL, {
-      method: "POST",
-      headers: {
-        "Authorization": `Bearer ${HF_TOKEN}`,
-        "Content-Type": "application/json"
-      },
-      signal: controller.signal,
-      body: JSON.stringify({
-        inputs: `[SYS] You are a Master Mechanic in Kelowna. Analyze: ${data.symptoms} for a ${data.vehicle}. Respond in 3 short sentences using 'Chain Reaction' logic. [ANS]`,
-        parameters: { max_new_tokens: 150, temperature: 0.7 }
-      })
-    });
-
-    clearTimeout(timeoutId);
-
-    if (!response.ok) throw new Error("API Offline or CORS");
-
-    const result = await response.json();
-    let aiText = result[0]?.generated_text || result.generated_text || "";
-
-    if (aiText.includes("[ANS]")) {
-      aiText = aiText.split("[ANS]").pop().trim();
-    }
-
-    if (placeholder) {
-      displayExpertText(aiText || generateAIHypothesis(data.symptoms));
-    }
-  } catch (error) {
-    clearTimeout(timeoutId);
-    console.warn("🛡️ KPEM SAFE-MODE: El navegador bloqueó la IA (CORS). Activando Lógica Experta Local.");
-    if (placeholder) {
-      displayExpertText(generateAIHypothesis(data.symptoms));
-    }
-  }
 }
 
 /**
