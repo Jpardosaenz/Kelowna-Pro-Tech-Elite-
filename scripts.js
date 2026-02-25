@@ -244,16 +244,6 @@ async function diagNext(step) {
     // Mostrar feedback visual de envío
     showLeadFeedback(result.success);
 
-    // TRACKING DETALLADO: Enviar datos completos a GA4 y Consola
-    console.group("🚀 NUEVO LEAD CAPTURADO");
-    console.log("Cliente:", currentLead.name);
-    console.log("Contacto:", currentLead.contact);
-    console.log("Vehículo:", currentLead.vehicle);
-    console.log("Síntomas:", currentLead.symptoms);
-    console.log("Urgencia:", currentLead.urgency);
-    console.log("Email enviado:", result.success ? "✅ Sí" : "❌ No");
-    console.groupEnd();
-
     // GA4 Tracking - Complete Lead (High-Value Conversion)
     if (typeof gtag === 'function') {
       gtag('event', 'generate_lead', {
@@ -292,13 +282,6 @@ async function diagNext(step) {
 async function sendLeadToAdmin(data) {
   const timestamp = new Date().toLocaleString();
 
-  console.group("📬 ENVIANDO LEAD AL ADMINISTRADOR");
-  console.log("Fecha:", timestamp);
-  console.log("Nombre:", data.name);
-  console.log("Contacto:", data.contact);
-  console.log("Estado:", data.type || "Lead Completo");
-  console.groupEnd();
-
   // Guardar en localStorage como backup
   const history = JSON.parse(localStorage.getItem('kpem_leads_history') || "[]");
   history.push({ ...data, timestamp: new Date().toISOString() });
@@ -329,7 +312,6 @@ async function sendLeadToAdmin(data) {
     });
 
     if (response.ok) {
-      console.log('✅ Lead enviado exitosamente por email');
       return { success: true };
     } else {
       console.error('⚠️ Error al enviar lead:', response.status);
@@ -539,13 +521,6 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      // Console log for debugging
-      console.group('📞 PHONE CLICK TRACKED');
-      console.log('Number:', phoneNumber);
-      console.log('Link Text:', linkText);
-      console.log('Page:', window.location.pathname);
-      console.log('Class:', linkClass);
-      console.groupEnd();
     });
   });
 
@@ -569,22 +544,8 @@ document.addEventListener('DOMContentLoaded', function () {
         });
       }
 
-      // Console log for debugging
-      console.group('💬 SMS CLICK TRACKED');
-      console.log('Number:', phoneNumber);
-      console.log('Link Text:', linkText);
-      console.log('Page:', window.location.pathname);
-      console.log('Class:', linkClass);
-      console.groupEnd();
     });
   });
-
-  // Summary log on page load
-  console.group('🎯 CONVERSION TRACKING INITIALIZED');
-  console.log(`Phone links tracked: ${telLinks.length}`);
-  console.log(`SMS links tracked: ${smsLinks.length}`);
-  console.log('Events will be sent to GA4 on click');
-  console.groupEnd();
 
   // Track service card clicks
   document.querySelectorAll('#service-tiles .tile').forEach(tile => {
