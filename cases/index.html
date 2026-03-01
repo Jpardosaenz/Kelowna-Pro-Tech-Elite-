@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GDM77733G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1GDM77733G');
+  </script>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
+  <title>Case Studies — Real Kelowna Diagnostics | Kelowna Protech Elite Mobile Mechanic</title>
+  <meta name="description"
+    content="Real vehicle diagnostic cases from Kelowna, BC. See how Joseph resolves breakdowns, coolant leaks, and hidden faults on-site — no tow truck, same day." />
+  <meta name="robots" content="index,follow" />
+  <link rel="canonical" href="https://kelownaprotechmobilemech.com/cases/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Case Studies — Real Kelowna Diagnostics | Kelowna Protech Elite" />
+  <meta property="og:description"
+    content="Real vehicle diagnostic cases from Kelowna, BC. On-site, same day, no tow truck." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kelownaprotechmobilemech.com/cases/" />
+  <meta property="og:image" content="https://kelownaprotechmobilemech.com/images/diagnostic-og.jpg" />
+  <meta property="og:locale" content="en_CA" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Case Studies — Real Kelowna Diagnostics | Kelowna Protech Elite" />
+  <meta name="twitter:description"
+    content="Real vehicle diagnostic cases from Kelowna, BC. On-site, same day, no tow truck." />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/estilos-header2.css" />
+  <link rel="stylesheet" href="/service-tiles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/service-tiles.css" /></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet"
+    media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap"
+      rel="stylesheet" /></noscript>
+
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #6b7280;
+      --line: #e5e7eb;
+      --premium-dark: #0f172a;
+      --premium-gold: #fbbf24;
+      --premium-blue: #1e40af;
+      --premium-light: #f8fafc;
+    }
+
+    .page {
+      max-width: 1400px;
+      margin: 0 auto;
+      padding: 24px 40px;
+    }
+
+    @media (max-width: 768px) {
+      .page {
+        padding: 24px 16px;
+      }
+    }
+
+    .breadcrumb {
+      font-size: 12px;
+      color: var(--muted);
+      margin: 8px 0 16px;
+    }
+
+    .breadcrumb a {
+      color: inherit;
+      text-decoration: none;
+    }
+
+    .cases-header {
+      margin: 24px 0 48px;
+      max-width: 640px;
+    }
+
+    .cases-header h1 {
+      font-size: 32px;
+      line-height: 1.2;
+      margin: 0 0 12px;
+      color: var(--premium-dark);
+    }
+
+    @media (min-width: 768px) {
+      .cases-header h1 {
+        font-size: 44px;
+      }
+    }
+
+    .cases-header p {
+      font-size: 17px;
+      color: var(--muted);
+      line-height: 1.6;
+      margin: 0;
+    }
+
+    /* Case cards grid */
+    .cases-grid {
+      display: grid;
+      gap: 32px;
+      grid-template-columns: 1fr;
+    }
+
+    @media (min-width: 768px) {
+      .cases-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (min-width: 1024px) {
+      .cases-grid {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+
+    .case-card {
+      background: #fff;
+      border: 1px solid var(--line);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+      transition: transform 0.2s ease, box-shadow 0.2s ease;
+      text-decoration: none;
+      color: inherit;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .case-card:hover {
+      transform: translateY(-4px);
+      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.13);
+    }
+
+    .case-card__img {
+      width: 100%;
+      aspect-ratio: 16 / 10;
+      object-fit: cover;
+      display: block;
+    }
+
+    .case-card__body {
+      padding: 24px;
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    .case-card__tag {
+      font-size: 12px;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--premium-blue);
+    }
+
+    .case-card__title {
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 1.3;
+      color: var(--premium-dark);
+      margin: 0;
+    }
+
+    .case-card__meta {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 4px;
+    }
+
+    .case-card__link {
+      margin-top: auto;
+      padding-top: 16px;
+      font-size: 14px;
+      font-weight: 700;
+      color: var(--premium-blue);
+      display: inline-flex;
+      align-items: center;
+      gap: 4px;
+    }
+  </style>
+
+  <!-- JSON-LD -->
+  <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "Organization",
+          "@id": "https://kelownaprotechmobilemech.com/#org",
+          "name": "Kelowna Protech Elite Mobile Mechanic",
+          "url": "https://kelownaprotechmobilemech.com/"
+        },
+        {
+          "@type": "CollectionPage",
+          "@id": "https://kelownaprotechmobilemech.com/cases/#webpage",
+          "url": "https://kelownaprotechmobilemech.com/cases/",
+          "name": "Case Studies — Real Kelowna Diagnostics",
+          "description": "Real vehicle diagnostic cases from Kelowna, BC.",
+          "isPartOf": {
+            "@id": "https://kelownaprotechmobilemech.com/#website"
+          },
+          "breadcrumb": {
+            "@id": "https://kelownaprotechmobilemech.com/cases/#breadcrumb"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "@id": "https://kelownaprotechmobilemech.com/cases/#breadcrumb",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://kelownaprotechmobilemech.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Cases",
+              "item": "https://kelownaprotechmobilemech.com/cases/"
+            }
+          ]
+        }
+      ]
+    }
+  </script>
+</head>
+
+<body>
+  <!-- HEADER MOBILE -->
+  <header class="kpem-header-mobile" role="banner">
+    <div class="contenedor-logo">
+      <a href="/" aria-label="Go to homepage">
+        <img src="/images/logo-kelowna-protech-eliteV1.webp" alt="Kelowna Protech Elite Mobile Mechanic logo"
+          loading="eager" decoding="async" width="85" height="85" class="logo-mobile" />
+      </a>
+    </div>
+    <nav id="mobile-navigation" class="mobile-menu" role="navigation" aria-label="Main Navigation">
+      <button class="menu-close-button" aria-label="Close menu">&times;</button>
+      <ul>
+        <li><a href="/#client-stories">Client Stories</a></li>
+        <li><a href="/#why-us">Why Us</a></li>
+        <li><a href="/#service-tiles">Services</a></li>
+        <li><a href="/cases/" aria-current="page">Cases</a></li>
+        <li><a href="/#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <a href="tel:+12508595467" class="header-cta" aria-label="Call expert mechanic for same-day service">
+      <span class="cta-main">Call Expert Mechanic</span>
+      <span class="cta-sub">Same-Day Service • 15+ Years</span>
+    </a>
+    <button class="kpem-menu-trigger" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false">
+      &#9776;
+    </button>
+  </header>
+
+  <main class="page">
+    <!-- Breadcrumb -->
+    <nav class="breadcrumb" aria-label="Breadcrumb">
+      <a href="/">Home</a> › Cases
+    </nav>
+
+    <!-- Header -->
+    <header class="cases-header">
+      <h1>Real Diagnoses. Real Kelowna Vehicles.</h1>
+      <p>Each case is a real situation — broken down, stranded, or just something that didn't feel right. Here's how
+        we found the root cause, on-site, the same day.</p>
+    </header>
+
+    <!-- Cases grid -->
+    <section aria-label="Case studies">
+      <div class="cases-grid">
+
+        <!-- BMW Z3 -->
+        <a class="case-card" href="/cases/bmw-z3-kelowna-diagnostic/">
+          <img class="case-card__img"
+            src="/images/bmw-z3-kelowna-parking.jpg"
+            alt="Red BMW Z3 roadster in Kelowna parking lot — on-site mobile diagnostic"
+            width="2720"
+            height="1995"
+            loading="lazy"
+            decoding="async" />
+          <div class="case-card__body">
+            <span class="case-card__tag">On-Site Diagnostic</span>
+            <p class="case-card__title">BMW Z3 Stranded in a Kelowna Parking Lot</p>
+            <p class="case-card__meta">Harvey Avenue · Same-Day · Kelowna, BC</p>
+            <span class="case-card__link">Read case →</span>
+          </div>
+        </a>
+
+      </div>
+    </section>
+
+    <!-- NAP Footer -->
+    <footer class="site-nap" aria-label="Business info">
+      <div class="site-nap__wrap">
+        <strong class="site-nap__brand">Kelowna Protech Elite Mobile Mechanic</strong>
+        <div class="site-nap__area">
+          Service area: Kelowna, Vernon, Lake Country, Peachland, Penticton,
+          Okanagan Valley
+        </div>
+        <div class="site-nap__contact">
+          Phone:
+          <a href="tel:+12508595467" class="site-nap__tel" rel="nofollow">+1‑250‑859‑5467</a>
+        </div>
+        <div class="site-nap__hours">
+          Hours: <time>Mon–Sun 08:00–20:00</time>
+        </div>
+        <p class="site-nap__coverage">
+          <a href="/#coverage" class="site-nap__link">See Coverage & Areas Served →</a>
+        </p>
+      </div>
+    </footer>
+  </main>
+
+  <!-- FLOATING CTA -->
+  <div class="floating-cta-container" role="region" aria-label="Quick Contact">
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button"
+      style="background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%) !important; border: 2px solid #fbbf24 !important; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4), 0 0 20px rgba(251, 191, 36, 0.3) !important;"
+      aria-label="Call for same-day on-site diagnostic">
+      Call for Same-Day Diagnostic ✓
+    </a>
+  </div>
+
+  <!-- MODAL DEL EMBUDO DE DIAGNÓSTICO AI -->
+  <div id="diag-modal" class="diag-modal-overlay" aria-hidden="true">
+    <div class="diag-modal-content">
+      <button class="diag-close" onclick="closeDiagModal()" aria-label="Close diagnostic tool">&times;</button>
+
+      <!-- Paso 1 -->
+      <div id="diag-step-1" class="diag-step">
+        <h2 class="diag-title">Step 1: Contact Details</h2>
+        <p class="diag-subtitle">Where should we send your results?</p>
+        <div class="diag-input-group">
+          <input type="text" id="diag-name" placeholder="Your Name" required>
+        </div>
+        <div class="diag-input-group">
+          <input type="text" id="diag-contact" placeholder="Phone or Email" required>
+        </div>
+        <button class="diag-next-btn" onclick="diagNext(2)">Next: Vehicle Info →</button>
+        <p class="diag-privacy">We only use this to send your diagnostic report.</p>
+      </div>
+
+      <!-- Paso 2 -->
+      <div id="diag-step-2" class="diag-step" style="display:none;">
+        <h2 class="diag-title">Step 2: Vehicle & Symptoms</h2>
+        <div class="diag-input-group">
+          <input type="text" id="diag-vehicle" placeholder="Year / Make / Model (e.g., 2018 Ford F-150)">
+        </div>
+        <div class="diag-input-group">
+          <textarea id="diag-symptoms"
+            placeholder="Tell us what's happening (e.g., ticking noise, won't start, warning light...)"></textarea>
+        </div>
+        <div class="diag-input-group">
+          <select id="diag-urgency">
+            <option value="flexible">Urgency: Flexible</option>
+            <option value="24h">Need help within 24h</option>
+            <option value="emergency">Emergency / Broken Down</option>
+          </select>
+        </div>
+        <button class="diag-next-btn" onclick="diagNext(3)">Analyze Now — Get Results →</button>
+      </div>
+
+      <!-- Paso 3 -->
+      <div id="diag-step-3" class="diag-step" style="display:none;">
+        <div class="diag-success-icon">🔧</div>
+        <h2 class="diag-title">We're Reviewing Your Case</h2>
+        <div class="diag-result-box">
+          <p id="diag-result-placeholder">
+            Based on your description, our lead engineer Joseph is reviewing your case. We specialize in mobile
+            on-site repairs and can likely solve this today without a tow.
+          </p>
+        </div>
+        <p class="diag-cta-text">To book your engineering-grade diagnostic:</p>
+        <div class="diag-action-container">
+          <a href="tel:+12508595467" class="diag-call-btn"
+            style="background: #0f172a !important; border: 2px solid #fbbf24 !important;">Call for Same-Day Service
+            ✓</a>
+          <a href="sms:+12508595467" class="diag-sms-btn"
+            style="background: transparent !important; border: 2px solid #0f172a !important; color: #0f172a !important;">Text
+            for Quote (2-Min)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- RED SIDE WIDGET -->
+  <button id="side-ask-mechanic" class="side-ask-mechanic-btn" onclick="openDiagModal()"
+    aria-label="Ask a Mechanic - Free Diagnostic">
+    <span class="widget-text">Ask a Mechanic</span>
+  </button>
+
+  <script src="/scripts.js" defer></script>
+</body>
+
+</html>
