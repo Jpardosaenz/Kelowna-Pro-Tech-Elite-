@@ -14,6 +14,10 @@ http://kelownaprotechmobilemech.com/*   https://kelownaprotechmobilemech.com/:sp
 /services/pre-purchase/    /services/pre-purchase/index.html     200
 /services/maintenance      /services/maintenance/index.html      200
 /services/maintenance/     /services/maintenance/index.html      200
+/field-reports             /field-reports/index.html             200
+/field-reports/            /field-reports/index.html             200
+/field-reports/bmw-z3-kelowna-diagnostic    /field-reports/bmw-z3-kelowna-diagnostic/index.html    200
+/field-reports/bmw-z3-kelowna-diagnostic/   /field-reports/bmw-z3-kelowna-diagnostic/index.html    200
 /pre-purchase   /services/pre-purchase/   301!
 
 /our-promise/        410
