@@ -28,6 +28,9 @@
   <meta property="og:type" content="article" />
   <meta property="og:url" content="https://kelownaprotechmobilemech.com/field-reports/bmw-z3-kelowna-diagnostic/" />
   <meta property="og:image" content="https://kelownaprotechmobilemech.com/images/bmw-z3-kelowna-parking.jpg" />
+  <meta property="og:image:width" content="800" />
+  <meta property="og:image:height" content="587" />
+  <meta property="og:image:alt" content="Red BMW Z3 roadster in Kelowna commercial parking lot during on-site mobile diagnostic" />
   <meta property="og:locale" content="en_CA" />
 
   <!-- Twitter Card -->
@@ -61,12 +64,17 @@
       --premium-gold: #fbbf24;
       --premium-blue: #1e40af;
       --premium-light: #f8fafc;
+      --bg: #ffffff;
+    }
+
+    body {
+      background-color: var(--bg);
     }
 
     .page {
       max-width: 1400px;
       margin: 0 auto;
-      padding: 24px 40px;
+      padding: 40px 40px;
     }
 
     @media (max-width: 768px) {
@@ -76,151 +84,71 @@
     }
 
     .breadcrumb {
-      font-size: 12px;
+      font-size: 13px;
       color: var(--muted);
-      margin: 8px 0 16px;
+      margin: 0 0 32px;
+      text-align: center;
     }
 
     .breadcrumb a {
       color: inherit;
       text-decoration: none;
+      transition: color 0.2s;
     }
 
-    /* ── HERO ─────────────────────────────── */
-    .case-hero {
-      margin-bottom: 40px;
+    .breadcrumb a:hover {
+      color: var(--premium-blue);
     }
 
-    /* Two-column layout on desktop: text left, image right */
-    .case-hero__layout {
-      display: flex;
-      flex-direction: column;
-      gap: 24px;
+    /* ── SUPERIOR HERO HEADER (CENTERED) ── */
+    .case-header {
+      max-width: 900px;
+      margin: 0 auto 56px;
+      text-align: center;
     }
 
-    @media (min-width: 768px) {
-      .case-hero__layout {
-        flex-direction: row;
-        align-items: flex-start;
-        gap: 40px;
-      }
-    }
-
-    .case-hero__text {
-      flex: 1;
-      min-width: 0;
-    }
-
-    .case-hero__image-col {
-      flex: 0 0 auto;
-      width: 100%;
-      max-width: 480px;
-    }
-
-    @media (min-width: 768px) {
-      .case-hero__image-col {
-        width: 480px;
-      }
-    }
-
-    .case-hero h1 {
-      font-size: 28px;
+    .case-header h1 {
+      font-size: 32px;
       line-height: 1.2;
-      margin: 0 0 16px;
+      margin: 0 0 20px;
       color: var(--premium-dark);
+      font-weight: 800;
+      letter-spacing: -0.02em;
     }
 
     @media (min-width: 768px) {
-      .case-hero h1 {
-        font-size: 42px;
+      .case-header h1 {
+        font-size: 48px;
+        line-height: 1.15;
       }
     }
 
-    /* Badge strip: single line below H1 */
     .badge-strip {
       display: flex;
       flex-wrap: wrap;
-      gap: 8px 16px;
-      font-size: 13px;
+      gap: 10px 16px;
+      font-size: 14px;
       font-weight: 600;
       color: var(--muted);
-      margin: 0 0 20px;
+      justify-content: center;
       align-items: center;
+      margin-bottom: 24px;
     }
 
     .badge-strip__sep {
       color: var(--line);
     }
 
-    /* Service area callout box */
-    .service-area-box {
-      background: var(--premium-light);
-      border: 1px solid var(--line);
-      border-left: 3px solid var(--premium-blue);
-      border-radius: 10px;
-      padding: 14px 16px;
-      margin: 20px 0;
-    }
-
-    .service-area-box__areas {
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--premium-dark);
-      margin: 0 0 4px;
-    }
-
-    .service-area-box__desc {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0;
-      line-height: 1.5;
-    }
-
-    /* Inline CTA — phone strip */
-    .cta-inline {
-      display: block;
-      background: var(--premium-dark);
-      color: #fff;
-      border: 2px solid var(--premium-gold);
-      border-radius: 10px;
-      padding: 14px 20px;
-      font-size: 15px;
-      font-weight: 700;
-      text-decoration: none;
-      text-align: center;
-      min-height: 48px;
-      line-height: 1.3;
-      transition: background 0.2s ease, box-shadow 0.2s ease;
-      margin: 20px 0;
-    }
-
-    .cta-inline:hover {
-      background: linear-gradient(135deg, var(--premium-dark) 0%, var(--premium-blue) 100%);
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.3), 0 0 16px rgba(251, 191, 36, 0.5);
-    }
-
-    /* Hero editorial image — constrained, not full-width banner */
-    .case-hero__photo-real {
-      margin: 0;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-    }
-
-    .case-hero__photo-real img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    /* Case meta */
     .case-meta {
       display: flex;
       gap: 16px;
       flex-wrap: wrap;
-      margin: 12px 0 0;
+      justify-content: center;
       color: var(--muted);
-      font-size: 13px;
+      font-size: 14px;
+      margin-top: 16px;
+      padding-top: 16px;
+      border-top: 1px solid var(--line);
     }
 
     .case-meta__item {
@@ -229,50 +157,59 @@
       gap: 6px;
     }
 
-    /* ── STORY CONTENT ─────────────────────── */
-    .story-content {
-      max-width: 740px;
+    /* ── EDITORIAL GRID (2-COLUMN) ── */
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr;
+      gap: 40px;
+      max-width: 1200px;
       margin: 0 auto;
     }
 
-    .story-content p {
-      line-height: 1.7;
-      margin: 0 0 20px;
-      color: var(--ink);
-    }
-
-    .story-content p:last-child {
-      margin-bottom: 0;
-    }
-
-    .story-section {
-      margin: 40px 0;
-    }
-
-    .story-section h2 {
-      font-size: 22px;
-      margin: 0 0 16px;
-      color: var(--premium-dark);
-    }
-
-    @media (min-width: 768px) {
-      .story-section h2 {
-        font-size: 26px;
+    @media (min-width: 1024px) {
+      .editorial-grid {
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 60px;
+        align-items: start;
       }
     }
 
-    /* Key findings box */
+    /* ── LEFT COLUMN (STORY) ── */
+    .story-main {
+      font-size: 18px;
+      line-height: 1.8;
+      color: #334155;
+    }
+
+    .story-main p {
+      margin: 0 0 24px;
+    }
+
+    .story-section {
+      margin: 48px 0;
+    }
+
+    .story-section h2 {
+      font-size: 26px;
+      margin: 0 0 20px;
+      color: var(--premium-dark);
+      font-weight: 700;
+      letter-spacing: -0.01em;
+    }
+
+    /* Findings Box - Sleek */
     .findings-box {
-      background: #fff;
-      border: 2px solid var(--premium-gold);
-      border-radius: 16px;
-      padding: 24px;
-      margin: 32px 0 0;
+      background: var(--premium-light);
+      border-left: 4px solid var(--premium-gold);
+      border-radius: 0 16px 16px 0;
+      padding: 32px;
+      margin: 40px 0;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
     }
 
     .findings-box h3 {
-      font-size: 16px;
-      margin: 0 0 16px;
+      font-size: 18px;
+      margin: 0 0 20px;
       color: var(--premium-dark);
       text-transform: uppercase;
       letter-spacing: 0.05em;
@@ -283,83 +220,77 @@
       padding: 0;
       margin: 0;
       display: grid;
-      gap: 12px;
+      gap: 16px;
     }
 
     .findings-list li {
-      padding-left: 28px;
+      padding-left: 32px;
       position: relative;
-      line-height: 1.6;
     }
 
     .findings-list li::before {
       content: "⚠️";
       position: absolute;
       left: 0;
-      font-size: 16px;
-    }
-
-    /* Diagnostic photo section */
-    .diagnostic-visual {
-      background: var(--premium-light);
-      border-radius: 20px;
-      padding: 32px;
-      margin: 48px 0;
-    }
-
-    .diagnostic-visual h3 {
       font-size: 18px;
-      margin: 0 0 20px;
-      color: var(--premium-dark);
+      top: 2px;
     }
 
-    .diagnostic-visual__grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 16px;
-      margin-bottom: 16px;
+    /* ── RIGHT COLUMN (STICKY SIDEBAR) ── */
+    .editorial-sidebar {
+      display: flex;
+      flex-direction: column;
+      gap: 32px;
     }
 
-    @media (max-width: 600px) {
-      .diagnostic-visual__grid {
-        grid-template-columns: 1fr;
+    @media (min-width: 1024px) {
+      .editorial-sidebar {
+        position: sticky;
+        top: 100px;
+        /* Offset for scrolling */
       }
     }
 
-    .diagnostic-visual__photo-real {
-      margin: 0;
-      border-radius: 12px;
+    .photo-card {
+      background: #fff;
+      border-radius: 16px;
       overflow: hidden;
       border: 1px solid var(--line);
+      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
     }
 
-    .diagnostic-visual__photo-real img {
+    .photo-card img {
       width: 100%;
-      height: 300px;
-      object-fit: cover;
-      object-position: center;
+      height: auto;
       display: block;
+      transition: transform 0.3s ease;
     }
 
-    @media (max-width: 600px) {
-      .diagnostic-visual__photo-real img {
-        height: 240px;
-      }
+    .photo-card:hover img {
+      transform: scale(1.02);
     }
 
-    .diagnostic-visual__caption {
+    .photo-card__caption {
+      padding: 16px;
       font-size: 14px;
       color: var(--muted);
       line-height: 1.5;
+      background: var(--premium-light);
+      border-top: 1px solid var(--line);
     }
+
+
 
     /* Vehicle details */
     .vehicle-details {
       background: var(--premium-dark);
       color: #fff;
       border-radius: 16px;
-      padding: 24px;
-      margin: 40px 0;
+      padding: 40px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
+      text-align: center;
+      max-width: 480px;
+      margin: 64px auto 0;
     }
 
     .vehicle-details h3 {
@@ -367,24 +298,27 @@
       color: var(--premium-gold);
       text-transform: uppercase;
       letter-spacing: 0.1em;
-      margin: 0 0 12px;
+      margin: 0 0 16px;
     }
 
     .vehicle-details dl {
       margin: 0;
-      display: grid;
-      gap: 8px;
+      text-align: center;
     }
 
     .vehicle-details dt {
       color: #94a3b8;
       font-size: 13px;
       font-weight: 600;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      margin: 16px 0 4px 0;
     }
 
     .vehicle-details dd {
-      margin: 0 0 12px 0;
+      margin: 0 0 16px 0;
       color: #fff;
+      font-size: 15px;
     }
 
     /* ── FINAL CTA BLOCK ──────────────────── */
@@ -392,58 +326,58 @@
       background: var(--premium-dark);
       color: #fff;
       border-radius: 24px;
-      padding: 56px 40px;
-      margin-top: 56px;
+      padding: 64px 40px;
+      margin-top: 80px;
       text-align: center;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
     }
 
     @media (max-width: 640px) {
       .cta-block {
         padding: 40px 24px;
+        margin-top: 56px;
       }
     }
 
     .cta-block h2 {
       color: #fff;
-      font-size: 26px;
-      margin: 0 0 12px;
+      font-size: 28px;
+      margin: 0 0 16px;
+      font-weight: 800;
     }
 
     @media (min-width: 768px) {
       .cta-block h2 {
-        font-size: 32px;
+        font-size: 36px;
       }
     }
 
     .cta-block p {
       color: #94a3b8;
-      margin: 0 0 28px;
-      font-size: 17px;
+      margin: 0 auto 32px;
+      font-size: 18px;
       line-height: 1.6;
-      max-width: 56ch;
-      margin-left: auto;
-      margin-right: auto;
+      max-width: 50ch;
     }
 
     .cta {
       display: inline-block;
-      margin: 8px 6px 0;
-      padding: 16px 32px;
-      border-radius: 8px;
-      background: var(--premium-dark);
-      color: #fff;
-      border: 2px solid var(--premium-gold);
+      margin: 0;
+      padding: 18px 40px;
+      border-radius: 12px;
+      background: var(--premium-gold);
+      color: var(--premium-dark);
       text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25), 0 0 0 0 rgba(251, 191, 36, 0.4);
+      font-weight: 800;
+      font-size: 18px;
+      box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
       transition: all 0.3s ease;
     }
 
     .cta:hover {
-      background: linear-gradient(135deg, var(--premium-dark) 0%, var(--premium-blue) 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35), 0 0 20px rgba(251, 191, 36, 0.6);
+      background: #fff;
+      transform: translateY(-3px);
+      box-shadow: 0 12px 28px rgba(255, 255, 255, 0.4);
     }
 
     @media (max-width: 640px) {
@@ -451,19 +385,60 @@
         display: block;
         width: 100%;
         box-sizing: border-box;
-        margin: 8px 0 0;
       }
     }
 
     .badges {
       display: flex;
-      gap: 16px;
+      gap: 20px;
       align-items: center;
       justify-content: center;
-      margin-top: 24px;
-      color: #64748b;
-      font-size: 13px;
+      margin-top: 32px;
+      color: #94a3b8;
+      font-size: 14px;
       flex-wrap: wrap;
+    }
+
+    /* ── MOBILE: show sidebar (photos) above article ── */
+    @media (max-width: 1023px) {
+      .story-main { order: 2; }
+      .editorial-sidebar { order: 1; }
+    }
+
+    /* ── CTA MULTI-CHANNEL ── */
+    .cta-actions {
+      display: flex;
+      gap: 16px;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .cta--secondary {
+      display: inline-block;
+      padding: 18px 40px;
+      border-radius: 12px;
+      background: transparent;
+      color: #fff;
+      text-decoration: none;
+      font-weight: 700;
+      font-size: 18px;
+      border: 2px solid rgba(255, 255, 255, 0.35);
+      transition: all 0.3s ease;
+    }
+
+    .cta--secondary:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 255, 255, 0.6);
+      transform: translateY(-2px);
+    }
+
+    @media (max-width: 640px) {
+      .cta--secondary {
+        display: block;
+        width: 100%;
+        box-sizing: border-box;
+        text-align: center;
+      }
     }
   </style>
 
@@ -495,6 +470,26 @@
           },
           "breadcrumb": {
             "@id": "https://kelownaprotechmobilemech.com/field-reports/bmw-z3-kelowna-diagnostic/#breadcrumb"
+          }
+        },
+        {
+          "@type": "Article",
+          "@id": "https://kelownaprotechmobilemech.com/field-reports/bmw-z3-kelowna-diagnostic/#article",
+          "headline": "BMW Z3 Stranded in Kelowna Parking Lot — Diagnosed On-Site",
+          "description": "A red BMW Z3 broke down in a Kelowna parking lot with a coolant leak and multiple hidden issues. Joseph diagnosed the full condition on-site — no tow, no dealer, same day.",
+          "image": "https://kelownaprotechmobilemech.com/images/bmw-z3-kelowna-parking.jpg",
+          "datePublished": "2026-01-01",
+          "author": {
+            "@type": "Person",
+            "name": "Joseph",
+            "worksFor": { "@id": "https://kelownaprotechmobilemech.com/#org" }
+          },
+          "publisher": { "@id": "https://kelownaprotechmobilemech.com/#org" },
+          "isPartOf": { "@id": "https://kelownaprotechmobilemech.com/field-reports/bmw-z3-kelowna-diagnostic/#webpage" },
+          "about": {
+            "@type": "Service",
+            "name": "On-site vehicle diagnostic",
+            "areaServed": "Kelowna, BC"
           }
         },
         {
@@ -560,178 +555,170 @@
       <a href="/">Home</a> › <a href="/field-reports/">Field Reports</a> › BMW Z3 Kelowna Diagnostic
     </nav>
 
-    <!-- HERO -->
-    <section class="case-hero" id="top">
-      <div class="case-hero__layout">
+    <!-- HEADER / HERO (Centered) -->
+    <header class="case-header" id="top">
+      <h1>His BMW Z3 Broke Down in a Kelowna Parking Lot. He Thought It Was Just a Leak.</h1>
 
-        <!-- Left column: title + badges + CTAs -->
-        <div class="case-hero__text">
-          <h1>His BMW Z3 Broke Down in a Kelowna Parking Lot. He Thought It Was Just a Leak.</h1>
+      <div class="badge-strip" aria-label="Service highlights">
+        <span>📍 Serving Kelowna &amp; Okanagan Valley</span>
+        <span class="badge-strip__sep" aria-hidden="true">·</span>
+        <span>🔧 On-Site</span>
+        <span class="badge-strip__sep" aria-hidden="true">·</span>
+        <span>No Tow Required</span>
+        <span class="badge-strip__sep" aria-hidden="true">·</span>
+        <span>Same Day</span>
+      </div>
 
-          <!-- Service badge strip — visible without scrolling on mobile -->
-          <div class="badge-strip" aria-label="Service highlights">
-            <span>📍 Serving Kelowna &amp; Okanagan Valley</span>
-            <span class="badge-strip__sep" aria-hidden="true">·</span>
-            <span>🔧 On-Site</span>
-            <span class="badge-strip__sep" aria-hidden="true">·</span>
-            <span>No Tow Required</span>
-            <span class="badge-strip__sep" aria-hidden="true">·</span>
-            <span>Same Day</span>
-          </div>
+      <div class="case-meta">
+        <span class="case-meta__item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
+            <line x1="16" y1="2" x2="16" y2="6"></line>
+            <line x1="8" y1="2" x2="8" y2="6"></line>
+            <line x1="3" y1="10" x2="21" y2="10"></line>
+          </svg>
+          Tuesday — Kelowna, BC
+        </span>
+        <span class="case-meta__item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
+            <circle cx="12" cy="10" r="3"></circle>
+          </svg>
+          Harvey Avenue Area
+        </span>
+        <span class="case-meta__item">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <circle cx="12" cy="12" r="10"></circle>
+            <polyline points="12 6 12 12 16 14"></polyline>
+          </svg>
+          Same-Day Diagnostic
+        </span>
+      </div>
+    </header>
 
-          <!-- Service area callout -->
-          <div class="service-area-box" aria-label="Service area">
-            <p class="service-area-box__areas">Kelowna · West Kelowna · Lake Country · Okanagan Valley</p>
-            <p class="service-area-box__desc">Joseph comes to your location — parking lots, driveways, office buildings.
-              No tow required.</p>
-          </div>
+    <!-- EDITORIAL GRID: 2 COLUMNS ON DESKTOP -->
+    <div class="editorial-grid">
 
-          <!-- Case meta -->
-          <div class="case-meta">
-            <span class="case-meta__item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"></rect>
-                <line x1="16" y1="2" x2="16" y2="6"></line>
-                <line x1="8" y1="2" x2="8" y2="6"></line>
-                <line x1="3" y1="10" x2="21" y2="10"></line>
-              </svg>
-              Tuesday — Kelowna, BC
-            </span>
-            <span class="case-meta__item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path>
-                <circle cx="12" cy="10" r="3"></circle>
-              </svg>
-              Harvey Avenue Area
-            </span>
-            <span class="case-meta__item">
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"
-                aria-hidden="true">
-                <circle cx="12" cy="12" r="10"></circle>
-                <polyline points="12 6 12 12 16 14"></polyline>
-              </svg>
-              Same-Day Diagnostic
-            </span>
-          </div>
+      <!-- LEFT: STORY & TEXT -->
+      <article class="story-main">
+        <p class="lead-text" style="font-size: 20px; font-weight: 600; color: var(--premium-dark);">He called on a
+          Tuesday morning. His red BMW Z3 — a classic M roadster — had stopped moving in a commercial parking lot near
+          Harvey Avenue.</p>
+
+        <p>Coolant was dripping onto the asphalt. He'd called a tow company. They quoted him $180 just to move it to the
+          nearest shop, where he'd wait days for a diagnosis.</p>
+
+        <p>He found Kelowna Protech Elite instead.</p>
+
+        <section class="story-section">
+          <h2>What the Owner Expected</h2>
+          <p>Joseph arrived at the lot within hours. No flatbed. No shop. Just a mechanic with 15 years of diagnostic
+            experience and professional-grade Autel equipment — the same tools dealers use.</p>
+          <p>What the owner thought: a coolant leak, probably a hose. A $200 fix, maybe $300.</p>
+          <p>What the Autel found: a different story entirely.</p>
+        </section>
+
+        <div class="findings-box">
+          <h3>Findings — Full Vehicle Assessment</h3>
+          <ul class="findings-list">
+            <li><strong>Cracked vacuum line</strong> running along the engine bay — brittle from age and heat cycles,
+              causing the visible coolant leak</li>
+            <li><strong>Front tire worn completely through wear indicators</strong> — not "getting low," but gone. A
+              blowout waiting to happen at highway speed on Highway 97</li>
+            <li><strong>Additional fault codes</strong> pointing to deferred maintenance that had been quietly building
+              for months</li>
+          </ul>
         </div>
 
-        <!-- Right column: editorial thumbnail (max 480px) -->
-        <div class="case-hero__image-col">
-          <figure class="case-hero__photo-real">
-            <img src="/images/bmw-z3-kelowna-parking.jpg"
-              alt="Red BMW Z3 roadster in Kelowna commercial parking lot — mobile mechanic on-site diagnostic"
-              width="2720" height="1995" loading="eager" decoding="async" />
-          </figure>
-        </div>
+        <section class="story-section">
+          <h2>A Blowout Waiting to Happen</h2>
+          <p>That front tire wasn't "getting low" — it was gone. A blowout waiting to happen at highway speed. The kind
+            of failure that doesn't give you a second chance on Highway 97.</p>
+          <p>The engine scan added more to the picture: fault codes pointing to deferred maintenance that had been
+            quietly building for months — the kind of thing shops miss when they're only looking at the complaint, not
+            the car.</p>
+        </section>
 
-      </div>
-    </section>
+        <section class="story-section">
+          <h2>No Tow. No Waiting Room. No "We'll Call You"</h2>
+          <p>The owner stood in the parking lot and got the full picture — not a phone call from a service advisor three
+            days later, not a surprise invoice. Right there, in plain language, with photos of every finding.</p>
+          <p>He made an informed decision about his car the same morning it broke down.</p>
+          <p style="font-weight: 700; font-size: 20px; margin-top: 32px; color: var(--premium-dark);">That's the
+            difference.</p>
+        </section>
+      </article>
 
-    <!-- STORY CONTENT -->
-    <article class="story-content">
-      <p>He called on a Tuesday morning. His red BMW Z3 — a classic M roadster — had stopped moving in a commercial
-        parking lot near Harvey Avenue. Coolant was dripping onto the asphalt. He'd called a tow company. They quoted
-        him $180 just to move it to the nearest shop, where he'd wait days for a diagnosis.</p>
+      <!-- RIGHT: STICKY SIDEBAR IMAGES & DETAILS -->
+      <aside class="editorial-sidebar">
 
-      <p>He found Kelowna Protech Elite instead.</p>
+        <!-- Hero Image Moved to Sidebar -->
+        <figure class="photo-card">
+          <img src="/images/bmw-z3-kelowna-parking.jpg" alt="Red BMW Z3 roadster in Kelowna commercial parking lot"
+            width="800" height="587" loading="eager" decoding="async" />
+        </figure>
 
-      <section class="story-section">
-        <h2>What the Owner Expected</h2>
-        <p>Joseph arrived at the lot within hours. No flatbed. No shop. Just a mechanic with 15 years of diagnostic
-          experience and professional-grade Autel equipment — the same tools dealers use.</p>
 
-        <p>What the owner thought: a coolant leak, probably a hose. A $200 fix, maybe $300.</p>
 
-        <p>What the Autel found: a different story entirely.</p>
-      </section>
+        <!-- Diagnostic Photo 1 -->
+        <figure class="photo-card">
+          <img src="/images/bmw-z3-engine-bay.webp" alt="BMW Z3 engine bay open during on-site diagnostic" width="800"
+            height="1066" loading="lazy" decoding="async" />
+          <figcaption class="photo-card__caption">On-site visual inspection immediately identified the cracked vacuum
+            lines causing the coolant leak.</figcaption>
+        </figure>
 
-      <div class="findings-box">
-        <h3>Findings — Full Vehicle Assessment</h3>
-        <ul class="findings-list">
-          <li><strong>Cracked vacuum line</strong> running along the engine bay — brittle from age and heat cycles,
-            causing the visible coolant leak</li>
-          <li><strong>Front tire worn completely through wear indicators</strong> — not "getting low," but gone.
-            A blowout waiting to happen at highway speed on Highway 97</li>
-          <li><strong>Additional fault codes</strong> pointing to deferred maintenance that had been quietly building
-            for months</li>
-        </ul>
-      </div>
+        <!-- Diagnostic Photo 2 -->
+        <figure class="photo-card">
+          <img src="/images/bmwz3-kelowna-protech.webp" alt="Autel diagnostic scanner connected inside BMW Z3"
+            width="800" height="1066" loading="lazy" decoding="async" />
+          <figcaption class="photo-card__caption">Dealer-level Autel scanner pulling hidden fault codes from the ECU
+            right in the parking lot.</figcaption>
+        </figure>
 
-      <section class="story-section">
-        <h2>The Full Picture — On-Site, Same Day</h2>
-        <p>The coolant leak was real — a cracked vacuum line running along the engine bay, brittle from age and heat
-          cycles. But that wasn't the only problem. A full walkaround revealed a front tire worn completely through
-          the wear indicators. Not "getting low." Gone. That tire was a blowout waiting to happen at highway speed.
-          The kind of failure that doesn't give you a second chance on Highway 97.</p>
+      </aside>
 
-        <p>The engine scan pulled additional fault codes pointing to deferred maintenance that had been quietly
-          building for months.</p>
-      </section>
+    </div> <!-- End Editorial Grid -->
 
-      <div class="diagnostic-visual">
-        <h3>Dealer-Level Diagnostic Equipment — At Your Location</h3>
-        <div class="diagnostic-visual__grid">
-          <figure class="diagnostic-visual__photo-real">
-            <img src="/images/bmw-z3-engine-bay.webp"
-              alt="BMW Z3 engine bay open during on-site diagnostic inspection in Kelowna" width="3024" height="4032"
-              loading="lazy" decoding="async" />
-          </figure>
-          <figure class="diagnostic-visual__photo-real">
-            <img src="/images/bmwz3-kelowna-protech.webp"
-              alt="Autel diagnostic scanner connected inside BMW Z3 — reading fault codes on-site in Kelowna"
-              width="3024" height="4032" loading="lazy" decoding="async"
-              style="object-position: center 70%;" />
-          </figure>
-        </div>
-        <p class="diagnostic-visual__caption">Professional-grade Autel diagnostic scanner — the same equipment BMW
-          dealers use — connected directly inside the client's vehicle in the parking lot. No tow truck. No 2-week wait.</p>
-      </div>
-
-      <section class="story-section">
-        <h2>No Tow. No Waiting Room. No "We'll Call You When We Know More."</h2>
-        <p>The owner stood in the parking lot and got the full picture — not a phone call from a service advisor
-          three days later, not a surprise invoice. Right there, in plain language, with photos of every finding.</p>
-
-        <p>No tow. No waiting room. No "we'll call you when we know more."</p>
-
-        <p>He made an informed decision about his car the same morning it broke down.</p>
-
-        <p><strong>That's the difference.</strong></p>
-      </section>
-
-      <div class="vehicle-details">
-        <h3>Service Details</h3>
-        <dl>
-          <dt>Vehicle</dt>
-          <dd>BMW Z3 Roadster — Kelowna, BC</dd>
-
-          <dt>Service</dt>
-          <dd>On-site diagnostic inspection</dd>
-
-          <dt>Location</dt>
-          <dd>Client's location — no tow required</dd>
-        </dl>
-      </div>
-    </article>
+    <!-- Vehicle Details Box Centered -->
+    <div class="vehicle-details">
+      <h3>Service Details</h3>
+      <dl>
+        <dt>Vehicle</dt>
+        <dd>BMW Z3 Roadster</dd>
+        <dt>Service</dt>
+        <dd>On-site diagnostic inspection</dd>
+        <dt>Location</dt>
+        <dd>Client's location (Kelowna, BC)</dd>
+      </dl>
+    </div>
 
     <!-- CTA 3 — final block before footer -->
     <section class="cta-block" aria-label="Final CTA">
       <h2>Your vehicle doesn't need a tow truck. It needs a diagnosis.</h2>
       <p>Joseph serves Kelowna, West Kelowna, Lake Country, and the Okanagan Valley. He comes to you — parking lots,
         driveways, wherever you are.</p>
-      <div>
-        <a class="cta" href="tel:+12508595467" aria-label="Text or call Joseph at (250) 859-5467">
-          Text or Call Joseph — (250) 859-5467
+      <div class="cta-actions">
+        <a class="cta" href="tel:+12508595467" aria-label="Call Joseph at (250) 859-5467">
+          Call: (250) 859-5467
+        </a>
+        <a class="cta cta--secondary" href="sms:+12508595467" aria-label="Text Joseph at (250) 859-5467">
+          Text for Quote
         </a>
       </div>
       <div class="badges">
-        <span>✓ 4.9★ (36 Reviews)</span>
+        <span>✓ 4.9★ (41 Reviews)</span>
         <span>✓ 15+ Years Engineering Experience</span>
-        <span>✓ 100+ Diagnostics Completed</span>
+        <span>✓ 100+ On-Site Diagnostics</span>
       </div>
     </section>
+
+    <!-- Internal links -->
+    <nav style="margin:48px 0 0; text-align:center; font-size:15px; color:#6b7280;" aria-label="More from Kelowna Protech Elite">
+      <a href="/field-reports/" style="color:#1e40af; text-decoration:none; font-weight:600;">← All Field Reports</a>
+      <span style="margin:0 16px; color:#e5e7eb;">·</span>
+      <a href="/services/diagnostic/" style="color:#1e40af; text-decoration:none; font-weight:600;">On-Site Diagnostic Service →</a>
+    </nav>
 
     <!-- NAP Footer -->
     <footer class="site-nap" aria-label="Business info">
