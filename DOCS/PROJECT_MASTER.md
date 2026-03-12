@@ -3,7 +3,7 @@
 **Document Purpose:** Complete project history, architecture, commits, and disaster recovery guide.
 **Last Updated:** 2026-02-06
 **Current Phase:** Phase 2 Complete + GBP Optimization Active
-**Status:** ✅ Production Stable | 🟢 4.9★ Rating | 36 Reviews
+**Status:** ✅ Production Stable | 🟢 4.9★ Rating | 41 Reviews
 
 ---
 
@@ -46,6 +46,23 @@ We position as the **Blue Ocean Alternative** to both:
 - **Google Analytics 4** (G-1GDM77733G)
 - **Event Tracking:** Lead generation, CTA clicks, form abandonment
 - **Lead Value:** $150 CAD per complete lead
+
+### 📊 Estructura Operativa de Medición (GA4)
+
+**🚨 ATENCIÓN PARA REPORTES Y CRO:** Para medir el rendimiento comercial del sitio, se debe observar exclusivamente la tasa de conversión de los contactos reales.
+
+**1. Conversiones Comerciales (KPIs Principales)**
+*Marcados activamente como Key Events en GA4.*
+- `phone_click`
+- `sms_click`
+
+**2. Microconversiones (Análisis de Comportamiento)**
+*Medidos como eventos estándar, desactivados como Key Events.*
+- `service_card_click`
+
+**3. Ruido del Sistema (Ignorar en lecturas)**
+- `purchase`: Aparece listado por limitación inherente de la plataforma GA4. Tiene 0 datos y debe ignorarse operativamente.
+- `click`: Obsoleto y removido de Key Events.
 
 ### Email & Forms
 - **FormSubmit.co** (Free tier, unlimited)
@@ -246,7 +263,7 @@ We position as the **Blue Ocean Alternative** to both:
 
 **Goal:** Optimize Google Business Profile for local SEO dominance
 
-**Current Status:** 4.9★ rating | 36 reviews | Ranking #1 in incognito searches
+**Current Status:** 4.9★ rating | 41 reviews | Ranking #1 in incognito searches
 
 **Documents Created:**
 - `GBP-OPTIMIZATION-STRATEGY.md` - Complete audit & 90-day roadmap
@@ -344,7 +361,7 @@ We position as the **Blue Ocean Alternative** to both:
 
 **Experience:**
 - 100+ services completed
-- 4.9★ rating, 36 reviews
+- 4.9★ rating, 41 reviews
 - Real case studies with full names + results
 
 **Expertise:**
@@ -1014,6 +1031,56 @@ Sitemap: https://kelownaprotechmobilemech.com/sitemap.xml
 - **Review Count:** 36 (target: 50+ by Q2 2026)
 - **Review Velocity:** ~2/month (target: 4/month)
 - **Review Quality:** 80% mention specific ROI/savings (maintain)
+
+---
+
+## 📊 Estructura final de medición operativa (GA4)
+
+### Conversiones principales reales
+- `phone_click`
+- `sms_click`
+
+Estas son las únicas conversiones comerciales principales que deben leerse como contacto real desde el sitio.
+
+### Microconversión
+- `service_card_click`
+
+Este evento ya no debe tratarse como Key Event principal.  
+Debe interpretarse únicamente como una señal de interés intermedio en servicios, no como contacto comercial real.
+
+### Eventos a ignorar operativamente
+- `purchase`
+
+`purchase` sigue apareciendo en GA4 por limitación de la plataforma, pero:
+- no es relevante para este negocio,
+- tiene 0 ocurrencias,
+- no debe usarse para lectura operativa,
+- no debe influir en el análisis de conversión real.
+
+### Evento removido de Key Events
+- `click`
+
+Este evento fue removido porque era genérico y no representaba conversión comercial útil.
+
+### Estructura final correcta para lectura del embudo
+- Contacto real principal:
+  - `phone_click`
+  - `sms_click`
+- Interés intermedio:
+  - `service_card_click`
+- Evento fantasma / irrelevante:
+  - `purchase`
+
+### Conclusión operativa
+A partir de esta actualización, la lectura correcta de conversión del sitio debe basarse únicamente en:
+- `phone_click`
+- `sms_click`
+
+Cualquier análisis futuro de rendimiento, CRO o tasa de conversión debe tomar esos dos eventos como base principal de contacto real.
+
+`service_card_click` puede analizarse como apoyo o microconversión, pero no debe mezclarse con conversiones finales.
+
+`purchase` debe quedar documentado como evento fantasma de GA4 sin uso práctico actual.
 
 ---
 
