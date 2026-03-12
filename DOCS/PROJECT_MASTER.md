@@ -64,6 +64,11 @@ We position as the **Blue Ocean Alternative** to both:
 - `purchase`: Aparece listado por limitación inherente de la plataforma GA4. Tiene 0 datos y debe ignorarse operativamente.
 - `click`: Obsoleto y removido de Key Events.
 
+### 🧭 Trazabilidad CRO de Homepage
+
+- **Auditoría consolidada CRO homepage (general + desktop + mobile):** `docs/HOMEPAGE-CRO-AUDIT-2026-03-11.md`
+- **Uso recomendado:** Leer este documento antes de cualquier cambio en hero, CTA, jerarquía, confianza o secuencia mobile-first de la homepage.
+
 ### Email & Forms
 - **FormSubmit.co** (Free tier, unlimited)
 - **Endpoint:** info@kelownaprotechmobilemech.com
@@ -109,6 +114,7 @@ We position as the **Blue Ocean Alternative** to both:
 │
 └── docs/
     ├── agents.md                 # Workflow rules & component docs (379 lines)
+    ├── HOMEPAGE-CRO-AUDIT-2026-03-11.md # Auditoria CRO consolidada de homepage
     ├── PROJECT_MASTER.md         # THIS FILE - Complete project history
     ├── SCRUM_BREADCRUMBS.md      # Strategic handover guide
     ├── GBP-OPTIMIZATION-STRATEGY.md  # Google Business Profile strategy
