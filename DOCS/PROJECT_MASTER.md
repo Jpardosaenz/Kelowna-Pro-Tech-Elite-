@@ -47,6 +47,23 @@ We position as the **Blue Ocean Alternative** to both:
 - **Event Tracking:** Lead generation, CTA clicks, form abandonment
 - **Lead Value:** $150 CAD per complete lead
 
+### 📊 Estructura Operativa de Medición (GA4)
+
+**🚨 ATENCIÓN PARA REPORTES Y CRO:** Para medir el rendimiento comercial del sitio, se debe observar exclusivamente la tasa de conversión de los contactos reales.
+
+**1. Conversiones Comerciales (KPIs Principales)**
+*Marcados activamente como Key Events en GA4.*
+- `phone_click`
+- `sms_click`
+
+**2. Microconversiones (Análisis de Comportamiento)**
+*Medidos como eventos estándar, desactivados como Key Events.*
+- `service_card_click`
+
+**3. Ruido del Sistema (Ignorar en lecturas)**
+- `purchase`: Aparece listado por limitación inherente de la plataforma GA4. Tiene 0 datos y debe ignorarse operativamente.
+- `click`: Obsoleto y removido de Key Events.
+
 ### Email & Forms
 - **FormSubmit.co** (Free tier, unlimited)
 - **Endpoint:** info@kelownaprotechmobilemech.com
