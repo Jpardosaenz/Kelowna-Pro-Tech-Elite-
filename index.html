@@ -102,6 +102,10 @@
       -moz-osx-font-smoothing: grayscale
     }
 
+    .mobile-cta-bar {
+      display: none
+    }
+
     .hero-image {
       aspect-ratio: 800/437;
       width: 100%;
@@ -252,6 +256,34 @@
         visibility: hidden !important;
         opacity: 0 !important;
         pointer-events: none !important
+      }
+
+      .mobile-cta-bar {
+        display: block;
+        background: #0f172a;
+        padding: 10px 16px;
+        text-align: center
+      }
+
+      .mobile-cta-bar a {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        color: #fff;
+        font-family: "Inter", 'Inter Fallback', sans-serif;
+        font-size: .9375rem;
+        font-weight: 600;
+        text-decoration: none
+      }
+
+      .mobile-cta-bar svg {
+        flex-shrink: 0
+      }
+
+      .mobile-cta-bar-sub {
+        color: #94a3b8;
+        font-weight: 400;
+        font-size: .8125rem
       }
 
       .floating-cta-container {
@@ -1116,6 +1148,18 @@
     </button>
   </header>
 
+  <!-- Mobile CTA Bar: immediate call-to-action below header (mobile only) -->
+  <div class="mobile-cta-bar">
+    <a href="tel:+12508595467" aria-label="Call expert mechanic for same-day service">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+        width="18" height="18" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span>Call Expert Mechanic</span>
+      <span class="mobile-cta-bar-sub">Same-Day Service</span>
+    </a>
+  </div>
 
   <!-- Componente 3: Sección Hero ("Our Promise") -->
   <section id="our-promise" class="hero-section">
