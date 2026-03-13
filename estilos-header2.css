@@ -1542,6 +1542,51 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
 
 
 /* ================================================================
+   Mobile CTA Bar: immediate call-to-action below header
+   - Visible only on mobile (≤1023px), hidden on desktop
+   - Static position: scrolls with content; floating CTA covers scroll
+   ================================================================ */
+.mobile-cta-bar {
+  display: none;
+}
+
+@media (max-width: 1023px) {
+  .mobile-cta-bar {
+    display: block;
+    background: #0f172a;
+    padding: 10px 16px;
+    text-align: center;
+  }
+
+  .mobile-cta-bar a {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    color: #ffffff;
+    font-family: "Inter", 'Inter Fallback', sans-serif;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    text-decoration: none;
+    letter-spacing: 0.2px;
+  }
+
+  .mobile-cta-bar a:active {
+    opacity: 0.85;
+  }
+
+  .mobile-cta-bar svg {
+    flex-shrink: 0;
+  }
+
+  .mobile-cta-bar-sub {
+    color: #94a3b8;
+    font-weight: 400;
+    font-size: 0.8125rem;
+  }
+}
+
+
+/* ================================================================
    PHASE 1: CRO URGENT FIXES - Hero CTA & Social Proof
    ================================================================ */
 
