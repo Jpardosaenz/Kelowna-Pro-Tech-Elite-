@@ -40,9 +40,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <!-- Preload hero image (LCP optimization) -->
-  <link rel="preload" as="image" href="images/hero-mechanic-400w.webp" media="(max-width: 640px)" type="image/webp">
-  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp"
-    media="(min-width: 641px) and (max-width: 1024px)" type="image/webp">
+  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp" media="(max-width: 767px)" type="image/webp">
+  <link rel="preload" as="image" href="images/hero-mechanic-1200w.webp" media="(min-width: 768px)" type="image/webp">
   <!-- Critical CSS: inline ATF styles to unblock FCP (header + hero + CTAs + social proof) -->
   <style>
     @font-face {
@@ -106,11 +105,265 @@
       display: none
     }
 
-    .hero-image {
-      aspect-ratio: 800/437;
+    /* ── TRUST BAR ─────────────────────────────────────────── */
+    .trust-bar {
       width: 100%;
-      height: auto
+      background: #fffbf2;
+      border-bottom: 1px solid #f0e6cc;
+      display: flex;
+      align-items: center;
+      padding: 9px 16px;
+      gap: 14px;
+      box-sizing: border-box;
+      overflow: hidden;
+      position: relative
     }
+    .trust-bar::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 48px;
+      background: linear-gradient(to bottom, transparent, #0d0d0b);
+      pointer-events: none
+    }
+    .trust-bar__static {
+      display: flex;
+      align-items: center;
+      gap: 7px;
+      flex-shrink: 0
+    }
+    .trust-bar__stars {
+      color: #e8a020;
+      font-size: 13px;
+      letter-spacing: 1px
+    }
+    .trust-bar__rating {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 700;
+      color: #1a1a16
+    }
+    .trust-bar__separator {
+      color: #c8b890;
+      font-size: 13px
+    }
+    .trust-bar__count {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-weight: 400;
+      color: #7a6f5a
+    }
+    .trust-bar__divider {
+      width: 1px;
+      height: 16px;
+      background: #ddd0b0;
+      flex-shrink: 0
+    }
+    .trust-bar__scroll {
+      overflow: hidden;
+      flex: 1;
+      min-width: 0
+    }
+    .trust-bar__track {
+      display: flex;
+      align-items: center;
+      gap: 48px;
+      white-space: nowrap;
+      animation: trust-ticker 22s linear infinite
+    }
+    .trust-bar__track:hover {
+      animation-play-state: paused
+    }
+    @keyframes trust-ticker {
+      0%   { transform: translateX(0) }
+      100% { transform: translateX(-50%) }
+    }
+    .trust-bar__item {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      flex-shrink: 0
+    }
+    .trust-bar__quote {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 13px;
+      font-style: italic;
+      font-weight: 300;
+      color: #5a5040
+    }
+    .trust-bar__author {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 12px;
+      font-weight: 500;
+      color: #a89060
+    }
+    /* ─────────────────────────────────────────────────────── */
+
+    /* ── REVIEWS TICKER ──────────────────────────────────────── */
+    .reviews-ticker { width:100%; background:#1a1a16; padding:14px 0 12px; overflow:hidden; border-bottom:0.5px solid #2a2a24 }
+    .reviews-ticker__rating { display:flex; align-items:center; justify-content:center; gap:8px; margin-bottom:10px }
+    .reviews-ticker__stars { color:#e8a020; font-size:16px; letter-spacing:3px }
+    .reviews-ticker__score { font-family:'Syne',sans-serif; font-size:18px; font-weight:700; color:#f0ece4 }
+    .reviews-ticker__sep { color:#444440; font-size:15px }
+    .reviews-ticker__count { font-family:'DM Sans',sans-serif; font-size:15px; font-weight:500; color:#c8bfa8 }
+    .reviews-ticker__track-wrap { position:relative; width:100%; overflow:hidden }
+    .reviews-ticker__track { display:flex; align-items:center; gap:24px; white-space:nowrap; animation:ticker-scroll 40s linear infinite; width:max-content }
+    .reviews-ticker__track:hover { animation-play-state:paused }
+    @keyframes ticker-scroll { 0%{transform:translateX(0)} 100%{transform:translateX(-50%)} }
+    .reviews-ticker__item { font-family:'DM Sans',sans-serif; font-size:15px; font-style:italic; font-weight:300; color:#c8bfa8; white-space:nowrap; display:inline-flex; align-items:center; gap:6px }
+    .reviews-ticker__stars-sm { color:#e8a020; font-size:11px; font-style:normal; letter-spacing:1px }
+    .reviews-ticker__author { font-style:normal; font-weight:400; color:#666660; margin-left:4px }
+    .reviews-ticker__dot { color:#333330; font-size:18px; flex-shrink:0 }
+    .reviews-ticker__fade { position:absolute; top:0; bottom:0; width:80px; pointer-events:none; z-index:2 }
+    .reviews-ticker__fade--left { left:0; background:linear-gradient(to right,#1a1a16,transparent) }
+    .reviews-ticker__fade--right { right:0; background:linear-gradient(to left,#1a1a16,transparent) }
+    @media(max-width:600px){ .reviews-ticker__track{animation-duration:30s} .reviews-ticker__fade{width:48px} }
+    /* ─────────────────────────────────────────────────────────── */
+
+    /* ── HERO FOLD 03 ─────────────────────────────────────── */
+    @keyframes heroFadeInUp {
+      from { opacity: 0; transform: translateY(20px) }
+      to { opacity: 1; transform: translateY(0) }
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+    .hero-fold {
+      position: relative;
+      width: 100%;
+      min-height: 90vh;
+      display: flex;
+      align-items: center;
+      background-image: url('images/hero-mechanic-800w.webp');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding: 80px 24px 60px;
+      box-sizing: border-box
+    }
+    .hero-fold::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13,13,11,0.80);
+      z-index: 1
+    }
+    .hero-fold__content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center
+    }
+    .hero-fold__h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 1.15;
+      color: #f5f0e8;
+      margin: 0;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.1s
+    }
+    .hero-fold__accent { color: #e8a020 }
+    .hero-fold__separator {
+      width: 48px;
+      height: 2px;
+      background: #e8a020;
+      margin: 24px auto
+    }
+    .hero-fold__tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: #a09880;
+      max-width: 540px;
+      margin: 0 auto;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.3s
+    }
+    .hero-fold__cta {
+      display: block;
+      width: 100%;
+      margin: 32px auto 0;
+      padding: 16px 32px;
+      background: #e8a020;
+      color: #0d0d0b;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 4px;
+      transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.5s;
+      box-sizing: border-box
+    }
+    .hero-fold__cta:hover {
+      background: #f5b830;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(232,160,32,0.35)
+    }
+    .hero-fold__micro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      margin-top: 16px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 0.8125rem;
+      color: #6b6455;
+      animation: heroFadeIn 0.6s ease both;
+      animation-delay: 0.7s
+    }
+    .hero-fold__check {
+      flex-shrink: 0;
+      display: inline-block
+    }
+    @media(min-width:768px) {
+      .hero-fold {
+        min-height: 100vh;
+        padding: 100px 60px 80px;
+        background-image: url('images/hero-mechanic-1200w.webp')
+      }
+      .hero-fold::before {
+        background: linear-gradient(to right, rgba(13,13,11,0.85) 40%, rgba(13,13,11,0.45) 100%)
+      }
+      .hero-fold__content {
+        margin: 0;
+        text-align: left
+      }
+      .hero-fold__h1 {
+        font-size: 3.5rem;
+        line-height: 1.1
+      }
+      .hero-fold__separator { margin: 24px 0 }
+      .hero-fold__tagline {
+        font-size: 1.125rem;
+        margin: 0
+      }
+      .hero-fold__cta {
+        display: inline-block;
+        width: auto
+      }
+      .hero-fold__micro { justify-content: flex-start }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .hero-fold__h1,
+      .hero-fold__tagline,
+      .hero-fold__cta,
+      .hero-fold__micro {
+        animation: none !important
+      }
+    }
+    /* ─────────────────────────────────────────────────────── */
 
     .kpem-header-mobile {
       width: 100%;
@@ -1136,6 +1389,8 @@
   <!-- ====== End Structured Data: Client Stories Page ====== -->
 
   <meta name="msvalidate.01" content="AA032A8781098ECE1CA6BEF5797E5B83" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -1168,6 +1423,81 @@
     </button>
   </header>
 
+
+  <!-- INICIO REVIEWS TICKER -->
+  <section class="reviews-ticker">
+
+    <!-- Fila 1: rating fijo -->
+    <div class="reviews-ticker__rating">
+      <span class="reviews-ticker__stars">★★★★★</span>
+      <span class="reviews-ticker__score">4.9</span>
+      <span class="reviews-ticker__sep">·</span>
+      <span class="reviews-ticker__count">42 Google Reviews</span>
+    </div>
+
+    <!-- Fila 2: ticker infinito -->
+    <div class="reviews-ticker__track-wrap">
+      <div class="reviews-ticker__track">
+
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Honest mechanic who shows you what's actually wrong."
+          <span class="reviews-ticker__author">— Tyler T.</span>
+        </span>
+        <span class="reviews-ticker__dot" aria-hidden="true">·</span>
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Very professional and I would recommend to anyone needing the same service."
+          <span class="reviews-ticker__author">— Elizabeth</span>
+        </span>
+        <span class="reviews-ticker__dot" aria-hidden="true">·</span>
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Saved me $4,000 — was interested in purchasing a car 8 hours from me."
+          <span class="reviews-ticker__author">— Outcast</span>
+        </span>
+        <span class="reviews-ticker__dot" aria-hidden="true">·</span>
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Diagnosed my electrical problems and fixed them all in one afternoon."
+          <span class="reviews-ticker__author">— Vic Campbell</span>
+        </span>
+        <span class="reviews-ticker__dot" aria-hidden="true">·</span>
+
+        <!-- Duplicado para loop continuo -->
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Honest mechanic who shows you what's actually wrong."
+          <span class="reviews-ticker__author">— Tyler T.</span>
+        </span>
+        <span class="reviews-ticker__dot" aria-hidden="true">·</span>
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Very professional and I would recommend to anyone needing the same service."
+          <span class="reviews-ticker__author">— Elizabeth</span>
+        </span>
+        <span class="reviews-ticker__dot" aria-hidden="true">·</span>
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Saved me $4,000 — was interested in purchasing a car 8 hours from me."
+          <span class="reviews-ticker__author">— Outcast</span>
+        </span>
+        <span class="reviews-ticker__dot" aria-hidden="true">·</span>
+        <span class="reviews-ticker__item">
+          <span class="reviews-ticker__stars-sm">★★★★★</span>
+          "Diagnosed my electrical problems and fixed them all in one afternoon."
+          <span class="reviews-ticker__author">— Vic Campbell</span>
+        </span>
+
+      </div><!-- /.reviews-ticker__track -->
+
+      <div class="reviews-ticker__fade reviews-ticker__fade--left" aria-hidden="true"></div>
+      <div class="reviews-ticker__fade reviews-ticker__fade--right" aria-hidden="true"></div>
+    </div><!-- /.reviews-ticker__track-wrap -->
+
+  </section>
+  <!-- FIN REVIEWS TICKER -->
+
   <!-- Mobile CTA Bar: immediate call-to-action below header (mobile only) -->
   <div class="mobile-cta-bar">
     <a href="tel:+12508595467" aria-label="Call expert mechanic for same-day service">
@@ -1181,206 +1511,27 @@
     </a>
   </div>
 
-  <!-- Componente 3: Sección Hero ("Our Promise") -->
-  <section id="our-promise" class="hero-section">
-    <div class="hero-container">
-      <div class="hero-grid">
-        <!-- LEFT COLUMN: Visuals Only (Image) -->
-        <div class="hero-visual-column">
-          <picture>
-            <source srcset="images/hero-mechanic-400w.webp" media="(max-width: 640px)">
-            <source srcset="images/hero-mechanic-800w.webp" media="(max-width: 1024px)">
-            <source srcset="images/hero-mechanic-1200w.webp" media="(min-width: 1025px)">
-            <img src="images/hero-mechanic-1200w.webp"
-              alt="Certified mobile mechanic diagnosing a Ford Explorer in a Kelowna residential driveway — Protech Elite on-site service"
-              class="hero-image" loading="eager" decoding="async" fetchpriority="high" width="800" height="437" />
-          </picture>
-        </div>
-
-        <!-- RIGHT COLUMN: Text Content -->
-        <div class="hero-text-content">
-          <p class="hero-intro">
-            MOBILE MECHANIC KELOWNA
-          </p>
-          <h1 class="hero-headline">Your Driveway Is Our Workshop</h1>
-          <p class="hero-support-text">
-            Dealer-level repairs at YOUR location. No towing. No waiting. No losing your car for days.
-          </p>
-
-          <!-- Value Props List: Convenience Positioning -->
-          <ul class="hero-value-list"
-            style="list-style: none; padding: 0; margin: 1.5rem auto 0; max-width: 600px; font-family: 'Inter', 'Inter Fallback', sans-serif; font-size: 1.1rem; line-height: 1.6; color: #374151;">
-            <li style="margin-bottom: 0.75rem;">✓ Same-day service (not 2-week dealer wait)</li>
-            <li style="margin-bottom: 0.75rem;">✓ Keep your car (no loaner hassle)</li>
-            <li style="margin-bottom: 0.75rem;">✓ Same-day at your location — no waiting room, no wait list</li>
-            <li style="margin-bottom: 0.75rem;">✓ Pro equipment (same tools dealers use)</li>
-          </ul>
-        </div>
-      </div>
-
-      <!-- Phase 2: Premium CTA Block (Centered Bottom Footer) -->
-      <div class="hero-cta-container">
-        <!-- Main CTA Buttons Row -->
-        <div class="hero-cta-buttons">
-          <!-- Primary: Call Now -->
-          <a href="tel:+12508595467" class="hero-cta-button-premium hero-cta-call"
-            onclick="if(typeof gtag === 'function') { gtag('event', 'click_to_call', { 'event_category': 'Lead Generation', 'event_label': 'Hero CTA - Primary', 'button_location': 'hero_primary' }); }">
-            <span class="cta-content">
-              <svg class="cta-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                </path>
-              </svg>
-              <span class="cta-text-mobile">Fix My Car Today</span>
-              <span class="cta-text-desktop">Fix My Car Today — (250) 859-5467</span>
-            </span>
-          </a>
-          <!-- Secondary: Text Us -->
-          <a href="sms:+12508595467" class="hero-cta-button-secondary hero-cta-sms"
-            onclick="if(typeof gtag === 'function') { gtag('event', 'click_to_sms', { 'event_category': 'Lead Generation', 'event_label': 'Hero CTA - Secondary', 'button_location': 'hero_secondary' }); }">
-            <svg class="cta-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <span>Text Us</span>
-          </a>
-        </div>
-
-        <!-- Social Proof Card - Enhanced CRO Design with Avatars -->
-        <a href="https://www.google.com/maps/place/Kelowna+Protech+Elite+Mobile+Mechanic/@49.8997969,-119.6772522,11z/data=!4m6!3m5!1s0x537df3a26ebc1df1:0xf75ae580e9a40140!8m2!3d49.8996925!4d-119.5124475!16s%2Fg%2F11vx5j2hbp"
-          target="_blank" rel="noopener" class="hero-social-proof-card-2026 hero-carousel-link">
-
-          <!-- Left: Rating Block -->
-          <div class="proof-rating-block">
-            <div class="proof-rating-number">4.9</div>
-            <div class="proof-rating-stars">★★★★★</div>
-            <div class="proof-rating-count">41 reviews</div>
-          </div>
-
-          <!-- Center: Testimonial Carousel with Avatars -->
-          <div class="proof-testimonial-block">
-            <div class="carousel-testimonials">
-              <!-- Review 1: Oscar B. -->
-              <div class="carousel-item active">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    OB
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Jose came to my place, diagnosed the issue in 10 minutes. I fully trust
-                      this guy with all my vehicles!"</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Oscar B.</span>
-                      <span class="review-service">• Diagnostic Service</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Review 2: Haley F. -->
-              <div class="carousel-item">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    HF
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Car wouldn't start on a cold morning. They diagnosed and fixed it quickly
-                      right in my driveway. Saved me a tow!"</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Haley F.</span>
-                      <span class="review-service">• Battery Replacement</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Review 3: Cathy G. -->
-              <div class="carousel-item">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    CG
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Very courteous, prompt, and professional. They explained everything clearly
-                      and didn't try to upsell me on unnecessary work."</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Cathy G.</span>
-                      <span class="review-service">• Pre-Purchase Inspection</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Review 4: Tyler T. -->
-              <div class="carousel-item">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                    TT
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Honest mechanic who shows you what's actually wrong. Fair pricing and
-                      saved me time by coming to my workplace."</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Tyler T.</span>
-                      <span class="review-service">• Oil Change & Inspection</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Google Badge -->
-          <div class="proof-google-badge">
-            <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20">
-              <path fill="#4285F4"
-                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-              <path fill="#34A853"
-                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-              <path fill="#FBBC05"
-                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-              <path fill="#EA4335"
-                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-            </svg>
-            <span>Google</span>
-          </div>
-        </a>
-
-        <!-- Availability & Badges Row -->
-        <div class="hero-trust-row">
-          <div class="hero-availability">
-            <span class="availability-dot"></span>
-            <span class="availability-text">Joseph is available today</span>
-          </div>
-        </div>
-
-        <div class="hero-trust-badges">
-          <span class="trust-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            Same-day service
-          </span>
-          <span class="trust-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            No tow needed
-          </span>
-          <span class="trust-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            Clear pricing
-          </span>
-        </div>
-      </div>
+  <!-- FOLD 03: Hero Section -->
+  <section id="hero" class="hero-fold">
+    <div class="hero-fold__content">
+      <h1 class="hero-fold__h1">
+        Don't Pay for a Repair Until You Know Exactly What's <span class="hero-fold__accent">Wrong.</span>
+      </h1>
+      <div class="hero-fold__separator" aria-hidden="true"></div>
+      <p class="hero-fold__tagline">
+        Kelowna's Only Mobile Diagnostic Engineer &mdash; We Find the Real Cause. You Decide What Happens Next.
+      </p>
+      <a href="tel:+12508595467" class="hero-fold__cta"
+        onclick="if(typeof gtag === 'function') { gtag('event', 'click_to_call', { 'event_category': 'Lead Generation', 'event_label': 'Hero CTA - Diagnosis', 'button_location': 'hero_fold03' }); }">
+        Book My Diagnosis &mdash; Know Before You Pay Anything
+      </a>
+      <p class="hero-fold__micro">
+        <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+        Kelowna Protech always responds &mdash; 42 verified reviews &middot; 4.9&#9733; Google
+      </p>
     </div>
   </section>
+  <!-- FIN HERO FOLD 03 -->
 
   <!-- Services / Mobile-first -->
   <section id="service-tiles" aria-labelledby="services-heading">
