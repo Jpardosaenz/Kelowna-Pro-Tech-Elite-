@@ -61,7 +61,7 @@ document.addEventListener("DOMContentLoaded", () => {
     floatingCtaContainer.style.transition = baseTransition;
     floatingCtaContainer.style.display = "none";
 
-    const threshold = 300; // Only show after scrolling past the Hero
+    const threshold = 100; // Show quickly so mobile users always have a CTA visible
     let isVisible = false;
     let idleTimer = null;
     const idleDelay = 2000;
