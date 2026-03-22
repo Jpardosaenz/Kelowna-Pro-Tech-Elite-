@@ -206,7 +206,7 @@ async function diagNext(step) {
 
     // GA4 Tracking - Partial Lead Captured
     if (typeof gtag === 'function') {
-      gtag('event', 'generate_lead', {
+      gtag('event', 'lead_step_1', {
         'event_category': 'Lead Generation',
         'event_label': 'Partial Lead - Step 1 Complete',
         'funnel_step': 'step_1_complete',
@@ -512,13 +512,17 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Send event to GA4
       if (typeof gtag === 'function') {
-        gtag('event', 'phone_click', {
+        const phoneEventParams = {
           'event_category': 'conversion',
           'event_label': linkText || 'Phone Click',
           'phone_number': phoneNumber,
           'link_class': linkClass,
           'page_location': window.location.pathname
-        });
+        };
+        if (this.id === 'main-cta-button' || this.closest('.floating-cta-container')) {
+          phoneEventParams['button_location'] = 'floating_widget';
+        }
+        gtag('event', 'phone_click', phoneEventParams);
       }
 
     });
