@@ -2968,6 +2968,31 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
     object-position: center top;
   }
 
+  .hero-intro {
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-headline {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-support-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-value-list {
+    margin-top: 0.5rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .hero-value-list li {
+    margin-bottom: 0.2rem !important;
+  }
+
   .hero-cta-container {
     margin-top: 0.75rem;
   }
