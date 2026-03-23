@@ -2940,3 +2940,60 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
     text-align: center;
   }
 }
+
+/* FIX 4: Hide floating CTA widget on mobile — blocks contact CTAs at 390px */
+@media (max-width: 768px) {
+  .floating-cta-container {
+    display: none !important;
+  }
+}
+
+/* FIX 5: Compress hero section on mobile so headline + subheadline + CTA
+   are all visible within the first 100vh at 390x844px.
+   Desktop (min-width: 769px) is untouched. */
+@media (max-width: 768px) {
+  .hero-section {
+    padding-top: 1.5rem;
+    padding-bottom: 1.5rem;
+  }
+
+  .hero-grid {
+    gap: 0.5rem;
+  }
+
+  .hero-visual-column .hero-image {
+    max-height: 180px;
+    width: 100%;
+    object-fit: cover;
+    object-position: center top;
+  }
+
+  .hero-intro {
+    margin-bottom: 0.25rem;
+  }
+
+  .hero-headline {
+    font-size: 1.75rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .hero-support-text {
+    font-size: 1rem;
+    line-height: 1.5;
+    margin-bottom: 0.75rem;
+  }
+
+  .hero-value-list {
+    margin-top: 0.5rem !important;
+    font-size: 0.875rem !important;
+    line-height: 1.4 !important;
+  }
+
+  .hero-value-list li {
+    margin-bottom: 0.2rem !important;
+  }
+
+  .hero-cta-container {
+    margin-top: 0.75rem;
+  }
+}
