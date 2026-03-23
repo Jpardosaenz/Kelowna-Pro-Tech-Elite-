@@ -287,6 +287,31 @@
       animation: heroFadeInUp 0.6s ease both;
       animation-delay: 0.3s
     }
+    .hero-fold__trust {
+      margin: 20px auto 0;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.4s
+    }
+    .hero-fold__trust-stars {
+      color: #e8a020;
+      font-size: 0.875rem;
+      letter-spacing: 0.08em
+    }
+    .hero-fold__trust-meta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      color: #6b6455;
+      letter-spacing: normal;
+      margin-left: 4px
+    }
+    .hero-fold__trust-quote {
+      font-family: 'DM Sans', sans-serif;
+      font-style: italic;
+      font-size: 0.8125rem;
+      color: #a09880;
+      line-height: 1.5;
+      margin: 5px 0 0
+    }
     .hero-fold__cta {
       display: block;
       width: 100%;
@@ -358,6 +383,7 @@
     @media(prefers-reduced-motion:reduce) {
       .hero-fold__h1,
       .hero-fold__tagline,
+      .hero-fold__trust,
       .hero-fold__cta,
       .hero-fold__micro {
         animation: none !important
@@ -1521,6 +1547,12 @@
       <p class="hero-fold__tagline">
         Kelowna's Only Mobile Diagnostic Engineer &mdash; We Find the Real Cause. You Decide What Happens Next.
       </p>
+      <div class="hero-fold__trust" aria-label="Verified customer review">
+        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 — 41 Google reviews">
+          ★★★★★<span class="hero-fold__trust-meta">4.9 · 41 Google Reviews</span>
+        </p>
+        <p class="hero-fold__trust-quote">"Honest mechanic who shows you what's actually wrong." &mdash; Tyler T.</p>
+      </div>
       <a href="tel:+12508595467" class="hero-fold__cta"
         onclick="if(typeof gtag === 'function') { gtag('event', 'click_to_call', { 'event_category': 'Lead Generation', 'event_label': 'Hero CTA - Diagnosis', 'button_location': 'hero_fold03' }); }">
         Book My Diagnosis &mdash; Know Before You Pay Anything
