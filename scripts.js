@@ -524,7 +524,6 @@ document.addEventListener('DOMContentLoaded', function () {
         }
         gtag('event', 'phone_click', phoneEventParams);
       }
-
     });
   });
 

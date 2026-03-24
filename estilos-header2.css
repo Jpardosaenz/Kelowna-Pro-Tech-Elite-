@@ -1531,6 +1531,12 @@ COMPONENTE: BOTÓN FLOTANTE DE LLAMADA A LA ACCIÓN (CTA) - DISEÑO PREMIUM
   }
 }
 
+@media (max-width:768px) {
+  .floating-cta-container {
+    display: none !important;
+  }
+}
+
 /* Accessibility: respect reduced motion */
 @media (prefers-reduced-motion: reduce) {
 
