@@ -456,7 +456,6 @@ document.addEventListener('DOMContentLoaded', function () {
       const phoneNumber = this.getAttribute('href');
       const linkText = this.textContent.trim();
       const linkClass = this.className;
-      const gaLabel = this.dataset.gaLabel;
 
       if (typeof gtag !== 'function') return;
 
@@ -467,15 +466,6 @@ document.addEventListener('DOMContentLoaded', function () {
         'link_class': linkClass,
         'page_location': window.location.pathname
       });
-
-      // Fire named CTA event for elements with explicit tracking label
-      if (gaLabel) {
-        gtag('event', 'click_to_call', {
-          'event_category': 'Lead Generation',
-          'event_label': gaLabel,
-          'button_location': linkClass
-        });
-      }
     });
   });
 
@@ -519,4 +509,3 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
-
