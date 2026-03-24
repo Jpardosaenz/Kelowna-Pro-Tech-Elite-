@@ -118,7 +118,7 @@ document.addEventListener("DOMContentLoaded", () => {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", handleScroll, { passive: true });
     handleScroll();
 
     ["touchstart", "click"].forEach(evt => {
@@ -133,13 +133,14 @@ SECCIÓN: AI DIAGNOSTIC FUNNEL LOGIC
 ==========================================================================
 */
 
-let currentLead = {
-  name: '',
-  contact: '',
-  vehicle: '',
-  symptoms: '',
-  urgency: ''
-};
+(function () {
+  let currentLead = {
+    name: '',
+    contact: '',
+    vehicle: '',
+    symptoms: '',
+    urgency: ''
+  };
 
 function openDiagModal() {
   const modal = document.getElementById('diag-modal');
@@ -298,7 +299,7 @@ async function sendLeadToAdmin(data) {
     timestamp: timestamp,
     _subject: `🚗 Nuevo Lead: ${data.name} - ${data.type || 'Diagnóstico Completo'}`,
     _template: 'table',
-    _captcha: 'false'
+    _captcha: 'true'
   };
 
   try {
@@ -431,64 +432,10 @@ function generateAIHypothesis(symptoms) {
   `;
 }
 
-
-/*
-==========================================================================
-HERO TESTIMONIAL CAROUSEL - Auto-rotating con pausa en hover/touch
-==========================================================================
-*/
-(function () {
-  const carouselItems = document.querySelectorAll('.carousel-item');
-  const carouselLink = document.querySelector('.hero-carousel-link');
-
-  if (carouselItems.length === 0 || !carouselLink) return;
-
-  let currentIndex = 0;
-  let intervalId = null;
-  let isPaused = false;
-
-  function showNextTestimonial() {
-    if (isPaused) return;
-
-    // Remove active class from current
-    carouselItems[currentIndex].classList.remove('active');
-
-    // Move to next (loop back to 0 if at end)
-    currentIndex = (currentIndex + 1) % carouselItems.length;
-
-    // Add active class to new current
-    carouselItems[currentIndex].classList.add('active');
-  }
-
-  // Start auto-rotation every 4 seconds
-  function startRotation() {
-    if (!intervalId) {
-      intervalId = setInterval(showNextTestimonial, 4000);
-    }
-  }
-
-  // Pause on hover (desktop)
-  carouselLink.addEventListener('mouseenter', function () {
-    isPaused = true;
-  });
-
-  carouselLink.addEventListener('mouseleave', function () {
-    isPaused = false;
-  });
-
-  // Pause on touch/click (mobile)
-  carouselLink.addEventListener('touchstart', function () {
-    isPaused = true;
-  });
-
-  carouselLink.addEventListener('touchend', function () {
-    setTimeout(function () {
-      isPaused = false;
-    }, 2000); // Resume after 2 seconds
-  });
-
-  // Start the rotation
-  startRotation();
+  // Expose only what HTML onclick handlers require
+  window.openDiagModal = openDiagModal;
+  window.closeDiagModal = closeDiagModal;
+  window.diagNext = diagNext;
 })();
 
 
@@ -565,42 +512,3 @@ document.addEventListener('DOMContentLoaded', function () {
   });
 });
 
-
-/*
-==========================================================================
-DIAGNOSTIC WIDGET FLOTANTE - Show/Hide based on scroll
-==========================================================================
-Similar to floating CTA, but specific for diagnostic modal trigger
-*/
-
-document.addEventListener('DOMContentLoaded', function () {
-  const widget = document.getElementById('diagnostic-widget-btn');
-
-  if (!widget) return;
-
-  const threshold = 400; // Show after scrolling 400px
-  let isVisible = false;
-
-  function checkScroll() {
-    if (window.scrollY > threshold && !isVisible) {
-      widget.style.display = 'flex';
-      requestAnimationFrame(() => {
-        widget.style.opacity = '1';
-        widget.style.transform = 'translateY(0) scale(1)';
-      });
-      isVisible = true;
-    } else if (window.scrollY <= threshold && isVisible) {
-      widget.style.opacity = '0';
-      widget.style.transform = 'translateY(20px) scale(0.8)';
-      isVisible = false;
-      setTimeout(() => {
-        if (!isVisible) widget.style.display = 'none';
-      }, 300);
-    }
-  }
-
-  // WIDGET IS NOW ALWAYS VISIBLE - Scroll logic removed for "Ask a Mechanic" side button
-  // window.addEventListener('scroll', checkScroll);
-  // checkScroll(); // Check on load
-  checkScroll(); // Check on load
-});
