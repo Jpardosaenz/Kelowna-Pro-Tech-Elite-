@@ -456,18 +456,26 @@ document.addEventListener('DOMContentLoaded', function () {
       const phoneNumber = this.getAttribute('href');
       const linkText = this.textContent.trim();
       const linkClass = this.className;
+      const gaLabel = this.dataset.gaLabel;
 
-      // Send event to GA4
-      if (typeof gtag === 'function') {
-        gtag('event', 'phone_click', {
-          'event_category': 'conversion',
-          'event_label': linkText || 'Phone Click',
-          'phone_number': phoneNumber,
-          'link_class': linkClass,
-          'page_location': window.location.pathname
+      if (typeof gtag !== 'function') return;
+
+      gtag('event', 'phone_click', {
+        'event_category': 'conversion',
+        'event_label': linkText || 'Phone Click',
+        'phone_number': phoneNumber,
+        'link_class': linkClass,
+        'page_location': window.location.pathname
+      });
+
+      // Fire named CTA event for elements with explicit tracking label
+      if (gaLabel) {
+        gtag('event', 'click_to_call', {
+          'event_category': 'Lead Generation',
+          'event_label': gaLabel,
+          'button_location': linkClass
         });
       }
-
     });
   });
 

@@ -4,6 +4,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security headers (meta equivalents — reinforce at server/CDN level) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
   <title>Mobile Mechanic Kelowna | Certified Engineer On-Site Repairs</title>
@@ -764,8 +768,7 @@
       <p class="hero-fold__tagline">
         Kelowna's Only Mobile Diagnostic Engineer &mdash; We Find the Real Cause. You Decide What Happens Next.
       </p>
-      <a href="tel:+12508595467" class="hero-fold__cta"
-        onclick="if(typeof gtag === 'function') { gtag('event', 'click_to_call', { 'event_category': 'Lead Generation', 'event_label': 'Hero CTA - Diagnosis', 'button_location': 'hero_fold03' }); }">
+      <a href="tel:+12508595467" class="hero-fold__cta" data-ga-label="Hero CTA - Diagnosis">
         Book My Diagnosis &mdash; Know Before You Pay Anything
       </a>
       <p class="hero-fold__micro">
