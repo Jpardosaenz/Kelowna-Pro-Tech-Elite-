@@ -1,5 +1,38 @@
 # 🏗️ PROJECT MASTER — Kelowna Protech Elite Mobile Mechanic
 
+## What This File Is
+
+This is the master history of the project.
+
+Use this file to understand:
+
+- the big picture of the business and website
+- major project phases
+- structural decisions
+- important milestones
+- long-term project history
+
+## What This File Is Not
+
+This file is not:
+
+- a daily work log
+- a branch-by-branch checkpoint file
+- a chat transcript
+- a detailed handoff for the current active task
+
+## When To Update This File
+
+Update this file only when there is a meaningful historical or structural change, for example:
+
+- a new project phase
+- a major redesign
+- a tracking or analytics system change
+- an important architecture or deployment change
+- a business-critical compliance or SEO milestone
+
+Do not update this file for every small approved edit.
+
 **Document Purpose:** Complete project history, architecture, commits, and disaster recovery guide.
 **Last Updated:** 2026-02-06
 **Current Phase:** Phase 2 Complete + GBP Optimization Active

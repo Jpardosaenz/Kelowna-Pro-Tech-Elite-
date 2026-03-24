@@ -1,5 +1,32 @@
 # 🧶 KPEMM: Scrum Breadcrumbs (Technical & Strategic Handover)
 
+## What This File Is
+
+This is the strategic continuity guide for the project.
+
+Use this file to understand:
+
+- the core positioning of the business
+- the strategic rules that must not be broken
+- the compliance boundaries
+- the messaging logic behind the website
+- how future contributors should think before changing key pages
+
+## What This File Is Not
+
+This file is not:
+
+- the full project history
+- the daily operational work log
+- the branch checkpoint register
+- a place to record every small task or commit
+
+## When To Update This File
+
+Update this file only when a strategic rule, compliance boundary, positioning principle, or continuity instruction changes.
+
+Do not update this file for routine UI tweaks, spacing changes, or normal branch progress.
+
 Esta guía sirve para que cualquier futura IA o desarrollador entienda el **"Sistema de Conversión de Ingeniería"** que hemos construido para Kelowna Protech Elite.
 
 ## 🏁 Contexto Actual (Feb 2026)
