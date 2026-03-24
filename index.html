@@ -170,7 +170,8 @@
       font-weight: 400;
       font-size: 1rem;
       line-height: 1.6;
-      color: #a09880;
+      color: rgba(255, 255, 255, 0.92);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
       max-width: 540px;
       margin: 0 auto;
       animation: heroFadeInUp 0.6s ease both;
@@ -239,16 +240,24 @@
       transform: translateY(-1px);
       box-shadow: 0 4px 20px rgba(232,160,32,0.35)
     }
+    .hero-fold__micro-list {
+      list-style: none;
+      margin: 24px 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
     .hero-fold__micro {
       display: flex;
       align-items: center;
       justify-content: center;
       gap: 6px;
-      margin-top: 24px;
       font-family: 'DM Sans', sans-serif;
       font-weight: 400;
       font-size: 0.8125rem;
-      color: #6b6455;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
       animation: heroFadeIn 0.6s ease both;
       animation-delay: 0.7s
     }
@@ -762,19 +771,33 @@
         <p class="hero-fold__trust-quote">"Honest mechanic who shows you what's actually wrong." &mdash; Tyler T.</p>
       </div>
       <h1 class="hero-fold__h1">
-        Get Clear Answers Before You Risk Another Dollar on the <span class="hero-fold__accent">Wrong Repair.</span>
+        Mobile Mechanic Kelowna &mdash; Real Answers, Total Peace of <span class="hero-fold__accent">Mind.</span>
       </h1>
       <div class="hero-fold__separator" aria-hidden="true"></div>
       <p class="hero-fold__tagline">
-        Kelowna's mobile diagnostic specialist finds the real problem, gives you a clear next step, and can often repair it on-site the same day.
+        Dealer-level diagnostics at your door. We find the real problem, explain it clearly, and fix it on-site &mdash; same day when possible. No tow truck. No waiting room. No guessing.
       </p>
       <a href="tel:+12508595467" class="hero-fold__cta" data-ga-label="Hero CTA - Diagnosis">
         Book My Diagnosis &mdash; Know Before You Pay Anything
       </a>
-      <p class="hero-fold__micro">
-        <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-        Kelowna Protech always responds &mdash; 42 verified reviews &middot; 4.9&#9733; Google
-      </p>
+      <ul class="hero-fold__micro-list">
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          15+ years of diagnostics. 4.9 stars. We come to you.
+        </li>
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Kelowna mechanic serving you at home, work, or roadside &mdash; no shop visit needed.
+        </li>
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Covering Kelowna, West Kelowna &amp; Lake Country &mdash; same-day available.
+        </li>
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Dealer-grade scan tools on every call. Real diagnosis, not guesswork.
+        </li>
+      </ul>
     </div>
   </section>
   <!-- FIN HERO FOLD 03 -->
