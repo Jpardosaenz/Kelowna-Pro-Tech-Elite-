@@ -34,9 +34,9 @@ Update this file only when there is a meaningful historical or structural change
 Do not update this file for every small approved edit.
 
 **Document Purpose:** Complete project history, architecture, commits, and disaster recovery guide.
-**Last Updated:** 2026-02-06
-**Current Phase:** Phase 2 Complete + GBP Optimization Active
-**Status:** ✅ Production Stable | 🟢 4.9★ Rating | 36 Reviews
+**Last Updated:** 2026-03-24
+**Current Phase:** Phase 3 Homepage Trust-First + SEO Hardening Live
+**Status:** ✅ Production Stable | 🟢 4.9★ Rating | 42 Reviews | Auto-deploy from `main`
 
 ---
 
@@ -59,6 +59,59 @@ We position as the **Blue Ocean Alternative** to both:
 2. Dealers (inferior pricing + 2-week waits)
 
 **Strategic Positioning:** Engineering Authority + Mobile Convenience + Grand Slam Offers
+
+---
+
+## 📌 Production State — 2026-03-24
+
+### What changed in production today
+
+Production on `main` now includes a homepage-first trust flow and backend SEO improvements that were reviewed in the `test/trust-bar-fixes` work line and merged safely into `main`.
+
+### Production commits now reflected on `main`
+
+- `c932ac6` — remove GA4 phone-click duplication and hide floating widget on mobile
+- `0cfbce6` — merge approved hero + SEO backend work into `main`
+- `c85e453` — mobile CTA bar now stays sticky below the mobile header
+- `643e1e9` — public label `Field Reports` renamed to `Success Stories` (URLs unchanged)
+- `8d142e5` — homepage schema, title, and sitemap updated for stronger SEO alignment
+- `f07189a` — hero supporting copy readability and value bullets improved
+
+### Homepage state after this release
+
+- Mobile blue CTA bar exists below the sticky header and now stays sticky while scrolling
+- Homepage hero follows a trust-first sequence:
+  1. header
+  2. mobile CTA bar
+  3. trust block
+  4. hero H1
+  5. subtitle
+  6. CTA
+  7. value bullets
+- Hero message now emphasizes:
+  - real answers
+  - peace of mind
+  - same-day mobile convenience
+- Trust proof appears before the main promise instead of being pushed lower in the page
+
+### SEO / analytics state after this release
+
+- Homepage `<title>` updated for stronger service + location targeting
+- Homepage AutoRepair schema upgraded and aligned to:
+  - `["AutoRepair", "LocalBusiness"]`
+  - `reviewCount: 42`
+  - `serviceType: Mobile Mechanic`
+- `sitemap.xml` updated to 2026-03-24 timestamps and priority values
+- GA4 operational lead events remain:
+  - `phone_click`
+  - `sms_click`
+- Duplicate `click_to_call` behavior on phone CTA tracking was removed from production
+
+### Editorial naming state
+
+- Public-facing label changed from `Field Reports` to `Success Stories`
+- Important: URL paths remain `/field-reports/`
+- Reason: editorial improvement only, without creating SEO migration or redirect work
 
 ---
 
@@ -94,8 +147,10 @@ We position as the **Blue Ocean Alternative** to both:
 - `service_card_click`
 
 **3. Ruido del Sistema (Ignorar en lecturas)**
-- `purchase`: Aparece listado por limitación inherente de la plataforma GA4. Tiene 0 datos y debe ignorarse operativamente.
+- `purchase`: Puede aparecer listado por limitación inherente de GA4. No es un KPI comercial del sitio.
 - `click`: Obsoleto y removido de Key Events.
+- `click_to_call`: Obsoleto en producción; la referencia válida de llamadas es `phone_click`.
+- `click_to_sms`: Obsoleto; la referencia válida de SMS es `sms_click`.
 
 ### 🧭 Trazabilidad CRO de Homepage
 
@@ -145,11 +200,12 @@ We position as the **Blue Ocean Alternative** to both:
 ├── robots.txt                    # Disallow /admin, allow all else
 ├── sitemap.xml                   # Auto-generated sitemap
 │
-└── docs/
-    ├── agents.md                 # Workflow rules & component docs (379 lines)
+└── DOCS/
+    ├── agents.md                 # Workflow rules & component docs
     ├── HOMEPAGE-CRO-AUDIT-2026-03-11.md # Auditoria CRO consolidada de homepage
     ├── PROJECT_MASTER.md         # THIS FILE - Complete project history
     ├── SCRUM_BREADCRUMBS.md      # Strategic handover guide
+    ├── BRANCH_CHECKPOINTS.md     # Operational continuity checkpoints
     ├── GBP-OPTIMIZATION-STRATEGY.md  # Google Business Profile strategy
     ├── GBP-POST-01-VIC-ELECTRICAL.md # First GBP post template
     ├── GA4-SETUP-GUIDE.md        # Analytics setup instructions

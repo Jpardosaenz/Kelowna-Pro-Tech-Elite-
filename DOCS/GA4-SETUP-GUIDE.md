@@ -1,7 +1,8 @@
 # GA4 CONVERSIONS SETUP GUIDE
-## Configurar phone_click y sms_click como Conversiones
+## Configurar `phone_click` y `sms_click` como Key Events operativos
 
 **Fecha:** 2 febrero 2026
+**Última actualización operativa:** 24 marzo 2026
 **Parte de:** FASE 1 - MEDICIÓN (Semana 1, Tarea 2/5)
 **Tiempo estimado:** 15-20 minutos
 
@@ -14,6 +15,26 @@ Marcar los eventos `phone_click` y `sms_click` como **conversiones** en Google A
 2. Comparar conversiones por canal (Organic, Direct, GMB)
 3. Crear reports personalizados de conversiones
 4. Analizar qué páginas generan más conversiones
+
+## 🚨 ESTADO OPERATIVO ACTUAL (2026-03-24)
+
+Estos son los nombres válidos para operar KPEMM hoy:
+
+- `phone_click`
+- `sms_click`
+
+No usar para lectura operativa:
+
+- `click_to_call`
+- `click_to_sms`
+- `click`
+- `purchase`
+
+Notas:
+
+- `click_to_call` y `click_to_sms` deben tratarse como nombres obsoletos
+- los KPIs comerciales válidos del sitio son `phone_click` y `sms_click`
+- si GA4 sigue mostrando eventos heredados o vacíos, no deben leerse como conversión comercial activa
 
 ---
 
