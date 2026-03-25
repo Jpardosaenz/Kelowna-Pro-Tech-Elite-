@@ -1,3 +1,20 @@
+/* Skip-to-content link (accessibility) */
+.skip-link {
+  position: absolute;
+  top: -100%;
+  left: 0;
+  z-index: 10000;
+  padding: 8px 16px;
+  background: #005fcc;
+  color: #fff;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 0 0 4px 0;
+}
+.skip-link:focus {
+  top: 0;
+}
+
 /*
  * ==================================================================
  * RESET DE CSS MODERNO Y NORMALIZACIÓN
@@ -123,7 +140,6 @@ body {
   border: none;
   color: #212121;
   cursor: pointer;
-  outline: none;
   flex-shrink: 0;
 
   /* --- Importante para Safari --- */
@@ -134,7 +150,7 @@ body {
   /* Safari a veces añade un borde redondeado por defecto */
 }
 
-.menu-trigger:focus {
+.kpem-menu-trigger:focus-visible {
   outline: 2px solid #005fcc;
   outline-offset: 2px;
 }

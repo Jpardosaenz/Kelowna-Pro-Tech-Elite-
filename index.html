@@ -728,6 +728,7 @@
 </head>
 
 <body>
+  <a href="#hero" class="skip-link">Skip to main content</a>
   <!-- INICIO HEADER MOBILE -->
   <!-- Mobile Header -->
   <header class="kpem-header-mobile" role="banner">
@@ -742,10 +743,9 @@
       <button class="menu-close-button" aria-label="Close menu">&times;</button>
       <ul>
         <li><a href="#client-stories">Client Stories</a></li>
-        <li><a href="#why-us">Why Us</a></li>
+        <li><a href="#commercial-faq">Why Us</a></li>
         <li><a href="#service-tiles">Services</a></li>
         <li><a href="/field-reports/">Success Stories</a></li>
-        <li><a href="#contact">Contact</a></li>
       </ul>
     </nav>
     <a href="tel:+12508595467" class="header-cta" aria-label="Call expert mechanic for same-day service">
@@ -1138,10 +1138,10 @@
         <h2 class="diag-title">Step 1: Contact Details</h2>
         <p class="diag-subtitle">Where should we send your results?</p>
         <div class="diag-input-group">
-          <input type="text" id="diag-name" placeholder="Your Name" required>
+          <input type="text" id="diag-name" aria-label="Your name" placeholder="Your Name" required>
         </div>
         <div class="diag-input-group">
-          <input type="text" id="diag-contact" placeholder="Phone or Email" required>
+          <input type="text" id="diag-contact" aria-label="Phone or email" placeholder="Phone or Email" required>
         </div>
         <button class="diag-next-btn" onclick="diagNext(2)">Next: Vehicle Info →</button>
         <p class="diag-privacy">We only use this to send your diagnostic report.</p>
@@ -1151,14 +1151,14 @@
       <div id="diag-step-2" class="diag-step" style="display:none;">
         <h2 class="diag-title">Step 2: Vehicle & Symptoms</h2>
         <div class="diag-input-group">
-          <input type="text" id="diag-vehicle" placeholder="Year / Make / Model (e.g., 2018 Ford F-150)">
+          <input type="text" id="diag-vehicle" aria-label="Vehicle year, make and model" placeholder="Year / Make / Model (e.g., 2018 Ford F-150)">
         </div>
         <div class="diag-input-group">
-          <textarea id="diag-symptoms"
+          <textarea id="diag-symptoms" aria-label="Describe what is happening with your vehicle"
             placeholder="Tell us what's happening (e.g., ticking noise, won't start, warning light...)"></textarea>
         </div>
         <div class="diag-input-group">
-          <select id="diag-urgency">
+          <select id="diag-urgency" aria-label="How urgent is your situation">
             <option value="flexible">Urgency: Flexible</option>
             <option value="24h">Need help within 24h</option>
             <option value="emergency">Emergency / Broken Down</option>
