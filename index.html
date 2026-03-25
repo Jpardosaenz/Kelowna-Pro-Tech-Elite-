@@ -4,9 +4,13 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <!-- Security headers (meta equivalents — reinforce at server/CDN level) -->
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
-  <title>Mobile Mechanic Kelowna | Certified Engineer On-Site Repairs</title>
+  <title>Mobile Mechanic Kelowna — Expert Mechanic at Your Door | Kelowna Protech Elite</title>
   <meta name="description"
     content="Same-day mobile mechanic in Kelowna. Certified engineer arrives at your location — no tow, no shop wait. Clear diagnostics, upfront pricing. Call or text now.">
   <meta name="robots" content="index, follow" />
@@ -40,9 +44,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <!-- Preload hero image (LCP optimization) -->
-  <link rel="preload" as="image" href="images/hero-mechanic-400w.webp" media="(max-width: 640px)" type="image/webp">
-  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp"
-    media="(min-width: 641px) and (max-width: 1024px)" type="image/webp">
+  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp" media="(max-width: 767px)" type="image/webp">
+  <link rel="preload" as="image" href="images/hero-mechanic-1200w.webp" media="(min-width: 768px)" type="image/webp">
   <!-- Critical CSS: inline ATF styles to unblock FCP (header + hero + CTAs + social proof) -->
   <style>
     @font-face {
@@ -102,11 +105,220 @@
       -moz-osx-font-smoothing: grayscale
     }
 
-    .hero-image {
-      aspect-ratio: 800/437;
-      width: 100%;
-      height: auto
+    .mobile-cta-bar {
+      display: none
     }
+
+    /* ─────────────────────────────────────────────────────────── */
+
+    /* ── HERO FOLD 03 ─────────────────────────────────────── */
+    @keyframes heroFadeInUp {
+      from { opacity: 0; transform: translateY(20px) }
+      to { opacity: 1; transform: translateY(0) }
+    }
+    @keyframes heroFadeIn {
+      from { opacity: 0 }
+      to { opacity: 1 }
+    }
+    .hero-fold {
+      position: relative;
+      width: 100%;
+      min-height: 90vh;
+      display: flex;
+      align-items: flex-start;
+      background-image: url('images/hero-mechanic-800w.webp');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding: 24px 24px 60px;
+      box-sizing: border-box
+    }
+    .hero-fold::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13,13,11,0.80);
+      z-index: 1
+    }
+    .hero-fold__content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center
+    }
+    .hero-fold__h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 1.15;
+      color: #f5f0e8;
+      margin: 0;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.1s
+    }
+    .hero-fold__accent { color: #e8a020 }
+    .hero-fold__separator {
+      width: 48px;
+      height: 2px;
+      background: #e8a020;
+      margin: 30px auto
+    }
+    .hero-fold__tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+      max-width: 540px;
+      margin: 0 auto;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.3s
+    }
+    .hero-fold__trust {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 0 auto 28px;
+      padding: 0;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0s
+    }
+    .hero-fold__trust-stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: #ffd166;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase
+    }
+    .hero-fold__trust-meta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f8f4ec;
+      letter-spacing: normal;
+      margin-left: 0
+    }
+    .hero-fold__trust-quote {
+      font-family: 'DM Sans', sans-serif;
+      font-style: italic;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #efe7da;
+      line-height: 1.5;
+      max-width: 34ch;
+      margin: 0
+    }
+    .hero-fold__cta {
+      display: block;
+      width: 100%;
+      margin: 40px auto 0;
+      padding: 16px 32px;
+      background: #e8a020;
+      color: #0d0d0b;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 600;
+      font-size: 1rem;
+      text-decoration: none;
+      text-align: center;
+      border-radius: 4px;
+      transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.5s;
+      box-sizing: border-box
+    }
+    .hero-fold__cta:hover {
+      background: #f5b830;
+      transform: translateY(-1px);
+      box-shadow: 0 4px 20px rgba(232,160,32,0.35)
+    }
+    .hero-fold__micro-list {
+      list-style: none;
+      margin: 24px 0 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px
+    }
+    .hero-fold__micro {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 6px;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 0.8125rem;
+      color: rgba(255, 255, 255, 0.85);
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
+      animation: heroFadeIn 0.6s ease both;
+      animation-delay: 0.7s
+    }
+    .hero-fold__check {
+      flex-shrink: 0;
+      display: inline-block
+    }
+    @media(min-width:768px) {
+      .hero-fold {
+        min-height: 100vh;
+        align-items: center;
+        padding: 32px 60px 80px;
+        background-image: url('images/hero-mechanic-1200w.webp')
+      }
+      .hero-fold::before {
+        background: linear-gradient(to right, rgba(13,13,11,0.85) 40%, rgba(13,13,11,0.45) 100%)
+      }
+      .hero-fold__content {
+        margin: 0;
+        text-align: left
+      }
+      .hero-fold__trust {
+        align-items: flex-start;
+        margin: 0 0 32px
+      }
+      .hero-fold__trust-stars {
+        justify-content: flex-start;
+        font-size: 1.0625rem
+      }
+      .hero-fold__trust-meta {
+        font-size: 1rem
+      }
+      .hero-fold__trust-quote {
+        font-size: 1rem;
+        max-width: 42ch
+      }
+      .hero-fold__h1 {
+        font-size: 3.5rem;
+        line-height: 1.1
+      }
+      .hero-fold__separator { margin: 30px 0 }
+      .hero-fold__tagline {
+        font-size: 1.125rem;
+        margin: 0
+      }
+      .hero-fold__cta {
+        display: inline-block;
+        width: auto
+      }
+      .hero-fold__micro { justify-content: flex-start }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .hero-fold__h1,
+      .hero-fold__tagline,
+      .hero-fold__trust,
+      .hero-fold__cta,
+      .hero-fold__micro {
+        animation: none !important
+      }
+    }
+    /* ─────────────────────────────────────────────────────── */
 
     .kpem-header-mobile {
       width: 100%;
@@ -254,6 +466,39 @@
         pointer-events: none !important
       }
 
+      .mobile-cta-bar {
+        display: block;
+        padding: 10px 16px;
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        border-top: 1px solid rgba(251, 191, 36, .35);
+        border-bottom: 1px solid rgba(251, 191, 36, .25);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
+        text-align: center
+      }
+
+      .mobile-cta-bar a {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 10px;
+        color: #fff;
+        font-family: "Inter", 'Inter Fallback', sans-serif;
+        font-size: .9375rem;
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: .2px
+      }
+
+      .mobile-cta-bar svg {
+        flex-shrink: 0
+      }
+
+      .mobile-cta-bar-sub {
+        color: #cbd5e1;
+        font-weight: 500;
+        font-size: .8125rem
+      }
+
       .floating-cta-container {
         position: fixed;
         bottom: calc(16px + env(safe-area-inset-bottom));
@@ -297,551 +542,6 @@
       line-height: 1.2
     }
 
-    .hero-section {
-      background-color: #f8fafc;
-      padding: 4rem 1rem 5rem;
-      width: 100%;
-      box-sizing: border-box
-    }
-
-    .hero-container {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 0 20px
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: 1fr;
-      gap: 1rem;
-      align-items: center
-    }
-
-    .hero-text-content {
-      text-align: center
-    }
-
-    .hero-intro {
-      font-family: "Inter", 'Inter Fallback', sans-serif;
-      font-size: 1.15rem;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 2px;
-      color: #6b7280;
-      margin-bottom: .5rem;
-      text-align: center;
-      display: block
-    }
-
-    .hero-headline {
-      font-family: "Inter", 'Inter Fallback', sans-serif;
-      font-size: clamp(2rem, 7vw, 3.5rem);
-      font-weight: 900;
-      text-transform: uppercase;
-      line-height: 1.05;
-      letter-spacing: -.02em;
-      color: #0f172a;
-      max-width: 900px;
-      margin: 0 auto 1.5rem;
-      text-align: center
-    }
-
-    .hero-support-text {
-      font-family: "Inter", 'Inter Fallback', sans-serif;
-      font-size: 1.5rem;
-      line-height: 1.4;
-      color: #374151;
-      max-width: 100%;
-      margin: 0 auto 2.5rem;
-      text-align: center;
-      font-weight: 400
-    }
-
-    .hero-cta-container {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-      margin-top: 3rem;
-      padding-top: 2rem;
-      border-top: 1px solid #f1f5f9
-    }
-
-    .hero-cta-buttons {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 1.25rem;
-      width: 100%;
-      max-width: 100%;
-      margin: 0 auto;
-      padding: 0 1rem
-    }
-
-    .hero-cta-button-premium {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      background: #ffd700;
-      color: #0f172a;
-      padding: 1.5rem 3rem;
-      border-radius: 16px;
-      text-decoration: none;
-      box-shadow: 0 8px 24px rgba(255, 215, 0, .3);
-      transition: all .25s ease;
-      width: auto;
-      max-width: 600px;
-      margin: 0 auto;
-      border: 2px solid #eab308;
-      font-family: 'Inter', 'Inter Fallback', sans-serif
-    }
-
-    .cta-content {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 1rem;
-      width: 100%
-    }
-
-    .hero-cta-button-premium .cta-icon-svg {
-      width: 32px;
-      height: 32px;
-      stroke-width: 2.5;
-      color: #0f172a;
-      flex-shrink: 0
-    }
-
-    .cta-text-mobile,
-    .cta-text-desktop {
-      font-family: 'Inter', 'Inter Fallback', sans-serif;
-      font-size: 1.5rem;
-      font-weight: 700;
-      color: #0f172a;
-      white-space: nowrap;
-      letter-spacing: .2px
-    }
-
-    .cta-text-desktop {
-      display: none
-    }
-
-    .cta-text-mobile {
-      display: inline
-    }
-
-    .hero-cta-button-secondary {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: .75rem;
-      background: #fff;
-      color: #0f172a;
-      padding: 1.5rem 2.5rem;
-      border-radius: 16px;
-      text-decoration: none;
-      border: 2px solid #0f172a;
-      font-family: 'Inter', 'Inter Fallback', sans-serif;
-      font-size: 1.25rem;
-      font-weight: 700;
-      transition: all .25s ease;
-      min-width: 180px
-    }
-
-    .hero-cta-button-secondary .cta-icon-svg {
-      width: 28px;
-      height: 28px;
-      transition: stroke .25s ease
-    }
-
-    .hero-social-proof-card-2026 {
-      display: flex;
-      align-items: center;
-      gap: 1.75rem;
-      padding: 1.5rem 2rem;
-      background: #fff;
-      border-radius: 20px;
-      box-shadow: 0 6px 30px rgba(0, 0, 0, .08);
-      border: 1px solid #e2e8f0;
-      text-decoration: none;
-      width: 100%;
-      max-width: 700px;
-      margin: 1.5rem auto 0;
-      cursor: pointer;
-      transition: all .25s ease
-    }
-
-    .proof-rating-block {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      padding-right: 1.75rem;
-      border-right: 2px solid #f1f5f9;
-      flex-shrink: 0
-    }
-
-    .proof-rating-number {
-      font-family: 'Inter', 'Inter Fallback', sans-serif;
-      font-size: 3rem;
-      font-weight: 900;
-      color: #0f172a;
-      line-height: 1
-    }
-
-    .proof-rating-stars {
-      font-size: 1.1rem;
-      color: #fbbf24;
-      letter-spacing: 2px;
-      margin: 6px 0
-    }
-
-    .proof-rating-count {
-      font-size: .9rem;
-      color: #64748b;
-      font-weight: 600
-    }
-
-    .proof-testimonial-block {
-      flex: 1;
-      min-width: 0;
-      overflow: hidden
-    }
-
-    .hero-social-proof-card-2026 .carousel-testimonials {
-      min-height: 60px
-    }
-
-    .hero-social-proof-card-2026 .carousel-item {
-      display: none;
-      animation: fadeSlide .4s ease
-    }
-
-    .hero-social-proof-card-2026 .carousel-item.active {
-      display: block
-    }
-
-    @keyframes fadeSlide {
-      from {
-        opacity: 0;
-        transform: translateY(8px)
-      }
-
-      to {
-        opacity: 1;
-        transform: translateY(0)
-      }
-    }
-
-    .review-with-avatar {
-      display: flex;
-      gap: 12px;
-      align-items: flex-start;
-      width: 100%
-    }
-
-    .review-avatar {
-      width: 42px;
-      height: 42px;
-      border-radius: 50%;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      color: #fff;
-      font-weight: 700;
-      font-size: 14px;
-      flex-shrink: 0;
-      box-shadow: 0 2px 8px rgba(0, 0, 0, .12)
-    }
-
-    .review-content {
-      flex: 1;
-      min-width: 0
-    }
-
-    .hero-social-proof-card-2026 .proof-quote {
-      font-family: 'Inter', 'Inter Fallback', sans-serif;
-      font-size: .95rem;
-      font-weight: 500;
-      color: #1e293b;
-      line-height: 1.5;
-      margin: 0 0 8px 0;
-      font-style: italic
-    }
-
-    .review-meta {
-      display: flex;
-      align-items: center;
-      gap: 4px;
-      flex-wrap: wrap
-    }
-
-    .hero-social-proof-card-2026 .proof-author {
-      font-size: .9rem;
-      color: #1e293b;
-      font-weight: 600;
-      margin: 0
-    }
-
-    .review-service {
-      font-size: .85rem;
-      color: #64748b;
-      font-weight: 500
-    }
-
-    .proof-google-badge {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 6px;
-      padding-left: 1.5rem;
-      flex-shrink: 0
-    }
-
-    .proof-google-badge .google-icon {
-      width: 32px;
-      height: 32px
-    }
-
-    .proof-google-badge span {
-      font-size: .8rem;
-      color: #64748b;
-      font-weight: 700
-    }
-
-    .hero-trust-row {
-      display: flex;
-      flex-direction: column;
-      gap: .75rem;
-      margin-top: .5rem
-    }
-
-    .hero-availability {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 8px;
-      font-size: .9rem;
-      color: #059669;
-      font-weight: 600;
-      margin: 0;
-      width: 100%;
-      background: transparent;
-      padding: 0;
-      border: none
-    }
-
-    .availability-text {
-      color: #059669;
-      font-weight: 700
-    }
-
-    .availability-dot {
-      width: 8px;
-      height: 8px;
-      background: #10b981;
-      border-radius: 50%;
-      box-shadow: 0 0 0 2px #d1fae5;
-      animation: pulseDot 2s infinite
-    }
-
-    @keyframes pulseDot {
-      0% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, .7)
-      }
-
-      70% {
-        box-shadow: 0 0 0 6px rgba(16, 185, 129, 0)
-      }
-
-      100% {
-        box-shadow: 0 0 0 0 rgba(16, 185, 129, 0)
-      }
-    }
-
-    .hero-trust-badges {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: .75rem 1.25rem;
-      margin-top: 1.25rem;
-      width: 100%
-    }
-
-    .trust-badge {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-      font-size: .85rem;
-      color: #475569;
-      font-weight: 500
-    }
-
-    .badge-icon {
-      width: 16px;
-      height: 16px;
-      color: #059669;
-      stroke-width: 3
-    }
-
-    .main-cta-button {
-      background-color: #111827;
-      color: #fff;
-      border: 2px solid #ffd700;
-      padding: .25rem 1rem;
-      border-radius: 25px;
-      font-weight: 600;
-      font-size: 1.3rem;
-      font-family: "Inter", 'Inter Fallback', sans-serif;
-      box-shadow: 0 3px 16px rgba(44, 35, 14, .09);
-      cursor: pointer;
-      max-width: 95vw;
-      min-width: 250px;
-      text-align: center;
-      display: inline-block;
-      text-decoration: none;
-      line-height: 1.3
-    }
-
-    @media(max-width:600px) {
-      .hero-cta-button-premium {
-        padding: 1rem 1.75rem;
-        width: auto;
-        max-width: 100%
-      }
-
-      .cta-text-mobile {
-        font-size: 1.15rem
-      }
-
-      .cta-content {
-        justify-content: center;
-        gap: .6rem
-      }
-
-      .hero-cta-button-premium .cta-icon-svg {
-        width: 24px;
-        height: 24px
-      }
-
-      .hero-social-proof-card-2026 {
-        flex-direction: column;
-        gap: 1.25rem;
-        padding: 1.5rem;
-        text-align: center
-      }
-
-      .proof-rating-block {
-        flex-direction: row;
-        gap: 1rem;
-        padding-right: 0;
-        padding-bottom: 1rem;
-        border-right: none;
-        border-bottom: 2px solid #f1f5f9;
-        width: 100%;
-        justify-content: center;
-        align-items: center
-      }
-
-      .proof-rating-number {
-        font-size: 2.5rem
-      }
-
-      .proof-rating-stars {
-        font-size: 1rem
-      }
-
-      .proof-testimonial-block {
-        width: 100%
-      }
-
-      .review-with-avatar {
-        text-align: left
-      }
-
-      .review-avatar {
-        width: 36px;
-        height: 36px;
-        font-size: 12px
-      }
-
-      .hero-social-proof-card-2026 .proof-quote {
-        font-size: .9rem
-      }
-
-      .review-service {
-        font-size: .8rem
-      }
-
-      .proof-google-badge {
-        flex-direction: row;
-        padding-left: 0;
-        padding-top: 1rem;
-        border-top: 1px solid #f1f5f9;
-        width: 100%;
-        justify-content: center
-      }
-    }
-
-    @media(min-width:601px) {
-      .cta-text-desktop {
-        display: inline
-      }
-
-      .cta-text-mobile {
-        display: none
-      }
-    }
-
-    @media(max-width:699px) {
-      .hero-cta-button-secondary {
-        width: 100%;
-        max-width: 400px;
-        padding: 1.25rem 2rem;
-        font-size: 1.15rem
-      }
-    }
-
-    @media(min-width:700px) {
-      .hero-cta-buttons {
-        flex-direction: row;
-        justify-content: center;
-        gap: 1.5rem;
-        padding: 0
-      }
-    }
-
-    @media(max-width:767px) {
-      .hero-visual-column {
-        display: flex;
-        flex-direction: column
-      }
-
-      .hero-cta-container {
-        margin-top: 1.5rem;
-        gap: 1rem;
-        border-top: none;
-        padding-top: 0
-      }
-
-      .hero-cta-button-premium {
-        padding: 1rem 1.75rem;
-        max-width: 100%;
-        width: auto;
-        margin: 0 auto
-      }
-
-      .hero-image {
-        width: 100%;
-        height: auto;
-        max-height: 720px;
-        border-radius: 12px;
-        display: block;
-        margin: 0 auto;
-        object-fit: cover;
-        box-shadow: 0 4px 10px rgba(0, 0, 0, .2)
-      }
-    }
 
     @media only screen and (max-width:767px) {
       .kpem-header-mobile {
@@ -855,78 +555,6 @@
       }
     }
 
-    @media(min-width:768px) {
-      .hero-section {
-        padding: 6rem 2rem
-      }
-
-      .hero-grid {
-        grid-template-columns: 1fr 1fr;
-        gap: 4rem;
-        align-items: center
-      }
-
-      .hero-visual-column {
-        display: block;
-        width: 100%
-      }
-
-      .hero-image {
-        width: 100%;
-        max-width: none;
-        height: auto;
-        max-height: 400px;
-        object-fit: cover;
-        border-radius: 16px;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, .2)
-      }
-
-      .hero-text-content {
-        text-align: left;
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1.5rem
-      }
-
-      .hero-headline {
-        font-size: 4.5rem;
-        line-height: 1.05;
-        margin: 0;
-        font-weight: 800;
-        letter-spacing: -.02em
-      }
-
-      .hero-support-text {
-        margin: 0;
-        font-size: 1.1rem;
-        margin-bottom: 1.5rem
-      }
-
-      .hero-cta-container {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        width: 100%;
-        margin-top: 1rem
-      }
-
-      .hero-social-proof-premium,
-      .hero-cta-button-premium,
-      .hero-availability {
-        margin-left: 0;
-        margin-right: 0
-      }
-
-      .hero-trust-badges {
-        justify-content: center
-      }
-
-      .hero-social-proof-premium {
-        max-width: 600px;
-        align-items: center
-      }
-    }
 
     @media(min-width:1024px) {
       .kpem-header-mobile {
@@ -1032,32 +660,35 @@
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "AutoRepair",
+  "@type": ["AutoRepair", "LocalBusiness"],
   "@id": "https://kelownaprotechmobilemech.com/#organization",
   "name": "Kelowna Protech Elite Mobile Mechanic",
   "url": "https://kelownaprotechmobilemech.com/",
-  "description": "Car won’t start? Strange sounds? Don’t waste time towing—call a professional mechanic who comes to you. At Kelowna Protech Elite Mobile Mechanic, we solve mechanical problems directly in your driveway—fast, clear, and without guessing.",
+  "description": "Mobile mechanic in Kelowna, West Kelowna and Lake Country. Certified mechanic arrives at your location for same-day diagnostics and repairs — no tow, no shop wait. Dealer-level scan tools. 4.9 stars on Google.",
+  "serviceType": "Mobile Mechanic",
+  "additionalType": "https://schema.org/MobileService",
   "image": "/images/logo-kelowna-protech-eliteV1.webp",
   "logo": "/images/logo-kelowna-protech-eliteV1.webp",
   "hasMap": "https://www.google.com/maps?cid=15158851769671529299",
   "aggregateRating": {
-  "@type": "AggregateRating",
-  "ratingValue": "4.9",
-  "reviewCount": "36"
-},
+    "@type": "AggregateRating",
+    "ratingValue": "4.9",
+    "reviewCount": "42"
+  },
   "telephone": "+1-250-859-5467",
   "address": {
     "@type": "PostalAddress",
+    "addressLocality": "Kelowna",
     "addressRegion": "BC",
     "addressCountry": "CA"
   },
   "areaServed": [
-  { "@type": "City", "name": "Kelowna" },
-  { "@type": "City", "name": "West Kelowna" },
-  { "@type": "Neighborhood", "name": "East Kelowna" },
-  { "@type": "Neighborhood", "name": "South Kelowna" },
-  { "@type": "City", "name": "Lake Country" }
-],
+    { "@type": "City", "name": "Kelowna" },
+    { "@type": "City", "name": "West Kelowna" },
+    { "@type": "City", "name": "Lake Country" },
+    { "@type": "Neighborhood", "name": "East Kelowna" },
+    { "@type": "Neighborhood", "name": "South Kelowna" }
+  ],
   "priceRange": "$$",
   "openingHoursSpecification": [
     {
@@ -1084,6 +715,8 @@
   <!-- ====== End Structured Data: Client Stories Page ====== -->
 
   <meta name="msvalidate.01" content="AA032A8781098ECE1CA6BEF5797E5B83" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;700;800&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -1117,205 +750,60 @@
   </header>
 
 
-  <!-- Componente 3: Sección Hero ("Our Promise") -->
-  <section id="our-promise" class="hero-section">
-    <div class="hero-container">
-      <div class="hero-grid">
-        <!-- LEFT COLUMN: Visuals Only (Image) -->
-        <div class="hero-visual-column">
-          <picture>
-            <source srcset="images/hero-mechanic-400w.webp" media="(max-width: 640px)">
-            <source srcset="images/hero-mechanic-800w.webp" media="(max-width: 1024px)">
-            <source srcset="images/hero-mechanic-1200w.webp" media="(min-width: 1025px)">
-            <img src="images/hero-mechanic-1200w.webp"
-              alt="Certified mobile mechanic diagnosing a Ford Explorer in a Kelowna residential driveway — Protech Elite on-site service"
-              class="hero-image" loading="eager" decoding="async" fetchpriority="high" width="800" height="437" />
-          </picture>
-        </div>
 
-        <!-- RIGHT COLUMN: Text Content -->
-        <div class="hero-text-content">
-          <p class="hero-intro">
-            MOBILE MECHANIC KELOWNA
-          </p>
-          <h1 class="hero-headline">Your Driveway Is Our Workshop</h1>
-          <p class="hero-support-text">
-            Dealer-level repairs at YOUR location. No towing. No waiting. No losing your car for days.
-          </p>
+  <!-- Mobile CTA Bar: immediate call-to-action below header (mobile only) -->
+  <div class="mobile-cta-bar">
+    <a href="tel:+12508595467" aria-label="Call expert mechanic for same-day service">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
+        width="18" height="18" aria-hidden="true">
+        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+      </svg>
+      <span>Call Expert Mechanic</span>
+      <span class="mobile-cta-bar-sub">Same-Day Service</span>
+    </a>
+  </div>
 
-          <!-- Value Props List: Convenience Positioning -->
-          <ul class="hero-value-list"
-            style="list-style: none; padding: 0; margin: 1.5rem auto 0; max-width: 600px; font-family: 'Inter', 'Inter Fallback', sans-serif; font-size: 1.1rem; line-height: 1.6; color: #374151;">
-            <li style="margin-bottom: 0.75rem;">✓ Same-day service (not 2-week dealer wait)</li>
-            <li style="margin-bottom: 0.75rem;">✓ Keep your car (no loaner hassle)</li>
-            <li style="margin-bottom: 0.75rem;">✓ Same-day at your location — no waiting room, no wait list</li>
-            <li style="margin-bottom: 0.75rem;">✓ Pro equipment (same tools dealers use)</li>
-          </ul>
-        </div>
+  <!-- FOLD 03: Hero Section -->
+  <section id="hero" class="hero-fold">
+    <div class="hero-fold__content">
+      <div class="hero-fold__trust" aria-label="Trusted by 42 Google reviewers">
+        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 42 Google reviews">
+          ★★★★★<span class="hero-fold__trust-meta">4.9 · Trusted by 42 Google Reviews</span>
+        </p>
+        <p class="hero-fold__trust-quote">"Honest mechanic who shows you what's actually wrong." &mdash; Tyler T.</p>
       </div>
-
-      <!-- Phase 2: Premium CTA Block (Centered Bottom Footer) -->
-      <div class="hero-cta-container">
-        <!-- Main CTA Buttons Row -->
-        <div class="hero-cta-buttons">
-          <!-- Primary: Call Now -->
-          <a href="tel:+12508595467" class="hero-cta-button-premium hero-cta-call">
-            <span class="cta-content">
-              <svg class="cta-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z">
-                </path>
-              </svg>
-              <span class="cta-text-mobile">Fix My Car Today</span>
-              <span class="cta-text-desktop">Fix My Car Today — (250) 859-5467</span>
-            </span>
-          </a>
-          <!-- Secondary: Text Us -->
-          <a href="sms:+12508595467" class="hero-cta-button-secondary hero-cta-sms"
-            onclick="if(typeof gtag === 'function') { gtag('event', 'click_to_sms', { 'event_category': 'Lead Generation', 'event_label': 'Hero CTA - Secondary', 'button_location': 'hero_secondary' }); }">
-            <svg class="cta-icon-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
-              stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-              <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"></path>
-            </svg>
-            <span>Text Us</span>
-          </a>
-        </div>
-
-        <!-- Social Proof Card - Enhanced CRO Design with Avatars -->
-        <a href="https://www.google.com/maps/place/Kelowna+Protech+Elite+Mobile+Mechanic/@49.8997969,-119.6772522,11z/data=!4m6!3m5!1s0x537df3a26ebc1df1:0xf75ae580e9a40140!8m2!3d49.8996925!4d-119.5124475!16s%2Fg%2F11vx5j2hbp"
-          target="_blank" rel="noopener" class="hero-social-proof-card-2026 hero-carousel-link">
-
-          <!-- Left: Rating Block -->
-          <div class="proof-rating-block">
-            <div class="proof-rating-number">4.9</div>
-            <div class="proof-rating-stars">★★★★★</div>
-            <div class="proof-rating-count">41 reviews</div>
-          </div>
-
-          <!-- Center: Testimonial Carousel with Avatars -->
-          <div class="proof-testimonial-block">
-            <div class="carousel-testimonials">
-              <!-- Review 1: Oscar B. -->
-              <div class="carousel-item active">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);">
-                    OB
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Jose came to my place, diagnosed the issue in 10 minutes. I fully trust
-                      this guy with all my vehicles!"</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Oscar B.</span>
-                      <span class="review-service">• Diagnostic Service</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Review 2: Haley F. -->
-              <div class="carousel-item">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);">
-                    HF
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Car wouldn't start on a cold morning. They diagnosed and fixed it quickly
-                      right in my driveway. Saved me a tow!"</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Haley F.</span>
-                      <span class="review-service">• Battery Replacement</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Review 3: Cathy G. -->
-              <div class="carousel-item">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #4facfe 0%, #00f2fe 100%);">
-                    CG
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Very courteous, prompt, and professional. They explained everything clearly
-                      and didn't try to upsell me on unnecessary work."</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Cathy G.</span>
-                      <span class="review-service">• Pre-Purchase Inspection</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Review 4: Tyler T. -->
-              <div class="carousel-item">
-                <div class="review-with-avatar">
-                  <div class="review-avatar" style="background: linear-gradient(135deg, #fa709a 0%, #fee140 100%);">
-                    TT
-                  </div>
-                  <div class="review-content">
-                    <p class="proof-quote">"Honest mechanic who shows you what's actually wrong. Fair pricing and
-                      saved me time by coming to my workplace."</p>
-                    <div class="review-meta">
-                      <span class="proof-author">Tyler T.</span>
-                      <span class="review-service">• Oil Change & Inspection</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-
-          <!-- Right: Google Badge -->
-          <div class="proof-google-badge">
-            <svg class="google-icon" viewBox="0 0 24 24" width="20" height="20">
-              <path fill="#4285F4"
-                d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z" />
-              <path fill="#34A853"
-                d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z" />
-              <path fill="#FBBC05"
-                d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z" />
-              <path fill="#EA4335"
-                d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z" />
-            </svg>
-            <span>Google</span>
-          </div>
-        </a>
-
-        <!-- Availability & Badges Row -->
-        <div class="hero-trust-row">
-          <div class="hero-availability">
-            <span class="availability-dot"></span>
-            <span class="availability-text">Joseph is available today</span>
-          </div>
-        </div>
-
-        <div class="hero-trust-badges">
-          <span class="trust-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            Same-day service
-          </span>
-          <span class="trust-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            No tow needed
-          </span>
-          <span class="trust-badge">
-            <svg class="badge-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
-              <polyline points="22 4 12 14.01 9 11.01" />
-            </svg>
-            Clear pricing
-          </span>
-        </div>
-      </div>
+      <h1 class="hero-fold__h1">
+        Mobile Mechanic Kelowna &mdash; Real Answers, Total Peace of <span class="hero-fold__accent">Mind.</span>
+      </h1>
+      <div class="hero-fold__separator" aria-hidden="true"></div>
+      <p class="hero-fold__tagline">
+        Dealer-level diagnostics at your door. We find the real problem, explain it clearly, and fix it on-site &mdash; same day when possible. No tow truck. No waiting room. No guessing.
+      </p>
+      <a href="tel:+12508595467" class="hero-fold__cta" data-ga-label="Hero CTA - Diagnosis">
+        Book My Diagnosis &mdash; Know Before You Pay Anything
+      </a>
+      <ul class="hero-fold__micro-list">
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          15+ years of diagnostics. 4.9 stars. We come to you.
+        </li>
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Kelowna mechanic serving you at home, work, or roadside &mdash; no shop visit needed.
+        </li>
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Covering Kelowna, West Kelowna &amp; Lake Country &mdash; same-day available.
+        </li>
+        <li class="hero-fold__micro">
+          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
+          Dealer-grade scan tools on every call. Real diagnosis, not guesswork.
+        </li>
+      </ul>
     </div>
   </section>
+  <!-- FIN HERO FOLD 03 -->
 
   <!-- Services / Mobile-first -->
   <section id="service-tiles" aria-labelledby="services-heading">
@@ -1626,7 +1114,8 @@
   <!-- INICIO BOTÓN FLOTANTE CTA (RESTAURADO PARA CONTACTO DIRECTO) -->
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
     <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call an Expert Mechanic Now">
-      Speak with an Expert Mechanic
+      <span class="cta-main">Speak with an Expert Mechanic</span>
+      <span class="cta-sub">Same-Day Service • 15+ Years</span>
     </a>
   </div>
   <!-- FIN BOTÓN FLOTANTE CTA -->
