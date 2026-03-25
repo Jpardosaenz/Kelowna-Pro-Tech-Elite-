@@ -468,6 +468,10 @@
 
       .mobile-cta-bar {
         display: block;
+        position: sticky;
+        top: 68px;
+        z-index: 999;
+        width: 100%;
         padding: 10px 16px;
         background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
         border-top: 1px solid rgba(251, 191, 36, .35);
@@ -546,6 +550,10 @@
     @media only screen and (max-width:767px) {
       .kpem-header-mobile {
         height: 80px
+      }
+
+      .mobile-cta-bar {
+        top: 80px
       }
 
       .kpem-header-mobile .contenedor-logo img {
