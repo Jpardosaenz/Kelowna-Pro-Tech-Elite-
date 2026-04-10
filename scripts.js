@@ -617,8 +617,8 @@ diagNext() reads data-step="2|3" from the button to determine the step.
 */
 
 document.addEventListener('DOMContentLoaded', function () {
-  // Open modal — side widget button
-  document.querySelectorAll('#side-ask-mechanic-btn').forEach(function (btn) {
+  // Open modal — side widget button (class selector; ID is "side-ask-mechanic")
+  document.querySelectorAll('.side-ask-mechanic-btn').forEach(function (btn) {
     btn.addEventListener('click', openDiagModal);
   });
 
