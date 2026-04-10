@@ -2,3 +2,19 @@
 
 # Local Netlify folder
 .netlify
+
+# Credenciales y service accounts — NUNCA en el repo
+protech-analytics-f8110238d804.json
+*service_account*.json
+*-key.json
+
+# Archivos de trabajo local / analytics
+ga4_gbp_report.py
+search_console_report.py
+VERDAD_PROTECH_27MAR2026.md
+ga4_gbp_marzo2026.md
+search_console_marzo2026.md
+prompt_ga4_gbp_code.md
+
+# Claude Code config local (rutas absolutas locales)
+.claude/settings.local.json
