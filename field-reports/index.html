@@ -397,13 +397,13 @@
   </div>
 
   <!-- MODAL DEL EMBUDO DE DIAGNÓSTICO AI -->
-  <div id="diag-modal" class="diag-modal-overlay" aria-hidden="true">
+  <div id="diag-modal" class="diag-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="diag-modal-title" aria-hidden="true">
     <div class="diag-modal-content">
       <button class="diag-close" aria-label="Close diagnostic tool">&times;</button>
 
       <!-- Paso 1 -->
       <div id="diag-step-1" class="diag-step">
-        <h2 class="diag-title">Step 1: Contact Details</h2>
+        <h2 id="diag-modal-title" class="diag-title">Step 1: Contact Details</h2>
         <p class="diag-subtitle">Where should we send your results?</p>
         <div class="diag-input-group">
           <input type="text" id="diag-name" aria-label="Your name" placeholder="Your Name" required>
