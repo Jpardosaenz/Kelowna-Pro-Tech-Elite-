@@ -566,17 +566,15 @@ document.addEventListener('DOMContentLoaded', function () {
       }
     });
   });
-});
 
 
-/*
-==========================================================================
-DIAGNOSTIC WIDGET FLOTANTE - Show/Hide based on scroll
-==========================================================================
-Similar to floating CTA, but specific for diagnostic modal trigger
-*/
+  /*
+  ==========================================================================
+  DIAGNOSTIC WIDGET FLOTANTE - Show/Hide based on scroll
+  ==========================================================================
+  Similar to floating CTA, but specific for diagnostic modal trigger
+  */
 
-document.addEventListener('DOMContentLoaded', function () {
   const widget = document.getElementById('diagnostic-widget-btn');
 
   if (!widget) return;

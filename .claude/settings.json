@@ -1,0 +1,25 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls:*)",
+      "Bash(sort:*)",
+      "Bash(git commit:*)",
+      "Bash(git checkout:*)",
+      "Bash(git pull:*)",
+      "Bash(git fetch:*)",
+      "Bash(git push:*)",
+      "Bash(git stash)",
+      "Bash(git stash pop)",
+      "Bash(gh pr:*)",
+      "Bash(node --check scripts.js)",
+      "Bash(curl -s http://localhost:8888/*)",
+      "Bash(curl -s -o /dev/null -w:*)",
+      "Bash(lsof -ti :8888)",
+      "Bash(npx --version)",
+      "Bash(ntl status)",
+      "Bash(cwebp -version)",
+      "Bash(ffmpeg -version)",
+      "WebSearch"
+    ]
+  }
+}
