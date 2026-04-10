@@ -1131,7 +1131,7 @@
   <!-- MODAL DEL EMBUDO DE DIAGNÓSTICO AI -->
   <div id="diag-modal" class="diag-modal-overlay" aria-hidden="true">
     <div class="diag-modal-content">
-      <button class="diag-close" onclick="closeDiagModal()" aria-label="Close diagnostic tool">&times;</button>
+      <button class="diag-close" aria-label="Close diagnostic tool">&times;</button>
 
       <!-- Paso 1: Lead (Hook + Contact) -->
       <div id="diag-step-1" class="diag-step">
@@ -1143,7 +1143,7 @@
         <div class="diag-input-group">
           <input type="text" id="diag-contact" aria-label="Phone or email" placeholder="Phone or Email" required>
         </div>
-        <button class="diag-next-btn" onclick="diagNext(2)">Next: Vehicle Info →</button>
+        <button class="diag-next-btn" data-step="2">Next: Vehicle Info →</button>
         <p class="diag-privacy">We only use this to send your diagnostic report.</p>
       </div>
 
@@ -1164,7 +1164,7 @@
             <option value="emergency">Emergency / Broken Down</option>
           </select>
         </div>
-        <button class="diag-next-btn" onclick="diagNext(3)">Analyze Now — Get Results →</button>
+        <button class="diag-next-btn" data-step="3">Analyze Now — Get Results →</button>
       </div>
 
       <!-- Paso 3: Valor (Result & WhatsApp) -->
@@ -1219,7 +1219,7 @@
   </div>
 
   <!-- RED SIDE WIDGET (ASK A MECHANIC) -->
-  <button id="side-ask-mechanic" class="side-ask-mechanic-btn" onclick="openDiagModal()"
+  <button id="side-ask-mechanic" class="side-ask-mechanic-btn"
     aria-label="Ask a Mechanic - Free Diagnostic">
     <span class="widget-text">Ask a Mechanic</span>
   </button>
