@@ -605,3 +605,34 @@ document.addEventListener('DOMContentLoaded', function () {
   // checkScroll(); // Check on load
   checkScroll(); // Check on load
 });
+
+
+/*
+==========================================================================
+DIAGNOSTIC MODAL — Event listeners (replaces inline onclick attributes)
+==========================================================================
+Binds openDiagModal, closeDiagModal, and diagNext() via addEventListener
+so that no inline onclick attributes are needed in the HTML.
+diagNext() reads data-step="2|3" from the button to determine the step.
+*/
+
+document.addEventListener('DOMContentLoaded', function () {
+  // Open modal — side widget button (class selector; ID is "side-ask-mechanic")
+  document.querySelectorAll('.side-ask-mechanic-btn').forEach(function (btn) {
+    btn.addEventListener('click', openDiagModal);
+  });
+
+  // Close modal — close button inside modal
+  document.querySelectorAll('.diag-close').forEach(function (btn) {
+    btn.addEventListener('click', closeDiagModal);
+  });
+
+  // Advance modal steps — reads data-step attribute
+  document.querySelectorAll('.diag-next-btn').forEach(function (btn) {
+    btn.addEventListener('click', function () {
+      const step = parseInt(this.dataset.step, 10);
+      if (!step) return;
+      diagNext(step);
+    });
+  });
+});
