@@ -466,7 +466,9 @@
       }
 
       .mobile-cta-bar {
-        display: block;
+        display: flex;
+        align-items: center;
+        gap: 0;
         position: sticky;
         top: 68px;
         z-index: 999;
@@ -475,21 +477,59 @@
         background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
         border-top: 1px solid rgba(251, 191, 36, .35);
         border-bottom: 1px solid rgba(251, 191, 36, .25);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
-        text-align: center
+        box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06)
       }
 
       .mobile-cta-bar a {
-        display: inline-flex;
-        align-items: center;
-        justify-content: center;
-        gap: 10px;
         color: #fff;
         font-family: "Inter", 'Inter Fallback', sans-serif;
-        font-size: .9375rem;
         font-weight: 700;
         text-decoration: none;
         letter-spacing: .2px
+      }
+
+      .mobile-cta-sms {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1
+      }
+
+      .mobile-cta-sms-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1px
+      }
+
+      .mobile-cta-sms-text .cta-main-text {
+        font-size: .9375rem;
+        font-weight: 700;
+        line-height: 1.2
+      }
+
+      .mobile-cta-tel {
+        flex: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-left: 14px;
+        border-left: 1px solid rgba(255, 255, 255, .15)
+      }
+
+      .mobile-cta-tel-label {
+        display: block;
+        font-size: .6875rem;
+        color: #94a3b8;
+        font-weight: 400;
+        white-space: nowrap
+      }
+
+      .mobile-cta-tel-number {
+        display: block;
+        font-size: .875rem;
+        font-weight: 600;
+        color: #e2e8f0;
+        white-space: nowrap
       }
 
       .mobile-cta-bar svg {
@@ -747,9 +787,9 @@
         <li><a href="/field-reports/">Success Stories</a></li>
       </ul>
     </nav>
-    <a href="tel:+12508595467" class="header-cta" aria-label="Call expert mechanic for same-day service">
-      <span class="cta-main">Call Expert Mechanic</span>
-      <span class="cta-sub">Same-Day Service • 15+ Years</span>
+    <a href="tel:+12508595467" class="header-cta" aria-label="Call Joseph for same-day car repair">
+      <span class="cta-main">Get Same-Day Repair</span>
+      <span class="cta-sub">15+ Years Experience • Kelowna</span>
     </a>
     <button class="kpem-menu-trigger" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false">
       &#9776;
@@ -758,16 +798,22 @@
 
 
 
-  <!-- Mobile CTA Bar: immediate call-to-action below header (mobile only) -->
+  <!-- Mobile CTA Bar: SMS primary, phone number secondary (mobile only) -->
   <div class="mobile-cta-bar">
-    <a href="tel:+12508595467" aria-label="Call expert mechanic for same-day service">
+    <a href="sms:+12508595467" class="mobile-cta-sms" aria-label="Text Joseph for same-day car repair">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
-        width="18" height="18" aria-hidden="true">
-        <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+        width="20" height="20" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"/>
       </svg>
-      <span>Call Expert Mechanic</span>
-      <span class="mobile-cta-bar-sub">Same-Day Service</span>
+      <span class="mobile-cta-sms-text">
+        <span class="cta-main-text">Get My Car Fixed Today</span>
+        <span class="mobile-cta-bar-sub">Text Joseph &middot; Fast Response</span>
+      </span>
+    </a>
+    <a href="tel:+12508595467" class="mobile-cta-tel" aria-label="Call Joseph directly">
+      <span class="mobile-cta-tel-label">or call directly</span>
+      <span class="mobile-cta-tel-number">(250) 859-5467</span>
     </a>
   </div>
 
@@ -811,6 +857,81 @@
     </div>
   </section>
   <!-- FIN HERO FOLD 03 -->
+
+  <section class="wrap" id="client-stories">
+    <header class="t-head" aria-labelledby="t-title">
+      <h2 id="t-title" class="t-title">What Kelowna Drivers Say</h2>
+      <p class="t-subtitle">Real cases. Real outcomes. No shop visit required.</p>
+    </header>
+    <div class="t-grid" aria-label="Customer reviews">
+      <article class="t-card t-card--hero">
+        <blockquote class="t-hero-quote">
+          "11am diagnosis, 5pm driving."
+        </blockquote>
+        <p class="t-hero-full-text t-text">
+          "They diagnosed my complete electrical system and fixed everything in one afternoon at my home. Jose and his partner kept me informed the whole way. Fair price. I give my 100% endorsement."
+        </p>
+        <div class="t-hero-meta">
+          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
+            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">VC</text>
+          </svg>
+          <div class="t-meta">
+            <span class="t-name">Vic Campbell</span>
+            <span class="t-service">Electrical System Diagnosis & Repair</span>
+          </div>
+        </div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
+            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">GT</text>
+          </svg>
+          <div class="t-meta">
+            <span class="t-name">Growit Trucking</span>
+            <span class="t-service">Commercial Fleet Inspection</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "These guys are awesome, super detailed, prompt and honest. Highly recommend them for anyone looking to purchase a used vehicle."
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
+            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">MS</text>
+          </svg>
+          <div class="t-meta">
+            <span class="t-name">Matt Sankey</span>
+            <span class="t-service">European Vehicle Diagnostics</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "Didn't try to pry money out of me. Arrived on time, gave solid recommendations — very kind and thorough."
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
+            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
+            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">JO</text>
+          </svg>
+          <div class="t-meta">
+            <span class="t-name">Jorge</span>
+            <span class="t-service">Pre-Purchase Inspection</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "Saved me $4,000. I was 8 hours away from a car the seller said was in great condition — it would have needed to be towed home. They caught everything before I signed."
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+    </div>
+  </section>
 
   <!-- Services / Mobile-first -->
   <section id="service-tiles" aria-labelledby="services-heading">
@@ -910,80 +1031,6 @@
     </div>
   </div> 
   -->
-  <section class="wrap" id="client-stories">
-    <header class="t-head" aria-labelledby="t-title">
-      <h2 id="t-title" class="t-title">What Kelowna Drivers Say</h2>
-      <p class="t-subtitle">Real cases. Real outcomes. No shop visit required.</p>
-    </header>
-    <div class="t-grid" aria-label="Customer reviews">
-      <article class="t-card t-card--hero">
-        <blockquote class="t-hero-quote">
-          "11am diagnosis, 5pm driving."
-        </blockquote>
-        <p class="t-hero-full-text t-text">
-          "They diagnosed my complete electrical system and fixed everything in one afternoon at my home. Jose and his partner kept me informed the whole way. Fair price. I give my 100% endorsement."
-        </p>
-        <div class="t-hero-meta">
-          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
-            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
-            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">VC</text>
-          </svg>
-          <div class="t-meta">
-            <span class="t-name">Vic Campbell</span>
-            <span class="t-service">Electrical System Diagnosis & Repair</span>
-          </div>
-        </div>
-      </article>
-      <article class="t-card">
-        <div class="t-card-header">
-          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
-            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
-            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">GT</text>
-          </svg>
-          <div class="t-meta">
-            <span class="t-name">Growit Trucking</span>
-            <span class="t-service">Commercial Fleet Inspection</span>
-          </div>
-        </div>
-        <p class="t-text">
-          "These guys are awesome, super detailed, prompt and honest. Highly recommend them for anyone looking to purchase a used vehicle."
-        </p>
-        <div class="t-rating">★★★★★</div>
-      </article>
-      <article class="t-card">
-        <div class="t-card-header">
-          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
-            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
-            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">MS</text>
-          </svg>
-          <div class="t-meta">
-            <span class="t-name">Matt Sankey</span>
-            <span class="t-service">European Vehicle Diagnostics</span>
-          </div>
-        </div>
-        <p class="t-text">
-          "Didn't try to pry money out of me. Arrived on time, gave solid recommendations — very kind and thorough."
-        </p>
-        <div class="t-rating">★★★★★</div>
-      </article>
-      <article class="t-card">
-        <div class="t-card-header">
-          <svg width="48" height="48" viewBox="0 0 48 48" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" class="avatar">
-            <circle cx="24" cy="24" r="24" fill="#dbeafe"/>
-            <text x="24" y="30" text-anchor="middle" font-family="Inter,sans-serif" font-size="15" font-weight="700" fill="#1e293b">JO</text>
-          </svg>
-          <div class="t-meta">
-            <span class="t-name">Jorge</span>
-            <span class="t-service">Pre-Purchase Inspection</span>
-          </div>
-        </div>
-        <p class="t-text">
-          "Saved me $4,000. I was 8 hours away from a car the seller said was in great condition — it would have needed to be towed home. They caught everything before I signed."
-        </p>
-        <div class="t-rating">★★★★★</div>
-      </article>
-    </div>
-  </section>
   <!-- Conecta tu archivo JavaScript. 'defer' asegura que se ejecute después de que el HTML sea procesado. -->
   <section id="commercial-faq" aria-labelledby="commercial-faq-heading">
     <div class="faq-wrap">
@@ -1123,9 +1170,9 @@
   -->
   <!-- INICIO BOTÓN FLOTANTE CTA (RESTAURADO PARA CONTACTO DIRECTO) -->
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
-    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call an Expert Mechanic Now">
-      <span class="cta-main">Speak with an Expert Mechanic</span>
-      <span class="cta-sub">Same-Day Service • 15+ Years</span>
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call Joseph for same-day car repair">
+      <span class="cta-main">Get My Car Fixed Today</span>
+      <span class="cta-sub">Same-Day Service • Kelowna &amp; Area</span>
     </a>
   </div>
   <!-- FIN BOTÓN FLOTANTE CTA -->
