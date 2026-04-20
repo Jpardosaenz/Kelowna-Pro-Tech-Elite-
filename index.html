@@ -492,7 +492,8 @@
         display: flex;
         align-items: center;
         gap: 10px;
-        flex: 1
+        flex: 1;
+        touch-action: manipulation
       }
 
       .mobile-cta-sms-text {
@@ -588,18 +589,34 @@
 
     @media only screen and (max-width:767px) {
       .kpem-header-mobile {
-        height: 80px
+        height: 92px;
+        overflow: hidden
       }
 
       .mobile-cta-bar {
-        top: 80px
+        top: 92px
+      }
+
+      .kpem-header-mobile .contenedor-logo {
+        flex: 1 1 auto;
+        min-width: 0;
+        height: 92px
+      }
+
+      .kpem-header-mobile .contenedor-logo a {
+        display: flex;
+        align-items: center;
+        height: 100%;
+        max-width: calc(100vw - 96px)
       }
 
       .kpem-header-mobile .contenedor-logo img {
-        height: 52px;
-        max-height: 52px;
-        width: auto
+        width: min(240px, calc(100vw - 112px));
+        max-width: 100%;
+        height: auto;
+        max-height: none
       }
+
     }
 
 
@@ -776,7 +793,7 @@
     <div class="contenedor-logo">
       <a href="/" aria-label="Go to homepage">
         <img src="/images/logo-kelowna-protech-eliteV1.webp" alt="Kelowna Protech Elite Mobile Mechanic logo"
-          loading="eager" decoding="async" width="85" height="85" class="logo-mobile" />
+          loading="eager" decoding="async" class="logo-mobile" />
       </a>
     </div>
     <nav id="mobile-navigation" class="mobile-menu" role="navigation" aria-label="Main Navigation">
