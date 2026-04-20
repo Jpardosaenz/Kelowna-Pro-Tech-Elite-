@@ -1,0 +1,402 @@
+/* ==========================================================================
+   our-story.css — Page-specific styles for /our-story/
+   Global styles: /estilos-header2.css, /service-tiles.css
+   ========================================================================== */
+
+:root {
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --premium-dark: #0f172a;
+  --premium-gold: #fbbf24;
+  --premium-blue: #1e40af;
+  --premium-light: #f8fafc;
+}
+
+body {
+  font-family: "Inter", Arial, sans-serif;
+  background: #fff;
+  color: var(--ink);
+  margin: 0;
+}
+
+/* ── Page wrapper ── */
+.page {
+  max-width: 860px;
+  margin: 0 auto;
+  padding: 32px 40px 80px;
+}
+
+@media (max-width: 768px) {
+  .page { padding: 24px 20px 64px; }
+}
+
+/* ── Breadcrumb ── */
+.breadcrumb {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 8px 0 24px;
+}
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+/* ── Story hero ── */
+.story-hero {
+  margin-bottom: 56px;
+}
+.story-hero__badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--premium-blue);
+  background: rgba(30, 64, 175, 0.08);
+  padding: 5px 12px;
+  border-radius: 100px;
+  margin-bottom: 20px;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+.story-hero h1 {
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.025em;
+  color: var(--premium-dark);
+  margin: 0 0 20px;
+}
+.story-hero h1 .highlight {
+  background: linear-gradient(135deg, #1e40af 0%, #0f172a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+.story-hero__sub {
+  font-size: 18px;
+  line-height: 1.6;
+  color: var(--muted);
+  max-width: 600px;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .story-hero h1 { font-size: 52px; }
+  .story-hero__sub { font-size: 20px; }
+}
+
+/* ── Founder photo ── */
+.founder-photo {
+  margin: 40px 0 48px;
+  max-width: 480px;
+}
+.founder-photo img {
+  width: 100%;
+  height: auto;
+  border-radius: 16px;
+  display: block;
+  box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+}
+.founder-photo figcaption {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 10px;
+  font-style: italic;
+}
+
+/* ── Story body ── */
+.story-body {
+  font-size: 18px;
+  line-height: 1.75;
+  color: #1f2937;
+  max-width: 680px;
+}
+.story-body p {
+  margin: 0 0 28px;
+}
+.story-body p:last-child {
+  margin-bottom: 0;
+}
+
+/* ── Divider ── */
+.story-divider {
+  border: none;
+  border-top: 1px solid var(--line);
+  margin: 56px 0;
+}
+
+/* ── Team section ── */
+.team-section h2 {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--premium-dark);
+  letter-spacing: -0.02em;
+  margin: 0 0 8px;
+}
+.team-section__sub {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0 0 40px;
+}
+.team-grid {
+  display: grid;
+  gap: 24px;
+  grid-template-columns: 1fr;
+}
+@media (min-width: 640px) {
+  .team-grid { grid-template-columns: 1fr 1fr; }
+}
+.team-card {
+  background: var(--premium-light);
+  border: 1px solid var(--line);
+  border-radius: 20px;
+  padding: 28px;
+}
+.team-card__role {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--premium-blue);
+  margin: 0 0 8px;
+}
+.team-card__name {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--premium-dark);
+  margin: 0 0 4px;
+}
+.team-card__title {
+  font-size: 14px;
+  color: var(--muted);
+  margin: 0 0 20px;
+  font-weight: 500;
+}
+.team-card__creds {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+.team-card__creds li {
+  font-size: 14px;
+  color: #374151;
+  padding: 6px 0;
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+.team-card__creds li:last-child {
+  border-bottom: none;
+}
+.team-card__creds li::before {
+  content: "→";
+  color: var(--premium-blue);
+  font-weight: 700;
+  flex-shrink: 0;
+  margin-top: 1px;
+}
+
+/* ── Capabilities bar ── */
+.capabilities {
+  background: var(--premium-dark);
+  border-radius: 20px;
+  padding: 36px 32px;
+  margin-top: 40px;
+}
+.capabilities h3 {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--premium-gold);
+  margin: 0 0 20px;
+}
+.capabilities-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 12px;
+}
+@media (min-width: 640px) {
+  .capabilities-grid { grid-template-columns: repeat(3, 1fr); }
+}
+.cap-item {
+  font-size: 13px;
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  gap: 7px;
+}
+.cap-item::before {
+  content: "";
+  display: block;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: var(--premium-gold);
+  flex-shrink: 0;
+}
+
+/* ── Stats bar ── */
+.stats-bar {
+  display: flex;
+  gap: 0;
+  border: 1px solid var(--line);
+  border-radius: 16px;
+  overflow: hidden;
+  margin: 56px 0;
+}
+.stat-item {
+  flex: 1;
+  text-align: center;
+  padding: 24px 16px;
+  border-right: 1px solid var(--line);
+}
+.stat-item:last-child { border-right: none; }
+.stat-item__value {
+  display: block;
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--premium-dark);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  margin-bottom: 6px;
+}
+.stat-item__label {
+  font-size: 12px;
+  color: var(--muted);
+  font-weight: 500;
+}
+
+/* ── CTA block ── */
+.cta-block {
+  background: var(--premium-dark);
+  border-radius: 24px;
+  padding: 56px 40px;
+  text-align: center;
+  margin-top: 56px;
+}
+.cta-block h2 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  margin: 0 0 14px;
+  letter-spacing: -0.02em;
+}
+.cta-block p {
+  color: #94a3b8;
+  font-size: 17px;
+  line-height: 1.6;
+  margin: 0 auto 32px;
+  max-width: 46ch;
+}
+.cta-block__btns {
+  display: flex;
+  gap: 14px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+.cta-block__primary {
+  display: inline-block;
+  padding: 17px 36px;
+  border-radius: 12px;
+  background: var(--premium-gold);
+  color: var(--premium-dark);
+  text-decoration: none;
+  font-weight: 800;
+  font-size: 16px;
+  box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
+}
+.cta-block__secondary {
+  display: inline-block;
+  padding: 17px 36px;
+  border-radius: 12px;
+  background: transparent;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 700;
+  font-size: 16px;
+  border: 2px solid rgba(255, 255, 255, 0.3);
+}
+.cta-block__trust {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  justify-content: center;
+  margin-top: 24px;
+  color: #94a3b8;
+  font-size: 13px;
+  flex-wrap: wrap;
+}
+
+/* ── Mobile CTA bar ── */
+.mobile-cta-bar { display: none; }
+
+@media (max-width: 767px) {
+  .mobile-cta-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: sticky;
+    top: 68px;
+    z-index: 999;
+    width: 100%;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+    border-top: 1px solid rgba(251, 191, 36, .35);
+    border-bottom: 1px solid rgba(251, 191, 36, .25);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
+  }
+  .mobile-cta-bar a {
+    color: #fff;
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: .2px;
+  }
+  .mobile-cta-sms {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    flex: 1;
+  }
+  .mobile-cta-sms-text {
+    display: flex;
+    flex-direction: column;
+    gap: 1px;
+  }
+  .mobile-cta-sms-text .cta-main-text {
+    font-size: .9375rem;
+    font-weight: 700;
+    line-height: 1.2;
+  }
+  .mobile-cta-bar-sub {
+    color: #cbd5e1;
+    font-weight: 500;
+    font-size: .8125rem;
+  }
+  .mobile-cta-tel {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    padding-left: 14px;
+    border-left: 1px solid rgba(255, 255, 255, .15);
+  }
+  .mobile-cta-tel-label {
+    display: block;
+    font-size: .6875rem;
+    color: #94a3b8;
+    font-weight: 400;
+    white-space: nowrap;
+  }
+  .mobile-cta-tel-number {
+    display: block;
+    font-size: .875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    white-space: nowrap;
+  }
+  .mobile-cta-bar svg { flex-shrink: 0; }
+}
