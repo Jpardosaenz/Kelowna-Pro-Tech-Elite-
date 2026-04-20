@@ -208,6 +208,25 @@
       .story-hero__sub { font-size: 20px; }
     }
 
+    /* ── Founder photo ── */
+    .founder-photo {
+      margin: 40px 0 48px;
+      max-width: 480px;
+    }
+    .founder-photo img {
+      width: 100%;
+      height: auto;
+      border-radius: 16px;
+      display: block;
+      box-shadow: 0 12px 40px rgba(15, 23, 42, 0.12);
+    }
+    .founder-photo figcaption {
+      font-size: 13px;
+      color: var(--muted);
+      margin-top: 10px;
+      font-style: italic;
+    }
+
     /* ── Story body ── */
     .story-body {
       font-size: 18px;
@@ -568,6 +587,14 @@
     </header>
 
     <!-- Story body -->
+    <!-- Founder photo -->
+    <figure class="founder-photo">
+      <img src="/images/joseph-protech-mechanic.png"
+        alt="Joseph, Lead Mechanic and Service Manager at Kelowna Protech Elite Mobile Mechanic, beside a vehicle in a Kelowna driveway"
+        width="960" height="1200" loading="lazy" decoding="async" />
+      <figcaption>Joseph — Lead Mechanic &amp; Service Manager, Kelowna Protech Elite Mobile Mechanic</figcaption>
+    </figure>
+
     <article class="story-body" itemscope itemtype="https://schema.org/Article">
       <meta itemprop="headline" content="How Kelowna Protech Was Built" />
       <meta itemprop="datePublished" content="2024-01-01" />
