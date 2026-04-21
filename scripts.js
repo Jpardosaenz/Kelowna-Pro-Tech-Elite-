@@ -193,7 +193,23 @@ async function diagNext(step) {
     currentLead.contact = document.getElementById('diag-contact').value;
 
     if (!currentLead.name || !currentLead.contact) {
-      alert("Please provide your name and contact info to continue.");
+      const nameInput = document.getElementById('diag-name');
+      const contactInput = document.getElementById('diag-contact');
+      const target = !currentLead.name ? nameInput : contactInput;
+      let err = target.parentElement.querySelector('.diag-field-error');
+      if (!err) {
+        err = document.createElement('p');
+        err.className = 'diag-field-error';
+        err.style.cssText = 'color:#dc2626;font-size:0.85rem;margin:4px 0 0;';
+        target.parentElement.appendChild(err);
+      }
+      err.textContent = !currentLead.name ? 'Please enter your name.' : 'Please enter your phone or email.';
+      target.style.borderColor = '#dc2626';
+      target.focus();
+      target.addEventListener('input', function clear() {
+        err.remove();
+        target.style.borderColor = '';
+      }, { once: true });
       return;
     }
 
