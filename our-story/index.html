@@ -55,7 +55,7 @@
   <script type="application/ld+json">
   {
     "@context": "https://schema.org",
-    "@type": "LocalBusiness",
+    "@type": ["AutoRepair", "LocalBusiness"],
     "@id": "https://kelownaprotechmobilemech.com/#business",
     "name": "Kelowna Protech Elite Mobile Mechanic",
     "url": "https://kelownaprotechmobilemech.com",
@@ -71,8 +71,23 @@
       "addressRegion": "BC",
       "addressCountry": "CA"
     },
-    "areaServed": ["Kelowna", "West Kelowna", "Vernon", "Lake Country", "Peachland", "Penticton", "Okanagan Valley"],
-    "openingHours": "Mo-Sa 08:00-18:00",
+    "areaServed": [
+      { "@type": "City", "name": "Kelowna" },
+      { "@type": "City", "name": "West Kelowna" },
+      { "@type": "City", "name": "Vernon" },
+      { "@type": "City", "name": "Lake Country" },
+      { "@type": "City", "name": "Peachland" },
+      { "@type": "City", "name": "Penticton" },
+      { "@type": "State", "name": "Okanagan Valley" }
+    ],
+    "openingHoursSpecification": [
+      {
+        "@type": "OpeningHoursSpecification",
+        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"],
+        "opens": "08:00",
+        "closes": "18:00"
+      }
+    ],
     "aggregateRating": {
       "@type": "AggregateRating",
       "ratingValue": "4.9",
