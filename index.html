@@ -216,53 +216,101 @@
       max-width: 34ch;
       margin: 0
     }
-    .hero-fold__cta {
-      display: block;
-      width: 100%;
-      margin: 40px auto 0;
-      padding: 16px 32px;
-      background: #e8a020;
-      color: #0d0d0b;
-      font-family: 'DM Sans', sans-serif;
-      font-weight: 600;
-      font-size: 1rem;
-      text-decoration: none;
-      text-align: center;
-      border-radius: 4px;
-      transition: background 200ms ease, transform 200ms ease, box-shadow 200ms ease;
+    .hero-fold__path {
+      max-width: 540px;
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(232, 160, 32, 0.42);
       animation: heroFadeInUp 0.6s ease both;
-      animation-delay: 0.5s;
-      box-sizing: border-box
+      animation-delay: 0.5s
     }
-    .hero-fold__cta:hover {
-      background: #f5b830;
-      transform: translateY(-1px);
-      box-shadow: 0 4px 20px rgba(232,160,32,0.35)
-    }
-    .hero-fold__micro-list {
-      list-style: none;
-      margin: 24px 0 0;
-      padding: 0;
-      display: flex;
-      flex-direction: column;
-      gap: 6px
-    }
-    .hero-fold__micro {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 6px;
+    .hero-fold__path-kicker {
+      color: #e8a020;
       font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      font-size: 0.8125rem;
-      color: rgba(255, 255, 255, 0.85);
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
-      animation: heroFadeIn 0.6s ease both;
-      animation-delay: 0.7s
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.12em;
+      margin: 0 0 14px;
+      text-transform: uppercase
     }
-    .hero-fold__check {
-      flex-shrink: 0;
-      display: inline-block
+    .hero-fold__path-steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px
+    }
+    .hero-fold__path-step {
+      position: relative;
+      display: grid;
+      align-content: start;
+      gap: 6px;
+      min-width: 0;
+      text-align: center
+    }
+    .hero-fold__path-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 13px;
+      right: -7px;
+      width: 9px;
+      height: 9px;
+      border-right: 1px solid rgba(232, 160, 32, 0.75);
+      border-bottom: 1px solid rgba(232, 160, 32, 0.75);
+      transform: rotate(-45deg)
+    }
+    .hero-fold__path-node {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(232, 160, 32, 0.68);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(232, 160, 32, 0.18), rgba(13, 13, 11, 0.58) 62%),
+        rgba(13, 13, 11, 0.58);
+      color: #e8a020;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1;
+      border-radius: 999px
+    }
+    .hero-fold__path-title {
+      color: #f8f4ec;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.04em
+    }
+    .hero-fold__path-copy {
+      color: rgba(255, 255, 255, 0.82);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8125rem;
+      line-height: 1.45
+    }
+    .hero-fold__service-area {
+      max-width: 540px;
+      margin: 18px auto 0;
+      padding: 11px 16px;
+      border: 1px solid rgba(232, 160, 32, 0.24);
+      border-radius: 999px;
+      background: rgba(13, 13, 11, 0.48);
+      box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      color: rgba(248, 244, 236, 0.84);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      line-height: 1.4;
+      text-transform: uppercase;
+      scroll-margin-top: 150px;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.6s
     }
     @media(min-width:768px) {
       .hero-fold {
@@ -302,18 +350,36 @@
         font-size: 1.125rem;
         margin: 0
       }
-      .hero-fold__cta {
-        display: inline-block;
-        width: auto
+      .hero-fold__path {
+        margin: 34px 0 0;
+        max-width: 640px
       }
-      .hero-fold__micro { justify-content: flex-start }
+      .hero-fold__path-kicker {
+        margin-bottom: 16px
+      }
+      .hero-fold__path-steps {
+        gap: 18px
+      }
+      .hero-fold__path-step {
+        text-align: left
+      }
+      .hero-fold__path-node {
+        margin: 0
+      }
+      .hero-fold__path-step:not(:last-child)::after {
+        right: -12px
+      }
+      .hero-fold__service-area {
+        margin: 20px 0 0;
+        max-width: 640px
+      }
     }
     @media(prefers-reduced-motion:reduce) {
       .hero-fold__h1,
       .hero-fold__tagline,
       .hero-fold__trust,
-      .hero-fold__cta,
-      .hero-fold__micro {
+      .hero-fold__path,
+      .hero-fold__service-area {
         animation: none !important
       }
     }
@@ -856,33 +922,33 @@
         <p class="hero-fold__trust-quote">"Honest mechanic who shows you what's actually wrong." &mdash; Tyler T.</p>
       </div>
       <h1 class="hero-fold__h1">
-        Mobile Mechanic Kelowna &mdash; Real Answers, Total Peace of <span class="hero-fold__accent">Mind.</span>
+        Your Car Fixed On-Site. Your Life Back to Normal. <span class="hero-fold__accent">Kelowna&rsquo;s Specialist Mobile Mechanic.</span>
       </h1>
       <div class="hero-fold__separator" aria-hidden="true"></div>
       <p class="hero-fold__tagline">
-        Dealer-level diagnostics at your door. We find the real problem, explain it clearly, and fix it on-site &mdash; same day when possible. No tow truck. No waiting room. No guessing.
+        Your repair starts with a professional diagnosis credited toward the final job &mdash; then we fix only what needs fixing, show you the parts and work, and help get your day back under control.
       </p>
-      <a href="sms:+12508595467" class="hero-fold__cta" data-ga-label="Hero CTA - Diagnosis">
-        Get Your Car Fixed Today
-      </a>
-      <ul class="hero-fold__micro-list">
-        <li class="hero-fold__micro">
-          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          15+ years of diagnostics. 4.9 stars. We come to you.
-        </li>
-        <li class="hero-fold__micro">
-          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          Kelowna mechanic serving you at home, work, or roadside &mdash; no shop visit needed.
-        </li>
-        <li class="hero-fold__micro" id="coverage">
-          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          Covering Kelowna, West Kelowna &amp; Lake Country &mdash; same-day available.
-        </li>
-        <li class="hero-fold__micro">
-          <svg class="hero-fold__check" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="#e8a020" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14" aria-hidden="true"><path d="M20 6L9 17l-5-5"/></svg>
-          Dealer-grade scan tools on every call. Real diagnosis, not guesswork.
-        </li>
-      </ul>
+      <div class="hero-fold__path" aria-label="How the mobile repair process works">
+        <p class="hero-fold__path-kicker">Text first. Clear answers next.</p>
+        <ol class="hero-fold__path-steps">
+          <li class="hero-fold__path-step">
+            <span class="hero-fold__path-node">01</span>
+            <span class="hero-fold__path-title">Text</span>
+            <span class="hero-fold__path-copy">Tell us what happened.</span>
+          </li>
+          <li class="hero-fold__path-step">
+            <span class="hero-fold__path-node">02</span>
+            <span class="hero-fold__path-title">Diagnose</span>
+            <span class="hero-fold__path-copy">We find the real issue.</span>
+          </li>
+          <li class="hero-fold__path-step">
+            <span class="hero-fold__path-node">03</span>
+            <span class="hero-fold__path-title">Fix</span>
+            <span class="hero-fold__path-copy">Approve the right repair.</span>
+          </li>
+        </ol>
+      </div>
+      <p id="coverage" class="hero-fold__service-area">Serving Kelowna · West Kelowna · Lake Country</p>
     </div>
   </section>
   <!-- FIN HERO FOLD 03 -->
