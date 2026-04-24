@@ -590,7 +590,17 @@
     @media only screen and (max-width:767px) {
       .kpem-header-mobile {
         height: 92px;
-        overflow: hidden
+        overflow: visible;
+        transform: none
+      }
+
+      body.menu-is-open .kpem-header-mobile {
+        position: fixed;
+        inset: 0;
+        height: 100vh;
+        padding: 0;
+        background: #111827;
+        z-index: 10000
       }
 
       .mobile-cta-bar {
