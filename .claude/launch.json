@@ -16,7 +16,7 @@
     {
       "name": "npx serve",
       "runtimeExecutable": "npx",
-      "runtimeArgs": ["serve", "-l", "3000"],
+      "runtimeArgs": ["serve", "/Users/EPARDOSAENZ/Documents/KPEMM/Proyect Web/Website KPEMM", "-l", "3000"],
       "port": 3000
     }
   ]
