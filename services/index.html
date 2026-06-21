@@ -1,0 +1,943 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-1GDM77733G"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag() { dataLayer.push(arguments); }
+    gtag('js', new Date());
+    gtag('config', 'G-1GDM77733G');
+  </script>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+  <meta http-equiv="X-Frame-Options" content="SAMEORIGIN" />
+  <meta name="referrer" content="strict-origin-when-cross-origin" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
+
+  <title>Mechanic Kelowna | Mobile Mechanic Services — Kelowna Protech Elite</title>
+  <meta name="description" content="Mechanic comes to you in Kelowna. Real diagnosis before anything gets touched. No guessing, no hidden work, no surprise invoice. Same day. Call or text now." />
+  <meta name="robots" content="index, follow" />
+  <link rel="canonical" href="https://kelownaprotechmobilemech.com/services/" />
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="Mobile Mechanic Services Kelowna | Diagnostics, Inspections &amp; Repairs" />
+  <meta property="og:description" content="Certified mechanic comes to you in Kelowna, BC. Diagnostics, pre-purchase inspections, no-start diagnosis, check engine light, electrical faults, and preventive maintenance. Work guaranteed." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://kelownaprotechmobilemech.com/services/" />
+  <meta property="og:image" content="https://kelownaprotechmobilemech.com/images/diagnostic-og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta property="og:image:alt" content="Kelowna Protech Elite Mobile Mechanic — mobile mechanic services in Kelowna, BC" />
+  <meta property="og:site_name" content="Kelowna Protech Elite Mobile Mechanic" />
+  <meta property="og:locale" content="en_CA" />
+
+  <!-- Twitter Card -->
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="Mobile Mechanic Services Kelowna | Diagnostics, Inspections &amp; Repairs" />
+  <meta name="twitter:description" content="Certified mechanic comes to you in Kelowna, BC. Diagnostics, pre-purchase inspections, no-start, check engine light, and preventive maintenance. Work guaranteed." />
+  <meta name="twitter:image" content="https://kelownaprotechmobilemech.com/images/diagnostic-og.jpg" />
+
+  <meta name="theme-color" content="#E6B43C" />
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/estilos-header2.css" />
+  <link rel="stylesheet" href="/service-tiles.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/service-tiles.css" /></noscript>
+  <link rel="stylesheet" href="/services/services.css" media="print" onload="this.media='all'" />
+  <noscript><link rel="stylesheet" href="/services/services.css" /></noscript>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /></noscript>
+
+  <style>
+    :root {
+      --ink: #111827;
+      --muted: #6b7280;
+      --accent: #dc2626;
+      --line: #e5e7eb;
+      --premium-dark: #0f172a;
+      --premium-gold: #f59e0b;
+      --premium-blue: #1e40af;
+      --premium-light: #f7f8fa;
+      --scan-dark: #06090f;
+      --scan-green: #10b981;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-mono: 'Space Mono', monospace;
+      --font-body: 'Inter', sans-serif;
+    }
+    body { font-family: var(--font-body); }
+
+    .page {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 24px 40px 64px;
+    }
+
+    @media (max-width: 768px) {
+      .page { padding: 24px 16px 48px; }
+    }
+
+    .breadcrumb {
+      font-size: 12px;
+      color: var(--muted);
+      max-width: 1200px;
+      margin: 8px auto 0;
+      padding: 0 20px;
+    }
+    .breadcrumb a { color: inherit; text-decoration: none; }
+
+    /* ── FADE-IN ANIMATION ── */
+    .fade-in {
+      opacity: 0;
+      transform: translateY(22px);
+      transition: opacity 0.55s ease, transform 0.55s ease;
+    }
+    .fade-in.visible {
+      opacity: 1;
+      transform: translateY(0);
+    }
+
+    /* ── HERO ── */
+    .services-hero {
+      position: relative;
+      display: flex;
+      align-items: flex-start;
+      background-image: url('/images/hero-portada-gbp.png');
+      background-size: cover;
+      background-position: center top;
+      background-repeat: no-repeat;
+      padding: 48px 20px 56px;
+      margin-bottom: 0;
+      box-sizing: border-box;
+    }
+    .services-hero::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: rgba(13,13,11,0.83);
+      pointer-events: none;
+      z-index: 1;
+    }
+    .services-hero__content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      width: 100%;
+    }
+    @media (min-width: 768px) {
+      .services-hero {
+        align-items: center;
+        min-height: 560px;
+        padding: 72px 60px 80px;
+        background-position: right center;
+      }
+      .services-hero::before {
+        background: linear-gradient(to right, rgba(13,13,11,0.85) 40%, rgba(13,13,11,0.45) 100%);
+      }
+      .services-hero__content {
+        margin: 0;
+        max-width: 600px;
+      }
+    }
+
+    .services-hero__eyebrow {
+      display: inline-block;
+      background: transparent;
+      color: var(--premium-gold);
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      padding: 5px 12px;
+      border-radius: 4px;
+      border: 1px solid rgba(245,158,11,0.35);
+      margin-bottom: 20px;
+    }
+
+    .services-hero h1 {
+      font-family: var(--font-display);
+      font-size: clamp(28px, 4vw, 48px);
+      line-height: 1.05;
+      color: #ffffff;
+      margin: 0 0 24px;
+      letter-spacing: -0.02em;
+    }
+
+    .services-hero__tagline {
+      font-family: var(--font-display);
+      font-size: clamp(18px, 2.5vw, 24px);
+      font-weight: 700;
+      color: var(--premium-gold);
+      letter-spacing: 0.02em;
+      margin: 8px 0 28px;
+    }
+    .services-hero__fear {
+      font-size: clamp(17px, 2vw, 20px);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.88);
+      margin: 0 0 20px;
+      font-weight: 500;
+    }
+    .services-hero__relief {
+      font-size: clamp(16px, 1.8vw, 18px);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.80);
+      margin: 0 0 24px;
+    }
+    .services-hero__pillars {
+      margin: 20px 0 24px;
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
+    }
+    .services-hero__pillars p {
+      font-size: clamp(15px, 1.8vw, 17px);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.85);
+      margin: 0;
+      padding-left: 16px;
+      border-left: 2px solid rgba(245,158,11,0.6);
+    }
+    .services-hero__pillars strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .services-hero__close {
+      font-size: clamp(15px, 1.8vw, 17px);
+      line-height: 1.7;
+      color: rgba(255,255,255,0.80);
+      font-style: italic;
+      margin: 0 0 24px;
+    }
+    .services-hero__voc {
+      border-left: 3px solid var(--premium-gold);
+      padding-left: 16px;
+      font-style: italic;
+      color: rgba(255,255,255,0.88);
+      font-size: 16px;
+      margin: 0 0 28px;
+    }
+    .trust-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      font-size: 14px;
+      font-weight: 600;
+      color: rgba(255,255,255,0.90);
+    }
+    .trust-bar__item::before { content: "✓ "; color: var(--premium-gold); }
+  </style>
+
+  <!-- JSON-LD Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebPage",
+        "@id": "https://kelownaprotechmobilemech.com/services/#webpage",
+        "url": "https://kelownaprotechmobilemech.com/services/",
+        "name": "Mobile Mechanic Services Kelowna | Diagnostics, Inspections & Repairs",
+        "description": "Stuck with a car problem in Kelowna? Certified mechanic comes to you — same-day diagnostics, pre-purchase inspections & no-start service. Work guaranteed. No tow required.",
+        "breadcrumb": { "@id": "https://kelownaprotechmobilemech.com/services/#breadcrumb" },
+        "publisher": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
+      },
+      {
+        "@type": "BreadcrumbList",
+        "@id": "https://kelownaprotechmobilemech.com/services/#breadcrumb",
+        "itemListElement": [
+          { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://kelownaprotechmobilemech.com/" },
+          { "@type": "ListItem", "position": 2, "name": "Services", "item": "https://kelownaprotechmobilemech.com/services/" }
+        ]
+      },
+      {
+        "@type": "ItemList",
+        "@id": "https://kelownaprotechmobilemech.com/services/#servicelist",
+        "name": "Mobile Mechanic Services — Kelowna, BC",
+        "description": "Mobile mechanic services provided by Kelowna Protech Elite Mobile Mechanic, including diagnostics, inspections, and preventive maintenance.",
+        "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" },
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "item": {
+              "@type": "Service",
+              "name": "Mobile Mechanic Kelowna",
+              "description": "On-site mobile mechanic service in Kelowna, BC. Certified mechanic comes to your location. Backed by our service guarantee on parts and labour supplied by Kelowna Protech Elite Mobile Mechanic.",
+              "url": "https://kelownaprotechmobilemech.com/services/",
+              "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.9",
+                "reviewCount": "55",
+                "bestRating": "5"
+              }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "item": {
+              "@type": "Service",
+              "name": "Pre-Purchase Inspection Kelowna",
+              "description": "Pre-purchase vehicle inspection in Kelowna, BC. Performed at the seller's location before purchase. Comprehensive mechanical and electrical assessment. Detailed written assessment provided after every inspection.",
+              "url": "https://kelownaprotechmobilemech.com/services/pre-purchase/",
+              "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "item": {
+              "@type": "Service",
+              "name": "Car Diagnostic Kelowna",
+              "description": "On-site car diagnostic in Kelowna, BC. Root cause analysis, not just code reading. Backed by our service guarantee on parts and labour supplied by Kelowna Protech Elite Mobile Mechanic.",
+              "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
+              "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "item": {
+              "@type": "Service",
+              "name": "No-Start Diagnostic Kelowna",
+              "description": "No-start vehicle diagnostic in Kelowna, BC. Certified mechanic comes to the vehicle — no tow required. Backed by our service guarantee on parts and labour supplied by Kelowna Protech Elite Mobile Mechanic.",
+              "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
+              "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "item": {
+              "@type": "Service",
+              "name": "Electrical and Electronic Diagnostic Kelowna",
+              "description": "Automotive electrical and electronic diagnostic in Kelowna, BC. Schematic analysis and live data testing. Backed by our service guarantee on parts and labour supplied by Kelowna Protech Elite Mobile Mechanic.",
+              "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
+              "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "item": {
+              "@type": "Service",
+              "name": "Check Engine Light Diagnostic Kelowna",
+              "description": "Check engine light diagnostic in Kelowna, BC. Root cause confirmed, not just code identification. Backed by our service guarantee on parts and labour supplied by Kelowna Protech Elite Mobile Mechanic.",
+              "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
+              "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
+            }
+          },
+          {
+            "@type": "ListItem",
+            "position": 7,
+            "item": {
+              "@type": "Service",
+              "name": "Preventive Maintenance Kelowna",
+              "description": "Mobile preventive maintenance in Kelowna, BC. Oil changes, filters, and fluid inspections at your location. Backed by our service guarantee on parts and labour supplied by Kelowna Protech Elite Mobile Mechanic.",
+              "url": "https://kelownaprotechmobilemech.com/services/maintenance/",
+              "provider": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
+            }
+          }
+        ]
+      }
+    ,
+      {
+        "@type": "FAQPage",
+        "@id": "https://kelownaprotechmobilemech.com/services/#faq",
+        "mainEntity": [
+          {
+            "@type": "Question",
+            "name": "Can I get a certified mechanic to come to my location in Kelowna?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. A certified mechanic comes to your driveway, workplace, parking lot, or roadside in Kelowna — no tow required. You don't bring the car to us. We arrive with professional diagnostic and repair tools, and the work happens at your location the same day."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Do I have to take my car to a shop for a proper diagnostic?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "No. A complete professional diagnostic is performed at your location using dealer-grade scan tools, live data analysis, and schematic testing — the same process used in any certified shop. Most diagnostics are completed within 60 to 90 minutes on-site, without moving the vehicle."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Is the diagnostic fee applied toward the repair?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The diagnostic cost is credited toward the repair if you proceed with the work on the same visit. You are not charged twice. If you decide not to proceed, you pay for the diagnostic only — and leave with a documented answer about what your vehicle needs."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can the mechanic fix my car the same day?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "In most cases, yes. No-starts, electrical faults, sensor failures, and fluid issues are typically resolved on the same visit. Repairs requiring ordered parts may need a follow-up, but you get a clear answer and a realistic timeline the same day the mechanic arrives."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What does a pre-purchase inspection include?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "A comprehensive mechanical and electrical assessment performed at the seller's location before any money changes hands. Covers engine and fluid systems, transmission, brakes, suspension, electrical systems, and body condition. You receive a clear written verdict — what's solid, what's worn, and what would cost you money after the sale."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "My check engine light is on. Can a mechanic diagnose it without a shop?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes. The root cause — not just the fault code — is confirmed on-site using professional scan tools and live data testing. Reading a code identifies the system; a real diagnostic confirms why it triggered. Most check engine diagnostics are completed at your location within 60 to 90 minutes."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Another shop couldn't find the problem. Can your mechanic help?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — this is one of the most common reasons people call us. Intermittent faults, misread codes, and symptoms that appear only under specific conditions require root-cause diagnostic work. We start from live data and schematic analysis, not from the previous shop's guess. Over 55 verified clients have used this process."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "What areas in Kelowna and the Okanagan does the mechanic cover?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Kelowna, West Kelowna, Lake Country, Peachland, Penticton, and Vernon. If you're unsure whether your location is covered, call or text (250) 859-5467 and we'll confirm directly. No automated system — you reach the mechanic. Service is fully mobile, so coverage extends to wherever the vehicle is located."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "Can I watch the mechanic work on my car?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "Yes — that's the point of working this way. The diagnosis and repair happen at your location, in front of you. You can observe the process, ask questions at any point, and hear the findings before any work is approved. No back room. No waiting room. No surprises."
+            }
+          },
+          {
+            "@type": "Question",
+            "name": "How much does a pre-purchase inspection cost?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "We don't publish prices — call or text (250) 859-5467 for a quote specific to your vehicle and location. Clients have used our inspection to identify hidden repair costs ranging from $2,000 to over $7,000 on vehicles the seller described as fine."
+            }
+          }
+        ]
+      }
+    ]
+  }
+  </script>
+
+</head>
+
+<body>
+  <a href="#main-content" class="skip-link">Skip to main content</a>
+
+  <!-- ── HEADER ── -->
+  <header class="kpem-header-mobile" role="banner">
+    <div class="contenedor-logo">
+      <a href="/" aria-label="Go to homepage">
+        <img src="/images/logo-kelowna-protech-eliteV1.webp" alt="Kelowna Protech Elite Mobile Mechanic logo"
+          loading="eager" decoding="async" width="85" height="85" class="logo-mobile" />
+      </a>
+    </div>
+    <nav id="mobile-navigation" class="mobile-menu" role="navigation" aria-label="Main Navigation">
+      <button class="menu-close-button" aria-label="Close menu">&times;</button>
+      <ul>
+        <li><a href="/#commercial-faq">Why Us</a></li>
+        <li><a href="/services/" aria-current="page">Services</a></li>
+        <li><a href="/field-reports/">Success Stories</a></li>
+        <li><a href="/our-story/">Our Story</a></li>
+      </ul>
+    </nav>
+    <a href="tel:+12508595467" class="header-cta" aria-label="Call for same-day car repair">
+      <span class="cta-main">Get Same-Day Repair</span>
+      <span class="cta-sub">15+ Years Experience &bull; Kelowna</span>
+    </a>
+    <button class="kpem-menu-trigger" aria-label="Open menu" aria-controls="mobile-navigation" aria-expanded="false">
+      &#9776;
+    </button>
+  </header>
+
+  <!-- ── MOBILE CTA BAR ── -->
+  <div class="mobile-cta-bar">
+    <a href="sms:+12508595467" class="mobile-cta-sms" aria-label="Text for same-day car repair">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+      <span class="mobile-cta-sms-text">
+        <span class="cta-main-text">Get My Car Fixed Today</span>
+        <span class="mobile-cta-bar-sub">Text Us &middot; Fast Response</span>
+      </span>
+    </a>
+    <a href="tel:+12508595467" class="mobile-cta-tel" aria-label="Call directly">
+      <span class="mobile-cta-tel-label">or call directly</span>
+      <span class="mobile-cta-tel-number">(250) 859-5467</span>
+    </a>
+  </div>
+
+  <!-- ── MAIN CONTENT ── -->
+  <nav class="breadcrumb" aria-label="Breadcrumb">
+    <a href="/">Home</a> &rsaquo; Services
+  </nav>
+
+  <header class="services-hero">
+      <div class="services-hero__content">
+        <span class="services-hero__eyebrow">Kelowna &mdash; Mechanic Services</span>
+        <h1>Mechanic Services in Kelowna, BC</h1>
+        <p class="services-hero__tagline">No Guessing. No Hiding. No Surprises.</p>
+        <p class="services-hero__fear">
+          Most people walk into a mechanic shop already expecting to get burned. The vague call three days later. The invoice full of items you didn&rsquo;t ask for. The part that &ldquo;needed replacing&rdquo; &mdash; that you never saw replaced. That&rsquo;s not bad luck. That&rsquo;s how the industry learned to operate.
+        </p>
+        <p class="services-hero__relief">
+          Kelowna Protech was built to break that pattern. Not with better equipment. With a different set of values.
+        </p>
+        <div class="services-hero__pillars">
+          <p><strong>No Guessing</strong> &mdash; because our commitment is simple: we don&rsquo;t recommend a repair until we know the confirmed cause. Not the most likely one. The actual one. That&rsquo;s not something we do when it&rsquo;s convenient &mdash; it&rsquo;s how we work on every visit, with every client, without exception.</p>
+          <p><strong>No Hiding</strong> &mdash; because your car never leaves your sight. Everything happens in your driveway, in front of you. You watch each step. You ask questions. You hear the answer as it happens &mdash; not a filtered version three days later. Your property. Your right to know.</p>
+          <p><strong>No Surprises</strong> &mdash; because you have the right to know exactly what&rsquo;s being done with your money. We document what we find, what we recommend, and what we do &mdash; before we do it. The price you approve is the price you pay. Not an estimate. A commitment.</p>
+        </div>
+        <p class="services-hero__close">
+          That&rsquo;s the difference between Kelowna Protech and every other shop in the Okanagan. Not the tools we carry &mdash; the values we work by.
+        </p>
+        <blockquote class="services-hero__voc">
+          &ldquo;No towing, no guessing.&rdquo; &mdash; Ligia Saenz, Google Review &#9733;&#9733;&#9733;&#9733;&#9733;
+        </blockquote>
+        <div class="trust-bar" role="list" aria-label="Service credentials">
+          <span class="trust-bar__item" role="listitem">Certified Mechanic</span>
+          <span class="trust-bar__item" role="listitem">Same-Day Available</span>
+          <span class="trust-bar__item" role="listitem">Done at Your Door</span>
+          <span class="trust-bar__item" role="listitem">Work Guaranteed</span>
+          <span class="trust-bar__item" role="listitem">4.9&#9733; (55 Reviews)</span>
+        </div>
+      </div>
+  </header>
+
+  <main class="page" id="main-content">
+
+    <!-- STATS ROW — DIAGNOSTIC TERMINAL -->
+    <div class="stats-row fade-in" role="region" aria-label="At a glance">
+      <div class="stats-header" aria-hidden="true">
+        <span class="stats-header__label">VEHICLE INSPECTION SYSTEM &bull; KELOWNA&nbsp;BC</span>
+        <span class="stats-header__live"><span class="live-dot"></span>LIVE</span>
+      </div>
+      <div class="stats-items">
+        <div class="stat-item">
+          <span class="stat-num" data-count="4.9" data-suffix="&#9733;">4.9&#9733;</span>
+          <span class="stat-label">Google Rating</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="55" data-suffix="">55</span>
+          <span class="stat-label">Verified Reviews</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="15" data-suffix="+">15+</span>
+          <span class="stat-label">Years Experience</span>
+        </div>
+        <div class="stat-item">
+          <span class="stat-num" data-count="5" data-prefix="$" data-suffix="K+">$5K+</span>
+          <span class="stat-label">Saved &mdash; One Inspection</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- WHY KPEMM -->
+    <section class="why-section fade-in" aria-labelledby="why-heading">
+      <h2 id="why-heading" class="why-section__heading">Why Kelowna Protech? The mechanic Kelowna actually trusts.</h2>
+      <p class="why-section__sub">55 reviews. 4.9 stars. None of them had to drive anywhere.</p>
+      <div class="why-grid">
+        <div class="why-card" style="--card-i:0">
+          <span class="why-card__num">01</span>
+          <p class="why-card__title">We come to you — anywhere in Kelowna</p>
+          <p class="why-card__desc">Your driveway. Your office. The parking lot where the car stopped. The seller&rsquo;s location before you buy. Tell us where the car is &mdash; we drive there. No tow truck. No shop drop-off. No asking someone to pick you up.</p>
+        </div>
+        <div class="why-card" style="--card-i:1">
+          <span class="why-card__num">02</span>
+          <p class="why-card__title">You watch every step</p>
+          <p class="why-card__desc">Shops fix your car behind a closed bay door. You drop it off and wait for a phone call. We work in your driveway &mdash; you see what we find, hear the diagnosis the moment we make it, and ask questions in real time. Nothing happens behind your back.</p>
+        </div>
+        <div class="why-card" style="--card-i:2">
+          <span class="why-card__num">03</span>
+          <p class="why-card__title">One handoff — we handle the rest</p>
+          <p class="why-card__desc">Hand over the keys once. Joseph handles parts sourcing, delivery, and logistics. You don&rsquo;t coordinate with a parts store, a tow company, or a second shop. One call. One mechanic. Done.</p>
+        </div>
+        <div class="why-card" style="--card-i:3">
+          <span class="why-card__num">04</span>
+          <p class="why-card__title">You know what&rsquo;s happening before it happens</p>
+          <p class="why-card__desc">Every time we find something, we stop and tell you before moving forward. You understand each step before you approve it. No surprises on the invoice because nothing was done without your knowledge first.</p>
+        </div>
+        <div class="why-card" style="--card-i:4">
+          <span class="why-card__num">05</span>
+          <p class="why-card__title">Parts sourced and brought to your location</p>
+          <p class="why-card__desc">We identify what&rsquo;s needed, source the right part, and bring it to wherever you are. You don&rsquo;t run to a counter, guess at a part number, or wait for a wrong part to be returned. We manage it.</p>
+        </div>
+        <div class="why-card" style="--card-i:5">
+          <span class="why-card__num">06</span>
+          <p class="why-card__title">Same day &mdash; no appointment, no wait</p>
+          <p class="why-card__desc">The shop model runs on wait times, callbacks, and &ldquo;we can get you in Thursday.&rdquo; Most of our visits end with the car fixed the same day we arrive &mdash; no appointment slot, no leaving the car overnight, no calling a rental company.</p>
+        </div>
+        <div class="why-card" style="--card-i:6">
+          <span class="why-card__num">07</span>
+          <p class="why-card__title">Diagnostic cost credited toward the repair</p>
+          <p class="why-card__desc">If you proceed with the repair on the same visit, the diagnostic fee applies to the total. You pay for the diagnosis once &mdash; not once for the answer and again for the fix.</p>
+        </div>
+        <div class="why-card" style="--card-i:7">
+          <span class="why-card__num">08</span>
+          <p class="why-card__title">Confirmed price — before anything starts</p>
+          <p class="why-card__desc">No work begins until you have a confirmed number and you&rsquo;ve said yes. Not an estimate that grows. Not a quote that changes when the car&rsquo;s already apart. The price you approve is the price you pay.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- SERVICES -->
+    <section class="services-section fade-in" aria-labelledby="services-heading">
+      <h2 id="services-heading" class="section-heading">Services</h2>
+      <p class="section-sub">Every service is delivered on-site at your location, across Kelowna and the Okanagan.</p>
+      <ul class="services-grid" role="list">
+
+        <li class="service-card service-card--featured" role="listitem">
+          <span class="service-card__badge">Core Service</span>
+          <h2>Kelowna Mechanic — We Come to You</h2>
+          <p class="service-card__loss">Every other mechanic in Kelowna expects you to go to them. We don&rsquo;t.</p>
+          <p class="service-card__desc">
+            Tell us where the car is. Joseph drives to your home, your office, or wherever you&rsquo;re parked. The work happens in front of you, on your schedule, that same day. No appointment at a shop. No tow truck. No waiting room. A certified mechanic &mdash; at your door, not theirs.
+          </p>
+          <blockquote class="service-card__voc">&ldquo;Quicker than we could even get an appointment to have it looked at in a shop.&rdquo; &mdash; Gabe Carter &#9733;&#9733;&#9733;&#9733;&#9733;</blockquote>
+          <p class="service-card__who">For: anyone in Kelowna who needs a mechanic but won&rsquo;t give up their whole day to sit in a shop.</p>
+        </li>
+
+        <li class="service-card" role="listitem">
+          <h2>Pre-Purchase Inspection Kelowna</h2>
+          <p class="service-card__loss">Don&rsquo;t buy someone else&rsquo;s hidden $5,000 problem.</p>
+          <p class="service-card__desc">
+            Every used vehicle has a history. We inspect it at the seller&rsquo;s location, before any money changes hands, and tell you what&rsquo;s solid, what&rsquo;s worn, and what will cost you after the sale. Buy informed, not hopeful.
+          </p>
+          <p class="service-card__who">For: buyers who want a clear answer before signing anything.</p>
+          <a href="/services/pre-purchase/" class="service-card__link" aria-label="Pre-Purchase Inspection — full details">Inspection Details</a>
+        </li>
+
+        <li class="service-card" role="listitem">
+          <h2>Car Diagnostic Kelowna</h2>
+          <p class="service-card__loss">Stop replacing parts that don&rsquo;t fix the problem.</p>
+          <p class="service-card__desc">
+            We connect professional scan tools to your vehicle&rsquo;s computer, read live data from every system, and find the root cause. You get a clear answer the same day. Not a guess &mdash; the actual reason your car is behaving the way it is.
+          </p>
+          <p class="service-card__who">For: vehicles with warning lights, performance issues, or unexplained problems.</p>
+          <a href="/services/diagnostic/" class="service-card__link" aria-label="Car Diagnostic — full details">Diagnostic Details</a>
+        </li>
+
+        <li class="service-card" role="listitem">
+          <h2>No-Start Diagnostic Kelowna</h2>
+          <p class="service-card__loss">Stuck in your driveway. No tow required.</p>
+          <p class="service-card__desc">
+            Vehicle won&rsquo;t crank, won&rsquo;t turn over, or cranks but won&rsquo;t fire? We come to the vehicle, test the battery, starter, fuel system, and ignition circuit until we find the actual cause. Most no-starts are diagnosed and resolved the same day.
+          </p>
+          <p class="service-card__who">For: vehicles that won&rsquo;t start and can&rsquo;t safely be moved.</p>
+          <a href="/services/diagnostic/" class="service-card__link" aria-label="No-Start Diagnostic — full details">Diagnostic Details</a>
+        </li>
+
+        <li class="service-card" role="listitem">
+          <h2>Electrical &amp; Electronic Diagnostic Kelowna</h2>
+          <p class="service-card__loss">Faults other shops couldn&rsquo;t find.</p>
+          <p class="service-card__desc">
+            Intermittent failures, dead accessories, module faults, wiring issues &mdash; these are the hard ones. We use schematic analysis and live data to trace the fault to its actual source. Not the symptom. The cause.
+          </p>
+          <p class="service-card__who">For: vehicles with recurring electrical faults nobody else has resolved.</p>
+          <a href="/services/diagnostic/" class="service-card__link" aria-label="Electrical Diagnostic — full details">Diagnostic Details</a>
+        </li>
+
+        <li class="service-card" role="listitem">
+          <h2>Check Engine Light Diagnostic Kelowna</h2>
+          <p class="service-card__loss">A code number is not a diagnosis.</p>
+          <p class="service-card__desc">
+            Reading a fault code tells you which system triggered the alert. It doesn&rsquo;t tell you why. We test the related systems, confirm the root cause, and give you a clear answer &mdash; what caused the light, what it means, what happens if you ignore it.
+          </p>
+          <p class="service-card__who">For: vehicles with check engine, service engine, or malfunction indicator lights on.</p>
+          <a href="/services/diagnostic/" class="service-card__link" aria-label="Check Engine Light Diagnostic — full details">Diagnostic Details</a>
+        </li>
+
+        <li class="service-card" role="listitem">
+          <h2>Preventive Maintenance Kelowna</h2>
+          <p class="service-card__loss">The most expensive repair is the one that was preventable.</p>
+          <p class="service-card__desc">
+            Oil changes, filter replacements, fluid inspections, and scheduled services at your location, on your schedule. We keep your vehicle maintained without requiring a shop trip.
+          </p>
+          <p class="service-card__who">For: vehicle owners who want consistent maintenance without the wait.</p>
+          <a href="/services/maintenance/" class="service-card__link" aria-label="Preventive Maintenance — full details">Maintenance Details</a>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- HOW IT WORKS -->
+    <section class="process-section fade-in" aria-labelledby="process-heading">
+      <h2 id="process-heading" class="process-section__heading">How It Works</h2>
+      <p class="process-section__sub">Four steps. Same day. No shop.</p>
+      <div class="process-steps">
+        <div class="process-step">
+          <div class="process-step__num" aria-hidden="true">1</div>
+          <p class="process-step__title">Call or Text</p>
+          <p class="process-step__desc">Describe what&rsquo;s happening with your vehicle. Reach us directly at (250) 859-5467. No forms, no queue.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num" aria-hidden="true">2</div>
+          <p class="process-step__title">We Come to You</p>
+          <p class="process-step__desc">Our certified mechanic arrives at your location &mdash; driveway, workplace, parking lot, or roadside &mdash; with professional tools.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num" aria-hidden="true">3</div>
+          <p class="process-step__title">Diagnosis in Front of You</p>
+          <p class="process-step__desc">You watch the process, ask questions, and hear the findings as they happen. That&rsquo;s the whole point of working this way.</p>
+        </div>
+        <div class="process-step">
+          <div class="process-step__num" aria-hidden="true">4</div>
+          <p class="process-step__title">Clear Verdict &mdash; Your Decision</p>
+          <p class="process-step__desc">Price confirmed before any work starts. Diagnostic credited toward the repair if you proceed. You decide with full information.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS -->
+    <section class="testimonials-section fade-in" aria-labelledby="testimonials-heading">
+      <h2 id="testimonials-heading" class="section-heading">What Kelowna Clients Say</h2>
+      <p class="section-sub">Real Google reviews. Real dollars saved. Verified 4.9&#9733; across 55 reviews.</p>
+      <div class="testimonial-grid">
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__quote">&ldquo;He was able to determine that the car had been altered to hide a lot of problems&hellip; Potentially $5,000+ devastating engine repair bill&hellip; I&rsquo;m very thankful.&rdquo;</p>
+          <span class="testimonial-card__amount">$5,000+ avoided</span>
+          <div class="testimonial-card__author-wrap">
+            <div class="testimonial-card__avatar-initials" aria-hidden="true">DW</div>
+            <div>
+              <p class="testimonial-card__author">Doggy Woggy</p>
+              <span class="testimonial-card__source">Pre-Purchase Inspection &bull; Google Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__quote">&ldquo;Saved me $4,000 from buying that car. The inspection was worth every penny.&rdquo;</p>
+          <span class="testimonial-card__amount">$4,000 saved</span>
+          <div class="testimonial-card__author-wrap">
+            <img src="/images/avatar-jorge.png" alt="Jorge" class="testimonial-card__avatar" width="44" height="44" loading="lazy" decoding="async" />
+            <div>
+              <p class="testimonial-card__author">Jorge (Outcast)</p>
+              <span class="testimonial-card__source">Pre-Purchase Inspection &bull; Google Review</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="testimonial-card">
+          <div class="testimonial-card__stars" aria-label="5 stars">&#9733;&#9733;&#9733;&#9733;&#9733;</div>
+          <p class="testimonial-card__quote">&ldquo;Didn&rsquo;t push for any unnecessary repairs, just told me my options.&rdquo;</p>
+          <span class="testimonial-card__amount">Honest verdict &mdash; no pressure</span>
+          <div class="testimonial-card__author-wrap">
+            <div class="testimonial-card__avatar-initials" aria-hidden="true">TT</div>
+            <div>
+              <p class="testimonial-card__author">tyler thompson</p>
+              <span class="testimonial-card__source">Google Review</span>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FAQ -->
+    <section class="faq-section fade-in" aria-labelledby="faq-heading">
+      <h2 id="faq-heading" class="section-heading">Frequently Asked Questions</h2>
+      <p class="section-sub">Real questions from Kelowna vehicle owners. Straight answers.</p>
+      <div class="faq-list">
+
+        <div class="faq-item">
+          <p class="faq-item__q">Can I get a certified mechanic to come to my location in Kelowna?</p>
+          <p class="faq-item__a">Yes. A certified mechanic comes to your driveway, workplace, parking lot, or roadside in Kelowna &mdash; no tow required. You don&rsquo;t bring the car to us. We arrive with professional diagnostic and repair tools, and the work happens at your location the same day.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">Do I have to take my car to a shop for a proper diagnostic?</p>
+          <p class="faq-item__a">No. A complete professional diagnostic is performed at your location using dealer-grade scan tools, live data analysis, and schematic testing &mdash; the same process used in any certified shop. Most diagnostics are completed within 60 to 90 minutes on-site, without moving the vehicle.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">Is the diagnostic fee applied toward the repair?</p>
+          <p class="faq-item__a">Yes. The diagnostic cost is credited toward the repair if you proceed with the work on the same visit. You are not charged twice. If you decide not to proceed, you pay for the diagnostic only &mdash; and leave with a documented answer about what your vehicle needs.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">Can the mechanic fix my car the same day?</p>
+          <p class="faq-item__a">In most cases, yes. No-starts, electrical faults, sensor failures, and fluid issues are typically resolved on the same visit. Repairs requiring ordered parts may need a follow-up, but you get a clear answer and a realistic timeline the same day the mechanic arrives.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">What does a pre-purchase inspection include?</p>
+          <p class="faq-item__a">A comprehensive mechanical and electrical assessment performed at the seller&rsquo;s location before any money changes hands. Covers engine and fluid systems, transmission, brakes, suspension, electrical systems, and body condition. You receive a clear written verdict &mdash; what&rsquo;s solid, what&rsquo;s worn, and what would cost you money after the sale.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">My check engine light is on. Can a mechanic diagnose it without a shop?</p>
+          <p class="faq-item__a">Yes. The root cause &mdash; not just the fault code &mdash; is confirmed on-site using professional scan tools and live data testing. Reading a code identifies the system; a real diagnostic confirms why it triggered. Most check engine diagnostics are completed at your location within 60 to 90 minutes.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">Another shop couldn&rsquo;t find the problem. Can your mechanic help?</p>
+          <p class="faq-item__a">Yes &mdash; this is one of the most common reasons people call us. Intermittent faults, misread codes, and symptoms that appear only under specific conditions require root-cause diagnostic work. We start from live data and schematic analysis, not from the previous shop&rsquo;s guess. Over 55 verified clients have used this process.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">What areas in Kelowna and the Okanagan does the mechanic cover?</p>
+          <p class="faq-item__a">Kelowna, West Kelowna, Lake Country, Peachland, Penticton, and Vernon. If you&rsquo;re unsure whether your location is covered, call or text (250) 859-5467 and we&rsquo;ll confirm directly. No automated system &mdash; you reach the mechanic. Service is fully mobile, so coverage extends to wherever the vehicle is located.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">Can I watch the mechanic work on my car?</p>
+          <p class="faq-item__a">Yes &mdash; that&rsquo;s the point of working this way. The diagnosis and repair happen at your location, in front of you. You can observe the process, ask questions at any point, and hear the findings before any work is approved. No back room. No waiting room. No surprises.</p>
+        </div>
+
+        <div class="faq-item">
+          <p class="faq-item__q">How much does a pre-purchase inspection cost?</p>
+          <p class="faq-item__a">We don&rsquo;t publish prices &mdash; call or text (250) 859-5467 for a quote specific to your vehicle and location. What we can tell you: clients have used our inspection to identify hidden repair costs ranging from $2,000 to over $7,000 on vehicles the seller described as fine.</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- FINAL CTA -->
+    <section class="cta-section fade-in" aria-label="Contact Kelowna Protech">
+      <h2>Your car has a problem and you haven&rsquo;t been able to figure it out.</h2>
+      <p>Call us. Our certified mechanic comes to you &mdash; same day, across Kelowna and the Okanagan. Work guaranteed.</p>
+      <div class="cta-section__btns">
+        <a href="tel:+12508595467" class="btn-primary" aria-label="Call (250) 859-5467">Call (250) 859-5467</a>
+        <a href="sms:+12508595467" class="btn-secondary" aria-label="Text for same-day repair">Text Us Now</a>
+      </div>
+      <div class="cta-section__trust">
+        <span>4.9&#9733; &mdash; 55 Google Reviews</span>
+        <span>Certified Mechanic</span>
+        <span>Mon&ndash;Sat, 8am&ndash;6pm</span>
+        <span>Work Guaranteed</span>
+      </div>
+    </section>
+
+    <!-- RELATED LINKS -->
+    <section class="related-links" aria-label="More from Kelowna Protech">
+      <h3 class="related-links__heading">More From Kelowna Protech</h3>
+      <div class="related-links__grid">
+        <a href="/" class="related-links__item">Home</a>
+        <a href="/services/pre-purchase/" class="related-links__item">Pre-Purchase Inspection</a>
+        <a href="/services/diagnostic/" class="related-links__item">Car Diagnostic</a>
+        <a href="/services/maintenance/" class="related-links__item">Preventive Maintenance</a>
+        <a href="/our-story/" class="related-links__item">Our Story</a>
+        <a href="/field-reports/" class="related-links__item">Success Stories</a>
+      </div>
+    </section>
+
+    <!-- NAP FOOTER -->
+    <footer class="site-nap" aria-label="Business info">
+      <div class="site-nap__wrap">
+        <strong class="site-nap__brand">Kelowna Protech Elite Mobile Mechanic</strong>
+        <div class="site-nap__area">
+          Service area: Kelowna, West Kelowna, Vernon, Lake Country, Peachland, Penticton, Okanagan Valley
+        </div>
+        <div class="site-nap__contact">
+          Phone: <a href="tel:+12508595467" class="site-nap__tel" rel="nofollow">+1&#8209;250&#8209;859&#8209;5467</a>
+        </div>
+        <div class="site-nap__hours">
+          Hours: <time>Mon&ndash;Sat 08:00&ndash;18:00</time>
+        </div>
+        <p class="site-nap__coverage">
+          <a href="/#coverage" class="site-nap__link">See Coverage &amp; Areas Served &rarr;</a>
+        </p>
+        <p class="fine-print">Service guarantee applies to parts and labour supplied by Kelowna Protech Elite Mobile Mechanic only. Work performed using customer-supplied parts or components is excluded. Guarantee is void if the vehicle has been serviced, modified, or repaired by a third party following our work. Each claim assessed individually.</p>
+      </div>
+    </footer>
+
+  </main>
+
+  <!-- ── FLOATING CTA ── -->
+  <div class="floating-cta-container" role="region" aria-label="Quick Contact">
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call for same-day car repair">
+      <span class="cta-main">Get My Car Fixed Today</span>
+      <span class="cta-sub">Same-Day Service &bull; Kelowna &amp; Area</span>
+    </a>
+  </div>
+
+  <!-- ── DIAGNOSTIC MODAL ── -->
+  <div id="diag-modal" class="diag-modal-overlay" role="dialog" aria-modal="true" aria-labelledby="diag-modal-title" aria-hidden="true">
+    <div class="diag-modal-content">
+      <button class="diag-close" aria-label="Close diagnostic tool">&times;</button>
+
+      <div id="diag-step-1" class="diag-step">
+        <h2 id="diag-modal-title" class="diag-title">Step 1: Contact Details</h2>
+        <p class="diag-subtitle">Where should we send your results?</p>
+        <div class="diag-input-group">
+          <input type="text" id="diag-name" aria-label="Your name" placeholder="Your Name" required>
+        </div>
+        <div class="diag-input-group">
+          <input type="text" id="diag-contact" aria-label="Phone or email" placeholder="Phone or Email" required>
+        </div>
+        <button class="diag-next-btn" data-step="2">Next: Vehicle Info &rarr;</button>
+        <p class="diag-privacy">We only use this to send your diagnostic report.</p>
+      </div>
+
+      <div id="diag-step-2" class="diag-step" style="display:none;">
+        <h2 class="diag-title">Step 2: Vehicle &amp; Symptoms</h2>
+        <div class="diag-input-group">
+          <input type="text" id="diag-vehicle" aria-label="Vehicle year, make and model" placeholder="Year / Make / Model (e.g., 2018 Ford F-150)">
+        </div>
+        <div class="diag-input-group">
+          <textarea id="diag-symptoms" aria-label="Describe what is happening with your vehicle"
+            placeholder="Tell us what&apos;s happening (e.g., ticking noise, won&apos;t start, warning light...)"></textarea>
+        </div>
+        <div class="diag-input-group">
+          <select id="diag-urgency" aria-label="How urgent is your situation">
+            <option value="flexible">Urgency: Flexible</option>
+            <option value="24h">Need help within 24h</option>
+            <option value="emergency">Emergency / Broken Down</option>
+          </select>
+        </div>
+        <button class="diag-next-btn" data-step="3">Analyze Now — Get Results &rarr;</button>
+      </div>
+
+      <div id="diag-step-3" class="diag-step" style="display:none;">
+        <div class="diag-success-icon">🔧</div>
+        <h2 class="diag-title">We&rsquo;re Reviewing Your Case</h2>
+        <div class="diag-result-box">
+          <p id="diag-result-placeholder">
+            Based on your description, our lead mechanic is reviewing your case. We specialize in mobile on-site service and can likely help you today without a tow.
+          </p>
+        </div>
+        <p class="diag-cta-text">To book your service:</p>
+        <div class="diag-action-container">
+          <a href="tel:+12508595467" class="diag-call-btn">Call for Same-Day Service ✓</a>
+          <a href="sms:+12508595467" class="diag-sms-btn">Text for Quote (2-Min)</a>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ── SIDE WIDGET ── -->
+  <button id="side-ask-mechanic" class="side-ask-mechanic-btn" aria-label="Ask a Mechanic - Free Diagnostic">
+    <span class="widget-text">Ask a Mechanic</span>
+  </button>
+
+  <script src="/scripts.js" defer></script>
+
+  <script src="/services/services.js" defer></script>
+
+</body>
+
+</html>
