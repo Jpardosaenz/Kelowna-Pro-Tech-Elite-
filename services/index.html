@@ -109,17 +109,18 @@
       align-items: flex-start;
       background-image: url('/images/hero-portada-gbp.png');
       background-size: cover;
-      background-position: center top;
+      background-position: 50% 18%;
       background-repeat: no-repeat;
-      padding: 48px 20px 56px;
+      padding: 20px 20px 40px;
       margin-bottom: 0;
       box-sizing: border-box;
+      min-height: 480px;
     }
     .services-hero::before {
       content: '';
       position: absolute;
       inset: 0;
-      background: rgba(13,13,11,0.83);
+      background: linear-gradient(to bottom, rgba(13,13,11,0.90) 45%, rgba(13,13,11,0.55) 100%);
       pointer-events: none;
       z-index: 1;
     }
@@ -232,6 +233,59 @@
       color: rgba(255,255,255,0.90);
     }
     .trust-bar__item::before { content: "✓ "; color: var(--premium-gold); }
+
+    /* ── MOBILE ATF FAST-SCAN (hidden on desktop) ── */
+    .hero-atf-pills { display: none; }
+    .hero-atf-cta   { display: none; }
+
+    @media (max-width: 767px) {
+      /* Reduce H1 margin */
+      .services-hero__eyebrow { margin-bottom: 10px; }
+      .services-hero h1 { margin: 0 0 10px; font-size: clamp(22px, 6vw, 36px); }
+      .services-hero__tagline { font-size: 14px; margin: 0 0 0; letter-spacing: 0.01em; }
+
+      /* Hide long prose — show only ATF scan elements */
+      .services-hero__fear,
+      .services-hero__relief,
+      .services-hero__pillars,
+      .services-hero__close,
+      .services-hero__voc,
+      .trust-bar { display: none; }
+
+      /* Pills row */
+      .hero-atf-pills {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 6px;
+        margin: 14px 0 14px;
+      }
+      .hero-atf-pill {
+        background: rgba(245,158,11,0.12);
+        border: 1px solid rgba(245,158,11,0.45);
+        color: rgba(255,255,255,0.93);
+        font-size: 11px;
+        font-weight: 600;
+        padding: 4px 10px;
+        border-radius: 20px;
+        font-family: var(--font-mono);
+        letter-spacing: 0.03em;
+        white-space: nowrap;
+      }
+
+      /* CTA button */
+      .hero-atf-cta {
+        display: inline-block;
+        background: var(--premium-gold);
+        color: #0f172a;
+        font-family: var(--font-display);
+        font-weight: 700;
+        font-size: 15px;
+        padding: 13px 28px;
+        border-radius: 6px;
+        text-decoration: none;
+        letter-spacing: 0.01em;
+      }
+    }
   </style>
 
   <!-- JSON-LD Schema -->
@@ -498,6 +552,18 @@
         <span class="services-hero__eyebrow">Kelowna &mdash; Mechanic Services</span>
         <h1>Mechanic Services in Kelowna, BC</h1>
         <p class="services-hero__tagline">No Guessing. No Hiding. No Surprises.</p>
+
+        <!-- MOBILE ATF FAST-SCAN — hidden on desktop -->
+        <div class="hero-atf-pills" aria-label="Trust signals">
+          <span class="hero-atf-pill">⭐ 4.9 &middot; 55 Reviews</span>
+          <span class="hero-atf-pill">✓ Certified Mechanic</span>
+          <span class="hero-atf-pill">✓ Same Day</span>
+          <span class="hero-atf-pill">✓ We Come to You</span>
+        </div>
+        <a href="sms:+12508595467" class="hero-atf-cta" aria-label="Text Joseph for same-day service in Kelowna">
+          Text Joseph &mdash; Same Day in Kelowna
+        </a>
+
         <p class="services-hero__fear">
           Most people walk into a mechanic shop already expecting to get burned. The vague call three days later. The invoice full of items you didn&rsquo;t ask for. The part that &ldquo;needed replacing&rdquo; &mdash; that you never saw replaced. That&rsquo;s not bad luck. That&rsquo;s how the industry learned to operate.
         </p>
