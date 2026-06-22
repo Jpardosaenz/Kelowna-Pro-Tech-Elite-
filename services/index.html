@@ -211,64 +211,7 @@
       color: rgba(255,255,255,0.72);
       margin: 0 0 28px;
     }
-    .services-hero__fear {
-      font-size: clamp(17px, 2vw, 20px);
-      line-height: 1.7;
-      color: rgba(255,255,255,0.88);
-      margin: 0 0 20px;
-      font-weight: 500;
-    }
-    .services-hero__relief {
-      font-size: clamp(16px, 1.8vw, 18px);
-      line-height: 1.75;
-      color: rgba(255,255,255,0.80);
-      margin: 0 0 24px;
-    }
-    .services-hero__pillars {
-      margin: 20px 0 24px;
-      display: flex;
-      flex-direction: column;
-      gap: 16px;
-    }
-    .services-hero__pillars p {
-      font-size: clamp(15px, 1.8vw, 17px);
-      line-height: 1.7;
-      color: rgba(255,255,255,0.85);
-      margin: 0;
-      padding-left: 16px;
-      border-left: 2px solid rgba(245,158,11,0.6);
-    }
-    .services-hero__pillars strong {
-      color: #ffffff;
-      font-weight: 700;
-    }
-    .services-hero__close {
-      font-size: clamp(15px, 1.8vw, 17px);
-      line-height: 1.7;
-      color: rgba(255,255,255,0.80);
-      font-style: italic;
-      margin: 0 0 24px;
-    }
-    .services-hero__voc {
-      border-left: 3px solid var(--premium-gold);
-      padding-left: 16px;
-      font-style: italic;
-      color: rgba(255,255,255,0.88);
-      font-size: 16px;
-      margin: 0 0 28px;
-    }
-    .trust-bar {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 16px;
-      font-size: 14px;
-      font-weight: 600;
-      color: rgba(255,255,255,0.90);
-    }
-    .trust-bar__item::before { content: "✓ "; color: var(--premium-gold); }
-
     /* ── HERO CTA ── */
-    .hero-atf-pills { display: none; }
     .hero-atf-cta {
       display: inline-block;
       background: var(--premium-gold);
@@ -365,34 +308,6 @@
         color: rgba(255,255,255,0.68);
       }
 
-      /* Hide long prose — show only ATF scan elements */
-      .services-hero__fear,
-      .services-hero__relief,
-      .services-hero__pillars,
-      .services-hero__close,
-      .services-hero__voc,
-      .trust-bar { display: none; }
-
-      /* Pills row */
-      .hero-atf-pills {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 6px;
-        margin: 14px 0 14px;
-      }
-      .hero-atf-pill {
-        background: rgba(245,158,11,0.12);
-        border: 1px solid rgba(245,158,11,0.45);
-        color: rgba(255,255,255,0.93);
-        font-size: 11px;
-        font-weight: 600;
-        padding: 4px 10px;
-        border-radius: 20px;
-        font-family: var(--font-mono);
-        letter-spacing: 0.03em;
-        white-space: nowrap;
-      }
-
       /* CTA button — mobile full width */
       .hero-atf-cta {
         display: block;
@@ -418,71 +333,54 @@
 
     /* 3-step process */
     .how-it-works {
-      padding: 32px 24px;
-      background: #0f172a;
-      border-bottom: 1px solid rgba(245,158,11,0.18);
-    }
-    .how-it-works__kicker {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 600;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      color: var(--premium-gold);
-      margin: 0 0 20px;
+      background: #0a1124;
+      border-top: 2px solid rgba(245,158,11,0.20);
+      border-bottom: 1px solid rgba(245,158,11,0.10);
+      margin-bottom: 48px;
     }
     .how-it-works__steps {
       list-style: none;
       margin: 0;
       padding: 0;
-      display: flex;
-      gap: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
     }
     .how-it-works__step {
-      flex: 1;
+      padding: 22px 16px 22px 20px;
       display: flex;
       flex-direction: column;
-      align-items: center;
-      text-align: center;
-      position: relative;
-      padding: 0 8px;
+      gap: 5px;
     }
-    .how-it-works__step:not(:last-child)::after {
-      content: '';
-      position: absolute;
-      top: 16px;
-      right: -1px;
-      width: 2px;
-      height: 1px;
-      border-top: 1px dashed rgba(245,158,11,0.35);
-      width: 50%;
-      right: -25%;
+    .how-it-works__step:not(:last-child) {
+      border-right: 1px solid rgba(245,158,11,0.12);
     }
     .how-it-works__node {
-      width: 32px;
-      height: 32px;
-      border-radius: 50%;
-      border: 1.5px solid var(--premium-gold);
-      color: var(--premium-gold);
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 700;
-      display: flex;
+      display: inline-flex;
       align-items: center;
       justify-content: center;
-      margin-bottom: 10px;
+      width: 20px;
+      height: 20px;
+      background: var(--premium-gold);
+      color: #0f172a;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      font-weight: 700;
+      border-radius: 2px;
+      margin-bottom: 8px;
+      flex-shrink: 0;
     }
     .how-it-works__title {
       font-size: 13px;
       font-weight: 700;
       color: #ffffff;
-      margin: 0 0 4px;
+      font-family: var(--font-display);
+      margin: 0;
     }
     .how-it-works__copy {
       font-size: 12px;
-      color: rgba(255,255,255,0.55);
+      color: rgba(255,255,255,0.48);
       margin: 0;
-      line-height: 1.4;
+      line-height: 1.45;
     }
   </style>
 
@@ -599,8 +497,7 @@
             }
           }
         ]
-      }
-    ,
+      },
       {
         "@type": "FAQPage",
         "@id": "https://kelownaprotechmobilemech.com/services/#faq",
@@ -767,7 +664,6 @@
 
     <!-- HOW IT WORKS -->
     <div class="how-it-works" role="region" aria-label="How the repair process works">
-      <p class="how-it-works__kicker">How it works</p>
       <ol class="how-it-works__steps">
         <li class="how-it-works__step">
           <span class="how-it-works__node">01</span>
