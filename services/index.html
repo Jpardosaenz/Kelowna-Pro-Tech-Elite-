@@ -107,6 +107,7 @@
       position: relative;
       display: flex;
       align-items: flex-start;
+      overflow: hidden;
       background-image: url('/images/hero-portada-gbp.png');
       background-size: cover;
       background-position: 50% 18%;
@@ -135,10 +136,23 @@
         align-items: center;
         min-height: 560px;
         padding: 72px 60px 80px;
-        background-position: right center;
+        background-image: none;
       }
       .services-hero::before {
-        background: linear-gradient(to right, rgba(13,13,11,0.85) 40%, rgba(13,13,11,0.45) 100%);
+        background: linear-gradient(to right, rgba(13,13,11,0.88) 0%, rgba(13,13,11,0.76) 38%, rgba(13,13,11,0.42) 68%, rgba(13,13,11,0.16) 100%);
+      }
+      .services-hero::after {
+        content: '';
+        position: absolute;
+        inset: 0;
+        z-index: 0;
+        background-image: url('/images/hero-portada-gbp.png');
+        background-size: cover;
+        background-position: 62% center;
+        background-repeat: no-repeat;
+        transform: scaleX(-1);
+        transform-origin: center;
+        filter: brightness(1.14);
       }
       .services-hero__content {
         margin: 0;
@@ -177,6 +191,25 @@
       color: var(--premium-gold);
       letter-spacing: 0.02em;
       margin: 8px 0 28px;
+    }
+    .services-hero__service-line {
+      max-width: 640px;
+      font-size: clamp(15px, 1.7vw, 17px);
+      line-height: 1.75;
+      color: rgba(255,255,255,0.85);
+      margin: 0 0 14px;
+      font-weight: 400;
+    }
+    .services-hero__service-line strong {
+      color: #ffffff;
+      font-weight: 700;
+    }
+    .services-hero__service-transform {
+      max-width: 620px;
+      font-size: clamp(14px, 1.55vw, 16px);
+      line-height: 1.65;
+      color: rgba(255,255,255,0.72);
+      margin: 0 0 28px;
     }
     .services-hero__fear {
       font-size: clamp(17px, 2vw, 20px);
@@ -234,15 +267,103 @@
     }
     .trust-bar__item::before { content: "✓ "; color: var(--premium-gold); }
 
-    /* ── MOBILE ATF FAST-SCAN (hidden on desktop) ── */
+    /* ── HERO CTA ── */
     .hero-atf-pills { display: none; }
-    .hero-atf-cta   { display: none; }
+    .hero-atf-cta {
+      display: inline-block;
+      background: var(--premium-gold);
+      color: #0f172a;
+      font-family: var(--font-display);
+      font-weight: 700;
+      font-size: 15px;
+      padding: 13px 32px;
+      border-radius: 6px;
+      text-decoration: none;
+      letter-spacing: 0.01em;
+    }
 
     @media (max-width: 767px) {
       /* Reduce H1 margin */
-      .services-hero__eyebrow { margin-bottom: 10px; }
-      .services-hero h1 { margin: 0 0 10px; font-size: clamp(22px, 6vw, 36px); }
-      .services-hero__tagline { font-size: 14px; margin: 0 0 0; letter-spacing: 0.01em; }
+      .services-hero__eyebrow {
+        display: block;
+        width: 100%;
+        margin: 0 auto 18px;
+        padding: 0;
+        text-align: center;
+        color: #ffd166;
+        background: transparent;
+        border: 0;
+        border-radius: 0;
+        box-shadow: none;
+        font-family: var(--font-body);
+        font-size: 0;
+        letter-spacing: 0;
+      }
+      .services-hero__eyebrow-main {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 7px;
+        color: #f8f4ec;
+        font-size: clamp(11px, 3.1vw, 13px);
+        font-weight: 800;
+        line-height: 1.15;
+        letter-spacing: 0.02em;
+        text-transform: uppercase;
+      }
+      .services-hero__eyebrow-stars {
+        color: #ffd166;
+        font-size: clamp(17px, 4.8vw, 21px);
+        line-height: 1;
+        letter-spacing: 0.02em;
+        white-space: nowrap;
+      }
+      .services-hero__eyebrow-quote {
+        display: block;
+        max-width: 31ch;
+        margin-top: 9px;
+        margin-left: auto;
+        margin-right: auto;
+        color: rgba(255,255,255,0.92);
+        font-size: clamp(13px, 3.6vw, 15px);
+        font-style: italic;
+        font-weight: 400;
+        line-height: 1.35;
+        text-transform: none;
+      }
+      .services-hero h1 { margin: 0 auto 16px; font-size: clamp(28px, 8vw, 40px); text-align: center; }
+      .services-hero h1::after {
+        content: '';
+        display: block;
+        width: 38px;
+        height: 2px;
+        margin: 18px auto 0;
+        background: var(--premium-gold);
+      }
+      .services-hero__tagline {
+        max-width: 34ch;
+        margin: 0 auto 18px;
+        font-size: clamp(17px, 4.6vw, 20px);
+        font-weight: 800;
+        line-height: 1.55;
+        text-align: center;
+        letter-spacing: 0.01em;
+      }
+      .services-hero__service-line {
+        width: 100%;
+        margin: 0 0 14px;
+        font-size: clamp(14px, 4vw, 16px);
+        line-height: 1.72;
+        text-align: justify;
+      }
+      .services-hero__service-transform {
+        width: 100%;
+        margin: 0 0 22px;
+        font-size: clamp(13px, 3.8vw, 15px);
+        line-height: 1.65;
+        text-align: justify;
+        color: rgba(255,255,255,0.68);
+      }
 
       /* Hide long prose — show only ATF scan elements */
       .services-hero__fear,
@@ -272,18 +393,13 @@
         white-space: nowrap;
       }
 
-      /* CTA button */
+      /* CTA button — mobile full width */
       .hero-atf-cta {
-        display: inline-block;
-        background: var(--premium-gold);
-        color: #0f172a;
-        font-family: var(--font-display);
-        font-weight: 700;
-        font-size: 15px;
-        padding: 13px 28px;
-        border-radius: 6px;
-        text-decoration: none;
-        letter-spacing: 0.01em;
+        display: block;
+        width: 100%;
+        text-align: center;
+        font-size: 16px;
+        padding: 15px 28px;
       }
     }
   </style>
@@ -510,7 +626,7 @@
       <button class="menu-close-button" aria-label="Close menu">&times;</button>
       <ul>
         <li><a href="/#commercial-faq">Why Us</a></li>
-        <li><a href="/services/" aria-current="page">Services</a></li>
+        <li><a href="/services/" aria-current="page">Auto Repair Services</a></li>
         <li><a href="/field-reports/">Success Stories</a></li>
         <li><a href="/our-story/">Our Story</a></li>
       </ul>
@@ -549,75 +665,22 @@
 
   <header class="services-hero">
       <div class="services-hero__content">
-        <span class="services-hero__eyebrow">Kelowna &mdash; Mechanic Services</span>
+        <span class="services-hero__eyebrow">
+          <span class="services-hero__eyebrow-main">
+            <span class="services-hero__eyebrow-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>4.9 &middot; Trusted by 55 Google Reviews</span>
+          </span>
+          <span class="services-hero__eyebrow-quote">&ldquo;They came to our location, worked fast, and handled the issue without hassle.&rdquo;</span>
+        </span>
         <h1>Mechanic Services in Kelowna, BC</h1>
         <p class="services-hero__tagline">No Guessing. No Hiding. No Surprises.</p>
-
-        <!-- MOBILE ATF FAST-SCAN — hidden on desktop -->
-        <div class="hero-atf-pills" aria-label="Trust signals">
-          <span class="hero-atf-pill">⭐ 4.9 &middot; 55 Reviews</span>
-          <span class="hero-atf-pill">✓ Certified Mechanic</span>
-          <span class="hero-atf-pill">✓ Same Day</span>
-          <span class="hero-atf-pill">✓ We Come to You</span>
-        </div>
-        <a href="sms:+12508595467" class="hero-atf-cta" aria-label="Text Joseph for same-day service in Kelowna">
-          Text Joseph &mdash; Same Day in Kelowna
-        </a>
-
-        <p class="services-hero__fear">
-          Most people walk into a mechanic shop already expecting to get burned. The vague call three days later. The invoice full of items you didn&rsquo;t ask for. The part that &ldquo;needed replacing&rdquo; &mdash; that you never saw replaced. That&rsquo;s not bad luck. That&rsquo;s how the industry learned to operate.
-        </p>
-        <p class="services-hero__relief">
-          Kelowna Protech was built to break that pattern. Not with better equipment. With a different set of values.
-        </p>
-        <div class="services-hero__pillars">
-          <p><strong>No Guessing</strong> &mdash; because our commitment is simple: we don&rsquo;t recommend a repair until we know the confirmed cause. Not the most likely one. The actual one. That&rsquo;s not something we do when it&rsquo;s convenient &mdash; it&rsquo;s how we work on every visit, with every client, without exception.</p>
-          <p><strong>No Hiding</strong> &mdash; because your car never leaves your sight. Everything happens in your driveway, in front of you. You watch each step. You ask questions. You hear the answer as it happens &mdash; not a filtered version three days later. Your property. Your right to know.</p>
-          <p><strong>No Surprises</strong> &mdash; because you have the right to know exactly what&rsquo;s being done with your money. We document what we find, what we recommend, and what we do &mdash; before we do it. The price you approve is the price you pay. Not an estimate. A commitment.</p>
-        </div>
-        <p class="services-hero__close">
-          That&rsquo;s the difference between Kelowna Protech and every other shop in the Okanagan. Not the tools we carry &mdash; the values we work by.
-        </p>
-        <blockquote class="services-hero__voc">
-          &ldquo;No towing, no guessing.&rdquo; &mdash; Ligia Saenz, Google Review &#9733;&#9733;&#9733;&#9733;&#9733;
-        </blockquote>
-        <div class="trust-bar" role="list" aria-label="Service credentials">
-          <span class="trust-bar__item" role="listitem">Certified Mechanic</span>
-          <span class="trust-bar__item" role="listitem">Same-Day Available</span>
-          <span class="trust-bar__item" role="listitem">Done at Your Door</span>
-          <span class="trust-bar__item" role="listitem">Work Guaranteed</span>
-          <span class="trust-bar__item" role="listitem">4.9&#9733; (55 Reviews)</span>
-        </div>
+        <p class="services-hero__service-line">We&rsquo;re the mechanic Kelowna drivers rely on for <strong>check engine lights</strong>, <strong>no-start problems</strong>, <strong>electrical faults</strong>, <strong>electronic diagnostics</strong>, <strong>brake repairs</strong>, <strong>oil &amp; maintenance</strong>, and <strong>pre-purchase inspections</strong> &mdash; we come to your door and work right in front of you.</p>
+        <p class="services-hero__service-transform">Avoid major damage, stop paying for guesses, no surprises on the invoice, and get back to your normal life &mdash; same day.</p>
+        <a href="tel:+12508595467" class="hero-atf-cta" aria-label="Get same-day mechanic service in Kelowna">Get Your Car Fixed Today</a>
       </div>
   </header>
 
   <main class="page" id="main-content">
-
-    <!-- STATS ROW — DIAGNOSTIC TERMINAL -->
-    <div class="stats-row fade-in" role="region" aria-label="At a glance">
-      <div class="stats-header" aria-hidden="true">
-        <span class="stats-header__label">VEHICLE INSPECTION SYSTEM &bull; KELOWNA&nbsp;BC</span>
-        <span class="stats-header__live"><span class="live-dot"></span>LIVE</span>
-      </div>
-      <div class="stats-items">
-        <div class="stat-item">
-          <span class="stat-num" data-count="4.9" data-suffix="&#9733;">4.9&#9733;</span>
-          <span class="stat-label">Google Rating</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num" data-count="55" data-suffix="">55</span>
-          <span class="stat-label">Verified Reviews</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num" data-count="15" data-suffix="+">15+</span>
-          <span class="stat-label">Years Experience</span>
-        </div>
-        <div class="stat-item">
-          <span class="stat-num" data-count="5" data-prefix="$" data-suffix="K+">$5K+</span>
-          <span class="stat-label">Saved &mdash; One Inspection</span>
-        </div>
-      </div>
-    </div>
 
     <!-- WHY KPEMM -->
     <section class="why-section fade-in" aria-labelledby="why-heading">
