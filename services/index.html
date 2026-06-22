@@ -230,7 +230,7 @@
       .services-hero__eyebrow {
         display: block;
         width: 100%;
-        margin: 0 auto 18px;
+        margin: 0 auto 10px;
         padding: 0;
         text-align: center;
         color: #ffd166;
@@ -274,18 +274,18 @@
         line-height: 1.35;
         text-transform: none;
       }
-      .services-hero h1 { margin: 0 auto 16px; font-size: clamp(28px, 8vw, 40px); text-align: center; }
+      .services-hero h1 { margin: 0 auto 10px; font-size: clamp(28px, 8vw, 40px); text-align: center; }
       .services-hero h1::after {
         content: '';
         display: block;
         width: 38px;
         height: 2px;
-        margin: 18px auto 0;
+        margin: 10px auto 0;
         background: var(--premium-gold);
       }
       .services-hero__tagline {
         max-width: 34ch;
-        margin: 0 auto 18px;
+        margin: 0 auto 10px;
         font-size: clamp(17px, 4.6vw, 20px);
         font-weight: 800;
         line-height: 1.55;
@@ -294,18 +294,13 @@
       }
       .services-hero__service-line {
         width: 100%;
-        margin: 0 0 14px;
+        margin: 0 0 8px;
         font-size: clamp(14px, 4vw, 16px);
         line-height: 1.72;
         text-align: justify;
       }
       .services-hero__service-transform {
-        width: 100%;
-        margin: 0 0 22px;
-        font-size: clamp(13px, 3.8vw, 15px);
-        line-height: 1.65;
-        text-align: justify;
-        color: rgba(255,255,255,0.68);
+        display: none;
       }
 
       /* CTA button — mobile full width */
@@ -319,17 +314,18 @@
     }
 
     /* SMS secondary CTA */
-    .hero-atf-cta-secondary {
-      display: block;
-      color: rgba(255,255,255,0.55);
-      font-size: 13px;
-      text-decoration: none;
-      text-align: center;
-      margin-top: 10px;
-      font-family: var(--font-body);
-      letter-spacing: 0.01em;
+    .hero-cta-group {
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      margin-top: 0;
     }
-    .hero-atf-cta-secondary:hover { color: rgba(255,255,255,0.85); text-decoration: underline; }
+    .hero-cta-group .hero-atf-cta {
+      width: 100%;
+      text-align: center;
+      margin-top: 0;
+      box-sizing: border-box;
+    }
 
     /* 3-step process */
     .how-it-works {
@@ -431,10 +427,13 @@
         padding-left: 10px;
       }
 
-      /* SMS secondary CTA — align left to match inline-block gold button */
-      .hero-atf-cta-secondary {
-        text-align: left;
-        margin-left: 2px;
+      /* CTA group — side-by-side on desktop */
+      .hero-cta-group {
+        flex-direction: row;
+      }
+      .hero-cta-group .hero-atf-cta {
+        flex: 1;
+        width: auto;
       }
 
       /* CTA hover — subtle lift */
@@ -883,8 +882,10 @@
         <p class="services-hero__tagline">No Guessing. No Hiding. No Surprises.</p>
         <p class="services-hero__service-line">We&rsquo;re the certified mechanic Kelowna drivers rely on for <strong>no-starts</strong>, <strong>check engine lights</strong>, <strong>electrical &amp; electronic diagnostics</strong>, <strong>pre-purchase inspections</strong>, <strong>brake repairs</strong>, and <strong>maintenance</strong> &mdash; so you get a real diagnosis and your car fixed on-site, even when every shop has you waiting until Thursday.</p>
         <p class="services-hero__service-transform">Your car back on the road the same day &mdash; fixed at your location, every repair explained while we work, invoice with zero surprises.</p>
-        <a href="tel:+12508595467" class="hero-atf-cta" aria-label="Get same-day mechanic service in Kelowna">Get Your Car Fixed Today</a>
-        <a href="sms:+12508595467" class="hero-atf-cta-secondary" aria-label="Text for 2-minute response">or text us &mdash; 2-min response</a>
+        <div class="hero-cta-group">
+          <a href="sms:+12508595467" class="hero-atf-cta" aria-label="Text to get your car fixed today">Fix My Car &mdash; Text Now</a>
+          <a href="tel:+12508595467" class="hero-atf-cta" aria-label="Call to get back on the road today">Get Back on the Road &mdash; Call</a>
+        </div>
       </div>
   </header>
 
