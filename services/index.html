@@ -402,6 +402,88 @@
         padding: 15px 28px;
       }
     }
+
+    /* SMS secondary CTA */
+    .hero-atf-cta-secondary {
+      display: block;
+      color: rgba(255,255,255,0.55);
+      font-size: 13px;
+      text-decoration: none;
+      text-align: center;
+      margin-top: 10px;
+      font-family: var(--font-body);
+      letter-spacing: 0.01em;
+    }
+    .hero-atf-cta-secondary:hover { color: rgba(255,255,255,0.85); text-decoration: underline; }
+
+    /* 3-step process */
+    .how-it-works {
+      padding: 32px 24px;
+      background: #0f172a;
+      border-bottom: 1px solid rgba(245,158,11,0.18);
+    }
+    .how-it-works__kicker {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--premium-gold);
+      margin: 0 0 20px;
+    }
+    .how-it-works__steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      gap: 0;
+    }
+    .how-it-works__step {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      position: relative;
+      padding: 0 8px;
+    }
+    .how-it-works__step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 16px;
+      right: -1px;
+      width: 2px;
+      height: 1px;
+      border-top: 1px dashed rgba(245,158,11,0.35);
+      width: 50%;
+      right: -25%;
+    }
+    .how-it-works__node {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      border: 1.5px solid var(--premium-gold);
+      color: var(--premium-gold);
+      font-family: var(--font-mono);
+      font-size: 11px;
+      font-weight: 700;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 10px;
+    }
+    .how-it-works__title {
+      font-size: 13px;
+      font-weight: 700;
+      color: #ffffff;
+      margin: 0 0 4px;
+    }
+    .how-it-works__copy {
+      font-size: 12px;
+      color: rgba(255,255,255,0.55);
+      margin: 0;
+      line-height: 1.4;
+    }
   </style>
 
   <!-- JSON-LD Schema -->
@@ -677,10 +759,33 @@
         <p class="services-hero__service-line">We&rsquo;re the Red Seal certified mechanic Kelowna drivers rely on for <strong>check engine lights</strong>, <strong>no-start problems</strong>, <strong>electrical faults</strong>, <strong>electronic diagnostics</strong>, <strong>brake repairs</strong>, <strong>oil &amp; maintenance</strong>, and <strong>pre-purchase inspections</strong> &mdash; we come to your door and work right in front of you.</p>
         <p class="services-hero__service-transform">Avoid major damage, stop paying for guesses, no surprises on the invoice, and get back to your normal life &mdash; same day.</p>
         <a href="tel:+12508595467" class="hero-atf-cta" aria-label="Get same-day mechanic service in Kelowna">Get Your Car Fixed Today</a>
+        <a href="sms:+12508595467" class="hero-atf-cta-secondary" aria-label="Text for 2-minute response">or text us &mdash; 2-min response</a>
       </div>
   </header>
 
   <main class="page" id="main-content">
+
+    <!-- HOW IT WORKS -->
+    <div class="how-it-works" role="region" aria-label="How the repair process works">
+      <p class="how-it-works__kicker">How it works</p>
+      <ol class="how-it-works__steps">
+        <li class="how-it-works__step">
+          <span class="how-it-works__node">01</span>
+          <p class="how-it-works__title">Call or Text</p>
+          <p class="how-it-works__copy">Tell us what happened.</p>
+        </li>
+        <li class="how-it-works__step">
+          <span class="how-it-works__node">02</span>
+          <p class="how-it-works__title">Diagnose</p>
+          <p class="how-it-works__copy">We come to you and find the real issue.</p>
+        </li>
+        <li class="how-it-works__step">
+          <span class="how-it-works__node">03</span>
+          <p class="how-it-works__title">Fixed</p>
+          <p class="how-it-works__copy">Approve the repair. Done today.</p>
+        </li>
+      </ol>
+    </div>
 
     <!-- WHY KPEMM -->
     <section class="why-section fade-in" aria-labelledby="why-heading">
