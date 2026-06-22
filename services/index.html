@@ -382,6 +382,93 @@
       margin: 0;
       line-height: 1.45;
     }
+
+    /* ── DESKTOP (≥768px) ── */
+    @media (min-width: 768px) {
+      /* Eyebrow — fix concatenated mono text bug, restore two-line structure */
+      .services-hero__eyebrow {
+        display: flex;
+        flex-direction: column;
+        gap: 7px;
+        border: none;
+        padding: 0;
+        background: transparent;
+        font-size: initial;
+        text-transform: none;
+        letter-spacing: 0;
+        border-radius: 0;
+        margin-bottom: 22px;
+      }
+      .services-hero__eyebrow-main {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        color: #f8f4ec;
+        font-family: var(--font-mono);
+        font-size: 11px;
+        font-weight: 700;
+        letter-spacing: 0.1em;
+        text-transform: uppercase;
+        line-height: 1;
+      }
+      .services-hero__eyebrow-stars {
+        color: #ffd166;
+        font-size: 17px;
+        letter-spacing: 0.02em;
+        line-height: 1;
+      }
+      .services-hero__eyebrow-quote {
+        display: block;
+        font-family: var(--font-body);
+        font-size: 14px;
+        font-style: italic;
+        font-weight: 400;
+        color: rgba(255,255,255,0.78);
+        text-transform: none;
+        letter-spacing: 0;
+        line-height: 1.4;
+        border-left: 2px solid rgba(245,158,11,0.45);
+        padding-left: 10px;
+      }
+
+      /* SMS secondary CTA — align left to match inline-block gold button */
+      .hero-atf-cta-secondary {
+        text-align: left;
+        margin-left: 2px;
+      }
+
+      /* CTA hover — subtle lift */
+      .hero-atf-cta {
+        transition: opacity 0.18s, transform 0.18s;
+      }
+      .hero-atf-cta:hover {
+        opacity: 0.90;
+        transform: translateY(-1px);
+      }
+
+      /* How-it-works — full-bleed dark strip within .page container */
+      .how-it-works {
+        margin-left: -40px;
+        margin-right: -40px;
+      }
+      .how-it-works__steps {
+        max-width: 960px;
+        margin-left: auto;
+        margin-right: auto;
+        padding: 0 40px;
+      }
+    }
+
+    /* ── MOBILE how-it-works — stack vertically ── */
+    @media (max-width: 767px) {
+      .how-it-works__steps {
+        grid-template-columns: 1fr;
+      }
+      .how-it-works__step:not(:last-child) {
+        border-right: none;
+        border-bottom: 1px solid rgba(245,158,11,0.10);
+      }
+    }
   </style>
 
   <!-- JSON-LD Schema -->
