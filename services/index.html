@@ -51,8 +51,8 @@
   <noscript><link rel="stylesheet" href="/services/services.css" /></noscript>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /></noscript>
+  <link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
+  <noscript><link href="https://fonts.googleapis.com/css2?family=Anton&family=Space+Grotesk:wght@500;700;800&family=Space+Mono:wght@400;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet" /></noscript>
 
   <style>
     :root {
@@ -342,10 +342,10 @@
       grid-template-columns: 1fr 1fr 1fr;
     }
     .how-it-works__step {
-      padding: 22px 16px 22px 20px;
+      padding: 30px 20px 30px 24px;
       display: flex;
       flex-direction: column;
-      gap: 5px;
+      gap: 6px;
     }
     .how-it-works__step:not(:last-child) {
       border-right: 1px solid rgba(245,158,11,0.12);
@@ -354,16 +354,17 @@
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      width: 20px;
-      height: 20px;
+      width: 26px;
+      height: 26px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      font-weight: 700;
+      border-radius: 3px;
+      margin-bottom: 12px;
+      flex-shrink: 0;
+      /* default overridden per-step below */
       background: var(--premium-gold);
       color: #0f172a;
-      font-family: var(--font-mono);
-      font-size: 9px;
-      font-weight: 700;
-      border-radius: 2px;
-      margin-bottom: 8px;
-      flex-shrink: 0;
     }
     .how-it-works__title {
       font-size: 13px;
@@ -374,9 +375,29 @@
     }
     .how-it-works__copy {
       font-size: 12px;
-      color: rgba(255,255,255,0.48);
+      color: rgba(255,255,255,0.65);
       margin: 0;
-      line-height: 1.45;
+      line-height: 1.5;
+    }
+
+    /* Emotional arc: crisis (muted) → action (warming) → resolution (gold) */
+    .how-it-works__step:nth-child(1) .how-it-works__node {
+      background: rgba(255,255,255,0.10);
+      color: rgba(255,255,255,0.45);
+    }
+    .how-it-works__step:nth-child(1) .how-it-works__title {
+      color: rgba(255,255,255,0.72);
+    }
+    .how-it-works__step:nth-child(2) .how-it-works__node {
+      background: rgba(245,158,11,0.35);
+      color: #f5a010;
+    }
+    .how-it-works__step:nth-child(3) .how-it-works__node {
+      background: #ffd166;
+      color: #0a1124;
+    }
+    .how-it-works__step:nth-child(3) .how-it-works__title {
+      color: #ffd166;
     }
 
     /* ── DESKTOP (≥768px) ── */
@@ -458,6 +479,15 @@
       }
     }
 
+    /* ── How-it-works new section — full-bleed + spacing ── */
+    .hiw-section {
+      width: 100vw;
+      position: relative;
+      left: 50%;
+      transform: translateX(-50%);
+      margin-bottom: 40px;
+    }
+
     /* ── MOBILE how-it-works — stack vertically ── */
     @media (max-width: 767px) {
       .how-it-works__steps {
@@ -467,6 +497,11 @@
         border-right: none;
         border-bottom: 1px solid rgba(245,158,11,0.10);
       }
+      /* Left-border intensity encodes the arc on mobile */
+      .how-it-works__step { border-left: 3px solid transparent; padding-left: 21px; }
+      .how-it-works__step:nth-child(1) { border-left-color: rgba(245,158,11,0.18); }
+      .how-it-works__step:nth-child(2) { border-left-color: rgba(245,158,11,0.55); }
+      .how-it-works__step:nth-child(3) { border-left-color: #ffd166; }
     }
 
     /* ── Mobile CTA bar ── */
@@ -892,25 +927,66 @@
   <main class="page" id="main-content">
 
     <!-- HOW IT WORKS -->
-    <div class="how-it-works" role="region" aria-label="How the repair process works">
-      <ol class="how-it-works__steps">
-        <li class="how-it-works__step">
-          <span class="how-it-works__node">01</span>
-          <p class="how-it-works__title">Call or Text</p>
-          <p class="how-it-works__copy">Tell us what happened.</p>
-        </li>
-        <li class="how-it-works__step">
-          <span class="how-it-works__node">02</span>
-          <p class="how-it-works__title">Diagnose</p>
-          <p class="how-it-works__copy">We come to you and find the real issue.</p>
-        </li>
-        <li class="how-it-works__step">
-          <span class="how-it-works__node">03</span>
-          <p class="how-it-works__title">Fixed</p>
-          <p class="how-it-works__copy">Approve the repair. Done today.</p>
-        </li>
-      </ol>
-    </div>
+    <section class="hiw-section" role="region" aria-label="How the repair process works" style="background:#0a1124; color:#fff; font-family:'Barlow',-apple-system,sans-serif; padding:clamp(24px,3.5vw,40px) 16px clamp(28px,3.5vw,44px); position:relative; overflow:hidden;">
+
+      <div style="position:absolute; top:-80px; right:-80px; width:280px; height:280px; border-radius:50%; background:radial-gradient(circle, rgba(245,160,16,0.08), transparent 70%); pointer-events:none;"></div>
+
+      <div style="max-width:1140px; margin:0 auto; position:relative;">
+
+        <div style="max-width:600px; margin-bottom:clamp(20px,3vw,36px);">
+          <div style="display:flex; align-items:center; gap:10px; margin-bottom:12px; white-space:nowrap;">
+            <span style="width:24px; height:2px; background:#f5a010; display:block; flex-shrink:0;"></span>
+            <span style="font-size:11px; font-weight:600; letter-spacing:0.22em; color:#f5a010; text-transform:uppercase;">How It Works</span>
+          </div>
+          <h2 style="font-family:'Anton',sans-serif; font-weight:400; font-size:clamp(24px,5vw,40px); line-height:1.04; margin:0 0 10px; letter-spacing:-0.01em; text-transform:uppercase;">
+            From stuck to <span style="color:#f5a010;">sorted</span> &mdash; same day.
+          </h2>
+          <p style="font-size:clamp(13px,1.8vw,15px); line-height:1.6; color:#9aa3b8; margin:0;">
+            No shop. No tow truck. No surprises &mdash; just a real fix, right where you&rsquo;re parked.
+          </p>
+        </div>
+
+        <div style="display:flex; flex-wrap:wrap; gap:clamp(10px,1.8vw,16px);">
+
+          <article style="flex:1 1 260px; background:rgba(255,255,255,0.025); border:1px solid rgba(255,255,255,0.07); border-radius:12px; padding:clamp(16px,2.5vw,22px) clamp(14px,2.5vw,22px) clamp(18px,2.5vw,24px); position:relative; overflow:hidden;">
+            <div style="display:flex; gap:6px; margin-bottom:14px;">
+              <span style="height:3px; flex:1; border-radius:2px; background:#f5a010;"></span>
+              <span style="height:3px; flex:1; border-radius:2px; background:rgba(255,255,255,0.10);"></span>
+              <span style="height:3px; flex:1; border-radius:2px; background:rgba(255,255,255,0.10);"></span>
+            </div>
+            <span style="font-size:10px; font-weight:700; letter-spacing:0.22em; color:#f5a010; text-transform:uppercase;">The Problem</span>
+            <div style="font-family:'Anton',sans-serif; font-size:clamp(32px,4.5vw,48px); line-height:0.9; margin:4px 0 8px; color:transparent; -webkit-text-stroke:1.5px rgba(245,160,16,0.55); letter-spacing:0.01em;">01</div>
+            <h3 style="font-size:clamp(17px,1.8vw,20px); font-weight:700; margin:0 0 8px; line-height:1.15;">Stuck and Stressed</h3>
+            <p style="font-size:14px; line-height:1.58; color:#9aa3b8; margin:0;">Your car won&rsquo;t start, you&rsquo;re already late, and you don&rsquo;t know who to call without getting ripped off. We&rsquo;ve been there.</p>
+          </article>
+
+          <article style="flex:1 1 260px; background:rgba(255,255,255,0.035); border:1px solid rgba(255,255,255,0.09); border-radius:12px; padding:clamp(16px,2.5vw,22px) clamp(14px,2.5vw,22px) clamp(18px,2.5vw,24px); position:relative; overflow:hidden;">
+            <div style="display:flex; gap:6px; margin-bottom:14px;">
+              <span style="height:3px; flex:1; border-radius:2px; background:#f5a010;"></span>
+              <span style="height:3px; flex:1; border-radius:2px; background:#f5a010;"></span>
+              <span style="height:3px; flex:1; border-radius:2px; background:rgba(255,255,255,0.10);"></span>
+            </div>
+            <span style="font-size:10px; font-weight:700; letter-spacing:0.22em; color:#f5a010; text-transform:uppercase;">The Fix</span>
+            <div style="font-family:'Anton',sans-serif; font-size:clamp(32px,4.5vw,48px); line-height:0.9; margin:4px 0 8px; color:rgba(245,160,16,0.30); -webkit-text-stroke:1.5px rgba(245,160,16,0.9); letter-spacing:0.01em;">02</div>
+            <h3 style="font-size:clamp(17px,1.8vw,20px); font-weight:700; margin:0 0 8px; line-height:1.15;">We Come to You</h3>
+            <p style="font-size:14px; line-height:1.58; color:#a7b0c4; margin:0;">Certified mechanic arrives at your location, tools ready. No tow truck needed.</p>
+          </article>
+
+          <article style="flex:1 1 260px; background:linear-gradient(160deg, rgba(245,160,16,0.10), rgba(245,160,16,0.02)); border:1px solid rgba(245,160,16,0.35); border-radius:12px; padding:clamp(16px,2.5vw,22px) clamp(14px,2.5vw,22px) clamp(18px,2.5vw,24px); position:relative; overflow:hidden; box-shadow:0 0 30px rgba(245,160,16,0.06) inset;">
+            <div style="display:flex; gap:6px; margin-bottom:14px;">
+              <span style="height:3px; flex:1; border-radius:2px; background:#f5a010;"></span>
+              <span style="height:3px; flex:1; border-radius:2px; background:#f5a010;"></span>
+              <span style="height:3px; flex:1; border-radius:2px; background:#f5a010;"></span>
+            </div>
+            <span style="font-size:10px; font-weight:700; letter-spacing:0.22em; color:#f5a010; text-transform:uppercase;">The Result</span>
+            <div style="font-family:'Anton',sans-serif; font-size:clamp(32px,4.5vw,48px); line-height:0.9; margin:4px 0 8px; color:#f5a010; letter-spacing:0.01em; text-shadow:0 0 20px rgba(245,160,16,0.40);">03</div>
+            <h3 style="font-size:clamp(17px,1.8vw,20px); font-weight:700; margin:0 0 8px; line-height:1.15;">Car Fixed &mdash; Same Day</h3>
+            <p style="font-size:14px; line-height:1.58; color:#cfd5e2; margin:0;">You watch every step. Approve before we start. Pay only for what&rsquo;s done.</p>
+          </article>
+
+        </div>
+      </div>
+    </section>
 
     <!-- WHY KPEMM -->
     <section class="why-section fade-in" aria-labelledby="why-heading">
