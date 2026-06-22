@@ -469,6 +469,77 @@
         border-bottom: 1px solid rgba(245,158,11,0.10);
       }
     }
+
+    /* ── Mobile CTA bar ── */
+    .mobile-cta-bar { display: none; }
+
+    @media (max-width: 767px) {
+      .mobile-cta-bar {
+        display: flex;
+        align-items: center;
+        gap: 0;
+        position: sticky;
+        top: 68px;
+        z-index: 999;
+        width: 100%;
+        padding: 10px 16px;
+        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+        border-top: 1px solid rgba(251,191,36,.35);
+        border-bottom: 1px solid rgba(251,191,36,.25);
+        box-shadow: 0 10px 24px rgba(15,23,42,.18), inset 0 1px 0 rgba(255,255,255,.06);
+      }
+      .mobile-cta-bar a {
+        color: #fff;
+        font-family: "Inter", Arial, sans-serif;
+        font-weight: 700;
+        text-decoration: none;
+        letter-spacing: .2px;
+      }
+      .mobile-cta-sms {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        flex: 1;
+      }
+      .mobile-cta-sms-text {
+        display: flex;
+        flex-direction: column;
+        gap: 1px;
+      }
+      .mobile-cta-sms-text .cta-main-text {
+        font-size: .9375rem;
+        font-weight: 700;
+        line-height: 1.2;
+      }
+      .mobile-cta-bar-sub {
+        color: #cbd5e1;
+        font-weight: 500;
+        font-size: .8125rem;
+      }
+      .mobile-cta-tel {
+        flex: none;
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+        padding-left: 14px;
+        border-left: 1px solid rgba(255,255,255,.15);
+      }
+      .mobile-cta-tel-label {
+        display: block;
+        font-size: .6875rem;
+        color: #94a3b8;
+        font-weight: 400;
+        white-space: nowrap;
+      }
+      .mobile-cta-tel-number {
+        display: block;
+        font-size: .875rem;
+        font-weight: 600;
+        color: #e2e8f0;
+        white-space: nowrap;
+      }
+      .mobile-cta-bar svg { flex-shrink: 0; }
+    }
   </style>
 
   <!-- JSON-LD Schema -->
