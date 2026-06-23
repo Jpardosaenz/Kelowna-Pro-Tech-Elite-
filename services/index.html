@@ -61,7 +61,7 @@
       --accent: #dc2626;
       --line: #e5e7eb;
       --premium-dark: #0f172a;
-      --premium-gold: #f59e0b;
+      --premium-gold: #f5a010;
       --premium-blue: #1e40af;
       --premium-light: #f7f8fa;
       --scan-dark: #06090f;
@@ -70,6 +70,7 @@
       --font-mono: 'Space Mono', monospace;
       --font-body: 'Inter', sans-serif;
     }
+    html { scroll-behavior: smooth; }
     body { font-family: var(--font-body); }
 
     .page {
@@ -106,40 +107,59 @@
     .services-hero {
       position: relative;
       display: flex;
-      align-items: flex-start;
+      flex-direction: column;
+      align-items: center;
       overflow: hidden;
-      background-image: url('/images/hero-portada-gbp.png');
-      background-size: cover;
-      background-position: 50% 18%;
-      background-repeat: no-repeat;
-      padding: 20px 20px 40px;
+      background: #0d0d0b;
+      padding: 28px 20px 0;
       margin-bottom: 0;
       box-sizing: border-box;
-      min-height: 480px;
     }
-    .services-hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: linear-gradient(to bottom, rgba(13,13,11,0.90) 45%, rgba(13,13,11,0.55) 100%);
-      pointer-events: none;
-      z-index: 1;
-    }
+    .services-hero::before { display: none; }
     .services-hero__content {
       position: relative;
       z-index: 2;
-      max-width: 680px;
+      max-width: 720px;
       width: 100%;
+      text-align: center;
+    }
+    .services-hero__image-wrap {
+      width: 100%;
+      max-width: 1200px;
+      position: relative;
+      margin-top: 32px;
+    }
+    .services-hero__image-wrap::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      height: 120px;
+      background: linear-gradient(to bottom, transparent, #0d0d0b);
+      pointer-events: none;
+    }
+    .services-hero__hero-img {
+      width: 100%;
+      height: auto;
+      display: block;
     }
     @media (min-width: 768px) {
       .services-hero {
         align-items: center;
+        flex-direction: row;
         min-height: 560px;
         padding: 72px 60px 80px;
-        background-image: none;
+        background: transparent;
       }
       .services-hero::before {
+        display: block;
+        content: '';
+        position: absolute;
+        inset: 0;
         background: linear-gradient(to right, rgba(13,13,11,0.88) 0%, rgba(13,13,11,0.76) 38%, rgba(13,13,11,0.42) 68%, rgba(13,13,11,0.16) 100%);
+        pointer-events: none;
+        z-index: 1;
       }
       .services-hero::after {
         content: '';
@@ -157,6 +177,10 @@
       .services-hero__content {
         margin: 0;
         max-width: 600px;
+        text-align: left;
+      }
+      .services-hero__image-wrap {
+        display: none;
       }
     }
 
@@ -246,9 +270,9 @@
         display: flex;
         align-items: center;
         justify-content: center;
-        gap: 7px;
+        gap: 6px;
         color: #f8f4ec;
-        font-size: clamp(11px, 3.1vw, 13px);
+        font-size: 10px;
         font-weight: 800;
         line-height: 1.15;
         letter-spacing: 0.02em;
@@ -256,19 +280,19 @@
       }
       .services-hero__eyebrow-stars {
         color: #ffd166;
-        font-size: clamp(17px, 4.8vw, 21px);
+        font-size: 14px;
         line-height: 1;
         letter-spacing: 0.02em;
         white-space: nowrap;
       }
       .services-hero__eyebrow-quote {
         display: block;
-        max-width: 31ch;
-        margin-top: 9px;
+        max-width: 38ch;
+        margin-top: 5px;
         margin-left: auto;
         margin-right: auto;
-        color: rgba(255,255,255,0.92);
-        font-size: clamp(13px, 3.6vw, 15px);
+        color: rgba(255,255,255,0.82);
+        font-size: 11px;
         font-style: italic;
         font-weight: 400;
         line-height: 1.35;
@@ -302,14 +326,37 @@
       .services-hero__service-transform {
         display: none;
       }
+      /* service-line stays hidden — shows below image in mobile-text block */
+      .services-hero__service-line {
+        display: none;
+      }
+      /* Mobile image — full-bleed, natural ratio (shows full face) */
+      .services-hero__image-wrap {
+        margin-left: -20px;
+        margin-right: -20px;
+        width: calc(100% + 40px);
+        margin-top: 16px;
+      }
+      .services-hero__image-wrap::after {
+        height: 32px;
+      }
+      .services-hero__hero-img {
+        height: auto;
+        object-fit: initial;
+        object-position: initial;
+      }
 
-      /* CTA button — mobile full width */
-      .hero-atf-cta {
-        display: block;
-        width: 100%;
-        text-align: center;
-        font-size: 16px;
-        padding: 15px 28px;
+      /* CTAs — side-by-side, compact */
+      .hero-cta-group {
+        flex-direction: row;
+        gap: 8px;
+      }
+      .hero-cta-group .hero-atf-cta {
+        flex: 1;
+        width: auto;
+        font-size: 13px;
+        padding: 11px 8px;
+        white-space: nowrap;
       }
     }
 
@@ -325,6 +372,14 @@
       text-align: center;
       margin-top: 0;
       box-sizing: border-box;
+    }
+
+    /* Mobile: CTAs side-by-side (must come after base rule above) */
+    @media (max-width: 767px) {
+      .hero-cta-group {
+        flex-direction: row;
+        gap: 8px;
+      }
     }
 
     /* 3-step process */
@@ -485,7 +540,9 @@
       position: relative;
       left: 50%;
       transform: translateX(-50%);
+      margin-top: -24px;
       margin-bottom: 40px;
+      border-top: 2px solid rgba(245,160,16,0.45);
     }
 
     /* ── MOBILE how-it-works — stack vertically ── */
@@ -502,6 +559,61 @@
       .how-it-works__step:nth-child(1) { border-left-color: rgba(245,158,11,0.18); }
       .how-it-works__step:nth-child(2) { border-left-color: rgba(245,158,11,0.55); }
       .how-it-works__step:nth-child(3) { border-left-color: #ffd166; }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .fade-in { opacity: 1; transform: none; transition: none; }
+    }
+
+    /* ── MOBILE TEXT BLOCK (below hero image) ── */
+    .services-hero__mobile-text { display: none; }
+
+    @media (max-width: 767px) {
+      .services-hero__mobile-text {
+        display: block;
+        background: #0d0d0b;
+        padding: 28px 20px 36px;
+        border-top: 1px solid rgba(245,160,16,0.20);
+      }
+      .services-hero__mobile-text::before {
+        content: 'CERTIFIED · ON-SITE · KELOWNA';
+        display: block;
+        font-family: var(--font-mono);
+        font-size: 9px;
+        font-weight: 700;
+        letter-spacing: 0.22em;
+        color: #f5a010;
+        text-transform: uppercase;
+        text-align: center;
+        margin-bottom: 18px;
+      }
+      .services-hero__mobile-text__body {
+        border-left: 2px solid rgba(245,160,16,0.70);
+        padding-left: 16px;
+        margin-bottom: 18px;
+      }
+      .services-hero__mobile-text__body p {
+        font-family: var(--font-body);
+        font-size: 15px;
+        line-height: 1.75;
+        color: rgba(255,255,255,0.95);
+        margin: 0;
+        text-align: left;
+      }
+      .services-hero__mobile-text__body p strong {
+        color: #ffffff;
+        font-weight: 700;
+      }
+      .services-hero__mobile-text__promise {
+        font-family: var(--font-body);
+        font-size: 13px;
+        font-style: italic;
+        line-height: 1.65;
+        color: rgba(255,255,255,0.75);
+        margin: 0;
+        text-align: center;
+        letter-spacing: 0.01em;
+      }
     }
 
     /* ── Mobile CTA bar ── */
@@ -922,6 +1034,19 @@
           <a href="tel:+12508595467" class="hero-atf-cta" aria-label="Call to get back on the road today">Get Back on the Road &mdash; Call</a>
         </div>
       </div>
+      <div class="services-hero__image-wrap">
+        <img src="/images/hero-portada-gbp.png"
+             alt="Certified mobile mechanic at your location in Kelowna — Kelowna Protech Elite"
+             class="services-hero__hero-img"
+             width="1774" height="887"
+             loading="eager" decoding="async" />
+      </div>
+      <div class="services-hero__mobile-text">
+        <div class="services-hero__mobile-text__body">
+          <p>We&rsquo;re the certified mechanic Kelowna drivers rely on for <strong>no-starts</strong>, <strong>check engine lights</strong>, <strong>electrical &amp; electronic diagnostics</strong>, <strong>pre-purchase inspections</strong>, <strong>brake repairs</strong>, and <strong>maintenance</strong> &mdash; so you get a real diagnosis and your car fixed on-site, even when every shop has you waiting until Thursday.</p>
+        </div>
+        <p class="services-hero__mobile-text__promise">Your car back on the road the same day &mdash; fixed at your location, every repair explained while we work, invoice with zero surprises.</p>
+      </div>
   </header>
 
   <main class="page" id="main-content">
@@ -1006,7 +1131,7 @@
         <div class="why-card" style="--card-i:2">
           <span class="why-card__num">03</span>
           <p class="why-card__title">One handoff — we handle the rest</p>
-          <p class="why-card__desc">Hand over the keys once. Joseph handles parts sourcing, delivery, and logistics. You don&rsquo;t coordinate with a parts store, a tow company, or a second shop. One call. One mechanic. Done.</p>
+          <p class="why-card__desc">Hand over the keys once. We handle parts sourcing, delivery, and logistics. You don&rsquo;t coordinate with a parts store, a tow company, or a second shop. One call. One mechanic. Done.</p>
         </div>
         <div class="why-card" style="--card-i:3">
           <span class="why-card__num">04</span>
@@ -1044,17 +1169,17 @@
 
         <li class="service-card service-card--featured" role="listitem">
           <span class="service-card__badge">Core Service</span>
-          <h2>Kelowna Mechanic — We Come to You</h2>
+          <h3>Kelowna Mechanic — We Come to You</h3>
           <p class="service-card__loss">Every other mechanic in Kelowna expects you to go to them. We don&rsquo;t.</p>
           <p class="service-card__desc">
-            Tell us where the car is. Joseph drives to your home, your office, or wherever you&rsquo;re parked. The work happens in front of you, on your schedule, that same day. No appointment at a shop. No tow truck. No waiting room. A certified mechanic &mdash; at your door, not theirs.
+            Tell us where the car is. We drive to your home, your office, or wherever you&rsquo;re parked. The work happens in front of you, on your schedule, that same day. No appointment at a shop. No tow truck. No waiting room. A certified mechanic &mdash; at your door, not theirs.
           </p>
           <blockquote class="service-card__voc">&ldquo;Quicker than we could even get an appointment to have it looked at in a shop.&rdquo; &mdash; Gabe Carter &#9733;&#9733;&#9733;&#9733;&#9733;</blockquote>
           <p class="service-card__who">For: anyone in Kelowna who needs a mechanic but won&rsquo;t give up their whole day to sit in a shop.</p>
         </li>
 
         <li class="service-card" role="listitem">
-          <h2>Pre-Purchase Inspection Kelowna</h2>
+          <h3>Pre-Purchase Inspection Kelowna</h3>
           <p class="service-card__loss">Don&rsquo;t buy someone else&rsquo;s hidden $5,000 problem.</p>
           <p class="service-card__desc">
             Every used vehicle has a history. We inspect it at the seller&rsquo;s location, before any money changes hands, and tell you what&rsquo;s solid, what&rsquo;s worn, and what will cost you after the sale. Buy informed, not hopeful.
@@ -1064,7 +1189,7 @@
         </li>
 
         <li class="service-card" role="listitem">
-          <h2>Car Diagnostic Kelowna</h2>
+          <h3>Car Diagnostic Kelowna</h3>
           <p class="service-card__loss">Stop replacing parts that don&rsquo;t fix the problem.</p>
           <p class="service-card__desc">
             We connect professional scan tools to your vehicle&rsquo;s computer, read live data from every system, and find the root cause. You get a clear answer the same day. Not a guess &mdash; the actual reason your car is behaving the way it is.
@@ -1074,7 +1199,7 @@
         </li>
 
         <li class="service-card" role="listitem">
-          <h2>No-Start Diagnostic Kelowna</h2>
+          <h3>No-Start Diagnostic Kelowna</h3>
           <p class="service-card__loss">Stuck in your driveway. No tow required.</p>
           <p class="service-card__desc">
             Vehicle won&rsquo;t crank, won&rsquo;t turn over, or cranks but won&rsquo;t fire? We come to the vehicle, test the battery, starter, fuel system, and ignition circuit until we find the actual cause. Most no-starts are diagnosed and resolved the same day.
@@ -1084,7 +1209,7 @@
         </li>
 
         <li class="service-card" role="listitem">
-          <h2>Electrical &amp; Electronic Diagnostic Kelowna</h2>
+          <h3>Electrical &amp; Electronic Diagnostic Kelowna</h3>
           <p class="service-card__loss">Faults other shops couldn&rsquo;t find.</p>
           <p class="service-card__desc">
             Intermittent failures, dead accessories, module faults, wiring issues &mdash; these are the hard ones. We use schematic analysis and live data to trace the fault to its actual source. Not the symptom. The cause.
@@ -1094,7 +1219,7 @@
         </li>
 
         <li class="service-card" role="listitem">
-          <h2>Check Engine Light Diagnostic Kelowna</h2>
+          <h3>Check Engine Light Diagnostic Kelowna</h3>
           <p class="service-card__loss">A code number is not a diagnosis.</p>
           <p class="service-card__desc">
             Reading a fault code tells you which system triggered the alert. It doesn&rsquo;t tell you why. We test the related systems, confirm the root cause, and give you a clear answer &mdash; what caused the light, what it means, what happens if you ignore it.
@@ -1104,7 +1229,7 @@
         </li>
 
         <li class="service-card" role="listitem">
-          <h2>Preventive Maintenance Kelowna</h2>
+          <h3>Preventive Maintenance Kelowna</h3>
           <p class="service-card__loss">The most expensive repair is the one that was preventable.</p>
           <p class="service-card__desc">
             Oil changes, filter replacements, fluid inspections, and scheduled services at your location, on your schedule. We keep your vehicle maintained without requiring a shop trip.
@@ -1114,34 +1239,6 @@
         </li>
 
       </ul>
-    </section>
-
-    <!-- HOW IT WORKS -->
-    <section class="process-section fade-in" aria-labelledby="process-heading">
-      <h2 id="process-heading" class="process-section__heading">How It Works</h2>
-      <p class="process-section__sub">Four steps. Same day. No shop.</p>
-      <div class="process-steps">
-        <div class="process-step">
-          <div class="process-step__num" aria-hidden="true">1</div>
-          <p class="process-step__title">Call or Text</p>
-          <p class="process-step__desc">Describe what&rsquo;s happening with your vehicle. Reach us directly at (250) 859-5467. No forms, no queue.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-step__num" aria-hidden="true">2</div>
-          <p class="process-step__title">We Come to You</p>
-          <p class="process-step__desc">Our certified mechanic arrives at your location &mdash; driveway, workplace, parking lot, or roadside &mdash; with professional tools.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-step__num" aria-hidden="true">3</div>
-          <p class="process-step__title">Diagnosis in Front of You</p>
-          <p class="process-step__desc">You watch the process, ask questions, and hear the findings as they happen. That&rsquo;s the whole point of working this way.</p>
-        </div>
-        <div class="process-step">
-          <div class="process-step__num" aria-hidden="true">4</div>
-          <p class="process-step__title">Clear Verdict &mdash; Your Decision</p>
-          <p class="process-step__desc">Price confirmed before any work starts. Diagnostic credited toward the repair if you proceed. You decide with full information.</p>
-        </div>
-      </div>
     </section>
 
     <!-- TESTIMONIALS -->
