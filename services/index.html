@@ -1209,9 +1209,76 @@
     <section class="services-section fade-in" aria-labelledby="services-heading">
       <h2 id="services-heading" class="section-heading">Mechanic Services in Kelowna</h2>
       <p class="section-sub">Every service is delivered on-site at your location, across Kelowna and the Okanagan.</p>
+
+      <nav class="services-thumbs" aria-label="Jump to a specialized service">
+        <a class="services-thumbs__item" href="#core-service">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="/images/ford-ranger-diagnostic-400w.webp 400w"
+              sizes="110px">
+            <img
+              src="/images/ford-ranger-diagnostic-400w.webp"
+              alt="Certified mechanic with diagnostic tablet inspecting a Ford Ranger at a Kelowna residential location"
+              width="110" height="110"
+              loading="lazy"
+              decoding="async">
+          </picture>
+          <span class="services-thumbs__label">We Come to You</span>
+        </a>
+
+        <a class="services-thumbs__item" href="/services/diagnostic/" aria-label="Car Diagnostic — full details">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="/images/honda-civic-diagnostic-400w.webp 400w"
+              sizes="110px">
+            <img
+              src="/images/honda-civic-diagnostic-400w.webp"
+              alt="Autel MaxiPRO diagnostic scanner mounted on the steering wheel reading a Honda Civic's ABS system fault"
+              width="110" height="110"
+              loading="lazy"
+              decoding="async">
+          </picture>
+          <span class="services-thumbs__label">Car Diagnostic</span>
+        </a>
+
+        <a class="services-thumbs__item" href="/services/pre-purchase/" aria-label="Pre-Purchase Inspection — full details">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="/images/ppi-inspection-400w.webp 400w"
+              sizes="110px">
+            <img
+              src="/images/ppi-inspection-400w.webp"
+              alt="Certified mechanic performing a pre-purchase inspection on an SUV in a Kelowna driveway with mountain views"
+              width="110" height="110"
+              loading="lazy"
+              decoding="async">
+          </picture>
+          <span class="services-thumbs__label">Pre-Purchase Inspection</span>
+        </a>
+
+        <a class="services-thumbs__item" href="/services/maintenance/" aria-label="Preventive Maintenance — full details">
+          <picture>
+            <source
+              type="image/webp"
+              srcset="/images/jeep-maintenance-400w.webp 400w"
+              sizes="110px">
+            <img
+              src="/images/jeep-maintenance-400w.webp"
+              alt="Certified mechanic servicing a Jeep Grand Cherokee on-site in a Kelowna parking lot"
+              width="110" height="110"
+              loading="lazy"
+              decoding="async">
+          </picture>
+          <span class="services-thumbs__label">Preventive Maintenance</span>
+        </a>
+      </nav>
+
       <ul class="services-grid" role="list">
 
-        <li class="service-card service-card--featured" role="listitem">
+        <li id="core-service" class="service-card service-card--featured" role="listitem">
           <span class="service-card__badge">Core Service</span>
           <h3>Kelowna Mechanic — We Come to You</h3>
           <p class="service-card__loss">Every other mechanic in Kelowna expects you to go to them. We don&rsquo;t.</p>
