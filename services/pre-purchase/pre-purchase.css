@@ -382,7 +382,7 @@
 
 .ppi-tradeoff__or {
   justify-self: center;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 13px;
   color: #94a3b8;
   text-transform: uppercase;
@@ -417,7 +417,7 @@
 .ppi-tradeoff__card--cost .ppi-tradeoff__label { color: var(--premium-gold); }
 
 .ppi-tradeoff__stat {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-weight: 700;
   font-size: 32px;
   line-height: 1.1;
@@ -576,7 +576,7 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   letter-spacing: 0.03em;
   color: var(--risk-gray);
@@ -615,7 +615,7 @@
 }
 
 .ppi-scan__rank {
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 12px;
   font-weight: 500;
   color: var(--risk-gray);
@@ -661,7 +661,7 @@
 
 .ppi-scan__disclaimer {
   margin: 24px 0 0;
-  font-family: 'IBM Plex Mono', monospace;
+  font-family: var(--font-mono);
   font-size: 11px;
   color: rgba(255, 255, 255, 0.35);
 }
