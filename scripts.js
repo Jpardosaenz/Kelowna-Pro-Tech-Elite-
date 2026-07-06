@@ -652,3 +652,77 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 });
+
+/*
+==========================================================================
+IMAGE ZOOM — click-to-enlarge for elements with [data-zoom]
+==========================================================================
+No-op if the page has no [data-zoom] elements. Requires .img-zoom-overlay
+CSS (see page-level <style> block).
+*/
+document.addEventListener('DOMContentLoaded', function () {
+  const zoomables = document.querySelectorAll('[data-zoom]');
+  if (!zoomables.length) return;
+
+  const overlay = document.createElement('div');
+  overlay.className = 'img-zoom-overlay';
+  overlay.setAttribute('role', 'dialog');
+  overlay.setAttribute('aria-modal', 'true');
+  overlay.innerHTML = '<img class="img-zoom-overlay__img" alt="">';
+  document.body.appendChild(overlay);
+  const overlayImg = overlay.querySelector('img');
+
+  function openZoom(src, alt) {
+    overlayImg.src = src;
+    overlayImg.alt = alt;
+    overlay.classList.add('is-open');
+  }
+  function closeZoom() {
+    overlay.classList.remove('is-open');
+  }
+
+  zoomables.forEach(function (el) {
+    el.addEventListener('click', function () {
+      openZoom(el.dataset.zoom || el.src, el.alt);
+    });
+    el.addEventListener('keydown', function (e) {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openZoom(el.dataset.zoom || el.src, el.alt);
+      }
+    });
+  });
+
+  overlay.addEventListener('click', closeZoom);
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeZoom();
+  });
+});
+
+/*
+==========================================================================
+RISK SCAN BARS — reveal-on-scroll for .ppi-scan__row, once each
+==========================================================================
+No-op if the page has no .ppi-scan__row elements. CSS handles the actual
+fill width via the --w custom property; this only adds "is-visible" once
+so the fill transition plays as the row enters view.
+*/
+document.addEventListener('DOMContentLoaded', function () {
+  const rows = document.querySelectorAll('.ppi-scan__row');
+  if (!rows.length) return;
+
+  if (!('IntersectionObserver' in window)) {
+    rows.forEach(function (row) { row.classList.add('is-visible'); });
+    return;
+  }
+
+  const observer = new IntersectionObserver(function (entries, obs) {
+    entries.forEach(function (entry) {
+      if (!entry.isIntersecting) return;
+      entry.target.classList.add('is-visible');
+      obs.unobserve(entry.target);
+    });
+  }, { threshold: 0.4 });
+
+  rows.forEach(function (row) { observer.observe(row); });
+});

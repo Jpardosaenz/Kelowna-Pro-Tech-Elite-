@@ -5,7 +5,8 @@
       "name": "Netlify Dev",
       "runtimeExecutable": "netlify",
       "runtimeArgs": ["dev", "--port", "8888"],
-      "port": 8888
+      "port": 8888,
+      "cwd": "/Users/EPARDOSAENZ/Documents/KPEMM/Proyect Web/Website KPEMM"
     },
     {
       "name": "Python HTTP Server",
