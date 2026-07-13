@@ -24,21 +24,22 @@
 ### ESTRATÉGICO
 1. **[2026-07-05] GBP sin dirección fija — afecta ranking por proximidad/relevancia local.**
    Jose confirma que el perfil de Google Business Profile no tiene address configurada. Para negocios 100% móviles (SAB), Google permite ocultar la dirección pero necesita tener una base interna para calcular proximidad — sin ninguna, el ranking local pierde señal de relevancia. GBP API está rota (403, API no habilitada en Cloud Console) así que no pude verificar el estado actual vía API. Do instead: (1) Jose revisa en GBP dashboard si hay address guardada aunque esté oculta; (2) si no hay ninguna, cargar una (aunque sea oculta al público) para recuperar la señal de proximidad; (3) una vez resuelto en GBP, alinear schema LocalBusiness del sitio (areaServed/geo) para que coincida.
-2. **[2026-06-21] `/services/index.html` branch `fix/ppi-h1` — 7 commits, NO pushed aún.**
-   Hero ATF: Red Seal + Chris Gaal quote, servicios en `<strong>`, dual CTA (tel+SMS), 3-step bar (squares grid, full-bleed desktop). Desktop eyebrow fix aplicado (era bug: todo concatenado en mono box). Mobile 3-step stacks en columna. Pendiente: push + PR.
-   Do instead: no regressar CSS al `<style>` inline — split intencionado LCP. Al retomar: `git push origin fix/ppi-h1` → PR a main.
+2. **[2026-07-13 ✓] `fix/ppi-h1` ya mergeado a main** (verificado `git branch --merged origin/main`). También mergeado: `feature/pre-purchase-cro` (rebuild completo de PPI, live ~2026-07-06). Do instead: medir GSC de pre-purchase a fin de julio antes de tocarla de nuevo.
 
 ### IMPORTANTE
-1. **[2026-06-19] Desktop header CTA usa `sms:` — no funciona en PC/Mac.**
-   `index.html` línea 884: `.header-cta` solo visible en ≥1024px. `sms:` no tiene cliente nativo en desktop. Fix: cambiar a `href="tel:+12508595467"`. Mobile no afectado — usa `.mobile-cta-bar` (SMS primario + tel secundario, correcto).
+1. **[2026-07-13] Desktop header CTA usa `sms:` — no funciona en PC/Mac. Deprioritized por Jose: 95% del tráfico es mobile.**
+   `index.html` línea 884: `.header-cta` solo visible en ≥1024px. Fix trivial (`tel:` en vez de `sms:`) si se retoma, pero no urgente.
+2. **[2026-07-13 ✓ RESUELTO] Formulario de diagnóstico "AI" eliminado del sitio completo.**
+   Jose confirmó cero leads reales en toda la vida del formulario (2 requerimientos de info en total). Eliminado: HTML del modal + botón rojo "Ask a Mechanic" en 7 páginas, ~390 líneas de JS (`openDiagModal`, `diagNext`, `sendLeadToAdmin`, `generateAIHypothesis` — el "diagnóstico experto" era un if/else por palabra clave, no IA real), 272 líneas de CSS. También resuelve 2 hallazgos CRÍTICOS de la auditoría E-E-A-T 2026-07-13: (a) el form mandaba datos a formsubmit.co (tercero) antes de completarse, sin aviso claro — riesgo BC PIPA; (b) "diagnóstico experto" era automatizado, no evaluación humana. Sacado también `formsubmit.co` del CSP en `_headers` (permiso ya sin uso). `.claude/rules/shared-components.md` actualizado (ya no hay "Diagnostic modal" compartido).
 
 ## Bugs activos conocidos (no tocar sin branch)
 1. **[2026-07-05] `estilos-header2.css` tiene `.hero-intro`/`.hero-support-text` duplicados — la segunda definición gana y rompe la jerarquía tipográfica.**
    Línea ~367 define `.hero-intro` como eyebrow chico (13px, uppercase). Línea ~2312 lo redefine a 1.15rem/700/uppercase — gana por orden de cascada (misma especificidad). Mismo problema en `.hero-support-text` (1.125rem en la primera definición vs 1.5rem en la segunda, línea ~2304). Afecta cualquier página que use estas clases con texto más largo que una headline corta — hoy hace que el hero no quepa en una pantalla mobile. Parché con override local en `services/pre-purchase/index.html`, no toqué el archivo compartido. Do instead: eliminar la definición duplicada (la de línea ~2304-2320) en una sesión dedicada, verificando el impacto en home y demás páginas antes de borrar.
 2. **[2026-06-19] `estilos-header2.css` bloquea render en TODAS las subpáginas.**
    Homepage usa `media="print" onload="this.media='all'"` (correcto). Subpáginas lo cargan síncronamente (incorrecto). Do instead: aplicar patrón deferred de homepage en pre-purchase, our-story, field-reports, diagnostic, maintenance.
-2. **[2026-06-19] llms.txt dice "45 reviews" — sitio dice 55.**
-   Do instead: actualizar llms.txt a 55. También agregar `/services/pre-purchase/` y `/services/diagnostic/` a Key Pages en llms.txt.
+2. **[2026-07-13 ✓ parcial] Reviews 57 sincronizadas sitewide + llms.txt (PR #65, deployed).**
+   Pendiente: agregar `/services/pre-purchase/` y `/services/diagnostic/` a Key Pages en llms.txt. Y llms.txt tiene precios publicados (viola regla no-precios, flag de auditoría E-E-A-T 2026-07-13) + claim "#1" sin respaldo.
+   Regla de marca nueva [2026-07-13]: rol > nombre en copy de conversión ("Certified Mechanic", no "Joseph") — canónica en `Marketing workers/02-Marca-y-Contexto/estilo-voz.md`. Home ya cumple; quedan "Text Joseph"/"Call Joseph" en subpáginas.
 3. **[2026-07-04] `.mobile-cta-bar` con offset `top` mal en `our-story.css` y `services/index.html`.**
    Ambos usan un solo breakpoint (`max-width:767px`, `top:68px`), pero el header real mide 92px en pantallas ≤767px (el patrón correcto, ya en `index.html`, usa dos breakpoints: 68px hasta 1023px, 92px override bajo 767px). Sin el override, la barra tapa contenido en celulares chicos. Ya arreglado en `services/pre-purchase/index.html`. Do instead: aplicar el mismo override de 92px en esas 2 páginas.
 
@@ -61,8 +62,8 @@
    Competidores tienen checklists de 100+ puntos visibles en HTML. Protech tiene badge "75+ puntos" sin listar nada. Do instead: publicar checklist completo como lista HTML visible + expandir FAQ a 8-10 preguntas de 100+ palabras.
 3. **ALTO: "Red Seal" nunca aparece en ninguna página HTML.**
    La credencial más reconocida en oficios canadienses no está en homepage ni service pages. Do instead: agregar "Red Seal" (o la credencial exacta de Joseph) al trust bar y al primer párrafo de la homepage.
-4. **ALTO: Homepage no tiene CTA dentro del hero section.**
-   `<section id="hero">` no tiene botón, tel: link ni form. Do instead: agregar `<a href="tel:+12508595467">` button directamente dentro del hero.
+4. **ALTO [mitigado 2026-07-13]: Homepage hero sin CTA propio.**
+   Sticky CTA bar mobile rediseñada como botón real (dorado + animación, PR #65) — cubre la acción inmediata mobile. El hero section en sí sigue sin botón; evaluar si aún hace falta tras medir conversión del bar nuevo.
 5. **ALTO: No existe footer NAP en homepage.**
    Pre-purchase tiene `<footer class="site-nap">` completo. Homepage no tiene nada. Do instead: copiar patrón site-nap de pre-purchase a homepage.
 6. **ALTO: Field reports hub — 1 caso vs 100+ reclamados.**
