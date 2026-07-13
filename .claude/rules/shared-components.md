@@ -18,11 +18,6 @@ Selector: `<footer class="site-nap">`
 Present in: all pages EXCEPT 404.html
 Content is identical across all 6 pages. No variations.
 
-## Diagnostic modal (6 pages)
-Selector: `#diag-modal`
-Present in: all pages EXCEPT 404.html
-Structure is identical. ONLY the CTA button text in Step 3 varies per page — preserve each page's unique CTA text when syncing.
-
 ## Floating CTA (7 pages)
 Selector: `.floating-cta-container`
 Present in: all 7 pages
