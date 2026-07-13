@@ -557,37 +557,89 @@
       .mobile-cta-sms {
         display: flex;
         align-items: center;
-        gap: 10px;
+        gap: 8px;
         flex: 1;
+        min-width: 0;
+        margin-right: 8px;
+        padding: 6px 8px;
+        position: relative;
+        overflow: hidden;
+        border-radius: 12px;
+        background: rgba(245, 183, 0, .10);
+        box-shadow: inset 0 0 0 1.5px rgba(245, 183, 0, .55), 0 4px 12px -6px rgba(0, 0, 0, .55);
+        transition: transform 140ms cubic-bezier(.23, 1, .32, 1), background 140ms ease-out;
         touch-action: manipulation
+      }
+
+      .mobile-cta-sms:active {
+        transform: scale(.98);
+        background: rgba(245, 183, 0, .2)
+      }
+
+      .mobile-cta-sms::after {
+        content: "";
+        position: absolute;
+        inset: 0;
+        pointer-events: none;
+        background: linear-gradient(75deg, transparent 40%, rgba(255, 255, 255, .28) 50%, transparent 60%);
+        transform: translateX(-140%);
+        animation: ctaShimmer 4.2s cubic-bezier(.23, 1, .32, 1) infinite
+      }
+
+      @keyframes ctaShimmer {
+        0% { transform: translateX(-140%) }
+        22% { transform: translateX(140%) }
+        100% { transform: translateX(140%) }
+      }
+
+      @media (prefers-reduced-motion: reduce) {
+        .mobile-cta-sms::after { animation: none }
+        .mobile-cta-sms { transition: none }
       }
 
       .mobile-cta-sms-text {
         display: flex;
         flex-direction: column;
-        gap: 1px
+        justify-content: center;
+        gap: 1px;
+        min-width: 0
       }
 
       .mobile-cta-sms-text .cta-main-text {
-        font-size: .9375rem;
-        font-weight: 700;
-        line-height: 1.2
+        font-size: .875rem;
+        font-weight: 800;
+        line-height: 1.2;
+        letter-spacing: -.01em;
+        white-space: nowrap;
+        color: #f5c451;
+        text-shadow: 0 1px 10px rgba(245, 183, 0, .3)
+      }
+
+      @media (max-width: 359px) {
+        .mobile-cta-sms-text .cta-main-text { font-size: .8125rem }
+        .mobile-cta-bar-sub { font-size: .6875rem }
       }
 
       .mobile-cta-tel {
         flex: none;
         display: flex;
         flex-direction: column;
-        align-items: flex-end;
-        padding-left: 14px;
-        border-left: 1px solid rgba(255, 255, 255, .15)
+        align-items: center;
+        padding: 6px 10px;
+        border: 1px solid rgba(255, 255, 255, .22);
+        border-radius: 12px;
+        transition: transform 140ms cubic-bezier(.23, 1, .32, 1)
+      }
+
+      .mobile-cta-tel:active {
+        transform: scale(.98)
       }
 
       .mobile-cta-tel-label {
         display: block;
         font-size: .6875rem;
-        color: #94a3b8;
-        font-weight: 400;
+        color: #e2e8f0;
+        font-weight: 500;
         white-space: nowrap
       }
 
@@ -606,7 +658,8 @@
       .mobile-cta-bar-sub {
         color: #cbd5e1;
         font-weight: 500;
-        font-size: .8125rem
+        font-size: .75rem;
+        white-space: nowrap
       }
 
       .floating-cta-container {
@@ -813,7 +866,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "55",
+    "reviewCount": "57",
     "bestRating": "5"
   },
   "telephone": "+1-250-859-5467",
@@ -894,7 +947,7 @@
 
   <!-- Mobile CTA Bar: SMS primary, phone number secondary (mobile only) -->
   <div class="mobile-cta-bar">
-    <a href="sms:+12508595467" class="mobile-cta-sms" aria-label="Text Joseph for same-day car repair">
+    <a href="sms:+12508595467" class="mobile-cta-sms" aria-label="Text the certified mechanic for same-day car repair">
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none"
         stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"
         width="20" height="20" aria-hidden="true">
@@ -902,11 +955,11 @@
       </svg>
       <span class="mobile-cta-sms-text">
         <span class="cta-main-text">Get My Car Fixed Today</span>
-        <span class="mobile-cta-bar-sub">Text Joseph &middot; Fast Response</span>
+        <span class="mobile-cta-bar-sub">Certified Mechanic</span>
       </span>
     </a>
-    <a href="tel:+12508595467" class="mobile-cta-tel" aria-label="Call Joseph directly">
-      <span class="mobile-cta-tel-label">or call directly</span>
+    <a href="tel:+12508595467" class="mobile-cta-tel" aria-label="Call and talk to the mechanic directly">
+      <span class="mobile-cta-tel-label">talk to the mechanic</span>
       <span class="mobile-cta-tel-number">(250) 859-5467</span>
     </a>
   </div>
@@ -914,9 +967,9 @@
   <!-- FOLD 03: Hero Section -->
   <section id="hero" class="hero-fold">
     <div class="hero-fold__content">
-      <div class="hero-fold__trust" aria-label="Trusted by 55 Google reviewers">
-        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 55 Google reviews">
-          ★★★★★<span class="hero-fold__trust-meta">4.9 · Trusted by 55 Google Reviews</span>
+      <div class="hero-fold__trust" aria-label="Trusted by 57 Google reviewers">
+        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 57 Google reviews">
+          ★★★★★<span class="hero-fold__trust-meta">4.9 · Trusted by 57 Google Reviews</span>
         </p>
         <p class="hero-fold__trust-quote">"Honest mechanic who shows you what's actually wrong." &mdash; Tyler T.</p>
       </div>
