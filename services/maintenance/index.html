@@ -320,6 +320,128 @@
         transform: translateY(-2px);
         box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35), 0 0 20px rgba(251, 191, 36, 0.6);
       }
+
+      /* ── Mobile CTA bar ── */
+      .mobile-cta-bar { display: none; }
+
+      @media (max-width: 767px) {
+        .mobile-cta-bar {
+          display: flex;
+          align-items: center;
+          gap: 0;
+          position: sticky;
+          top: 92px;
+          z-index: 999;
+          width: 100%;
+          padding: 10px 16px;
+          background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+          border-top: 1px solid rgba(251, 191, 36, .35);
+          border-bottom: 1px solid rgba(251, 191, 36, .25);
+          box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
+        }
+        .mobile-cta-bar a {
+          color: #fff;
+          font-family: "Inter", Arial, sans-serif;
+          font-weight: 700;
+          text-decoration: none;
+          letter-spacing: .2px;
+        }
+        .mobile-cta-sms {
+          position: relative;
+          overflow: hidden;
+          display: flex;
+          align-items: center;
+          gap: 8px;
+          flex: 0 1 auto;
+          min-width: 0;
+          margin-right: 8px;
+          padding: 6px 8px;
+          min-height: 48px;
+          border-radius: 12px;
+          background: rgba(202, 138, 4, .12);
+          box-shadow: inset 0 0 0 1.5px rgba(245, 183, 0, .55), 0 4px 12px -6px rgba(0, 0, 0, .55);
+          transition: transform 140ms cubic-bezier(.23, 1, .32, 1), background 140ms ease-out;
+        }
+        .mobile-cta-sms:active {
+          transform: scale(.98);
+          background: rgba(202, 138, 4, .22);
+        }
+        .mobile-cta-sms::after {
+          content: "";
+          position: absolute;
+          inset: 0;
+          pointer-events: none;
+          background: linear-gradient(75deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%);
+          transform: translateX(-140%);
+          animation: ctaShimmerMaint 4.2s cubic-bezier(.23, 1, .32, 1) infinite;
+        }
+        @keyframes ctaShimmerMaint {
+          0% { transform: translateX(-140%); }
+          22% { transform: translateX(140%); }
+          100% { transform: translateX(140%); }
+        }
+        .mobile-cta-sms-text {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: 1px;
+          min-width: 0;
+        }
+        .mobile-cta-sms-text .cta-main-text {
+          font-size: .9rem;
+          font-weight: 800;
+          line-height: 1.2;
+          letter-spacing: -.01em;
+          white-space: nowrap;
+          color: #f5c451;
+          text-shadow: 0 1px 10px rgba(245, 183, 0, .3);
+        }
+        .mobile-cta-bar-sub {
+          color: #fff;
+          opacity: .8;
+          font-weight: 600;
+          font-size: .75rem;
+          white-space: nowrap;
+        }
+        .mobile-cta-tel {
+          flex: none;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          justify-content: center;
+          padding: 6px 10px;
+          min-height: 48px;
+          border: 1px solid rgba(255, 255, 255, .22);
+          border-radius: 12px;
+          transition: transform 140ms cubic-bezier(.23, 1, .32, 1);
+        }
+        .mobile-cta-tel:active {
+          transform: scale(.98);
+        }
+        .mobile-cta-tel-label {
+          display: block;
+          font-size: .6875rem;
+          color: #e2e8f0;
+          font-weight: 500;
+          white-space: nowrap;
+        }
+        .mobile-cta-tel-number {
+          display: block;
+          font-size: .875rem;
+          font-weight: 600;
+          color: #e2e8f0;
+          white-space: nowrap;
+        }
+        .mobile-cta-bar svg { flex-shrink: 0; color: #f5c451; }
+      }
+      @media (max-width: 359px) {
+        .mobile-cta-sms-text .cta-main-text { font-size: .8125rem; }
+        .mobile-cta-bar-sub { font-size: .6875rem; }
+      }
+      @media (prefers-reduced-motion: reduce) {
+        .mobile-cta-sms::after { animation: none; }
+        .mobile-cta-sms { transition: none; }
+      }
     </style>
   </head>
   <body>
@@ -349,6 +471,24 @@
       &#9776;
     </button>
   </header>
+
+  <!-- ── MOBILE CTA BAR ── -->
+  <div class="mobile-cta-bar">
+    <a href="sms:+12508595467" class="mobile-cta-sms" aria-label="Text the certified mechanic for same-day car repair">
+      <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none"
+        stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+        <path d="M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z" />
+      </svg>
+      <span class="mobile-cta-sms-text">
+        <span class="cta-main-text">Get My Car Fixed Today</span>
+        <span class="mobile-cta-bar-sub">Certified Mechanic</span>
+      </span>
+    </a>
+    <a href="tel:+12508595467" class="mobile-cta-tel" aria-label="Call and talk to the mechanic directly">
+      <span class="mobile-cta-tel-label">talk to the mechanic</span>
+      <span class="mobile-cta-tel-number">(250) 859-5467</span>
+    </a>
+  </div>
 
     <main class="page" id="main">
       <nav class="breadcrumb" aria-label="Breadcrumb">
