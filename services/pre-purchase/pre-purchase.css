@@ -918,13 +918,5 @@
   color: #475569;
 }
 
-.ppi-map__embed {
-  margin-top: 20px;
-  border-radius: 16px;
-  overflow: hidden;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.1);
-}
-
-.ppi-map__embed iframe {
-  display: block;
-}
+/* .ppi-map__embed rules moved to shared estilos-header2.css so every
+   page using this component gets them, not just this one. */
