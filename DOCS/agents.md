@@ -29,13 +29,12 @@
 - **Header:** `header.kpem-header-mobile` sticky (logo + menu hamburguesa).
 - **Hero:** `section#our-promise` con imagen WebP y mensaje anti-towing.
 - **Social Proof Card (Enhanced):** `.hero-social-proof-card-2026` con avatares, reviews largas (300% más contenido), contexto de servicio, carousel automático.
-- **Red Side Widget:** `#side-ask-mechanic` botón lateral fijo (posición derecha, texto vertical, z-index 9999) que abre modal de diagnóstico.
-- **Modal de Diagnóstico:** `#diag-modal` sistema de 3 pasos para captura de leads (Step 1: Contacto → Step 2: Vehículo/Síntomas → Step 3: Análisis AI).
+- **~~Red Side Widget / Modal de Diagnóstico~~ [ELIMINADO 2026-07-13, PR #66]:** `#side-ask-mechanic` y `#diag-modal` fueron removidos del sitio completo — Jose confirmó cero leads reales en su vida útil, y el modal mandaba datos a un tercero (formsubmit.co) sin aviso claro + etiquetaba un análisis automatizado por palabra clave como "diagnóstico experto". No recrear sin evaluar de nuevo con Jose. Ver `.claude/napkin.md` sección "System State — Hecho".
 - **Testimonials:** `section.wrap#client-stories` con tarjetas `.t-card` y `.t-card--hero`.
 - **Services:** `#service-tiles` con tarjetas `.tile` y etiqueta "Most Popular".
 - **FAQ:** `section#commercial-faq` con `p.faq-intro`, `dl` y `div.faq-item` (dt+dd en misma tarjeta).
 - **CTA flotante:** `.floating-cta-container` (Request Inspection Now + WhatsApp/SMS/Call).
-- **Toast Feedback:** `.lead-feedback-toast` notificaciones de éxito/error para envío de leads.
+- **~~Toast Feedback~~ [huérfano 2026-07-13]:** `.lead-feedback-toast` — el JS que lo creaba (`showLeadFeedback`) se eliminó junto al modal de diagnóstico, pero el CSS (`estilos-header2.css` ~línea 2680) quedó sin usar. No es un bug visible, es limpieza pendiente.
 - **Tokens:** Tipografia Inter; colores base `#0f172a`, `#111827`, `#475569`, acento `#2563eb`, widget rojo `#FF4444`; radios 20–26px; sombras `0 32px 56px rgba(15,23,42,0.12)`.
 - **Naming:** `.kpem-`, `.t-`, `.faq-`, `.cta-`, `.tile`, `.side-`, `.diag-`, `.review-`, `.proof-`; modificadores `--`.
 
