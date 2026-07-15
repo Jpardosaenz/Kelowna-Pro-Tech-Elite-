@@ -43,8 +43,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <!-- Preload hero image (LCP optimization) -->
-  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp" media="(max-width: 767px)" type="image/webp">
-  <link rel="preload" as="image" href="images/hero-mechanic-1200w.webp" media="(min-width: 768px)" type="image/webp">
+  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp" media="(max-width: 767px)" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-mechanic-1200w.webp" media="(min-width: 768px)" type="image/webp" fetchpriority="high">
   <!-- Critical CSS: inline ATF styles to unblock FCP (header + hero + CTAs + social proof) -->
   <style>
     @font-face {
@@ -922,7 +922,7 @@
     <div class="contenedor-logo">
       <a href="/" aria-label="Go to homepage">
         <img src="/images/logo-kelowna-protech-eliteV1.webp" alt="Kelowna Protech Elite Mobile Mechanic logo"
-          loading="eager" decoding="async" class="logo-mobile" />
+          loading="eager" decoding="async" width="66" height="66" class="logo-mobile" />
       </a>
     </div>
     <nav id="mobile-navigation" class="mobile-menu" role="navigation" aria-label="Main Navigation">
@@ -1019,7 +1019,7 @@
           "They diagnosed my complete electrical system and fixed everything in one afternoon at my home. Joseph and his partner kept me informed the whole way. Clear process. I give my 100% endorsement."
         </p>
         <div class="t-hero-meta">
-          <img src="/images/avatar-vic-campbell.png" alt="Vic Campbell" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
+          <img src="/images/avatar-vic-campbell.webp" alt="Vic Campbell" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
             <span class="t-name">Vic Campbell</span>
             <span class="t-service">Electrical System Diagnosis & Repair</span>
@@ -1028,7 +1028,7 @@
       </article>
       <article class="t-card">
         <div class="t-card-header">
-          <img src="/images/avatar-growit-trucking.png" alt="Growit Trucking" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
+          <img src="/images/avatar-growit-trucking.webp" alt="Growit Trucking" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
             <span class="t-name">Growit Trucking</span>
             <span class="t-service">Commercial Fleet Inspection</span>
@@ -1041,7 +1041,7 @@
       </article>
       <article class="t-card">
         <div class="t-card-header">
-          <img src="/images/avatar-matt-sankey.png" alt="Matt Sankey" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
+          <img src="/images/avatar-matt-sankey.webp" alt="Matt Sankey" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
             <span class="t-name">Matt Sankey</span>
             <span class="t-service">European Vehicle Diagnostics</span>
@@ -1054,7 +1054,7 @@
       </article>
       <article class="t-card">
         <div class="t-card-header">
-          <img src="/images/avatar-jorge.png" alt="Jorge" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
+          <img src="/images/avatar-jorge.webp" alt="Jorge" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
             <span class="t-name">Jorge</span>
             <span class="t-service">Pre-Purchase Inspection</span>
