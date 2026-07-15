@@ -1,6 +1,8 @@
 # 🎯 GBP Optimization Strategy: Kelowna Protech Elite Mobile Mechanic
 
 **Current Status:** 4.9 ⭐ | 36 Reviews | Active Management
+
+> ⚠️ **STALE — no usar sin verificar primero.** Reviews reales hoy = 58, no 36 (confirmado por Jose 2026-07-14, verificado contra reviewCount en vivo; ver también `reviews-gbp-v2.md` en Marketing workers). El bullet "Mechanical Engineering Background" de abajo está descartado: título regulado en BC, sin credencial verificable — usar "Certified Mechanic" (regla 2026-07-13, `estilo-voz.md`). Antes de copiar cualquier texto de este archivo al perfil de GBP, verificar contra `prueba-social.md` y `estilo-voz.md` (Marketing workers), que son la fuente viva.
 **Objective:** Align GBP with Premium "Dealer Alternative" Positioning
 
 ---

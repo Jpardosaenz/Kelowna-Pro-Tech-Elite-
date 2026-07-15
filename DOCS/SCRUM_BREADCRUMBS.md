@@ -38,7 +38,7 @@ El sitio ya no está solo en fase de páginas de servicio optimizadas. Ahora tam
 Si vas a continuar este trabajo, debes respetar estos pilares:
 1.  **Comparar HACIA ARRIBA:** No nos comparamos con "mecánicos de patio". Nos posicionamos como la **Alternativa Premium al Dealer**.
 2.  **Grand Slam Offers:** Cada servicio debe ser un "ofertón" donde el valor supere por 10x al precio. (Ej: PPI de $250 que ayuda a negociar $2,000-5,000+ de descuento).
-3.  **Autoridad de Ingeniería:** No usamos "Red Seal" (por petición del cliente). Usamos **"Mechanical Engineering Background"** y **"Analytical Precision"**.
+3.  **Autoridad de Ingeniería [ACTUALIZADO 2026-07-13 — resuelto]:** Regla de 2026-03-24 decía usar "Mechanical Engineering Background" (no Red Seal), por petición del cliente. Superada: la auditoría E-E-A-T del 2026-07-13 marcó "Mechanical Engineer" como CRÍTICO (título regulado en BC, sin credencial verificable). Jose confirmó explícitamente que **"Certified Mechanic" queda como versión definitiva** — no volver a "Mechanical Engineering Background". Ya aplicado sitewide (PR #66/#67).
 4.  **Social Proof Real:** Solo usamos reseñas reales (Gabe C., Oscar B., Tyler T., etc.). Cada reseña debe contar una historia de **ROI o Ahorro**.
 5.  **Trust First on Homepage:** En la homepage actual, la confianza entra antes del headline principal. No volver a empujar la prueba social hacia abajo ni a esconderla detrás de carruseles o ruido visual.
 6.  **Sticky Mobile CTA Bar:** La barra azul bajo el header móvil es parte del flujo principal. Debe seguir sticky y visible en mobile sin invadir desktop.
@@ -50,7 +50,7 @@ Estas reglas protegen al negocio legalmente. Cualquier IA o persona que trabaje 
 - **PERMITIDO:** "Warranty included — we stand behind our work" (sin plazos ni condiciones). Esta frase está aprobada y en uso.
 - **Velocidad de respuesta:** "Same day in most cases" o "same day when possible" — estos son los diferenciadores aprobados y verificables. Úsalos en FAQ, meta tags y copy.
 - **Testimoniales:** Solo hechos verificables. Nunca incluir políticas comerciales en boca de clientes (ej: "he credited the diagnostic fee" fue eliminado en PR #34).
-- **Social proof verificado:** 42 reseñas (4.9★), 100+ inspecciones, Certified Mechanical Engineer (15+ años).
+- **Social proof verificado:** 58 reseñas (4.9★, confirmado por Jose 2026-07-14, verificado contra reviewCount en vivo), 100+ inspecciones, Certified Mechanic (15+ años) — ver nota de tensión arriba sobre el título.
 
 ## 📋 Historial de Compliance — Cambios Aplicados
 

@@ -34,9 +34,9 @@ Update this file only when there is a meaningful historical or structural change
 Do not update this file for every small approved edit.
 
 **Document Purpose:** Complete project history, architecture, commits, and disaster recovery guide.
-**Last Updated:** 2026-03-24
+**Last Updated:** 2026-03-24 (review count corrected 2026-07-14 — rest of doc is historical, dated phase-by-phase; treat phase-specific "Current Status" lines below as snapshots of that phase, not live data)
 **Current Phase:** Phase 3 Homepage Trust-First + SEO Hardening Live
-**Status:** ✅ Production Stable | 🟢 4.9★ Rating | 42 Reviews | Auto-deploy from `main`
+**Status:** ✅ Production Stable | 🟢 4.9★ Rating | 58 Reviews (confirmed by Jose 2026-07-14, verified against live reviewCount in code) | Auto-deploy from `main`
 
 ---
 
@@ -249,6 +249,9 @@ Production on `main` now includes a homepage-first trust flow and backend SEO im
 - `1c85d30` - AI Diagnostic Funnel and conversion sensors
 
 **Major Features:**
+
+> ⚠️ **REMOVED 2026-07-13 (PR #66) — items 1-3 below no longer exist.** Jose confirmed the diagnostic widget/modal produced zero real leads across its entire lifetime (2 info requests, ever). It also sent name/contact to formsubmit.co (third party) before the form was complete, with no clear consent notice — flagged CRITICAL in the 2026-07-13 E-E-A-T audit alongside the "AI Analysis" label misrepresenting a keyword-matched response as expert review. Kept below as historical record only; do not treat as current site behavior.
+
 1. **Red Side Widget** (`#side-ask-mechanic`)
    - Fixed position button (right side, vertical text)
    - Z-index: 9999 (always visible)
