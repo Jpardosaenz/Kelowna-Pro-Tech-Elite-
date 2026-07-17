@@ -211,8 +211,7 @@ document.addEventListener('DOMContentLoaded', function () {
           'event_category': 'conversion',
           'event_label': linkText || 'Phone Click',
           'phone_number': phoneNumber,
-          'link_class': linkClass,
-          'page_location': window.location.pathname
+          'link_class': linkClass
         };
         if (this.id === 'main-cta-button' || this.closest('.floating-cta-container')) {
           phoneEventParams['button_location'] = 'floating_widget';
@@ -237,8 +236,7 @@ document.addEventListener('DOMContentLoaded', function () {
           'event_category': 'conversion',
           'event_label': linkText || 'SMS Click',
           'phone_number': phoneNumber,
-          'link_class': linkClass,
-          'page_location': window.location.pathname
+          'link_class': linkClass
         });
       }
 
