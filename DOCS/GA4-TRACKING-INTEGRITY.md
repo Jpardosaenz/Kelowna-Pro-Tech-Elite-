@@ -2,7 +2,9 @@
 
 **Implemented:** 2026-07-17
 
-**Status:** Ready for review; not merged or deployed
+**Status:** Merged in PR #73 and deployed to production
+
+**Production cutoff:** 2026-07-17 11:21:49 PDT (`2026-07-17T18:21:49.958Z`), merge commit `a61c3b1`
 
 ## Purpose
 
@@ -48,4 +50,4 @@ Historical GA4 data remains contaminated and must still be filtered with:
 hostName EXACTLY kelownaprotechmobilemech.com
 ```
 
-Future data can be treated as protected from localhost and preview contamination only from the actual production deployment timestamp onward. Record that timestamp here and in the cross-project analytics baseline after deployment.
+Data from the production cutoff above onward is protected from localhost and Netlify preview contamination by the hostname gate. This does not exclude other kinds of internal visits made directly on the live production domain.
