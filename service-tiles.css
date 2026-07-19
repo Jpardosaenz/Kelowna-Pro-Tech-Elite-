@@ -448,4 +448,92 @@ main.page {
   }
 }
 
+/* Maintenance card: compact BOFU offer */
+.tile--maintenance .maintenance-copy {
+  gap: 0;
+}
+
+.tile--maintenance .image-container {
+  overflow: hidden;
+}
+
+.tile--maintenance .image-container picture {
+  display: block;
+  height: 100%;
+}
+
+.tile--maintenance .image-container img {
+  height: 100%;
+}
+
+.tile--maintenance .title {
+  margin-bottom: 10px;
+}
+
+.tile--maintenance .maintenance-copy__text {
+  margin: 0;
+  color: #374151;
+  font-size: 13.5px;
+  line-height: 1.32;
+}
+
+.tile--maintenance .maintenance-footer {
+  padding-top: 0;
+}
+
+@media (max-width: 767px) {
+  .tile--maintenance .image-container {
+    height: clamp(104px, 15svh, 124px);
+  }
+
+  .tile--maintenance .copy {
+    margin-top: 0;
+    padding: 14px 16px 16px;
+  }
+
+  .tile--maintenance .title {
+    margin-bottom: 8px;
+    font-size: 18px;
+    line-height: 1.15;
+  }
+
+  .tile--maintenance .maintenance-copy__text {
+    font-size: 13px;
+    line-height: 1.28;
+  }
+
+  .tile--maintenance .maintenance-footer {
+    padding: 0 16px 16px;
+  }
+
+  .tile--maintenance .cta-button {
+    padding: 12px 14px;
+  }
+}
+
+@media (max-width: 767px) and (max-height: 700px) {
+  .tile--maintenance .image-container {
+    height: 84px;
+  }
+
+  .tile--maintenance .copy {
+    padding: 10px 14px 12px;
+  }
+
+  .tile--maintenance .title {
+    margin-bottom: 6px;
+    font-size: 17px;
+    line-height: 1.1;
+  }
+
+  .tile--maintenance .maintenance-copy__text {
+    font-size: 12.5px;
+    line-height: 1.2;
+  }
+
+  .tile--maintenance .maintenance-footer {
+    padding: 0 14px 12px;
+  }
+}
+
 /* ===== Testimonios de Apoyo (compartida) ===== */
