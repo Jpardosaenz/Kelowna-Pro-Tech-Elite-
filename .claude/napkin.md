@@ -9,17 +9,19 @@
 
 ## Execution & Validation — Highest Priority
 
-1. **[2026-07-18] Verify branch before every edit; never work directly on `main`.**
+1. **[2026-07-19] Una tarea usa una branch y un worktree exclusivos; nadie puede reutilizarlos para otra tarea.**
+   Do instead: antes de editar, confirmar branch, status, commits y archivos; si existe trabajo de otra tarea, detenerse y crear una branch y un worktree limpios.
+2. **[2026-07-18] Verify branch before every edit; never work directly on `main`.**
    Do instead: run `git branch --show-current` and `git status --short --branch` before changing files.
-2. **[2026-07-18] No bulk changes.**
+3. **[2026-07-18] No bulk changes.**
    Do instead: make the smallest viable change, verify it, then continue only after approval.
-3. **[2026-07-18] Read repository rules before acting.**
+4. **[2026-07-18] Read repository rules before acting.**
    Do instead: read `AGENTS.md`, `CLAUDE.md`, and relevant `.claude/rules/` files.
-4. **[2026-07-18] Present purpose before deliverables.**
+5. **[2026-07-18] Present purpose before deliverables.**
    Do instead: state priority, POR QUÉ, PARA QUÉ, QUÉ, and RESULTADO ESPERADO before execution.
-5. **[2026-07-18] Review exact scope before commit or handoff.**
+6. **[2026-07-18] Review exact scope before commit or handoff.**
    Do instead: run `git status`, inspect the diff, and list only files actually changed.
-6. **[2026-07-18] Verify behavior, not only static screenshots.**
+7. **[2026-07-18] Verify behavior, not only static screenshots.**
    Do instead: test responsive state, scroll, DOM position, CTA action, and relevant breakpoints.
 
 ## Copy, Conversion & AEO
