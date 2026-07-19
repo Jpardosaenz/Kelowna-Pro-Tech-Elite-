@@ -10,6 +10,10 @@ Purpose:
 
 ## Non-negotiable workflow rules
 - Do not modify `main` directly. All work must happen in a test branch. `main` may only be modified if the project owner gives direct, explicit approval.
+- One task must use exactly one dedicated branch and one dedicated worktree. Never reuse a branch or worktree for a different task, even when the tasks are related.
+- A follow-up may remain on the same branch only when it directly completes the same approved deliverable. A new objective, deliverable, bug, content change, or operational request is a new task and requires a new branch and worktree.
+- Before any edit, confirm that the current branch name and worktree belong to the active task. If unrelated commits or uncommitted changes are present, stop; do not move, stash, overwrite, or commit them. Create a clean branch and worktree for the new task.
+- Concurrent people or agents must never write from the same branch or worktree. Each active task must have its own isolated branch and worktree.
 - Do not make bulk corrections or bulk commits. Audit the relevant context first, work in the smallest possible increments, fix step by step, and verify after each micro-change before continuing.
 - Changes must be approved before execution.
 - State the reason for the change and its intended outcome before substantial work.
