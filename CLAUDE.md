@@ -64,6 +64,11 @@ Before each deliverable, classify:
 ## Proactive consent
 Propose ideas and alternatives freely. NEVER execute without explicit authorization. Proposing ≠ executing.
 
+## Continuity discipline
+- Read and curate `.claude/napkin.md` at the beginning of work; it is the recurring runbook, not a session log.
+- After every representative activity, update `.claude/handoff.md` with current decisions, pending work, corrections, modified files, and the exact next start.
+- Store durable copy methodology in `DOCS/COPY-INTENT-TRUST-PLAYBOOK.md`; do not bury reusable knowledge only in chat or handoff files.
+
 ## Incident log
 <!-- Format: [YYYY-MM-DD HH:MM] TIPO: descripción — resultado -->
 
