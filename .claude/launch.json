@@ -11,7 +11,7 @@
     {
       "name": "Python HTTP Server",
       "runtimeExecutable": "python3",
-      "runtimeArgs": ["/Users/EPARDOSAENZ/Documents/Proyect Web/Website KPEMM/.claude/serve.py"],
+      "runtimeArgs": ["/Users/EPARDOSAENZ/Documents/KPEMM/Proyect Web/Website KPEMM/.claude/serve.py"],
       "port": 5500
     },
     {
