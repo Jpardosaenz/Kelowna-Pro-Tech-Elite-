@@ -12,9 +12,11 @@
 - Auditoría E-E-A-T completa (55/100, base de la mayoría de pendientes de abajo) → `AUDITORIAS-LOCALES/2026-07-13_Auditoria-EEAT-Autoridad-Tematica.md`.
 
 ## Directivas de trabajo
-1. **[2026-06-16] Leer antes de actuar. No inventar dato (reviews/horario/zona) — alinear con la fuente de Marketing, no con lo viejo del sitio.**
-2. **[2026-06-16] Diseño + copy juntos:** premium (frontend-design + emil) + copy que FILTRA al cazador de precio (filosofía). No solo estética.
-3. **[2026-07-13] Rol > nombre en copy de conversión.** "Certified Mechanic", nunca "Joseph"/"Jose" en CTAs, botones, headlines. Regla canónica en `estilo-voz.md`. Aplicado sitewide (PR #66/#67) + en llms.txt (branch `feat/ppi-top-position`, sin mergear aún, 2026-07-14).
+1. **[2026-07-19] Una tarea usa una branch y un worktree exclusivos; nadie puede reutilizarlos para otra tarea.**
+   Do instead: antes de editar, confirmar branch, status, commits y archivos; si existe trabajo de otra tarea, detenerse y crear una branch y un worktree limpios.
+2. **[2026-06-16] Leer antes de actuar. No inventar dato (reviews/horario/zona) — alinear con la fuente de Marketing, no con lo viejo del sitio.**
+3. **[2026-06-16] Diseño + copy juntos:** premium (frontend-design + emil) + copy que FILTRA al cazador de precio (filosofía). No solo estética.
+4. **[2026-07-13] Rol > nombre en copy de conversión.** "Certified Mechanic", nunca "Joseph"/"Jose" en CTAs, botones, headlines. Regla canónica en `estilo-voz.md`. Aplicado sitewide (PR #66/#67) + en llms.txt (branch `feat/ppi-top-position`, sin mergear aún, 2026-07-14).
 
 ## Stack
 1. **[2026-06-16] Estático HTML/CSS/JS en Netlify. NO React/Next/shadcn.**

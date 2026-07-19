@@ -14,6 +14,15 @@ Redirects: `_redirects`. Headers: `_headers`.
 ## Branch rules
 All changes must be made in a test/feature branch first. Never modify `main` directly without explicit owner approval.
 
+### Mandatory task isolation — NEVER violate
+- One task = one dedicated branch = one dedicated worktree.
+- NEVER reuse an existing branch or worktree for a different task. Related subject matter does not make two separate deliverables the same task.
+- A direct continuation may stay on the branch only when it completes the same approved deliverable. Any new objective, deliverable, bug, content change, or operational request requires a new branch and worktree.
+- Before editing, run `git branch --show-current` and `git status --short --branch`, then verify that the branch name, existing commits, staged files, and unstaged files all belong to the active task.
+- If the worktree contains changes from another task, STOP. Do not stash, move, delete, overwrite, stage, or commit them. Create a clean worktree and branch from the correct base.
+- Every concurrent person or agent must work in a different branch and worktree. No two active tasks may share either one.
+- A branch is closed to new work after its task is completed. Further work requires a new branch, except for corrections requested specifically to complete the same review or pull request.
+
 ## Git staging rules — NEVER violate
 - NEVER use `git add .` or `git add -A`. Only stage files explicitly by name: `git add path/to/file`.
 - ALWAYS run `git status` before any commit to verify exactly which files are staged.
@@ -46,6 +55,7 @@ Run these in order and confirm each passes before pushing:
 ## Corrections log
 <!-- Add rules here only when Claude makes a real mistake. Format: "- Do X, not Y" -->
 - ALWAYS verify current branch before any edit. Run `git branch --show-current` at session start. If on main, switch to test branch before doing anything.
+- Use a dedicated branch and worktree for every task; never allow unrelated work to share the same branch or working directory.
 
 ## Mandatory pre-delivery framework
 Before ANY deliverable (code, prompt, message, file change), present:
