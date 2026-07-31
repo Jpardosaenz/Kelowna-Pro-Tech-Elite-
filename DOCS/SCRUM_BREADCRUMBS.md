@@ -50,7 +50,7 @@ Estas reglas protegen al negocio legalmente. Cualquier IA o persona que trabaje 
 - **PERMITIDO:** "Warranty included — we stand behind our work" (sin plazos ni condiciones). Esta frase está aprobada y en uso.
 - **Velocidad de respuesta:** "Same day in most cases" o "same day when possible" — estos son los diferenciadores aprobados y verificables. Úsalos en FAQ, meta tags y copy.
 - **Testimoniales:** Solo hechos verificables. Nunca incluir políticas comerciales en boca de clientes (ej: "he credited the diagnostic fee" fue eliminado en PR #34).
-- **Social proof verificado:** 58 reseñas (4.9★, confirmado por Jose 2026-07-14, verificado contra reviewCount en vivo), 100+ inspecciones, Certified Mechanic (15+ años) — ver nota de tensión arriba sobre el título.
+- **Social proof verificado:** 62 reseñas (4.9★, confirmado por Jose 2026-07-31), 100+ inspecciones, Certified Mechanic (15+ años) — ver nota de tensión arriba sobre el título.
 
 ## 📋 Historial de Compliance — Cambios Aplicados
 
@@ -74,7 +74,7 @@ Estas reglas protegen al negocio legalmente. Cualquier IA o persona que trabaje 
 ### 3. SEO & E-E-A-T
 *   **Schema.org:** Cada página tiene JSON-LD de `Service` y `FAQPage`.
 *   **Contenido:** Buscamos >1,500 palabras por página para dominar el ranking de "Mobile Mechanic Kelowna".
-*   **Homepage schema actual:** La homepage usa `["AutoRepair", "LocalBusiness"]` y `reviewCount: 42`. No desalinear schema vs UI visible.
+*   **Homepage schema actual:** La homepage usa `["AutoRepair", "LocalBusiness"]` y `reviewCount: 62` (actualizado 2026-07-31 con ./update-reviews.sh). No desalinear schema vs UI visible.
 
 ## 🧭 Reglas de Continuidad Operativa
 
