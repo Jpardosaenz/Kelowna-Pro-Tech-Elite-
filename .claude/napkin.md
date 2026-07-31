@@ -9,19 +9,12 @@
 
 ## Execution & Validation — Highest Priority
 
-1. **[2026-07-19] Una tarea usa una branch y un worktree exclusivos; nadie puede reutilizarlos para otra tarea.**
-   Do instead: antes de editar, confirmar branch, status, commits y archivos; si existe trabajo de otra tarea, detenerse y crear una branch y un worktree limpios.
-2. **[2026-07-18] Verify branch before every edit; never work directly on `main`.**
-   Do instead: run `git branch --show-current` and `git status --short --branch` before changing files.
-3. **[2026-07-18] No bulk changes.**
-   Do instead: make the smallest viable change, verify it, then continue only after approval.
-4. **[2026-07-18] Read repository rules before acting.**
-   Do instead: read `AGENTS.md`, `CLAUDE.md`, and relevant `.claude/rules/` files.
-5. **[2026-07-18] Present purpose before deliverables.**
-   Do instead: state priority, POR QUÉ, PARA QUÉ, QUÉ, and RESULTADO ESPERADO before execution.
-6. **[2026-07-18] Review exact scope before commit or handoff.**
-   Do instead: run `git status`, inspect the diff, and list only files actually changed.
-7. **[2026-07-18] Verify behavior, not only static screenshots.**
+> **[2026-07-31]** Los 6 ítems que estaban acá (branch/worktree exclusivos, verificar branch,
+> no hacer cambios masivos, leer las reglas del repo, presentar POR QUÉ/PARA QUÉ/QUÉ/RESULTADO,
+> revisar el diff antes del commit) eran copia textual de `AGENTS.md` y `CLAUDE.md`, que se
+> cargan igual. Fuente única ahora: esos dos archivos. No volver a copiarlos acá.
+
+1. **[2026-07-18] Verify behavior, not only static screenshots.**
    Do instead: test responsive state, scroll, DOM position, CTA action, and relevant breakpoints.
 
 ## Copy, Conversion & AEO
@@ -62,18 +55,14 @@
    Do instead: refine existing patterns and avoid unnecessary frameworks or dependencies.
 2. **[2026-07-18] Shared components may be duplicated across pages.**
    Do instead: read `.claude/rules/shared-components.md` and verify each affected page individually.
-3. **[2026-07-18] Protected production files require explicit approval.**
-   Do instead: do not edit `_headers`, `_redirects`, `robots.txt`, or `sitemap.xml` without the required explanation and approval.
-4. **[2026-07-18] Mobile-first behavior can differ from desktop.**
+3. **[2026-07-18] Mobile-first behavior can differ from desktop.**
    Do instead: audit both environments before classifying a layout or CTA issue.
 
 ## Continuity
 
-1. **[2026-07-18] Create a handoff after every representative activity.**
-   Do instead: update `.claude/handoff.md` with decisions, pending work, corrections, files changed, and the exact next start.
-2. **[2026-07-18] Keep durable copy knowledge in the living playbook.**
+1. **[2026-07-18] Keep durable copy knowledge in the living playbook.**
    Do instead: update `DOCS/COPY-INTENT-TRUST-PLAYBOOK.md` when evidence or Jose's corrections change the standard.
-3. **[2026-07-18] Do not use the handoff as a permanent knowledge base.**
+2. **[2026-07-18] Do not use the handoff as a permanent knowledge base.**
    Do instead: put recurring rules in this napkin, copy methodology in the playbook, and only current activity state in the handoff.
 
 ## Canonical Pointers
