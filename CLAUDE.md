@@ -11,23 +11,13 @@ No build step. Static HTML/CSS/JS served directly.
 Production deploy: push to `main` on GitHub → Netlify auto-deploys.
 Redirects: `_redirects`. Headers: `_headers`.
 
-## Branch rules
-All changes must be made in a test/feature branch first. Never modify `main` directly without explicit owner approval.
+## Branch and task-isolation rules
+Canonical source: `AGENTS.md` § "Non-negotiable workflow rules" (imported above via `@AGENTS.md`).
+Do not restate those rules here — they were duplicated in this file until 2026-07-31.
 
-### Mandatory task isolation — NEVER violate
-- One task = one dedicated branch = one dedicated worktree.
-- NEVER reuse an existing branch or worktree for a different task. Related subject matter does not make two separate deliverables the same task.
-- A direct continuation may stay on the branch only when it completes the same approved deliverable. Any new objective, deliverable, bug, content change, or operational request requires a new branch and worktree.
-- Before editing, run `git branch --show-current` and `git status --short --branch`, then verify that the branch name, existing commits, staged files, and unstaged files all belong to the active task.
-- If the worktree contains changes from another task, STOP. Do not stash, move, delete, overwrite, stage, or commit them. Create a clean worktree and branch from the correct base.
-- Every concurrent person or agent must work in a different branch and worktree. No two active tasks may share either one.
-- A branch is closed to new work after its task is completed. Further work requires a new branch, except for corrections requested specifically to complete the same review or pull request.
-
-## Git staging rules — NEVER violate
-- NEVER use `git add .` or `git add -A`. Only stage files explicitly by name: `git add path/to/file`.
-- ALWAYS run `git status` before any commit to verify exactly which files are staged.
-- ALWAYS run `git diff --staged` before committing to review every line being committed.
+## Git staging — the one rule born from a real incident
 - NEVER commit credentials, service account keys, or `.json` auth files — even if not in `.gitignore`.
+  (2026-04-09: a service account key was committed and had to be rotated. See `docs/HISTORIAL-INCIDENTES.md`.)
 
 ## Prohibited commands — require explicit owner approval before running
 - `git reset --hard`
@@ -44,18 +34,9 @@ These files affect Netlify production behavior directly upon push:
 - `sitemap.xml`
 Do not modify without stating POR QUÉ / PARA QUÉ / QUÉ / RESULTADO ESPERADO and receiving explicit "yes, proceed".
 
-## Pre-push checklist — mandatory before any `git push`
-Run these in order and confirm each passes before pushing:
-1. `git branch --show-current` → must NOT be `main`
-2. `git remote -v` → confirm pushing to correct remote (origin = Jpardosaenz repo)
-3. `git status` → no unintended files staged or modified
-4. `git diff --staged` → review every line going up
-5. No credentials or sensitive files in the diff
-
-## Corrections log
-<!-- Add rules here only when Claude makes a real mistake. Format: "- Do X, not Y" -->
-- ALWAYS verify current branch before any edit. Run `git branch --show-current` at session start. If on main, switch to test branch before doing anything.
-- Use a dedicated branch and worktree for every task; never allow unrelated work to share the same branch or working directory.
+## Before `git push` — the project-specific check
+`git remote -v` → origin must be the Jpardosaenz repo.
+(The rest of the old checklist was standard git hygiene and lived in three files at once; removed 2026-07-31.)
 
 ## Mandatory pre-delivery framework
 Before ANY deliverable (code, prompt, message, file change), present:
@@ -71,19 +52,12 @@ Before each deliverable, classify:
 - IMPORTANTE — operational gain
 - ESTRATÉGICO — long-term business impact
 
-## Proactive consent
-Propose ideas and alternatives freely. NEVER execute without explicit authorization. Proposing ≠ executing.
-
 ## Continuity discipline
 - Read and curate `.claude/napkin.md` at the beginning of work; it is the recurring runbook, not a session log.
 - After every representative activity, update `.claude/handoff.md` with current decisions, pending work, corrections, modified files, and the exact next start.
 - Store durable copy methodology in `DOCS/COPY-INTENT-TRUST-PLAYBOOK.md`; do not bury reusable knowledge only in chat or handoff files.
 
 ## Incident log
-<!-- Format: [YYYY-MM-DD HH:MM] TIPO: descripción — resultado -->
-
-[2026-04-09] SETUP: Created CLAUDE.md, settings.json, shared-components rule, .gitignore update, fixed double DOMContentLoaded in scripts.js — merged to main via PR #47
-[2026-04-09] INCIDENT: Committed sensitive file (protech-analytics-f8110238d804.json, service account key) in branch chore/claude-config — branch never pushed, key rotated in Google Cloud, orphaned commit cleaned with git gc, new key stored in ~/Documents/protech-intelligence/credentials/
-[2026-04-09] INCIDENT: Worked on main directly without verifying branch — caught by owner, rule added to Corrections log
-[2026-04-10] SETUP: Added Mandatory pre-delivery framework, Priority classification, Proactive consent, and Incident log sections to CLAUDE.md
-[2026-04-19] INCIDENT: Edited index.html while on main branch without reading website CLAUDE.md — session started from Marketing Workers directory which does not auto-load website CLAUDE.md. Fix: added mandatory cross-reference in Marketing Workers CLAUDE.md + added 6 production safety rules to website CLAUDE.md (staging, prohibited commands, protected files, pre-push checklist).
+Moved to `docs/HISTORIAL-INCIDENTES.md` on 2026-07-31 — the incidents were already
+converted into the active rules above, so the full narrative no longer needs to load
+every session. New incidents go in that file, and only the resulting *rule* comes here.
