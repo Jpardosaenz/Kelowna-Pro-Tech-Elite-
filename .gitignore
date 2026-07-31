@@ -18,3 +18,8 @@ prompt_ga4_gbp_code.md
 
 # Claude Code config local (rutas absolutas locales)
 .claude/settings.local.json
+
+# Salidas generadas por herramientas — se regeneran, no son código (2026-07-31)
+graphify-out/
+.claude/backup-reviews-*/
+.claude/backup-reglas-*/
