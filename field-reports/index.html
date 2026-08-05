@@ -360,9 +360,34 @@
       "@context": "https://schema.org",
       "@graph": [
         {
-          "@type": "Organization",
+          "@type": "LocalBusiness",
           "@id": "https://kelownaprotechmobilemech.com/#organization",
           "name": "Kelowna Protech Elite Mobile Mechanic",
+          "telephone": "+1-250-859-5467",
+          "address": {
+            "@type": "PostalAddress",
+            "streetAddress": "773 Glenmore Rd",
+            "addressLocality": "Kelowna",
+            "addressRegion": "BC",
+            "postalCode": "V1V 3B9",
+            "addressCountry": "CA"
+          },
+          "openingHoursSpecification": [
+            {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
+          ],
+          "image": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
           "url": "https://kelownaprotechmobilemech.com/"
         },
         {
@@ -376,6 +401,36 @@
           },
           "breadcrumb": {
             "@id": "https://kelownaprotechmobilemech.com/field-reports/#breadcrumb"
+          },
+          "mainEntity": {
+            "@type": "ItemList",
+            "itemListElement": [
+              {
+                "@type": "ListItem",
+                "position": 1,
+                "url": "https://kelownaprotechmobilemech.com/field-reports/gmc-savana-kelowna-diagnostic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 2,
+                "url": "https://kelownaprotechmobilemech.com/field-reports/honda-pilot-kelowna-diagnostic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 3,
+                "url": "https://kelownaprotechmobilemech.com/field-reports/chrysler-300-kelowna-diagnostic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 4,
+                "url": "https://kelownaprotechmobilemech.com/field-reports/vw-jetta-tdi-kelowna-diagnostic/"
+              },
+              {
+                "@type": "ListItem",
+                "position": 5,
+                "url": "https://kelownaprotechmobilemech.com/field-reports/jeep-cherokee-kelowna-diagnostic/"
+              }
+            ]
           }
         },
         {
@@ -466,18 +521,7 @@
     <section aria-label="Field reports">
       <div class="cases-grid">
 
-        <!-- BMW Z3 -->
-        <a class="case-card" href="/field-reports/bmw-z3-kelowna-diagnostic/">
-          <img class="case-card__img" src="/images/bmw-z3-kelowna-parking.jpg"
-            alt="Red BMW Z3 roadster in Kelowna parking lot — on-site mobile diagnostic" width="2720" height="1995"
-            loading="lazy" decoding="async" />
-          <div class="case-card__body">
-            <span class="case-card__tag">On-Site Diagnostic</span>
-            <h2 class="case-card__title">BMW Z3 Stranded in a Kelowna Parking Lot</h2>
-            <p class="case-card__meta">Harvey Avenue · Same-Day · Kelowna, BC</p>
-            <span class="case-card__link">Read case →</span>
-          </div>
-        </a>
+        <!-- Case cards pending: GMC Savana, Honda Pilot, Chrysler 300, VW Jetta TDI, Jeep Cherokee -->
 
       </div>
     </section>
