@@ -65,14 +65,14 @@
 
     @media (max-width: 768px) {
       .page {
-        padding: 24px 16px;
+        padding: 8px 16px 24px;
       }
     }
 
     .breadcrumb {
       font-size: 12px;
       color: var(--muted);
-      margin: 8px 0 16px;
+      margin: 0 0 8px;
     }
 
     .breadcrumb a {
@@ -101,8 +101,8 @@
     }
 
     .cases-header h1 {
-      font-size: 24px;
-      line-height: 1.2;
+      font-size: 19px;
+      line-height: 1.25;
       margin: 0 0 8px;
       color: var(--premium-dark);
       font-weight: 800;
@@ -119,27 +119,25 @@
 
     @media (min-width: 768px) {
       .cases-header {
-        margin: 64px auto 80px;
-        max-width: 800px;
-        text-align: center;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
+        margin: 32px 0 36px;
+        max-width: 900px;
+        text-align: left;
       }
 
       .cases-header h1 {
-        font-size: 52px;
+        font-size: clamp(28px, 3.2vw, 38px);
+        line-height: 1.15;
       }
 
       .cases-header p {
-        font-size: 20px;
-        margin: 0 auto;
+        font-size: 17px;
+        margin: 0;
         max-width: 680px;
       }
     }
 
     .cases-header p {
-      font-size: 14px;
+      font-size: 16px;
       color: var(--muted);
       line-height: 1.5;
       margin: 0;
@@ -214,7 +212,7 @@
 
     @media (min-width: 768px) {
       .case-card__body {
-        padding: 24px;
+        padding: 18px 20px 20px;
       }
     }
 
@@ -402,6 +400,107 @@
       .mobile-cta-sms::after { animation: none; }
       .mobile-cta-sms { transition: none; }
     }
+
+    /* ── Dark theme — this page only, matches /services/ dark panels.
+       Nav bar stays white (shared site header, untouched). ── */
+    body {
+      background: var(--premium-dark);
+    }
+
+    .page {
+      color: #e2e8f0;
+    }
+
+    .breadcrumb {
+      color: #94a3b8;
+    }
+
+    .cases-header__badge {
+      background: transparent;
+      color: var(--premium-gold);
+      border: 1px solid rgba(251, 191, 36, 0.35);
+    }
+
+    .cases-header h1 {
+      color: #fff;
+    }
+
+    .cases-header h1 .highlight {
+      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+      -webkit-background-clip: text;
+      background-clip: text;
+    }
+
+    .cases-header p {
+      color: #94a3b8;
+    }
+
+    .cases-header p a {
+      color: #7dd3fc;
+    }
+
+    .case-card {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: rgba(255, 255, 255, 0.12);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+    }
+
+    .case-card:hover {
+      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+      border-color: rgba(251, 191, 36, 0.35);
+    }
+
+    .case-card__tag {
+      color: var(--premium-gold);
+    }
+
+    .case-card__title {
+      color: #fff;
+    }
+
+    .case-card__meta {
+      color: #94a3b8;
+    }
+
+    .case-card__link {
+      color: var(--premium-gold);
+    }
+
+    .page .lead {
+      color: #94a3b8;
+    }
+
+    .section h2 {
+      color: #fff;
+    }
+
+    .ppi-map__embed {
+      border: 1px solid rgba(255, 255, 255, 0.12);
+    }
+
+    .site-nap {
+      color: #94a3b8;
+      border-top: 1px solid rgba(255, 255, 255, 0.1);
+      margin-top: 40px;
+      padding-top: 24px;
+      font-size: 14px;
+      line-height: 1.7;
+    }
+
+    .site-nap__brand {
+      color: #fff;
+      font-size: 16px;
+      display: block;
+      margin-bottom: 4px;
+    }
+
+    .site-nap__tel {
+      color: var(--premium-gold);
+    }
+
+    .site-nap__link {
+      color: #7dd3fc;
+    }
   </style>
 
   <!-- JSON-LD -->
@@ -566,9 +665,12 @@
     <!-- Header -->
     <header class="cases-header">
       <div class="cases-header__badge">Success Stories</div>
-      <h1>Real Diagnoses. <span class="highlight">Real Kelowna Vehicles.</span></h1>
-      <p>Real breakdowns, fixed on-site, same day. Buying used? The same scan powers our
-        <a href="/services/pre-purchase/">pre-purchase inspection in Kelowna</a>.</p>
+      <h1>Your Car Fixed On-Site. Your Answers Documented Photo by Photo. <span class="highlight">Kelowna Protech, the Best On-Site Mechanic in Kelowna.</span></h1>
+      <p>Below, you will find real repair cases from Kelowna Protech:
+        <a href="/services/diagnostic/"><strong>specialized diagnostics and automotive electrical work</strong></a>,
+        <a href="/services/pre-purchase/"><strong>pre-purchase inspections</strong></a>, and
+        <a href="/services/maintenance/"><strong>preventive maintenance</strong></a>, each one
+        documented on-site with real photos and a clear outcome.</p>
     </header>
 
     <!-- Cases grid -->
@@ -579,7 +681,7 @@
         <a class="case-card" href="/field-reports/gmc-savana-kelowna-diagnostic/">
           <img class="case-card__img" src="/images/gmc-savana-2016-mechanic-onsite-800w.jpg"
             alt="Certified mechanic diagnosing a 2016 GMC Savana work van on-site in Kelowna, hood open, scanner in hand"
-            width="600" height="800" loading="lazy" decoding="async" />
+            width="600" height="800" loading="lazy" decoding="async" style="object-position: 50% 61%;" />
           <div class="case-card__body">
             <span class="case-card__tag">On-Site Repair</span>
             <h2 class="case-card__title">GMC Savana Crew Stranded in Kelowna, Fixed Same Day</h2>
@@ -644,7 +746,7 @@
         <a class="case-card" href="/field-reports/cadillac-srx-kelowna-diagnostic/">
           <img class="case-card__img" src="/images/cadillac-srx-2013-kelowna-mechanic-600w.jpg"
             alt="Certified mechanic diagnosing a 2013 Cadillac SRX in a Kelowna driveway, hood open" width="450"
-            height="600" loading="lazy" decoding="async" />
+            height="600" loading="lazy" decoding="async" style="object-position: 50% 35%;" />
           <div class="case-card__body">
             <span class="case-card__tag">No-Power Diagnostic</span>
             <h2 class="case-card__title">Cadillac SRX Total Power Loss, Fixed in 2 Hours</h2>

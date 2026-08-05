@@ -2,7 +2,7 @@ import http.server
 import socketserver
 
 PORT = 5500
-DIRECTORY = "/Users/EPARDOSAENZ/Documents/KPEMM/Proyect Web/Website KPEMM"
+DIRECTORY = "/Users/EPARDOSAENZ/Documents/Proyect Web/Website KPEMM/worktree-field-reports-cluster"
 
 class Handler(http.server.SimpleHTTPRequestHandler):
     def __init__(self, *args, **kwargs):
