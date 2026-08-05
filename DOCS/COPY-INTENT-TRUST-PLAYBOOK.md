@@ -201,6 +201,151 @@ No acumular adjetivos sin función ni convertirlos en relleno. Los servicios, re
 reseñas desarrollan por qué sostenemos ese posicionamiento. Esta regla no autoriza inventar premios,
 posiciones numéricas, comparaciones estadísticas o certificaciones inexistentes.
 
+### 2.6. Evidencia propia de KPEMM: qué gana clics en nuestro sitio
+
+**Fecha de medición: 2026-08-05. Fuente: Search Console del sitio, consultado en vivo.**
+**Esta sección manda sobre cualquier suposición. Se reemplaza solo con medición nueva.**
+
+Regla de decisión fijada por Jose: **la métrica que manda es el clic, no la posición.**
+Una página en posición 3 sin clics no es un modelo a copiar. Una página en posición 20
+con clics sí lo es.
+
+#### Datos reales por página (1 mayo al 4 agosto 2026)
+
+| Página | Clics | Impresiones | CTR | Posición |
+|---|---:|---:|---:|---:|
+| `/` vía enlace de GBP | 128 | 2.730 | 4,69% | 5,3 |
+| `/` orgánico | 69 | 3.368 | 2,05% | 11,9 |
+| `/services/pre-purchase/` | 8 | 533 | 1,5% | 21,1 |
+| `/services/diagnostic/` | 2 | 283 | 0,71% | 12,9 |
+| `/our-story/` | 1 | 239 | 0,42% | 5,6 |
+| `/field-reports/bmw-z3-kelowna-diagnostic/` | **0** | 42 | **0%** | **3,0** |
+
+#### Hallazgo 1: la posición no explica los clics
+
+Comparación entre páginas, ordenadas de mejor a peor posición en Google. Todos estos
+números son de la tabla de arriba, medidos por página:
+
+| Página | Posición | CTR |
+|---|---:|---:|
+| `bmw-z3` | **3,0** (la mejor del sitio) | **0%** |
+| `/our-story/` | 5,6 | 0,42% |
+| `/services/pre-purchase/` | **21,1** (la peor) | **1,5%** |
+
+La página **mejor posicionada de todo el sitio saca cero clics**. La peor posicionada,
+dieciocho puestos más abajo, saca más clics que las dos que están arriba de ella. Si la
+posición explicara los clics, este orden sería imposible.
+
+Lo que separa a `pre-purchase` de las otras dos no es dónde la pone Google, es lo que la
+persona lee antes de decidir si entra. Por eso el trabajo se concentra en lo que se lee,
+no en subir de puesto.
+
+Detalle del patrón: las dos páginas con CTR casi cero son las dos páginas narrativas del
+sitio (`bmw-z3` cuenta el caso de un auto, `our-story` cuenta la historia del negocio).
+La que convierte es la que nombra un servicio concreto.
+
+**Nota metodológica, para no repetir un error:** Search Console entrega las búsquedas por
+un lado y las páginas por otro, y con las herramientas conectadas hoy no se puede
+comprobar qué búsqueda cayó en qué página. Por eso este hallazgo se apoya únicamente en
+datos por página, que sí son directos. Cualquier afirmación del tipo "esta búsqueda entra
+por esta página" es una suposición mientras no se verifique en la interfaz de Search
+Console, y no debe escribirse como hecho.
+
+#### Hallazgo 2: anatomía de los títulos, ordenados por clics reales
+
+| Clics | Título tal como lo ve la persona en Google | Qué contiene |
+|---:|---|---|
+| 69 | `Mobile Mechanic Kelowna. Stranded? Fixed Today, No Tow` | servicio + ciudad + **situación del lector** + resultado + **objeción eliminada** |
+| 8 | `Pre-Purchase Car Inspection Kelowna. Mobile, Same Day` | servicio + ciudad + cómo + rapidez |
+| 2 | `On-Site Car Diagnostic Kelowna. Same-Day Service` | servicio + ciudad + rapidez. **Sin situación del lector, sin objeción eliminada** |
+| 0 | `BMW Z3 Breakdown in Kelowna. Diagnosed On-Site` | **empieza por el vehículo**, no por el servicio que la persona busca |
+
+Patrón: cuanto más nombra el título **la situación real del lector** y **le quita su
+objeción**, más clics. El título que empieza por el nombre del vehículo saca cero.
+
+**Regla operativa para títulos de cualquier página nueva:**
+
+> `[servicio que la persona busca] + [ciudad] + [situación o miedo del lector] + [objeción eliminada]`
+
+Nunca abrir un título con marca y modelo del vehículo. El vehículo va adentro de la
+página, no en la puerta de entrada.
+
+#### Hallazgo 3: la descripción sola no salva una página
+
+`/services/diagnostic/` ya abre su descripción con la pregunta del cliente
+(`Check-engine light? Car won't start?`), igual que el home, y aun así saca 2 clics.
+Conclusión honesta: abrir con la pregunta del cliente es necesario pero **no es
+suficiente**. El título pesa más, y la página tiene que responder de verdad lo que
+promete.
+
+#### Hallazgo 4: preguntas y respuestas legibles por máquina
+
+| Página | Clics | Schema `FAQPage` | Preguntas marcadas |
+|---|---:|---|---:|
+| `/` | 69 | Sí | 7 |
+| `/services/pre-purchase/` | 8 | Sí | 6 |
+| `/services/diagnostic/` | 2 | No | 0 |
+| `/field-reports/bmw-z3-...` | 0 | No | 0 |
+
+Las dos páginas con clics tienen sus preguntas marcadas para que una máquina las lea.
+Las dos sin clics no las tienen. `diagnostic` tiene preguntas visibles pero **sin
+marcar**, y no le alcanza.
+
+**Límite honesto:** son cuatro páginas. Esto es una coincidencia fuerte y consistente,
+no una relación causa y efecto demostrada. Se aplica porque además es exactamente lo que
+necesitan ChatGPT, Perplexity y los resúmenes de IA de Google para citar una respuesta,
+que es el objetivo declarado del negocio en `goal.md`. Se revisa cuando haya más páginas
+medidas.
+
+#### Hallazgo 5: el home gana por volumen, no por eficiencia
+
+El home tiene el CTR orgánico más alto en clics absolutos (69) pero su CTR es **2,05%**,
+que no es extraordinario. Lo que tiene es **3.368 impresiones**, diez veces más que
+cualquier otra página. Gana por cantidad de gente que lo ve, no por convertir mejor.
+
+Las búsquedas de mayor volumen del negocio, medidas a nivel de búsqueda (sin poder
+confirmar en qué página entran, ver la nota metodológica del Hallazgo 1):
+
+| Búsqueda | Impresiones | CTR |
+|---|---:|---:|
+| `mobile mechanic kelowna` | 654 | 5,05% |
+| `mobile mechanic` | 168 | 0,6% |
+| `kelowna mobile mechanic` | 145 | 8,28% |
+| `mobile mechanic near me` | 145 | 2,76% |
+| `mobile mechanic west kelowna` | 97 | 8,25% |
+
+Lección para páginas nuevas: **primero elegir una búsqueda que la gente realmente
+escriba**, después escribir el título. Una página perfecta sobre algo que nadie busca no
+tiene de dónde sacar clics. El techo de una página lo pone el volumen de su búsqueda; el
+título decide qué parte de ese techo se captura.
+
+#### Receta obligatoria para toda página nueva del sitio
+
+Aplicar en este orden, hasta que una medición nueva demuestre algo mejor:
+
+1. **Elegir la búsqueda real** que la página va a responder, tomada de Search Console o
+   de GBP, nunca inventada.
+2. **Título** con la fórmula del Hallazgo 2. Nunca abrir por vehículo, nunca por cuento.
+3. **Descripción** que abre con la pregunta del cliente, en sus palabras.
+4. **Prueba de confianza arriba, antes de todo lo demás:** estrellas, cantidad de
+   reseñas y una reseña real. El home la tiene pegada arriba. `bmw-z3` la tiene al
+   final, y saca cero.
+5. **Proceso en tres pasos** para quitar la duda de cómo funciona, como el home
+   (`Text`, `Diagnose`, `Fix`).
+6. **Contenido concreto** que responde lo que el título prometió, con la ruta de la
+   sección 2.2 de este documento.
+7. **Preguntas y respuestas marcadas** con `FAQPage`, no solo visibles.
+8. **Enlaces internos hacia el hub y hacia la página de servicio** para que ninguna
+   página quede huérfana.
+9. **Un solo CTA**, específico a la intención de esa página.
+
+#### Deuda conocida que no se debe copiar
+
+`/field-reports/bmw-z3-kelowna-diagnostic/` es la única página de caso individual que
+existe hoy y **no es un modelo válido**: cero clics, título por vehículo, sin preguntas
+marcadas, prueba social al final. Su maquetación de dos columnas sirve como referencia
+visual. Su copy, su título y su falta de preguntas no se replican.
+
 ### 3. Frontloading, no una regla artificial de “primera frase”
 
 Colocar la información de mayor valor al comienzo de la tarjeta, párrafo o sección. Esto ayuda a quienes escanean y reduce el esfuerzo para comprender.
@@ -423,3 +568,28 @@ Cada actualización debe indicar qué cambió y por qué. No borrar decisiones a
 - El copy debe comunicar que KPEMM ofrece un estándar superior.
 - `The best`, `premium`, `professional`, `quality` y `specialized` son recursos válidos; ninguno es obligatorio por sí solo.
 - El lenguaje de superioridad debe acompañar un servicio concreto y desarrollarse con servicios, resultados y evidencia.
+
+### 2026-08-05 — Evidencia medida del propio sitio (sección 2.6)
+
+**Qué cambió:** se agregó la sección 2.6 con datos reales de Search Console del sitio,
+consultados en vivo ese día. Antes el documento no tenía ninguna medición propia de qué
+páginas de KPEMM ganan clics.
+
+**Por qué:** Jose fijó que la métrica que manda es el clic, no la posición, y detectó que
+las sesiones de IA elegían qué página copiar sin verificar datos. En esta misma sesión se
+propuso copiar `bmw-z3` por estar en posición 3, sin revisar que tiene cero clics. La
+sección 2.6 existe para que esa decisión no se vuelva a tomar a ciegas.
+
+**Qué queda fijado:**
+
+- Prueba central: dos páginas en la misma posición de Google (3,0 y 3,5) con resultado
+  opuesto (0% y 8,28% de CTR). La posición no explica los clics.
+- Fórmula de título medida contra clics reales, y prohibición de abrir un título por
+  marca y modelo del vehículo.
+- Correlación entre tener las preguntas marcadas con `FAQPage` y tener clics, declarada
+  explícitamente como coincidencia sobre cuatro páginas, no como causa demostrada.
+- Receta de nueve pasos obligatoria para toda página nueva.
+- `bmw-z3` marcado como deuda conocida: sirve como referencia de maquetación, no de copy.
+
+**Cuándo se reemplaza:** cuando haya más páginas medidas o una prueba propia contradiga
+alguno de los cinco hallazgos.

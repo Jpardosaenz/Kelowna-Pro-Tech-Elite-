@@ -105,31 +105,74 @@ de un ajuste de espaciado mobile, con el hero final sin commitear todavía.
 
 ## Pendientes
 
-- 🔴 URGENTE: **Commitear el hero final** (H1, subtítulo, ajuste de
-  espaciado mobile) — quedó aprobado por Jose pero sin commit al cortarse
-  la sesión. Diff vive en `field-reports/index.html`, sin commitear.
-- 🔴 URGENTE: Jose debe confirmar la reseña real de cada uno de estos casos
-  sin match exacto encontrado: Honda Pilot 2004, Jeep Cherokee 1998, VW
-  Jetta TDI. (Subaru ya no aplica, se sacó del cluster.) GMC Savana → Chris
-  Gaal y Chrysler 300 → TL C ya están confirmados.
-- 🔴 URGENTE: BMW Z3 — sigue sin resolver cuál historia es la real (ver
-  arriba). No forma parte de este cluster hasta que Jose decida.
-- 🟡 IMPORTANTE: Falta construir el resto de la página hub — FAQ, mapa,
-  NAP footer y CTA final ya existían del hub viejo (no revisados a fondo
-  esta sesión, probablemente necesiten el mismo tratamiento "sin mobile,
-  con the best, sin rayas" que se aplicó al hero).
-- 🟡 IMPORTANTE: Falta el recibo de lectura + plan completo por
-  `cmd-field-report.md` (título, URL slug, estructura, FAQ, fotos exactas,
-  schema) para las **6 páginas de caso individuales** — cero HTML nuevo
-  escrito para esas páginas todavía, solo la tarjeta en el hub que apunta
-  a URLs que aún no existen (404 por ahora, aceptado por Jose porque nada
-  se publica hasta tener el cluster completo).
-- 🟡 IMPORTANTE: E-E-A-T audit marcó como CRÍTICO el título "Certified
-  Mechanical Engineer / 15+ Years" sin respaldo verificable; no repetir esa
-  credencial en las páginas de caso nuevas sin autorización de Jose.
-- 🔵 ESTRATÉGICO: aplicar la misma revisión "the best" + "sin mobile" + "sin
-  rayas" al resto del sitio en algún momento futuro (fuera de alcance de
-  esta tarea, no iniciar sin que Jose lo pida).
+> **Jerarquía (2026-08-05):** Jose pidió reordenar esto por dependencia real,
+> no por fecha en que se anotó. Cada fase abajo bloquea la siguiente — no
+> saltar una fase sin terminar la anterior. Antes de "reseña de Google" (un
+> detalle chico) va TODA la arquitectura de la página de caso, porque hoy
+> no existe ni un solo ejemplo construido.
+
+- ✅ HECHO (2026-08-05): hub (`field-reports/index.html`) — hero final +
+  fondo oscuro + fotos GMC/Cadillac corregidas. Commiteado en `2cbcfcf`,
+  rama `feat/field-reports-cluster`. Sin push, sin publicar. El hub en sí
+  ya no tiene pendientes (mapa, footer, CTA ya existían y ya se les aplicó
+  el fondo oscuro esta sesión — no falta nada ahí, esto ya cierra la tarea
+  vieja "falta FAQ/mapa/footer/CTA del hub").
+
+- ~~BMW Z3~~ — descartado por Jose (2026-08-05): no es parte de este
+  proyecto, no se vuelve a mencionar.
+
+### FASE 1 — LA QUE SIGUE AHORA: arquitectura de la página de caso individual
+
+**No existe todavía ni un solo ejemplo construido.** Sin esto, nada de lo de
+abajo se puede hacer (no hay dónde poner reseñas, fotos ni preguntas).
+Estructura fija según `cmd-field-report.md` (Marketing workers):
+
+1. Título + URL slug por caso.
+2. **5 párrafos fijos:** situación del cliente → proceso de diagnóstico →
+   hallazgos adicionales → resolución y resultado → CTA del caso.
+3. **Fotos con texto explicativo** — cada foto va después de un párrafo
+   específico, con alt text (esto es lo que Jose pidió hoy: "más texto para
+   explicar qué es lo que hay en estas imágenes").
+4. **Sección de preguntas y respuestas (FAQ), 3–5 por caso** — esto es lo
+   que Jose llamó "las preguntas que van en cada una de las imágenes".
+5. Schema JSON-LD (`Article` + `FAQPage`).
+
+**Plan de esta fase:** construir UN caso de muestra primero (candidato:
+**GMC Savana**, porque ya tiene todos los datos confirmados — cliente,
+diagnóstico, resultado, reseña real de Chris G.) para que Jose lo apruebe
+como plantilla. Recién después se replica a los otros 5. `cmd-field-report.md`
+exige presentar primero el plan (caso, dolor, promesa, transformación,
+evidencia, keyword, estructura, CTA, fotos exactas) y esperar aprobación
+antes de redactar — no escribir la página directo.
+
+### FASE 2 — después de aprobar la plantilla: completar datos por caso
+
+Con la plantilla ya aprobada, juntar lo que falta de cada caso (síntoma
+exacto del cliente, hallazgos, solución, resultado cuantificado, fecha
+aproximada) para los 5 restantes, usando `casos-reales.md` como base y
+preguntándole a Jose lo que no esté ahí.
+
+### FASE 3 — detalle menor, no bloqueante: reseña real de Google por caso
+
+Según el propio `cmd-field-report.md`, el testimonio del cliente es
+**"ideal", no obligatorio** para publicar. Se agrega si existe, se omite si
+no — no debe frenar las Fases 1 y 2.
+
+- Sin reseña anotada todavía en `casos-reales.md`: **Honda Pilot 2004, Jeep
+  Cherokee 1998, VW Jetta TDI**.
+- Ya confirmados: GMC Savana → Chris G. (5★), Chrysler 300 → TL C.
+
+### FASE 4 — control de calidad antes de publicar cualquier caso
+
+- E-E-A-T audit marcó como CRÍTICO el título "Certified Mechanical
+  Engineer / 15+ Years" sin respaldo verificable; no repetir esa credencial
+  en las páginas de caso nuevas sin autorización de Jose.
+- Pasar `cmd-brand-review.md` antes de entregar cualquier borrador.
+
+### Fuera de alcance por ahora (no iniciar sin que Jose lo pida)
+
+- 🔵 aplicar la misma revisión "the best" + "sin mobile" + "sin rayas" al
+  resto del sitio.
 - 🔵 ESTRATÉGICO (tarea nueva pedida por Jose 2026-08-05, **NO empezar hasta
   terminar el cluster de field reports**): **`/services/` — subir el bloque de
   servicios justo debajo del hero.**
