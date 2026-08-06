@@ -47,567 +47,156 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   </noscript>
 
-  <style>
-    :root {
-      --ink: #111827;
-      --muted: #6b7280;
-      --line: #e5e7eb;
-      --premium-dark: #0f172a;
-      --premium-gold: #fbbf24;
-      --premium-blue: #1e40af;
-      --premium-light: #f8fafc;
-    }
-
-    .page {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 24px 40px;
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding: 8px 16px 24px;
-      }
-    }
-
-    .breadcrumb {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 0 0 8px;
-    }
-
-    .breadcrumb a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .cases-header {
-      margin: 16px 0 20px;
-      max-width: 640px;
-      text-align: left;
-    }
-
-    .cases-header__badge {
-      display: inline-flex;
-      align-items: center;
-      font-size: 11px;
-      font-weight: 700;
-      color: var(--premium-blue);
-      background: rgba(30, 64, 175, 0.08);
-      padding: 4px 10px;
-      border-radius: 100px;
-      margin-bottom: 8px;
-      letter-spacing: 0.05em;
-      text-transform: uppercase;
-    }
-
-    .cases-header h1 {
-      font-size: 19px;
-      line-height: 1.25;
-      margin: 0 0 8px;
-      color: var(--premium-dark);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    .cases-header h1 .highlight {
-      background: linear-gradient(135deg, #1e40af 0%, #0f172a 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-      -webkit-text-fill-color: transparent;
-      display: inline-block;
-    }
-
-    @media (min-width: 768px) {
-      .cases-header {
-        margin: 32px 0 36px;
-        max-width: 900px;
-        text-align: left;
-      }
-
-      .cases-header h1 {
-        font-size: clamp(28px, 3.2vw, 38px);
-        line-height: 1.15;
-      }
-
-      .cases-header p {
-        font-size: 17px;
-        margin: 0;
-        max-width: 680px;
-      }
-    }
-
-    .cases-header p {
-      font-size: 16px;
-      color: var(--muted);
-      line-height: 1.5;
-      margin: 0;
-    }
-
-    /* Case cards grid — mobile-first: 2 columns by default so the customer
-       can scan photo+title side by side and pick a story fast. */
-    .cases-grid {
-      display: grid;
-      gap: 8px;
-      grid-template-columns: repeat(3, 1fr);
-    }
-
-    @media (min-width: 768px) {
-      .cases-grid {
-        gap: 24px;
-        grid-template-columns: repeat(3, 1fr);
-      }
-    }
-
-    @media (min-width: 1024px) {
-      .cases-grid {
-        gap: 32px;
-      }
-    }
-
-    .case-card {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 14px;
-      overflow: hidden;
-      box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
-      transition: transform 0.2s ease, box-shadow 0.2s ease;
-      text-decoration: none;
-      color: inherit;
-      display: flex;
-      flex-direction: column;
-    }
-
-    @media (min-width: 768px) {
-      .case-card {
-        border-radius: 20px;
-      }
-    }
-
-    .case-card:hover {
-      transform: translateY(-4px);
-      box-shadow: 0 12px 32px rgba(15, 23, 42, 0.13);
-    }
-
-    .case-card__img {
-      width: 100%;
-      height: 108px;
-      object-fit: cover;
-      object-position: 35% 60%;
-      display: block;
-    }
-
-    @media (min-width: 768px) {
-      .case-card__img {
-        height: 260px;
-      }
-    }
-
-    .case-card__body {
-      padding: 6px 6px 8px;
-      flex: 1;
-      display: flex;
-      flex-direction: column;
-      gap: 8px;
-    }
-
-    @media (min-width: 768px) {
-      .case-card__body {
-        padding: 18px 20px 20px;
-      }
-    }
-
-    /* Mobile: photo + title only, so the grid stays scannable at a glance.
-       Tag, meta and the "Read case" link come back once there's room.
-       (Selectors scoped to .cases-grid so they outrank the base
-       .case-card__link display:inline-flex declared below.) */
-    .cases-grid .case-card__tag,
-    .cases-grid .case-card__meta,
-    .cases-grid .case-card__link {
-      display: none;
-    }
-
-    @media (min-width: 768px) {
-      .cases-grid .case-card__tag {
-        display: block;
-      }
-
-      .cases-grid .case-card__meta {
-        display: block;
-      }
-
-      .cases-grid .case-card__link {
-        display: inline-flex;
-      }
-    }
-
-    .case-card__tag {
-      font-size: 12px;
-      font-weight: 700;
-      text-transform: uppercase;
-      letter-spacing: 0.07em;
-      color: var(--premium-blue);
-    }
-
-    .case-card__title {
-      font-size: 11px;
-      font-weight: 700;
-      line-height: 1.25;
-      color: var(--premium-dark);
-      margin: 0;
-    }
-
-    @media (min-width: 768px) {
-      .case-card__title {
-        font-size: 18px;
-      }
-    }
-
-    .case-card__meta {
-      font-size: 13px;
-      color: var(--muted);
-      margin-top: 4px;
-    }
-
-    .case-card__link {
-      margin-top: auto;
-      padding-top: 16px;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--premium-blue);
-      display: inline-flex;
-      align-items: center;
-      gap: 4px;
-    }
-
-    /* ── Mobile CTA bar ── */
-    .mobile-cta-bar { display: none; }
-
-    @media (max-width: 767px) {
-      .mobile-cta-bar {
-        display: flex;
-        align-items: center;
-        gap: 0;
-        position: sticky;
-        top: 92px;
-        z-index: 999;
-        width: 100%;
-        padding: 10px 16px;
-        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
-        border-top: 1px solid rgba(251, 191, 36, .35);
-        border-bottom: 1px solid rgba(251, 191, 36, .25);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
-      }
-      .mobile-cta-bar a {
-        color: #fff;
-        font-family: "Inter", Arial, sans-serif;
-        font-weight: 700;
-        text-decoration: none;
-        letter-spacing: .2px;
-      }
-      .mobile-cta-sms {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex: 0 1 auto;
-        min-width: 0;
-        margin-right: 8px;
-        padding: 6px 8px;
-        min-height: 48px;
-        border-radius: 12px;
-        background: rgba(202, 138, 4, .12);
-        box-shadow: inset 0 0 0 1.5px rgba(245, 183, 0, .55), 0 4px 12px -6px rgba(0, 0, 0, .55);
-        transition: transform 140ms cubic-bezier(.23, 1, .32, 1), background 140ms ease-out;
-      }
-      .mobile-cta-sms:active {
-        transform: scale(.98);
-        background: rgba(202, 138, 4, .22);
-      }
-      .mobile-cta-sms::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(75deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%);
-        transform: translateX(-140%);
-        animation: ctaShimmerFR 4.2s cubic-bezier(.23, 1, .32, 1) infinite;
-      }
-      @keyframes ctaShimmerFR {
-        0% { transform: translateX(-140%); }
-        22% { transform: translateX(140%); }
-        100% { transform: translateX(140%); }
-      }
-      .mobile-cta-sms-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1px;
-        min-width: 0;
-      }
-      .mobile-cta-sms-text .cta-main-text {
-        font-size: .9rem;
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -.01em;
-        white-space: nowrap;
-        color: #f5c451;
-        text-shadow: 0 1px 10px rgba(245, 183, 0, .3);
-      }
-      .mobile-cta-bar-sub {
-        color: #fff;
-        opacity: .8;
-        font-weight: 600;
-        font-size: .75rem;
-        white-space: nowrap;
-      }
-      .mobile-cta-tel {
-        flex: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 6px 10px;
-        min-height: 48px;
-        border: 1px solid rgba(255, 255, 255, .22);
-        border-radius: 12px;
-        transition: transform 140ms cubic-bezier(.23, 1, .32, 1);
-      }
-      .mobile-cta-tel:active {
-        transform: scale(.98);
-      }
-      .mobile-cta-tel-label {
-        display: block;
-        font-size: .6875rem;
-        color: #e2e8f0;
-        font-weight: 500;
-        white-space: nowrap;
-      }
-      .mobile-cta-tel-number {
-        display: block;
-        font-size: .875rem;
-        font-weight: 600;
-        color: #e2e8f0;
-        white-space: nowrap;
-      }
-      .mobile-cta-bar svg { flex-shrink: 0; color: #f5c451; }
-    }
-    @media (max-width: 359px) {
-      .mobile-cta-sms-text .cta-main-text { font-size: .8125rem; }
-      .mobile-cta-bar-sub { font-size: .6875rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .mobile-cta-sms::after { animation: none; }
-      .mobile-cta-sms { transition: none; }
-    }
-
-    /* ── Dark theme — this page only, matches /services/ dark panels.
-       Nav bar stays white (shared site header, untouched). ── */
-    body {
-      background: var(--premium-dark);
-    }
-
-    .page {
-      color: #e2e8f0;
-    }
-
-    .breadcrumb {
-      color: #94a3b8;
-    }
-
-    .cases-header__badge {
-      background: transparent;
-      color: var(--premium-gold);
-      border: 1px solid rgba(251, 191, 36, 0.35);
-    }
-
-    .cases-header h1 {
-      color: #fff;
-    }
-
-    .cases-header h1 .highlight {
-      background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
-      -webkit-background-clip: text;
-      background-clip: text;
-    }
-
-    .cases-header p {
-      color: #94a3b8;
-    }
-
-    .cases-header p a {
-      color: #7dd3fc;
-    }
-
-    .case-card {
-      background: rgba(255, 255, 255, 0.05);
-      border-color: rgba(255, 255, 255, 0.12);
-      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
-    }
-
-    .case-card:hover {
-      box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
-      border-color: rgba(251, 191, 36, 0.35);
-    }
-
-    .case-card__tag {
-      color: var(--premium-gold);
-    }
-
-    .case-card__title {
-      color: #fff;
-    }
-
-    .case-card__meta {
-      color: #94a3b8;
-    }
-
-    .case-card__link {
-      color: var(--premium-gold);
-    }
-
-    .page .lead {
-      color: #94a3b8;
-    }
-
-    .section h2 {
-      color: #fff;
-    }
-
-    .ppi-map__embed {
-      border: 1px solid rgba(255, 255, 255, 0.12);
-    }
-
-    .site-nap {
-      color: #94a3b8;
-      border-top: 1px solid rgba(255, 255, 255, 0.1);
-      margin-top: 40px;
-      padding-top: 24px;
-      font-size: 14px;
-      line-height: 1.7;
-    }
-
-    .site-nap__brand {
-      color: #fff;
-      font-size: 16px;
-      display: block;
-      margin-bottom: 4px;
-    }
-
-    .site-nap__tel {
-      color: var(--premium-gold);
-    }
-
-    .site-nap__link {
-      color: #7dd3fc;
-    }
-  </style>
 
   <!-- JSON-LD -->
   <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
     {
-      "@context": "https://schema.org",
-      "@graph": [
+      "@type": "LocalBusiness",
+      "@id": "https://kelownaprotechmobilemech.com/#organization",
+      "name": "Kelowna Protech Elite Mobile Mechanic",
+      "telephone": "+1-250-859-5467",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "773 Glenmore Rd",
+        "addressLocality": "Kelowna",
+        "addressRegion": "BC",
+        "postalCode": "V1V 3B9",
+        "addressCountry": "CA"
+      },
+      "openingHoursSpecification": [
         {
-          "@type": "LocalBusiness",
-          "@id": "https://kelownaprotechmobilemech.com/#organization",
-          "name": "Kelowna Protech Elite Mobile Mechanic",
-          "telephone": "+1-250-859-5467",
-          "address": {
-            "@type": "PostalAddress",
-            "streetAddress": "773 Glenmore Rd",
-            "addressLocality": "Kelowna",
-            "addressRegion": "BC",
-            "postalCode": "V1V 3B9",
-            "addressCountry": "CA"
-          },
-          "openingHoursSpecification": [
-            {
-              "@type": "OpeningHoursSpecification",
-              "dayOfWeek": [
-                "Monday",
-                "Tuesday",
-                "Wednesday",
-                "Thursday",
-                "Friday",
-                "Saturday"
-              ],
-              "opens": "08:00",
-              "closes": "18:00"
-            }
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday",
+            "Saturday"
           ],
-          "image": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
-          "url": "https://kelownaprotechmobilemech.com/"
+          "opens": "08:00",
+          "closes": "18:00"
+        }
+      ],
+      "image": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
+      "url": "https://kelownaprotechmobilemech.com/"
+    },
+    {
+      "@type": "CollectionPage",
+      "@id": "https://kelownaprotechmobilemech.com/field-reports/#webpage",
+      "url": "https://kelownaprotechmobilemech.com/field-reports/",
+      "name": "Success Stories — Real Kelowna Diagnostics",
+      "description": "Real vehicle diagnostic cases from Kelowna, BC.",
+      "isPartOf": {
+        "@id": "https://kelownaprotechmobilemech.com/#website"
+      },
+      "breadcrumb": {
+        "@id": "https://kelownaprotechmobilemech.com/field-reports/#breadcrumb"
+      },
+      "mainEntity": {
+        "@type": "ItemList",
+        "itemListElement": [
+          {
+            "@type": "ListItem",
+            "position": 1,
+            "url": "https://kelownaprotechmobilemech.com/field-reports/gmc-savana-kelowna-diagnostic/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 2,
+            "url": "https://kelownaprotechmobilemech.com/field-reports/honda-pilot-kelowna-diagnostic/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 3,
+            "url": "https://kelownaprotechmobilemech.com/field-reports/chrysler-300-kelowna-diagnostic/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 4,
+            "url": "https://kelownaprotechmobilemech.com/field-reports/vw-jetta-tdi-kelowna-diagnostic/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 5,
+            "url": "https://kelownaprotechmobilemech.com/field-reports/jeep-cherokee-kelowna-diagnostic/"
+          },
+          {
+            "@type": "ListItem",
+            "position": 6,
+            "url": "https://kelownaprotechmobilemech.com/field-reports/cadillac-srx-kelowna-diagnostic/"
+          }
+        ]
+      }
+    },
+    {
+      "@type": "BreadcrumbList",
+      "@id": "https://kelownaprotechmobilemech.com/field-reports/#breadcrumb",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "Home",
+          "item": "https://kelownaprotechmobilemech.com/"
         },
         {
-          "@type": "CollectionPage",
-          "@id": "https://kelownaprotechmobilemech.com/field-reports/#webpage",
-          "url": "https://kelownaprotechmobilemech.com/field-reports/",
-          "name": "Success Stories — Real Kelowna Diagnostics",
-          "description": "Real vehicle diagnostic cases from Kelowna, BC.",
-          "isPartOf": {
-            "@id": "https://kelownaprotechmobilemech.com/#website"
-          },
-          "breadcrumb": {
-            "@id": "https://kelownaprotechmobilemech.com/field-reports/#breadcrumb"
-          },
-          "mainEntity": {
-            "@type": "ItemList",
-            "itemListElement": [
-              {
-                "@type": "ListItem",
-                "position": 1,
-                "url": "https://kelownaprotechmobilemech.com/field-reports/gmc-savana-kelowna-diagnostic/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 2,
-                "url": "https://kelownaprotechmobilemech.com/field-reports/honda-pilot-kelowna-diagnostic/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 3,
-                "url": "https://kelownaprotechmobilemech.com/field-reports/chrysler-300-kelowna-diagnostic/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 4,
-                "url": "https://kelownaprotechmobilemech.com/field-reports/vw-jetta-tdi-kelowna-diagnostic/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 5,
-                "url": "https://kelownaprotechmobilemech.com/field-reports/jeep-cherokee-kelowna-diagnostic/"
-              },
-              {
-                "@type": "ListItem",
-                "position": 6,
-                "url": "https://kelownaprotechmobilemech.com/field-reports/cadillac-srx-kelowna-diagnostic/"
-              }
-            ]
+          "@type": "ListItem",
+          "position": 2,
+          "name": "Success Stories",
+          "item": "https://kelownaprotechmobilemech.com/field-reports/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Who is the best mobile mechanic in Kelowna?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "We are the mobile mechanic Kelowna drivers turn to when they need a real answer about their vehicle, rated 4.9 stars across 62 Google reviews. We are specialists, not generalists: our work is on-site diagnostics, automotive electrical and electronic faults, and pre-purchase inspections, which is where a wrong guess costs the most money. We come to your driveway, your workplace, or wherever the vehicle is sitting, anywhere in Kelowna, West Kelowna, Vernon, Lake Country, Peachland, or Penticton. We arrive with dealer-level diagnostic equipment, run the scan in front of you, send you photos and findings in real time as we work, and explain what the fault code actually means before anything gets approved. You know the cost before we start, not after. Nothing is hidden behind a service counter, and there are no surprise items added to an invoice at the end."
           }
         },
         {
-          "@type": "BreadcrumbList",
-          "@id": "https://kelownaprotechmobilemech.com/field-reports/#breadcrumb",
-          "itemListElement": [
-            {
-              "@type": "ListItem",
-              "position": 1,
-              "name": "Home",
-              "item": "https://kelownaprotechmobilemech.com/"
-            },
-            {
-              "@type": "ListItem",
-              "position": 2,
-              "name": "Success Stories",
-              "item": "https://kelownaprotechmobilemech.com/field-reports/"
-            }
-          ]
+          "@type": "Question",
+          "name": "Does Kelowna Protech have real repair cases, or just promises?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Every case on this page is a real repair we performed and photographed on-site, start to finish: a GMC Savana water pump that got a stranded work crew back on the road, a Chrysler 300 fuel pressure fault that ended months of guessing, a Honda Pilot fuel pump diagnosis where we sourced the part and repaired it the same visit, a Jeep Cherokee crankshaft sensor fix that saved the owner an unnecessary PCM replacement, a Volkswagen Jetta immobilizer repair that got a car running after a year parked, and a Cadillac SRX battery terminal repair completed in two hours. Each case names the vehicle, the symptom in the customer's own words, the diagnostic steps we ran, the root cause we confirmed, and the outcome. The photos are ours, taken during the actual job, never stock images. Behind these six are 60 five-star Google reviews from customers whose repairs ended the same way."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it safe to trust a mobile mechanic instead of a shop?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A mobile mechanic uses the same dealer-level diagnostic equipment a shop uses. The real difference is what you can see. At a shop, your car disappears into a bay you cannot enter, and you find out what happened when someone hands you an invoice. With us, the entire job happens in front of you, in your own driveway. You watch the scan get connected, you see the live fault code on the screen, you see the failed part come out and the new one go in. We send photos and findings in real time as we work, so there is a record of every step even if you step inside for a coffee. Nothing gets approved without you seeing the evidence first, and the price is agreed before any work begins. For most drivers, that is more transparency than a shop can offer, not less."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "How many Google reviews does Kelowna Protech have, and what do they say?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "62 Google reviews at a 4.9 average, with 60 of them at five stars. Most customers never bother writing a review at all, so each one represents someone who felt the work was worth vouching for publicly, with their real name, on a profile anyone can open and verify. The words repeat: honest about what actually needed fixing, no pressure toward repairs that were not necessary, options explained clearly before any work started, arrived the same day when a car would not start, and came to the customer instead of asking them to arrange a tow. One Kelowna customer wrote, \"Didn't push for any unnecessary repairs, just told me my options.\" None of these reviews are staged, incentivized, or purchased, and because they are public, a bad experience would be just as visible as a good one."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "What makes Kelowna Protech different from a general mechanic?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "A general mechanic at a shop waits for your car to arrive and works on whatever comes through the door. We do the opposite in almost every way. First, we specialize: on-site diagnostics, automotive electrical and electronic faults, and pre-purchase inspections, rather than high-volume routine servicing. Second, we come to you, so you never arrange a tow, never leave your car overnight, and never lose a day of work sitting in a waiting room. Third, everything happens in front of your eyes, in your own driveway, with photos and findings sent to you in real time as the job progresses. Fourth, we use current dealer-level scanning technology to capture live data and stored fault codes, so the diagnosis is based on what the vehicle is actually reporting, not on a guess from a symptom. Fifth, we handle the whole job for you, including sourcing and buying the parts, so you are never sent chasing a parts store. Sixth, the price is agreed before we start and stays that way, so there are no surprise line items when the work is finished. And we will tell you honestly when a repair is not worth doing, which is the reason customers keep using the word honest in their reviews."
+          }
         }
       ]
     }
+  ]
+}
   </script>
 </head>
 
@@ -666,6 +255,10 @@
     <!-- Header -->
     <header class="cases-header">
       <div class="cases-header__badge">Success Stories</div>
+      <div class="cases-header__trust" aria-label="Rated 4.9 out of 5 from 62 Google reviews">
+        <span class="cases-header__trust-stars"><span class="cases-header__trust-stars-glyph">★★★★★</span><span class="cases-header__trust-meta">4.9 · 62 Google Reviews</span></span>
+        <span class="cases-header__trust-quote">"...very fast and efficient." &mdash; Chris G., Google Review</span>
+      </div>
       <h1>Your Car Fixed On-Site. Your Answers Documented Photo by Photo. <span class="highlight">Kelowna Protech, the Best On-Site Mechanic in Kelowna.</span></h1>
       <p>Below, you will find real repair cases from Kelowna Protech:
         <a href="/services/diagnostic/"><strong>specialized diagnostics and automotive electrical work</strong></a>,
@@ -680,9 +273,9 @@
 
         <!-- GMC Savana -->
         <a class="case-card" href="/field-reports/gmc-savana-kelowna-diagnostic/">
-          <img class="case-card__img" src="/images/gmc-savana-2016-mechanic-onsite-800w.jpg"
+          <img class="case-card__img" src="/images/gmc-savana-2016-mechanic-onsite-800w.webp"
             alt="Certified mechanic diagnosing a 2016 GMC Savana work van on-site in Kelowna, hood open, scanner in hand"
-            width="600" height="800" loading="lazy" decoding="async" style="object-position: 50% 61%;" />
+            width="834" height="520" loading="lazy" decoding="async" />
           <div class="case-card__body">
             <span class="case-card__tag">On-Site Repair</span>
             <h2 class="case-card__title">GMC Savana Crew Stranded in Kelowna, Fixed Same Day</h2>
@@ -693,9 +286,9 @@
 
         <!-- Chrysler 300 -->
         <a class="case-card" href="/field-reports/chrysler-300-kelowna-diagnostic/">
-          <img class="case-card__img" src="/images/chrysler-300-kelowna-driveway-600w.jpg"
-            alt="Chrysler 300 and Kelowna Protech Elite service truck on-site during no-start diagnostic" width="450"
-            height="600" loading="lazy" decoding="async" />
+          <img class="case-card__img" src="/images/chrysler-300-kelowna-driveway-600w.webp"
+            alt="Chrysler 300 and Kelowna Protech Elite service truck on-site during no-start diagnostic" width="834"
+            height="520" loading="lazy" decoding="async" />
           <div class="case-card__body">
             <span class="case-card__tag">No-Start Diagnostic</span>
             <h2 class="case-card__title">Chrysler 300 No-Start, Root Cause Found in Kelowna</h2>
@@ -706,9 +299,9 @@
 
         <!-- Honda Pilot -->
         <a class="case-card" href="/field-reports/honda-pilot-kelowna-diagnostic/">
-          <img class="case-card__img" src="/images/honda-pilot-2004-kelowna-onsite-600w.jpg"
-            alt="2004 Honda Pilot with hood open during on-site no-start diagnostic in Kelowna" width="450"
-            height="600" loading="lazy" decoding="async" />
+          <img class="case-card__img" src="/images/honda-pilot-2004-kelowna-onsite-600w.webp"
+            alt="2004 Honda Pilot with hood open during on-site no-start diagnostic in Kelowna" width="834"
+            height="520" loading="lazy" decoding="async" />
           <div class="case-card__body">
             <span class="case-card__tag">No-Start Diagnostic</span>
             <h2 class="case-card__title">Honda Pilot Won't Start, Diagnosed Same Day</h2>
@@ -719,9 +312,9 @@
 
         <!-- Jeep Cherokee -->
         <a class="case-card" href="/field-reports/jeep-cherokee-kelowna-diagnostic/">
-          <img class="case-card__img" src="/images/jeep-cherokee-1998-kelowna-mechanic-600w.jpg"
+          <img class="case-card__img" src="/images/jeep-cherokee-1998-kelowna-mechanic-600w.webp"
             alt="Certified mechanic with diagnostic tablet at a 1998 Jeep Cherokee, hood open, Kelowna parking garage"
-            width="600" height="450" loading="lazy" decoding="async" />
+            width="834" height="520" loading="lazy" decoding="async" />
           <div class="case-card__body">
             <span class="case-card__tag">No-Start Diagnostic</span>
             <h2 class="case-card__title">Jeep Cherokee No-Start, PCM Replacement Avoided</h2>
@@ -732,9 +325,9 @@
 
         <!-- VW Jetta TDI -->
         <a class="case-card" href="/field-reports/vw-jetta-tdi-kelowna-diagnostic/">
-          <img class="case-card__img" src="/images/vw-jetta-tdi-kelowna-diagnostic-600w.jpg"
-            alt="VW Jetta TDI engine bay diagnostic on-site in Kelowna, multimeter connected to battery" width="450"
-            height="600" loading="lazy" decoding="async" />
+          <img class="case-card__img" src="/images/vw-jetta-tdi-kelowna-diagnostic-600w.webp"
+            alt="VW Jetta TDI engine bay diagnostic on-site in Kelowna, multimeter connected to battery" width="834"
+            height="520" loading="lazy" decoding="async" />
           <div class="case-card__body">
             <span class="case-card__tag">No-Start Diagnostic</span>
             <h2 class="case-card__title">VW Jetta TDI, One Year Without Starting, Fixed On-Site</h2>
@@ -745,9 +338,9 @@
 
         <!-- Cadillac SRX -->
         <a class="case-card" href="/field-reports/cadillac-srx-kelowna-diagnostic/">
-          <img class="case-card__img" src="/images/cadillac-srx-2013-kelowna-mechanic-600w.jpg"
-            alt="Certified mechanic diagnosing a 2013 Cadillac SRX in a Kelowna driveway, hood open" width="450"
-            height="600" loading="lazy" decoding="async" style="object-position: 50% 35%;" />
+          <img class="case-card__img" src="/images/cadillac-srx-2013-kelowna-mechanic-600w.webp"
+            alt="Certified mechanic diagnosing a 2013 Cadillac SRX in a Kelowna driveway, hood open" width="834"
+            height="520" loading="lazy" decoding="async" />
           <div class="case-card__body">
             <span class="case-card__tag">No-Power Diagnostic</span>
             <h2 class="case-card__title">Cadillac SRX Total Power Loss, Fixed in 2 Hours</h2>
@@ -756,6 +349,90 @@
           </div>
         </a>
 
+      </div>
+    </section>
+
+    <!-- Trust content — answers the Level 1 questions from goal.md in
+         flowing paragraphs, so both readers and AI answer engines can
+         pull a short, direct excerpt. -->
+    <section class="cases-content" aria-label="About these repair cases">
+      <h2>Why Kelowna Drivers Choose an On-Site Mechanic Over a Shop</h2>
+      <p>Too many repairs at a shop do not go the way they are supposed
+        to: the car disappears into a bay you cannot see, extra items show
+        up on the invoice, and you find out the final cost only when it is
+        time to pay. We built this to work differently. Our certified
+        mechanic comes to your driveway or workplace, anywhere in Kelowna,
+        West Kelowna, Vernon, Lake Country, Peachland, or Penticton, and
+        does the whole job in front of you, not behind a service counter.
+        We handle it all: the dealer-level diagnostic scan, sourcing the
+        part, and the repair itself, so you never have to leave home or
+        chase down a parts store yourself. You see the fault code, you see
+        the part get replaced, and you know the cost before we start, not
+        after.</p>
+
+      <h2>Real Cases, Not Promises</h2>
+      <p>What you are reading here are real cases: real people who got a
+        real solution in their own driveway or parking lot, without the
+        hassle, and whose vehicles are still running today with no
+        comebacks and no second visit. Each one was fixed right the first
+        time. These six are only a sample. Behind them are 60 five-star
+        Google reviews, 60 more stories that end the same way. We do not
+        deal in guesses or claims we cannot back up. Every case is
+        documented with real photos taken on-site, never stock images, and
+        each one names the vehicle, the symptom, the root cause we
+        confirmed, and the outcome.</p>
+
+      <h2>What Real Customers Say, and Why 62 Reviews Matter</h2>
+      <p>Most people never write a review. They pay, they drive away, and
+        they move on with their day. A customer only stops to write one
+        when something stood out enough to be worth the effort. That is
+        what makes 62 reviews at 4.9 stars meaningful: it is not a number
+        we bought or a badge we designed, it is 62 separate people in
+        Kelowna who decided the work was worth vouching for publicly, with
+        their own name attached, on a Google profile anyone can open and
+        read right now.</p>
+      <p>They are not testimonials we selected. They are neighbours: the
+        person two streets over whose car would not start, the family
+        whose van was stranded before a trip, the buyer who wanted a used
+        car checked before signing. Every one of those reviews is public,
+        timestamped, and tied to a real Google account. Nothing here is
+        staged, incentivized, or purchased. If we ever got it wrong, that
+        would be public too, which is exactly why the rating means
+        something.</p>
+      <p>What matters most is not the star count, it is the words people
+        chose. They repeat the same things: honest, no pressure to approve
+        repairs that were not needed, options explained before any work
+        started, arrived the same day, came to us instead of asking us to
+        come to them, fixed it right the first time. "Didn't push for any
+        unnecessary repairs, just told me my options," one Kelowna
+        customer wrote after a diagnostic and repair. Those are not
+        marketing words. They are what people write when a mechanic tells
+        them the truth about their car, and that is the standard behind
+        every case on this page.</p>
+    </section>
+
+    <!-- FAQ -->
+    <section class="cases-faq" aria-label="Frequently asked questions">
+      <h2>FAQ</h2>
+      <div class="cases-faq-item">
+        <h3>Who is the best mobile mechanic in Kelowna?</h3>
+        <p>We are the mobile mechanic Kelowna drivers turn to when they need a real answer about their vehicle, rated 4.9 stars across 62 Google reviews. We are specialists, not generalists: our work is on-site diagnostics, automotive electrical and electronic faults, and pre-purchase inspections, which is where a wrong guess costs the most money. We come to your driveway, your workplace, or wherever the vehicle is sitting, anywhere in Kelowna, West Kelowna, Vernon, Lake Country, Peachland, or Penticton. We arrive with dealer-level diagnostic equipment, run the scan in front of you, send you photos and findings in real time as we work, and explain what the fault code actually means before anything gets approved. You know the cost before we start, not after. Nothing is hidden behind a service counter, and there are no surprise items added to an invoice at the end.</p>
+      </div>
+      <div class="cases-faq-item">
+        <h3>Does Kelowna Protech have real repair cases, or just promises?</h3>
+        <p>Every case on this page is a real repair we performed and photographed on-site, start to finish: a GMC Savana water pump that got a stranded work crew back on the road, a Chrysler 300 fuel pressure fault that ended months of guessing, a Honda Pilot fuel pump diagnosis where we sourced the part and repaired it the same visit, a Jeep Cherokee crankshaft sensor fix that saved the owner an unnecessary PCM replacement, a Volkswagen Jetta immobilizer repair that got a car running after a year parked, and a Cadillac SRX battery terminal repair completed in two hours. Each case names the vehicle, the symptom in the customer's own words, the diagnostic steps we ran, the root cause we confirmed, and the outcome. The photos are ours, taken during the actual job, never stock images. Behind these six are 60 five-star Google reviews from customers whose repairs ended the same way.</p>
+      </div>
+      <div class="cases-faq-item">
+        <h3>Is it safe to trust a mobile mechanic instead of a shop?</h3>
+        <p>A mobile mechanic uses the same dealer-level diagnostic equipment a shop uses. The real difference is what you can see. At a shop, your car disappears into a bay you cannot enter, and you find out what happened when someone hands you an invoice. With us, the entire job happens in front of you, in your own driveway. You watch the scan get connected, you see the live fault code on the screen, you see the failed part come out and the new one go in. We send photos and findings in real time as we work, so there is a record of every step even if you step inside for a coffee. Nothing gets approved without you seeing the evidence first, and the price is agreed before any work begins. For most drivers, that is more transparency than a shop can offer, not less.</p>
+      </div>
+      <div class="cases-faq-item">
+        <h3>How many Google reviews does Kelowna Protech have, and what do they say?</h3>
+        <p>62 Google reviews at a 4.9 average, with 60 of them at five stars. Most customers never bother writing a review at all, so each one represents someone who felt the work was worth vouching for publicly, with their real name, on a profile anyone can open and verify. The words repeat: honest about what actually needed fixing, no pressure toward repairs that were not necessary, options explained clearly before any work started, arrived the same day when a car would not start, and came to the customer instead of asking them to arrange a tow. One Kelowna customer wrote, "Didn't push for any unnecessary repairs, just told me my options." None of these reviews are staged, incentivized, or purchased, and because they are public, a bad experience would be just as visible as a good one.</p>
+      </div>
+      <div class="cases-faq-item">
+        <h3>What makes Kelowna Protech different from a general mechanic?</h3>
+        <p>A general mechanic at a shop waits for your car to arrive and works on whatever comes through the door. We do the opposite in almost every way. First, we specialize: on-site diagnostics, automotive electrical and electronic faults, and pre-purchase inspections, rather than high-volume routine servicing. Second, we come to you, so you never arrange a tow, never leave your car overnight, and never lose a day of work sitting in a waiting room. Third, everything happens in front of your eyes, in your own driveway, with photos and findings sent to you in real time as the job progresses. Fourth, we use current dealer-level scanning technology to capture live data and stored fault codes, so the diagnosis is based on what the vehicle is actually reporting, not on a guess from a symptom. Fifth, we handle the whole job for you, including sourcing and buying the parts, so you are never sent chasing a parts store. Sixth, the price is agreed before we start and stays that way, so there are no surprise line items when the work is finished. And we will tell you honestly when a repair is not worth doing, which is the reason customers keep using the word honest in their reviews.</p>
       </div>
     </section>
 
