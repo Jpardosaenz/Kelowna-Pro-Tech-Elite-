@@ -57,6 +57,26 @@
    Do instead: read `.claude/rules/shared-components.md` and verify each affected page individually.
 3. **[2026-07-18] Mobile-first behavior can differ from desktop.**
    Do instead: audit both environments before classifying a layout or CTA issue.
+4. **[2026-08-05] Mobile CTA bar CSS is copy-pasted inline into 6 pages (~21.5 KB duplicated).**
+   Measured: `field-reports` 6939 B, `services` 3711 B, `services/maintenance` 3954 B,
+   `services/diagnostic` 3712 B, `field-reports/bmw-z3...` 3710 B. Two pages already do it
+   right in their own stylesheet (`our-story.css`, `pre-purchase.css`), so the correct
+   pattern already exists in this repo.
+   Do instead: when touching any of those 6 pages, move that block into a shared
+   stylesheet instead of editing the copy in place. Never edit the bar in one page only:
+   the other 5 will silently drift.
+5. **[2026-08-05] Case photos ship as oversized JPG while the site already uses WebP elsewhere.**
+   Measured on the field-reports hub: 6 photos = 625 KB of a ~726 KB page (80% of total
+   weight). Files are 600x800 / 450x600 but render at 417x260, roughly double the pixels
+   needed. The repo already contains 37 `.webp` images, so the technique is adopted, just
+   not applied here.
+   Do instead: before adding any new case photo, export WebP at the size it actually
+   renders, keep the original JPG as backup, and measure page weight before and after.
+6. **[2026-08-05] Page CSS is inlined in `<style>` blocks on the heaviest pages.**
+   Measured: home 19.0 KB inline, `services` 18.7 KB, `field-reports` 12.8 KB, while
+   `our-story` and `services/pre-purchase` correctly use an external stylesheet.
+   Do instead: follow the external-stylesheet pattern for any page you rework, so the
+   browser can cache the CSS across pages instead of re-downloading it every visit.
 
 ## Continuity
 
