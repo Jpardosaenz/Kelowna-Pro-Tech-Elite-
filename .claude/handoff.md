@@ -41,10 +41,16 @@ Después de leer el handoff, empezá directo por el primer punto de
 
 ## Qué estábamos haciendo
 
-Construyendo la página hub `/field-reports/index.html` del cluster de field
-reports (KPEMM). El hero (badge + H1 + subtítulo) ya quedó cerrado y
-aprobado por Jose tras varias rondas de ajuste. Sesión cortada justo después
-de un ajuste de espaciado mobile, con el hero final sin commitear todavía.
+**Actualizado 2026-08-05: la página hub `/field-reports/` quedó TERMINADA.**
+
+Se construyó, se auditó contra datos reales de Search Console, se corrigió, se
+optimizó (peso 726 KB → 384 KB) y se subió a GitHub en 12 commits. Nada
+publicado: `main` sin tocar.
+
+Lo que sigue no es el hub, son las **6 páginas de caso individuales**, que
+todavía no existen (las tarjetas apuntan a URLs 404 hasta que se construyan,
+aceptado por Jose porque nada se publica hasta tener el cluster completo).
+Detalle del siguiente paso al final de este documento.
 
 ## Decisiones tomadas
 
@@ -111,15 +117,25 @@ de un ajuste de espaciado mobile, con el hero final sin commitear todavía.
 > detalle chico) va TODA la arquitectura de la página de caso, porque hoy
 > no existe ni un solo ejemplo construido.
 
-- ✅ HECHO (2026-08-05): hub (`field-reports/index.html`) — hero final +
-  fondo oscuro + fotos GMC/Cadillac corregidas. Commiteado en `2cbcfcf`,
-  rama `feat/field-reports-cluster`. Sin push, sin publicar. El hub en sí
-  ya no tiene pendientes (mapa, footer, CTA ya existían y ya se les aplicó
-  el fondo oscuro esta sesión — no falta nada ahí, esto ya cierra la tarea
-  vieja "falta FAQ/mapa/footer/CTA del hub").
+- ✅ **EL HUB (`/field-reports/`) ESTÁ TERMINADO Y SUBIDO A GITHUB.**
+  12 commits en la rama `feat/field-reports-cluster`, ya con `push` hecho.
+  **Sin merge a `main`, sin publicar.** El sitio en vivo no cambió.
+  Los 7 commits del 2026-08-05, en orden:
+  `194656c` napkin (deuda técnica del sitio) · `7670f7d` playbook (2 reglas
+  corregidas + verificación externa) · `ce52289` goal · `4677e4b` fotos WebP ·
+  `7bfe3c4` CSS a archivo propio · `7f0827a` título y descripción ·
+  `bf5ab83` prueba social arriba + contenido AEO + FAQ + schema.
+
+  El hub pasó los 9 puntos de la receta (playbook §2.6). Peso: 726 KB → 384 KB.
 
 - ~~BMW Z3~~ — descartado por Jose (2026-08-05): no es parte de este
   proyecto, no se vuelve a mencionar.
+
+- 📌 **Deuda técnica de TODO el sitio: está en `.claude/napkin.md`**, sección
+  "Repository & Architecture Gotchas", puntos 4, 5 y 6 (CSS duplicado en 6
+  páginas, fotos JPG sin optimizar, CSS pegado dentro del HTML). Va ahí y no
+  acá porque el napkin es permanente y este handoff se reescribe. **No
+  re-auditar: los números ya están medidos ahí.**
 
 ### FASE 1 — LA QUE SIGUE AHORA: arquitectura de la página de caso individual
 
@@ -212,25 +228,48 @@ no — no debe frenar las Fases 1 y 2.
 - Ya documentado en handoff anterior, sigue vigente: no asumir que
   `services/pre-purchase/` y `services/diagnostic/` están al mismo nivel de
   terminado sin leer el código real primero.
+- **[2026-08-05] Propuse copiar la página del BMW Z3 como modelo porque está
+  en posición 3 de Google, sin mirar que tiene CERO clics.** Jose lo detectó
+  y fijó la regla: **manda el clic, no la posición.** Antes de llamar
+  "exitosa" a una página, mirar sus clics reales en Search Console.
+- **[2026-08-05] Escribí una regla ("un solo CTA por página") sin verificarla
+  contra los datos, y casi la aplico.** `pre-purchase`, que sí convierte,
+  tiene 9 botones de llamar/textear. Antes de escribir una regla en el canon,
+  contrastarla contra la página que ya funciona.
+- **[2026-08-05] Afirmé que ciertas búsquedas entran por ciertas páginas sin
+  poder comprobarlo.** Search Console entrega búsquedas y páginas por
+  separado y las herramientas conectadas no permiten cruzarlas. Todo hallazgo
+  se apoya en datos por página; una afirmación búsqueda→página es suposición.
 
-## Archivos modificados (sin commitear al cortarse la sesión)
+## Estado de los archivos (2026-08-05, todo commiteado y en GitHub)
 
-- `field-reports/index.html` — hero (H1, subtítulo, badge, espaciado mobile)
-- `.claude/handoff.md` (este archivo)
+Nada pendiente sin guardar. `git status` limpio. 12 commits en la rama, todos
+subidos con `push`. **`main` sin tocar, nada publicado en el sitio en vivo.**
 
-**Ya commiteado en sesiones previas de esta misma rama** (`feat/field-reports-cluster`):
-- `c13b6aa` — schema LocalBusiness + ItemList (5 casos)
-- `f738cff` — 6 tarjetas del grid con fotos reales + CSS mobile-first
+Archivos nuevos creados hoy:
+- `field-reports/field-reports.css` — el CSS que antes estaba dentro del HTML.
+- `images/*.webp` (6) — fotos optimizadas. Los `.jpg` originales siguen ahí
+  como respaldo, no se borraron.
 
-**Fuera del sitio, en Marketing workers:**
+**Fuera del sitio, en Marketing workers** (sin commit de git, esa carpeta no
+es el repo del sitio):
 - `02-Marca-y-Contexto/01_BRAND_WEBSITE_PLAYBOOK_KPEMM.md` — regla "the best"
-  corregida para no contradecir `COPY-INTENT-TRUST-PLAYBOOK.md` (sin commit
-  de git ahí, esa carpeta no es el repo del sitio).
+  corregida para no contradecir `COPY-INTENT-TRUST-PLAYBOOK.md`.
 
 ## Para arrancar la próxima sesión
 
-Abrir el worktree `/Users/EPARDOSAENZ/Documents/Proyect Web/Website KPEMM/worktree-field-reports-cluster`
-en la rama `feat/field-reports-cluster`, mostrarle a Jose el hero final en
-`localhost` (arrancar el server "Field Reports Preview (rama de prueba)" del
-`launch.json` de la raíz de KPEMM), y si aprueba, commitear antes de seguir
-con el resto del hub (FAQ, mapa, CTA) o las 6 páginas individuales.
+**El hub está terminado. Lo que sigue es construir la PRIMERA página de caso
+individual, como plantilla.**
+
+1. Abrir el worktree en la rama `feat/field-reports-cluster` (ya tiene todo).
+2. Leer `.claude/goal.md` (la vara de medida) y la sección 2.6 del playbook
+   `DOCS/COPY-INTENT-TRUST-PLAYBOOK.md` (la receta de 9 pasos, ya medida).
+3. Caso candidato: **GMC Savana**, es el único con todos los datos confirmados
+   (cliente, diagnóstico, resultado y reseña real de Chris G.).
+4. **`cmd-field-report.md` exige presentar el plan y esperar aprobación de
+   Jose ANTES de escribir una línea.** No saltarse ese paso.
+5. Recién con esa página aprobada, replicar a los otros 5 casos.
+
+Servidor de prueba: "Field Reports Preview (rama de prueba)" en el
+`launch.json` de la **raíz de KPEMM**, no el del worktree. Confirmar que está
+corriendo antes de mandarle un link a Jose.
