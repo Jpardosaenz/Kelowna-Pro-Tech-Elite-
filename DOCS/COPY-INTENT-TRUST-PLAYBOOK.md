@@ -292,10 +292,21 @@ Las dos sin clics no las tienen. `diagnostic` tiene preguntas visibles pero **si
 marcar**, y no le alcanza.
 
 **Límite honesto:** son cuatro páginas. Esto es una coincidencia fuerte y consistente,
-no una relación causa y efecto demostrada. Se aplica porque además es exactamente lo que
-necesitan ChatGPT, Perplexity y los resúmenes de IA de Google para citar una respuesta,
-que es el objetivo declarado del negocio en `goal.md`. Se revisa cuando haya más páginas
-medidas.
+no una relación causa y efecto demostrada. Se revisa cuando haya más páginas medidas.
+
+**Corrección verificada contra fuente externa (2026-08-05):** la razón que se había
+escrito acá antes ("ayuda a que Google muestre un resultado enriquecido") **es
+incorrecta y hay que descartarla.** Google retiró por completo los resultados
+enriquecidos de FAQ el 7 de mayo de 2026 (Search Engine Journal, Search Engine Land) —
+ya no aparece ninguna caja de preguntas en el buscador, ni para sitios de gobierno o
+salud, que eran los únicos que quedaban desde 2023. Marcar las preguntas **no mejora
+el clic en Google** y nunca más lo va a hacer con este esquema.
+
+La razón correcta para seguir usándolo, confirmada por la misma fuente: Google sigue
+leyendo el marcado para entender la página (lo confirmó explícito), y ChatGPT,
+Perplexity y los resúmenes de IA lo usan para citar. Es una herramienta de AEO, no de
+clic en Google. Coincide con el objetivo declarado en `goal.md`, pero por la razón
+correcta, no por la que se había escrito antes.
 
 #### Hallazgo 5: el home gana por volumen, no por eficiencia
 
@@ -337,7 +348,16 @@ Aplicar en este orden, hasta que una medición nueva demuestre algo mejor:
 7. **Preguntas y respuestas marcadas** con `FAQPage`, no solo visibles.
 8. **Enlaces internos hacia el hub y hacia la página de servicio** para que ninguna
    página quede huérfana.
-9. **Un solo CTA**, específico a la intención de esa página.
+9. **CTA repetido y consistente, no un botón único.** Corregido el 2026-08-05:
+   una primera versión de esta receta decía "un solo CTA por página". Se
+   verificó contra `pre-purchase` (la página con más clics reales del sitio
+   después del home) y esa regla es falsa: tiene **9** botones de llamar o
+   textear (header, barra sticky móvil, hero, bloque de CTA a mitad de
+   página, footer, botón flotante), más que los 7 que tenía `field-reports`
+   cuando se le iba a "arreglar" este punto. Lo que sí se sostiene con los
+   datos: mismo número de teléfono siempre, mismo texto de botón repetido
+   (no siete llamados a la acción distintos compitiendo), y presente en
+   cada tramo de scroll para que nunca haya que volver arriba a buscarlo.
 
 #### Deuda conocida que no se debe copiar
 
@@ -345,6 +365,25 @@ Aplicar en este orden, hasta que una medición nueva demuestre algo mejor:
 existe hoy y **no es un modelo válido**: cero clics, título por vehículo, sin preguntas
 marcadas, prueba social al final. Su maquetación de dos columnas sirve como referencia
 visual. Su copy, su título y su falta de preguntas no se replican.
+
+#### Verificación contra fuentes externas (2026-08-05)
+
+Jose pidió comparar todo lo de arriba contra lo que dicen especialistas de afuera del
+negocio, no solo confiar en el dato propio. Búsqueda hecha ese día contra Neil Patel,
+CXL, Search Engine Journal y Search Engine Land:
+
+| Lo que hicimos | Qué dice la fuente externa | Veredicto |
+|---|---|---|
+| Título con la fórmula servicio + ciudad + situación del lector | Neil Patel: keyword al inicio, marca al final, evitar título genérico | Coincide |
+| Reseñas y casos reales arriba | Neil Patel / CXL: los testimonios reales suben leads ~11% y son parte directa de E-E-A-T de Google | Coincide |
+| Preguntas marcadas con `FAQPage` | Search Engine Journal / Search Engine Land: Google **eliminó por completo** el resultado enriquecido de FAQ el 7 de mayo de 2026, ya ni los sitios de gobierno o salud lo conservan | **Se usaba por la razón equivocada, corregido arriba en el Hallazgo 4** — sigue sirviendo, pero para que lo lean IA como ChatGPT/Perplexity, no para ganar clic en Google |
+| Estructura, novedad y fuente creíble como lo que más predice si una IA cita una página | CXL / AirOps (guías AEO 2026): 83% de las citas de IA en búsquedas comerciales vienen de páginas actualizadas en los últimos 12 meses | Nuevo: agregar fecha de actualización visible en cada caso cuando se construyan (no estaba contemplado) |
+| Longitud del título (67-72 caracteres en las páginas del sitio) | Neil Patel: el punto óptimo medido es 51-60 caracteres | **Tensión sin resolver:** la recomendación externa dice más corto: nuestras propias páginas con clics reales (home, pre-purchase) están igual de largas que esta y funcionan. No se fuerza el cambio sin evidencia propia que lo pida. |
+
+**Regla de aplicación:** cuando un dato propio y uno externo coinciden, se refuerza la
+regla. Cuando un dato externo corrige un error propio, se corrige el canon (como el caso
+del FAQ arriba). Cuando un dato externo sugiere algo que el dato propio no confirma ni
+contradice, se anota como tensión abierta, no se aplica a ciegas.
 
 ### 3. Frontloading, no una regla artificial de “primera frase”
 
