@@ -184,7 +184,11 @@ tenemos backlinks externos; esto es lo que hacemos en su lugar:
       de clics, siempre).
 - [ ] La prueba de confianza (estrellas, reseñas) aparece pegada arriba,
       no al final de la página.
-- [ ] Un solo CTA principal por página, no varios botones compitiendo.
+- [ ] El mismo número de teléfono y el mismo texto de botón se repiten en
+      cada tramo de scroll (no un botón único — se verificó que
+      `pre-purchase`, la página con más clics real después del home, tiene
+      9 botones de llamar/textear, no 1; ver corrección en sección 2.6 del
+      playbook de copy, punto 9).
 - [ ] Las preguntas de Nivel 1 y Nivel 2 de este documento están escritas
       Y marcadas con schema `FAQPage`.
 - [ ] Cada caso enlaza a 1-2 casos parecidos, no solo de vuelta al hub.
@@ -195,16 +199,25 @@ tenemos backlinks externos; esto es lo que hacemos en su lugar:
 - Hub (`/field-reports/`) con las 6 tarjetas, fondo oscuro, fotos
   corregidas, hero con H1 y subtítulo aprobados por Jose.
 - Auditoría del hub contra la receta de 9 pasos de la sección 2.6 del
-  playbook de copy: **reprobó 5 de 9** (título, descripción, prueba
-  social abajo, sin preguntas marcadas, 7 CTAs). Corrección pendiente.
+  playbook de copy: reprobó 5 de 9 en la primera pasada (título,
+  descripción, prueba social abajo, sin preguntas marcadas, y un punto de
+  CTA que resultó estar mal medido — ver corrección abajo).
+- **Corregidos ya:** título, descripción (con la fórmula de pregunta del
+  cliente), prueba social subida arriba del H1 con reseña real de Chris G.,
+  H1 y subtítulo reajustados de tamaño.
+- **Corrección al propio playbook (2026-08-05):** el punto "un solo CTA"
+  era falso. Se verificó contra `pre-purchase` (más clics que el resto del
+  sitio después del home) y tiene 9 botones de llamar/textear, no 1. No se
+  tocan los CTAs de `field-reports`.
 - El análisis de qué gana clics en el sitio real, guardado como canon en
   `DOCS/COPY-INTENT-TRUST-PLAYBOOK.md` sección 2.6.
 - Este mismo documento, actualizado con la meta numérica, las preguntas
   de dos niveles y el plan de enlaces internos.
 
 **Lo que sigue, en orden (no se salta un paso sin terminar el anterior):**
-1. Corregir el hub contra los 5 puntos que reprobó (título, descripción,
-   posición de la prueba social, preguntas marcadas, un solo CTA).
+1. Falta solo un punto de los 5: **preguntas marcadas con `FAQPage`** en el
+   hub. Se deja para cuando arranque el paso 2, porque ahí se define qué
+   preguntas responde cada caso y tiene más sentido escribirlas juntas.
 2. Construir la primera página de caso como plantilla (candidato: GMC
    Savana, tiene todos los datos confirmados), aplicando la receta
    completa + las preguntas de Nivel 2 + los 3 enlaces obligatorios.
