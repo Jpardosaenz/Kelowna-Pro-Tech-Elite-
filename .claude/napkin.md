@@ -16,6 +16,14 @@
 
 1. **[2026-07-18] Verify behavior, not only static screenshots.**
    Do instead: test responsive state, scroll, DOM position, CTA action, and relevant breakpoints.
+2. **[2026-08-05] Never merge a page whose internal links point to pages that don't exist yet.**
+   Applies to any hub/index/cluster page built incrementally. Check with a filesystem test
+   for every linked slug, not by assuming "they must be done by now".
+   Do instead: `for u in <slugs>; do [ -f "path/$u/index.html" ] || echo "404: $u"; done`
+   before considering merge. A hub with broken links does more damage than no hub at all —
+   it hits the visitor with the most intent to call, and search engines/AI penalize dead
+   internal links. Confirmed on field-reports: hub was finished and audited, but the 6
+   linked case pages did not exist yet, so merge was correctly held.
 
 ## Copy, Conversion & AEO
 

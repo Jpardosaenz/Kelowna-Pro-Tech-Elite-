@@ -256,6 +256,22 @@ es el repo del sitio):
 - `02-Marca-y-Contexto/01_BRAND_WEBSITE_PLAYBOOK_KPEMM.md` — regla "the best"
   corregida para no contradecir `COPY-INTENT-TRUST-PLAYBOOK.md`.
 
+## Decisión: NO merge todavía (2026-08-05, verificado)
+
+Jose preguntó si hacer merge a `main` ahora que el hub está listo. Se verificó
+en disco, no se asumió: las 6 URLs a las que apuntan las tarjetas del hub
+**no existen** (`404` las 6):
+`gmc-savana-kelowna-diagnostic`, `chrysler-300-kelowna-diagnostic`,
+`honda-pilot-kelowna-diagnostic`, `jeep-cherokee-kelowna-diagnostic`,
+`vw-jetta-tdi-kelowna-diagnostic`, `cadillac-srx-kelowna-diagnostic`.
+
+**Regla fijada: no se mergea a `main` hasta que las 6 páginas de caso existan
+y funcionen.** Publicar el hub solo, con 6 links rotos, sería peor que no
+publicar: le rompe la experiencia justo al cliente con más intención de
+llamar, y Google/las IA penalizan/desconfían de páginas con links muertos.
+Volver a verificar los 6 archivos antes de considerar el merge, no confiar en
+que "ya deben estar listos".
+
 ## Para arrancar la próxima sesión
 
 **El hub está terminado. Lo que sigue es construir la PRIMERA página de caso
