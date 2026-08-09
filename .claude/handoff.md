@@ -1,4 +1,4 @@
-# Handoff — 2026-08-04 18:30
+# Handoff — 2026-08-05 (sesión cerrada, hub terminado)
 
 ## PROMPT PARA ARRANCAR LA PRÓXIMA SESIÓN (pegar tal cual)
 
@@ -6,11 +6,12 @@
 Lee el handoff en /Users/EPARDOSAENZ/Documents/Proyect Web/Website KPEMM/worktree-field-reports-cluster/.claude/handoff.md
 completo antes de responder nada. Antes de leer archivos sueltos, consultá
 primero los grafos de graphify de la carpeta correspondiente (raíz KPEMM,
-Marketing workers, sitio web) para orientarte gratis y rápido — solo abrí
-archivos completos cuando el grafo no alcance.
+Marketing workers, sitio web) para orientarte gratis y rápido — pero si el
+grafo tiene fecha anterior a los archivos que vas a tocar, no confíes en él,
+verificá leyendo directo (regla del propio KPEMM/CLAUDE.md).
 
-Trabajá con esta disciplina, que es la que dio buenos resultados en la
-sesión anterior y no se debe perder:
+Trabajá con esta disciplina, que es la que dio buenos resultados y no se
+debe perder:
 
 1. Nunca asumas que un archivo "de referencia" está terminado o correcto
    porque otro documento lo dice — abrilo y leelo antes de copiarlo.
@@ -33,10 +34,17 @@ sesión anterior y no se debe perder:
 7. Cada respuesta empieza con "🐤 José —", sin excepción, y en español
    simple, sin jerga sin traducir.
 8. `main` nunca se toca directo; todo en la rama `feat/field-reports-cluster`
-   ya creada, y no se hace push ni se publica sin aprobación explícita.
+   ya creada. NO hacer merge hasta que las 6 páginas de caso existan (ver
+   sección "Decisión: NO merge todavía" en este handoff) — push sí está
+   autorizado, merge no.
+9. Antes de llamar "exitosa" a una página o copiar su estructura, verificá
+   sus CLICS reales en Search Console, no su posición en Google. Una página
+   bien posicionada puede tener cero clics.
+10. Antes de escribir una regla de copy/diseño en el canon, contrastala
+    contra la página que de verdad convierte — no la escribas de memoria.
 
-Después de leer el handoff, empezá directo por el primer punto de
-"Pendientes" — no repitas trabajo ya cerrado ahí.
+Después de leer el handoff, empezá directo por "Para arrancar la próxima
+sesión" (al final del archivo) — no repitas trabajo ya cerrado.
 ```
 
 ## Qué estábamos haciendo
