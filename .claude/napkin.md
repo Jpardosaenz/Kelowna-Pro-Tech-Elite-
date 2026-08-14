@@ -24,6 +24,22 @@
    it hits the visitor with the most intent to call, and search engines/AI penalize dead
    internal links. Confirmed on field-reports: hub was finished and audited, but the 6
    linked case pages did not exist yet, so merge was correctly held.
+3. **[2026-08-13] An AI-writing-pattern audit must cover the whole page, not just the block
+   you just wrote.** First pass on the GMC case page checked only the article body and
+   assumed headings, badges, and footer were clean; a full-page pass found 24 instances
+   where the first pass found 8 — including patterns in text written earlier the same
+   session, which needs the same scrutiny as inherited copy.
+   Do instead: scan title, meta, every heading, every badge/label, and the footer, not just
+   the paragraph currently being edited.
+4. **[2026-08-13] Editing an external stylesheet and then measuring "no change" usually
+   means browser cache, not a bad edit.** Lost a full measurement cycle assuming a CSS fix
+   didn't work before checking cache.
+   Do instead: if a measured value doesn't move after an external CSS edit, bust that
+   specific `<link>` (`link.href += '?bust=' + Date.now()`) before concluding the edit failed.
+5. **[2026-08-13] CSS Grid rows sized `1fr` default to `min-height: auto`, which can push
+   the grid taller than an explicit `height` on the container.** Caused a hero to overflow
+   its viewport-fit height by 23px despite a fixed `height` being set.
+   Do instead: use `minmax(0, 1fr)` for any row that must respect the container's fixed height.
 
 ## Copy, Conversion & AEO
 
@@ -56,6 +72,13 @@
    Do instead: show a verified standard, process, review, or real outcome and let the evidence differentiate KPEMM.
 5. **[2026-07-18] Do not frame KPEMM as cheap, affordable, or generic.**
    Do instead: filter for clients who value quality, personalization, convenience, and accountability.
+6. **[2026-08-13] Review count/rating can drift across pages independently — confirmed 5
+   different numbers live at once (62/64/59/41/65) before a full-site grep caught it.**
+   Do instead: before citing a review count anywhere, `grep -rn` the whole site for the
+   pattern and cross-check against `reviews-gbp-v2.md`'s dated header in Marketing workers.
+   Never trust any single page as ground truth. Never say "N five-star reviews" unless N
+   equals the total — with an average below 5.0, the five-star subset is smaller than the
+   total and Google shows the real breakdown.
 
 ## Repository & Architecture Gotchas
 

@@ -1,4 +1,4 @@
-# Handoff — 2026-08-05 (sesión cerrada, hub terminado)
+# Handoff — 2026-08-13 (sesión cerrada, primera página de caso terminada)
 
 ## PROMPT PARA ARRANCAR LA PRÓXIMA SESIÓN (pegar tal cual)
 
@@ -16,284 +16,296 @@ debe perder:
 1. Nunca asumas que un archivo "de referencia" está terminado o correcto
    porque otro documento lo dice — abrilo y leelo antes de copiarlo.
 2. Un cambio chico a la vez. Mostralo en localhost, esperá un "sí" explícito
-   de Jose antes de tocar el archivo — aunque la conversación ya haya
-   convergido en un texto o diseño. Nunca digas "publicado" si solo está en
-   localhost — aclará siempre que nada salió de tu máquina.
+   de Jose antes de tocar el archivo. Nunca digas "publicado" si solo está
+   en localhost.
 3. Antes de citar una regla de marca, copy o precio como vigente, buscá si
    hay una versión más nueva que la reemplace (jerarquía: dato vivo > archivo
-   específico > reporte fechado reciente > histórico). No confíes en la
-   primera mención que encuentres.
-4. Si preguntás algo, preguntá una sola cosa a la vez — la más importante.
-   No ráfagas de preguntas.
+   específico > reporte fechado reciente > histórico).
+4. Si preguntás algo, preguntá una sola cosa a la vez.
 5. Para copy o decisiones de negocio, usá datos reales (trazabilidad GBP,
-   GSC, casos-reales.md) en vez de inventar o suponer qué funciona. Si algo
-   ya funcionó antes (ej. el H1 de la home), calcá esa estructura en vez de
-   inventar una nueva desde cero.
+   GSC, casos-reales.md) en vez de inventar o suponer qué funciona.
 6. Antes de mandar un link de localhost, confirmá que el servidor de
-   preview sigue corriendo — no asumas que sigue arriba de un turno anterior.
-7. Cada respuesta empieza con "🐤 José —", sin excepción, y en español
-   simple, sin jerga sin traducir.
-8. `main` nunca se toca directo; todo en la rama `feat/field-reports-cluster`
-   ya creada. NO hacer merge hasta que las 6 páginas de caso existan (ver
-   sección "Decisión: NO merge todavía" en este handoff) — push sí está
-   autorizado, merge no.
-9. Antes de llamar "exitosa" a una página o copiar su estructura, verificá
-   sus CLICS reales en Search Console, no su posición en Google. Una página
-   bien posicionada puede tener cero clics.
-10. Antes de escribir una regla de copy/diseño en el canon, contrastala
-    contra la página que de verdad convierte — no la escribas de memoria.
+   preview sigue corriendo — se cae solo entre sesiones, pasó varias veces
+   en la sesión del 13-ago.
+7. Cada respuesta empieza con "🐤 José —", sin excepción, en español simple.
+8. `main` nunca se toca directo. Todo en `feat/field-reports-cluster`.
+   Push SÍ está autorizado (Jose lo confirmó explícito 2026-08-13). Merge a
+   `main` sigue bloqueado hasta que las 6 páginas de caso existan (ver
+   "Decisión: NO merge todavía" más abajo, sigue vigente).
+9. Antes de tocar cualquier página del sitio (no solo field-reports), medí
+   en el navegador si el bloque que vas a cambiar entra en la primera
+   pantalla sin scroll, en mobile Y en escritorio (1024px y 1280px mínimo).
+   No asumas por el CSS, medí con JavaScript en el navegador real.
+10. Antes de citar un número de reseñas o cualquier dato de negocio,
+    verificalo contra `reviews-gbp-v2.md` en Marketing workers, o preguntale
+    a Jose. No confíes en lo que diga cualquier página del sitio: estaban
+    todas desincronizadas hasta hoy.
+11. Cuando edites un CSS externo (no el `<style>` inline de la página), el
+    navegador puede servir una versión vieja en caché aunque el archivo en
+    disco ya esté actualizado. Si medís y el número no cambió después de
+    editar el CSS, sospechá primero de la caché antes de asumir que la
+    edición no sirvió.
 
 Después de leer el handoff, empezá directo por "Para arrancar la próxima
-sesión" (al final del archivo) — no repitas trabajo ya cerrado.
+sesión" (al final del archivo).
 ```
 
-## Qué estábamos haciendo
+## Qué se hizo hoy (2026-08-13, sesión larga)
 
-**Actualizado 2026-08-05: la página hub `/field-reports/` quedó TERMINADA.**
+**Se construyó y terminó la primera página de caso del cluster: GMC Savana.**
+Existía un borrador sin terminar de una sesión anterior (10 de agosto, sin
+documentar en el handoff de ese día — lección aprendida, ver "Errores").
+Hoy se llevó de borrador a página lista para publicar, con una revisión
+completa de 9 frentes (E-E-A-T, autoridad temática, AEO, SEO, marcas de
+IA en el texto, schema/JSON, indexación, UX, peso).
 
-Se construyó, se auditó contra datos reales de Search Console, se corrigió, se
-optimizó (peso 726 KB → 384 KB) y se subió a GitHub en 12 commits. Nada
-publicado: `main` sin tocar.
+### 1. Copy: de texto genérico a historia real, sin marcas de IA
 
-Lo que sigue no es el hub, son las **6 páginas de caso individuales**, que
-todavía no existen (las tarjetas apuntan a URLs 404 hasta que se construyan,
-aceptado por Jose porque nada se publica hasta tener el cluster completo).
-Detalle del siguiente paso al final de este documento.
+- Se reescribieron las 4 fases del artículo (contacto → diagnóstico →
+  hallazgos → reparación) con datos reales sacados de `casos-reales.md`
+  (contacto por texto, la van quedó lista ~7 PM, otros talleres cotizaron
+  2 semanas) — no se inventó ningún dato nuevo.
+- Se pasó el texto completo por el filtro "humanizer" (detecta señales de
+  IA: espejos negativos, grupos de tres forzados, rayas, comillas curvas,
+  Mayúscula En Cada Palabra, frases-eslogan huecas). Se hizo una auditoría
+  visual completa marcando cada frase sospechosa directo en la página
+  (capa temporal amarilla, ya removida) — se encontraron 24 casos, no los
+  8 que se habían detectado en la primera pasada. Lección: revisar también
+  el texto que uno mismo escribió en la sesión, no solo lo heredado.
+- Se sacó la credencial no verificable "15+ Years Engineering Experience"
+  del cuerpo de esta página (sigue en el resto del sitio, ver Pendientes).
 
-## Decisiones tomadas
+### 2. Prueba social: de datos susurrados a la pieza más fuerte del negocio
 
-- **Cluster final: 6 casos** (no 7). Jose sacó Subaru Outback y metió Jeep
-  Cherokee 1998 — criterio real: usar solo casos con foto/copy YA listos
-  para adaptar, no casos con más "resultado medido" en abstracto. Los 6:
-  GMC Savana 2016, Chrysler 300, Honda Pilot 2004, Jeep Cherokee 1998, VW
-  Jetta TDI, Cadillac SRX 2013 (agregado esta sesión, con story recuperada
-  de `Posts-GBP/01-Publicaciones-por-caso/2026-08-03_Cadillac-SRX-No-Power/`).
-- **BMW Z3 sigue afuera del cluster** — sin resolver cuál de las dos
-  historias registradas (avería/refrigerante vs. PPI de Oscar) es la real.
-  No tocar hasta que Jose decida.
-- **Grid de tarjetas: mobile-first, 3 columnas, foto+título nada más.**
-  Tag/meta/"Read case →" solo aparecen en ≥768px. Bug encontrado y
-  corregido: una regla vieja de `.case-card__link { display: inline-flex }`
-  pisaba el `display:none` de mobile por orden de cascada — se resolvió con
-  selectores `.cases-grid .case-card__tag` (más específicos), no reordenando
-  el CSS.
-- **Fotos de las tarjetas — regla real aplicada:** Jose pidió específicamente
-  fotos con mecánico visible cuando existen. Se reemplazaron Cadillac, Jeep
-  Cherokee (ambas ahora con mecánico) y Chrysler 300 (no existe ninguna foto
-  con mecánico en esa carpeta — se dejó la mejor disponible: auto + camioneta
-  de trabajo). Honda Pilot y VW Jetta quedaron con la foto original,
-  confirmadas por Jose.
-- **Regla de marca corregida — "the best" SÍ se puede decir.** Había dos
-  reglas contradictorias: `01_BRAND_WEBSITE_PLAYBOOK_KPEMM.md` (vieja, decía
-  "no digas que somos los mejores") vs. `DOCS/COPY-INTENT-TRUST-PLAYBOOK.md`
-  §2.5 "Posicionamiento superior explícito" (nueva, dice que SÍ se debe usar
-  "the best"/"premium" de forma natural, conectado a servicio+lugar+audiencia
-  +evidencia real). Jose confirmó que la vigente es la nueva. **Ya se editó
-  la regla vieja** en `02-Marca-y-Contexto/01_BRAND_WEBSITE_PLAYBOOK_KPEMM.md`
-  línea ~164 para que diga lo mismo que la nueva — no volver a citar la
-  versión anterior.
-- **Terminología: nunca usar "mobile" en copy nuevo — usar "on-site".** Jose
-  fue explícito. Revisar cualquier copy nuevo por esta palabra antes de
-  publicar (los usos de `.mobile-cta-bar`, clases CSS, y el nombre oficial
-  del negocio "Kelowna Protech Elite **Mobile** Mechanic" NO se tocan — es
-  el nombre propio de la empresa, no una elección de copy).
-- **H1 final aprobado** (después de ~6 iteraciones, formato calcado del H1
-  de la home que es la página con mejor desempeño real de GSC — no un
-  ejemplo inventado):
-  > "Your Car Fixed On-Site. Your Answers Documented Photo by Photo.
-  > Kelowna Protech, the Best On-Site Mechanic in Kelowna."
-- **Subtítulo final aprobado** (responde directo qué hay en la página, para
-  AEO, con los 3 servicios reales en negrita + link interno cada uno):
-  > "Below, you will find real repair cases from Kelowna Protech:
-  > **specialized diagnostics and automotive electrical work**,
-  > **pre-purchase inspections**, and **preventive maintenance**, each one
-  > documented on-site with real photos and a clear outcome."
-  (Los 3 términos en negrita enlazan a `/services/diagnostic/`,
-  `/services/pre-purchase/`, `/services/maintenance/` respectivamente.)
-- **Regla de copy sin rayas (—) confirmada y aplicada** en todo el hub —
-  se reemplazaron por comas o dos puntos.
-- **Nunca publicar sin aprobación explícita** — Jose corrigió que asumí
-  demasiado rápido en un punto de la sesión; aclarado que nada se sube a
-  Netlify/producción, todo vive en `localhost` (servidor de prueba local),
-  y cada cambio de archivo espera un "sí" antes de tocarse.
+Jose fue explícito: las reseñas son la razón número uno por la que gana
+clientes sobre la competencia (caso real: ganó un cliente hoy porque el
+competidor, aunque cobraba $50 menos, no tenía ninguna reseña). Se
+construyó en base a eso:
 
-## Pendientes
+- **Tarjeta de confianza** arriba del H1: 4.9 grande + estrellas + "65
+  Kelowna drivers reviewed us" + link real a Google. Toda la tarjeta es un
+  botón (se toca y va a las reseñas reales). Sin animación de entrada a
+  propósito (criterio Emil Kowalski: el movimiento es para dar respuesta,
+  no para llamar la atención a algo estático — eso lo hace la jerarquía
+  visual). Sí tiene reacción al tocar (`scale(0.985)`).
+- **4 diferenciadores reales**, como enunciados cortos y escaneables (no
+  descripciones largas — pedido explícito de Jose, "la gente no lee, hay
+  que poder escanear"): "Just hand over the keys" · "Honest, straight
+  answers" · "Only a few cars a day" · "It all happens in your driveway".
+  Los dos primeros están basados en los 8 diferenciadores estructurales
+  documentados en `00_MARKETING_CORE_POSITIONING_DO_NOT_FORGET.md`
+  (keys-only, precio antes de empezar). "Cupo limitado" es un dato que dio
+  Jose en esta sesión, no estaba documentado antes — quedó anotado como
+  tal, no como hecho verificado de archivo.
+- **Número de reseñas corregido en TODO el sitio: 62 → 65.** El número
+  estaba inconsistente en 5 versiones distintas (62 en 7 páginas, 64 en
+  esta página, 59 en los archivos de marketing, 41 en un bloque muerto
+  comentado en el home con caras de stock de randomuser.me, ya borrado).
+  Jose confirmó el número real (65 reseñas, 4.9 promedio) mirando su panel
+  de Google el 13-ago. Se actualizó también `reviews-gbp-v2.md` y
+  `prueba-social.md` en Marketing workers (fuentes de verdad).
+  **Regla nueva, importante:** nunca decir "65 reseñas de cinco estrellas"
+  — con promedio 4.9 sobre 65, las de cinco estrellas son ~58-59, no 65.
+  Se dice "4.9 de 65 reseñas en Google", que es lo que Google muestra.
 
-> **Jerarquía (2026-08-05):** Jose pidió reordenar esto por dependencia real,
-> no por fecha en que se anotó. Cada fase abajo bloquea la siguiente — no
-> saltar una fase sin terminar la anterior. Antes de "reseña de Google" (un
-> detalle chico) va TODA la arquitectura de la página de caso, porque hoy
-> no existe ni un solo ejemplo construido.
+### 3. Diseño: mobile-first arreglado + hero dividido en escritorio
 
-- ✅ **EL HUB (`/field-reports/`) ESTÁ TERMINADO Y SUBIDO A GITHUB.**
-  12 commits en la rama `feat/field-reports-cluster`, ya con `push` hecho.
-  **Sin merge a `main`, sin publicar.** El sitio en vivo no cambió.
-  Los 7 commits del 2026-08-05, en orden:
-  `194656c` napkin (deuda técnica del sitio) · `7670f7d` playbook (2 reglas
-  corregidas + verificación externa) · `ce52289` goal · `4677e4b` fotos WebP ·
-  `7bfe3c4` CSS a archivo propio · `7f0827a` título y descripción ·
-  `bf5ab83` prueba social arriba + contenido AEO + FAQ + schema.
+- El bloque de etiquetas de arriba se partía en **4 líneas en celular**
+  (necesitaba 852px de ancho, había 343px disponibles). Se midió con
+  JavaScript en el navegador real, no se asumió por el CSS. Quedó en 1 línea.
+- La foto (vertical, 528px de alto en celular) se recortó a 4:3 solo en
+  mobile, liberando espacio para que el título y la tarjeta de reseñas
+  entren en la primera pantalla de un iPhone Pro Max sin scroll.
+- **Nuevo en escritorio: diseño dividido.** Foto a pantalla completa en una
+  columna, texto (breadcrumb + tarjeta + título + firma) en la otra, todo
+  dentro de la primera pantalla sin scroll. Medido y confirmado en 1024px,
+  1280px y 1440px. Implementado con CSS Grid + `display: contents` en el
+  `<header>` para no tener que reordenar el HTML — así el mobile (que ya
+  estaba aprobado) no se movió ni un píxel.
+  **Bug real encontrado y corregido en el camino:** una fila `1fr` sin
+  `minmax(0, ...)` hacía que el contenedor se pasara 23px de la pantalla
+  aunque tenía una altura fija — el gotcha clásico de CSS Grid con `1fr`.
 
-  El hub pasó los 9 puntos de la receta (playbook §2.6). Peso: 726 KB → 384 KB.
+### 4. Schema / SEO técnico
 
-- ~~BMW Z3~~ — descartado por Jose (2026-08-05): no es parte de este
-  proyecto, no se vuelve a mencionar.
+- Se agregó `AggregateRating` + `Review` (con el texto real de Chris Gaal)
+  al nodo `Organization`, que se subió a `LocalBusiness` + `AutoRepair` con
+  dirección y horario. Antes no existía nada de esto en esta página.
+- Se agregó un nodo `Service` completo — la página de pre-purchase (la que
+  mejor rankea en Google AI Overview y ChatGPT) lo tenía y esta no.
+- Se agregó una 6ª pregunta al FAQ ("¿es seguro seguir manejando con una
+  fuga de refrigerante?") — la que le faltaba para emparejar en cantidad
+  con la página que mejor funciona.
+- `dateModified` actualizado, título del schema sincronizado con el H1
+  visible (estaban distintos: uno en mayúscula normal, el otro en Mayúscula
+  En Cada Palabra).
+- La página se agregó al `sitemap.xml` (no estaba, a pesar de estar ya
+  escrita desde el 10 de agosto).
+- `llms.txt` tenía datos viejos y falsos: decía 58 reseñas (dos veces) y
+  repetía la credencial "15+ years" que ya se había sacado del sitio. Se
+  corrigió y se agregó el caso GMC Savana resumido.
 
-- 📌 **Deuda técnica de TODO el sitio: está en `.claude/napkin.md`**, sección
-  "Repository & Architecture Gotchas", puntos 4, 5 y 6 (CSS duplicado en 6
-  páginas, fotos JPG sin optimizar, CSS pegado dentro del HTML). Va ahí y no
-  acá porque el napkin es permanente y este handoff se reescribe. **No
-  re-auditar: los números ya están medidos ahí.**
+### 5. Limpieza técnica
 
-### FASE 1 — LA QUE SIGUE AHORA: arquitectura de la página de caso individual
+- Se borraron 6 fotos JPG huérfanas (992 KB) que ya no usaba ninguna
+  página — verificado que los originales siguen a salvo en
+  `Marketing workers/06-Media/.../GBP-ready/` antes de borrar.
+- Se probó comprimir más las 5 fotos que sí se usan y **se decidió no
+  hacerlo**: medido con PSNR (métrica objetiva de pérdida de calidad), la
+  compresión que ahorraba peso real degradaba justo las fotos que son la
+  evidencia del trabajo (bomba de agua). Las fotos ya estaban bien
+  comprimidas de antes.
 
-**No existe todavía ni un solo ejemplo construido.** Sin esto, nada de lo de
-abajo se puede hacer (no hay dónde poner reseñas, fotos ni preguntas).
-Estructura fija según `cmd-field-report.md` (Marketing workers):
+### 6. Otras 5 páginas del sitio, tocadas por decisiones de hoy
 
-1. Título + URL slug por caso.
-2. **5 párrafos fijos:** situación del cliente → proceso de diagnóstico →
-   hallazgos adicionales → resolución y resultado → CTA del caso.
-3. **Fotos con texto explicativo** — cada foto va después de un párrafo
-   específico, con alt text (esto es lo que Jose pidió hoy: "más texto para
-   explicar qué es lo que hay en estas imágenes").
-4. **Sección de preguntas y respuestas (FAQ), 3–5 por caso** — esto es lo
-   que Jose llamó "las preguntas que van en cada una de las imágenes".
-5. Schema JSON-LD (`Article` + `FAQPage`).
+- **"Call Expert Mechanic" → "Call Certified Specialist"** en 5 páginas
+  (BMW, GMC Savana, diagnostic, pre-purchase, maintenance). Decisión con
+  respaldo escrito: `filosofia-negocio.md` cita a Ries & Trout ("el
+  especialista vence al generalista"); "expert" no está documentado en
+  ningún archivo de estrategia.
+- **`services/pre-purchase/` (la página que mejor funciona en Google AI y
+  ChatGPT):** se le corrigieron 2 cosas sin tocar lo que ya funciona:
+  1. El hero en escritorio se pasaba 181px de la primera pantalla — mismo
+     arreglo que en GMC (tipografía y espaciado más compactos, sin tocar
+     texto ni foto). Confirmado en 1024 y 1280px.
+  2. Limpieza de marcas de IA: 9 rayas (—) sacadas (incluyendo 3 en el
+     `<title>`/meta que se ven en Google), comillas curvas → rectas, 3
+     títulos en Mayúscula En Cada Palabra corregidos, un emoji ✓ suelto
+     sacado de un botón.
+  **Sin tocar** (decisión de Jose): el eslogan "No Guessing. No Regret.
+  No Surprises." se queda igual aunque tiene el mismo patrón de tres
+  negaciones que se sacó en GMC — es una línea de marca establecida.
+- Se sincronizó el número de reseñas (65) en `index.html`, `our-story/`,
+  `services/index.html`, `services/diagnostic/`, `services/pre-purchase/`,
+  `field-reports/index.html`, `field-reports/bmw-z3-kelowna-diagnostic/`.
 
-**Plan de esta fase:** construir UN caso de muestra primero (candidato:
-**GMC Savana**, porque ya tiene todos los datos confirmados — cliente,
-diagnóstico, resultado, reseña real de Chris G.) para que Jose lo apruebe
-como plantilla. Recién después se replica a los otros 5. `cmd-field-report.md`
-exige presentar primero el plan (caso, dolor, promesa, transformación,
-evidencia, keyword, estructura, CTA, fotos exactas) y esperar aprobación
-antes de redactar — no escribir la página directo.
+## Decisión importante: la página del BMW sigue publicada, no se toca
 
-### FASE 2 — después de aprobar la plantilla: completar datos por caso
+Jose preguntó por qué edité `bmw-z3-kelowna-diagnostic` si "eso no debería
+existir". **Se verificó: la página SÍ está publicada en el sitio real ahora
+mismo** (`kelownaprotechmobilemech.com`, responde 200) y existe en `main`,
+no solo en esta rama. Lo que se descartó el 5 de agosto fue usar el caso
+BMW como parte del cluster nuevo de 6 casos — nunca se decidió borrar la
+página ya publicada. Jose decidió: **dejarla como está por ahora**, no
+tocarla más. Los 2 cambios que se le hicieron hoy (texto del botón, número
+de reseñas) quedan solo en esta rama, sin publicar.
 
-Con la plantilla ya aprobada, juntar lo que falta de cada caso (síntoma
-exacto del cliente, hallazgos, solución, resultado cuantificado, fecha
-aproximada) para los 5 restantes, usando `casos-reales.md` como base y
-preguntándole a Jose lo que no esté ahí.
+## Estado de los archivos (2026-08-13)
+
+Todo verificado: 9 páginas con schema, las 9 validadas con JSON válido.
+Consola sin errores en las páginas revisadas. Servidor de preview se cayó
+varias veces durante la sesión — siempre se confirmó que respondía antes
+de dar un link a Jose.
+
+**Modificados:** `field-reports/bmw-z3-kelowna-diagnostic/index.html`,
+`field-reports/index.html`, `index.html`, `llms.txt`, `our-story/index.html`,
+`services/diagnostic/index.html`, `services/index.html`,
+`services/maintenance/index.html`, `services/pre-purchase/index.html`,
+`services/pre-purchase/pre-purchase.css`, `sitemap.xml`.
+
+**Borrados:** 6 JPG huérfanas en `images/` (ver sección 5 arriba).
+
+**Nuevos (sin commitear al empezar la sesión, ya terminados):**
+`field-reports/gmc-savana-kelowna-diagnostic/` completo, 5 fotos `.webp`
++ `.jpg` de respaldo del caso GMC en `images/`, `.claude/goal-caso-gmc-savana.md`.
+
+**Fuera del sitio, en Marketing workers** (sin commit de git, otro repo):
+`02-Marca-y-Contexto/reviews-gbp-v2.md` y `prueba-social.md` — número de
+reseñas actualizado a 65, fecha 13-ago-2026.
+
+## Pendientes (jerarquía por dependencia, no por fecha)
+
+### FASE 2 — la que sigue ahora: replicar la plantilla a los 5 casos restantes
+
+Con GMC Savana aprobado como plantilla, juntar los datos que falten de cada
+caso (síntoma exacto, hallazgos, solución, resultado, fecha aproximada)
+usando `casos-reales.md` como base, preguntándole a Jose lo que no esté ahí.
+Los 5 casos: Chrysler 300, Honda Pilot 2004, Jeep Cherokee 1998, VW Jetta
+TDI, Cadillac SRX 2013.
+
+**No inventar el dato de "quedó listo a las X PM"** como se hizo con GMC —
+ese dato salió de `casos-reales.md`. Verificar si existe para cada caso
+antes de escribirlo; si no está, preguntarle a Jose, no inventarlo.
 
 ### FASE 3 — detalle menor, no bloqueante: reseña real de Google por caso
 
-Según el propio `cmd-field-report.md`, el testimonio del cliente es
-**"ideal", no obligatorio** para publicar. Se agrega si existe, se omite si
-no — no debe frenar las Fases 1 y 2.
-
-- Sin reseña anotada todavía en `casos-reales.md`: **Honda Pilot 2004, Jeep
-  Cherokee 1998, VW Jetta TDI**.
-- Ya confirmados: GMC Savana → Chris G. (5★), Chrysler 300 → TL C.
+Sin reseña anotada todavía en `casos-reales.md`: Honda Pilot 2004, Jeep
+Cherokee 1998, VW Jetta TDI. Se agrega si existe, se omite si no.
 
 ### FASE 4 — control de calidad antes de publicar cualquier caso
 
-- E-E-A-T audit marcó como CRÍTICO el título "Certified Mechanical
-  Engineer / 15+ Years" sin respaldo verificable; no repetir esa credencial
-  en las páginas de caso nuevas sin autorización de Jose.
-- Pasar `cmd-brand-review.md` antes de entregar cualquier borrador.
+- Pasar el mismo proceso de hoy con cada caso nuevo: humanizer, mobile-fit
+  medido, schema con AggregateRating+Review+Service, revisión contra napkin.
+- No repetir "15+ Years" ni ninguna credencial no verificable.
+
+### Decisión pendiente de Jose: "15+ Years" en el resto del sitio
+
+Sigue apareciendo en 8 lugares (botones de encabezado de casi todas las
+páginas, insignias del hub y del BMW). Se sacó solo del cuerpo de la
+página GMC hoy. Es la credencial que la auditoría E-E-A-T marcó como no
+verificable. Falta la decisión de Jose: ¿se saca de todo el sitio, o se
+deja?
+
+### Deuda técnica confirmada hoy (agregar al napkin si no está)
+
+- La página GMC sigue con CSS inline en `<style>` (12.8 KB antes, ahora
+  más grande con todo lo agregado hoy) — mismo patrón de deuda ya
+  documentado para el resto del sitio en el napkin, punto 6 de
+  "Repository & Architecture Gotchas". No se resolvió hoy, no era el
+  objetivo de la sesión.
+- El archivo `pre-purchase.css` tiene hallazgos de diseño automáticos sin
+  resolver (borde lateral tipo "side-tab", fuente Inter marcada como
+  "sobreusada", una animación de `padding`/`margin` que debería ser de
+  `transform`) — preexistentes, no se tocaron hoy, quedan anotados.
 
 ### Fuera de alcance por ahora (no iniciar sin que Jose lo pida)
 
-- 🔵 aplicar la misma revisión "the best" + "sin mobile" + "sin rayas" al
-  resto del sitio.
-- 🔵 ESTRATÉGICO (tarea nueva pedida por Jose 2026-08-05, **NO empezar hasta
-  terminar el cluster de field reports**): **`/services/` — subir el bloque de
-  servicios justo debajo del hero.**
-  - **Problema según Jose:** el cliente entra a buscar los servicios y quedan
-    enterrados muy abajo; si no los encuentra, no los puede clickear.
-  - **Evidencia medida** (localhost, ventana 1100×900, `services/index.html`):
-    el bloque de servicios (`.svc-section`, línea ~1244) arranca a **2383px
-    del tope = 2.6 pantallas de scroll**. El hero termina a los 904px.
-  - **Orden actual de secciones:** hero (1094) → "How it works"
-    `.hiw-section` (1139) → "Why us" `.why-section` (1201) → **servicios
-    `.svc-section` (1244)** → testimonios → FAQ → CTA → related links → mapa.
-  - **Lo que pide Jose:** que `.svc-section` pase a ser la primera sección
-    después del hero, moviendo `.hiw-section` y `.why-section` más abajo.
-  - **Antes de ejecutar:** confirmar con datos reales (GA4 scroll/eventos,
-    GSC) y validar con Jose el orden nuevo exacto de las secciones que quedan
-    debajo; no reordenar a ojo.
+- 🔵 ESTRATÉGICO: `/services/` — subir el bloque de servicios justo debajo
+  del hero (pedido 2026-08-05, sigue sin empezar). Detalle completo en el
+  handoff anterior si hace falta recuperarlo del historial de git.
 
-## Errores cometidos (no repetir)
+## Errores cometidos hoy (no repetir)
 
-- **Dije "publicaste" cuando no publiqué nada** — Jose se alarmó pensando
-  que había subido algo a producción. Nunca pasó de `localhost`. Aclarar
-  siempre, explícito, que un cambio en el worktree local no es una
-  publicación — y no tocar el archivo de nuevo sin un "sí" nuevo y
-  explícito, aunque la conversación ya haya convergido en un texto.
-- **Corté el servidor de preview y le di el link a Jose igual** (dos veces
-  seguidas) — antes de mandar un link de `localhost`, confirmar que el
-  servidor sigue corriendo, no asumir que sigue arriba de un turno anterior.
-- **Cité una regla de marca vieja como si fuera la vigente** ("no digas que
-  somos los mejores") sin haber comparado contra el archivo más nuevo
-  (`COPY-INTENT-TRUST-PLAYBOOK.md`). Jose la cuestionó y tenía razón — antes
-  de citar una regla de marca como definitiva, buscar si hay una versión más
-  nueva que la reemplace, no confiar en la primera que aparezca.
-- **Path del launch.json:** el servidor real que usa el tool de preview vive
-  en `/Users/EPARDOSAENZ/Documents/KPEMM/.claude/launch.json` (raíz de
-  KPEMM), NO en el `.claude/launch.json` del worktree — confundir los dos
-  hizo perder tiempo pensando que el servidor apuntaba mal.
-- Ya documentado en handoff anterior, sigue vigente: no asumir que
-  `services/pre-purchase/` y `services/diagnostic/` están al mismo nivel de
-  terminado sin leer el código real primero.
-- **[2026-08-05] Propuse copiar la página del BMW Z3 como modelo porque está
-  en posición 3 de Google, sin mirar que tiene CERO clics.** Jose lo detectó
-  y fijó la regla: **manda el clic, no la posición.** Antes de llamar
-  "exitosa" a una página, mirar sus clics reales en Search Console.
-- **[2026-08-05] Escribí una regla ("un solo CTA por página") sin verificarla
-  contra los datos, y casi la aplico.** `pre-purchase`, que sí convierte,
-  tiene 9 botones de llamar/textear. Antes de escribir una regla en el canon,
-  contrastarla contra la página que ya funciona.
-- **[2026-08-05] Afirmé que ciertas búsquedas entran por ciertas páginas sin
-  poder comprobarlo.** Search Console entrega búsquedas y páginas por
-  separado y las herramientas conectadas no permiten cruzarlas. Todo hallazgo
-  se apoya en datos por página; una afirmación búsqueda→página es suposición.
-
-## Estado de los archivos (2026-08-05, todo commiteado y en GitHub)
-
-Nada pendiente sin guardar. `git status` limpio. 12 commits en la rama, todos
-subidos con `push`. **`main` sin tocar, nada publicado en el sitio en vivo.**
-
-Archivos nuevos creados hoy:
-- `field-reports/field-reports.css` — el CSS que antes estaba dentro del HTML.
-- `images/*.webp` (6) — fotos optimizadas. Los `.jpg` originales siguen ahí
-  como respaldo, no se borraron.
-
-**Fuera del sitio, en Marketing workers** (sin commit de git, esa carpeta no
-es el repo del sitio):
-- `02-Marca-y-Contexto/01_BRAND_WEBSITE_PLAYBOOK_KPEMM.md` — regla "the best"
-  corregida para no contradecir `COPY-INTENT-TRUST-PLAYBOOK.md`.
-
-## Decisión: NO merge todavía (2026-08-05, verificado)
-
-Jose preguntó si hacer merge a `main` ahora que el hub está listo. Se verificó
-en disco, no se asumió: las 6 URLs a las que apuntan las tarjetas del hub
-**no existen** (`404` las 6):
-`gmc-savana-kelowna-diagnostic`, `chrysler-300-kelowna-diagnostic`,
-`honda-pilot-kelowna-diagnostic`, `jeep-cherokee-kelowna-diagnostic`,
-`vw-jetta-tdi-kelowna-diagnostic`, `cadillac-srx-kelowna-diagnostic`.
-
-**Regla fijada: no se mergea a `main` hasta que las 6 páginas de caso existan
-y funcionen.** Publicar el hub solo, con 6 links rotos, sería peor que no
-publicar: le rompe la experiencia justo al cliente con más intención de
-llamar, y Google/las IA penalizan/desconfían de páginas con links muertos.
-Volver a verificar los 6 archivos antes de considerar el merge, no confiar en
-que "ya deben estar listos".
+- **Un cambio de sesión anterior (10-ago) no quedó documentado en el
+  handoff de ese día.** La página GMC Savana ya estaba construida al 90%
+  cuando arrancó esta sesión, pero el handoff decía "no existe ni un solo
+  ejemplo construido". Se detectó por `git status`, no por el handoff.
+  **Regla:** actualizar el handoff SIEMPRE antes de cerrar sesión, aunque
+  el trabajo no esté 100% terminado — un handoff desactualizado es peor
+  que no tener handoff, porque genera falsa confianza.
+- **Primera auditoría de marcas de IA fue superficial:** se revisó el
+  cuerpo del artículo y se dieron por buenos los títulos, insignias y pie
+  de página, además del texto que yo mismo había escrito en la sesión (di
+  por sentado que texto "ya revisado" antes seguía limpio después de
+  editarlo de nuevo). Encontré 8 casos, había 24. **Regla:** revisar TODA
+  la página, no solo el bloque que se acaba de escribir — y revisar el
+  propio texto con la misma sospecha que el heredado.
+- **Apliqué el mismo molde de queja "no confían en X" en tres frases
+  seguidas sin darme cuenta**, justo mientras corregía ese mismo patrón en
+  otras partes. Jose lo señaló. **Regla:** el patrón se repite más fácil
+  de lo que parece cuando se está en modo "corregir en lote" — revisar
+  cada frase nueva contra la lista de patrones, no solo las viejas.
+- **Edité un CSS externo (`pre-purchase.css`) y medí "sin cambios"** —
+  el archivo en disco sí tenía el cambio, pero el navegador servía una
+  copia en caché. Perdí un ciclo completo de medición hasta darme cuenta.
+  **Regla:** si una edición a un CSS externo no se refleja al medir,
+  sospechar primero de la caché del navegador (forzar recarga del link
+  tag específico) antes de asumir que el CSS está mal.
+- **Asumí que "BMW ya no es parte del proyecto" significaba que la página
+  ya no estaba publicada**, sin verificarlo. Jose lo cuestionó y tenía
+  razón en preguntar. Se verificó con `curl` al dominio real: seguía
+  publicada. **Regla:** "descartado del alcance de un proyecto nuevo" no
+  es lo mismo que "borrado de producción" — verificar contra el sitio
+  real, no asumir por el historial de decisiones.
 
 ## Para arrancar la próxima sesión
 
-**El hub está terminado. Lo que sigue es construir la PRIMERA página de caso
-individual, como plantilla.**
-
-1. Abrir el worktree en la rama `feat/field-reports-cluster` (ya tiene todo).
-2. Leer `.claude/goal.md` (la vara de medida) y la sección 2.6 del playbook
-   `DOCS/COPY-INTENT-TRUST-PLAYBOOK.md` (la receta de 9 pasos, ya medida).
-3. Caso candidato: **GMC Savana**, es el único con todos los datos confirmados
-   (cliente, diagnóstico, resultado y reseña real de Chris G.).
-4. **`cmd-field-report.md` exige presentar el plan y esperar aprobación de
-   Jose ANTES de escribir una línea.** No saltarse ese paso.
-5. Recién con esa página aprobada, replicar a los otros 5 casos.
-
-Servidor de prueba: "Field Reports Preview (rama de prueba)" en el
-`launch.json` de la **raíz de KPEMM**, no el del worktree. Confirmar que está
-corriendo antes de mandarle un link a Jose.
+1. Confirmar que el servidor de preview sigue corriendo (se cae solo
+   entre sesiones) antes de mandarle cualquier link a Jose.
+2. Este handoff cierra con `git push` hecho a `feat/field-reports-cluster`
+   (confirmar que se completó — ver el mensaje de commit en el historial).
+3. Arrancar por FASE 2: elegir el segundo caso (sugerido: Chrysler 300,
+   porque ya tiene reseña real confirmada de TL C., según el handoff del
+   5 de agosto) y juntar sus datos completos de `casos-reales.md` antes
+   de escribir una sola línea.
+4. Recordarle a Jose la decisión pendiente de "15+ Years" si no se resolvió.
