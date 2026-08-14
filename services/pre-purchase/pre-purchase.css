@@ -63,7 +63,7 @@
     align-items: center;
     flex-direction: row;
     min-height: clamp(560px, 40vw, 820px);
-    padding: 72px 60px 80px;
+    padding: 40px 60px 40px;
     background: transparent;
   }
   .services-hero::before {
@@ -112,27 +112,27 @@
 
 .services-hero h1 {
   font-family: var(--font-display);
-  font-size: clamp(28px, 4vw, 48px);
-  line-height: 1.05;
+  font-size: clamp(26px, 3.2vw, 38px);
+  line-height: 1.1;
   color: #ffffff;
-  margin: 0 0 24px;
+  margin: 0 0 16px;
   letter-spacing: -0.02em;
 }
 
 .services-hero__tagline {
   font-family: var(--font-display);
-  font-size: clamp(18px, 2.5vw, 24px);
+  font-size: clamp(17px, 2.1vw, 21px);
   font-weight: 700;
   color: var(--premium-gold);
   letter-spacing: 0.02em;
-  margin: 8px 0 28px;
+  margin: 6px 0 18px;
 }
 .services-hero__service-line {
   max-width: 640px;
-  font-size: clamp(15px, 1.7vw, 17px);
-  line-height: 1.75;
+  font-size: clamp(14px, 1.5vw, 16px);
+  line-height: 1.55;
   color: rgba(255,255,255,0.85);
-  margin: 0 0 14px;
+  margin: 0 0 10px;
   font-weight: 400;
 }
 .services-hero__service-line strong {
@@ -141,10 +141,10 @@
 }
 .services-hero__service-transform {
   max-width: 620px;
-  font-size: clamp(14px, 1.55vw, 16px);
-  line-height: 1.65;
+  font-size: clamp(13px, 1.35vw, 15px);
+  line-height: 1.5;
   color: rgba(255,255,255,0.72);
-  margin: 0 0 28px;
+  margin: 0 0 18px;
 }
 
 .hero-atf-cta {
@@ -217,6 +217,10 @@
     line-height: 1.4;
     border-left: 2px solid rgba(245,158,11,0.45);
     padding-left: 10px;
+  }
+
+  .services-hero__eyebrow {
+    margin-bottom: 14px;
   }
 
   .hero-cta-group {
