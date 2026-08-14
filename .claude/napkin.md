@@ -43,21 +43,43 @@
 
 ## Copy, Conversion & AEO
 
-1. **[2026-07-18] Reducing pogo-sticking is a fundamental operational objective.**
+1. **[2026-08-14] Case-page content standard, derived from why PPI (pre-purchase) converts best on the site.**
+   Comparing GMC against PPI content/structure (not visual design) found 5 content gaps + 3
+   technical gaps that explain part of PPI's performance. Applied to GMC first as the
+   template; every new case page must include all 8:
+   1. Strongest review proof placed right after the hero (card w/ name, stars, quote,
+      "Verify on Google" link), not buried mid-article. Never show the same review twice
+      on one page — if it's up top, it isn't repeated lower down.
+   2. One bolded single-sentence differentiator near the top, built only from facts already
+      stated elsewhere on the page (never a new claim).
+   3. Mid-page CTA restates the trust numbers (rating + review count) in its own text, not
+      just a bare phone number.
+   4. "Related Services" is a real `<section>` with its own `<h2>` and a lead paragraph, not
+      a bare link list — carries more topical-relevance signal for Google/AI.
+   5. Never invent reviewer metadata (photo, "N reviews", "Local Guide"). Check the real
+      screenshot/profile first; if the data isn't there, omit the line rather than guess.
+   6. Preload the hero image (`<link rel="preload" as="image">` + `fetchpriority="high"` on
+      the `<img>`) for LCP.
+   7. Prefer an external stylesheet over a large inline `<style>` block on new pages (GMC's
+      page still has one — flagged as future cleanup, not blocking).
+   8. Do not add a quantified-loss dollar figure unless Jose gives a verified number — reuse
+      existing approved copy (e.g. an FAQ answer) for risk framing instead of inventing one.
+
+2. **[2026-07-18] Reducing pogo-sticking is a fundamental operational objective.**
    Do instead: confirm relevance immediately, communicate value, provide proof, create internal depth, and lead to a concrete decision.
-2. **[2026-07-18] KPEMM speaks as a company using `we`.**
+3. **[2026-07-18] KPEMM speaks as a company using `we`.**
    Do instead: use `we` for real company actions and standards; support every promise with specifics or evidence.
-3. **[2026-07-18] Communicate transformation before listing services.**
+4. **[2026-07-18] Communicate transformation before listing services.**
    Do instead: lead with what changes for the customer, then service, inclusions, differentiator, proof, and CTA.
-4. **[2026-07-18] The homepage maintenance card is BOFU plus a gateway to the maintenance silo.**
+5. **[2026-07-18] The homepage maintenance card is BOFU plus a gateway to the maintenance silo.**
    Do instead: make it capable of converting directly while linking to deeper service evidence.
-5. **[2026-07-18] Make answers extractable for people and AI.**
+6. **[2026-07-18] Make answers extractable for people and AI.**
    Do instead: state entity, service, location, result, differentiator, evidence, and action in clear self-contained language.
-6. **[2026-07-18] Retention is not artificially long text.**
+7. **[2026-07-18] Retention is not artificially long text.**
    Do instead: answer quickly, then earn continued attention with useful specifics, proof, comparisons, and internal links.
-7. **[2026-07-18] KPEMM is premium, not a commodity.**
+8. **[2026-07-18] KPEMM is premium, not a commodity.**
    Do instead: communicate personalized on-site care, quality materials, careful work, and why those standards matter.
-8. **[2026-07-18] Separate evidence from marketing hypotheses.**
+9. **[2026-07-18] Separate evidence from marketing hypotheses.**
    Do instead: label claims as confirmed, plausible, anecdotal, or unproven; test before promising outcomes.
 
 ## Business Facts & Compliance

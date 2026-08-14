@@ -33,6 +33,9 @@
     content="A work crew's van broke down in Kelowna with a coolant leak. We confirmed the water pump on-site with a pressure test and had them back on the road the same day." />
   <meta name="twitter:image" content="https://kelownaprotechmobilemech.com/images/gmc-savana-2016-onsite-diagnostic-800w.jpg" />
 
+  <!-- Preload hero image (LCP optimization) -->
+  <link rel="preload" as="image" href="/images/gmc-savana-2016-mechanic-hero-800w.webp" fetchpriority="high" />
+
   <!-- CSS -->
   <link rel="stylesheet" href="/estilos-header2.css" />
   <link rel="stylesheet" href="/service-tiles.css" media="print" onload="this.media='all'" />
@@ -47,843 +50,8 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" />
   </noscript>
 
-  <style>
-    :root {
-      --ink: #111827;
-      --muted: #6b7280;
-      --brand: #111827;
-      --accent: #dc2626;
-      --line: #e5e7eb;
-      --premium-dark: #0f172a;
-      --premium-gold: #fbbf24;
-      --premium-blue: #1e40af;
-      --premium-light: #f8fafc;
-      --bg: #ffffff;
-    }
+  <link rel="stylesheet" href="/field-reports/case-page.css" />
 
-    body {
-      background-color: var(--bg);
-    }
-
-    .page {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 40px 40px;
-    }
-
-    .breadcrumb {
-      font-size: 13px;
-      color: var(--muted);
-      margin: 0 0 24px;
-      text-align: center;
-    }
-
-    .breadcrumb a {
-      color: inherit;
-      text-decoration: none;
-      transition: color 0.2s;
-    }
-
-    .breadcrumb a:hover {
-      color: var(--premium-blue);
-    }
-
-    /* ── TRUST CARD ──────────────────────────────────────────────
-       65 Google reviews is the strongest asset this business has and
-       visitors were missing it. It reads as one object, not page text.
-       No entrance animation on purpose: motion is for feedback, not for
-       making static content loud. Prominence comes from hierarchy.
-       The whole card is one tap target to the real Google listing. ── */
-    .trust-card {
-      --ease-out: cubic-bezier(0.23, 1, 0.32, 1);
-      display: flex;
-      align-items: center;
-      gap: 14px;
-      max-width: 540px;
-      margin: 0 auto 16px;
-      padding: 10px 14px;
-      background: #fff;
-      border: 2px solid var(--premium-dark);
-      border-radius: 12px;
-      box-shadow: 0 4px 14px rgba(15, 23, 42, 0.08);
-      text-align: left;
-      text-decoration: none;
-      transition:
-        transform 160ms var(--ease-out),
-        box-shadow 160ms var(--ease-out);
-    }
-
-    .trust-card:active {
-      transform: scale(0.985);
-    }
-
-    @media (hover: hover) and (pointer: fine) {
-      .trust-card:hover {
-        box-shadow: 0 8px 22px rgba(15, 23, 42, 0.14);
-      }
-      .trust-card:hover .trust-card__cta {
-        color: var(--premium-dark);
-      }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      .trust-card { transition: none; }
-      .trust-card:active { transform: none; }
-    }
-
-    .trust-card__score {
-      flex: none;
-      display: grid;
-      justify-items: center;
-      gap: 3px;
-      padding-right: 16px;
-      border-right: 1px solid var(--line);
-    }
-
-    .trust-card__number {
-      font-size: 32px;
-      font-weight: 800;
-      line-height: 1;
-      color: var(--premium-dark);
-      letter-spacing: -0.03em;
-      font-variant-numeric: tabular-nums;
-    }
-
-    .trust-card__stars {
-      color: var(--premium-gold);
-      font-size: 13px;
-      letter-spacing: 1px;
-    }
-
-    .trust-card__body {
-      min-width: 0;
-      display: grid;
-      gap: 2px;
-    }
-
-    .trust-card__count {
-      font-size: 13.5px;
-      line-height: 1.25;
-      font-weight: 800;
-      color: var(--premium-dark);
-      letter-spacing: -0.01em;
-      white-space: nowrap;
-    }
-
-    .trust-card__cta {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--premium-blue);
-      transition: color 160ms var(--ease-out);
-    }
-
-    @media (min-width: 768px) {
-      .trust-card { gap: 22px; padding: 16px 24px; max-width: 600px; margin-bottom: 28px; }
-      .trust-card__score { padding-right: 22px; }
-      .trust-card__number { font-size: 46px; }
-      .trust-card__stars { font-size: 16px; }
-      .trust-card__count { font-size: 19px; }
-      .trust-card__cta { font-size: 14px; }
-    }
-
-    @media (max-width: 360px) {
-      .trust-card { gap: 11px; padding: 9px 12px; }
-      .trust-card__score { padding-right: 11px; }
-      .trust-card__number { font-size: 28px; }
-      .trust-card__count { font-size: 12.5px; }
-    }
-
-    /* ── SUPERIOR HERO HEADER (CENTERED) ── */
-    .case-header {
-      max-width: 900px;
-      margin: 0 auto 32px;
-      text-align: center;
-    }
-
-    .case-header h1 {
-      font-size: 28px;
-      line-height: 1.25;
-      margin: 0 0 20px;
-      color: var(--premium-dark);
-      font-weight: 800;
-      letter-spacing: -0.02em;
-    }
-
-    @media (min-width: 768px) {
-      .case-header h1 {
-        font-size: 44px;
-        line-height: 1.15;
-      }
-    }
-
-    /* ── VALUE STRIP — replaces what used to be a one-line badge row that
-       repeated the star rating (already big in the trust card above) and
-       "Same day" (already stated in case-meta below). This is the space
-       freed by cropping the portrait hero photo on mobile; it earns that
-       space back with differentiators not said anywhere else on the page. ── */
-    .value-strip {
-      max-width: 640px;
-      margin: 0 auto 24px;
-      display: grid;
-      gap: 10px;
-    }
-
-    .value-strip__item {
-      display: flex;
-      gap: 10px;
-      align-items: center;
-      font-size: 15px;
-      font-weight: 700;
-      line-height: 1.3;
-      color: var(--premium-dark);
-      text-align: left;
-    }
-
-    .value-strip__mark {
-      flex: none;
-      width: 18px;
-      height: 18px;
-      color: var(--premium-blue);
-    }
-
-    @media (min-width: 768px) {
-      .value-strip { grid-template-columns: repeat(2, 1fr); gap: 14px 32px; max-width: 560px; }
-      .value-strip__item { font-size: 15px; justify-content: center; }
-    }
-
-    /* ── HERO SPLIT — desktop only. Photo fills one full-height column,
-       breadcrumb/proof/headline fill the other, sized to fit inside the
-       first screen with no scroll. Below 1024px this is a no-op: the
-       block-level markup stacks exactly like it does on mobile. ── */
-    @media (min-width: 1024px) {
-      .hero-split {
-        display: grid;
-        grid-template-columns: minmax(360px, 420px) 1fr;
-        grid-template-rows: auto auto minmax(0, 1fr) auto;
-        overflow: hidden;
-        grid-template-areas:
-          "breadcrumb media"
-          "trust media"
-          "h1 media"
-          "byline media";
-        column-gap: 48px;
-        max-width: 1400px;
-        margin: 0 auto;
-        height: calc(100vh - 124px);
-        max-height: 720px;
-      }
-
-      .hero-split .breadcrumb { grid-area: breadcrumb; text-align: left; margin: 0 0 20px; }
-
-      .hero-split .trust-card { grid-area: trust; max-width: none; margin: 0 0 24px; }
-
-      .hero-split .case-header {
-        display: contents;
-      }
-
-      .hero-split .case-header h1 {
-        grid-area: h1;
-        align-self: center;
-        text-align: left;
-        margin: 0;
-        font-size: clamp(28px, 3vw, 38px);
-        line-height: 1.15;
-      }
-
-      .hero-split .case-photo--hero {
-        grid-area: media;
-        grid-row: 1 / -1;
-        max-width: none;
-        margin: 0;
-        height: 100%;
-        position: relative;
-        overflow: hidden;
-      }
-
-      .hero-split .case-photo--hero img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-      }
-
-      .hero-split .case-photo--hero figcaption {
-        position: absolute;
-        left: 0;
-        right: 0;
-        bottom: 0;
-        background: linear-gradient(to top, rgba(15, 23, 42, .82), transparent 70%);
-        color: #fff;
-        border: none;
-        padding: 40px 24px 18px;
-        font-size: 13px;
-      }
-
-      .hero-split .byline { grid-area: byline; text-align: left; margin: 20px 0 0 !important; }
-    }
-
-    .case-meta {
-      display: flex;
-      gap: 16px;
-      flex-wrap: wrap;
-      justify-content: center;
-      color: var(--muted);
-      font-size: 14px;
-      margin-top: 16px;
-      padding-top: 16px;
-      border-top: 1px solid var(--line);
-    }
-
-    .case-meta__item {
-      display: flex;
-      align-items: center;
-      gap: 6px;
-    }
-
-    /* ── 3-STEP PROCESS STRIP ── */
-    .case-process {
-      max-width: 640px;
-      margin: 0 auto 48px;
-      padding: 20px 24px;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      background: var(--premium-light);
-    }
-
-    .case-process__kicker {
-      color: var(--premium-blue);
-      font-size: 12px;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase;
-      margin: 0 0 14px;
-      text-align: center;
-    }
-
-    .case-process__steps {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 10px;
-    }
-
-    .case-process__step {
-      text-align: center;
-      display: grid;
-      gap: 4px;
-    }
-
-    .case-process__node {
-      width: 30px;
-      height: 30px;
-      margin: 0 auto 4px;
-      display: grid;
-      place-items: center;
-      border-radius: 999px;
-      background: var(--premium-dark);
-      color: var(--premium-gold);
-      font-size: 12px;
-      font-weight: 700;
-    }
-
-    .case-process__title {
-      font-size: 13px;
-      font-weight: 700;
-      color: var(--premium-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.03em;
-    }
-
-    .case-process__copy {
-      font-size: 12px;
-      color: var(--muted);
-    }
-
-    /* ── ARTICLE (SINGLE COLUMN, PHOTOS INLINE) ── */
-    .story-main {
-      max-width: 720px;
-      margin: 0 auto;
-      font-size: 18px;
-      line-height: 1.8;
-      color: #334155;
-    }
-
-    .story-main p {
-      margin: 0 0 24px;
-    }
-
-    .story-section {
-      margin: 40px 0;
-    }
-
-    .story-section h2 {
-      font-size: 24px;
-      margin: 0 0 18px;
-      color: var(--premium-dark);
-      font-weight: 700;
-      letter-spacing: -0.01em;
-    }
-
-    .case-photo {
-      margin: 32px 0;
-      border-radius: 16px;
-      overflow: hidden;
-      border: 1px solid var(--line);
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.06);
-      background: #fff;
-    }
-
-    .case-photo img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .case-photo figcaption {
-      padding: 14px 18px;
-      font-size: 14px;
-      color: var(--muted);
-      line-height: 1.5;
-      background: var(--premium-light);
-      border-top: 1px solid var(--line);
-    }
-
-    .case-photo--review img {
-      max-width: 480px;
-      margin: 0 auto;
-      display: block;
-    }
-
-    .case-photo--hero {
-      max-width: 420px;
-      margin-left: auto;
-      margin-right: auto;
-      text-align: left;
-    }
-
-    /* On phones the portrait hero eats the whole screen, pushing the H1 and
-       the trust card out of view. Crop it to 4:3 so the card, the headline
-       and the photo all land inside one iPhone screen. */
-    @media (max-width: 767px) {
-      /* `main.page` matches the specificity used in service-tiles.css, which
-         otherwise wins over a plain `.page` selector and keeps the old padding. */
-      main.page { padding: 14px 16px 24px; }
-
-      .breadcrumb { margin: 0 0 12px; font-size: 12px; }
-
-      .case-header h1 { margin-bottom: 12px; }
-
-      .case-photo--hero {
-        margin-top: 16px;
-        margin-bottom: 24px;
-      }
-
-      .case-photo--hero img {
-        aspect-ratio: 4 / 3;
-        object-fit: cover;
-        object-position: center 42%;
-      }
-
-      .case-photo--hero figcaption {
-        padding: 10px 14px;
-        font-size: 13px;
-      }
-    }
-
-    /* Findings Box */
-    .findings-box {
-      background: var(--premium-light);
-      border-radius: 16px;
-      padding: 32px;
-      margin: 40px 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    }
-
-    .findings-box h3 {
-      font-size: 18px;
-      margin: 0 0 20px;
-      color: var(--premium-dark);
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-    }
-
-    .findings-list {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: grid;
-      gap: 16px;
-    }
-
-    .findings-list li {
-      padding-left: 32px;
-      position: relative;
-    }
-
-    .findings-list li::before {
-      content: "⚠️";
-      position: absolute;
-      left: 0;
-      font-size: 18px;
-      top: 2px;
-    }
-
-    /* Testimonial block */
-    .testimonial-box {
-      background: #fff;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 28px 32px;
-      margin: 32px 0;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
-    }
-
-    .testimonial-box p {
-      margin: 0 0 12px;
-      font-size: 17px;
-      font-style: italic;
-      color: var(--premium-dark);
-    }
-
-    .testimonial-box cite {
-      font-style: normal;
-      font-size: 14px;
-      font-weight: 700;
-      color: var(--muted);
-    }
-
-    /* Vehicle details */
-    .vehicle-details {
-      background: var(--premium-dark);
-      color: #fff;
-      border-radius: 16px;
-      padding: 40px;
-      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.15);
-      text-align: center;
-      max-width: 480px;
-      margin: 64px auto 0;
-    }
-
-    .vehicle-details h3 {
-      font-size: 14px;
-      color: var(--premium-gold);
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      margin: 0 0 16px;
-    }
-
-    .vehicle-details dl {
-      margin: 0;
-      text-align: center;
-    }
-
-    .vehicle-details dt {
-      color: #94a3b8;
-      font-size: 13px;
-      font-weight: 600;
-      text-transform: uppercase;
-      letter-spacing: 0.05em;
-      margin: 16px 0 4px 0;
-    }
-
-    .vehicle-details dd {
-      margin: 0 0 16px 0;
-      color: #fff;
-      font-size: 15px;
-    }
-
-    /* Mid-article CTA */
-    .cta-inline {
-      display: block;
-      text-align: center;
-      margin: 40px auto;
-      padding: 18px 32px;
-      border-radius: 12px;
-      background: var(--premium-dark);
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 16px;
-      max-width: 480px;
-    }
-
-    .cta-inline:hover {
-      background: var(--premium-blue);
-    }
-
-    .cta-inline strong {
-      color: var(--premium-gold);
-    }
-
-    /* FAQ */
-    .faq-section {
-      max-width: 720px;
-      margin: 64px auto 0;
-    }
-
-    .faq-section h2 {
-      font-size: 26px;
-      color: var(--premium-dark);
-      margin: 0 0 24px;
-      text-align: center;
-    }
-
-    .faq-item {
-      border-bottom: 1px solid var(--line);
-      padding: 20px 0;
-    }
-
-    .faq-item h3 {
-      font-size: 17px;
-      color: var(--premium-dark);
-      margin: 0 0 8px;
-      font-weight: 700;
-    }
-
-    .faq-item p {
-      margin: 0;
-      font-size: 15px;
-      color: var(--muted);
-      line-height: 1.6;
-    }
-
-    /* ── FINAL CTA BLOCK ──────────────────── */
-    .cta-block {
-      background: var(--premium-dark);
-      color: #fff;
-      border-radius: 24px;
-      padding: 64px 40px;
-      margin-top: 80px;
-      text-align: center;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.2);
-    }
-
-    @media (max-width: 640px) {
-      .cta-block {
-        padding: 40px 24px;
-        margin-top: 56px;
-      }
-    }
-
-    .cta-block h2 {
-      color: #fff;
-      font-size: 28px;
-      margin: 0 0 16px;
-      font-weight: 800;
-    }
-
-    @media (min-width: 768px) {
-      .cta-block h2 {
-        font-size: 36px;
-      }
-    }
-
-    .cta-block p {
-      color: #94a3b8;
-      margin: 0 auto 32px;
-      font-size: 18px;
-      line-height: 1.6;
-      max-width: 50ch;
-    }
-
-    .cta {
-      display: inline-block;
-      margin: 0;
-      padding: 18px 40px;
-      border-radius: 12px;
-      background: var(--premium-gold);
-      color: var(--premium-dark);
-      text-decoration: none;
-      font-weight: 800;
-      font-size: 18px;
-      box-shadow: 0 8px 20px rgba(251, 191, 36, 0.3);
-      transition: all 0.3s ease;
-    }
-
-    .cta:hover {
-      background: #fff;
-      transform: translateY(-3px);
-      box-shadow: 0 12px 28px rgba(255, 255, 255, 0.4);
-    }
-
-    @media (max-width: 640px) {
-      .cta {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-      }
-    }
-
-    .badges {
-      display: flex;
-      gap: 20px;
-      align-items: center;
-      justify-content: center;
-      margin-top: 32px;
-      color: #94a3b8;
-      font-size: 14px;
-      flex-wrap: wrap;
-    }
-
-    /* ── CTA MULTI-CHANNEL ── */
-    .cta-actions {
-      display: flex;
-      gap: 16px;
-      justify-content: center;
-      flex-wrap: wrap;
-    }
-
-    .cta--secondary {
-      display: inline-block;
-      padding: 18px 40px;
-      border-radius: 12px;
-      background: transparent;
-      color: #fff;
-      text-decoration: none;
-      font-weight: 700;
-      font-size: 18px;
-      border: 2px solid rgba(255, 255, 255, 0.35);
-      transition: all 0.3s ease;
-    }
-
-    .cta--secondary:hover {
-      background: rgba(255, 255, 255, 0.08);
-      border-color: rgba(255, 255, 255, 0.6);
-      transform: translateY(-2px);
-    }
-
-    @media (max-width: 640px) {
-      .cta--secondary {
-        display: block;
-        width: 100%;
-        box-sizing: border-box;
-        text-align: center;
-      }
-    }
-
-    /* ── Mobile CTA bar ── */
-    .mobile-cta-bar { display: none; }
-
-    @media (max-width: 767px) {
-      .mobile-cta-bar {
-        display: flex;
-        align-items: center;
-        gap: 0;
-        position: sticky;
-        top: 92px;
-        z-index: 999;
-        width: 100%;
-        padding: 10px 16px;
-        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
-        border-top: 1px solid rgba(251, 191, 36, .35);
-        border-bottom: 1px solid rgba(251, 191, 36, .25);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
-      }
-      .mobile-cta-bar a {
-        color: #fff;
-        font-family: "Inter", Arial, sans-serif;
-        font-weight: 700;
-        text-decoration: none;
-        letter-spacing: .2px;
-      }
-      .mobile-cta-sms {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex: 0 1 auto;
-        min-width: 0;
-        margin-right: 8px;
-        padding: 6px 8px;
-        min-height: 48px;
-        border-radius: 12px;
-        background: rgba(202, 138, 4, .12);
-        box-shadow: inset 0 0 0 1.5px rgba(245, 183, 0, .55), 0 4px 12px -6px rgba(0, 0, 0, .55);
-        transition: transform 140ms cubic-bezier(.23, 1, .32, 1), background 140ms ease-out;
-      }
-      .mobile-cta-sms:active {
-        transform: scale(.98);
-        background: rgba(202, 138, 4, .22);
-      }
-      .mobile-cta-sms::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(75deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%);
-        transform: translateX(-140%);
-        animation: ctaShimmerGMC 4.2s cubic-bezier(.23, 1, .32, 1) infinite;
-      }
-      @keyframes ctaShimmerGMC {
-        0% { transform: translateX(-140%); }
-        22% { transform: translateX(140%); }
-        100% { transform: translateX(140%); }
-      }
-      .mobile-cta-sms-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1px;
-        min-width: 0;
-      }
-      .mobile-cta-sms-text .cta-main-text {
-        font-size: .9rem;
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -.01em;
-        white-space: nowrap;
-        color: #f5c451;
-        text-shadow: 0 1px 10px rgba(245, 183, 0, .3);
-      }
-      .mobile-cta-bar-sub {
-        color: #fff;
-        opacity: .8;
-        font-weight: 600;
-        font-size: .75rem;
-        white-space: nowrap;
-      }
-      .mobile-cta-tel {
-        flex: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 6px 10px;
-        min-height: 48px;
-        border: 1px solid rgba(255, 255, 255, .22);
-        border-radius: 12px;
-        transition: transform 140ms cubic-bezier(.23, 1, .32, 1);
-      }
-      .mobile-cta-tel:active {
-        transform: scale(.98);
-      }
-      .mobile-cta-tel-label {
-        display: block;
-        font-size: .6875rem;
-        color: #e2e8f0;
-        font-weight: 500;
-        white-space: nowrap;
-      }
-      .mobile-cta-tel-number {
-        display: block;
-        font-size: .875rem;
-        font-weight: 600;
-        color: #e2e8f0;
-        white-space: nowrap;
-      }
-      .mobile-cta-bar svg { flex-shrink: 0; color: #f5c451; }
-    }
-    @media (max-width: 359px) {
-      .mobile-cta-sms-text .cta-main-text { font-size: .8125rem; }
-      .mobile-cta-bar-sub { font-size: .6875rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .mobile-cta-sms::after { animation: none; }
-      .mobile-cta-sms { transition: none; }
-    }
-  </style>
 
   <!-- JSON-LD: Organization + WebSite + WebPage + BreadcrumbList + Article + FAQPage -->
   <script type="application/ld+json">
@@ -905,6 +73,17 @@
             "postalCode": "V1V 3B9",
             "addressCountry": "CA"
           },
+          "geo": {
+            "@type": "GeoCoordinates",
+            "latitude": 49.9151,
+            "longitude": -119.4447
+          },
+          "hasMap": "https://www.google.com/maps?cid=15158851769671529299",
+          "sameAs": [
+            "https://www.facebook.com/profile.php?id=61552836610953",
+            "https://www.instagram.com/kelownaprotechmobilemech",
+            "https://share.google/nIHmMOjqsRskkHvpM"
+          ],
           "openingHoursSpecification": [
             {
               "@type": "OpeningHoursSpecification",
@@ -984,7 +163,7 @@
           "description": "A work crew's van broke down in Kelowna with a coolant leak. We confirmed the water pump on-site with a pressure test and had them back on the road the same day.",
           "image": "https://kelownaprotechmobilemech.com/images/gmc-savana-2016-onsite-diagnostic-800w.jpg",
           "datePublished": "2026-05-15",
-          "dateModified": "2026-08-13",
+          "dateModified": "2026-08-14",
           "author": {
             "@type": "Organization",
             "name": "Kelowna Protech Elite Mobile Mechanic",
@@ -1123,6 +302,7 @@
          fill the other. On mobile this wrapper does nothing (plain block),
          so the phone layout already approved stays exactly as it was. ── -->
     <div class="hero-split">
+    <div class="hero-split__text">
     <!-- Breadcrumb -->
     <nav class="breadcrumb" aria-label="Breadcrumb">
       <a href="/">Home</a> › <a href="/field-reports/">Success Stories</a> › GMC Savana Water Pump Repair Kelowna
@@ -1144,14 +324,37 @@
     <!-- HEADER / HERO (Centered) -->
     <header class="case-header" id="top">
       <h1>A work crew's van broke down in Kelowna. They were back on the road by evening.</h1>
+    </header>
+    </div>
+
       <figure class="case-photo case-photo--hero">
-        <img src="/images/gmc-savana-2016-mechanic-hero-800w.webp" alt="Certified mechanic Joseph diagnosing a 2016 GMC Savana work van on-site in Kelowna, hood open, scanner in hand" width="800" height="1066" loading="eager" decoding="async" />
+        <img src="/images/gmc-savana-2016-mechanic-hero-800w.webp" alt="Certified mechanic Joseph diagnosing a 2016 GMC Savana work van on-site in Kelowna, hood open, scanner in hand" width="800" height="1066" loading="eager" decoding="async" fetchpriority="high" />
         <figcaption>Joseph, on-site with the crew's GMC Savana. The whole diagnostic happened in the driveway, with the crew standing there watching it.</figcaption>
       </figure>
 
       <p class="byline" style="font-size:13px;color:#64748b;margin:0;">By <strong>Kelowna Protech Elite Mobile Mechanic</strong> · Updated August 2026</p>
-    </header>
     </div>
+
+      <section class="case-review-proof" aria-label="Verified customer review">
+        <div class="case-review-proof__card">
+          <div class="case-review-proof__head">
+            <span class="case-review-proof__avatar" aria-hidden="true">C</span>
+            <span class="case-review-proof__name">Chris Gaal</span>
+            <span class="case-review-proof__badge">Google Review</span>
+          </div>
+          <div class="case-review-proof__stars" aria-label="5 out of 5 stars">★★★★★</div>
+          <blockquote class="case-review-proof__quote">
+            "Joseph and Miguel were awesome and they were very fast and efficient. They came to our location and worked fast. They replaced our water pump and while doing they found another issue and they did that very quickly and without hassle and good price! Highly recommend!"
+          </blockquote>
+          <a class="case-review-proof__link" href="https://share.google/nIHmMOjqsRskkHvpM" target="_blank" rel="noopener noreferrer">
+            Verify this review on Google &rarr;
+          </a>
+        </div>
+      </section>
+
+      <p class="case-differentiator">
+        <strong>Our biggest difference:</strong> we come to your driveway, and we prove the cause with a pressure test before we touch anything — that's why a coolant leak that could have meant head gasket damage stayed a straightforward pump repair.
+      </p>
 
       <div class="value-strip" aria-label="Why clients choose us">
         <p class="value-strip__item">
@@ -1191,30 +394,10 @@
         </span>
       </div>
 
-    <!-- 3-STEP PROCESS -->
-    <div class="case-process" aria-label="How the on-site repair process works">
-      <p class="case-process__kicker">A premium service that comes to you, from first message to finished repair</p>
-      <ol class="case-process__steps">
-        <li class="case-process__step">
-          <span class="case-process__node">01</span>
-          <span class="case-process__title">Text</span>
-          <span class="case-process__copy">You text us what the vehicle is doing, and we answer the same day.</span>
-        </li>
-        <li class="case-process__step">
-          <span class="case-process__node">02</span>
-          <span class="case-process__title">Diagnose</span>
-          <span class="case-process__copy">We come to you and test it while you watch.</span>
-        </li>
-        <li class="case-process__step">
-          <span class="case-process__node">03</span>
-          <span class="case-process__title">Fix</span>
-          <span class="case-process__copy">You approve the repair after seeing what failed.</span>
-        </li>
-      </ol>
-    </div>
-
     <!-- ARTICLE -->
     <article class="story-main">
+      <div class="story-row story-row--intro">
+      <div class="lead-block">
       <p class="lead-text" style="font-size: 20px; font-weight: 600; color: var(--premium-dark);">A work crew from Vancouver texted us early one morning: their 2016 GMC Savana was leaking water and they didn't know why. They were just passing through Kelowna.</p>
 
       <p>We answered right away. Every case we take starts with a text, and the same certified mechanic handles it from that first message through to the finished repair. The crew explained the problem once, to the person who would end up fixing it.</p>
@@ -1222,7 +405,32 @@
       <p>We scheduled an on-site diagnostic for that same morning. The quote comes after a certified mechanic has been to the vehicle with the right equipment and found the actual problem, which is why we don't put a number on a repair we haven't seen yet.</p>
 
       <p>We only found out about the two-week quotes from other shops once we were already there, running the diagnostic. The crew hadn't mentioned it in the first text. It came up while we were working on the van.</p>
+      </div>
 
+      <!-- 3-STEP PROCESS -->
+      <div class="case-process" aria-label="How the on-site repair process works">
+        <p class="case-process__kicker">A premium service that comes to you, from first message to finished repair</p>
+        <ol class="case-process__steps">
+          <li class="case-process__step">
+            <span class="case-process__node">01</span>
+            <span class="case-process__title">Text</span>
+            <span class="case-process__copy">You text us what the vehicle is doing, and we answer the same day.</span>
+          </li>
+          <li class="case-process__step">
+            <span class="case-process__node">02</span>
+            <span class="case-process__title">Diagnose</span>
+            <span class="case-process__copy">We come to you and test it while you watch.</span>
+          </li>
+          <li class="case-process__step">
+            <span class="case-process__node">03</span>
+            <span class="case-process__title">Fix</span>
+            <span class="case-process__copy">You approve the repair after seeing what failed.</span>
+          </li>
+        </ol>
+      </div>
+      </div>
+
+      <div class="story-row">
       <section class="story-section">
         <h2>How we confirmed it was the water pump</h2>
         <p>A coolant leak can come from more than one place: a hose, a clamp, a cracked reservoir, or the pump itself. Each one looks the same from underneath the van, just a puddle of coolant on the ground. Guess wrong and the crew pays for a part that was never the problem, then waits again while the real cause keeps leaking.</p>
@@ -1236,7 +444,9 @@
         <img src="/images/gmc-savana-2016-pressure-test-800w.webp" alt="Certified mechanic running a coolant system pressure test on a GMC Savana engine in Kelowna" width="800" height="1066" loading="lazy" decoding="async" />
         <figcaption>Pressure test in progress. This is the step that turns a guess into a confirmed diagnosis before any part gets ordered.</figcaption>
       </figure>
+      </div>
 
+      <div class="story-row story-row--reverse">
       <section class="story-section">
         <h2>What the test ruled in, and what it ruled out</h2>
         <p>The pressure test named one part: the water pump had failed internally, and that's where the coolant under the van was coming from. Nothing else on the system was leaking. The hoses and clamps held their seal under the same test, and so did the reservoir.</p>
@@ -1248,7 +458,9 @@
         <img src="/images/gmc-savana-2016-failed-water-pumps-800w.webp" alt="Failed water pump removed from a 2016 GMC Savana, confirming the coolant leak source on-site in Kelowna" width="800" height="786" loading="lazy" decoding="async" />
         <figcaption>The failed water pump, out of the vehicle. This is the part the pressure test pointed to before it was ever removed.</figcaption>
       </figure>
+      </div>
 
+      <div class="story-row">
       <section class="story-section">
         <h2>Getting the crew back on the road the same day</h2>
         <p>With the cause confirmed, we sourced a genuine OEM water pump that same afternoon, locally, without a special order. The old pump came out, the new one went in.</p>
@@ -1261,17 +473,13 @@
         <img src="/images/gmc-savana-2016-new-pump-installed-800w.webp" alt="New OEM water pump installed on a 2016 GMC Savana during a same-day on-site repair in Kelowna" width="800" height="1066" loading="lazy" decoding="async" />
         <figcaption>New OEM water pump installed and tested under load before the van left the driveway.</figcaption>
       </figure>
-
-      <div class="testimonial-box">
-        <p>"Joseph and Miguel were awesome and they were very fast and efficient. They came to our location and worked fast. They replaced our water pump and while doing they found another issue and they did that very quickly and without hassle and good price! Highly recommend!"</p>
-        <cite>Chris Gaal &middot; Google Review</cite>
       </div>
 
-      <figure class="case-photo case-photo--review">
-        <img src="/images/gmc-savana-2016-google-review-chris-gaal.webp" alt="Screenshot of Chris Gaal's five-star Google review describing the same-day GMC Savana water pump repair in Kelowna" width="480" height="109" loading="lazy" decoding="async" />
-      </figure>
-
-      <a class="cta-inline" href="tel:+12508595467">Stranded with a coolant leak? <strong>Call (250) 859-5467</strong> for same-day, on-site service.</a>
+      <a class="cta-inline" href="tel:+12508595467">
+        <span class="cta-inline__kicker">Stranded with a coolant leak?</span>
+        <span class="cta-inline__number">Call (250) 859-5467</span>
+        <span class="cta-inline__sub">Same-day, on-site service &middot; 4.9&#9733; &middot; 65 Google reviews</span>
+      </a>
 
       <section class="story-section">
         <h2>Why a work van can't sit in a shop queue</h2>
@@ -1281,19 +489,7 @@
       </section>
     </article>
 
-    <!-- Vehicle Details Box Centered -->
-    <div class="vehicle-details">
-      <h3>Service Details</h3>
-      <dl>
-        <dt>Vehicle</dt>
-        <dd>2016 GMC Savana (work van)</dd>
-        <dt>Service</dt>
-        <dd>On-site coolant system diagnostic and water pump repair</dd>
-        <dt>Location</dt>
-        <dd>Client's location (Kelowna, BC)</dd>
-      </dl>
-    </div>
-
+    <div class="story-row story-row--details">
     <!-- FAQ -->
     <section class="faq-section" aria-label="Frequently asked questions">
       <h2>Questions drivers ask about this kind of repair</h2>
@@ -1329,6 +525,20 @@
       </div>
     </section>
 
+    <!-- Vehicle Details Box -->
+    <div class="vehicle-details">
+      <h3>Service Details</h3>
+      <dl>
+        <dt>Vehicle</dt>
+        <dd>2016 GMC Savana (work van)</dd>
+        <dt>Service</dt>
+        <dd>On-site coolant system diagnostic and water pump repair</dd>
+        <dt>Location</dt>
+        <dd>Client's location (Kelowna, BC)</dd>
+      </dl>
+    </div>
+    </div>
+
     <!-- CTA — final block before footer -->
     <section class="cta-block" aria-label="Final CTA">
       <h2>Get your vehicle diagnosed today, where it's parked.</h2>
@@ -1347,14 +557,16 @@
       </div>
     </section>
 
-    <!-- Internal links -->
-    <nav style="margin:48px 0 0; text-align:center; font-size:15px; color:#6b7280;" aria-label="More from Kelowna Protech Elite">
-      <a href="/field-reports/" style="color:#1e40af; text-decoration:none; font-weight:600;">← All Success Stories</a>
-      <span style="margin:0 16px; color:#e5e7eb;">·</span>
-      <a href="/services/diagnostic/" style="color:#1e40af; text-decoration:none; font-weight:600;">On-Site Diagnostic Service →</a>
-      <span style="margin:0 16px; color:#e5e7eb;">·</span>
-      <a href="/services/maintenance/" style="color:#1e40af; text-decoration:none; font-weight:600;">Preventive Maintenance →</a>
-    </nav>
+    <!-- RELATED SERVICES -->
+    <section class="section" aria-label="Related services">
+      <h2>Related Services</h2>
+      <p class="lead">
+        Noticing a leak or a warning light on a vehicle you already own? We also offer
+        <a href="/services/diagnostic/">on-site diagnostic scans</a> to find the cause before it strands you, and
+        <a href="/services/maintenance/">preventive maintenance</a> to catch issues like this one early.
+        See more real repairs on <a href="/field-reports/">All Success Stories</a>.
+      </p>
+    </section>
 
     <!-- SERVICE AREA MAP -->
     <section class="section ppi-map">
