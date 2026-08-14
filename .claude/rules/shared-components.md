@@ -10,7 +10,7 @@ If you edit any of these in one page, you MUST apply the same edit to ALL pages 
 
 ## Header (7 pages)
 Selector: `<header class="kpem-header-mobile">`
-Present in: index.html, services/diagnostic/index.html, services/maintenance/index.html, services/pre-purchase/index.html, field-reports/index.html, field-reports/bmw-z3-kelowna-diagnostic/index.html, 404.html
+Present in: index.html, services/diagnostic/index.html, services/maintenance/index.html, services/pre-purchase/index.html, field-reports/index.html, field-reports/gmc-savana-kelowna-diagnostic/index.html, 404.html
 Known variation: field-reports pages have "Success Stories" nav item instead of "Contact" link.
 
 ## Footer (6 pages)

@@ -16,6 +16,8 @@ http://kelownaprotechmobilemech.com/*   https://kelownaprotechmobilemech.com/:sp
 /services/maintenance/     /services/maintenance/index.html      200
 /field-reports             /field-reports/index.html             200
 /field-reports/            /field-reports/index.html             200
-/field-reports/bmw-z3-kelowna-diagnostic    /field-reports/bmw-z3-kelowna-diagnostic/index.html    200
-/field-reports/bmw-z3-kelowna-diagnostic/   /field-reports/bmw-z3-kelowna-diagnostic/index.html    200
 /pre-purchase   /services/pre-purchase/   301!
+
+# 4) BMW Z3 case retired 2026-08-14 — send the indexed URL to the cases hub instead of a 404
+/field-reports/bmw-z3-kelowna-diagnostic    /field-reports/   301
+/field-reports/bmw-z3-kelowna-diagnostic/   /field-reports/   301
