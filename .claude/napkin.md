@@ -16,24 +16,70 @@
 
 1. **[2026-07-18] Verify behavior, not only static screenshots.**
    Do instead: test responsive state, scroll, DOM position, CTA action, and relevant breakpoints.
+2. **[2026-08-05] Never merge a page whose internal links point to pages that don't exist yet.**
+   Applies to any hub/index/cluster page built incrementally. Check with a filesystem test
+   for every linked slug, not by assuming "they must be done by now".
+   Do instead: `for u in <slugs>; do [ -f "path/$u/index.html" ] || echo "404: $u"; done`
+   before considering merge. A hub with broken links does more damage than no hub at all —
+   it hits the visitor with the most intent to call, and search engines/AI penalize dead
+   internal links. Confirmed on field-reports: hub was finished and audited, but the 6
+   linked case pages did not exist yet, so merge was correctly held.
+3. **[2026-08-13] An AI-writing-pattern audit must cover the whole page, not just the block
+   you just wrote.** First pass on the GMC case page checked only the article body and
+   assumed headings, badges, and footer were clean; a full-page pass found 24 instances
+   where the first pass found 8 — including patterns in text written earlier the same
+   session, which needs the same scrutiny as inherited copy.
+   Do instead: scan title, meta, every heading, every badge/label, and the footer, not just
+   the paragraph currently being edited.
+4. **[2026-08-13] Editing an external stylesheet and then measuring "no change" usually
+   means browser cache, not a bad edit.** Lost a full measurement cycle assuming a CSS fix
+   didn't work before checking cache.
+   Do instead: if a measured value doesn't move after an external CSS edit, bust that
+   specific `<link>` (`link.href += '?bust=' + Date.now()`) before concluding the edit failed.
+5. **[2026-08-13] CSS Grid rows sized `1fr` default to `min-height: auto`, which can push
+   the grid taller than an explicit `height` on the container.** Caused a hero to overflow
+   its viewport-fit height by 23px despite a fixed `height` being set.
+   Do instead: use `minmax(0, 1fr)` for any row that must respect the container's fixed height.
 
 ## Copy, Conversion & AEO
 
-1. **[2026-07-18] Reducing pogo-sticking is a fundamental operational objective.**
+1. **[2026-08-14] Case-page content standard, derived from why PPI (pre-purchase) converts best on the site.**
+   Comparing GMC against PPI content/structure (not visual design) found 5 content gaps + 3
+   technical gaps that explain part of PPI's performance. Applied to GMC first as the
+   template; every new case page must include all 8:
+   1. Strongest review proof placed right after the hero (card w/ name, stars, quote,
+      "Verify on Google" link), not buried mid-article. Never show the same review twice
+      on one page — if it's up top, it isn't repeated lower down.
+   2. One bolded single-sentence differentiator near the top, built only from facts already
+      stated elsewhere on the page (never a new claim).
+   3. Mid-page CTA restates the trust numbers (rating + review count) in its own text, not
+      just a bare phone number.
+   4. "Related Services" is a real `<section>` with its own `<h2>` and a lead paragraph, not
+      a bare link list — carries more topical-relevance signal for Google/AI.
+   5. Never invent reviewer metadata (photo, "N reviews", "Local Guide"). Check the real
+      screenshot/profile first; if the data isn't there, omit the line rather than guess.
+   6. Preload the hero image (`<link rel="preload" as="image">` + `fetchpriority="high"` on
+      the `<img>`) for LCP.
+   7. Prefer an external stylesheet over a large inline `<style>` block on new pages (GMC's
+      page still has one — flagged as future cleanup, not blocking).
+   8. Do not add a quantified-loss dollar figure unless Jose gives a verified number — reuse
+      existing approved copy (e.g. an FAQ answer) for risk framing instead of inventing one.
+
+2. **[2026-07-18] Reducing pogo-sticking is a fundamental operational objective.**
    Do instead: confirm relevance immediately, communicate value, provide proof, create internal depth, and lead to a concrete decision.
-2. **[2026-07-18] KPEMM speaks as a company using `we`.**
+3. **[2026-07-18] KPEMM speaks as a company using `we`.**
    Do instead: use `we` for real company actions and standards; support every promise with specifics or evidence.
-3. **[2026-07-18] Communicate transformation before listing services.**
+4. **[2026-07-18] Communicate transformation before listing services.**
    Do instead: lead with what changes for the customer, then service, inclusions, differentiator, proof, and CTA.
-4. **[2026-07-18] The homepage maintenance card is BOFU plus a gateway to the maintenance silo.**
+5. **[2026-07-18] The homepage maintenance card is BOFU plus a gateway to the maintenance silo.**
    Do instead: make it capable of converting directly while linking to deeper service evidence.
-5. **[2026-07-18] Make answers extractable for people and AI.**
+6. **[2026-07-18] Make answers extractable for people and AI.**
    Do instead: state entity, service, location, result, differentiator, evidence, and action in clear self-contained language.
-6. **[2026-07-18] Retention is not artificially long text.**
+7. **[2026-07-18] Retention is not artificially long text.**
    Do instead: answer quickly, then earn continued attention with useful specifics, proof, comparisons, and internal links.
-7. **[2026-07-18] KPEMM is premium, not a commodity.**
+8. **[2026-07-18] KPEMM is premium, not a commodity.**
    Do instead: communicate personalized on-site care, quality materials, careful work, and why those standards matter.
-8. **[2026-07-18] Separate evidence from marketing hypotheses.**
+9. **[2026-07-18] Separate evidence from marketing hypotheses.**
    Do instead: label claims as confirmed, plausible, anecdotal, or unproven; test before promising outcomes.
 
 ## Business Facts & Compliance
@@ -48,6 +94,13 @@
    Do instead: show a verified standard, process, review, or real outcome and let the evidence differentiate KPEMM.
 5. **[2026-07-18] Do not frame KPEMM as cheap, affordable, or generic.**
    Do instead: filter for clients who value quality, personalization, convenience, and accountability.
+6. **[2026-08-13] Review count/rating can drift across pages independently — confirmed 5
+   different numbers live at once (62/64/59/41/65) before a full-site grep caught it.**
+   Do instead: before citing a review count anywhere, `grep -rn` the whole site for the
+   pattern and cross-check against `reviews-gbp-v2.md`'s dated header in Marketing workers.
+   Never trust any single page as ground truth. Never say "N five-star reviews" unless N
+   equals the total — with an average below 5.0, the five-star subset is smaller than the
+   total and Google shows the real breakdown.
 
 ## Repository & Architecture Gotchas
 
@@ -57,6 +110,26 @@
    Do instead: read `.claude/rules/shared-components.md` and verify each affected page individually.
 3. **[2026-07-18] Mobile-first behavior can differ from desktop.**
    Do instead: audit both environments before classifying a layout or CTA issue.
+4. **[2026-08-05] Mobile CTA bar CSS is copy-pasted inline into 6 pages (~21.5 KB duplicated).**
+   Measured: `field-reports` 6939 B, `services` 3711 B, `services/maintenance` 3954 B,
+   `services/diagnostic` 3712 B, `field-reports/bmw-z3...` 3710 B. Two pages already do it
+   right in their own stylesheet (`our-story.css`, `pre-purchase.css`), so the correct
+   pattern already exists in this repo.
+   Do instead: when touching any of those 6 pages, move that block into a shared
+   stylesheet instead of editing the copy in place. Never edit the bar in one page only:
+   the other 5 will silently drift.
+5. **[2026-08-05] Case photos ship as oversized JPG while the site already uses WebP elsewhere.**
+   Measured on the field-reports hub: 6 photos = 625 KB of a ~726 KB page (80% of total
+   weight). Files are 600x800 / 450x600 but render at 417x260, roughly double the pixels
+   needed. The repo already contains 37 `.webp` images, so the technique is adopted, just
+   not applied here.
+   Do instead: before adding any new case photo, export WebP at the size it actually
+   renders, keep the original JPG as backup, and measure page weight before and after.
+6. **[2026-08-05] Page CSS is inlined in `<style>` blocks on the heaviest pages.**
+   Measured: home 19.0 KB inline, `services` 18.7 KB, `field-reports` 12.8 KB, while
+   `our-story` and `services/pre-purchase` correctly use an external stylesheet.
+   Do instead: follow the external-stylesheet pattern for any page you rework, so the
+   browser can cache the CSS across pages instead of re-downloading it every visit.
 
 ## Continuity
 

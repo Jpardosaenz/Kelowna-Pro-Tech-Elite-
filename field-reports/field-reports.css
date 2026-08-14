@@ -1,0 +1,569 @@
+/* Field Reports hub (/field-reports/)
+   Moved out of the page's inline <style> block on 2026-08-05, following the
+   same external-stylesheet pattern already used by our-story.css and
+   pre-purchase.css. Rules are unchanged: this was a move, not a rewrite. */
+
+:root {
+  --ink: #111827;
+  --muted: #6b7280;
+  --line: #e5e7eb;
+  --premium-dark: #0f172a;
+  --premium-gold: #fbbf24;
+  --premium-blue: #1e40af;
+  --premium-light: #f8fafc;
+}
+
+.page {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 24px 40px;
+}
+
+@media (max-width: 768px) {
+  .page {
+    padding: 8px 16px 24px;
+  }
+}
+
+.breadcrumb {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0 0 8px;
+}
+
+.breadcrumb a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.cases-header {
+  margin: 16px 0 20px;
+  max-width: 640px;
+  text-align: left;
+}
+
+.cases-header__badge {
+  display: inline-flex;
+  align-items: center;
+  font-size: 11px;
+  font-weight: 700;
+  color: var(--premium-blue);
+  background: rgba(30, 64, 175, 0.08);
+  padding: 4px 10px;
+  border-radius: 100px;
+  margin-bottom: 8px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+}
+
+/* ── Trust proof — must render above the H1, same position as the
+   home page hero. A hero with reviews at the bottom gets 0% CTR
+   (measured, see COPY-INTENT-TRUST-PLAYBOOK.md section 2.6). ── */
+.cases-header__trust {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  margin: 0 0 12px;
+}
+
+.cases-header__trust-stars {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  flex-wrap: wrap;
+  color: var(--premium-gold);
+  font-size: 15px;
+  letter-spacing: 2px;
+}
+
+.cases-header__trust-stars-glyph {
+  position: relative;
+  top: -1px;
+  line-height: 1;
+}
+
+.cases-header__trust-meta {
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: normal;
+  color: #cbd5e1;
+}
+
+.cases-header__trust-quote {
+  font-size: 12px;
+  color: #94a3b8;
+  font-style: italic;
+}
+
+.cases-header h1 {
+  font-size: 19px;
+  line-height: 1.25;
+  margin: 0 0 8px;
+  color: var(--premium-dark);
+  font-weight: 800;
+  letter-spacing: -0.02em;
+}
+
+.cases-header h1 .highlight {
+  background: linear-gradient(135deg, #1e40af 0%, #0f172a 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.cases-header p {
+  font-size: 16px;
+  color: var(--muted);
+  line-height: 1.5;
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .cases-header {
+    margin: 32px 0 36px;
+    max-width: 900px;
+    text-align: left;
+  }
+
+  .cases-header h1 {
+    font-size: clamp(30px, 3.6vw, 44px);
+    line-height: 1.15;
+  }
+
+  .cases-header p {
+    font-size: 14px;
+    margin: 0;
+    max-width: 680px;
+  }
+
+  .cases-header__trust {
+    margin: 0 0 16px;
+  }
+}
+
+/* Case cards grid — mobile-first: 2 columns by default so the customer
+   can scan photo+title side by side and pick a story fast. */
+.cases-grid {
+  display: grid;
+  gap: 8px;
+  grid-template-columns: repeat(3, 1fr);
+}
+
+@media (min-width: 768px) {
+  .cases-grid {
+    gap: 24px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .cases-grid {
+    gap: 32px;
+  }
+}
+
+.case-card {
+  background: #fff;
+  border: 1px solid var(--line);
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 4px 16px rgba(15, 23, 42, 0.07);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 768px) {
+  .case-card {
+    border-radius: 20px;
+  }
+}
+
+.case-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 32px rgba(15, 23, 42, 0.13);
+}
+
+.case-card__img {
+  width: 100%;
+  height: 108px;
+  object-fit: cover;
+  object-position: 35% 60%;
+  display: block;
+}
+
+@media (min-width: 768px) {
+  .case-card__img {
+    height: 260px;
+  }
+}
+
+.case-card__body {
+  padding: 6px 6px 8px;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+@media (min-width: 768px) {
+  .case-card__body {
+    padding: 18px 20px 20px;
+  }
+}
+
+/* Mobile: photo + title only, so the grid stays scannable at a glance.
+   Tag, meta and the "Read case" link come back once there's room.
+   (Selectors scoped to .cases-grid so they outrank the base
+   .case-card__link display:inline-flex declared below.) */
+.cases-grid .case-card__tag,
+.cases-grid .case-card__meta,
+.cases-grid .case-card__link {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  .cases-grid .case-card__tag {
+    display: block;
+  }
+
+  .cases-grid .case-card__meta {
+    display: block;
+  }
+
+  .cases-grid .case-card__link {
+    display: inline-flex;
+  }
+}
+
+.case-card__tag {
+  font-size: 12px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.07em;
+  color: var(--premium-blue);
+}
+
+.case-card__title {
+  font-size: 11px;
+  font-weight: 700;
+  line-height: 1.25;
+  color: var(--premium-dark);
+  margin: 0;
+}
+
+@media (min-width: 768px) {
+  .case-card__title {
+    font-size: 18px;
+  }
+}
+
+.case-card__meta {
+  font-size: 13px;
+  color: var(--muted);
+  margin-top: 4px;
+}
+
+.case-card__link {
+  margin-top: auto;
+  padding-top: 16px;
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--premium-blue);
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+/* ── Mobile CTA bar ── */
+.mobile-cta-bar { display: none; }
+
+@media (max-width: 767px) {
+  .mobile-cta-bar {
+    display: flex;
+    align-items: center;
+    gap: 0;
+    position: sticky;
+    top: 92px;
+    z-index: 999;
+    width: 100%;
+    padding: 10px 16px;
+    background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
+    border-top: 1px solid rgba(251, 191, 36, .35);
+    border-bottom: 1px solid rgba(251, 191, 36, .25);
+    box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
+  }
+  .mobile-cta-bar a {
+    color: #fff;
+    font-family: "Inter", Arial, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    letter-spacing: .2px;
+  }
+  .mobile-cta-sms {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    flex: 0 1 auto;
+    min-width: 0;
+    margin-right: 8px;
+    padding: 6px 8px;
+    min-height: 48px;
+    border-radius: 12px;
+    background: rgba(202, 138, 4, .12);
+    box-shadow: inset 0 0 0 1.5px rgba(245, 183, 0, .55), 0 4px 12px -6px rgba(0, 0, 0, .55);
+    transition: transform 140ms cubic-bezier(.23, 1, .32, 1), background 140ms ease-out;
+  }
+  .mobile-cta-sms:active {
+    transform: scale(.98);
+    background: rgba(202, 138, 4, .22);
+  }
+  .mobile-cta-sms::after {
+    content: "";
+    position: absolute;
+    inset: 0;
+    pointer-events: none;
+    background: linear-gradient(75deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%);
+    transform: translateX(-140%);
+    animation: ctaShimmerFR 4.2s cubic-bezier(.23, 1, .32, 1) infinite;
+  }
+  @keyframes ctaShimmerFR {
+    0% { transform: translateX(-140%); }
+    22% { transform: translateX(140%); }
+    100% { transform: translateX(140%); }
+  }
+  .mobile-cta-sms-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    gap: 1px;
+    min-width: 0;
+  }
+  .mobile-cta-sms-text .cta-main-text {
+    font-size: .9rem;
+    font-weight: 800;
+    line-height: 1.2;
+    letter-spacing: -.01em;
+    white-space: nowrap;
+    color: #f5c451;
+    text-shadow: 0 1px 10px rgba(245, 183, 0, .3);
+  }
+  .mobile-cta-bar-sub {
+    color: #fff;
+    opacity: .8;
+    font-weight: 600;
+    font-size: .75rem;
+    white-space: nowrap;
+  }
+  .mobile-cta-tel {
+    flex: none;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 6px 10px;
+    min-height: 48px;
+    border: 1px solid rgba(255, 255, 255, .22);
+    border-radius: 12px;
+    transition: transform 140ms cubic-bezier(.23, 1, .32, 1);
+  }
+  .mobile-cta-tel:active {
+    transform: scale(.98);
+  }
+  .mobile-cta-tel-label {
+    display: block;
+    font-size: .6875rem;
+    color: #e2e8f0;
+    font-weight: 500;
+    white-space: nowrap;
+  }
+  .mobile-cta-tel-number {
+    display: block;
+    font-size: .875rem;
+    font-weight: 600;
+    color: #e2e8f0;
+    white-space: nowrap;
+  }
+  .mobile-cta-bar svg { flex-shrink: 0; color: #f5c451; }
+}
+@media (max-width: 359px) {
+  .mobile-cta-sms-text .cta-main-text { font-size: .8125rem; }
+  .mobile-cta-bar-sub { font-size: .6875rem; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .mobile-cta-sms::after { animation: none; }
+  .mobile-cta-sms { transition: none; }
+}
+
+/* ── Dark theme — this page only, matches /services/ dark panels.
+   Nav bar stays white (shared site header, untouched). ── */
+body {
+  background: var(--premium-dark);
+}
+
+.page {
+  color: #e2e8f0;
+}
+
+.breadcrumb {
+  color: #94a3b8;
+}
+
+.cases-header__badge {
+  background: transparent;
+  color: var(--premium-gold);
+  border: 1px solid rgba(251, 191, 36, 0.35);
+}
+
+.cases-header h1 {
+  color: #fff;
+}
+
+.cases-header h1 .highlight {
+  background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%);
+  -webkit-background-clip: text;
+  background-clip: text;
+}
+
+.cases-header p {
+  color: #94a3b8;
+}
+
+.cases-header p a {
+  color: #7dd3fc;
+}
+
+.case-card {
+  background: rgba(255, 255, 255, 0.05);
+  border-color: rgba(255, 255, 255, 0.12);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.35);
+}
+
+.case-card:hover {
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.5);
+  border-color: rgba(251, 191, 36, 0.35);
+}
+
+.case-card__tag {
+  color: var(--premium-gold);
+}
+
+.case-card__title {
+  color: #fff;
+}
+
+.case-card__meta {
+  color: #94a3b8;
+}
+
+.case-card__link {
+  color: var(--premium-gold);
+}
+
+.page .lead {
+  color: #94a3b8;
+}
+
+.section h2 {
+  color: #fff;
+}
+
+/* ── Trust content + FAQ — answers the Level 1 questions from
+   goal.md in flowing paragraphs, then a compact FAQ block with
+   FAQPage schema. Pattern matched from /services/pre-purchase/,
+   the site's best-converting page (see playbook 2.6). ── */
+.cases-content {
+  max-width: 760px;
+  margin: 56px 0 0;
+}
+
+.cases-content h2 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 40px 0 12px;
+  letter-spacing: -0.01em;
+}
+
+.cases-content h2:first-child {
+  margin-top: 0;
+}
+
+.cases-content p {
+  color: #94a3b8;
+  font-size: 15px;
+  line-height: 1.7;
+  margin: 0 0 16px;
+}
+
+.cases-content p:last-child {
+  margin-bottom: 0;
+}
+
+.cases-faq {
+  max-width: 760px;
+  margin: 48px 0 0;
+}
+
+.cases-faq h2 {
+  color: #fff;
+  font-size: 22px;
+  font-weight: 700;
+  margin: 0 0 20px;
+}
+
+.cases-faq-item {
+  padding: 20px 0;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.cases-faq-item:last-child {
+  padding-bottom: 0;
+}
+
+.cases-faq-item h3 {
+  color: #fff;
+  font-size: 16px;
+  font-weight: 700;
+  margin: 0 0 8px;
+}
+
+.cases-faq-item p {
+  color: #94a3b8;
+  font-size: 14px;
+  line-height: 1.65;
+  margin: 0;
+}
+
+.ppi-map__embed {
+  border: 1px solid rgba(255, 255, 255, 0.12);
+}
+
+.site-nap {
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.1);
+  margin-top: 40px;
+  padding-top: 24px;
+  font-size: 14px;
+  line-height: 1.7;
+}
+
+.site-nap__brand {
+  color: #fff;
+  font-size: 16px;
+  display: block;
+  margin-bottom: 4px;
+}
+
+.site-nap__tel {
+  color: var(--premium-gold);
+}
+
+.site-nap__link {
+  color: #7dd3fc;
+}
