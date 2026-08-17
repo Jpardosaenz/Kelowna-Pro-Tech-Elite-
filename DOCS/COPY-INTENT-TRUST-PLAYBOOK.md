@@ -330,6 +330,35 @@ escriba**, después escribir el título. Una página perfecta sobre algo que nad
 tiene de dónde sacar clics. El techo de una página lo pone el volumen de su búsqueda; el
 título decide qué parte de ese techo se captura.
 
+#### Hallazgo 6: la causa del Hallazgo 1, con fecha — confirmación 2026-08-14
+
+**Fuente: Search Console, comparación de dos ventanas de 30 días exactas (14 jun–13 jul
+vs. 15 jul–13 ago), consultado en vivo. Confirma el Hallazgo 1 con una ventana temporal
+en vez de una foto fija, y le agrega la causa.**
+
+| | Ventana 1 (antes) | Ventana 2 (después) |
+|---|---:|---:|
+| `mobile mechanic kelowna` — posición | 4,1 | 6,1 (bajó) |
+| `mobile mechanic kelowna` — impresiones | 213 | 183 (menos) |
+| `mobile mechanic kelowna` — CTR | 5,63% | **8,74%** |
+| Sitio completo — impresiones/día | 61 | 59 (igual) |
+| Sitio completo — CTR | 2,71% | **4,25%** (+56%) |
+
+La posición bajó y las impresiones se mantuvieron planas. El CTR subió 56%. Mismo
+hallazgo que la sección 2.6 (la posición no explica el clic), visto en el tiempo en vez
+de comparando páginas entre sí.
+
+**Qué cambió en el sitio justo antes del salto (correlación por fecha de commit, no
+prueba causal):** 13-jul se sacó la credencial no verificable "Mechanical Engineer" y se
+puso "Certified Mechanic", se borró un formulario falso de diagnóstico, se sincronizó el
+número de reseñas. 14-jul se unificaron los datos del negocio sitewide y se reescribió
+`llms.txt`. El hilo común es honestidad y claridad de lo que ya dice la sección 2.2 —
+sacar lo no comprobable, dejar solo lo verificable, hacer legible el resultado en Google.
+
+**Límite honesto:** es correlación por fecha, no un experimento controlado. Coincide con
+la regla ya fijada en el Hallazgo 1 (lo que decide el clic es lo que se lee antes de
+entrar), no la contradice ni la reemplaza.
+
 #### Receta obligatoria para toda página nueva del sitio
 
 Aplicar en este orden, hasta que una medición nueva demuestre algo mejor:
