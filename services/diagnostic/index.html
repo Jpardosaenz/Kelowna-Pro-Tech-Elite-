@@ -700,15 +700,64 @@
     }
 
     .faq details {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px 14px;
-      background: #fff;
+      border: 0;
+      border-bottom: 1px solid var(--line);
+      border-left: 3px solid var(--line);
+      border-radius: 0;
+      padding: 0 0 0 18px;
+      background: transparent;
+    }
+
+    .faq details[open] {
+      border-left-color: var(--premium-gold);
     }
 
     .faq summary {
+      position: relative;
+      list-style: none;
       cursor: pointer;
       font-weight: 700;
+      line-height: 1.35;
+      padding: 17px 38px 17px 0;
+    }
+
+    .faq summary::-webkit-details-marker {
+      display: none;
+    }
+
+    .faq summary::after {
+      content: '';
+      position: absolute;
+      top: 50%;
+      right: 4px;
+      width: 8px;
+      height: 8px;
+      border-right: 2px solid var(--premium-dark);
+      border-bottom: 2px solid var(--premium-dark);
+      transform: translateY(-65%) rotate(45deg);
+      transition: transform 180ms cubic-bezier(0.23, 1, 0.32, 1);
+    }
+
+    .faq details[open] summary::after {
+      transform: translateY(-35%) rotate(225deg);
+    }
+
+    .faq summary:focus-visible {
+      outline: 2px solid var(--premium-blue);
+      outline-offset: 4px;
+    }
+
+    .faq details > div {
+      max-width: 760px;
+      padding: 0 38px 18px 0;
+      color: var(--muted);
+      line-height: 1.65;
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      .faq summary::after {
+        transition: none;
+      }
     }
 
     /* Grand Slam Offer Box - Premium Style */
@@ -874,28 +923,61 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
-            "@id": "https://kelownaprotechmobilemech.com/#org",
+            "@type": ["AutoRepair", "LocalBusiness"],
+            "@id": "https://kelownaprotechmobilemech.com/#organization",
             "name": "Kelowna Protech Elite Mobile Mechanic",
-            "url": "https://kelownaprotechmobilemech.com/"
+            "url": "https://kelownaprotechmobilemech.com/",
+            "logo": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
+            "telephone": "+1-250-859-5467",
+            "areaServed": [
+              { "@type": "City", "name": "Kelowna" },
+              { "@type": "City", "name": "West Kelowna" },
+              { "@type": "City", "name": "Vernon" },
+              { "@type": "City", "name": "Lake Country" },
+              { "@type": "City", "name": "Peachland" },
+              { "@type": "City", "name": "Penticton" },
+              "Okanagan Valley"
+            ],
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
           },
           {
             "@type": "WebSite",
             "@id": "https://kelownaprotechmobilemech.com/#website",
             "url": "https://kelownaprotechmobilemech.com/",
             "name": "Kelowna Protech Elite Mobile Mechanic",
-            "publisher": { "@id": "https://kelownaprotechmobilemech.com/#org" }
+            "publisher": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
           },
           {
             "@type": "WebPage",
             "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#webpage",
             "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
-            "name": "On-Site Diagnostic",
+            "name": "Mobile Car Diagnostic in Kelowna",
             "isPartOf": {
               "@id": "https://kelownaprotechmobilemech.com/#website"
             },
+            "mainEntity": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#service"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#primaryimage"
+            },
             "breadcrumb": {
               "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#breadcrumb"
+            },
+            "hasPart": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#faq"
             }
           },
           {
@@ -917,29 +999,171 @@
             ]
           },
           {
+            "@type": "ImageObject",
+            "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#primaryimage",
+            "url": "https://kelownaprotechmobilemech.com/images/diag-ranger-1300w.webp",
+            "contentUrl": "https://kelownaprotechmobilemech.com/images/diag-ranger-1300w.webp",
+            "width": 975,
+            "height": 1300,
+            "caption": "KPEMM mechanic performing a mobile car diagnostic on a Ford Ranger in a Kelowna driveway"
+          },
+          {
             "@type": "Service",
             "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#service",
-            "name": "Mobile Vehicle Diagnostic Service Kelowna",
-            "serviceType": "Automotive Diagnostic",
-            "description": "Professional mobile vehicle diagnostics in Kelowna. Dealer-grade scan tools, root-cause analysis, and a written Digital Health Report — at your location. No tow required.",
+            "name": "Mobile Car Diagnostic in Kelowna",
+            "serviceType": "Mobile car diagnostic",
+            "description": "KPEMM provides mobile car diagnostics at homes and workplaces in Kelowna. Our mechanics check cars that will not start, check engine and battery warning lights, electrical faults, and problems with lights, windows, locks or signals. You see what we find on your own vehicle and can ask questions while we are there. If the car needs a repair, we explain the next step and give you the price before you decide whether to continue. In many cases, we can diagnose the car where it is parked, so you may not need a tow or a trip to a repair shop.",
             "provider": {
-              "@type": "LocalBusiness",
-              "@id": "https://kelownaprotechmobilemech.com/#organization",
-              "name": "Kelowna Protech Elite Mobile Mechanic"
+              "@id": "https://kelownaprotechmobilemech.com/#organization"
             },
+            "providerMobility": "dynamic",
             "areaServed": [
               { "@type": "City", "name": "Kelowna" },
               { "@type": "City", "name": "West Kelowna" },
               { "@type": "City", "name": "Vernon" },
               { "@type": "City", "name": "Lake Country" },
               { "@type": "City", "name": "Peachland" },
-              { "@type": "City", "name": "Penticton" }
+              { "@type": "City", "name": "Penticton" },
+              "Okanagan Valley"
             ],
             "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock"
+            "image": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#primaryimage"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#webpage"
             }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#faq",
+            "url": "https://kelownaprotechmobilemech.com/services/diagnostic/#faq",
+            "name": "Frequently asked questions about mobile car diagnostics",
+            "isPartOf": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#webpage"
+            },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can a mobile mechanic diagnose my car at home?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. One of our expert mobile mechanics comes to your home or workplace and checks the vehicle where it is parked. You get an explanation of what is wrong and what needs to happen next without taking the car to a shop first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "My car cranks but will not start. Can you check it in my driveway?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We can. A car may crank normally and still fail to start for several different reasons. We test the vehicle before recommending anything, so you are not buying parts just to see whether they work."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if I turn the key and nothing happens?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A click, dim lights or complete silence can each point us in a different direction. We check the vehicle at your location and find out why it is not responding before blaming the battery, starter or another part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you diagnose a check engine light at my home?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The stored code gives us a place to begin, but the code alone does not prove which part failed. We check what is causing the warning and explain whether the car needs immediate attention. If the light is flashing, the engine is running badly or a red warning light appears, stop driving and contact us."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you diagnose electrical problems?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We work on starting and charging problems, lights, signals, windows and electrical faults that keep returning. Just tell us what the car is doing. You do not need to know the mechanical name of the problem."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if the problem comes and goes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Intermittent problems can take patience, but they can still be diagnosed. Tell us when the problem happens, what you hear and which warning lights appear. If we need more testing or another visit, we will say so instead of pretending the problem is solved."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to tow my car before you can diagnose it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually not. We can begin the diagnostic wherever the vehicle is parked, as long as the location is safe and accessible. If the car eventually needs to be moved for a repair, we explain why before you arrange anything."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you only connect a scanner and read the codes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A code is a clue. Our job is to find out why that code appeared and what is actually causing the problem. We confirm the failure before telling you to replace a part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is a mobile diagnostic as thorough as taking the car to a shop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A mobile diagnostic is professional diagnostic work performed at your location. The mechanic works on your vehicle during the appointment, and you can see what was found instead of waiting for a call from a service counter. If the problem requires something that cannot be done safely at your location, we tell you directly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What will I know when the diagnostic is finished?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You will know what we found, what it means and what should happen next. We show you the problem whenever possible and answer your questions at the vehicle. If the cause still needs more testing, we explain what remains instead of giving you a convenient guess."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a mobile car diagnostic cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We tell you the diagnostic price before you book. If the vehicle needs a repair, you receive that price before the work begins. We do not add extra work to the bill without speaking with you and getting your approval first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a car diagnostic take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no honest answer that fits every vehicle. Some problems can be confirmed during the first visit. Electrical faults and problems that come and go may take longer, but we keep you informed while we work."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you repair the vehicle after finding the problem?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often, yes. If the repair is suitable for your location and the part is available, we may be able to finish it during the same visit. Otherwise, we give you the price and arrange a time to return."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can KPEMM give me a second opinion on a shop or dealer diagnosis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We can examine the vehicle and compare what we find with the diagnosis or estimate you received. We then show you the problem and explain it in plain language, so you can decide whether the recommended repair makes sense."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I book a mobile diagnostic in Kelowna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Call or text KPEMM at 250-859-5467. Send us the year, make and model of the vehicle, its location and a short description of the problem. We serve Kelowna, West Kelowna, Lake Country, Vernon, Peachland, Penticton and nearby Okanagan communities."
+                }
+              }
+            ]
           }
         ]
       }
@@ -1112,22 +1336,67 @@
     </section>
 
     <!-- FAQ visible (coincide con JSON-LD) -->
-    <section class="section faq" aria-label="FAQ">
-      <h2>FAQ</h2>
+    <section id="faq" class="section faq" aria-label="FAQ">
+      <h2>Frequently asked questions about mobile car diagnostics</h2>
       <details>
-        <summary>What do you check in a diagnostic?</summary>
-        <div>
-          ECU scan, battery/alternator tests, fuel/air, ignition, sensors,
-          vacuum and wiring as needed.
-        </div>
+        <summary>Can a mobile mechanic diagnose my car at home?</summary>
+        <div>Yes. One of our expert mobile mechanics comes to your home or workplace and checks the vehicle where it is parked. You get an explanation of what is wrong and what needs to happen next without taking the car to a shop first.</div>
       </details>
       <details>
-        <summary>Do I need a tow?</summary>
-        <div>No. We come to you—home, work, or roadside.</div>
+        <summary>My car cranks but will not start. Can you check it in my driveway?</summary>
+        <div>We can. A car may crank normally and still fail to start for several different reasons. We test the vehicle before recommending anything, so you are not buying parts just to see whether they work.</div>
       </details>
       <details>
-        <summary>How fast can you arrive?</summary>
-        <div>Same-day in most of Kelowna. Call +1-250-859-5467.</div>
+        <summary>What if I turn the key and nothing happens?</summary>
+        <div>A click, dim lights or complete silence can each point us in a different direction. We check the vehicle at your location and find out why it is not responding before blaming the battery, starter or another part.</div>
+      </details>
+      <details>
+        <summary>Can you diagnose a check engine light at my home?</summary>
+        <div>Yes. The stored code gives us a place to begin, but the code alone does not prove which part failed. We check what is causing the warning and explain whether the car needs immediate attention. If the light is flashing, the engine is running badly or a red warning light appears, stop driving and contact us.</div>
+      </details>
+      <details>
+        <summary>Do you diagnose electrical problems?</summary>
+        <div>Yes. We work on starting and charging problems, lights, signals, windows and electrical faults that keep returning. Just tell us what the car is doing. You do not need to know the mechanical name of the problem.</div>
+      </details>
+      <details>
+        <summary>What if the problem comes and goes?</summary>
+        <div>Intermittent problems can take patience, but they can still be diagnosed. Tell us when the problem happens, what you hear and which warning lights appear. If we need more testing or another visit, we will say so instead of pretending the problem is solved.</div>
+      </details>
+      <details>
+        <summary>Do I need to tow my car before you can diagnose it?</summary>
+        <div>Usually not. We can begin the diagnostic wherever the vehicle is parked, as long as the location is safe and accessible. If the car eventually needs to be moved for a repair, we explain why before you arrange anything.</div>
+      </details>
+      <details>
+        <summary>Do you only connect a scanner and read the codes?</summary>
+        <div>No. A code is a clue. Our job is to find out why that code appeared and what is actually causing the problem. We confirm the failure before telling you to replace a part.</div>
+      </details>
+      <details>
+        <summary>Is a mobile diagnostic as thorough as taking the car to a shop?</summary>
+        <div>A mobile diagnostic is professional diagnostic work performed at your location. The mechanic works on your vehicle during the appointment, and you can see what was found instead of waiting for a call from a service counter. If the problem requires something that cannot be done safely at your location, we tell you directly.</div>
+      </details>
+      <details>
+        <summary>What will I know when the diagnostic is finished?</summary>
+        <div>You will know what we found, what it means and what should happen next. We show you the problem whenever possible and answer your questions at the vehicle. If the cause still needs more testing, we explain what remains instead of giving you a convenient guess.</div>
+      </details>
+      <details>
+        <summary>How much does a mobile car diagnostic cost?</summary>
+        <div>We tell you the diagnostic price before you book. If the vehicle needs a repair, you receive that price before the work begins. We do not add extra work to the bill without speaking with you and getting your approval first.</div>
+      </details>
+      <details>
+        <summary>How long does a car diagnostic take?</summary>
+        <div>There is no honest answer that fits every vehicle. Some problems can be confirmed during the first visit. Electrical faults and problems that come and go may take longer, but we keep you informed while we work.</div>
+      </details>
+      <details>
+        <summary>Can you repair the vehicle after finding the problem?</summary>
+        <div>Often, yes. If the repair is suitable for your location and the part is available, we may be able to finish it during the same visit. Otherwise, we give you the price and arrange a time to return.</div>
+      </details>
+      <details>
+        <summary>Can KPEMM give me a second opinion on a shop or dealer diagnosis?</summary>
+        <div>Yes. We can examine the vehicle and compare what we find with the diagnosis or estimate you received. We then show you the problem and explain it in plain language, so you can decide whether the recommended repair makes sense.</div>
+      </details>
+      <details>
+        <summary>How do I book a mobile diagnostic in Kelowna?</summary>
+        <div>Call or text KPEMM at 250-859-5467. Send us the year, make and model of the vehicle, its location and a short description of the problem. We serve Kelowna, West Kelowna, Lake Country, Vernon, Peachland, Penticton and nearby Okanagan communities.</div>
       </details>
     </section>
 
