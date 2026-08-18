@@ -1,12 +1,12 @@
 # Kelowna Protech Elite Mobile Mechanic
 
-> Mobile mechanic service in Kelowna, BC, Canada. A certified mechanic comes to your vehicle — no tow truck, no shop drop-off, same-day diagnosis and repair in most cases.
+> Mobile diagnostic specialist in Kelowna, BC, Canada. A certified mechanic comes to the vehicle and finds what actually failed, in front of the client — no tow truck, no shop drop-off, same-day in most cases.
 
-Last verified: 2026-08-13.
+Last verified: 2026-08-15.
 
 ## Who We Are
 
-Kelowna Protech Elite Mobile Mechanic is a mobile-only automotive service led by a certified mechanic, including dealership-level diagnostic work.
+Kelowna Protech Elite Mobile Mechanic is a mobile-only automotive service led by a certified mechanic. The specialty is advanced diagnostics: finding the actual cause of a fault, including automotive electrical and electronic problems, rather than replacing parts until the symptom disappears.
 
 We go to the client, at their home, workplace, or roadside. We diagnose the problem on-site, source the parts ourselves, and complete the repair the same day in most cases. The client hands over the keys and we handle the rest, with the work happening in their own driveway where they can watch it.
 
@@ -31,16 +31,19 @@ A mobile pre-purchase car inspection performed at the seller's driveway or deale
 
 Details: https://kelownaprotechmobilemech.com/services/pre-purchase/
 
-## Other Services
+## Advanced Diagnostics (our core specialty)
 
-- On-site vehicle diagnostics (PCM-based, electrical diagrams, systematic troubleshooting)
-- Engine and drivetrain repair
-- Electrical system diagnosis and repair
-- Commercial fleet inspections
-- Battery, starter, and alternator service
-- Cooling system repair
-- Brake service
-- Same-day repair for most common failures
+A mobile diagnostic is a private service. One client at a time, at their own home, with the vehicle where it already sits. The client watches the work from their sofa with a coffee instead of arranging a ride and waiting for a call.
+
+Because the work happens in front of them, the client can step outside at any point and ask the mechanic what he is doing and why, and get the answer on the spot. When the diagnosis is finished, the mechanic shows them the failed component on their own vehicle and explains what it means and what it affects. Nothing about the diagnosis is taken on faith, because the client saw it.
+
+That is also what keeps the bill predictable. Before anything is taken apart, the client is told what failed and what the repair will cost, and that is the figure they pay. If the scope needs to change, it is approved by the client first, not explained afterward.
+
+Same-day diagnosis at the client's home or workplace is possible in most cases, and when the parts are available the repair is completed in the same visit. This suits clients who value their time, want to understand what they are paying for, and prefer the work to happen at their own door.
+
+We diagnose automotive electrical and electronic faults, including intermittent problems other shops could not isolate; no-start conditions across the battery, starter, alternator and charging system; diesel systems; and commercial fleet vehicles.
+
+Details: https://kelownaprotechmobilemech.com/services/diagnostic/
 
 Repairs focus on 2010-and-newer vehicles. All makes and models including European vehicles. Pre-purchase inspections accept all model years.
 

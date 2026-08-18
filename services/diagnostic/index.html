@@ -6,380 +6,47 @@
   <script src="/analytics.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
-  <title>On-Site Car Diagnostic Kelowna | Same-Day Service</title>
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png" />
+  <title>Mobile Car Diagnostic Kelowna. We Find the Cause and Get It Fixed</title>
   <meta name="description"
-    content="Check-engine light? Car won’t start? Same-day on-site diagnostic in Kelowna. We find the root cause fast — no towing, no guessing." />
+    content="Car won't start? Warning light on? Our mobile mechanics come to you, find the real cause and take the job from diagnosis to repair. 65 Google reviews." />
   <meta name="robots" content="index,follow" />
 
   <!-- Canonical de la URL final sin www -->
   <link rel="canonical" href="https://kelownaprotechmobilemech.com/services/diagnostic/" />
 
   <!-- Open Graph -->
-  <meta property="og:title" content="On-Site Car Diagnostic Kelowna | Same-Day Service" />
-  <meta property="og:description" content="Same-day mobile diagnostic at your location — fast answers without a tow truck. No towing, no guessing." />
+  <meta property="og:title" content="Mobile Car Diagnostic Kelowna. We Find the Cause and Get It Fixed" />
+  <meta property="og:description" content="Car won't start? Warning light on? Our mobile mechanics come to you, find the real cause and take the job from diagnosis to repair. 65 Google reviews." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kelownaprotechmobilemech.com/services/diagnostic/" />
   <meta property="og:image" content="https://kelownaprotechmobilemech.com/images/diagnostic-og.jpg" />
-  <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="630" />
+  <meta property="og:image:width" content="1536" />
+  <meta property="og:image:height" content="838" />
   <meta property="og:image:alt" content="Mobile mechanic performing on-site car diagnostic in Kelowna" />
   <meta property="og:locale" content="en_CA" />
 
   <!-- Twitter Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="On-Site Car Diagnostic Kelowna | Same-Day Service" />
-  <meta name="twitter:description" content="Check-engine light? Car won’t start? Same-day on-site diagnostic in Kelowna. Root cause found fast — no towing, no guessing." />
+  <meta name="twitter:title" content="Mobile Car Diagnostic Kelowna. We Find the Cause and Get It Fixed" />
+  <meta name="twitter:description" content="Car won't start? Warning light on? Our mobile mechanics come to you, find the real cause and take the job from diagnosis to repair. 65 Google reviews." />
   <meta name="twitter:image" content="https://kelownaprotechmobilemech.com/images/diagnostic-og.jpg" />
 
   <!-- Preload hero image (LCP optimization) -->
-  <link rel="preload" as="image" href="/images/diagnostic-repairs-400w.webp" media="(max-width: 640px)" type="image/webp">
-  <link rel="preload" as="image" href="/images/diagnostic-repairs-800w.webp" media="(min-width: 641px) and (max-width: 1024px)" type="image/webp">
+  <link rel="preload" as="image" href="/images/diag-ranger-500w.webp"
+    imagesrcset="/images/diag-ranger-500w.webp 375w, /images/diag-ranger-mobile-780w.webp 780w"
+    imagesizes="100vw" media="(max-width: 640px)" type="image/webp">
+  <link rel="preload" as="image" href="/images/diag-ranger-900w.webp" media="(min-width: 641px) and (max-width: 767px)" type="image/webp">
+  <link rel="preload" as="image" href="/images/diag-ranger-1300w.webp" media="(min-width: 768px)" type="image/webp">
   <!-- CSS ya existente del sitio -->
   <link rel="stylesheet" href="/estilos-header2.css" />
-  <link rel="stylesheet" href="/service-tiles.css" media="print" onload="this.media='all'" />
-  <noscript><link rel="stylesheet" href="/service-tiles.css" /></noscript>
+  <link rel="stylesheet" href="/service-tiles.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" media="print" onload="this.media='all'" />
-  <noscript><link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet" /></noscript>
-  <!-- Estilos mínimos locales para esta página -->
-  <style>
-    :root {
-      --ink: #111827;
-      --muted: #6b7280;
-      --brand: #111827;
-      --accent: #dc2626;
-      --line: #e5e7eb;
-      /* PREMIUM ENGINEERING AUTHORITY COLORS */
-      --premium-dark: #0f172a;
-      --premium-gold: #fbbf24;
-      --premium-blue: #1e40af;
-      --premium-light: #f8fafc;
-    }
-
-    .page {
-      max-width: 1400px;
-      margin: 0 auto;
-      padding: 24px 40px;
-    }
-
-    @media (max-width: 768px) {
-      .page {
-        padding: 24px 16px;
-      }
-    }
-
-    .breadcrumb {
-      font-size: 12px;
-      color: var(--muted);
-      margin: 8px 0 16px;
-    }
-
-    .breadcrumb a {
-      color: inherit;
-      text-decoration: none;
-    }
-
-    .hero {
-      display: grid;
-      gap: 16px;
-      align-items: center;
-    }
-
-    .hero h1 {
-      font-size: 28px;
-      line-height: 1.2;
-      margin: 0;
-    }
-
-    .hero p.lead {
-      color: var(--muted);
-      margin: 8px 0 0;
-      max-width: 64ch;
-    }
-
-    .hero figure {
-      margin: 0;
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      overflow: hidden;
-    }
-
-    .hero img {
-      width: 100%;
-      height: 260px;
-      object-fit: cover;
-      display: block;
-    }
-
-    .badges {
-      display: flex;
-      gap: 12px;
-      align-items: center;
-      margin: 16px 0;
-      color: var(--muted);
-      font-size: 14px;
-    }
-
-    .section {
-      margin-top: 32px;
-    }
-
-    .section h2 {
-      font-size: 20px;
-      margin: 0 0 8px;
-    }
-
-    .list {
-      display: grid;
-      gap: 8px;
-      padding-left: 18px;
-    }
-
-    .cta {
-      display: inline-block;
-      margin-top: 20px;
-      margin-right: 12px;
-      padding: 16px 32px;
-      border-radius: 8px;
-      background: var(--premium-dark);
-      color: #fff;
-      border: 2px solid var(--premium-gold);
-      text-decoration: none;
-      font-weight: 700;
-      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.25), 0 0 0 0 rgba(251, 191, 36, 0.4);
-      transition: all 0.3s ease;
-    }
-
-    .cta:hover {
-      background: linear-gradient(135deg, var(--premium-dark) 0%, var(--premium-blue) 100%);
-      transform: translateY(-2px);
-      box-shadow: 0 12px 28px rgba(15, 23, 42, 0.35), 0 0 20px rgba(251, 191, 36, 0.6);
-    }
-
-    .cta-secondary {
-      display: inline-block;
-      margin-top: 20px;
-      margin-right: 12px;
-      padding: 16px 32px;
-      border-radius: 8px;
-      background: transparent;
-      color: var(--premium-dark);
-      border: 2px solid var(--premium-dark);
-      text-decoration: none;
-      font-weight: 600;
-      transition: all 0.3s ease;
-    }
-
-    .cta-secondary:hover {
-      background: var(--premium-dark);
-      color: #fff;
-    }
-
-    @media (min-width: 900px) {
-      .hero {
-        grid-template-columns: 1fr 1fr;
-      }
-
-      .hero img {
-        height: 340px;
-      }
-
-      .hero h1 {
-        font-size: 34px;
-      }
-    }
-
-    /* Tarjetas chicas para “what you get” */
-    .benefits {
-      display: grid;
-      gap: 12px;
-      grid-template-columns: 1fr;
-      margin-top: 12px;
-    }
-
-    .card {
-      border: 1px solid var(--line);
-      border-radius: 16px;
-      padding: 16px;
-      background: #fff;
-    }
-
-    .card h3 {
-      font-size: 16px;
-      margin: 0 0 4px;
-    }
-
-    .faq details {
-      border: 1px solid var(--line);
-      border-radius: 12px;
-      padding: 12px 14px;
-      background: #fff;
-    }
-
-    .faq summary {
-      cursor: pointer;
-      font-weight: 700;
-    }
-
-    /* Grand Slam Offer Box - Premium Style */
-    .offer-box {
-      background: linear-gradient(135deg, #f8fafc 0%, #e2e8f0 100%);
-      border-left: 4px solid var(--premium-gold);
-      padding: 24px;
-      margin: 24px 0;
-      border-radius: 0 12px 12px 0;
-      box-shadow: 0 4px 12px rgba(15, 23, 42, 0.08);
-    }
-
-    .offer-title {
-      display: inline-block;
-      background: var(--premium-gold);
-      color: var(--premium-dark);
-      font-weight: 700;
-      font-size: 11px;
-      text-transform: uppercase;
-      letter-spacing: 0.1em;
-      padding: 4px 12px;
-      border-radius: 4px;
-      margin-bottom: 8px;
-    }
-
-    .offer-text {
-      font-size: 17px;
-      line-height: 1.5;
-      color: var(--premium-dark);
-      margin: 0;
-    }
-
-    .offer-text strong {
-      color: var(--premium-blue);
-    }
-
-    /* ── Mobile CTA bar ── */
-    .mobile-cta-bar { display: none; }
-
-    @media (max-width: 767px) {
-      .mobile-cta-bar {
-        display: flex;
-        align-items: center;
-        gap: 0;
-        position: sticky;
-        top: 92px;
-        z-index: 999;
-        width: 100%;
-        padding: 10px 16px;
-        background: linear-gradient(135deg, #0f172a 0%, #1e3a8a 50%, #0f172a 100%);
-        border-top: 1px solid rgba(251, 191, 36, .35);
-        border-bottom: 1px solid rgba(251, 191, 36, .25);
-        box-shadow: 0 10px 24px rgba(15, 23, 42, .18), inset 0 1px 0 rgba(255, 255, 255, .06);
-      }
-      .mobile-cta-bar a {
-        color: #fff;
-        font-family: "Inter", Arial, sans-serif;
-        font-weight: 700;
-        text-decoration: none;
-        letter-spacing: .2px;
-      }
-      .mobile-cta-sms {
-        position: relative;
-        overflow: hidden;
-        display: flex;
-        align-items: center;
-        gap: 8px;
-        flex: 0 1 auto;
-        min-width: 0;
-        margin-right: 8px;
-        padding: 6px 8px;
-        min-height: 48px;
-        border-radius: 12px;
-        background: rgba(202, 138, 4, .12);
-        box-shadow: inset 0 0 0 1.5px rgba(245, 183, 0, .55), 0 4px 12px -6px rgba(0, 0, 0, .55);
-        transition: transform 140ms cubic-bezier(.23, 1, .32, 1), background 140ms ease-out;
-      }
-      .mobile-cta-sms:active {
-        transform: scale(.98);
-        background: rgba(202, 138, 4, .22);
-      }
-      .mobile-cta-sms::after {
-        content: "";
-        position: absolute;
-        inset: 0;
-        pointer-events: none;
-        background: linear-gradient(75deg, transparent 40%, rgba(255,255,255,.28) 50%, transparent 60%);
-        transform: translateX(-140%);
-        animation: ctaShimmerDiag 4.2s cubic-bezier(.23, 1, .32, 1) infinite;
-      }
-      @keyframes ctaShimmerDiag {
-        0% { transform: translateX(-140%); }
-        22% { transform: translateX(140%); }
-        100% { transform: translateX(140%); }
-      }
-      .mobile-cta-sms-text {
-        display: flex;
-        flex-direction: column;
-        justify-content: center;
-        gap: 1px;
-        min-width: 0;
-      }
-      .mobile-cta-sms-text .cta-main-text {
-        font-size: .9rem;
-        font-weight: 800;
-        line-height: 1.2;
-        letter-spacing: -.01em;
-        white-space: nowrap;
-        color: #f5c451;
-        text-shadow: 0 1px 10px rgba(245, 183, 0, .3);
-      }
-      .mobile-cta-bar-sub {
-        color: #fff;
-        opacity: .8;
-        font-weight: 600;
-        font-size: .75rem;
-        white-space: nowrap;
-      }
-      .mobile-cta-tel {
-        flex: none;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        padding: 6px 10px;
-        min-height: 48px;
-        border: 1px solid rgba(255, 255, 255, .22);
-        border-radius: 12px;
-        transition: transform 140ms cubic-bezier(.23, 1, .32, 1);
-      }
-      .mobile-cta-tel:active {
-        transform: scale(.98);
-      }
-      .mobile-cta-tel-label {
-        display: block;
-        font-size: .6875rem;
-        color: #e2e8f0;
-        font-weight: 500;
-        white-space: nowrap;
-      }
-      .mobile-cta-tel-number {
-        display: block;
-        font-size: .875rem;
-        font-weight: 600;
-        color: #e2e8f0;
-        white-space: nowrap;
-      }
-      .mobile-cta-bar svg { flex-shrink: 0; color: #f5c451; }
-    }
-    @media (max-width: 359px) {
-      .mobile-cta-sms-text .cta-main-text { font-size: .8125rem; }
-      .mobile-cta-bar-sub { font-size: .6875rem; }
-    }
-    @media (prefers-reduced-motion: reduce) {
-      .mobile-cta-sms::after { animation: none; }
-      .mobile-cta-sms { transition: none; }
-    }
-  </style>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;700;800&amp;family=Space+Mono:wght@400;700&amp;family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet" />
+  <!-- Estilos específicos de esta página -->
+  <link rel="stylesheet" href="/services/diagnostic/diagnostic.css" />
 
   <!-- JSON-LD: Breadcrumb + Service + FAQ -->
   <script type="application/ld+json">
@@ -387,28 +54,61 @@
         "@context": "https://schema.org",
         "@graph": [
           {
-            "@type": "Organization",
-            "@id": "https://kelownaprotechmobilemech.com/#org",
+            "@type": ["AutoRepair", "LocalBusiness"],
+            "@id": "https://kelownaprotechmobilemech.com/#organization",
             "name": "Kelowna Protech Elite Mobile Mechanic",
-            "url": "https://kelownaprotechmobilemech.com/"
+            "url": "https://kelownaprotechmobilemech.com/",
+            "logo": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
+            "telephone": "+1-250-859-5467",
+            "areaServed": [
+              { "@type": "City", "name": "Kelowna" },
+              { "@type": "City", "name": "West Kelowna" },
+              { "@type": "City", "name": "Vernon" },
+              { "@type": "City", "name": "Lake Country" },
+              { "@type": "City", "name": "Peachland" },
+              { "@type": "City", "name": "Penticton" },
+              "Okanagan Valley"
+            ],
+            "openingHoursSpecification": {
+              "@type": "OpeningHoursSpecification",
+              "dayOfWeek": [
+                "Monday",
+                "Tuesday",
+                "Wednesday",
+                "Thursday",
+                "Friday",
+                "Saturday"
+              ],
+              "opens": "08:00",
+              "closes": "18:00"
+            }
           },
           {
             "@type": "WebSite",
             "@id": "https://kelownaprotechmobilemech.com/#website",
             "url": "https://kelownaprotechmobilemech.com/",
             "name": "Kelowna Protech Elite Mobile Mechanic",
-            "publisher": { "@id": "https://kelownaprotechmobilemech.com/#org" }
+            "publisher": { "@id": "https://kelownaprotechmobilemech.com/#organization" }
           },
           {
             "@type": "WebPage",
             "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#webpage",
             "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
-            "name": "On-Site Diagnostic",
+            "name": "Mobile Car Diagnostic in Kelowna",
             "isPartOf": {
               "@id": "https://kelownaprotechmobilemech.com/#website"
             },
+            "mainEntity": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#service"
+            },
+            "primaryImageOfPage": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#primaryimage"
+            },
             "breadcrumb": {
               "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#breadcrumb"
+            },
+            "hasPart": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#faq"
             }
           },
           {
@@ -430,29 +130,171 @@
             ]
           },
           {
+            "@type": "ImageObject",
+            "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#primaryimage",
+            "url": "https://kelownaprotechmobilemech.com/images/diag-ranger-1300w.webp",
+            "contentUrl": "https://kelownaprotechmobilemech.com/images/diag-ranger-1300w.webp",
+            "width": 975,
+            "height": 1300,
+            "caption": "KPEMM mechanic performing a mobile car diagnostic on a Ford Ranger in a Kelowna driveway"
+          },
+          {
             "@type": "Service",
             "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#service",
-            "name": "Mobile Vehicle Diagnostic Service Kelowna",
-            "serviceType": "Automotive Diagnostic",
-            "description": "Professional mobile vehicle diagnostics in Kelowna. Dealer-grade scan tools, root-cause analysis, and a written Digital Health Report — at your location. No tow required.",
+            "name": "Mobile Car Diagnostic in Kelowna",
+            "serviceType": "Mobile car diagnostic",
+            "description": "KPEMM provides mobile car diagnostics at homes and workplaces in Kelowna. Our mechanics check cars that will not start, check engine and battery warning lights, electrical faults, and problems with lights, windows, locks or signals. You see what we find on your own vehicle and can ask questions while we are there. If the car needs a repair, we explain the next step and give you the price before you decide whether to continue. In many cases, we can diagnose the car where it is parked, so you may not need a tow or a trip to a repair shop.",
             "provider": {
-              "@type": "LocalBusiness",
-              "@id": "https://kelownaprotechmobilemech.com/#organization",
-              "name": "Kelowna Protech Elite Mobile Mechanic"
+              "@id": "https://kelownaprotechmobilemech.com/#organization"
             },
+            "providerMobility": "dynamic",
             "areaServed": [
               { "@type": "City", "name": "Kelowna" },
               { "@type": "City", "name": "West Kelowna" },
               { "@type": "City", "name": "Vernon" },
               { "@type": "City", "name": "Lake Country" },
               { "@type": "City", "name": "Peachland" },
-              { "@type": "City", "name": "Penticton" }
+              { "@type": "City", "name": "Penticton" },
+              "Okanagan Valley"
             ],
             "url": "https://kelownaprotechmobilemech.com/services/diagnostic/",
-            "offers": {
-              "@type": "Offer",
-              "availability": "https://schema.org/InStock"
+            "image": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#primaryimage"
+            },
+            "mainEntityOfPage": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#webpage"
             }
+          },
+          {
+            "@type": "FAQPage",
+            "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#faq",
+            "url": "https://kelownaprotechmobilemech.com/services/diagnostic/#faq",
+            "name": "Frequently asked questions about mobile car diagnostics",
+            "isPartOf": {
+              "@id": "https://kelownaprotechmobilemech.com/services/diagnostic/#webpage"
+            },
+            "mainEntity": [
+              {
+                "@type": "Question",
+                "name": "Can a mobile mechanic diagnose my car at home?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. One of our expert mobile mechanics comes to your home or workplace and checks the vehicle where it is parked. You get an explanation of what is wrong and what needs to happen next without taking the car to a shop first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "My car cranks but will not start. Can you check it in my driveway?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We can. A car may crank normally and still fail to start for several different reasons. We test the vehicle before recommending anything, so you are not buying parts just to see whether they work."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if I turn the key and nothing happens?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A click, dim lights or complete silence can each point us in a different direction. We check the vehicle at your location and find out why it is not responding before blaming the battery, starter or another part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you diagnose a check engine light at my home?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. The stored code gives us a place to begin, but the code alone does not prove which part failed. We check what is causing the warning and explain whether the car needs immediate attention. If the light is flashing, the engine is running badly or a red warning light appears, stop driving and contact us."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you diagnose electrical problems?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We work on starting and charging problems, lights, signals, windows and electrical faults that keep returning. Just tell us what the car is doing. You do not need to know the mechanical name of the problem."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What if the problem comes and goes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Intermittent problems can take patience, but they can still be diagnosed. Tell us when the problem happens, what you hear and which warning lights appear. If we need more testing or another visit, we will say so instead of pretending the problem is solved."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do I need to tow my car before you can diagnose it?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Usually not. We can begin the diagnostic wherever the vehicle is parked, as long as the location is safe and accessible. If the car eventually needs to be moved for a repair, we explain why before you arrange anything."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Do you only connect a scanner and read the codes?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "No. A code is a clue. Our job is to find out why that code appeared and what is actually causing the problem. We confirm the failure before telling you to replace a part."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Is a mobile diagnostic as thorough as taking the car to a shop?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "A mobile diagnostic is professional diagnostic work performed at your location. The mechanic works on your vehicle during the appointment, and you can see what was found instead of waiting for a call from a service counter. If the problem requires something that cannot be done safely at your location, we tell you directly."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "What will I know when the diagnostic is finished?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "You will know what we found, what it means and what should happen next. We show you the problem whenever possible and answer your questions at the vehicle. If the cause still needs more testing, we explain what remains instead of giving you a convenient guess."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How much does a mobile car diagnostic cost?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "We tell you the diagnostic price before you book. If the vehicle needs a repair, you receive that price before the work begins. We do not add extra work to the bill without speaking with you and getting your approval first."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How long does a car diagnostic take?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "There is no honest answer that fits every vehicle. Some problems can be confirmed during the first visit. Electrical faults and problems that come and go may take longer, but we keep you informed while we work."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can you repair the vehicle after finding the problem?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Often, yes. If the repair is suitable for your location and the part is available, we may be able to finish it during the same visit. Otherwise, we give you the price and arrange a time to return."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "Can KPEMM give me a second opinion on a shop or dealer diagnosis?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Yes. We can examine the vehicle and compare what we find with the diagnosis or estimate you received. We then show you the problem and explain it in plain language, so you can decide whether the recommended repair makes sense."
+                }
+              },
+              {
+                "@type": "Question",
+                "name": "How do I book a mobile diagnostic in Kelowna?",
+                "acceptedAnswer": {
+                  "@type": "Answer",
+                  "text": "Call or text KPEMM at 250-859-5467. Send us the year, make and model of the vehicle, its location and a short description of the problem. We serve Kelowna, West Kelowna, Lake Country, Vernon, Peachland, Penticton and nearby Okanagan communities."
+                }
+              }
+            ]
           }
         ]
       }
@@ -511,172 +353,182 @@
       <a href="/">Home</a> › On-Site Diagnostic
     </nav>
 
-    <!-- HERO -->
-    <section class="hero" id="top">
-      <div>
-        <h1 class="services-heading">
-          On-Site Car Diagnostic Kelowna — Same-Day Service
-        </h1>
-        <h2 class="services-subheading">
-          Mobile Mechanic Kelowna — Same-Day On-Site Diagnostics & Clear
-          Answers
-        </h2>
-        <p class="byline">
-          <strong>Kelowna Protech Elite Mobile Mechanic</strong> — Kelowna’s
-          Expert Mobile mechanic.
-        </p>
-        <p class="lead">
-          Check-engine light, no-start, or strange noise? We come to your
-          location and find the root cause fast—no towing, no waiting, no
-          guessing.
-        </p>
-
-        <div class="offer-box">
-          <span class="offer-title">⚡ Same-Day Diagnostic — No Towing, No Waiting, No Dealer Delays</span>
-          <p class="offer-text">
-            <strong>Dealer-level diagnostic equipment brought to your location.</strong>
-            Skip the 2-week dealer wait. We come to you with engineering-grade tools and pinpoint the problem in hours, not weeks. Same precision, zero downtime.
-          </p>
-        </div>
-
-        <!-- Premium CTA System -->
-        <div style="margin: 24px 0;">
-          <a class="cta" href="tel:+12508595467"
-            aria-label="Book same-day engineering-grade diagnostic at your location">
-            Book Same-Day Diagnostic — Skip Dealer Wait ✓
-          </a>
-          <a class="cta-secondary" href="sms:+12508595467"
-            aria-label="Text for quick diagnostic quote — 2 minute response">
-            Text for Quote (2-Min Response)
-          </a>
-        </div>
-
-        <div class="badges">
-          <span>✓ Engineering-Grade Tools</span>
-          <span>✓ Same-Day Available</span>
-          <span>✓ 4.9★ (65 Reviews)</span>
-        </div>
+    <!-- HERO — same system as pre-purchase (.services-hero) -->
+    <header class="services-hero" id="top">
+      <div class="services-hero__content">
+        <span class="services-hero__eyebrow">
+          <span class="services-hero__eyebrow-main">
+            <span class="services-hero__eyebrow-stars">&#9733;&#9733;&#9733;&#9733;&#9733;</span>
+            <span>4.9 &middot; 65 Google Reviews &middot; Kelowna mobile mechanics</span>
+          </span>
+          <span class="services-hero__eyebrow-quote">&ldquo;Their communication was impeccable in explaining things as they unfolded.&rdquo; - Jennean, Google review</span>
+        </span>
+        <h1>Need a car diagnostic in Kelowna? Our mobile mechanics come to you.</h1>
+        <p class="services-hero__service-line">Car won't start? Did the check engine light come on? Maybe an electrical problem keeps coming back. <strong>A KPEMM mobile mechanic can check it at your home or work</strong>, show you what failed and explain what the repair will cost.</p>
+        <p class="services-hero__service-transform">You do not need to arrange a tow or leave the car at a shop for days. We check the vehicle where it is. You see what we found before you decide what to do.</p>
       </div>
-      <figure>
+      <div class="services-hero__image-wrap">
         <picture>
-          <source srcset="/images/diagnostic-repairs-400w.webp" media="(max-width: 640px)">
-          <source srcset="/images/diagnostic-repairs-800w.webp" media="(max-width: 1024px)">
-          <img src="/images/diagnostic-repairs.webp"
-            alt="Mobile mechanic running an advanced diagnostic scan under the hood." width="800" height="534"
+          <source srcset="/images/diag-ranger-500w.webp 375w, /images/diag-ranger-mobile-780w.webp 780w"
+            sizes="100vw" media="(max-width: 640px)">
+          <source srcset="/images/diag-ranger-900w.webp" media="(max-width: 767px)">
+          <img src="/images/diag-ranger-1300w.webp"
+            alt="Kelowna Protech Elite mechanic running an on-site diagnostic scan on a white Ford Ranger in a Kelowna driveway"
+            class="services-hero__hero-img"
+            width="1086" height="1448"
             loading="eager" decoding="async" />
         </picture>
+      </div>
+      <div class="services-hero__mobile-text">
+        <div class="services-hero__mobile-text__body">
+          <p>Car won't start? Did the check engine light come on? Maybe an electrical problem keeps coming back. <strong>A KPEMM mobile mechanic can check it at your home or work</strong>, show you what failed and explain what the repair will cost.</p>
+        </div>
+        <p class="services-hero__mobile-text__promise">You do not need to arrange a tow or leave the car at a shop for days. We check the vehicle where it is. You see what we found before you decide what to do.</p>
+      </div>
+    </header>
+
+    <!-- WHAT THE CLIENT GETS — visible proof, approved price and personal service -->
+    <section class="diag-values">
+      <h2>You see what we find before any repair starts.</h2>
+      <p class="diag-values__intro">At most shops, you leave the keys and wait for a call. With KPEMM, the mechanic checks the car at your home or work. When we find the problem, we bring you to the vehicle and show it to you.</p>
+      <p class="diag-values__item"><strong>See the problem on your own car.</strong> We do not expect you to approve a repair based on a code or a phone call. The mechanic shows you the failed part or test result and explains what it means.</p>
+      <p class="diag-values__item"><strong>Know the price first.</strong> You get a flat price before the repair starts. If the job changes, we stop and talk to you. We do not add work that you have not approved.</p>
+      <p class="diag-values__item"><strong>Your appointment is actually for your car.</strong> You do not drop it off at 3 p.m. and wonder whether anyone has looked at it. The mechanic is there to work on your vehicle at the time we arranged.</p>
+      <p class="diag-values__item"><strong>If we say we will do it, we do it.</strong> We give you a realistic time. If we need a part or a second visit, we tell you before the plan changes.</p>
+      <p class="diag-values__item"><strong>You deal with KPEMM throughout the job.</strong> The same company handles the booking, the visit and the follow-up. You know who to call if you have a question.</p>
+      <div class="diag-values__actions">
+        <a class="cta" href="tel:+12508595467"
+          aria-label="Call KPEMM to book a mobile diagnostic">
+          Call to Book Your Diagnostic
+        </a>
+        <a class="cta-secondary" href="sms:+12508595467"
+          aria-label="Text KPEMM about a mobile diagnostic">
+          Text KPEMM
+        </a>
+      </div>
+    </section>
+
+    <!-- REAL CLIENT PROOF — Dodge Challenger no-start diagnostic -->
+    <section class="diag-case-proof">
+      <div class="diag-case-proof__copy">
+        <h2>Mason's Dodge Challenger would not start.</h2>
+        <p class="diag-case-proof__story">We met Mason at the car, worked through the no-start problem and found the cause. Before we left, he knew what had failed and what needed to happen next.</p>
+        <blockquote class="diag-case-proof__review">
+          <strong class="diag-case-proof__review-title">Reasonable price</strong>
+          <p>&ldquo;Joseph was very helpful diagnosing my car's issue. Whole process was quick and easy.&rdquo;</p>
+          <cite>Mason Neumeier<br>Google Review, August 2026</cite>
+        </blockquote>
+        <p class="diag-case-proof__result">Mason called the process quick and easy and said the price was reasonable. That is what an on-site diagnostic should feel like.</p>
+      </div>
+      <figure class="diag-case-proof__figure">
+        <img
+          src="/images/review-mason-neumeier-dodge-challenger.png"
+          alt="Original five-star Google review from Mason Neumeier describing KPEMM's quick and easy Dodge Challenger diagnostic at a reasonable price"
+          width="1340" height="340"
+          loading="lazy" decoding="async"
+          class="diag-case-proof__image"
+          data-zoom="/images/review-mason-neumeier-dodge-challenger.png"
+          tabindex="0"
+          role="button"
+          aria-label="Open Mason Neumeier's original Google review at full size" />
+        <figcaption>Original Google review. Tap to enlarge.</figcaption>
       </figure>
     </section>
 
-    <!-- WHAT YOU GET -->
-    <section class="section">
-      <h2>What you get</h2>
-      <div class="benefits">
-        <div class="card">
-          <h3>Clear answer today</h3>
-          <p>
-            We isolate the real fault and explain it in plain language, with
-            next-step options.
-          </p>
-        </div>
-        <div class="card">
-          <h3>Dealership-level scan</h3>
-          <p>
-            Pro tools to read live data, freeze frames, and
-            manufacturer-specific codes.
-          </p>
-        </div>
-        <div class="card">
-          <h3>No extra expenses</h3>
-          <p>
-            Avoid towing and lost time. We come to your driveway, workplace,
-            or roadside.
-          </p>
-        </div>
-      </div>
-    </section>
-
-    <!-- CASE STUDY: Gabe's No-Start Crisis -->
-    <section class="section"
-      style="background: var(--ink); color: white; border-radius: 24px; padding: 60px 40px; margin-top: 40px;">
-      <div style="max-width: 800px; margin: 0 auto;">
-        <span
-          style="color: var(--accent); font-weight: 700; text-transform: uppercase; letter-spacing: 0.1em; font-size: 14px;">Real
-          Client Story</span>
-        <h2 style="color: white; font-size: 38px; margin: 12px 0 24px;">Gabe's No-Start Crisis: <br>Diagnosed in His
-          Garage, Fixed Before Lunch.</h2>
-        <p style="font-size: 18px; line-height: 1.6; color: #cbd5e1; margin-bottom: 32px;">
-          Most shops in Kelowna told Gabe to tow his car in and wait 2 weeks for an appointment. We had a different
-          approach: bring the shop to him.
-        </p>
-
-        <div
-          style="background: rgba(255,255,255,0.05); padding: 32px; border-radius: 16px; border-left: 4px solid var(--accent);">
-          <h3 style="color: var(--accent); margin-bottom: 12px;">The Situation</h3>
-          <p style="font-style: italic; color: white; font-size: 17px; line-height: 1.6;">
-            "My car wouldn't start on a Monday morning. I called three shops—all said they couldn't even look at it for
-            a week or more. I called Kelowna Protech Elite, and Joseph arrived at 11 AM. By 11:30, he diagnosed a failed
-            starter relay using his dealer-level scanner. He sourced the part immediately and had me driving by 4 PM.
-            All done in my garage—no tow truck, no rental car, no stress."
-          </p>
-          <strong
-            style="display: block; margin-top: 20px; color: #94a3b8; text-transform: uppercase; font-size: 13px; letter-spacing: 0.05em;">—
-            Gabe Carter, Kelowna</strong>
-        </div>
-
-        <div class="benefits" style="grid-template-columns: 1fr 1fr; gap: 24px; margin-top: 40px;">
-          <div>
-            <h4 style="color: white; margin-bottom: 8px;">✓ Same-Day Resolution</h4>
-            <p style="color: #94a3b8; font-size: 14px;">While other shops were "booking appointments," Gabe was back on
-              the road.</p>
-          </div>
-          <div>
-            <h4 style="color: white; margin-bottom: 8px;">✓ No Tow, No Wait</h4>
-            <p style="color: #94a3b8; font-size: 14px;">We brought dealer-level tools to his driveway. Zero downtime.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <!-- CTA Mid-Page Premium -->
-    <section class="section">
-      <h2>Engineering-Grade Diagnostic. Dealer-Level Tools. Your Location.</h2>
-      <p class="lead">
-        We bring precision diagnostic equipment to your driveway, workplace, or roadside. <strong>Same dealer-level precision without the 2-week wait or towing fees.</strong> Already tried a shop? Bring us their report — we'll verify the root cause with engineering-grade analysis.
-      </p>
-      <p class="lead">
-        Buying a used vehicle instead? The same dealer-level scan powers our <a href="/services/pre-purchase/">pre-purchase car inspection in Kelowna</a> — 100+ points checked at the seller's lot before you pay.
-      </p>
-      <div style="margin-top: 24px;">
-        <a class="cta" href="tel:+12508595467"
-          aria-label="Call to book same-day diagnostic at your location">
-          Book Same-Day Diagnostic — No Dealer Wait ✓
-        </a>
-        <a class="cta-secondary" href="sms:+12508595467"
-          aria-label="Text for diagnostic quote — 2 minute response guaranteed">
-          Text for Quote (2-Min Response)
-        </a>
+    <!-- COMMON DIAGNOSTIC SITUATIONS — customer language, not tool specifications -->
+    <section class="diag-symptoms">
+      <h2>What can a mobile mechanic diagnose at your home?</h2>
+      <p class="diag-symptoms__intro">Most calls start with a simple description: "It won't start," "this light came on" or "the window stopped working." You do not need to know the mechanical name for the problem. Tell us what the car is doing and we will start there.</p>
+      <div class="diag-symptoms__list">
+        <article class="diag-symptoms__item">
+          <h3>Nothing happens when you try to start it.</h3>
+          <p>You turn the key or press the start button and get silence. We come to the car and trace the reason it is not responding before you spend money on parts or a tow.</p>
+        </article>
+        <article class="diag-symptoms__item">
+          <h3>The engine turns, but the car will not start.</h3>
+          <p>This is the "it cranks but won't fire" call. The mechanic tests the car where it stopped and tells you what it needs next.</p>
+        </article>
+        <article class="diag-symptoms__item">
+          <h3>The check engine or battery light came on.</h3>
+          <p>A warning light can mean many things. We check the system involved and tell you whether the car is safe to drive or should stay parked.</p>
+        </article>
+        <article class="diag-symptoms__item">
+          <h3>A window, light, lock or signal stopped working.</h3>
+          <p>Electrical problems can be small or frustratingly hard to catch. We test the part that is not working and follow the fault until we can explain it.</p>
+        </article>
+        <article class="diag-symptoms__item">
+          <h3>The battery keeps dying.</h3>
+          <p>A jump start may get you moving once. It will not tell you why the battery went flat. We find out before you buy another battery you may not need.</p>
+        </article>
+        <article class="diag-symptoms__item">
+          <h3>The problem comes and goes.</h3>
+          <p>Cars often behave perfectly by the time they reach a shop. We can check yours where the problem happened and use what you noticed to narrow it down.</p>
+        </article>
       </div>
     </section>
 
     <!-- FAQ visible (coincide con JSON-LD) -->
-    <section class="section faq" aria-label="FAQ">
-      <h2>FAQ</h2>
+    <section id="faq" class="section faq" aria-label="FAQ">
+      <h2>Frequently asked questions about mobile car diagnostics</h2>
       <details>
-        <summary>What do you check in a diagnostic?</summary>
-        <div>
-          ECU scan, battery/alternator tests, fuel/air, ignition, sensors,
-          vacuum and wiring as needed.
-        </div>
+        <summary>Can a mobile mechanic diagnose my car at home?</summary>
+        <div>Yes. One of our expert mobile mechanics comes to your home or workplace and checks the vehicle where it is parked. You get an explanation of what is wrong and what needs to happen next without taking the car to a shop first.</div>
       </details>
       <details>
-        <summary>Do I need a tow?</summary>
-        <div>No. We come to you—home, work, or roadside.</div>
+        <summary>My car cranks but will not start. Can you check it in my driveway?</summary>
+        <div>We can. A car may crank normally and still fail to start for several different reasons. We test the vehicle before recommending anything, so you are not buying parts just to see whether they work.</div>
       </details>
       <details>
-        <summary>How fast can you arrive?</summary>
-        <div>Same-day in most of Kelowna. Call +1-250-859-5467.</div>
+        <summary>What if I turn the key and nothing happens?</summary>
+        <div>A click, dim lights or complete silence can each point us in a different direction. We check the vehicle at your location and find out why it is not responding before blaming the battery, starter or another part.</div>
+      </details>
+      <details>
+        <summary>Can you diagnose a check engine light at my home?</summary>
+        <div>Yes. The stored code gives us a place to begin, but the code alone does not prove which part failed. We check what is causing the warning and explain whether the car needs immediate attention. If the light is flashing, the engine is running badly or a red warning light appears, stop driving and contact us.</div>
+      </details>
+      <details>
+        <summary>Do you diagnose electrical problems?</summary>
+        <div>Yes. We work on starting and charging problems, lights, signals, windows and electrical faults that keep returning. Just tell us what the car is doing. You do not need to know the mechanical name of the problem.</div>
+      </details>
+      <details>
+        <summary>What if the problem comes and goes?</summary>
+        <div>Intermittent problems can take patience, but they can still be diagnosed. Tell us when the problem happens, what you hear and which warning lights appear. If we need more testing or another visit, we will say so instead of pretending the problem is solved.</div>
+      </details>
+      <details>
+        <summary>Do I need to tow my car before you can diagnose it?</summary>
+        <div>Usually not. We can begin the diagnostic wherever the vehicle is parked, as long as the location is safe and accessible. If the car eventually needs to be moved for a repair, we explain why before you arrange anything.</div>
+      </details>
+      <details>
+        <summary>Do you only connect a scanner and read the codes?</summary>
+        <div>No. A code is a clue. Our job is to find out why that code appeared and what is actually causing the problem. We confirm the failure before telling you to replace a part.</div>
+      </details>
+      <details>
+        <summary>Is a mobile diagnostic as thorough as taking the car to a shop?</summary>
+        <div>A mobile diagnostic is professional diagnostic work performed at your location. The mechanic works on your vehicle during the appointment, and you can see what was found instead of waiting for a call from a service counter. If the problem requires something that cannot be done safely at your location, we tell you directly.</div>
+      </details>
+      <details>
+        <summary>What will I know when the diagnostic is finished?</summary>
+        <div>You will know what we found, what it means and what should happen next. We show you the problem whenever possible and answer your questions at the vehicle. If the cause still needs more testing, we explain what remains instead of giving you a convenient guess.</div>
+      </details>
+      <details>
+        <summary>How much does a mobile car diagnostic cost?</summary>
+        <div>We tell you the diagnostic price before you book. If the vehicle needs a repair, you receive that price before the work begins. We do not add extra work to the bill without speaking with you and getting your approval first.</div>
+      </details>
+      <details>
+        <summary>How long does a car diagnostic take?</summary>
+        <div>There is no honest answer that fits every vehicle. Some problems can be confirmed during the first visit. Electrical faults and problems that come and go may take longer, but we keep you informed while we work.</div>
+      </details>
+      <details>
+        <summary>Can you repair the vehicle after finding the problem?</summary>
+        <div>Often, yes. If the repair is suitable for your location and the part is available, we may be able to finish it during the same visit. Otherwise, we give you the price and arrange a time to return.</div>
+      </details>
+      <details>
+        <summary>Can KPEMM give me a second opinion on a shop or dealer diagnosis?</summary>
+        <div>Yes. We can examine the vehicle and compare what we find with the diagnosis or estimate you received. We then show you the problem and explain it in plain language, so you can decide whether the recommended repair makes sense.</div>
+      </details>
+      <details>
+        <summary>How do I book a mobile diagnostic in Kelowna?</summary>
+        <div>Call or text KPEMM at 250-859-5467. Send us the year, make and model of the vehicle, its location and a short description of the problem. We serve Kelowna, West Kelowna, Lake Country, Vernon, Peachland, Penticton and nearby Okanagan communities.</div>
       </details>
     </section>
 
@@ -687,7 +539,7 @@
       <div class="ppi-map__embed">
         <iframe
           src="https://maps.google.com/maps?q=Kelowna,BC&z=9&output=embed"
-          width="100%" height="360" style="border:0;"
+          width="100%" height="360"
           loading="lazy"
           referrerpolicy="no-referrer-when-downgrade"
           title="Map of our service area: Kelowna, West Kelowna, Vernon, Lake Country, Peachland, Penticton, and the Okanagan Valley">
@@ -719,7 +571,6 @@
   <!-- FLOATING CTA - Premium Engineering Authority -->
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
     <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button"
-      style="background: linear-gradient(135deg, #0f172a 0%, #1e40af 100%) !important; border: 2px solid #fbbf24 !important; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4), 0 0 20px rgba(251, 191, 36, 0.3) !important;"
       aria-label="Book Engineering-Grade Same-Day Diagnostic">
       Book Same-Day Diagnostic ✓
     </a>
