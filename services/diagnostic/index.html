@@ -6,8 +6,8 @@
   <script src="/analytics.js"></script>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon-180.png" />
   <title>Mobile Car Diagnostic Kelowna. We Find the Cause and Get It Fixed</title>
   <meta name="description"
     content="Car won't start? Warning light on? Our mobile mechanics come to you, find the real cause and take the job from diagnosis to repair. 65 Google reviews." />
@@ -34,8 +34,11 @@
   <meta name="twitter:image" content="https://kelownaprotechmobilemech.com/images/diagnostic-og.jpg" />
 
   <!-- Preload hero image (LCP optimization) -->
-  <link rel="preload" as="image" href="/images/diag-ranger-500w.webp" media="(max-width: 640px)" type="image/webp">
-  <link rel="preload" as="image" href="/images/diag-ranger-900w.webp" media="(min-width: 641px) and (max-width: 1024px)" type="image/webp">
+  <link rel="preload" as="image" href="/images/diag-ranger-500w.webp"
+    imagesrcset="/images/diag-ranger-500w.webp 375w, /images/diag-ranger-mobile-780w.webp 780w"
+    imagesizes="100vw" media="(max-width: 640px)" type="image/webp">
+  <link rel="preload" as="image" href="/images/diag-ranger-900w.webp" media="(min-width: 641px) and (max-width: 767px)" type="image/webp">
+  <link rel="preload" as="image" href="/images/diag-ranger-1300w.webp" media="(min-width: 768px)" type="image/webp">
   <!-- CSS ya existente del sitio -->
   <link rel="stylesheet" href="/estilos-header2.css" />
   <link rel="stylesheet" href="/service-tiles.css" />
@@ -366,8 +369,9 @@
       </div>
       <div class="services-hero__image-wrap">
         <picture>
-          <source srcset="/images/diag-ranger-500w.webp" media="(max-width: 640px)">
-          <source srcset="/images/diag-ranger-900w.webp" media="(max-width: 1024px)">
+          <source srcset="/images/diag-ranger-500w.webp 375w, /images/diag-ranger-mobile-780w.webp 780w"
+            sizes="100vw" media="(max-width: 640px)">
+          <source srcset="/images/diag-ranger-900w.webp" media="(max-width: 767px)">
           <img src="/images/diag-ranger-1300w.webp"
             alt="Kelowna Protech Elite mechanic running an on-site diagnostic scan on a white Ford Ranger in a Kelowna driveway"
             class="services-hero__hero-img"
