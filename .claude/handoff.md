@@ -54,34 +54,48 @@ Disciplina obligatoria, en este orden:
 
 ---
 
-## ⚠️ BLOQUEANTE — hay que resolver esto antes de fusionar
+## Estado real de las ramas (2026-09-02, cierre)
 
-La rama se creó desde un **`main` local desactualizado** (parado antes del
-2026-08-18). El `main` real tiene 11 commits más: la reconstrucción de
-`services/diagnostic/`, hecha por Jose el 16-18 de agosto y **ya publicada**.
+**Son dos ramas, pero la segunda contiene a la primera.** Para publicar todo
+alcanza con fusionar `feat/servicios-selector-arriba`. La otra queda como
+punto de reversión por si hay que sacar solo la parte de servicios.
 
-Consecuencias, verificadas contra el sitio en vivo el 2026-09-02:
+| Rama | Qué agrega |
+|---|---|
+| `feat/plomeria-enlaces-ppi` | 12 commits: enlaces internos, ítem de menú, fusión con `main`, MEDICIONES, napkin y handoff |
+| `feat/servicios-selector-arriba` | los de arriba **+ 3 commits**: selector de servicios arriba, reseñas junto al selector, reseñas de mecánica con fotos reales |
 
-1. Los dos cambios míos a `services/diagnostic/` se hicieron sobre la versión
-   vieja. El enlace al caso GMC lo puse **dentro de la historia de Gabe**, que
-   la reconstrucción eliminó. Hay que rehacerlos sobre la versión buena.
-2. **La reconstrucción borró el único enlace del cuerpo hacia
-   `/services/pre-purchase/`** (decía *"pre-purchase car inspection in
-   Kelowna"*). Hoy la página en vivo no enlaza a la inspección.
-3. **La página de diagnóstico en vivo es un callejón sin salida**: su único
-   enlace interno del cuerpo es "Home".
-4. El conteo de **19 enlaces** hacia la inspección se midió contra la versión
-   vieja. Contra el `main` real es **uno menos**. Hay que recontar y corregir
-   `MEDICIONES/2026-09-02-ANTES-plomeria-enlaces.md`.
+Las dos subidas y al día con GitHub. El sitio en vivo sin tocar.
 
-### Los 4 pasos exactos para arrancar
+### El bloqueante del `main` desactualizado: RESUELTO
 
-1. `git fetch origin` y traer `origin/main` a la rama.
-2. Rehacer los 2 cambios de `services/diagnostic/` sobre la versión nueva.
-3. Devolver el enlace a la inspección que se perdió en agosto.
-4. Recontar enlaces y corregir el archivo de MEDICIONES.
+La rama se había creado desde una copia local tres semanas atrasada. Se
+fusionó `origin/main`, se conservó entera la reconstrucción de
+`services/diagnostic/` de Jose, y se rehicieron los dos cambios sobre la
+versión buena. Verificado: los 7 títulos de `services/` siguen ahí, ningún
+bloque perdido.
 
----
+**De paso se arregló una fuga real:** la reconstrucción del 2026-08-18 había
+dejado `services/diagnostic/` con un solo enlace interno del cuerpo ("Home") y
+había borrado el único enlace hacia `/services/pre-purchase/`. Se le devolvió
+una sección "Related Services". Salidas del cuerpo: 1 → 4.
+
+### Auditoría de las dos ramas (2026-09-02)
+
+| | |
+|---|---|
+| Credenciales, secretos, código peligroso | ninguno |
+| Líneas realmente nuevas / borradas | 66 / 28 — todas las borradas son reemplazos |
+| Imágenes con medidas, `loading`, `alt` | 100% |
+| Estilos dentro del HTML en lo nuevo | 0 |
+| Jerarquía de títulos | sin saltos |
+| Huérfanas · rotos · sitemap · canonical · JSON-LD | limpio |
+
+**Un hallazgo menor, aceptado por Jose:** la sección de reseñas quedó anidada
+dentro de la de servicios; las dos tienen `h2`, así que las tarjetas de
+servicio quedan después del `h2` de reseñas en el esquema. HTML válido y se ve
+bien. Se dejó así a propósito: tener las reseñas en la pantalla 2 vale más que
+la prolijidad del esquema.
 
 ## Qué se hizo y por qué
 
@@ -122,9 +136,34 @@ en las dos páginas que venden (inspección y diagnóstico). Sí igualar la
 
 ### De esta sesión
 
-1. **El bloqueante de arriba** (4 pasos).
-2. **Números de reseñas:** el sitio dice `4.9` / `65` en 5 páginas; la ficha de
-   Google dice **4,8 / 68**. Jose confirmó 68 pero no se cambió — decisión suya.
+1. **🔴 MODO OSCURO — lo más urgente del sitio.** Ninguna de las 8 páginas
+   declara su color de fondo (`background` en `body`, o `color-scheme`). En un
+   celular con modo oscuro activado el navegador pinta el lienzo negro y el
+   texto oscuro desaparece. Medido solo en `/services/`: **46 textos con
+   contraste 1,18** (el mínimo legible es 4,5), incluidos los títulos
+   principales y los letreros de las 4 fotos del selector. Afecta a todo
+   visitante con modo oscuro, y no lo causó ningún cambio de esta sesión — es
+   de siempre. Se arregla declarando el fondo; es de los arreglos más baratos
+   que hay. Rama propia.
+2. **🟠 Números de reseñas — `services/index.html` se contradice a sí misma.**
+   El número real y cerrado por Jose es **68 reseñas · 4,8★** (confirmado en el
+   panel de Google el 2026-09-01 y en
+   `Marketing workers/02-Marca-y-Contexto/reviews-gbp-v2.md`, que es la fuente
+   de verdad; la API de GBP sigue bloqueada).
+   Al reemplazar las reseñas se cambió el subtítulo de esa sección a `4.8 · 68`,
+   pero en la **misma página** quedaron 4 lugares diciendo `4.9 · 65`:
+   línea 1031-1032 (JSON-LD `aggregateRating`), 1100 (encabezado), 1400
+   (`why-section__sub`), 1503 (bloque de confianza).
+   **Una página que se desmiente a sí misma es peor que cualquiera de los dos
+   números**, y el JSON-LD que no coincide con el perfil de Google puede costar
+   la estrella en los resultados.
+   **Estado en el resto del sitio:** siguen en `4.9` / `65` en portada,
+   historia, casos, caso GMC, diagnóstico e inspección.
+   **Qué hacer:** rama propia y corregir las 7 páginas de una vez a `4.8` / `68`,
+   texto visible y JSON-LD. Toca la portada, así que necesita el OK explícito de
+   Jose. Mientras no se haga, la rama `feat/servicios-selector-arriba` publica
+   una página inconsistente consigo misma.
+
 3. **`50 five-star`** en `.claude/skills/protech-gbp/references/business-context.md:39`
    — marcado por el guardián el 2-sep, sin arreglar.
 4. **Fase siguiente aprobada en concepto:** el racimo de páginas para autoridad
@@ -135,6 +174,19 @@ en las dos páginas que venden (inspección y diagnóstico). Sí igualar la
 5. **Lakeshore Automotive** — el que está 1º. Nunca lo miramos.
 6. **Al publicar:** anotar la fecha en `MEDICIONES/`, borrar el tag de respaldo,
    y volver a medir a los 21 días.
+
+7. **Idea de Jose, sin decidir: versiones en francés y español.** Técnicamente
+   posible (carpetas por idioma + `hreflang`). No se construye nada todavía por
+   tres razones dadas y aceptadas: multiplica por tres el mantenimiento de cada
+   cambio; no sabemos si hay demanda; y choca con la estrategia de autoridad
+   temática — 16 páginas traducidas ensanchan el sitio en vez de profundizarlo,
+   cuando hoy hay **una sola** página sobre inspecciones.
+   **Qué hacer antes de decidir:** medir. Buscar en Search Console consultas en
+   francés o español, y en GA4 el idioma del navegador de los visitantes. Si
+   aparece demanda, empezar por **una sola página** en español (la de
+   inspección) como prueba, nunca el sitio entero. El español Jose lo puede
+   escribir y verificar; el francés no, y una página en mal francés hace más
+   daño que no tenerla.
 
 ### Heredados del handoff del 2026-08-13, todavía abiertos
 
