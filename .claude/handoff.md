@@ -136,7 +136,13 @@ en las dos páginas que venden (inspección y diagnóstico). Sí igualar la
 
 ### De esta sesión
 
-1. **🔴 MODO OSCURO — lo más urgente del sitio.** Ninguna de las 8 páginas
+1. ~~MODO OSCURO~~ **HECHO** — rama `fix/modo-oscuro-fondo`. Dos declaraciones
+   en `estilos-header2.css` (`:root{color-scheme:light}` + `body{background:#fff}`),
+   ningún HTML tocado. De 50 textos ilegibles en `/services/` a 0 atribuibles al
+   modo oscuro; verificado en las 8 páginas en oscuro **y en claro como control**,
+   con resultados idénticos. No es un tema oscuro, es evitar que el sitio se rompa.
+   *Descripción original del problema, por si hace falta el contexto:*
+   **MODO OSCURO.** Ninguna de las 8 páginas
    declara su color de fondo (`background` en `body`, o `color-scheme`). En un
    celular con modo oscuro activado el navegador pinta el lienzo negro y el
    texto oscuro desaparece. Medido solo en `/services/`: **46 textos con
@@ -145,24 +151,12 @@ en las dos páginas que venden (inspección y diagnóstico). Sí igualar la
    visitante con modo oscuro, y no lo causó ningún cambio de esta sesión — es
    de siempre. Se arregla declarando el fondo; es de los arreglos más baratos
    que hay. Rama propia.
-2. **🟠 Números de reseñas — `services/index.html` se contradice a sí misma.**
-   El número real y cerrado por Jose es **68 reseñas · 4,8★** (confirmado en el
-   panel de Google el 2026-09-01 y en
-   `Marketing workers/02-Marca-y-Contexto/reviews-gbp-v2.md`, que es la fuente
-   de verdad; la API de GBP sigue bloqueada).
-   Al reemplazar las reseñas se cambió el subtítulo de esa sección a `4.8 · 68`,
-   pero en la **misma página** quedaron 4 lugares diciendo `4.9 · 65`:
-   línea 1031-1032 (JSON-LD `aggregateRating`), 1100 (encabezado), 1400
-   (`why-section__sub`), 1503 (bloque de confianza).
-   **Una página que se desmiente a sí misma es peor que cualquiera de los dos
-   números**, y el JSON-LD que no coincide con el perfil de Google puede costar
-   la estrella en los resultados.
-   **Estado en el resto del sitio:** siguen en `4.9` / `65` en portada,
-   historia, casos, caso GMC, diagnóstico e inspección.
-   **Qué hacer:** rama propia y corregir las 7 páginas de una vez a `4.8` / `68`,
-   texto visible y JSON-LD. Toca la portada, así que necesita el OK explícito de
-   Jose. Mientras no se haga, la rama `feat/servicios-selector-arriba` publica
-   una página inconsistente consigo misma.
+2. ~~Números de reseñas~~ **HECHO** — rama `fix/numeros-resenas-68`. 44 líneas
+   en 7 páginas pasadas de `4.9` / `65` a **`4.8` / `68`**, texto visible y
+   JSON-LD. Los 5 bloques `aggregateRating` coinciden ahora con el perfil de
+   Google. Verificado que no se tocaron números ajenos (`line-height: 1.65`,
+   `rgba(...,0.65)`, `--w:65%`). Fuente: `reviews-gbp-v2.md`, confirmado por
+   Jose en su panel el 2026-09-01.
 
 3. **`50 five-star`** en `.claude/skills/protech-gbp/references/business-context.md:39`
    — marcado por el guardián el 2-sep, sin arreglar.
