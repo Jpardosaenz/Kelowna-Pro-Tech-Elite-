@@ -99,11 +99,18 @@ promedio no.
 
 ## 6 · Arquitectura interna — antes y después
 
-| | Antes | Después |
+> **Corregido el 2026-09-02, después de fusionar `main`.** Los números de
+> "antes" que había acá primero se midieron contra una copia local
+> desactualizada del proyecto, tres semanas atrasada respecto de la
+> reconstrucción publicada de `services/diagnostic/`. Estos son los buenos,
+> medidos contra el `main` real.
+
+| | Antes (real) | Después |
 |---|---:|---:|
-| Enlaces hacia `/services/pre-purchase/` | 7 | **19** |
-| Páginas que la enlazan | 4 | **7** |
+| Enlaces hacia `/services/pre-purchase/` | **6** | **19** |
+| Páginas que la enlazan | **3** | **7** |
 | Enlaces hacia el caso GMC | 1 | **2** |
+| Salidas del cuerpo en `/services/diagnostic/` | **1** (solo "Home") | **4** |
 | Textos de enlace genéricos (*"Diagnostic Details"*) | 6 | **0** |
 | Páginas huérfanas | 0 | 0 |
 | Enlaces rotos | 0 | 0 |
@@ -116,14 +123,22 @@ Reparto completo después del cambio:
 | **Inspección pre-compra** | **19** | 7 |
 | Diagnóstico | 12 | 5 |
 | Casos reales | 11 | 7 |
+| Mantenimiento | 8 | 6 |
 | Historia | 8 | 7 |
 | Servicios | 8 | 7 |
-| Mantenimiento | 7 | 5 |
 | Caso GMC | 2 | 2 |
+
+### Lo que se arregló de paso
+
+La reconstrucción de `services/diagnostic/` del 2026-08-18 había dejado esa
+página **sin ningún enlace interno del cuerpo salvo "Home"**, y de paso borró
+el único enlace que existía hacia la página de inspección. Llevaba dos semanas
+así. Se le devolvió una sección "Related Services" con los tres enlaces:
+inspección, caso GMC y mantenimiento.
 
 ---
 
-## 7 · Qué se cambió (8 commits)
+## 7 · Qué se cambió
 
 1. Goal del trabajo
 2. `our-story/` — párrafo con enlace bajo la barra de capacidades
@@ -131,8 +146,12 @@ Reparto completo después del cambio:
 4. Caso GMC — la inspección entra en "Related Services"
 5. `services/` — las 2 preguntas de inspección se redirigen a la página dedicada
 6. **Menú** — "Pre-Purchase Inspection" como ítem propio en las 8 páginas
-7. `services/diagnostic/` — enlace al caso GMC (sacándolo del aislamiento)
-8. `services/` — los 7 textos de enlace de las tarjetas, descriptivos
+7. `services/` — los 7 textos de enlace de las tarjetas, descriptivos
+8. Documentación: napkin y handoff
+9. **Fusión con el `main` real** — la rama se había creado desde una copia
+   desactualizada. Se conservó entera la reconstrucción de diagnóstico de Jose
+10. `services/diagnostic/` — sección "Related Services" nueva, que devuelve el
+    enlace a la inspección perdido el 18-ago y saca al caso GMC del aislamiento
 
 **Lo que NO se tocó:** el cuerpo de la portada, ningún título, ningún H1,
 ninguna dirección de página, ninguna descripción, y nada del contenido de la
