@@ -7,7 +7,7 @@
 
 ---
 
-## PROMPT PARA ARRANCAR LA PRÓXIMA SESIÓN (pegar tal cual)
+## Estado de la rama
 
 ```
 Lee /Users/EPARDOSAENZ/Documents/KPEMM/Proyect Web/Website KPEMM/.claude/handoff.md
