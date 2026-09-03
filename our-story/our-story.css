@@ -228,6 +228,17 @@ body {
   align-items: center;
   gap: 7px;
 }
+.capabilities__note {
+  font-size: 14px;
+  line-height: 1.65;
+  color: #cbd5e1;
+  margin: 22px 0 0;
+}
+.capabilities__note a {
+  color: var(--premium-gold);
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
 .cap-item::before {
   content: "";
   display: block;
