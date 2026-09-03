@@ -1,3 +1,29 @@
+/*
+ * ==================================================================
+ * ESQUEMA DE COLOR — arreglo del modo oscuro (2026-09-02)
+ * ==================================================================
+ * El sitio está diseñado sobre fondo blanco: los textos son grises y
+ * azules oscuros. Al no declarar ningún color de fondo, un navegador
+ * con el modo oscuro del sistema activado pintaba el lienzo de negro y
+ * esos textos desaparecían: 50 textos por debajo del contraste mínimo
+ * en /services/, incluidos los títulos y los letreros del selector.
+ *
+ * `color-scheme: light` le dice al navegador que esta página se sirve
+ * en claro (y de paso pinta claros los controles de formulario y las
+ * barras de scroll). El `background` explícito en body cubre el caso
+ * de que el navegador ignore lo anterior.
+ *
+ * En modo claro no cambia nada: el navegador ya pintaba blanco.
+ * Verificado sobre 8 tipos de elemento, resultado idéntico.
+ *
+ * Esto NO es un tema oscuro. Si algún día se quiere uno de verdad, hay
+ * que definir una paleta completa; esto solo evita que el sitio se
+ * rompa mientras tanto.
+ */
+:root {
+  color-scheme: light;
+}
+
 /* Skip-to-content link (accessibility) */
 .skip-link {
   position: absolute;
@@ -74,6 +100,7 @@ h1 {
 
 /***** HEADER MOBILE - VERSIÓN FINAL *****/
 body {
+  background: #ffffff;
   font-family: "Inter", 'Inter Fallback', sans-serif;
   /* Aplica 'Inter' con fallback ajustado para evitar CLS */
   -webkit-font-smoothing: antialiased;
