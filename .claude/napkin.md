@@ -14,7 +14,23 @@
 > revisar el diff antes del commit) eran copia textual de `AGENTS.md` y `CLAUDE.md`, que se
 > cargan igual. Fuente única ahora: esos dos archivos. No volver a copiarlos acá.
 
-1. **[2026-09-02] Measure the real thing, never a copy of it. Four wrong conclusions in one
+1. **[2026-09-04] GSC average position cannot answer "where do we rank in Kelowna",
+   and six months of analysis were built on it.** It averages every impression
+   across every city and device. This site showed 15.3 for
+   "mobile pre purchase inspection kelowna" while the real Kelowna SERP, in
+   incognito, showed **2nd** (Jose, screenshot, 2026-09-02). Both are correct;
+   they answer different questions. The average is diluted by impressions in
+   Vancouver, Calgary, Toronto and the US, where the business does not operate.
+   Two limits verified 2026-09-04: the connected MCP functions take only dates
+   and a row limit, with no country/region/city filter at all; and the full GSC
+   UI filters by **country only** — no city dimension exists.
+   Do instead: for local position use Jose's incognito search from Kelowna or
+   Google Business Profile, never GSC's average. Keep using GSC for what it is
+   good at: which queries exist, click and impression trends, indexation. When
+   quoting any position, always state the source — "GSC worldwide average" or
+   "real Kelowna SERP, date" — never a bare "position".
+
+2. **[2026-09-02] Measure the real thing, never a copy of it. Four wrong conclusions in one
    session all came from this single mistake, and each one had to be walked back in front of
    the owner.** Read the repo and got the page wrong (it already had the reviews, the sample
    report and the neighbourhoods). Trusted `img.naturalWidth` from the browser pane (reported
@@ -30,16 +46,16 @@
    - Verify tool output against the source (file on disk, live HTML) before quoting it.
    - Say "I have not verified this" rather than presenting an unverified number as a fact.
 
-2. **[2026-09-02] The rebuild of `services/diagnostic/` on 2026-08-18 silently removed the only
+3. **[2026-09-02] The rebuild of `services/diagnostic/` on 2026-08-18 silently removed the only
    body link to `/services/pre-purchase/` and left the page with no internal outbound links at
    all except "Home".** A page rebuild is an internal-link event, not only a design one, and no
    one noticed for two weeks.
    Do instead: before merging any page rebuild, diff the body's outbound internal links against
    the version being replaced and re-add any that were dropped on purposeless grounds.
 
-3. **[2026-07-18] Verify behavior, not only static screenshots.**
+4. **[2026-07-18] Verify behavior, not only static screenshots.**
    Do instead: test responsive state, scroll, DOM position, CTA action, and relevant breakpoints.
-4. **[2026-08-05] Never merge a page whose internal links point to pages that don't exist yet.**
+5. **[2026-08-05] Never merge a page whose internal links point to pages that don't exist yet.**
    Applies to any hub/index/cluster page built incrementally. Check with a filesystem test
    for every linked slug, not by assuming "they must be done by now".
    Do instead: `for u in <slugs>; do [ -f "path/$u/index.html" ] || echo "404: $u"; done`
@@ -47,19 +63,19 @@
    it hits the visitor with the most intent to call, and search engines/AI penalize dead
    internal links. Confirmed on field-reports: hub was finished and audited, but the 6
    linked case pages did not exist yet, so merge was correctly held.
-5. **[2026-08-13] An AI-writing-pattern audit must cover the whole page, not just the block
+6. **[2026-08-13] An AI-writing-pattern audit must cover the whole page, not just the block
    you just wrote.** First pass on the GMC case page checked only the article body and
    assumed headings, badges, and footer were clean; a full-page pass found 24 instances
    where the first pass found 8 — including patterns in text written earlier the same
    session, which needs the same scrutiny as inherited copy.
    Do instead: scan title, meta, every heading, every badge/label, and the footer, not just
    the paragraph currently being edited.
-6. **[2026-08-13] Editing an external stylesheet and then measuring "no change" usually
+7. **[2026-08-13] Editing an external stylesheet and then measuring "no change" usually
    means browser cache, not a bad edit.** Lost a full measurement cycle assuming a CSS fix
    didn't work before checking cache.
    Do instead: if a measured value doesn't move after an external CSS edit, bust that
    specific `<link>` (`link.href += '?bust=' + Date.now()`) before concluding the edit failed.
-7. **[2026-08-13] CSS Grid rows sized `1fr` default to `min-height: auto`, which can push
+8. **[2026-08-13] CSS Grid rows sized `1fr` default to `min-height: auto`, which can push
    the grid taller than an explicit `height` on the container.** Caused a hero to overflow
    its viewport-fit height by 23px despite a fixed `height` being set.
    Do instead: use `minmax(0, 1fr)` for any row that must respect the container's fixed height.
