@@ -878,12 +878,12 @@
       box-shadow: 0 8px 20px rgba(15, 23, 42, 0.4), 0 0 20px rgba(251, 191, 36, 0.3) !important;
     }
 
-/* Tarea 1 (2026-10-18): la frase con enlace debajo de la lista de síntomas lleva espacio arriba para no verse pegada al último síntoma */
+/* Tarea 1 (2026-10-18): la frase con enlace debajo de la lista de síntomas lleva espacio arriba para no verse pegada al último síntoma. Primero teléfono, luego computadora. */
 .diag-symptoms__list + .diag-symptoms__intro {
-  margin: 34px 0 0;
+  margin: 28px 0 0;
 }
-@media (max-width: 767px) {
+@media (min-width: 768px) {
   .diag-symptoms__list + .diag-symptoms__intro {
-    margin-top: 28px;
+    margin-top: 34px;
   }
 }
