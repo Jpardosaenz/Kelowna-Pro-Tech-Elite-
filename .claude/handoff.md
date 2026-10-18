@@ -15,6 +15,9 @@ Registro completo, pruebas y decisiones de Jose: `Mobile Mechanic KPEMM /Marketi
 - El límite viene de los estilos compartidos del encabezado (`estilos-header2.css`, bloque `@media (min-width: 1024px)` de `.mobile-menu`), que usan las 8 páginas.
 - **Hacer:** tarea aparte, mobile-first, que arregle el ancho del menú en fila; probar las 8 páginas en 1024, 1180, 1240, 1280, 1366, 1400 y 1440, y en teléfono, con el método de prueba sin Analytics del registro 06. **No fusionar `test` con `main` hasta cerrar este pendiente** o hasta que Jose decida otra cosa por escrito.
 
+## Aviso para subir a GitHub
+En GitHub existe la rama `test/cta-sticky-bar-mobile`; mientras exista, GitHub rechaza una rama llamada exactamente `test`. Antes de pedir a Jose la autorización para subir, acordar otro nombre (por ejemplo `test-nivel1-tarea1`). No borrar esa rama.
+
 ## Otros pendientes anotados (anteriores a la Tarea 1, no bloquean)
 - Opciones del menú de teléfono de 28–30 de alto (el libro de marca pide 44).
 - El color de los enlaces de texto del sitio no es de la paleta oficial.
