@@ -3,10 +3,10 @@
 ## Estado de la rama
 
 `test`, creada desde `main` (78f748c) el 2026-10-18. **Nada subido a GitHub, nada en producción.**
-Guardados: `33618f4` (enlaces), `594805a` (contraste), `2335519` (estilos a su archivo según el libro de marca), `8402f64` (mobile-first), más este traspaso.
+Guardados: `33618f4` (enlaces), `594805a` (contraste), `2335519` (estilos a su archivo según el libro de marca), `8402f64` (mobile-first), `bc39b5a` y `f77812b` (traspaso), `dade115` (textos con enfoque en pérdida aprobados por Jose 14:34), más este traspaso.
 Registro completo, pruebas y decisiones de Jose: `Mobile Mechanic KPEMM /Marketing workers /Auditorias/2026-10-18 Posicionamiento PPI sin mobile/06-implementacion-nivel-1.md`.
 
-## ⛔ PENDIENTE IMPORTANTE ANTES DE SUBIR A PRODUCCIÓN (decisión de Jose, 2026-10-18 14:11)
+## BLOQUEANTE: PENDIENTE IMPORTANTE ANTES DE SUBIR A PRODUCCIÓN (decisión de Jose, 2026-10-18 14:11)
 
 **El menú en fila se parte en varios renglones en computadoras portátiles.**
 - Desde 1024 de ancho el menú pasa a fila, pero su ancho está limitado y las opciones se doblan en 2 renglones cuando no caben.
