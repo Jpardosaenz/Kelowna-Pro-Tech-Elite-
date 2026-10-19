@@ -932,3 +932,83 @@
 
 /* .ppi-map__embed rules moved to shared estilos-header2.css so every
    page using this component gets them, not just this one. */
+
+/* ── What buyers say: review excerpts as estimate-sheet line items (mobile first) ── */
+.ppi-voices { padding-top: 32px; }
+.ppi-voices__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #a86a00;
+  margin: 0 0 6px;
+}
+.ppi-voices h2 { margin: 0 0 6px; }
+.ppi-voices__rating {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #3f3f46;
+  margin: 0 0 18px;
+}
+.ppi-voices__rating span { color: var(--premium-gold); letter-spacing: 2px; }
+.ppi-voices__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid #0d0d0b;
+}
+.ppi-voices__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding: 14px 0;
+  border-bottom: 1px dashed #c9c6bd;
+}
+.ppi-voices__outcome {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: #0d0d0b;
+  background: var(--premium-gold);
+  justify-self: start;
+  padding: 2px 8px;
+  border-radius: 3px;
+}
+.ppi-voices__quote {
+  margin: 4px 0 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.5;
+  color: #18181b;
+}
+.ppi-voices__who {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #52525b;
+}
+.ppi-voices__link {
+  display: inline-block;
+  margin: 16px 0 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: #0b4fa3;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-height: 44px;
+  line-height: 44px;
+}
+.ppi-voices__link:focus-visible { outline: 3px solid var(--premium-gold); outline-offset: 2px; }
+@media (min-width: 768px) {
+  .ppi-voices__row {
+    grid-template-columns: 168px 1fr;
+    column-gap: 24px;
+    align-items: baseline;
+  }
+  .ppi-voices__outcome { grid-row: 1 / span 2; }
+  .ppi-voices__quote { margin: 0; }
+  .ppi-voices__who { grid-column: 2; }
+}
