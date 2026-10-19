@@ -2804,7 +2804,7 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1399px) {
+@media (min-width: 1024px) and (max-width: 1399.98px) {
   .kpem-header-mobile {
     padding: 20px 24px;
     gap: 24px;
@@ -2816,6 +2816,11 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
 
   .kpem-header-mobile .header-cta {
     margin-left: auto;
+  }
+
+  /* Sin fundido de color: al cerrar la lista ☰ la fila no pasa de blanco a gris */
+  #mobile-navigation > ul > li > a {
+    transition: none;
   }
 
   /* Lista completa abierta con el botón ☰ (mismo aspecto que en teléfono) */
@@ -2867,14 +2872,14 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
   }
 }
 
-@media (min-width: 1024px) and (max-width: 1199px) {
+@media (min-width: 1024px) and (max-width: 1199.98px) {
   /* Fila oculta: el menú se abre solo con el botón ☰ */
   #mobile-navigation {
     display: none;
   }
 }
 
-@media (min-width: 1200px) and (max-width: 1399px) {
+@media (min-width: 1200px) and (max-width: 1399.98px) {
   #mobile-navigation > ul {
     gap: 16px;
   }
