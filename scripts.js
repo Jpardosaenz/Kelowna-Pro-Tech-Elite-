@@ -47,7 +47,24 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   document.addEventListener("keydown", (event) => {
-    if (event.key === "Escape") closeMenu(true);
+    if (!isMenuOpen()) return;
+    if (event.key === "Escape") {
+      closeMenu(true);
+      return;
+    }
+    // Tab no sale de la lista abierta: del último vuelve al primero y al revés.
+    if (event.key === "Tab" && mobileMenu) {
+      const focusable = mobileMenu.querySelectorAll("a, button");
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      if (event.shiftKey && document.activeElement === first) {
+        event.preventDefault();
+        last.focus();
+      } else if (!event.shiftKey && document.activeElement === last) {
+        event.preventDefault();
+        first.focus();
+      }
+    }
   });
 
   /*
