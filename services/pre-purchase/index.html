@@ -486,21 +486,96 @@
         arrives within 1 hour: every finding with a repair suggestion and an
         estimated price, plus real negotiation points you can show the seller.
       </p>
-      <figure class="ppi-report__figure">
-        <img
-          src="/images/ppi-sample-report-450w.webp"
-          srcset="/images/ppi-sample-report-450w.webp 450w, /images/ppi-sample-report-900w.webp 900w"
-          sizes="(max-width: 640px) 90vw, 450px"
-          alt="Sample pre-purchase inspection report page for a 1990 Ford F-150, showing engine and brake findings with urgency ratings"
-          width="695" height="900"
-          loading="lazy" decoding="async"
-          class="ppi-report__img"
-          data-zoom="/images/ppi-sample-report-900w.webp"
-          tabindex="0"
-          role="button"
-          aria-label="Click to enlarge sample inspection report" />
-        <figcaption>Real report, real client. Tap to enlarge.</figcaption>
-      </figure>
+      <!-- Real report sample (2020 Subaru Forester, 17 Oct 2026). Private details removed. -->
+      <article class="ppi-dash" aria-label="Sample of a real pre-purchase inspection report">
+        <div class="ppi-dash__bar">Kelowna Pro-Tech &nbsp;|&nbsp; Elite Mobile Mechanic</div>
+        <div class="ppi-dash__body">
+          <p class="ppi-dash__eyebrow">Pre-purchase inspection | Decision dashboard</p>
+          <h3 class="ppi-dash__title">2020 Subaru Forester</h3>
+          <p class="ppi-dash__spec">2.5i Touring / Boxer / CVT / All-wheel drive</p>
+          <img class="ppi-dash__photo"
+            src="/images/ppi-report-forester-2020-600w.webp"
+            srcset="/images/ppi-report-forester-2020-600w.webp 600w, /images/ppi-report-forester-2020-1056w.webp 1056w"
+            sizes="(max-width: 767px) 92vw, 720px"
+            alt="2020 Subaru Forester inspected on a dealer lot in Kelowna"
+            width="1056" height="490" loading="lazy" decoding="async" />
+          <div class="ppi-dash__verdict">
+            <span class="ppi-dash__verdict-label">Conditional purchase</span>
+            <span class="ppi-dash__verdict-note">Suitable to consider after battery replacement, dealer resolution of listed findings, and a satisfactory buyer road test.</span>
+          </div>
+          <ul class="ppi-dash__stats">
+            <li><span class="ppi-dash__num">22 / 23</span><span class="ppi-dash__lbl">Modules without DTCs</span></li>
+            <li><span class="ppi-dash__num">50%</span><span class="ppi-dash__lbl">Brake pad estimate</span></li>
+            <li><span class="ppi-dash__num ppi-dash__num--bad">Replace</span><span class="ppi-dash__lbl">12 V battery</span></li>
+          </ul>
+          <p class="ppi-dash__eyebrow ppi-dash__eyebrow--gap">Owner dashboard | What matters and what to do next</p>
+          <h4 class="ppi-dash__glance">Your inspection at a glance</h4>
+          <ul class="ppi-dash__cards">
+          <li class="ppi-dash__card ppi-dash__card--ok">
+            <span class="ppi-dash__area">Engine data</span>
+            <span class="ppi-dash__status">Favourable</span>
+            <span class="ppi-dash__note">Low fuel-trim corrections in the sampled captures; no engine DTCs in the supplied scan.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--ok">
+            <span class="ppi-dash__area">Engine oil / coolant</span>
+            <span class="ppi-dash__status">Satisfactory</span>
+            <span class="ppi-dash__note">Technician reports correct levels and satisfactory oil condition.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--ok">
+            <span class="ppi-dash__area">Brakes</span>
+            <span class="ppi-dash__status">Serviceable</span>
+            <span class="ppi-dash__note">Rotors reported good; pads approximately 50% by visual estimate.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--ok">
+            <span class="ppi-dash__area">Charging</span>
+            <span class="ppi-dash__status">Satisfactory</span>
+            <span class="ppi-dash__note">Recorded output 14.24–14.42 V across separate tests; ripple reported 22 mV.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--bad">
+            <span class="ppi-dash__area">Battery</span>
+            <span class="ppi-dash__status">Replace</span>
+            <span class="ppi-dash__note">Technician requires replacement. Low-charge / low-cranking evidence; service terminals.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--act">
+            <span class="ppi-dash__area">Reset / readiness</span>
+            <span class="ppi-dash__status">Dealer follow-up</span>
+            <span class="ppi-dash__note">Engine counters: 2 km / 2 warm-ups / 56 min since clearing; four monitors incomplete.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--ok">
+            <span class="ppi-dash__area">Hot gear engagement</span>
+            <span class="ppi-dash__status">Normal on site</span>
+            <span class="ppi-dash__note">P / R / N / D response reported normal. Road-load CVT behaviour is for the buyer drive.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--ok">
+            <span class="ppi-dash__area">X-Mode</span>
+            <span class="ppi-dash__status">Static check OK</span>
+            <span class="ppi-dash__note">Activation and response checked on site; no off-road performance claim.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--act">
+            <span class="ppi-dash__area">Driver seat</span>
+            <span class="ppi-dash__status">Repair</span>
+            <span class="ppi-dash__note">Torn covering reported. Agree repair or allowance before delivery.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--act">
+            <span class="ppi-dash__area">Front driver corner</span>
+            <span class="ppi-dash__status">Repair / allowance</span>
+            <span class="ppi-dash__note">Pronounced scratch / impact mark reported, plus ordinary-use scratches elsewhere.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--act">
+            <span class="ppi-dash__area">Audio</span>
+            <span class="ppi-dash__status">Historical codes</span>
+            <span class="ppi-dash__note">B2241 and B2253 stored as History. Dealer to assess; no confirmed failed speaker.</span>
+          </li>
+          <li class="ppi-dash__card ppi-dash__card--rec">
+            <span class="ppi-dash__area">Safety modules</span>
+            <span class="ppi-dash__status">No DTCs recorded</span>
+            <span class="ppi-dash__note">ABS, SRS and EyeSight show zero DTCs. This does not certify every safety function.</span>
+          </li>
+          </ul>
+          <p class="ppi-dash__legend">Green: satisfactory check. Amber: action / negotiation. Red: required repair. Teal: electronic record only.</p>
+        </div>
+      </article>
+      <p class="ppi-dash__caption">Real report from a buyer's inspection on 17 Oct 2026, first two pages. VIN, report number and seller details removed.</p>
     </section>
 
     <!-- CTA Mid-Page Premium -->
