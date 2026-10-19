@@ -451,3 +451,8 @@ body {
   .mobile-cta-sms::after { animation: none; }
   .mobile-cta-sms { transition: none; }
 }
+
+/* Tarea 1 (2026-10-18): el enlace del recuadro conserva el color del texto; el subrayado indica que es enlace */
+.cap-item a {
+  color: inherit;
+}

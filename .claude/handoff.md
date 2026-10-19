@@ -1,4 +1,48 @@
-# Handoff — 2026-08-15 (sesión larga: auditoría + llms.txt + rebuild de Diagnostic, INTERRUMPIDA a mitad de un ajuste)
+# Handoff — 2026-10-18 (Nivel 1, Tarea 1: enlaces internos hacia la página de inspección precompra)
+
+## Estado de la rama
+
+`test`, creada desde `main` (78f748c) el 2026-10-18. **Nada subido a GitHub, nada en producción.**
+Guardados: `33618f4` (enlaces), `594805a` (contraste), `2335519` (estilos a su archivo según el libro de marca), `8402f64` (mobile-first), `bc39b5a` y `f77812b` (traspaso), `dade115` (textos con enfoque en pérdida aprobados por Jose 14:34), más este traspaso; menú en portátiles: `6fa324b`, `bd6035d`, `ab5531a`, `a9b6787` y el traspaso que lo cierra.
+Registro completo, pruebas y decisiones de Jose: `Mobile Mechanic KPEMM /Marketing workers /Auditorias/2026-10-18 Posicionamiento PPI sin mobile/06-implementacion-nivel-1.md`.
+
+## REVISIÓN VISUAL DE JOSE (2026-10-18): los 4 cambios aprobados
+
+Jose revisó la rama `test` en localhost:8080 y aprobó: la frase de la principal (debajo de «What Kelowna Drivers Say»), la frase de Diagnóstico (antes de las preguntas frecuentes), el enlace «Pre-purchase inspections» de Nuestra historia y el menú en portátil («quedó muy bien»). Siguiente paso: pedir autorización expresa para subir con otro nombre de rama.
+Visto en la revisión, sin tocar (anterior a la Tarea 1): en modo oscuro del Mac, la sección de reseñas de la principal pierde contraste (título casi invisible).
+
+## RESUELTO (2026-10-18 19:10): menú en portátiles
+
+Antes era el bloqueante para subir a producción. Se resolvió con el «menú por prioridades» que decidió Jose (18:11), en los guardados `6fa324b`, `bd6035d`, `ab5531a` y `a9b6787`:
+- Hasta 1023: sin cambios (menú de teléfono).
+- De 1024 a 1199: logo completo, botón de llamada y botón ☰, que abre las 5 opciones.
+- De 1200 a 1399: Why Us, Mechanic Services y Pre-Purchase Inspection en un renglón, más el ☰.
+- Desde 1400: las 5 opciones en un renglón.
+- El logo se mantiene en 300 y ninguna opción se parte.
+- Archivos: `estilos-header2.css` (bloque al final) y la misma regla copiada en el bloque de estilos de `index.html`, para que el primer instante de carga ya se vea igual. Jose lo aprobó a las 19:01.
+- Probado en las 8 páginas y en teléfono (sin diferencias con la versión anterior), sin Analytics. El revisor independiente lo aprobó con cambios menores, ya aplicados. Detalle en el registro 06.
+
+**Pendientes nuevos, en tareas aparte:**
+- Teclado en la lista ☰: el enfoque se queda detrás, Escape no cierra. Requiere cambiar `scripts.js`.
+- Encabezado sin estilo un instante al cargar Precompra.
+- Menú de teléfono semitransparente en la copia de prueba de Mantenimiento a 1023. Hay que comprobarlo en la página real.
+- Texto agrandado o etiquetas más largas: revisar si cambia alguna etiqueta del menú.
+
+**Para publicar:** hace falta la autorización expresa de Jose y otro nombre de rama (ver aviso abajo). Si pasan a la vez la principal y el archivo de estilos, no hay paso intermedio raro.
+
+## Aviso para subir a GitHub
+En GitHub existe la rama `test/cta-sticky-bar-mobile`; mientras exista, GitHub rechaza una rama llamada exactamente `test`. Antes de pedir a Jose la autorización para subir, acordar otro nombre (por ejemplo `test-nivel1-tarea1`). No borrar esa rama.
+
+## Otros pendientes anotados (anteriores a la Tarea 1, no bloquean)
+- Opciones del menú de teléfono de 28–30 de alto (el libro de marca pide 44).
+- El color de los enlaces de texto del sitio no es de la paleta oficial.
+- Sin estilo propio de borde de enfoque para enlaces de texto; no probado con teclado real.
+- Error de consola en `/` y `/our-story/`: X-Frame-Options dentro de una etiqueta meta.
+- Índice interno viejo (`.git/objects/info/commit-graphs`) que menciona un objeto inexistente `d985a2c`.
+
+---
+
+# (Histórico) Handoff — 2026-08-15 (sesión larga: auditoría + llms.txt + rebuild de Diagnostic, INTERRUMPIDA a mitad de un ajuste)
 
 ## Estado de la rama
 
