@@ -316,6 +316,13 @@
     object-fit: cover;
     object-position: center top;
   }
+  /* Thin breadcrumb strip on phones (Jose 2026-10-19) */
+  main.page {
+    padding-top: 4px;
+  }
+  main.page > .breadcrumb {
+    margin: 0 0 4px;
+  }
   .hero-cta-group {
     flex-direction: row;
     gap: 8px;
