@@ -879,11 +879,12 @@
     }
 
 /* Tarea 1 (2026-10-18): la frase con enlace debajo de la lista de síntomas lleva espacio arriba para no verse pegada al último síntoma. Primero teléfono, luego computadora. */
-.diag-symptoms__list + .diag-symptoms__intro {
+.diag-symptoms__intro--closing {
   margin: 28px 0 0;
 }
+
 @media (min-width: 768px) {
-  .diag-symptoms__list + .diag-symptoms__intro {
+  .diag-symptoms__intro--closing {
     margin-top: 34px;
   }
 }

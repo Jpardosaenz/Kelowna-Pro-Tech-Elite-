@@ -13,15 +13,23 @@ document.addEventListener("DOMContentLoaded", () => {
 
   const menuTrigger = document.querySelector(".kpem-menu-trigger");
   const menuCloseButton = document.querySelector(".menu-close-button");
+  const mobileMenu = document.querySelector("#mobile-navigation");
+
+  const isMenuOpen = () => document.body.classList.contains("menu-is-open");
 
   function openMenu() {
     document.body.classList.add("menu-is-open");
     menuTrigger.setAttribute("aria-expanded", "true");
+    // Teclado: el enfoque entra a la lista abierta (primero, el botón ×).
+    mobileMenu?.querySelector("a, button")?.focus();
   }
 
-  function closeMenu() {
+  // returnFocus: devolver el enfoque al ☰ (al cerrar con × o Escape, no al seguir un enlace).
+  function closeMenu(returnFocus = false) {
+    if (!isMenuOpen()) return;
     document.body.classList.remove("menu-is-open");
     menuTrigger.setAttribute("aria-expanded", "false");
+    if (returnFocus) menuTrigger.focus();
   }
 
   if (menuTrigger) {
@@ -29,15 +37,18 @@ document.addEventListener("DOMContentLoaded", () => {
   }
 
   if (menuCloseButton) {
-    menuCloseButton.addEventListener("click", closeMenu);
+    menuCloseButton.addEventListener("click", () => closeMenu(true));
   }
 
-  const mobileMenu = document.querySelector("#mobile-navigation");
   if (mobileMenu) {
     mobileMenu.querySelectorAll("a").forEach((link) => {
-      link.addEventListener("click", closeMenu);
+      link.addEventListener("click", () => closeMenu());
     });
   }
+
+  document.addEventListener("keydown", (event) => {
+    if (event.key === "Escape") closeMenu(true);
+  });
 
   /*
   ----------------------------------------------------------------------

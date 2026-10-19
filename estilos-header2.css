@@ -2792,6 +2792,8 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
      + botón ☰ (abre las 5 opciones).
    - Desde 1400: las 5 opciones en una sola línea.
    El logo conserva su tamaño. Ninguna opción del menú se parte en dos renglones.
+   SINCRONIZAR: este bloque está copiado en el <style> de index.html (primer
+   pintado de la principal). Si se cambia aquí, cambiar también allí.
    ================================================================ */
 @media (min-width: 1024px) {
   #mobile-navigation > ul > li > a {
@@ -2851,7 +2853,6 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
   body.menu-is-open #mobile-navigation > ul > li > a {
     color: #fff !important;
     font-size: 24px;
-    transition: none;
   }
 
   body.menu-is-open #mobile-navigation > ul > li > a::after {
