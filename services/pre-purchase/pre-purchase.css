@@ -971,10 +971,10 @@
   font-weight: 700;
   letter-spacing: 0.06em;
   text-transform: uppercase;
-  color: #0d0d0b;
-  background: var(--premium-gold);
+  color: var(--premium-gold);
+  background: #0d0d0b;
   justify-self: start;
-  padding: 2px 8px;
+  padding: 3px 9px;
   border-radius: 3px;
 }
 .ppi-voices__quote {
@@ -987,8 +987,13 @@
 .ppi-voices__who {
   font-family: var(--font-mono);
   font-size: 12px;
-  color: #52525b;
+  color: #0b4fa3;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  justify-self: start;
+  padding: 6px 0;
 }
+.ppi-voices__who:focus-visible { outline: 3px solid var(--premium-gold); outline-offset: 2px; }
 .ppi-voices__link {
   display: inline-block;
   margin: 16px 0 8px;
