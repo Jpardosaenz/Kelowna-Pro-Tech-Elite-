@@ -1,3 +1,17 @@
+# Handoff — 2026-10-19 (precompra: textos con pérdida y transformación)
+
+## Estado de producción
+`main` en GitHub = `2ff4cf1`: modo oscuro camino A **ya publicado** (PR #86). El bloque de abajo que dice «falta su autorización para subir» quedó superado.
+
+## Esta tarea: rama `copy/ppi-perdida-transformacion` (worktree `.worktrees/website-textos-ppi-20261019`, sin subir)
+- Solo cambian `services/pre-purchase/index.html`, `pre-purchase.css`, `llms.txt`, `sitemap.xml` (lastmod con OK de Jose) e imágenes (2 nuevas del Forester; 3 huérfanas borradas).
+- Apertura nueva (riesgo de cualquier problema o estafa, certified mechanic, mismo día, fotos y video, informe en 1 hora); sección «What buyers say» con 6 reseñas reales y enlace a Google; tablero del informe real del Forester 2020 (sin datos privados, permiso de Jose); foto de portada 2:1 y ruta delgada solo en teléfono; FAQ (8) y JSON-LD generados de una misma lista; descripción, servicio y `llms.txt` alineados.
+- Todo aprobado por Jose en local. Falta su autorización para subir, abrir la PR y unir.
+- Registro completo: `Mobile Mechanic KPEMM /Marketing workers /Auditorias/2026-10-18 Posicionamiento PPI sin mobile/10-textos-pagina-ppi.md`.
+- Pendiente para otras tareas: título «Mobile, Same Day» y H1 «Certainty» (Tarea 2); botón común «Get My Car Fixed Today»; Peachland en zonas (decisión de Jose).
+
+---
+
 # Handoff — 2026-10-19 (modo oscuro, camino A)
 
 ## Estado de producción (corrige el traspaso anterior)

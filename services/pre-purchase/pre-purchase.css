@@ -139,13 +139,6 @@
   color: #ffffff;
   font-weight: 700;
 }
-.services-hero__service-transform {
-  max-width: 620px;
-  font-size: clamp(13px, 1.35vw, 15px);
-  line-height: 1.5;
-  color: rgba(255,255,255,0.72);
-  margin: 0 0 18px;
-}
 
 .hero-atf-cta {
   display: inline-block;
@@ -298,9 +291,6 @@
   .services-hero__service-line {
     display: none;
   }
-  .services-hero__service-transform {
-    display: none;
-  }
   .services-hero__image-wrap {
     margin-left: -20px;
     margin-right: -20px;
@@ -312,8 +302,16 @@
   }
   .services-hero__hero-img {
     height: auto;
-    object-fit: initial;
-    object-position: initial;
+    aspect-ratio: 2 / 1;
+    object-fit: cover;
+    object-position: center top;
+  }
+  /* Thin breadcrumb strip on phones (Jose 2026-10-19) */
+  main.page {
+    padding-top: 4px;
+  }
+  main.page > .breadcrumb {
+    margin: 0 0 4px;
   }
   .hero-cta-group {
     flex-direction: row;
@@ -366,64 +364,17 @@
     color: #ffffff;
     font-weight: 700;
   }
-  .services-hero__mobile-text__promise {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-style: italic;
-    line-height: 1.65;
-    color: rgba(255,255,255,0.75);
-    margin: 0;
-    text-align: center;
-    letter-spacing: 0.01em;
-  }
 }
 
 /* Hidden Repair Risk callout */
-.ppi-tradeoff__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 480px;
-  margin: 24px auto 0;
-}
 
-.ppi-tradeoff__card {
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
 
-.ppi-tradeoff__card--risk {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-}
 
-.ppi-tradeoff__label {
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
 
-.ppi-tradeoff__card--risk .ppi-tradeoff__label { color: var(--risk-red); }
 
-.ppi-tradeoff__stat {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.1;
-}
 
-.ppi-tradeoff__card--risk .ppi-tradeoff__stat { color: #991b1b; }
 
-.ppi-tradeoff__note {
-  margin: 4px 0 0;
-  font-size: 14px;
-  line-height: 1.5;
-}
 
-.ppi-tradeoff__card--risk .ppi-tradeoff__note { color: #7f1d1d; }
 
 .ppi-tradeoff__differentiator {
   margin: 20px 0 0;
@@ -509,91 +460,17 @@
 }
 
 /* Verified Google Review — social proof, right after the hero */
-.ppi-review-proof__card {
-  max-width: 560px;
-  margin: 0 auto;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-}
 
-.ppi-review-proof__head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
-.ppi-review-proof__avatar {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
-.ppi-review-proof__who {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
 
-.ppi-review-proof__name {
-  font-weight: 700;
-  color: var(--premium-dark);
-  font-size: 15px;
-}
 
-.ppi-review-proof__meta {
-  font-size: 13px;
-  color: #64748b;
-}
 
-.ppi-review-proof__badge {
-  font-size: 12px;
-  font-weight: 600;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
-  border-radius: 999px;
-  padding: 4px 10px;
-  white-space: nowrap;
-}
 
-.ppi-review-proof__stars {
-  margin-top: 16px;
-  color: var(--premium-gold);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.ppi-review-proof__when {
-  font-size: 13px;
-  color: #94a3b8;
-  font-weight: 400;
-}
 
-.ppi-review-proof__quote {
-  margin: 14px 0 0;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #1e293b;
-}
 
-.ppi-review-proof__link {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--premium-blue);
-  text-decoration: none;
-}
 
-.ppi-review-proof__link:hover {
-  text-decoration: underline;
-}
 
 /* 100+ Point Scan — dark instrument panel, full-bleed band on wide screens.
    Background spans the viewport; .ppi-scan__inner keeps rows readable-width and centered. */
@@ -726,24 +603,8 @@
 }
 
 /* Sample Report */
-.ppi-report__figure {
-  margin: 24px 0 0;
-  max-width: 340px;
-}
 
-.ppi-report__img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
-  cursor: zoom-in;
-}
 
-.ppi-report__figure figcaption {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #64748b;
-}
 
 /* Click-to-enlarge overlay (see scripts.js) */
 .img-zoom-overlay {
@@ -924,3 +785,173 @@
 
 /* .ppi-map__embed rules moved to shared estilos-header2.css so every
    page using this component gets them, not just this one. */
+
+/* ── What buyers say: review excerpts as estimate-sheet line items (mobile first) ── */
+.ppi-voices { padding-top: 32px; }
+.ppi-voices__eyebrow {
+  font-family: var(--font-mono);
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: #8a5600;
+  margin: 0 0 6px;
+}
+.ppi-voices h2 { margin: 0 0 6px; }
+.ppi-voices__rating {
+  font-family: var(--font-body);
+  font-size: 15px;
+  color: #3f3f46;
+  margin: 0 0 18px;
+}
+.ppi-voices__rating span { color: var(--premium-gold); letter-spacing: 2px; }
+.ppi-voices__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  border-top: 2px solid #0d0d0b;
+}
+.ppi-voices__row {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 4px;
+  padding: 14px 0;
+  border-bottom: 1px dashed #c9c6bd;
+}
+.ppi-voices__outcome {
+  font-family: var(--font-mono);
+  font-size: 13px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--premium-gold);
+  background: #0d0d0b;
+  justify-self: start;
+  padding: 3px 9px;
+  border-radius: 3px;
+}
+.ppi-voices__quote {
+  margin: 4px 0 0;
+  font-family: var(--font-body);
+  font-size: 17px;
+  line-height: 1.5;
+  color: #18181b;
+}
+.ppi-voices__who {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: #0b4fa3;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  justify-self: start;
+  padding: 6px 0;
+}
+.ppi-voices__who:focus-visible { outline: 3px solid var(--premium-gold); outline-offset: 2px; }
+.ppi-voices__link {
+  display: inline-block;
+  margin: 16px 0 8px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  font-size: 16px;
+  color: #0b4fa3;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  min-height: 44px;
+  line-height: 44px;
+}
+.ppi-voices__link:focus-visible { outline: 3px solid var(--premium-gold); outline-offset: 2px; }
+@media (min-width: 768px) {
+  .ppi-voices__row {
+    grid-template-columns: 168px 1fr;
+    column-gap: 24px;
+    align-items: baseline;
+  }
+  .ppi-voices__outcome { grid-row: 1 / span 2; }
+  .ppi-voices__quote { margin: 0; }
+  .ppi-voices__who { grid-column: 2; }
+}
+
+/* ── Real report dashboard (mirrors the PDF delivered to buyers) — mobile first ── */
+.ppi-dash {
+  --dash-navy: #10253a;
+  --dash-teal: #0f7a80;
+  --dash-ok: #276b48;
+  --dash-act: #8a5409;
+  --dash-bad: #b03030;
+  --dash-card: #eef2f5;
+  margin: 20px 0 8px;
+  background: #fff;
+  border: 1px solid #d9dee4;
+  border-radius: 10px;
+  overflow: hidden;
+  box-shadow: 0 6px 24px rgba(16, 37, 58, 0.10);
+  font-family: var(--font-body);
+  color: var(--dash-navy);
+  text-align: left;
+}
+.ppi-dash__bar {
+  background: var(--dash-navy);
+  color: #fff;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 10px 16px;
+}
+.ppi-dash__body { padding: 16px; }
+.ppi-dash__eyebrow {
+  margin: 0;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  color: var(--dash-teal);
+}
+.ppi-dash__eyebrow--gap { margin-top: 24px; }
+.ppi-dash__title { margin: 4px 0 2px; font-size: 26px; line-height: 1.15; color: var(--dash-navy); }
+.ppi-dash__spec { margin: 0 0 12px; font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; color: #4a5866; }
+.ppi-dash__photo { display: block; width: 100%; height: auto; border-radius: 4px; }
+.ppi-dash__verdict {
+  display: grid;
+  gap: 4px;
+  margin: 12px 0;
+  padding: 12px 14px;
+  background: #fdf0dc;
+  border-radius: 8px;
+}
+.ppi-dash__verdict-label { font-size: 20px; font-weight: 800; letter-spacing: 0.02em; text-transform: uppercase; color: #9a5b00; }
+.ppi-dash__verdict-note { font-size: 13px; line-height: 1.45; color: #5c4a2c; }
+.ppi-dash__stats { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 8px; }
+.ppi-dash__stats li { background: var(--dash-card); border-radius: 8px; padding: 10px; display: grid; gap: 2px; }
+.ppi-dash__num { font-size: 20px; font-weight: 800; color: var(--dash-teal); text-transform: uppercase; line-height: 1.1; }
+.ppi-dash__num--bad { color: var(--dash-bad); font-size: 17px; }
+.ppi-dash__lbl { font-size: 11px; line-height: 1.3; color: #4a5866; }
+.ppi-dash__glance { margin: 4px 0 12px; font-size: 22px; line-height: 1.2; color: var(--dash-navy); }
+.ppi-dash__cards { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: 1fr; gap: 8px; }
+.ppi-dash__card {
+  display: grid;
+  gap: 3px;
+  background: var(--dash-card);
+  border-left: 5px solid var(--dash-ok);
+  border-radius: 0 8px 8px 0;
+  padding: 10px 12px;
+}
+.ppi-dash__area { font-size: 12px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--dash-navy); }
+.ppi-dash__status { font-size: 12px; font-weight: 700; letter-spacing: 0.03em; text-transform: uppercase; color: var(--dash-ok); }
+.ppi-dash__note { font-size: 13px; line-height: 1.4; color: #4a5866; }
+.ppi-dash__card--act { border-left-color: var(--dash-act); }
+.ppi-dash__card--act .ppi-dash__status { color: var(--dash-act); }
+.ppi-dash__card--bad { border-left-color: var(--dash-bad); }
+.ppi-dash__card--bad .ppi-dash__status { color: var(--dash-bad); }
+.ppi-dash__card--rec { border-left-color: var(--dash-teal); }
+.ppi-dash__card--rec .ppi-dash__status { color: var(--dash-teal); }
+.ppi-dash__legend { margin: 12px 0 0; font-size: 12px; line-height: 1.45; color: #4a5866; }
+.ppi-dash__caption { margin: 8px 0 0; font-size: 13px; color: #52525b; text-align: center; }
+@media (min-width: 768px) {
+  .ppi-dash { max-width: 760px; margin-left: auto; margin-right: auto; }
+  .ppi-dash__body { padding: 24px 32px 28px; }
+  .ppi-dash__title { font-size: 34px; }
+  .ppi-dash__verdict-label { font-size: 24px; }
+  .ppi-dash__num { font-size: 26px; }
+  .ppi-dash__cards { grid-template-columns: 1fr 1fr; gap: 10px; }
+}
