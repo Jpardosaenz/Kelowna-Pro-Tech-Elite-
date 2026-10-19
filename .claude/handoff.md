@@ -6,6 +6,11 @@
 Guardados: `33618f4` (enlaces), `594805a` (contraste), `2335519` (estilos a su archivo según el libro de marca), `8402f64` (mobile-first), `bc39b5a` y `f77812b` (traspaso), `dade115` (textos con enfoque en pérdida aprobados por Jose 14:34), más este traspaso; menú en portátiles: `6fa324b`, `bd6035d`, `ab5531a`, `a9b6787` y el traspaso que lo cierra.
 Registro completo, pruebas y decisiones de Jose: `Mobile Mechanic KPEMM /Marketing workers /Auditorias/2026-10-18 Posicionamiento PPI sin mobile/06-implementacion-nivel-1.md`.
 
+## REVISIÓN VISUAL DE JOSE (2026-10-18): los 4 cambios aprobados
+
+Jose revisó la rama `test` en localhost:8080 y aprobó: la frase de la principal (debajo de «What Kelowna Drivers Say»), la frase de Diagnóstico (antes de las preguntas frecuentes), el enlace «Pre-purchase inspections» de Nuestra historia y el menú en portátil («quedó muy bien»). Siguiente paso: pedir autorización expresa para subir con otro nombre de rama.
+Visto en la revisión, sin tocar (anterior a la Tarea 1): en modo oscuro del Mac, la sección de reseñas de la principal pierde contraste (título casi invisible).
+
 ## RESUELTO (2026-10-18 19:10): menú en portátiles
 
 Antes era el bloqueante para subir a producción. Se resolvió con el «menú por prioridades» que decidió Jose (18:11), en los guardados `6fa324b`, `bd6035d`, `ab5531a` y `a9b6787`:
