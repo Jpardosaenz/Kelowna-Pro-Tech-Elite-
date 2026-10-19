@@ -2846,6 +2846,7 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
   body.menu-is-open #mobile-navigation > ul > li > a {
     color: #fff !important;
     font-size: 24px;
+    transition: none;
   }
 
   body.menu-is-open #mobile-navigation > ul > li > a::after {
