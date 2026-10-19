@@ -2783,3 +2783,113 @@ LEAD FEEDBACK TOAST - Confirmación visual de envío
     margin-top: 0.75rem;
   }
 }
+
+/* ================================================================
+   Menú por prioridades en portátiles (aprobado por Jose 2026-10-18 18:11)
+   - Hasta 1023: sin cambios (menú de teléfono).
+   - 1024–1199: logo completo + botón de llamada + botón ☰ (abre las 5 opciones).
+   - 1200–1399: fila con Why Us, Mechanic Services y Pre-Purchase Inspection
+     + botón ☰ (abre las 5 opciones).
+   - Desde 1400: las 5 opciones en una sola línea.
+   El logo conserva su tamaño. Ninguna opción del menú se parte en dos renglones.
+   ================================================================ */
+@media (min-width: 1024px) {
+  #mobile-navigation > ul > li > a {
+    white-space: nowrap;
+  }
+
+  .kpem-header-mobile .contenedor-logo,
+  .kpem-header-mobile .header-cta {
+    flex-shrink: 0;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1399px) {
+  .kpem-header-mobile {
+    padding: 20px 24px;
+    gap: 24px;
+  }
+
+  .kpem-header-mobile .kpem-menu-trigger {
+    display: flex !important;
+  }
+
+  .kpem-header-mobile .header-cta {
+    margin-left: auto;
+  }
+
+  /* Lista completa abierta con el botón ☰ (mismo aspecto que en teléfono) */
+  body.menu-is-open #mobile-navigation {
+    display: flex;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    flex: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background: #111827;
+    z-index: 10000;
+  }
+
+  body.menu-is-open #mobile-navigation > ul {
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  body.menu-is-open #mobile-navigation > ul > li {
+    display: block;
+  }
+
+  body.menu-is-open #mobile-navigation > ul > li > a {
+    color: #fff !important;
+    font-size: 24px;
+  }
+
+  body.menu-is-open #mobile-navigation > ul > li > a::after {
+    display: none;
+  }
+
+  body.menu-is-open #mobile-navigation .menu-close-button {
+    display: block;
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    z-index: 10001;
+    background: transparent;
+    border: 0;
+    font-size: 32px;
+    color: #fff;
+    cursor: pointer;
+  }
+}
+
+@media (min-width: 1024px) and (max-width: 1199px) {
+  /* Fila oculta: el menú se abre solo con el botón ☰ */
+  #mobile-navigation {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1399px) {
+  #mobile-navigation > ul {
+    gap: 16px;
+  }
+
+  /* Success Stories y Our Story quedan en la lista del botón ☰ */
+  #mobile-navigation > ul > li:nth-child(n + 4) {
+    display: none;
+  }
+}
+
+@media (min-width: 1400px) {
+  .kpem-header-mobile {
+    gap: 32px;
+  }
+
+  #mobile-navigation > ul {
+    gap: 16px;
+  }
+}
