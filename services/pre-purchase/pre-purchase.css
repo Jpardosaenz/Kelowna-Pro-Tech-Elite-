@@ -139,13 +139,6 @@
   color: #ffffff;
   font-weight: 700;
 }
-.services-hero__service-transform {
-  max-width: 620px;
-  font-size: clamp(13px, 1.35vw, 15px);
-  line-height: 1.5;
-  color: rgba(255,255,255,0.72);
-  margin: 0 0 18px;
-}
 
 .hero-atf-cta {
   display: inline-block;
@@ -298,9 +291,6 @@
   .services-hero__service-line {
     display: none;
   }
-  .services-hero__service-transform {
-    display: none;
-  }
   .services-hero__image-wrap {
     margin-left: -20px;
     margin-right: -20px;
@@ -374,64 +364,17 @@
     color: #ffffff;
     font-weight: 700;
   }
-  .services-hero__mobile-text__promise {
-    font-family: var(--font-body);
-    font-size: 13px;
-    font-style: italic;
-    line-height: 1.65;
-    color: rgba(255,255,255,0.75);
-    margin: 0;
-    text-align: center;
-    letter-spacing: 0.01em;
-  }
 }
 
 /* Hidden Repair Risk callout */
-.ppi-tradeoff__grid {
-  display: grid;
-  grid-template-columns: 1fr;
-  max-width: 480px;
-  margin: 24px auto 0;
-}
 
-.ppi-tradeoff__card {
-  border-radius: 16px;
-  padding: 24px;
-  display: flex;
-  flex-direction: column;
-  gap: 6px;
-}
 
-.ppi-tradeoff__card--risk {
-  background: #fef2f2;
-  border: 1px solid #fecaca;
-}
 
-.ppi-tradeoff__label {
-  font-size: 13px;
-  font-weight: 700;
-  text-transform: uppercase;
-  letter-spacing: 0.05em;
-}
 
-.ppi-tradeoff__card--risk .ppi-tradeoff__label { color: var(--risk-red); }
 
-.ppi-tradeoff__stat {
-  font-family: var(--font-mono);
-  font-weight: 700;
-  font-size: 32px;
-  line-height: 1.1;
-}
 
-.ppi-tradeoff__card--risk .ppi-tradeoff__stat { color: #991b1b; }
 
-.ppi-tradeoff__note {
-  margin: 4px 0 0;
-  font-size: 14px;
-  line-height: 1.5;
-}
 
-.ppi-tradeoff__card--risk .ppi-tradeoff__note { color: #7f1d1d; }
 
 .ppi-tradeoff__differentiator {
   margin: 20px 0 0;
@@ -517,91 +460,17 @@
 }
 
 /* Verified Google Review — social proof, right after the hero */
-.ppi-review-proof__card {
-  max-width: 560px;
-  margin: 0 auto;
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 16px;
-  padding: 28px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.06);
-}
 
-.ppi-review-proof__head {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-}
 
-.ppi-review-proof__avatar {
-  flex-shrink: 0;
-  width: 44px;
-  height: 44px;
-  border-radius: 50%;
-  object-fit: cover;
-}
 
-.ppi-review-proof__who {
-  display: flex;
-  flex-direction: column;
-  flex: 1;
-}
 
-.ppi-review-proof__name {
-  font-weight: 700;
-  color: var(--premium-dark);
-  font-size: 15px;
-}
 
-.ppi-review-proof__meta {
-  font-size: 13px;
-  color: #64748b;
-}
 
-.ppi-review-proof__badge {
-  font-size: 12px;
-  font-weight: 600;
-  color: #64748b;
-  border: 1px solid #e2e8f0;
-  border-radius: 999px;
-  padding: 4px 10px;
-  white-space: nowrap;
-}
 
-.ppi-review-proof__stars {
-  margin-top: 16px;
-  color: var(--premium-gold);
-  font-size: 16px;
-  display: flex;
-  align-items: center;
-  gap: 10px;
-}
 
-.ppi-review-proof__when {
-  font-size: 13px;
-  color: #94a3b8;
-  font-weight: 400;
-}
 
-.ppi-review-proof__quote {
-  margin: 14px 0 0;
-  font-size: 16px;
-  line-height: 1.6;
-  color: #1e293b;
-}
 
-.ppi-review-proof__link {
-  display: inline-block;
-  margin-top: 16px;
-  font-size: 14px;
-  font-weight: 600;
-  color: var(--premium-blue);
-  text-decoration: none;
-}
 
-.ppi-review-proof__link:hover {
-  text-decoration: underline;
-}
 
 /* 100+ Point Scan — dark instrument panel, full-bleed band on wide screens.
    Background spans the viewport; .ppi-scan__inner keeps rows readable-width and centered. */
@@ -734,24 +603,8 @@
 }
 
 /* Sample Report */
-.ppi-report__figure {
-  margin: 24px 0 0;
-  max-width: 340px;
-}
 
-.ppi-report__img {
-  width: 100%;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 8px 24px rgba(15, 23, 42, 0.15);
-  cursor: zoom-in;
-}
 
-.ppi-report__figure figcaption {
-  margin-top: 8px;
-  font-size: 13px;
-  color: #64748b;
-}
 
 /* Click-to-enlarge overlay (see scripts.js) */
 .img-zoom-overlay {
@@ -941,7 +794,7 @@
   font-weight: 700;
   letter-spacing: 0.2em;
   text-transform: uppercase;
-  color: #a86a00;
+  color: #8a5600;
   margin: 0 0 6px;
 }
 .ppi-voices h2 { margin: 0 0 6px; }
@@ -1022,8 +875,8 @@
 .ppi-dash {
   --dash-navy: #10253a;
   --dash-teal: #0f7a80;
-  --dash-ok: #2e7d55;
-  --dash-act: #a8670f;
+  --dash-ok: #276b48;
+  --dash-act: #8a5409;
   --dash-bad: #b03030;
   --dash-card: #eef2f5;
   margin: 20px 0 8px;
