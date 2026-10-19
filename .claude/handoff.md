@@ -7,7 +7,7 @@
 - Guardado `08933f3`: `<meta name="color-scheme" content="only light">` en el `<head>` de las 8 páginas, justo después de `viewport`. Frena el «tema oscuro automático» de Chrome (Android), que volvía ilegibles los botones dorados (texto blanco sobre dorado, contraste 1,65–2,09), el nombre del logo y «Kelowna Protech» de Nuestra historia.
 - `color-scheme: light` NO lo frena; solo `only light` (blog de Chrome «Auto Dark Theme», MDN; comprobado con páginas testigo).
 - Pruebas y revisión independiente: 0 fallos por modo oscuro, modo claro idéntico píxel a píxel, primer instante cubierto, sin Analytics. Registro completo: `Mobile Mechanic KPEMM /Marketing workers /Auditorias/2026-10-18 Posicionamiento PPI sin mobile/06-implementacion-nivel-1.md`, sección «Tarea modo oscuro — camino A».
-- **Estado: PENDIENTE.** Falta que Jose acepte por escrito 2 límites (el mapa de Google puede seguir oscureciéndose; Samsung Internet sin probar) y decida sobre su entorno original no reproducido. Después, autorización para subir la rama, abrir la solicitud de unión y unir.
+- **Estado: APROBADO (2026-10-19).** Jose aceptó por escrito («si») los 2 límites (el mapa de Google puede seguir oscureciéndose; Samsung Internet sin probar) y dio por cubierto su entorno original no reproducido. Falta su autorización para subir la rama, abrir la solicitud de unión y unir, cada paso por separado.
 - Rama vieja `fix/modo-oscuro-fondo` (`369e958`, septiembre): no se unió nunca y su arreglo (`light`) no habría frenado a Chrome. No se usa ni se borra.
 - Fuera de alcance, anotado: `404.html` sigue oscureciéndose; camino B (modo oscuro propio con colores de marca) es proyecto aparte, anotado en el `00-estado-activo.md` de la auditoría.
 
