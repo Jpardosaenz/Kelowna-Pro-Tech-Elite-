@@ -3,17 +3,27 @@
 ## Estado de la rama
 
 `test`, creada desde `main` (78f748c) el 2026-10-18. **Nada subido a GitHub, nada en producción.**
-Guardados: `33618f4` (enlaces), `594805a` (contraste), `2335519` (estilos a su archivo según el libro de marca), `8402f64` (mobile-first), `bc39b5a` y `f77812b` (traspaso), `dade115` (textos con enfoque en pérdida aprobados por Jose 14:34), más este traspaso.
+Guardados: `33618f4` (enlaces), `594805a` (contraste), `2335519` (estilos a su archivo según el libro de marca), `8402f64` (mobile-first), `bc39b5a` y `f77812b` (traspaso), `dade115` (textos con enfoque en pérdida aprobados por Jose 14:34), más este traspaso; menú en portátiles: `6fa324b`, `bd6035d`, `ab5531a`, `a9b6787` y el traspaso que lo cierra.
 Registro completo, pruebas y decisiones de Jose: `Mobile Mechanic KPEMM /Marketing workers /Auditorias/2026-10-18 Posicionamiento PPI sin mobile/06-implementacion-nivel-1.md`.
 
-## BLOQUEANTE: PENDIENTE IMPORTANTE ANTES DE SUBIR A PRODUCCIÓN (decisión de Jose, 2026-10-18 14:11)
+## RESUELTO (2026-10-18 19:10): menú en portátiles
 
-**El menú en fila se parte en varios renglones en computadoras portátiles.**
-- Desde 1024 de ancho el menú pasa a fila, pero su ancho está limitado y las opciones se doblan en 2 renglones cuando no caben.
-- Antes de la Tarea 1 pasaba de 1024 a ~1239. Con la opción nueva «Pre-Purchase Inspection» pasa de 1024 a ~1399 (a 1024, esa opción ocupa 3 renglones). Incluye anchos comunes de portátil: 1280 y 1366.
-- No se rompe nada (el alto del encabezado sigue en 100 y nada se tapa); es de aspecto. Hay espacio libre sin usar entre el menú y el botón (184 a 1024; 280 a 1280).
-- El límite viene de los estilos compartidos del encabezado (`estilos-header2.css`, bloque `@media (min-width: 1024px)` de `.mobile-menu`), que usan las 8 páginas.
-- **Hacer:** tarea aparte, mobile-first, que arregle el ancho del menú en fila; probar las 8 páginas en 1024, 1180, 1240, 1280, 1366, 1400 y 1440, y en teléfono, con el método de prueba sin Analytics del registro 06. **No fusionar `test` con `main` hasta cerrar este pendiente** o hasta que Jose decida otra cosa por escrito.
+Antes era el bloqueante para subir a producción. Se resolvió con el «menú por prioridades» que decidió Jose (18:11), en los guardados `6fa324b`, `bd6035d`, `ab5531a` y `a9b6787`:
+- Hasta 1023: sin cambios (menú de teléfono).
+- De 1024 a 1199: logo completo, botón de llamada y botón ☰, que abre las 5 opciones.
+- De 1200 a 1399: Why Us, Mechanic Services y Pre-Purchase Inspection en un renglón, más el ☰.
+- Desde 1400: las 5 opciones en un renglón.
+- El logo se mantiene en 300 y ninguna opción se parte.
+- Archivos: `estilos-header2.css` (bloque al final) y la misma regla copiada en el bloque de estilos de `index.html`, para que el primer instante de carga ya se vea igual. Jose lo aprobó a las 19:01.
+- Probado en las 8 páginas y en teléfono (sin diferencias con la versión anterior), sin Analytics. El revisor independiente lo aprobó con cambios menores, ya aplicados. Detalle en el registro 06.
+
+**Pendientes nuevos, en tareas aparte:**
+- Teclado en la lista ☰: el enfoque se queda detrás, Escape no cierra. Requiere cambiar `scripts.js`.
+- Encabezado sin estilo un instante al cargar Precompra.
+- Menú de teléfono semitransparente en la copia de prueba de Mantenimiento a 1023. Hay que comprobarlo en la página real.
+- Texto agrandado o etiquetas más largas: revisar si cambia alguna etiqueta del menú.
+
+**Para publicar:** hace falta la autorización expresa de Jose y otro nombre de rama (ver aviso abajo). Si pasan a la vez la principal y el archivo de estilos, no hay paso intermedio raro.
 
 ## Aviso para subir a GitHub
 En GitHub existe la rama `test/cta-sticky-bar-mobile`; mientras exista, GitHub rechaza una rama llamada exactamente `test`. Antes de pedir a Jose la autorización para subir, acordar otro nombre (por ejemplo `test-nivel1-tarea1`). No borrar esa rama.
