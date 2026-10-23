@@ -1,12 +1,35 @@
-# Handoff — 2026-10-19 (precompra: textos con pérdida y transformación)
+# Handoff — 2026-10-23 (puesta al día del estado real)
 
 ## Estado de producción
-`main` en GitHub = `2ff4cf1`: modo oscuro camino A **ya publicado** (PR #86). El bloque de abajo que dice «falta su autorización para subir» quedó superado.
+`main` en GitHub = `1c57930`. **Todo lo de abajo ya está publicado**; cualquier «falta su autorización para subir» en los bloques siguientes quedó superado:
+- PR #84 enlaces a precompra + menú en portátiles; PR #85 76 reseñas; PR #86 modo oscuro camino A.
+- PR #87 textos de precompra (pérdida y transformación).
+- PR #88 título y descripción de precompra (20-oct): título actual «Pre-Purchase Inspection Specialists - Kelowna Protech Elite».
 
-## Esta tarea: rama `copy/ppi-perdida-transformacion` (worktree `.worktrees/website-textos-ppi-20261019`, sin subir)
+## Ninguna tarea en curso
+No hay ramas con trabajo sin publicar.
+
+## Pendientes (cada uno es una tarea aparte, con su rama)
+1. Precompra: H1 «Certainty» (Tarea 2). Verificar con Jose si el título de PR #88 ya cierra la idea «Mobile, Same Day».
+2. Botón común «Get My Car Fixed Today».
+3. Peachland en zonas de servicio (decide Jose).
+4. Menú ☰ con teclado: el enfoque se queda detrás, Escape no cierra (`scripts.js`).
+5. Encabezado sin estilo un instante al cargar Precompra.
+6. `404.html` sigue oscureciéndose con el modo oscuro automático.
+7. Opciones del menú de teléfono de 28–30 de alto (el libro de marca pide 44).
+8. Diagnóstico: hero sin aprobación de cierre (ver bloque histórico del 2026-08-15).
+
+## Próximo arranque
+Leer este bloque y preguntar a Jose cuál pendiente sigue. Las sesiones en la nube solo ven el repositorio; para tareas que necesiten `Marketing workers`, trabajar desde el Mac o pedir los archivos.
+
+---
+
+# Handoff — 2026-10-19 (precompra: textos con pérdida y transformación) — PUBLICADO (PR #87, #88)
+
+## Esta tarea: rama `copy/ppi-perdida-transformacion` (worktree `.worktrees/website-textos-ppi-20261019`) — ya unida
 - Solo cambian `services/pre-purchase/index.html`, `pre-purchase.css`, `llms.txt`, `sitemap.xml` (lastmod con OK de Jose) e imágenes (2 nuevas del Forester; 3 huérfanas borradas).
 - Apertura nueva (riesgo de cualquier problema o estafa, certified mechanic, mismo día, fotos y video, informe en 1 hora); sección «What buyers say» con 6 reseñas reales y enlace a Google; tablero del informe real del Forester 2020 (sin datos privados, permiso de Jose); foto de portada 2:1 y ruta delgada solo en teléfono; FAQ (8) y JSON-LD generados de una misma lista; descripción, servicio y `llms.txt` alineados.
-- Todo aprobado por Jose en local. Falta su autorización para subir, abrir la PR y unir.
+- Todo aprobado por Jose y publicado (PR #87).
 - Registro completo: `Mobile Mechanic KPEMM /Marketing workers /Auditorias/2026-10-18 Posicionamiento PPI sin mobile/10-textos-pagina-ppi.md`.
 - Pendiente para otras tareas: título «Mobile, Same Day» y H1 «Certainty» (Tarea 2); botón común «Get My Car Fixed Today»; Peachland en zonas (decisión de Jose).
 
