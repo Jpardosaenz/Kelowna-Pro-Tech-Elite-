@@ -18,6 +18,11 @@ http://kelownaprotechmobilemech.com/*   https://kelownaprotechmobilemech.com/:sp
 /field-reports/            /field-reports/index.html             200
 /pre-purchase   /services/pre-purchase/   301!
 
-# 4) BMW Z3 case retired 2026-08-14 — send the indexed URL to the cases hub instead of a 404
-/field-reports/bmw-z3-kelowna-diagnostic    /field-reports/   301
-/field-reports/bmw-z3-kelowna-diagnostic/   /field-reports/   301
+# 4) Páginas retiradas → 410 Gone (Google las saca del índice más rápido que un 404)
+# BMW Z3 retirado 2026-08-14 (antes 301 al hub = soft 404); client-stories retirado 2025-10-17; privacy nunca existió en el repo
+/field-reports/bmw-z3-kelowna-diagnostic    /404.html   410
+/field-reports/bmw-z3-kelowna-diagnostic/   /404.html   410
+/client-stories    /404.html   410
+/client-stories/   /404.html   410
+/privacy           /404.html   410
+/privacy/          /404.html   410
