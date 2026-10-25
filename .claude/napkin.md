@@ -90,8 +90,8 @@
    Do instead: use price privately as a qualification tool only when authorized.
 3. **[2026-07-18] Use role-based public positioning.**
    Do instead: use `Certified Mechanic` in conversion copy; do not foreground Joseph/Jose unless explicitly requested.
-4. **[2026-07-18] Avoid unsupported superiority and fear claims.**
-   Do instead: show a verified standard, process, review, or real outcome and let the evidence differentiate KPEMM.
+4. **[2026-10-25] "#1 in Kelowna" and "the best" are mandatory; no invented fear.** Replaces the 2026-07-18 note "avoid unsupported superiority claims".
+   Do instead: follow `AGENTS.md` (Content/compliance rules): say them with the why (competitor comparison, review, real outcome); never invent fear or verifiable figures.
 5. **[2026-07-18] Do not frame KPEMM as cheap, affordable, or generic.**
    Do instead: filter for clients who value quality, personalization, convenience, and accountability.
 6. **[2026-08-13] Review count/rating can drift across pages independently — confirmed 5

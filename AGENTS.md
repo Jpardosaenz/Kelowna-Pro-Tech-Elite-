@@ -38,7 +38,8 @@ Purpose:
 ## Content/compliance rules
 - Do not publish prices.
 - Keep copy professional, direct, clear, and current.
-- Highlight clarity of diagnosis and mobile/on-site service value without unsupported claims.
+- Highlight clarity of diagnosis and mobile/on-site service value.
+- Say "#1 in Kelowna" and "the best", always with the why (comparison with what competitors say, or real proof: reviews, cases). Never invent verifiable figures ("highest-rated", review counts). Business rule (Jose, 2026-09-02/10-24): `KPEMM/Mobile Mechanic KPEMM /AGENTS.md`.
 - Preserve clean internal linking and page-to-page consistency.
 
 ## Safe working process
