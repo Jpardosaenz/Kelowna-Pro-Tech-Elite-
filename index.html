@@ -964,6 +964,16 @@
   "url": "https://kelownaprotechmobilemech.com/",
   "description": "Certified mechanics in Kelowna and across the Okanagan. We are a mobile mechanic service: we come to your location for same day diagnostics and auto repair. Dealer-level scan tools. 4.9 stars on Google.",
   "serviceType": "Mobile Mechanic",
+  "knowsLanguage": ["en", "es"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile auto repair services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car diagnostics and auto repair", "url": "https://kelownaprotechmobilemech.com/services/diagnostic/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-purchase car inspection", "url": "https://kelownaprotechmobilemech.com/services/pre-purchase/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive maintenance", "url": "https://kelownaprotechmobilemech.com/services/maintenance/" } }
+    ]
+  },
   "additionalType": "https://schema.org/MobileService",
   "image": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
   "logo": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
@@ -987,7 +997,8 @@
     { "@type": "City", "name": "Vernon" },
     { "@type": "City", "name": "Lake Country" },
     { "@type": "City", "name": "Peachland" },
-    { "@type": "City", "name": "Penticton" }
+    { "@type": "City", "name": "Penticton" },
+    { "@type": "AdministrativeArea", "name": "Okanagan Valley" }
   ],
   "openingHoursSpecification": [
     {
@@ -1015,71 +1026,133 @@
   <!-- ====== End Structured Data: Client Stories Page ====== -->
 
 
-  <!-- Home 2026-11-13: styles for the hero proof, fears section and closing CTA (homepage only) -->
+  <!-- Home 2026-11-13: homepage-only styles (hero proof, fears, how it works, reviews, facts, closing) -->
   <style>
-    .hero-fold__trust-stars { font-size: 1.35rem; gap: 6px; flex-direction: column }
-    .hero-fold__trust-meta { font-size: 1.2rem; line-height: 1.3 }
-    .hero-fold__trust-meta strong { font-size: 1.6rem; color: #ffd166; font-weight: 800 }
-    @media (max-width: 767px) {
-      .hero-fold__h1 { font-size: 1.85rem; line-height: 1.18 }
-      .hero-fold__trust { margin-bottom: 20px; gap: 10px }
-      .hero-fold__separator { margin: 20px auto }
-    }
+    .hero-fold__trust { margin-bottom: 16px; gap: 8px }
+    .hero-fold__trust-stars { font-size: 1rem; gap: 8px; letter-spacing: 0.06em; text-transform: none }
+    .hero-fold__trust-meta { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700 }
+    .hero-fold__trust-meta strong { color: #ffd166 }
+    .hero-fold__trust-quote { font-size: 0.875rem; font-weight: 400; max-width: 38ch }
+    .hero-fold__h1 { text-wrap: balance }
+    .hero-fold__tagline { margin-top: 16px }
     .hero-fold__cta {
       display: inline-flex; align-items: center; justify-content: center;
-      min-height: 52px; margin: 26px auto 0; padding: 14px 26px;
+      min-height: 48px; margin: 20px auto 0; padding: 12px 24px;
       border-radius: 999px; background: #e8a020; color: #0d0d0b;
-      font-family: 'DM Sans', sans-serif; font-size: 1.0625rem; font-weight: 700;
-      text-decoration: none; box-shadow: 0 10px 26px rgba(0, 0, 0, 0.35)
+      font: 700 1rem/1.2 'Inter', sans-serif; text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3)
     }
-    .hero-fold__cta:hover, .hero-fold__cta:focus-visible { background: #f5b23c }
-    .fears { background: #0f172a; padding: 56px 16px 60px }
-    .fears__inner { max-width: 1120px; margin: 0 auto }
-    .fears__eyebrow {
-      margin: 0 0 10px; text-align: center; color: #e8a020;
-      font: 700 0.8125rem/1.4 'DM Sans', sans-serif; letter-spacing: 0.12em; text-transform: uppercase
+    .hero-fold__cta:hover { background: #f5b23c }
+    .hero-fold__cta:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
+    .hero-fold__service-area { margin-top: 16px }
+    @media (max-width: 767px) {
+      .hero-fold { min-height: 0; padding: 22px 20px 34px }
+      .hero-fold__h1 { font-size: 1.625rem; line-height: 1.18 }
+      .hero-fold__tagline { font-size: 0.9375rem; line-height: 1.55 }
+      .hero-fold__service-area { font-size: 0.6875rem; padding: 8px 14px }
     }
-    .fears__title {
-      margin: 0; text-align: center; color: #f5f0e8;
-      font: 700 1.9rem/1.2 'Syne', sans-serif
+
+    .fears { background: #f5f0e8; padding: 40px 20px 44px }
+    .fears__inner, .how__inner, .facts__inner { max-width: 1120px; margin: 0 auto }
+    .fears__title, .how__title, .facts__title {
+      margin: 0; color: #0f172a; font: 700 1.5rem/1.2 'Syne', sans-serif; text-wrap: balance
     }
-    .fears__lead {
-      max-width: 620px; margin: 14px auto 0; text-align: center;
-      color: rgba(248, 244, 236, 0.86); font: 400 1.0625rem/1.6 'DM Sans', sans-serif
+    .fears__lead, .facts__lead {
+      max-width: 62ch; margin: 10px 0 0; color: #334155; font: 400 0.9375rem/1.6 'DM Sans', sans-serif
     }
-    .fears__grid { display: grid; grid-template-columns: 1fr; gap: 20px; margin: 34px 0 0; padding: 0; list-style: none }
-    .fear-card {
-      display: flex; flex-direction: column; gap: 14px;
-      background: #ffffff; border-radius: 20px; padding: 26px 24px;
-      border-top: 5px solid #e8a020; box-shadow: 0 18px 40px rgba(0, 0, 0, 0.28)
+    .fears__list { display: grid; grid-template-columns: 1fr; margin: 22px 0 0; padding: 0; list-style: none }
+    .fear { padding: 20px 0; border-top: 1px solid rgba(15, 23, 42, 0.14) }
+    .fear:last-child { padding-bottom: 0 }
+    .fear__q { margin: 0; color: #0f172a; font: 700 1.125rem/1.3 'Syne', sans-serif }
+    .fear__a { margin: 8px 0 0; color: #0f172a; font: 600 0.9375rem/1.5 'Inter', sans-serif }
+    .fear__review { margin: 12px 0 0; padding: 0 }
+    .fear__review p { margin: 0; color: #475569; font: italic 400 0.9375rem/1.6 'DM Sans', sans-serif }
+    .fear__review footer { margin-top: 8px; color: #0f172a; font: 600 0.8125rem/1.4 'Inter', sans-serif }
+    .fear__stars { color: #b7791f; letter-spacing: 0.06em; margin-right: 6px }
+    .fear__src { color: #475569; font-weight: 400 }
+    .fears__cta-row { margin: 24px 0 0 }
+
+    .how { background: #ffffff; padding: 40px 20px 44px }
+    .how__steps { display: grid; grid-template-columns: 1fr; gap: 18px; margin: 20px 0 0; padding: 0; list-style: none; counter-reset: how }
+    .how__steps li { position: relative; padding-left: 44px; counter-increment: how }
+    .how__steps li::before {
+      content: counter(how); position: absolute; left: 0; top: 0;
+      width: 30px; height: 30px; border-radius: 50%; border: 1px solid #b7791f; color: #8a5a12;
+      display: grid; place-items: center; font: 700 0.875rem/1 'Inter', sans-serif
     }
-    .fear-card__q { margin: 0; color: #0f172a; font: 700 1.3rem/1.3 'Syne', sans-serif }
-    .fear-card__a { margin: 0; color: #1f2937; font: 600 1.0625rem/1.55 'DM Sans', sans-serif }
-    .fear-card__review {
-      margin: auto 0 0; padding: 16px 18px; border-radius: 14px;
-      background: #f8fafc; border: 1px solid rgba(15, 23, 42, 0.08)
-    }
-    .fear-card__review p { margin: 0; color: #334155; font: italic 400 1rem/1.65 'DM Sans', sans-serif }
-    .fear-card__review footer { margin-top: 12px; color: #0f172a; font: 700 0.9375rem/1.4 'DM Sans', sans-serif }
-    .fear-card__stars { color: #e8a020; letter-spacing: 0.06em; margin-right: 6px }
-    .fear-card__src { color: #64748b; font-weight: 500 }
-    .fears__cta-row { margin: 34px 0 0; text-align: center }
-    .t-stat { margin: 0; color: #0f172a; font: 800 1.3rem/1.3 'DM Sans', sans-serif }
-    .t-stat span { display: block; color: #e8a020; font-size: 1.6rem; letter-spacing: 0.06em }
+    .how__steps h3 { margin: 0; color: #0f172a; font: 700 1.0625rem/1.3 'Inter', sans-serif }
+    .how__steps p { margin: 4px 0 0; color: #475569; font: 400 0.9375rem/1.55 'DM Sans', sans-serif }
+
+    #client-stories.wrap { padding: 40px 16px 44px; gap: 20px }
+    #client-stories .t-head { gap: 8px }
+    .t-stat { margin: 0; color: #0f172a; font: 700 1rem/1.3 'Inter', sans-serif }
+    .t-stat span { color: #b7791f; letter-spacing: 0.06em; margin-right: 6px }
+    #client-stories .t-title { font-size: 1.5rem; line-height: 1.2; text-wrap: balance }
+    #client-stories .t-subtitle { font-size: 0.9375rem; line-height: 1.55 }
+    #client-stories .t-card { padding: 20px; gap: 12px; border-radius: 16px; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06) }
+    #client-stories .t-card:hover { transform: none }
+    #client-stories .t-card--hero::before { content: none }
+    #client-stories .t-hero-quote { font-size: 1.125rem }
+    #client-stories .t-text { font-size: 0.9375rem; line-height: 1.6 }
+    #client-stories .avatar { width: 40px; height: 40px }
+    #client-stories .t-name { font-size: 0.9375rem }
+    #client-stories .t-service { font-size: 0.8125rem }
+    .t-swipe { display: none; margin: 0; color: #64748b; font: 400 0.8125rem/1.4 'Inter', sans-serif; text-align: center }
     .t-all { margin: 0; text-align: center }
-    .t-all a { color: #1e40af; font-weight: 700; font-size: 1.0625rem; text-decoration: none; border-bottom: 2px solid #bfdbfe; padding-bottom: 2px }
-    .t-card--hero::before { content: none }
-    .closing-cta { background: #0f172a; margin: 56px 0 0; padding: 56px 20px 64px; text-align: center }
-    .closing-cta h2 { max-width: 640px; margin: 0 auto; color: #f5f0e8; font: 700 1.8rem/1.2 'Syne', sans-serif }
-    .closing-cta p { max-width: 560px; margin: 14px auto 0; color: rgba(248, 244, 236, 0.86); font: 400 1.0625rem/1.6 'DM Sans', sans-serif }
-    .closing-cta__proof { font-weight: 700 !important; color: #ffd166 !important; margin-top: 18px !important }
+    .t-all a { color: #1e40af; font-weight: 700; font-size: 0.9375rem; text-decoration: none; border-bottom: 2px solid #bfdbfe; padding-bottom: 2px }
+    @media (max-width: 639px) {
+      #client-stories .t-grid {
+        display: flex; align-items: stretch; gap: 12px; overflow-x: auto;
+        margin: 0 -16px; padding: 4px 16px 12px;
+        scroll-snap-type: x mandatory; scroll-padding: 0 16px; -webkit-overflow-scrolling: touch
+      }
+      #client-stories .t-grid > .t-card { flex: 0 0 86%; scroll-snap-align: start; align-content: start }
+      .t-swipe { display: block }
+    }
+
+    #commercial-faq { padding: 40px 16px 44px }
+    #commercial-faq .faq-wrap { gap: 18px }
+    #commercial-faq-heading { font-size: 1.5rem; text-wrap: balance }
+    #commercial-faq .faq-intro { margin: 0; font-size: 0.9375rem; line-height: 1.55 }
+    #commercial-faq .faq-wrap dl { gap: 12px }
+    #commercial-faq .faq-item { border-radius: 16px }
+    #commercial-faq .faq-item:hover { transform: none }
+    #commercial-faq .faq-wrap dt { padding: 16px 18px 4px 42px; font-size: 1rem; line-height: 1.35; border-radius: 16px 16px 0 0 }
+    #commercial-faq .faq-wrap dt::before { left: 18px; top: 22px; width: 8px; height: 8px; box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.16) }
+    #commercial-faq .faq-wrap dd { margin: 0; padding: 6px 18px 16px 42px; font-size: 0.9375rem; line-height: 1.6; border-radius: 0 0 16px 16px; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07) }
+    #commercial-faq .faq-wrap dd:hover { transform: none }
+
+    .facts { background: #f5f0e8; margin: 40px 0 0; padding: 40px 20px 44px }
+    .facts__list { display: grid; grid-template-columns: 1fr; margin: 20px 0 0 }
+    .facts__list div { padding: 12px 0; border-top: 1px solid rgba(15, 23, 42, 0.14) }
+    .facts__list dt { margin: 0; color: #0f172a; font: 700 0.9375rem/1.4 'Inter', sans-serif }
+    .facts__list dd { margin: 2px 0 0; color: #334155; font: 400 0.9375rem/1.55 'DM Sans', sans-serif }
+
+    .ppi-map .ppi-map__embed iframe { height: 240px }
+
+    .closing-cta { background: #0f172a; margin: 40px 0 0; padding: 40px 20px 46px; text-align: center }
+    .closing-cta h2 { max-width: 640px; margin: 0 auto; color: #f5f0e8; font: 700 1.5rem/1.2 'Syne', sans-serif; text-wrap: balance }
+    .closing-cta p { max-width: 52ch; margin: 10px auto 0; color: rgba(248, 244, 236, 0.86); font: 400 0.9375rem/1.6 'DM Sans', sans-serif }
+    .closing-cta__proof { color: #ffd166 !important; font: 600 0.875rem/1.4 'Inter', sans-serif !important; margin-top: 16px !important }
+
+    ::selection { background: #e8a020; color: #0d0d0b }
+
     @media (min-width: 768px) {
-      .hero-fold__trust-meta { font-size: 1.35rem }
-      .hero-fold__trust-meta strong { font-size: 1.9rem }
-      .fears { padding: 72px 24px 76px }
-      .fears__title { font-size: 2.4rem }
-      .fears__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 24px }
-      .closing-cta h2 { font-size: 2.2rem }
+      .hero-fold__trust-meta { font-size: 1.0625rem }
+      .fears, .how, .facts { padding: 64px 32px 68px }
+      .fears__title, .how__title, .facts__title { font-size: 2rem }
+      .fears__lead, .facts__lead { font-size: 1rem }
+      .fears__list { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px }
+      .fear { padding: 22px 0 0 }
+      .how__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px }
+      #client-stories.wrap { padding: 64px 24px 68px }
+      #client-stories .t-title, #commercial-faq-heading { font-size: 2rem }
+      #commercial-faq { padding: 64px 24px 68px }
+      #commercial-faq .faq-wrap dl { gap: 16px }
+      .facts__list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px }
+      .ppi-map .ppi-map__embed iframe { height: 320px }
+      .closing-cta { padding: 64px 24px 72px }
+      .closing-cta h2 { font-size: 2rem }
     }
   </style>
   <meta name="msvalidate.01" content="AA032A8781098ECE1CA6BEF5797E5B83" />
@@ -1155,31 +1228,10 @@
       <h1 class="hero-fold__h1">
         Certified Mechanics in Kelowna Who Come to You. <span class="hero-fold__accent">Your Mobile Mechanic, Same Day.</span>
       </h1>
-      <div class="hero-fold__separator" aria-hidden="true"></div>
       <p class="hero-fold__tagline">
         You should not pay for guesses. Kelowna Protech Elite Mobile Mechanic finds the real cause, shows you what failed and what it costs, and repairs it at your home or work only after you approve.
       </p>
       <a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text a certified mechanic at Kelowna Protech Elite Mobile Mechanic">Text a Certified Mechanic</a>
-      <div class="hero-fold__path" aria-label="How the mobile repair process works">
-        <p class="hero-fold__path-kicker">Text first. Clear answers next.</p>
-        <ol class="hero-fold__path-steps">
-          <li class="hero-fold__path-step">
-            <span class="hero-fold__path-node">01</span>
-            <span class="hero-fold__path-title">Text</span>
-            <span class="hero-fold__path-copy">Tell us what happened.</span>
-          </li>
-          <li class="hero-fold__path-step">
-            <span class="hero-fold__path-node">02</span>
-            <span class="hero-fold__path-title">Diagnose</span>
-            <span class="hero-fold__path-copy">We find the real issue.</span>
-          </li>
-          <li class="hero-fold__path-step">
-            <span class="hero-fold__path-node">03</span>
-            <span class="hero-fold__path-title">Fix</span>
-            <span class="hero-fold__path-copy">Approve the right repair.</span>
-          </li>
-        </ol>
-      </div>
       <p id="coverage" class="hero-fold__service-area">Based in Kelowna · We go anywhere in the Okanagan</p>
     </div>
   </section>
@@ -1188,38 +1240,58 @@
   <!-- FEARS: loss, solution, proof. Reviews are verbatim from Google (source: reviews-gbp-v2.md) -->
   <section class="fears" id="why-trust-us" aria-labelledby="fears-title">
     <div class="fears__inner">
-      <p class="fears__eyebrow">Before you spend a dollar</p>
       <h2 id="fears-title" class="fears__title">Afraid of paying for the wrong repair?</h2>
       <p class="fears__lead">Three worries our customers mention in their Google reviews, and how our certified mechanics handle each one.</p>
-      <ul class="fears__grid" role="list">
-        <li class="fear-card">
-          <h3 class="fear-card__q">&ldquo;Will they sell me repairs I don&rsquo;t need?&rdquo;</h3>
-          <p class="fear-card__a">No. We tell you what failed and give you your options. You decide.</p>
-          <blockquote class="fear-card__review">
+      <ul class="fears__list" role="list">
+        <li class="fear">
+          <h3 class="fear__q">&ldquo;Will they sell me repairs I don&rsquo;t need?&rdquo;</h3>
+          <p class="fear__a">No. We tell you what failed and give you your options. You decide.</p>
+          <blockquote class="fear__review">
             <p>"Joseph is fantastic. He is very honest and won&rsquo;t try to rip you off with things you don&rsquo;t need. Would highly recommend"</p>
-            <footer><span class="fear-card__stars" aria-label="5 out of 5 stars">★★★★★</span>Jack Stear <span class="fear-card__src">· Google review</span></footer>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Jack Stear <span class="fear__src">· Google review</span></footer>
           </blockquote>
         </li>
-        <li class="fear-card">
-          <h3 class="fear-card__q">&ldquo;What if I pay and the problem is still there?&rdquo;</h3>
-          <p class="fear-card__a">We find the real cause first, then we fix it.</p>
-          <blockquote class="fear-card__review">
+        <li class="fear">
+          <h3 class="fear__q">&ldquo;What if I pay and the problem is still there?&rdquo;</h3>
+          <p class="fear__a">We find the real cause first, then we fix it.</p>
+          <blockquote class="fear__review">
             <p>"All the other mechanics we took it to (6 of them!!!) just threw parts at it and OVERCHARGED and NEVER even fixed the problem! [...] it was a SIMPLE sensor replacement WHICH he could have sent a mechanic out and charged for - but he was so honest he told us we could do it ourselves! [...] we did and it WORKED!"</p>
-            <footer><span class="fear-card__stars" aria-label="5 out of 5 stars">★★★★★</span>Elizabeth Ocean <span class="fear-card__src">· Google review</span></footer>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Elizabeth Ocean <span class="fear__src">· Google review</span></footer>
           </blockquote>
         </li>
-        <li class="fear-card">
-          <h3 class="fear-card__q">&ldquo;Will the bill be a surprise?&rdquo;</h3>
-          <p class="fear-card__a">No. You know the cost before we start, and nothing is done without your approval.</p>
-          <blockquote class="fear-card__review">
+        <li class="fear">
+          <h3 class="fear__q">&ldquo;Will the bill be a surprise?&rdquo;</h3>
+          <p class="fear__a">No. You know the cost before we start, and nothing is done without your approval.</p>
+          <blockquote class="fear__review">
             <p>"[...] I really appreciated being informed throughout the entire process, and was asked for consent at every additional cost as it was incurred. My vehicle is back running and I&rsquo;m armed with advice on how to continue to maintain my engine. [...]"</p>
-            <footer><span class="fear-card__stars" aria-label="5 out of 5 stars">★★★★★</span>Madi Holgate <span class="fear-card__src">· Google review</span></footer>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Madi Holgate <span class="fear__src">· Google review</span></footer>
           </blockquote>
         </li>
       </ul>
       <p class="fears__cta-row">
         <a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text us what your car is doing">Text Us What Your Car Is Doing</a>
       </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: the three real steps, in full sentences -->
+  <section class="how" id="how-it-works" aria-labelledby="how-title">
+    <div class="how__inner">
+      <h2 id="how-title" class="how__title">How Our Mobile Auto Repair Works</h2>
+      <ol class="how__steps">
+        <li>
+          <h3>Text us</h3>
+          <p>Tell us what your car is doing and where it is. A certified mechanic answers by text.</p>
+        </li>
+        <li>
+          <h3>We come to your car and find the real cause</h3>
+          <p>We test the car at your home or work with professional scan tools, same day.</p>
+        </li>
+        <li>
+          <h3>You approve, then we repair it there</h3>
+          <p>We show you what failed and what it costs. Nothing is done or charged without your approval, and we repair it on the spot as long as it is safe to work there.</p>
+        </li>
+      </ol>
     </div>
   </section>
 
@@ -1230,7 +1302,7 @@
       <p class="t-subtitle">These are their words, not ours. Every review below is published on our Google profile.</p>
       <p class="t-subtitle">Buying a used car? Don't get ripped off. Don't buy a lemon. Don't lose your savings. Start with a <a href="/services/pre-purchase/">pre-purchase inspection in Kelowna</a>. We come to the seller.</p>
     </header>
-    <div class="t-grid" aria-label="Customer reviews">
+    <div class="t-grid" role="region" tabindex="0" aria-label="Customer reviews from Google">
       <article class="t-card t-card--hero">
         <blockquote class="t-hero-quote">
           "They diagnosed my electrical problems and fixed them all in one afternoon."
@@ -1297,6 +1369,7 @@
         <div class="t-rating">★★★★★</div>
       </article>
     </div>
+    <p class="t-swipe" aria-hidden="true">Swipe to read more reviews</p>
     <p class="t-all"><a href="https://www.google.com/maps?cid=15158851769671529299" target="_blank" rel="noopener">Read all 84 reviews on Google →</a></p>
   </section>
 
@@ -1305,7 +1378,7 @@
     <header class="section-head">
       <span class="eyebrow">Your Personal Mobile Mechanics</span>
       <h2 id="services-heading">Mobile Mechanic Services Expert Auto Repair Delivered to Your Door</h2>
-      <p class="lead">Same day help from certified mechanics. We bring the shop to your car.</p>
+      <p class="lead">Auto repair, diagnostics and inspections by certified mechanics, at your home or work, same day.</p>
     </header>
 
     <ul class="tiles" role="list">
@@ -1317,7 +1390,7 @@
               <source srcset="images/diagnostic-repairs-400w.webp" media="(max-width: 640px)">
               <source srcset="images/diagnostic-repairs-800w.webp" media="(max-width: 1024px)">
               <img src="images/diagnostic-repairs.webp"
-                alt="Mobile mechanic running an advanced diagnostic scan under the hood in a driveway." loading="eager"
+                alt="Mobile mechanic running an advanced diagnostic scan under the hood in a driveway." loading="lazy"
                 decoding="async" width="800" height="534" />
             </picture>
           </figure>
@@ -1447,6 +1520,48 @@
     <a href="/field-reports/" style="display:inline-flex; align-items:center; gap:8px; font-size:17px; font-weight:700; color:#1e40af; text-decoration:none; border-bottom:2px solid #bfdbfe; padding-bottom:2px; transition:color 0.2s;" aria-label="See real diagnostic cases from Kelowna">
       See Real Diagnostic Cases from Kelowna →
     </a>
+  </section>
+
+  <!-- AT A GLANCE: plain facts, one per line -->
+  <section class="facts" id="at-a-glance" aria-labelledby="facts-title">
+    <div class="facts__inner">
+      <h2 id="facts-title" class="facts__title">Kelowna Protech Elite Mobile Mechanic at a Glance</h2>
+      <p class="facts__lead">Kelowna Protech Elite Mobile Mechanic is a mobile auto repair company based in Kelowna, BC. Our certified mechanics come to your home, your work or wherever the car is, find the real cause of the problem and repair it there, same day.</p>
+      <dl class="facts__list">
+        <div>
+          <dt>What we do</dt>
+          <dd>Car diagnostics and auto repair, including electrical and electronic problems, pre-purchase car inspections and preventive maintenance.</dd>
+        </div>
+        <div>
+          <dt>How we do it</dt>
+          <dd>You text us, a certified mechanic comes to the car, and you approve the cost before any repair.</dd>
+        </div>
+        <div>
+          <dt>Why we are different</dt>
+          <dd>We are certified mechanics who do the work where your car is, we show you what failed, and we do not sell repairs you do not need. Our customers rate us 4.9 out of 5 in 84 Google reviews (November 2026).</dd>
+        </div>
+        <div>
+          <dt>Vehicles</dt>
+          <dd>Cars, SUVs and light trucks first, then diesel vehicles and fleets. We do not service electric vehicles: electrical repair here means the 12 volt electrical system of your car.</dd>
+        </div>
+        <div>
+          <dt>Where</dt>
+          <dd>Based in Kelowna. We go anywhere in the Okanagan, including West Kelowna, Lake Country, Vernon, Peachland and Penticton.</dd>
+        </div>
+        <div>
+          <dt>Hours</dt>
+          <dd>Monday to Saturday, 8 am to 6 pm.</dd>
+        </div>
+        <div>
+          <dt>How to reach us</dt>
+          <dd>Text (250) 859-5467. We answer in English or Spanish.</dd>
+        </div>
+        <div>
+          <dt>Warranty</dt>
+          <dd>Our work is covered by warranty.</dd>
+        </div>
+      </dl>
+    </div>
   </section>
 
   <!-- SERVICE AREA MAP -->
