@@ -180,6 +180,108 @@
     @media(prefers-reduced-motion:reduce) {
       .hero-fold::after { animation: none; display: none }
     }
+    /* Path back on the road (restored from live home, 2026-11-16) */
+    .hero-fold__path {
+      max-width: 540px;
+      margin: 30px auto 0;
+      padding-top: 18px;
+      border-top: 1px solid rgba(232, 160, 32, 0.42);
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.5s
+    }
+    .hero-fold__path-kicker {
+      color: #e8a020;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1.2;
+      letter-spacing: 0.12em;
+      margin: 0 0 14px;
+      text-transform: uppercase
+    }
+    .hero-fold__path-steps {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 10px
+    }
+    .hero-fold__path-step {
+      position: relative;
+      display: grid;
+      align-content: start;
+      gap: 6px;
+      min-width: 0;
+      text-align: center
+    }
+    .hero-fold__path-step:not(:last-child)::after {
+      content: '';
+      position: absolute;
+      top: 13px;
+      right: -7px;
+      width: 9px;
+      height: 9px;
+      border-right: 1px solid rgba(232, 160, 32, 0.75);
+      border-bottom: 1px solid rgba(232, 160, 32, 0.75);
+      transform: rotate(-45deg)
+    }
+    .hero-fold__path-node {
+      width: 34px;
+      height: 34px;
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(232, 160, 32, 0.68);
+      background:
+        radial-gradient(circle at 50% 50%, rgba(232, 160, 32, 0.18), rgba(13, 13, 11, 0.58) 62%),
+        rgba(13, 13, 11, 0.58);
+      color: #e8a020;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.75rem;
+      font-weight: 700;
+      line-height: 1;
+      border-radius: 999px
+    }
+    .hero-fold__path-title {
+      color: #f8f4ec;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.875rem;
+      font-weight: 700;
+      line-height: 1.2;
+      text-transform: uppercase;
+      letter-spacing: 0.04em
+    }
+    .hero-fold__path-copy {
+      color: rgba(255, 255, 255, 0.82);
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.8125rem;
+      line-height: 1.45
+    }
+    @media(min-width:768px) {
+      .hero-fold__path {
+        margin: 34px 0 0;
+        max-width: 640px
+      }
+      .hero-fold__path-kicker {
+        margin-bottom: 16px
+      }
+      .hero-fold__path-steps {
+        gap: 18px
+      }
+      .hero-fold__path-step {
+        text-align: left
+      }
+      .hero-fold__path-node {
+        margin: 0
+      }
+      .hero-fold__path-step:not(:last-child)::after {
+        right: -12px
+      }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .hero-fold__path { animation: none !important }
+    }
     .hero-fold__content {
       position: relative;
       z-index: 2;
@@ -1170,9 +1272,28 @@
         <img src="images/hero-winter-800w.webp" width="800" height="441" alt="Kelowna Protech Elite certified mechanic scanning an SUV in the snow, next to the service truck with the tools" fetchpriority="high" decoding="async">
       </picture>
       <p class="hero-fold__tagline">
-        Text us what your car is doing. We come to you the same day, find the real cause, explain it in plain words, and fix it right there with your OK. No guessing, no parts thrown at it.
+        We come to you the same day, find the real cause, explain it in plain words, and fix it right there with your OK. No guessing, no parts thrown at it.
       </p>
-      <a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text a certified mechanic at Kelowna Protech Elite Mobile Mechanic">Text a Certified Mechanic</a>
+      <div class="hero-fold__path" aria-label="Your path from a car that won't start to a car that's fixed">
+        <p class="hero-fold__path-kicker">Your way back on the road</p>
+        <ol class="hero-fold__path-steps">
+          <li class="hero-fold__path-step">
+            <span class="hero-fold__path-node">01</span>
+            <span class="hero-fold__path-title">Text</span>
+            <span class="hero-fold__path-copy">Tell us what your car is doing.</span>
+          </li>
+          <li class="hero-fold__path-step">
+            <span class="hero-fold__path-node">02</span>
+            <span class="hero-fold__path-title">We Come</span>
+            <span class="hero-fold__path-copy">We find the real cause.</span>
+          </li>
+          <li class="hero-fold__path-step">
+            <span class="hero-fold__path-node">03</span>
+            <span class="hero-fold__path-title">Fixed</span>
+            <span class="hero-fold__path-copy">You approve, we fix it right there.</span>
+          </li>
+        </ol>
+      </div>
       <p id="coverage" class="hero-fold__service-area">Based in Kelowna · We go anywhere in the Okanagan</p>
     </div>
   </section>
