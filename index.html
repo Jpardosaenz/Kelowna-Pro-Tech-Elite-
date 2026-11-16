@@ -11,8 +11,8 @@
   <meta name="referrer" content="strict-origin-when-cross-origin" />
   <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
-  <title>Mobile Mechanic Kelowna: Stranded? Certified Auto Repair, Same Day | Protech Elite</title>
-  <meta name="description" content="Car won't start? Check engine light on? Our certified mobile mechanics come to you in Kelowna, same day. Real cause found and fixed with your approval. Text us.">
+  <title>Mobile Mechanic Kelowna — Stranded? Fixed Today, No Tow | Protech Elite</title>
+  <meta name="description" content="Car won't start? Check engine light on? Your mobile mechanic comes to you in Kelowna — same day. Real diagnosis, no tow, no shop wait. Call or text now.">
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://kelownaprotechmobilemech.com/" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -23,7 +23,7 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kelownaprotechmobilemech.com/" />
   <meta property="og:image"
-    content="https://kelownaprotechmobilemech.com/images/hero-mechanic-1200w.webp" />
+    content="https://kelownaprotechmobilemech.com/images/hero-winter-1200w.webp" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="655" />
   <meta property="og:image:alt" content="Certified mobile mechanic from Kelowna Protech diagnosing a Ford Explorer at a Kelowna home" />
@@ -36,7 +36,7 @@
   <meta name="twitter:description"
     content="Kelowna Protech Elite Mobile Mechanic comes to your car, same day. Our certified mechanics find the real cause, explain it clearly and fix it only with your approval. Text us now." />
   <meta name="twitter:image"
-    content="https://kelownaprotechmobilemech.com/images/hero-mechanic-1200w.webp" />
+    content="https://kelownaprotechmobilemech.com/images/hero-winter-1200w.webp" />
   <meta name="twitter:image:alt" content="Certified mobile mechanic from Kelowna Protech diagnosing a Ford Explorer at a Kelowna home" />
 
   <!-- Additional SEO & Conversion Meta Tags -->
@@ -44,8 +44,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <!-- Preload hero image (LCP optimization) -->
-  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp" media="(max-width: 767px)" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="images/hero-mechanic-1200w.webp" media="(min-width: 768px)" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-winter-800w.webp" media="(max-width: 767px)" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-winter-1200w.webp" media="(min-width: 768px)" type="image/webp" fetchpriority="high">
   <!-- Critical CSS: inline ATF styles to unblock FCP (header + hero + CTAs + social proof) -->
   <style>
     @font-face {
@@ -126,7 +126,7 @@
       min-height: 90vh;
       display: flex;
       align-items: flex-start;
-      background-image: url('images/hero-mechanic-800w.webp');
+      background-image: url('images/hero-winter-800w.webp');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -139,6 +139,46 @@
       inset: 0;
       background: rgba(13,13,11,0.80);
       z-index: 1
+    }
+    /* Winter 2026: question kicker, visible photo on phones, light snowfall */
+    .hero-fold__kicker {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 700;
+      color: #ffd166;
+      margin: 0 0 10px
+    }
+    .hero-fold__photo { display: block; margin: 18px auto 4px; max-width: 520px }
+    .hero-fold__photo img { display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.45) }
+    @media(max-width:767px) {
+      .hero-fold { background-image: none; background-color: #0d0d0b; min-height: 0 }
+      .hero-fold::before { background: none }
+    }
+    @media(min-width:768px) {
+      .hero-fold__photo { display: none }
+    }
+    .hero-fold::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.85), transparent 60%),
+        radial-gradient(2px 2px at 120px 80px, rgba(255,255,255,0.7), transparent 60%),
+        radial-gradient(3px 3px at 200px 150px, rgba(255,255,255,0.6), transparent 60%),
+        radial-gradient(2px 2px at 60px 190px, rgba(255,255,255,0.75), transparent 60%),
+        radial-gradient(3px 3px at 160px 10px, rgba(255,255,255,0.55), transparent 60%);
+      background-size: 240px 240px;
+      animation: heroSnow 14s linear infinite;
+      opacity: 0.7
+    }
+    @keyframes heroSnow {
+      from { background-position: 0 0 }
+      to { background-position: 40px 240px }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .hero-fold::after { animation: none; display: none }
     }
     .hero-fold__content {
       position: relative;
@@ -235,7 +275,7 @@
         min-height: 100vh;
         align-items: center;
         padding: 32px 60px 80px;
-        background-image: url('images/hero-mechanic-1200w.webp')
+        background-image: url('images/hero-winter-1200w.webp')
       }
       .hero-fold::before {
         background: linear-gradient(to right, rgba(13,13,11,0.85) 40%, rgba(13,13,11,0.45) 100%)
@@ -877,7 +917,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "84",
+    "reviewCount": "85",
     "bestRating": "5"
   },
   "telephone": "+1-250-859-5467",
@@ -1115,17 +1155,22 @@
   <!-- FOLD 03: Hero Section -->
   <section id="hero" class="hero-fold">
     <div class="hero-fold__content">
-      <div class="hero-fold__trust" aria-label="Trusted by 84 Google reviewers">
-        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 84 Google reviews">
-          ★★★★★<span class="hero-fold__trust-meta"><strong>4.9 out of 5</strong> from 84 Google reviews</span>
+      <div class="hero-fold__trust" aria-label="Trusted by 85 Google reviewers">
+        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 85 Google reviews">
+          ★★★★★<span class="hero-fold__trust-meta"><strong>4.9 out of 5</strong> from 85 Google reviews</span>
         </p>
-        <p class="hero-fold__trust-quote">"Super professional, on time (early), deep knowledge, goes the extra mile. WORTH EVERY PENNY!" - Sebastian T.</p>
+        <p class="hero-fold__trust-quote">"Won&rsquo;t try to rip you off with things you don&rsquo;t need." - Jack S.</p>
       </div>
+      <p class="hero-fold__kicker">Car won&rsquo;t start this morning?</p>
       <h1 class="hero-fold__h1">
-        Certified Mechanics in Kelowna Who Come to You. <span class="hero-fold__accent">Your Mobile Mechanic, Same Day.</span>
+        Kelowna&rsquo;s Certified Auto Repair Shop That Comes to You. <span class="hero-fold__accent">Your Mobile Mechanic, Same Day.</span>
       </h1>
+      <picture class="hero-fold__photo">
+        <source srcset="images/hero-winter-400w.webp 400w, images/hero-winter-800w.webp 800w" sizes="100vw" type="image/webp">
+        <img src="images/hero-winter-800w.webp" width="800" height="441" alt="Kelowna Protech Elite certified mechanic scanning an SUV in the snow, next to the service truck with the tools" fetchpriority="high" decoding="async">
+      </picture>
       <p class="hero-fold__tagline">
-        You should not pay for guesses. Kelowna Protech Elite Mobile Mechanic finds the real cause, shows you what failed and what it costs, and repairs it at your home or work only after you approve.
+        Text us what your car is doing. We come to you the same day, find the real cause, explain it in plain words, and fix it right there with your OK. No guessing, no parts thrown at it.
       </p>
       <a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text a certified mechanic at Kelowna Protech Elite Mobile Mechanic">Text a Certified Mechanic</a>
       <p id="coverage" class="hero-fold__service-area">Based in Kelowna · We go anywhere in the Okanagan</p>
@@ -1173,7 +1218,7 @@
   <!-- HOW IT WORKS: the three real steps, in full sentences -->
   <section class="how" id="how-it-works" aria-labelledby="how-title">
     <div class="how__inner">
-      <h2 id="how-title" class="how__title">How Our Mobile Auto Repair Works</h2>
+      <h2 id="how-title" class="how__title">A Full Repair Shop, Brought to Your Driveway</h2>
       <ol class="how__steps">
         <li>
           <h3>Text us</h3>
@@ -1193,8 +1238,8 @@
 
   <section class="wrap" id="client-stories">
     <header class="t-head" aria-labelledby="t-title">
-      <p class="t-stat"><span>★★★★★</span>4.9 out of 5 from 84 Google reviews</p>
-      <h2 id="t-title" class="t-title">#1 in Kelowna, and Our Customers Say Why</h2>
+      <p class="t-stat"><span>★★★★★</span>4.9 out of 5 from 85 Google reviews</p>
+      <h2 id="t-title" class="t-title">#1 in Kelowna: 85 Google Reviews Say Why</h2>
       <p class="t-subtitle">These are their words, not ours. Every review below is published on our Google profile.</p>
       <p class="t-subtitle">Buying a used car? Don't get ripped off. Don't buy a lemon. Don't lose your savings. Start with a <a href="/services/pre-purchase/">pre-purchase inspection in Kelowna</a>. We come to the seller.</p>
     </header>
@@ -1266,7 +1311,7 @@
       </article>
     </div>
     <p class="t-swipe" aria-hidden="true">Swipe to read more reviews</p>
-    <p class="t-all"><a href="https://www.google.com/maps?cid=15158851769671529299" target="_blank" rel="noopener">Read all 84 reviews on Google →</a></p>
+    <p class="t-all"><a href="https://www.google.com/maps?cid=15158851769671529299" target="_blank" rel="noopener">Read all 85 reviews on Google →</a></p>
   </section>
 
   <!-- Services / Mobile-first -->
@@ -1434,7 +1479,7 @@
         </div>
         <div>
           <dt>Why we are different</dt>
-          <dd>We are certified mechanics who do the work where your car is, we show you what failed, and we do not sell repairs you do not need. Our customers rate us 4.9 out of 5 in 84 Google reviews (November 2026).</dd>
+          <dd>We are certified mechanics who do the work where your car is, we show you what failed, and we do not sell repairs you do not need. Our customers rate us 4.9 out of 5 in 85 Google reviews (November 2026).</dd>
         </div>
         <div>
           <dt>Vehicles</dt>
@@ -1480,7 +1525,7 @@
     <h2 id="closing-cta-title">Text us what your car is doing.</h2>
     <p>A certified mechanic answers, same day. You get a clear answer before you spend money on the wrong repair.</p>
     <p><a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text (250) 859-5467, Kelowna Protech Elite Mobile Mechanic">Text (250) 859-5467</a></p>
-    <p class="closing-cta__proof">★★★★★ 4.9 out of 5 from 84 Google reviews</p>
+    <p class="closing-cta__proof">★★★★★ 4.9 out of 5 from 85 Google reviews</p>
   </section>
 
   <script type="application/ld+json">
@@ -1591,7 +1636,7 @@
       <img
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJtMTIgMTQgNC00Ii8+PHBhdGggZD0iTTMuMzQgMTlhMTAgMTAgMCAxIDEgMTcuMzIgMCIvPjwvc3ZnPg=="
         alt="Gauge icon, Google reviews" class="icon-achievement" width="28" height="28" loading="lazy" />
-      <span>84 Google<br>Reviews</span>
+      <span>85 Google<br>Reviews</span>
     </div>
 
     <!-- Icono 3: Map Pin – On-Site Service -->
