@@ -298,6 +298,19 @@
     .hero-fold__path-link .hero-fold__path-node { background: #e8a020; color: #0d0d0b }
     .hero-fold__path-link .hero-fold__path-title { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(232,160,32,0.8) }
     .hero-fold__path-link:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
+    .hero-fold__desk-phone { display: none }
+    @media(min-width:768px) {
+      .hero-fold__desk-phone {
+        display: block;
+        margin: 18px 0 0;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #f8f4ec
+      }
+      .hero-fold__desk-phone a { color: #ffd166; text-decoration: none; border-bottom: 2px solid rgba(255,209,102,0.6) }
+      .hero-fold__desk-phone a:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
+    }
     .hero-fold__content {
       position: relative;
       z-index: 2;
@@ -1277,7 +1290,7 @@
         <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 85 Google reviews">
           ★★★★★<span class="hero-fold__trust-meta"><strong>#1 in Kelowna</strong> · 4.9 out of 5 from 85 Google reviews · Warranty on our work</span>
         </p>
-        <p class="hero-fold__trust-quote">"&hellip;won&rsquo;t try to rip you off with things you don&rsquo;t need." - Jack S.</p>
+        <p class="hero-fold__trust-quote">"&hellip;able to diagnose the issue with my vehicle and fix it in my driveway." - Scout, November 2026</p>
       </div>
       <p class="hero-fold__kicker">Car won&rsquo;t start this morning?</p>
       <h1 class="hero-fold__h1">
@@ -1312,6 +1325,7 @@
           </li>
         </ol>
       </div>
+      <p class="hero-fold__desk-phone">Text or call <a href="tel:+12508595467">(250) 859-5467</a></p>
       <p id="coverage" class="hero-fold__service-area">Based in Kelowna · We go anywhere in the Okanagan</p>
     </div>
   </section>
@@ -1397,6 +1411,30 @@
             <span class="t-service">Google review</span>
           </div>
         </div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Scout</span>
+            <span class="t-service">Google review · November 2026</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "Joseph is a patient and skilled mechanic. He was able to diagnose the issue with my vehicle and fix it in my driveway. He took the time to inspect and explain his findings that helped me understand the issue. He was also very responsive and easy to communicate with. Thank you! for your service and hard work!"
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Alanood Abdulmonem</span>
+            <span class="t-service">Google review · Pre-purchase inspection · November 2026</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "Had a great experience with Kelowna Protech! Joseph was super friendly, professional, and quick to respond. He came out to inspect a used car I was considering buying, kept me updated with photos and videos throughout, and provided a really detailed report explaining everything he found. He also took the time to answer my questions and give me honest advice, which I really appreciated as a first-time car buyer. Definitely recommend his services!"
+        </p>
+        <div class="t-rating">★★★★★</div>
       </article>
       <article class="t-card">
         <div class="t-card-header">
