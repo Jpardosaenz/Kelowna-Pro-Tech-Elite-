@@ -158,6 +158,7 @@
       .hero-fold__photo { display: none }
     }
     .hero-fold::after {
+      display: none;
       content: '';
       position: absolute;
       inset: 0;
@@ -172,6 +173,9 @@
       background-size: 240px 240px;
       animation: heroSnow 14s linear infinite;
       opacity: 0.7
+    }
+    @media(min-width:768px) {
+      .hero-fold::after { display: block }
     }
     @keyframes heroSnow {
       from { background-position: 0 0 }
@@ -1273,15 +1277,15 @@
         <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 85 Google reviews">
           ★★★★★<span class="hero-fold__trust-meta"><strong>#1 in Kelowna</strong> · 4.9 out of 5 from 85 Google reviews · Warranty on our work</span>
         </p>
-        <p class="hero-fold__trust-quote">"Won&rsquo;t try to rip you off with things you don&rsquo;t need." - Jack S.</p>
+        <p class="hero-fold__trust-quote">"&hellip;won&rsquo;t try to rip you off with things you don&rsquo;t need." - Jack S.</p>
       </div>
       <p class="hero-fold__kicker">Car won&rsquo;t start this morning?</p>
       <h1 class="hero-fold__h1">
         Kelowna&rsquo;s Certified Auto Repair Shop That Comes to You. <span class="hero-fold__accent">Your Mobile Mechanic, Same Day.</span>
       </h1>
       <picture class="hero-fold__photo">
-        <source srcset="images/hero-winter-400w.webp 400w, images/hero-winter-800w.webp 800w" sizes="100vw" type="image/webp">
-        <img src="images/hero-winter-800w.webp" width="800" height="441" alt="Kelowna Protech Elite certified mechanic scanning an SUV in the snow, next to the service truck with the tools" fetchpriority="high" decoding="async">
+        <source media="(max-width: 767px)" srcset="images/hero-winter-800w.webp" type="image/webp">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAACH5BAEAAAAALAAAAAABAAEAAAIBTAA7" width="800" height="441" alt="Kelowna Protech Elite certified mechanic scanning an SUV in the snow, next to the service truck with the tools" fetchpriority="high" decoding="async">
       </picture>
       <p class="hero-fold__tagline">
         We come to you the same day, find the real cause, explain it in plain words, and fix it right there with your OK. No guessing, no parts thrown at it.
