@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
   <title>Mobile Mechanic Kelowna — Stranded? Fixed Today, No Tow | Protech Elite</title>
-  <meta name="description" content="Car won't start? Check engine light on? Your mobile mechanic comes to you in Kelowna — same day. Real diagnosis, no tow, no shop wait. Call or text now.">
+  <meta name="description" content="Car won't start? Our certified mobile mechanics come to your home or work in Kelowna, same day. We find the real cause and fix it with your OK. Text us.">
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://kelownaprotechmobilemech.com/" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -282,6 +282,18 @@
     @media(prefers-reduced-motion:reduce) {
       .hero-fold__path { animation: none !important }
     }
+    .hero-fold__path-link {
+      display: grid;
+      align-content: start;
+      gap: 6px;
+      color: inherit;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 4px 2px
+    }
+    .hero-fold__path-link .hero-fold__path-node { background: #e8a020; color: #0d0d0b }
+    .hero-fold__path-link .hero-fold__path-title { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(232,160,32,0.8) }
+    .hero-fold__path-link:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
     .hero-fold__content {
       position: relative;
       z-index: 2;
@@ -1224,7 +1236,7 @@
         <li><a href="/our-story/">Our Story</a></li>
       </ul>
     </nav>
-    <a href="sms:+12508595467" class="header-cta" aria-label="Call Joseph for same-day car repair">
+    <a href="sms:+12508595467" class="header-cta" aria-label="Text Kelowna Protech Elite Mobile Mechanic for same-day car repair">
       <span class="cta-main">Get Same-Day Repair</span>
       <span class="cta-sub">15+ Years Experience • Kelowna</span>
     </a>
@@ -1259,7 +1271,7 @@
     <div class="hero-fold__content">
       <div class="hero-fold__trust" aria-label="Trusted by 85 Google reviewers">
         <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 85 Google reviews">
-          ★★★★★<span class="hero-fold__trust-meta"><strong>4.9 out of 5</strong> from 85 Google reviews</span>
+          ★★★★★<span class="hero-fold__trust-meta"><strong>#1 in Kelowna</strong> · 4.9 out of 5 from 85 Google reviews · Warranty on our work</span>
         </p>
         <p class="hero-fold__trust-quote">"Won&rsquo;t try to rip you off with things you don&rsquo;t need." - Jack S.</p>
       </div>
@@ -1278,9 +1290,11 @@
         <p class="hero-fold__path-kicker">Your way back on the road</p>
         <ol class="hero-fold__path-steps">
           <li class="hero-fold__path-step">
-            <span class="hero-fold__path-node">01</span>
-            <span class="hero-fold__path-title">Text</span>
-            <span class="hero-fold__path-copy">Tell us what your car is doing.</span>
+            <a class="hero-fold__path-link" href="sms:+12508595467" aria-label="Text Kelowna Protech Elite Mobile Mechanic what your car is doing">
+              <span class="hero-fold__path-node">01</span>
+              <span class="hero-fold__path-title">Text</span>
+              <span class="hero-fold__path-copy">Tell us what your car is doing.</span>
+            </a>
           </li>
           <li class="hero-fold__path-step">
             <span class="hero-fold__path-node">02</span>
@@ -1731,7 +1745,7 @@
   -->
   <!-- INICIO BOTÓN FLOTANTE CTA (RESTAURADO PARA CONTACTO DIRECTO) -->
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
-    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call Joseph for same-day car repair">
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call Kelowna Protech Elite Mobile Mechanic for same-day car repair">
       <span class="cta-main">Get My Car Fixed Today</span>
       <span class="cta-sub">Same-Day Service • Kelowna &amp; Area</span>
     </a>
