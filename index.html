@@ -1119,15 +1119,19 @@
       .hero-fold__tagline { font-size: 0.9375rem; line-height: 1.55 }
       .hero-fold__service-area { font-size: 0.8125rem; padding: 8px 14px; letter-spacing: 0.04em }
       /* 2026-11-22 Jose: photo and key text in the first screen on phones */
-      .hero-fold { padding: 12px 16px 28px }
+      .hero-fold { padding: 8px 16px 28px }
       .hero-fold__content { display: flex; flex-direction: column }
       .hero-fold__trust { margin: 0 auto 8px; gap: 2px }
       .hero-fold__trust-stars { font-size: 0.875rem; gap: 6px; line-height: 1.35 }
       .hero-fold__trust-meta { font-size: 0.875rem }
       .hero-fold__trust-quote { font-size: 0.8125rem; line-height: 1.35; max-width: 40ch }
       .hero-fold__kicker { font-size: 1rem; margin: 0 0 4px }
-      .hero-fold__h1 { font-size: 1.375rem; line-height: 1.15 }
-      .hero-fold__photo { margin: 10px auto 0; width: 100% }
+      .hero-fold__h1 { font-size: 1.3rem; line-height: 1.12 }
+      .hero-fold__photo { margin: 8px auto 0; width: 100% }
+      .hero-fold__trust { display: contents }
+      .hero-fold__trust-stars { order: -1; margin: 0 0 4px }
+      .hero-fold__trust-quote { order: 1; margin: 10px auto 0 }
+      .hero-fold__kicker { order: 0 }
       .hero-fold__path { order: 1; margin-top: 14px; padding-top: 12px }
       .hero-fold__path-kicker { margin: 0 0 8px }
       .hero-fold__tagline { order: 2 }
@@ -1358,23 +1362,23 @@
           <p class="fear__a">No. We tell you what failed and give you your options. You decide.</p>
           <blockquote class="fear__review">
             <p>"Joseph is fantastic. He is very honest and won&rsquo;t try to rip you off with things you don&rsquo;t need. Would highly recommend"</p>
-            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Jack Stear <span class="fear__src">· Google review</span></footer>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Jack Stear <span class="fear__src">· Google review · October 2026</span></footer>
           </blockquote>
         </li>
         <li class="fear">
           <h3 class="fear__q">&ldquo;What if I pay and the problem is still there?&rdquo;</h3>
           <p class="fear__a">We find the real cause first, then we fix it.</p>
           <blockquote class="fear__review">
-            <p>"All the other mechanics we took it to (6 of them!!!) just threw parts at it and OVERCHARGED and NEVER even fixed the problem! [...] it was a SIMPLE sensor replacement WHICH he could have sent a mechanic out and charged for - but he was so honest he told us we could do it ourselves! [...] we did and it WORKED!"</p>
-            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Elizabeth Ocean <span class="fear__src">· Google review</span></footer>
+            <p>"[...] He was able to diagnose the issue with my vehicle and fix it in my driveway. He took the time to inspect and explain his findings that helped me understand the issue. [...]"</p>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Scout <span class="fear__src">· Google review · November 2026</span></footer>
           </blockquote>
         </li>
         <li class="fear">
           <h3 class="fear__q">&ldquo;Will the bill be a surprise?&rdquo;</h3>
           <p class="fear__a">No. You know the cost before we start, and nothing is done without your approval.</p>
           <blockquote class="fear__review">
-            <p>"[...] I really appreciated being informed throughout the entire process, and was asked for consent at every additional cost as it was incurred. My vehicle is back running and I&rsquo;m armed with advice on how to continue to maintain my engine. [...]"</p>
-            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Madi Holgate <span class="fear__src">· Google review</span></footer>
+            <p>"Prompt service. Good communication. Clear pricing."</p>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>G D <span class="fear__src">· Google review · November 2026</span></footer>
           </blockquote>
         </li>
       </ul>
@@ -1716,6 +1720,7 @@
     <p>A certified mechanic answers, same day. You get a clear answer before you spend money on the wrong repair.</p>
     <p><a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text (250) 859-5467, Kelowna Protech Elite Mobile Mechanic">Text (250) 859-5467</a></p>
     <p class="closing-cta__proof">★★★★★ 4.9 out of 5 from 87 Google reviews</p>
+    <p class="closing-cta__proof">Updated <time datetime="2026-11-22">November 22, 2026</time></p>
   </section>
 
   <script type="application/ld+json">
@@ -1723,6 +1728,7 @@
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": "https://kelownaprotechmobilemech.com/#faq",
+  "dateModified": "2026-11-22",
   "mainEntity": [
     {
       "@type": "Question",
