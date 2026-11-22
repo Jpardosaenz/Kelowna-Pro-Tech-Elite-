@@ -25,7 +25,7 @@
   <meta property="og:image"
     content="https://kelownaprotechmobilemech.com/images/hero-winter-1200w.webp" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="655" />
+  <meta property="og:image:height" content="662" />
   <meta property="og:image:alt" content="Certified mobile mechanic from Kelowna Protech diagnosing a Ford Explorer at a Kelowna home" />
   <meta property="og:site_name" content="Kelowna Protech Elite Mobile Mechanic" />
   <meta property="og:locale" content="en_CA" />
@@ -1111,12 +1111,28 @@
     }
     .hero-fold__cta:hover { background: #f5b23c }
     .hero-fold__cta:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
+    .fears .hero-fold__cta:focus-visible { outline-color: #0d0d0b }
     .hero-fold__service-area { margin-top: 16px }
     @media (max-width: 767px) {
       .hero-fold { min-height: 0; padding: 22px 20px 34px }
       .hero-fold__h1 { font-size: 1.625rem; line-height: 1.18 }
       .hero-fold__tagline { font-size: 0.9375rem; line-height: 1.55 }
       .hero-fold__service-area { font-size: 0.8125rem; padding: 8px 14px; letter-spacing: 0.04em }
+      /* 2026-11-22 Jose: photo and key text in the first screen on phones */
+      .hero-fold { padding: 12px 16px 28px }
+      .hero-fold__content { display: flex; flex-direction: column }
+      .hero-fold__trust { margin: 0 auto 8px; gap: 2px }
+      .hero-fold__trust-stars { font-size: 0.875rem; gap: 6px; line-height: 1.35 }
+      .hero-fold__trust-meta { font-size: 0.875rem }
+      .hero-fold__trust-quote { font-size: 0.8125rem; line-height: 1.35; max-width: 40ch }
+      .hero-fold__kicker { font-size: 1rem; margin: 0 0 4px }
+      .hero-fold__h1 { font-size: 1.375rem; line-height: 1.15 }
+      .hero-fold__photo { margin: 10px auto 0; width: 100% }
+      .hero-fold__path { order: 1; margin-top: 14px; padding-top: 12px }
+      .hero-fold__path-kicker { margin: 0 0 8px }
+      .hero-fold__tagline { order: 2 }
+      .hero-fold__desk-phone { order: 3 }
+      .hero-fold__service-area { order: 4 }
     }
 
     .fears { background: #f5f0e8; padding: 40px 20px 44px }
@@ -1399,16 +1415,15 @@
     <div class="t-grid" role="region" tabindex="0" aria-label="Customer reviews from Google">
       <article class="t-card t-card--hero">
         <blockquote class="t-hero-quote">
-          "They diagnosed my electrical problems and fixed them all in one afternoon."
+          "[...] These guys saved me from a huge hassle. [...]"
         </blockquote>
         <p class="t-hero-full-text t-text">
-          "Wow! I never thought there was first rate service like Jose and partner any more. They diagnosed my electrical problems and fixed them all in one afternoon.They kept me informed on the whole process so the price was very fair. Look forward to using them if I have problems in the future and give my 100% endorsement"
+          "Absolutely amazing service and the only one I will consider going forward for pre-inspections. Very reliable, prompt, and convenient. Sent photos, received a very thorough report that was layed out nice and very easy to read as someone who isn't as familiar with 'car stuff'. These guys saved me from a huge hassle. Great business."
         </p>
         <div class="t-hero-meta">
-          <img src="/images/avatar-vic-campbell.webp" alt="Vic Campbell" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
-            <span class="t-name">Vic Campbell</span>
-            <span class="t-service">Google review</span>
+            <span class="t-name">Kimberly Rein</span>
+            <span class="t-service">Google review · Pre-purchase inspection · November 2026</span>
           </div>
         </div>
       </article>
@@ -1416,11 +1431,47 @@
         <div class="t-card-header">
           <div class="t-meta">
             <span class="t-name">Scout</span>
-            <span class="t-service">Google review · November 2026</span>
+            <span class="t-service">Google review · Repair in the driveway · November 2026</span>
           </div>
         </div>
         <p class="t-text">
           "Joseph is a patient and skilled mechanic. He was able to diagnose the issue with my vehicle and fix it in my driveway. He took the time to inspect and explain his findings that helped me understand the issue. He was also very responsive and easy to communicate with. Thank you! for your service and hard work!"
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Tim Perry</span>
+            <span class="t-service">Google review · Pre-purchase inspection · October 2026</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "I am so thankful for Joseph's detailed and professional assessment of a used Hyundai Tuscon before we purchased it. He reviewed all the diagnostic and engine data and alerts that indicated some issues to be resolved. He is very thorough at what he does and will give you an honest and accurate report on any vehicle you are considering before you drive it away. His fee is a small price to pay for peace of mind when buying a used vehicle."
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Sebastian Tohtz-Perry</span>
+            <span class="t-service">Google review · Pre-purchase inspection · October 2026 · Excerpt</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "[...] In my case, the dealership gave me a used auto inspection, but it was just a bunch of checkmarks. With Joseph's diagnostic reports there was proof for every single issue, including pictures, percentages, etc. It gives you a lot of leverage when you have that type of detail. [...]"
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Alison Parkins</span>
+            <span class="t-service">Google review · Pre-purchase inspection · October 2026</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "This is a fantastic service. Very efficient booking system. I was viewing a car the next day and they agreed a time straight away. The mechanic showed up very promptly.. I Asked them to check out the car I was hoping to buy and specifically asked them To check manual transmission and clutch. He spent over an hour on the car and gave me a clear and concise summary of the cars condition. This service gave me the confidence to purchase the car. I would highly recommend this service before you purchase."
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
@@ -1432,57 +1483,19 @@
           </div>
         </div>
         <p class="t-text">
-          "Had a great experience with Kelowna Protech! Joseph was super friendly, professional, and quick to respond. He came out to inspect a used car I was considering buying, kept me updated with photos and videos throughout, and provided a really detailed report explaining everything he found. He also took the time to answer my questions and give me honest advice, which I really appreciated as a first-time car buyer. Definitely recommend his services!"
+          "Had a great experience with Kelowna Protech! Joseph was super friendly, professional, and quick to respond. He came out to inspect a used car I was considering buying, kept me updated with photos and videos throughout, and provided a really detailed report explaining everything he found. He also took the time to answer my questions and give me honest advice, which I really appreciated as a first-time car buyer. Definitely recommend his services! 😊"
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
       <article class="t-card">
         <div class="t-card-header">
           <div class="t-meta">
-            <span class="t-name">Jennean Bruner</span>
-            <span class="t-service">Google review</span>
+            <span class="t-name">Jack Stear</span>
+            <span class="t-service">Google review · October 2026</span>
           </div>
         </div>
         <p class="t-text">
-          "I live alone and dont know anything about cars. My car died recently so I called protech to help me. Their communication was impeccable in explaining things as they unfolded in the process. The owner is extremely kind and courteous and didnt need to worry about anything. Highly recommended as they come to you and you dont need to stress. Will be contacting for future maintenance"
-        </p>
-        <div class="t-rating">★★★★★</div>
-      </article>
-      <article class="t-card">
-        <div class="t-card-header">
-          <div class="t-meta">
-            <span class="t-name">Gabe Carter</span>
-            <span class="t-service">Google review</span>
-          </div>
-        </div>
-        <p class="t-text">
-          "Service was great! They completed diagnostic and repairs in our garage, quicker than we could even get an appointment to have it looked at in a shop. Jose and Miguel were great to work with."
-        </p>
-        <div class="t-rating">★★★★★</div>
-      </article>
-      <article class="t-card">
-        <div class="t-card-header">
-          <img src="/images/avatar-matt-sankey.webp" alt="Matt Sankey" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
-          <div class="t-meta">
-            <span class="t-name">Matt Sankey</span>
-            <span class="t-service">Google review</span>
-          </div>
-        </div>
-        <p class="t-text">
-          "Very kind and thorough. Arrived on time, gave solid recommendations and didnt try to pry money out of me"
-        </p>
-        <div class="t-rating">★★★★★</div>
-      </article>
-      <article class="t-card">
-        <div class="t-card-header">
-          <img src="/images/avatar-jorge.webp" alt="Jorge" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
-          <div class="t-meta">
-            <span class="t-name">Jorge</span>
-            <span class="t-service">Google review · Pre-purchase inspection</span>
-          </div>
-        </div>
-        <p class="t-text">
-          "Saved me $4000 - was interested in purchasing a car 8 hours from me and was told in its great well kept condition but likely would have needed to be towed home"
+          "Joseph is fantastic. He is very honest and won't try to rip you off with things you don't need. Would highly recommend"
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
