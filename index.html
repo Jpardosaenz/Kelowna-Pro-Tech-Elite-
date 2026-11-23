@@ -12,7 +12,7 @@
   <link rel="icon" type="image/png" sizes="32x32" href="/Favicon.png" />
   <link rel="apple-touch-icon" sizes="180x180" href="/Favicon.png" />
   <title>Mobile Mechanic Kelowna — Stranded? Fixed Today, No Tow | Protech Elite</title>
-  <meta name="description" content="Car won't start? Check engine light on? Your mobile mechanic comes to you in Kelowna — same day. Real diagnosis, no tow, no shop wait. Call or text now.">
+  <meta name="description" content="Car won't start? Our certified mobile mechanics come to your home or work in Kelowna, same day. We find the real cause and fix it with your OK. Text us.">
   <meta name="robots" content="index, follow" />
   <link rel="canonical" href="https://kelownaprotechmobilemech.com/" />
   <link rel="sitemap" type="application/xml" title="Sitemap" href="/sitemap.xml" />
@@ -23,9 +23,9 @@
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://kelownaprotechmobilemech.com/" />
   <meta property="og:image"
-    content="https://kelownaprotechmobilemech.com/images/hero-mechanic-1200w.webp" />
+    content="https://kelownaprotechmobilemech.com/images/hero-winter-1200w.webp" />
   <meta property="og:image:width" content="1200" />
-  <meta property="og:image:height" content="655" />
+  <meta property="og:image:height" content="662" />
   <meta property="og:image:alt" content="Certified mobile mechanic from Kelowna Protech diagnosing a Ford Explorer at a Kelowna home" />
   <meta property="og:site_name" content="Kelowna Protech Elite Mobile Mechanic" />
   <meta property="og:locale" content="en_CA" />
@@ -36,7 +36,7 @@
   <meta name="twitter:description"
     content="Kelowna Protech Elite Mobile Mechanic comes to your car, same day. Our certified mechanics find the real cause, explain it clearly and fix it only with your approval. Text us now." />
   <meta name="twitter:image"
-    content="https://kelownaprotechmobilemech.com/images/hero-mechanic-1200w.webp" />
+    content="https://kelownaprotechmobilemech.com/images/hero-winter-1200w.webp" />
   <meta name="twitter:image:alt" content="Certified mobile mechanic from Kelowna Protech diagnosing a Ford Explorer at a Kelowna home" />
 
   <!-- Additional SEO & Conversion Meta Tags -->
@@ -44,8 +44,8 @@
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent" />
   <!-- Preload hero image (LCP optimization) -->
-  <link rel="preload" as="image" href="images/hero-mechanic-800w.webp" media="(max-width: 767px)" type="image/webp" fetchpriority="high">
-  <link rel="preload" as="image" href="images/hero-mechanic-1200w.webp" media="(min-width: 768px)" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-winter-800w.webp" media="(max-width: 767px)" type="image/webp" fetchpriority="high">
+  <link rel="preload" as="image" href="images/hero-winter-1200w.webp" media="(min-width: 768px)" type="image/webp" fetchpriority="high">
   <!-- Critical CSS: inline ATF styles to unblock FCP (header + hero + CTAs + social proof) -->
   <style>
     @font-face {
@@ -126,7 +126,7 @@
       min-height: 90vh;
       display: flex;
       align-items: flex-start;
-      background-image: url('images/hero-mechanic-800w.webp');
+      background-image: url('images/hero-winter-800w.webp');
       background-size: cover;
       background-position: center top;
       background-repeat: no-repeat;
@@ -140,83 +140,51 @@
       background: rgba(13,13,11,0.80);
       z-index: 1
     }
-    .hero-fold__content {
-      position: relative;
-      z-index: 2;
-      max-width: 680px;
-      width: 100%;
-      margin: 0 auto;
-      text-align: center
-    }
-    .hero-fold__h1 {
-      font-family: 'Syne', sans-serif;
-      font-weight: 700;
-      font-size: 2.25rem;
-      line-height: 1.15;
-      color: #f5f0e8;
-      margin: 0;
-      animation: heroFadeInUp 0.6s ease both;
-      animation-delay: 0.1s
-    }
-    .hero-fold__accent { color: #e8a020 }
-    .hero-fold__separator {
-      width: 48px;
-      height: 2px;
-      background: #e8a020;
-      margin: 30px auto
-    }
-    .hero-fold__tagline {
+    /* Winter 2026: question kicker, visible photo on phones, light snowfall */
+    .hero-fold__kicker {
       font-family: 'DM Sans', sans-serif;
-      font-weight: 400;
-      font-size: 1rem;
-      line-height: 1.6;
-      color: rgba(255, 255, 255, 0.92);
-      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
-      max-width: 540px;
-      margin: 0 auto;
-      animation: heroFadeInUp 0.6s ease both;
-      animation-delay: 0.3s
-    }
-    .hero-fold__trust {
-      display: inline-flex;
-      flex-direction: column;
-      align-items: center;
-      gap: 12px;
-      margin: 0 auto 28px;
-      padding: 0;
-      animation: heroFadeInUp 0.6s ease both;
-      animation-delay: 0s
-    }
-    .hero-fold__trust-stars {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      gap: 10px;
-      flex-wrap: wrap;
+      font-size: 1.05rem;
+      font-weight: 700;
       color: #ffd166;
-      font-size: 1rem;
-      font-weight: 700;
-      letter-spacing: 0.08em;
-      text-transform: uppercase
+      margin: 0 0 10px
     }
-    .hero-fold__trust-meta {
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.95rem;
-      font-weight: 700;
-      color: #f8f4ec;
-      letter-spacing: normal;
-      margin-left: 0
+    .hero-fold__photo { display: block; margin: 18px auto 4px; max-width: 520px }
+    .hero-fold__photo img { display: block; width: 100%; height: auto; border-radius: 10px; box-shadow: 0 6px 20px rgba(0,0,0,0.45) }
+    @media(max-width:767px) {
+      .hero-fold { background-image: none; background-color: #0d0d0b; min-height: 0 }
+      .hero-fold::before { background: none }
     }
-    .hero-fold__trust-quote {
-      font-family: 'DM Sans', sans-serif;
-      font-style: italic;
-      font-size: 0.9375rem;
-      font-weight: 500;
-      color: #efe7da;
-      line-height: 1.5;
-      max-width: 34ch;
-      margin: 0
+    @media(min-width:768px) {
+      .hero-fold__photo { display: none }
     }
+    .hero-fold::after {
+      display: none;
+      content: '';
+      position: absolute;
+      inset: 0;
+      z-index: 1;
+      pointer-events: none;
+      background-image:
+        radial-gradient(2px 2px at 20px 30px, rgba(255,255,255,0.85), transparent 60%),
+        radial-gradient(2px 2px at 120px 80px, rgba(255,255,255,0.7), transparent 60%),
+        radial-gradient(3px 3px at 200px 150px, rgba(255,255,255,0.6), transparent 60%),
+        radial-gradient(2px 2px at 60px 190px, rgba(255,255,255,0.75), transparent 60%),
+        radial-gradient(3px 3px at 160px 10px, rgba(255,255,255,0.55), transparent 60%);
+      background-size: 240px 240px;
+      animation: heroSnow 14s linear infinite;
+      opacity: 0.7
+    }
+    @media(min-width:768px) {
+      .hero-fold::after { display: block }
+    }
+    @keyframes heroSnow {
+      from { background-position: 0 0 }
+      to { background-position: 40px 240px }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .hero-fold::after { animation: none; display: none }
+    }
+    /* Path back on the road (restored from live home, 2026-11-16) */
     .hero-fold__path {
       max-width: 540px;
       margin: 30px auto 0;
@@ -294,6 +262,126 @@
       font-size: 0.8125rem;
       line-height: 1.45
     }
+    @media(min-width:768px) {
+      .hero-fold__path {
+        margin: 34px 0 0;
+        max-width: 640px
+      }
+      .hero-fold__path-kicker {
+        margin-bottom: 16px
+      }
+      .hero-fold__path-steps {
+        gap: 18px
+      }
+      .hero-fold__path-step {
+        text-align: left
+      }
+      .hero-fold__path-node {
+        margin: 0
+      }
+      .hero-fold__path-step:not(:last-child)::after {
+        right: -12px
+      }
+    }
+    @media(prefers-reduced-motion:reduce) {
+      .hero-fold__path { animation: none !important }
+    }
+    .hero-fold__path-link {
+      display: grid;
+      align-content: start;
+      gap: 6px;
+      color: inherit;
+      text-decoration: none;
+      border-radius: 10px;
+      padding: 4px 2px
+    }
+    .hero-fold__path-link .hero-fold__path-node { background: #e8a020; color: #0d0d0b }
+    .hero-fold__path-link .hero-fold__path-title { text-decoration: underline; text-underline-offset: 3px; text-decoration-color: rgba(232,160,32,0.8) }
+    .hero-fold__path-link:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
+    .hero-fold__desk-phone { display: none }
+    @media(min-width:768px) {
+      .hero-fold__desk-phone {
+        display: block;
+        margin: 18px 0 0;
+        font-family: 'DM Sans', sans-serif;
+        font-size: 1.125rem;
+        font-weight: 700;
+        color: #f8f4ec
+      }
+      .hero-fold__desk-phone a { color: #ffd166; text-decoration: none; border-bottom: 2px solid rgba(255,209,102,0.6) }
+      .hero-fold__desk-phone a:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
+    }
+    .hero-fold__content {
+      position: relative;
+      z-index: 2;
+      max-width: 680px;
+      width: 100%;
+      margin: 0 auto;
+      text-align: center
+    }
+    .hero-fold__h1 {
+      font-family: 'Syne', sans-serif;
+      font-weight: 700;
+      font-size: 2.25rem;
+      line-height: 1.15;
+      color: #f5f0e8;
+      margin: 0;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.1s
+    }
+    .hero-fold__accent { color: #e8a020 }
+    .hero-fold__tagline {
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      font-size: 1rem;
+      line-height: 1.6;
+      color: rgba(255, 255, 255, 0.92);
+      text-shadow: 0 1px 3px rgba(0, 0, 0, 0.45);
+      max-width: 540px;
+      margin: 0 auto;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0.3s
+    }
+    .hero-fold__trust {
+      display: inline-flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 12px;
+      margin: 0 auto 28px;
+      padding: 0;
+      animation: heroFadeInUp 0.6s ease both;
+      animation-delay: 0s
+    }
+    .hero-fold__trust-stars {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 10px;
+      flex-wrap: wrap;
+      color: #ffd166;
+      font-size: 1rem;
+      font-weight: 700;
+      letter-spacing: 0.08em;
+      text-transform: uppercase
+    }
+    .hero-fold__trust-meta {
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.95rem;
+      font-weight: 700;
+      color: #f8f4ec;
+      letter-spacing: normal;
+      margin-left: 0
+    }
+    .hero-fold__trust-quote {
+      font-family: 'DM Sans', sans-serif;
+      font-style: italic;
+      font-size: 0.9375rem;
+      font-weight: 500;
+      color: #efe7da;
+      line-height: 1.5;
+      max-width: 34ch;
+      margin: 0
+    }
     .hero-fold__service-area {
       max-width: 540px;
       margin: 18px auto 0;
@@ -318,7 +406,7 @@
         min-height: 100vh;
         align-items: center;
         padding: 32px 60px 80px;
-        background-image: url('images/hero-mechanic-1200w.webp')
+        background-image: url('images/hero-winter-1200w.webp')
       }
       .hero-fold::before {
         background: linear-gradient(to right, rgba(13,13,11,0.85) 40%, rgba(13,13,11,0.45) 100%)
@@ -346,29 +434,9 @@
         font-size: 3.5rem;
         line-height: 1.1
       }
-      .hero-fold__separator { margin: 30px 0 }
       .hero-fold__tagline {
         font-size: 1.125rem;
         margin: 0
-      }
-      .hero-fold__path {
-        margin: 34px 0 0;
-        max-width: 640px
-      }
-      .hero-fold__path-kicker {
-        margin-bottom: 16px
-      }
-      .hero-fold__path-steps {
-        gap: 18px
-      }
-      .hero-fold__path-step {
-        text-align: left
-      }
-      .hero-fold__path-node {
-        margin: 0
-      }
-      .hero-fold__path-step:not(:last-child)::after {
-        right: -12px
       }
       .hero-fold__service-area {
         margin: 20px 0 0;
@@ -379,7 +447,6 @@
       .hero-fold__h1,
       .hero-fold__tagline,
       .hero-fold__trust,
-      .hero-fold__path,
       .hero-fold__service-area {
         animation: none !important
       }
@@ -962,8 +1029,18 @@
   "@id": "https://kelownaprotechmobilemech.com/#organization",
   "name": "Kelowna Protech Elite Mobile Mechanic",
   "url": "https://kelownaprotechmobilemech.com/",
-  "description": "Mobile mechanic in Kelowna, West Kelowna and Lake Country. Certified mechanic arrives at your location for same-day diagnostics and repairs — no tow, no shop wait. Dealer-level scan tools. 4.9 stars on Google.",
+  "description": "Certified mechanics in Kelowna and across the Okanagan. We are a mobile mechanic service: we come to your location for same day diagnostics and auto repair. Dealer-level scan tools. 4.9 stars on Google.",
   "serviceType": "Mobile Mechanic",
+  "knowsLanguage": ["en", "es"],
+  "hasOfferCatalog": {
+    "@type": "OfferCatalog",
+    "name": "Mobile auto repair services",
+    "itemListElement": [
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Car diagnostics and auto repair", "url": "https://kelownaprotechmobilemech.com/services/diagnostic/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Pre-purchase car inspection", "url": "https://kelownaprotechmobilemech.com/services/pre-purchase/" } },
+      { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "Preventive maintenance", "url": "https://kelownaprotechmobilemech.com/services/maintenance/" } }
+    ]
+  },
   "additionalType": "https://schema.org/MobileService",
   "image": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
   "logo": "https://kelownaprotechmobilemech.com/images/logo-kelowna-protech-eliteV1.webp",
@@ -971,7 +1048,7 @@
   "aggregateRating": {
     "@type": "AggregateRating",
     "ratingValue": "4.9",
-    "reviewCount": "84",
+    "reviewCount": "87",
     "bestRating": "5"
   },
   "telephone": "+1-250-859-5467",
@@ -987,7 +1064,8 @@
     { "@type": "City", "name": "Vernon" },
     { "@type": "City", "name": "Lake Country" },
     { "@type": "City", "name": "Peachland" },
-    { "@type": "City", "name": "Penticton" }
+    { "@type": "City", "name": "Penticton" },
+    { "@type": "AdministrativeArea", "name": "Okanagan Valley" }
   ],
   "openingHoursSpecification": [
     {
@@ -1014,6 +1092,156 @@
 
   <!-- ====== End Structured Data: Client Stories Page ====== -->
 
+
+  <!-- Home 2026-11-13: homepage-only styles (hero proof, fears, how it works, reviews, facts, closing) -->
+  <style>
+    .hero-fold__trust { margin-bottom: 16px; gap: 8px }
+    .hero-fold__trust-stars { font-size: 1rem; gap: 8px; letter-spacing: 0.06em; text-transform: none }
+    .hero-fold__trust-meta { font-family: 'Inter', sans-serif; font-size: 1rem; font-weight: 700 }
+    .hero-fold__trust-meta strong { color: #ffd166 }
+    .hero-fold__trust-quote { font-size: 0.875rem; font-weight: 400; max-width: 38ch }
+    .hero-fold__h1 { text-wrap: balance }
+    .hero-fold__tagline { margin-top: 16px }
+    .hero-fold__cta {
+      display: inline-flex; align-items: center; justify-content: center;
+      min-height: 48px; margin: 20px auto 0; padding: 12px 24px;
+      border-radius: 999px; background: #e8a020; color: #0d0d0b;
+      font: 700 1rem/1.2 'Inter', sans-serif; text-decoration: none;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3)
+    }
+    .hero-fold__cta:hover { background: #f5b23c }
+    .hero-fold__cta:focus-visible { outline: 3px solid #ffffff; outline-offset: 3px }
+    .fears .hero-fold__cta:focus-visible { outline-color: #0d0d0b }
+    .hero-fold__service-area { margin-top: 16px }
+    @media (max-width: 767px) {
+      .hero-fold { min-height: 0; padding: 22px 20px 34px }
+      .hero-fold__h1 { font-size: 1.625rem; line-height: 1.18 }
+      .hero-fold__tagline { font-size: 0.9375rem; line-height: 1.55 }
+      .hero-fold__service-area { font-size: 0.8125rem; padding: 8px 14px; letter-spacing: 0.04em }
+      /* 2026-11-22 Jose: photo and key text in the first screen on phones */
+      .hero-fold { padding: 6px 16px 28px }
+      .hero-fold__content { display: flex; flex-direction: column }
+      .hero-fold__trust { margin: 0 auto 8px; gap: 2px }
+      .hero-fold__trust-stars { font-size: 0.875rem; gap: 6px; line-height: 1.35 }
+      .hero-fold__trust-meta { font-size: 0.875rem }
+      .hero-fold__trust-quote { font-size: 0.8125rem; line-height: 1.35; max-width: 40ch }
+      .hero-fold__kicker { font-size: 1rem; margin: 0 0 4px }
+      .hero-fold__h1 { font-size: 1.3rem; line-height: 1.12 }
+      .hero-fold__photo { margin: 2px auto 0; width: 100% }
+      .hero-fold__trust { display: contents }
+      .hero-fold__trust-stars { order: -1; margin: 0 0 4px }
+      .hero-fold__trust-quote { order: 1; margin: 10px auto 0 }
+      .hero-fold__kicker { order: 0 }
+      .hero-fold__path { order: 1; margin-top: 14px; padding-top: 12px }
+      .hero-fold__path-kicker { margin: 0 0 8px }
+      .hero-fold__tagline { order: 2 }
+      .hero-fold__desk-phone { order: 3 }
+      .hero-fold__service-area { order: 4 }
+    }
+
+    .fears { background: #f5f0e8; padding: 40px 20px 44px }
+    .fears__inner, .how__inner, .facts__inner { max-width: 1120px; margin: 0 auto }
+    .fears__title, .how__title, .facts__title {
+      margin: 0; color: #0f172a; font: 700 1.5rem/1.2 'Syne', sans-serif; text-wrap: balance
+    }
+    .fears__lead, .facts__lead {
+      max-width: 62ch; margin: 10px 0 0; color: #334155; font: 400 0.9375rem/1.6 'DM Sans', sans-serif
+    }
+    .fears__list { display: grid; grid-template-columns: 1fr; margin: 22px 0 0; padding: 0; list-style: none }
+    .fear { padding: 20px 0; border-top: 1px solid rgba(15, 23, 42, 0.14) }
+    .fear:last-child { padding-bottom: 0 }
+    .fear__q { margin: 0; color: #0f172a; font: 700 1.125rem/1.3 'Syne', sans-serif }
+    .fear__a { margin: 8px 0 0; color: #0f172a; font: 600 0.9375rem/1.5 'Inter', sans-serif }
+    .fear__review { margin: 12px 0 0; padding: 0 }
+    .fear__review p { margin: 0; color: #475569; font: italic 400 0.9375rem/1.6 'DM Sans', sans-serif }
+    .fear__review footer { margin-top: 8px; color: #0f172a; font: 600 0.8125rem/1.4 'Inter', sans-serif }
+    .fear__stars { color: #b7791f; letter-spacing: 0.06em; margin-right: 6px }
+    .fear__src { color: #475569; font-weight: 400 }
+    .fears__cta-row { margin: 24px 0 0 }
+
+    .how { background: #ffffff; padding: 40px 20px 44px }
+    .how__steps { display: grid; grid-template-columns: 1fr; gap: 18px; margin: 20px 0 0; padding: 0; list-style: none; counter-reset: how }
+    .how__steps li { position: relative; padding-left: 44px; counter-increment: how }
+    .how__steps li::before {
+      content: counter(how); position: absolute; left: 0; top: 0;
+      width: 30px; height: 30px; border-radius: 50%; border: 1px solid #b7791f; color: #8a5a12;
+      display: grid; place-items: center; font: 700 0.875rem/1 'Inter', sans-serif
+    }
+    .how__steps h3 { margin: 0; color: #0f172a; font: 700 1.0625rem/1.3 'Inter', sans-serif }
+    .how__steps p { margin: 4px 0 0; color: #475569; font: 400 0.9375rem/1.55 'DM Sans', sans-serif }
+
+    #client-stories.wrap { padding: 40px 16px 44px; gap: 20px }
+    #client-stories .t-head { gap: 8px }
+    .t-stat { margin: 0; color: #0f172a; font: 700 1rem/1.3 'Inter', sans-serif }
+    .t-stat span { color: #b7791f; letter-spacing: 0.06em; margin-right: 6px }
+    #client-stories .t-title { font-size: 1.5rem; line-height: 1.2; text-wrap: balance }
+    #client-stories .t-subtitle { font-size: 0.9375rem; line-height: 1.55 }
+    #client-stories .t-card { padding: 20px; gap: 12px; border-radius: 16px; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.06) }
+    #client-stories .t-card:hover { transform: none }
+    #client-stories .t-card--hero::before { content: none }
+    #client-stories .t-hero-quote { font-size: 1.125rem }
+    #client-stories .t-text { font-size: 0.9375rem; line-height: 1.6 }
+    #client-stories .avatar { width: 40px; height: 40px }
+    #client-stories .t-name { font-size: 0.9375rem }
+    #client-stories .t-service { font-size: 0.8125rem }
+    .t-swipe { display: none; margin: 0; color: #64748b; font: 400 0.8125rem/1.4 'Inter', sans-serif; text-align: center }
+    .t-all { margin: 0; text-align: center }
+    .t-all a { color: #1e40af; font-weight: 700; font-size: 0.9375rem; text-decoration: none; border-bottom: 2px solid #bfdbfe; padding-bottom: 2px }
+    @media (max-width: 639px) {
+      #client-stories .t-grid {
+        display: flex; align-items: stretch; gap: 12px; overflow-x: auto;
+        margin: 0 -16px; padding: 4px 16px 12px;
+        scroll-snap-type: x mandatory; scroll-padding: 0 16px; -webkit-overflow-scrolling: touch
+      }
+      #client-stories .t-grid > .t-card { flex: 0 0 86%; scroll-snap-align: start; align-content: start }
+      .t-swipe { display: block }
+    }
+
+    #commercial-faq { padding: 40px 16px 44px }
+    #commercial-faq .faq-wrap { gap: 18px }
+    #commercial-faq-heading { font-size: 1.5rem; text-wrap: balance }
+    #commercial-faq .faq-intro { margin: 0; font-size: 0.9375rem; line-height: 1.55 }
+    #commercial-faq .faq-wrap dl { gap: 12px }
+    #commercial-faq .faq-item { border-radius: 16px }
+    #commercial-faq .faq-item:hover { transform: none }
+    #commercial-faq .faq-wrap dt { padding: 16px 18px 4px 42px; font-size: 1rem; line-height: 1.35; border-radius: 16px 16px 0 0 }
+    #commercial-faq .faq-wrap dt::before { left: 18px; top: 22px; width: 8px; height: 8px; box-shadow: 0 0 0 5px rgba(37, 99, 235, 0.16) }
+    #commercial-faq .faq-wrap dd { margin: 0; padding: 6px 18px 16px 42px; font-size: 0.9375rem; line-height: 1.6; border-radius: 0 0 16px 16px; box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07) }
+    #commercial-faq .faq-wrap dd:hover { transform: none }
+
+    .facts { background: #f5f0e8; margin: 40px 0 0; padding: 40px 20px 44px }
+    .facts__list { display: grid; grid-template-columns: 1fr; margin: 20px 0 0 }
+    .facts__list div { padding: 12px 0; border-top: 1px solid rgba(15, 23, 42, 0.14) }
+    .facts__list dt { margin: 0; color: #0f172a; font: 700 0.9375rem/1.4 'Inter', sans-serif }
+    .facts__list dd { margin: 2px 0 0; color: #334155; font: 400 0.9375rem/1.55 'DM Sans', sans-serif }
+
+    .ppi-map .ppi-map__embed iframe { height: 240px }
+
+    .closing-cta { background: #0f172a; margin: 40px 0 0; padding: 40px 20px 46px; text-align: center }
+    .closing-cta h2 { max-width: 640px; margin: 0 auto; color: #f5f0e8; font: 700 1.5rem/1.2 'Syne', sans-serif; text-wrap: balance }
+    .closing-cta p { max-width: 52ch; margin: 10px auto 0; color: rgba(248, 244, 236, 0.86); font: 400 0.9375rem/1.6 'DM Sans', sans-serif }
+    .closing-cta__proof { color: #ffd166 !important; font: 600 0.875rem/1.4 'Inter', sans-serif !important; margin-top: 16px !important }
+
+    ::selection { background: #e8a020; color: #0d0d0b }
+
+    @media (min-width: 768px) {
+      .hero-fold__trust-meta { font-size: 1.0625rem }
+      .fears, .how, .facts { padding: 64px 32px 68px }
+      .fears__title, .how__title, .facts__title { font-size: 2rem }
+      .fears__lead, .facts__lead { font-size: 1rem }
+      .fears__list { grid-template-columns: repeat(3, minmax(0, 1fr)); column-gap: 40px }
+      .fear { padding: 22px 0 0 }
+      .how__steps { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 32px }
+      #client-stories.wrap { padding: 64px 24px 68px }
+      #client-stories .t-title, #commercial-faq-heading { font-size: 2rem }
+      #commercial-faq { padding: 64px 24px 68px }
+      #commercial-faq .faq-wrap dl { gap: 16px }
+      .facts__list { grid-template-columns: repeat(2, minmax(0, 1fr)); column-gap: 48px }
+      .ppi-map .ppi-map__embed iframe { height: 320px }
+      .closing-cta { padding: 64px 24px 72px }
+      .closing-cta h2 { font-size: 2rem }
+    }
+  </style>
   <meta name="msvalidate.01" content="AA032A8781098ECE1CA6BEF5797E5B83" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,300;0,400;0,500;1,300&family=Syne:wght@400;700;800&display=swap"
@@ -1045,7 +1273,7 @@
         <li><a href="/our-story/">Our Story</a></li>
       </ul>
     </nav>
-    <a href="sms:+12508595467" class="header-cta" aria-label="Call Joseph for same-day car repair">
+    <a href="sms:+12508595467" class="header-cta" aria-label="Text Kelowna Protech Elite Mobile Mechanic for same-day car repair">
       <span class="cta-main">Get Same-Day Repair</span>
       <span class="cta-sub">15+ Years Experience • Kelowna</span>
     </a>
@@ -1078,106 +1306,206 @@
   <!-- FOLD 03: Hero Section -->
   <section id="hero" class="hero-fold">
     <div class="hero-fold__content">
-      <div class="hero-fold__trust" aria-label="Trusted by 84 Google reviewers">
-        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 84 Google reviews">
-          ★★★★★<span class="hero-fold__trust-meta">4.9 · Trusted by 84 Google Reviews</span>
+      <div class="hero-fold__trust" aria-label="Trusted by 87 Google reviewers">
+        <p class="hero-fold__trust-stars" aria-label="Rated 4.9 out of 5 from 87 Google reviews">
+          ★★★★★<span class="hero-fold__trust-meta"><strong>#1 in Kelowna</strong> · 4.9 out of 5 from 87 Google reviews · Warranty on our work</span>
         </p>
-        <p class="hero-fold__trust-quote">"Super professional, on time (early), deep knowledge, goes the extra mile. WORTH EVERY PENNY!" - Sebastian T.</p>
+        <p class="hero-fold__trust-quote">"&hellip;able to diagnose the issue with my vehicle and fix it in my driveway." - Scout, November 2026</p>
       </div>
+      <p class="hero-fold__kicker">Car won&rsquo;t start this morning?</p>
       <h1 class="hero-fold__h1">
-        Your Car Fixed On-Site. Your Life Back to Normal. <span class="hero-fold__accent">Kelowna&rsquo;s Specialist Mobile Mechanic.</span>
+        Kelowna&rsquo;s Certified Auto Repair Shop That Comes to You. <span class="hero-fold__accent">Your Mobile Mechanic, Same Day.</span>
       </h1>
-      <div class="hero-fold__separator" aria-hidden="true"></div>
+      <picture class="hero-fold__photo">
+        <source media="(max-width: 767px)" srcset="images/hero-winter-800w.webp" type="image/webp">
+        <img src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAACH5BAEAAAAALAAAAAABAAEAAAIBTAA7" width="800" height="441" alt="Kelowna Protech Elite certified mechanic scanning an SUV in the snow, next to the service truck with the tools" fetchpriority="high" decoding="async">
+      </picture>
       <p class="hero-fold__tagline">
-        Your repair starts with a professional diagnosis &mdash; then we fix only what needs fixing, show you the parts and work, and help get your day back under control.
+        We come to you the same day, find the real cause, explain it in plain words, and fix it right there with your OK. No guessing, no parts thrown at it.
       </p>
-      <div class="hero-fold__path" aria-label="How the mobile repair process works">
-        <p class="hero-fold__path-kicker">Text first. Clear answers next.</p>
+      <div class="hero-fold__path" aria-label="Your path from a car that won't start to a car that's fixed">
+        <p class="hero-fold__path-kicker">Your way back on the road</p>
         <ol class="hero-fold__path-steps">
           <li class="hero-fold__path-step">
-            <span class="hero-fold__path-node">01</span>
-            <span class="hero-fold__path-title">Text</span>
-            <span class="hero-fold__path-copy">Tell us what happened.</span>
+            <a class="hero-fold__path-link" href="sms:+12508595467" aria-label="Text Kelowna Protech Elite Mobile Mechanic what your car is doing">
+              <span class="hero-fold__path-node">01</span>
+              <span class="hero-fold__path-title">Text</span>
+              <span class="hero-fold__path-copy">Tell us what your car is doing.</span>
+            </a>
           </li>
           <li class="hero-fold__path-step">
             <span class="hero-fold__path-node">02</span>
-            <span class="hero-fold__path-title">Diagnose</span>
-            <span class="hero-fold__path-copy">We find the real issue.</span>
+            <span class="hero-fold__path-title">We Come</span>
+            <span class="hero-fold__path-copy">We find the real cause.</span>
           </li>
           <li class="hero-fold__path-step">
             <span class="hero-fold__path-node">03</span>
-            <span class="hero-fold__path-title">Fix</span>
-            <span class="hero-fold__path-copy">Approve the right repair.</span>
+            <span class="hero-fold__path-title">Fixed</span>
+            <span class="hero-fold__path-copy">You approve, we fix it right there.</span>
           </li>
         </ol>
       </div>
-      <p id="coverage" class="hero-fold__service-area">Serving Kelowna · West Kelowna · Lake Country</p>
+      <p class="hero-fold__desk-phone">Text or call <a href="tel:+12508595467">(250) 859-5467</a></p>
+      <p id="coverage" class="hero-fold__service-area">Based in Kelowna · We go anywhere in the Okanagan</p>
     </div>
   </section>
   <!-- FIN HERO FOLD 03 -->
 
+  <!-- FEARS: loss, solution, proof. Reviews are verbatim from Google (source: reviews-gbp-v2.md) -->
+  <section class="fears" id="why-trust-us" aria-labelledby="fears-title">
+    <div class="fears__inner">
+      <h2 id="fears-title" class="fears__title">Afraid of paying for the wrong repair?</h2>
+      <p class="fears__lead">Three worries our customers mention in their Google reviews, and how our certified mechanics handle each one.</p>
+      <ul class="fears__list" role="list">
+        <li class="fear">
+          <h3 class="fear__q">&ldquo;Will they sell me repairs I don&rsquo;t need?&rdquo;</h3>
+          <p class="fear__a">No. We tell you what failed and give you your options. You decide.</p>
+          <blockquote class="fear__review">
+            <p>"Joseph is fantastic. He is very honest and won&rsquo;t try to rip you off with things you don&rsquo;t need. Would highly recommend"</p>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Jack Stear <span class="fear__src">· Google review · October 2026</span></footer>
+          </blockquote>
+        </li>
+        <li class="fear">
+          <h3 class="fear__q">&ldquo;What if I pay and the problem is still there?&rdquo;</h3>
+          <p class="fear__a">We find the real cause first, then we fix it.</p>
+          <blockquote class="fear__review">
+            <p>"[...] He was able to diagnose the issue with my vehicle and fix it in my driveway. He took the time to inspect and explain his findings that helped me understand the issue. [...]"</p>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>Scout <span class="fear__src">· Google review · November 2026</span></footer>
+          </blockquote>
+        </li>
+        <li class="fear">
+          <h3 class="fear__q">&ldquo;Will the bill be a surprise?&rdquo;</h3>
+          <p class="fear__a">No. You know the cost before we start, and nothing is done without your approval.</p>
+          <blockquote class="fear__review">
+            <p>"Prompt service. Good communication. Clear pricing."</p>
+            <footer><span class="fear__stars" aria-label="5 out of 5 stars">★★★★★</span>G D <span class="fear__src">· Google review · November 2026</span></footer>
+          </blockquote>
+        </li>
+      </ul>
+      <p class="fears__cta-row">
+        <a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text us what your car is doing">Text Us What Your Car Is Doing</a>
+      </p>
+    </div>
+  </section>
+
+  <!-- HOW IT WORKS: the three real steps, in full sentences -->
+  <section class="how" id="how-it-works" aria-labelledby="how-title">
+    <div class="how__inner">
+      <h2 id="how-title" class="how__title">A Full Repair Shop, Brought to Your Driveway</h2>
+      <ol class="how__steps">
+        <li>
+          <h3>Text us</h3>
+          <p>Tell us what your car is doing and where it is. A certified mechanic answers by text.</p>
+        </li>
+        <li>
+          <h3>We come to your car and find the real cause</h3>
+          <p>We test the car at your home or work with professional scan tools, same day.</p>
+        </li>
+        <li>
+          <h3>You approve, then we repair it there</h3>
+          <p>We show you what failed and what it costs. Nothing is done or charged without your approval, and we repair it on the spot as long as it is safe to work there.</p>
+        </li>
+      </ol>
+    </div>
+  </section>
+
   <section class="wrap" id="client-stories">
     <header class="t-head" aria-labelledby="t-title">
-      <h2 id="t-title" class="t-title">What Kelowna Drivers Say</h2>
-      <p class="t-subtitle">Real cases. Real outcomes. No shop visit required.</p>
+      <p class="t-stat"><span>★★★★★</span>4.9 out of 5 from 87 Google reviews</p>
+      <h2 id="t-title" class="t-title">#1 in Kelowna: 87 Google Reviews Say Why</h2>
+      <p class="t-subtitle">These are their words, not ours. Every review below is published on our Google profile.</p>
       <p class="t-subtitle">Buying a used car? Don't get ripped off. Don't buy a lemon. Don't lose your savings. Start with a <a href="/services/pre-purchase/">pre-purchase inspection in Kelowna</a>. We come to the seller.</p>
     </header>
-    <div class="t-grid" aria-label="Customer reviews">
+    <div class="t-grid" role="region" tabindex="0" aria-label="Customer reviews from Google">
       <article class="t-card t-card--hero">
         <blockquote class="t-hero-quote">
-          "11am diagnosis, 5pm driving."
+          "[...] These guys saved me from a huge hassle. [...]"
         </blockquote>
         <p class="t-hero-full-text t-text">
-          "They diagnosed my complete electrical system and fixed everything in one afternoon at my home. Joseph and his partner kept me informed the whole way. Clear process. I give my 100% endorsement."
+          "Absolutely amazing service and the only one I will consider going forward for pre-inspections. Very reliable, prompt, and convenient. Sent photos, received a very thorough report that was layed out nice and very easy to read as someone who isn't as familiar with 'car stuff'. These guys saved me from a huge hassle. Great business."
         </p>
         <div class="t-hero-meta">
-          <img src="/images/avatar-vic-campbell.webp" alt="Vic Campbell" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
-            <span class="t-name">Vic Campbell</span>
-            <span class="t-service">Electrical System Diagnosis & Repair</span>
+            <span class="t-name">Kimberly Rein</span>
+            <span class="t-service">Google review · Pre-purchase inspection · November 2026</span>
           </div>
         </div>
       </article>
       <article class="t-card">
         <div class="t-card-header">
-          <img src="/images/avatar-growit-trucking.webp" alt="Growit Trucking" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
-            <span class="t-name">Growit Trucking</span>
-            <span class="t-service">Commercial Fleet Inspection</span>
+            <span class="t-name">Scout</span>
+            <span class="t-service">Google review · Repair in the driveway · November 2026</span>
           </div>
         </div>
         <p class="t-text">
-          "These guys are awesome, super detailed, prompt and honest. Highly recommend them for anyone looking to purchase a used vehicle."
+          "Joseph is a patient and skilled mechanic. He was able to diagnose the issue with my vehicle and fix it in my driveway. He took the time to inspect and explain his findings that helped me understand the issue. He was also very responsive and easy to communicate with. Thank you! for your service and hard work!"
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
       <article class="t-card">
         <div class="t-card-header">
-          <img src="/images/avatar-matt-sankey.webp" alt="Matt Sankey" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
-            <span class="t-name">Matt Sankey</span>
-            <span class="t-service">European Vehicle Diagnostics</span>
+            <span class="t-name">Tim Perry</span>
+            <span class="t-service">Google review · Pre-purchase inspection · October 2026</span>
           </div>
         </div>
         <p class="t-text">
-          "Didn't try to pry money out of me. Arrived on time, gave solid recommendations — very kind and thorough."
+          "I am so thankful for Joseph's detailed and professional assessment of a used Hyundai Tuscon before we purchased it. He reviewed all the diagnostic and engine data and alerts that indicated some issues to be resolved. He is very thorough at what he does and will give you an honest and accurate report on any vehicle you are considering before you drive it away. His fee is a small price to pay for peace of mind when buying a used vehicle."
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
       <article class="t-card">
         <div class="t-card-header">
-          <img src="/images/avatar-jorge.webp" alt="Jorge" class="avatar" width="48" height="48" loading="lazy" style="border-radius:50%;object-fit:cover;" />
           <div class="t-meta">
-            <span class="t-name">Jorge</span>
-            <span class="t-service">Pre-Purchase Inspection</span>
+            <span class="t-name">Sebastian Tohtz-Perry</span>
+            <span class="t-service">Google review · Pre-purchase inspection · October 2026 · Excerpt</span>
           </div>
         </div>
         <p class="t-text">
-          "Saved me from a costly mistake. I was 8 hours away from a car the seller said was in great condition — it would have needed to be towed home. They caught everything before I signed."
+          "[...] In my case, the dealership gave me a used auto inspection, but it was just a bunch of checkmarks. With Joseph's diagnostic reports there was proof for every single issue, including pictures, percentages, etc. It gives you a lot of leverage when you have that type of detail. [...]"
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Alison Parkins</span>
+            <span class="t-service">Google review · Pre-purchase inspection · October 2026</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "This is a fantastic service. Very efficient booking system. I was viewing a car the next day and they agreed a time straight away. The mechanic showed up very promptly.. I Asked them to check out the car I was hoping to buy and specifically asked them To check manual transmission and clutch. He spent over an hour on the car and gave me a clear and concise summary of the cars condition. This service gave me the confidence to purchase the car. I would highly recommend this service before you purchase."
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Alanood Abdulmonem</span>
+            <span class="t-service">Google review · Pre-purchase inspection · November 2026</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "Had a great experience with Kelowna Protech! Joseph was super friendly, professional, and quick to respond. He came out to inspect a used car I was considering buying, kept me updated with photos and videos throughout, and provided a really detailed report explaining everything he found. He also took the time to answer my questions and give me honest advice, which I really appreciated as a first-time car buyer. Definitely recommend his services! 😊"
+        </p>
+        <div class="t-rating">★★★★★</div>
+      </article>
+      <article class="t-card">
+        <div class="t-card-header">
+          <div class="t-meta">
+            <span class="t-name">Jack Stear</span>
+            <span class="t-service">Google review · October 2026</span>
+          </div>
+        </div>
+        <p class="t-text">
+          "Joseph is fantastic. He is very honest and won't try to rip you off with things you don't need. Would highly recommend"
         </p>
         <div class="t-rating">★★★★★</div>
       </article>
     </div>
+    <p class="t-swipe" aria-hidden="true">Swipe to read more reviews</p>
+    <p class="t-all"><a href="https://www.google.com/maps?cid=15158851769671529299" target="_blank" rel="noopener">Read all 87 reviews on Google →</a></p>
   </section>
 
   <!-- Services / Mobile-first -->
@@ -1185,25 +1513,25 @@
     <header class="section-head">
       <span class="eyebrow">Your Personal Mobile Mechanics</span>
       <h2 id="services-heading">Mobile Mechanic Services Expert Auto Repair Delivered to Your Door</h2>
-      <p class="lead">Same-day help from our two-mechanic team. The shop comes to you.</p>
+      <p class="lead">Auto repair, diagnostics and inspections by certified mechanics, at your home or work, same day.</p>
     </header>
 
     <ul class="tiles" role="list">
       <!-- Card 1: On-site Diagnostic -->
       <li class="tile" role="listitem">
-        <a class="OnSiteDiagnostics" href="/services/diagnostic/" aria-label="On-site diagnostic service details">
+        <a class="OnSiteDiagnostics" href="/services/diagnostic/" aria-label="Mobile car diagnostic and repair details">
           <figure class="image-container">
             <picture>
               <source srcset="images/diagnostic-repairs-400w.webp" media="(max-width: 640px)">
               <source srcset="images/diagnostic-repairs-800w.webp" media="(max-width: 1024px)">
               <img src="images/diagnostic-repairs.webp"
-                alt="Mobile mechanic running an advanced diagnostic scan under the hood in a driveway." loading="eager"
+                alt="Mobile mechanic running an advanced diagnostic scan under the hood in a driveway." loading="lazy"
                 decoding="async" width="800" height="534" />
             </picture>
           </figure>
           <div class="copy">
-            <h3 class="title">On-Site Diagnostic — Clear Answers Today</h3>
-            <p class="hint">We come to your location and find the root cause fast. No tow, no waiting, no guessing.</p>
+            <h3 class="title">Car Diagnostic and Repair: Clear Answers, Same Day</h3>
+            <p class="hint">We come to your car, find the real cause and fix it once you approve. No waiting, no guessing.</p>
           </div>
           <span class="tag" aria-hidden="true">Most Popular</span>
           <div class="tile-footer">
@@ -1216,8 +1544,8 @@
       <!-- Card 2: Pre-Purchase Inspection -->
       <li class="tile" role="listitem">
         <a class="tile-link" href="/services/pre-purchase/"
-          title="Pre-Purchase Car Inspection in Kelowna — mobile, same-day availability"
-          aria-label="Pre-purchase car inspection in Kelowna — avoid costly surprises before buying">
+          title="Pre-Purchase Car Inspection in Kelowna, mobile, same day"
+          aria-label="Pre-purchase car inspection in Kelowna, avoid costly surprises before buying">
           <figure class="image-container">
             <picture>
               <source srcset="images/pre-purchase-400w.webp" media="(max-width: 640px)">
@@ -1228,7 +1556,7 @@
             </picture>
           </figure>
           <div class="copy">
-            <h3 class="title">Pre-Purchase Car Inspection — Buy with Confidence</h3>
+            <h3 class="title">Pre-Purchase Car Inspection: Buy with Confidence</h3>
             <p class="hint">We uncover hidden issues before they become your expensive problem.</p>
           </div>
           <div class="tile-footer">
@@ -1276,28 +1604,22 @@
       <dl>
         <div class="faq-item">
           <dt>My car won’t start. Who can actually fix this fastest in Kelowna?</dt>
-          <dd>Our on-site diagnostic specialist comes to your location, confirms the root cause, and tells you exactly
-            what failed — usually the same day. You skip the tow, and you get a real answer in your own driveway.</dd>
+          <dd>Our certified mechanics come to where your car is, same day. We confirm the real cause, tell you exactly what failed, and repair it there once you approve.</dd>
         </div>
 
         <div class="faq-item">
-          <dt>Why should I use a mobile mechanic instead of towing to a shop?</dt>
-          <dd>A tow already costs money before you even know what’s wrong. We bring professional tools to you, isolate
-            the failure, and tell you what actually needs to be done before you approve any repair. You stay in control
-            from the first minute.</dd>
+          <dt>Why choose a mobile mechanic instead of a shop?</dt>
+          <dd>You don’t lose a day dropping off your car and waiting for a slot. Our certified mechanics bring professional tools to your home or work, find the failure, and tell you what needs to be done before you approve any repair. You stay in control from the first minute.</dd>
         </div>
 
         <div class="faq-item">
           <dt>How fast can you get to me?</dt>
-          <dd>Same day in most cases. Once you reach out, you get a direct response — not a voicemail or a callback
-            queue. We confirm availability, head to your location, and get to work. No waiting days for a shop
-            slot.</dd>
+          <dd>Same day. Text us and you get a direct answer, not a callback queue. We confirm the time, come to your location, and get to work.</dd>
         </div>
 
         <div class="faq-item">
           <dt>How do I avoid buying the wrong used car?</dt>
-          <dd>We perform a full <a href="/services/pre-purchase/">pre-purchase car inspection in Kelowna</a> on-site before you hand over any money. You get a straight
-            report on mechanical condition, hidden issues, and upcoming costs — not a sales pitch from the seller.</dd>
+          <dd>We do a full <a href="/services/pre-purchase/">pre-purchase car inspection in Kelowna</a> where the car is, at the seller or the dealership, before you hand over any money. You get a straight report on mechanical condition, hidden issues, and upcoming costs, not a sales pitch from the seller.</dd>
         </div>
 
         <div class="faq-item">
@@ -1335,6 +1657,48 @@
     </a>
   </section>
 
+  <!-- AT A GLANCE: plain facts, one per line -->
+  <section class="facts" id="at-a-glance" aria-labelledby="facts-title">
+    <div class="facts__inner">
+      <h2 id="facts-title" class="facts__title">Kelowna Protech Elite Mobile Mechanic at a Glance</h2>
+      <p class="facts__lead">Kelowna Protech Elite Mobile Mechanic is a mobile auto repair company based in Kelowna, BC. Our certified mechanics come to your home, your work or wherever the car is, find the real cause of the problem and repair it there, same day.</p>
+      <dl class="facts__list">
+        <div>
+          <dt>What we do</dt>
+          <dd>Car diagnostics and auto repair, including electrical and electronic problems, pre-purchase car inspections and preventive maintenance.</dd>
+        </div>
+        <div>
+          <dt>How we do it</dt>
+          <dd>You text us, a certified mechanic comes to the car, and you approve the cost before any repair.</dd>
+        </div>
+        <div>
+          <dt>Why we are different</dt>
+          <dd>We are certified mechanics who do the work where your car is, we show you what failed, and we do not sell repairs you do not need. Our customers rate us 4.9 out of 5 in 87 Google reviews (November 2026).</dd>
+        </div>
+        <div>
+          <dt>Vehicles</dt>
+          <dd>Cars, SUVs and light trucks first, then diesel vehicles and fleets. We do not service electric vehicles: electrical repair here means the 12 volt electrical system of your car.</dd>
+        </div>
+        <div>
+          <dt>Where</dt>
+          <dd>Based in Kelowna. We go anywhere in the Okanagan, including West Kelowna, Lake Country, Vernon, Peachland and Penticton.</dd>
+        </div>
+        <div>
+          <dt>Hours</dt>
+          <dd>Monday to Saturday, 8 am to 6 pm.</dd>
+        </div>
+        <div>
+          <dt>How to reach us</dt>
+          <dd>Text (250) 859-5467. We answer in English or Spanish.</dd>
+        </div>
+        <div>
+          <dt>Warranty</dt>
+          <dd>Our work is covered by warranty.</dd>
+        </div>
+      </dl>
+    </div>
+  </section>
+
   <!-- SERVICE AREA MAP -->
   <section class="section ppi-map" style="padding:0 24px;">
     <h2>Where We Work</h2>
@@ -1350,26 +1714,36 @@
     </div>
   </section>
 
+  <!-- CLOSING CTA -->
+  <section class="closing-cta" aria-labelledby="closing-cta-title">
+    <h2 id="closing-cta-title">Text us what your car is doing.</h2>
+    <p>A certified mechanic answers, same day. You get a clear answer before you spend money on the wrong repair.</p>
+    <p><a href="sms:+12508595467" class="hero-fold__cta" aria-label="Text (250) 859-5467, Kelowna Protech Elite Mobile Mechanic">Text (250) 859-5467</a></p>
+    <p class="closing-cta__proof">★★★★★ 4.9 out of 5 from 87 Google reviews</p>
+    <p class="closing-cta__proof">Updated <time datetime="2026-11-22">November 22, 2026</time></p>
+  </section>
+
   <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "FAQPage",
   "@id": "https://kelownaprotechmobilemech.com/#faq",
+  "dateModified": "2026-11-22",
   "mainEntity": [
     {
       "@type": "Question",
       "name": "My car won’t start. Who can actually fix this fastest in Kelowna?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Our on-site diagnostic specialist comes to your location, confirms the root cause, and tells you exactly what failed — usually the same day. You skip the tow, and you get a real answer in your own driveway."
+        "text": "Our certified mechanics come to where your car is, same day. We confirm the real cause, tell you exactly what failed, and repair it there once you approve."
       }
     },
     {
       "@type": "Question",
-      "name": "Why should I use a mobile mechanic instead of towing to a shop?",
+      "name": "Why choose a mobile mechanic instead of a shop?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "A tow already costs money before you even know what’s wrong. We bring professional tools to you, isolate the failure, and tell you what actually needs to be done before you approve any repair. You stay in control from the first minute."
+        "text": "You don’t lose a day dropping off your car and waiting for a slot. Our certified mechanics bring professional tools to your home or work, find the failure, and tell you what needs to be done before you approve any repair. You stay in control from the first minute."
       }
     },
     {
@@ -1377,7 +1751,7 @@
       "name": "How fast can you get to me?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Same day in most cases. Once you reach out, you get a direct response — not a voicemail or a callback queue. We confirm availability, head to your location, and get to work. No waiting days for a shop slot."
+        "text": "Same day. Text us and you get a direct answer, not a callback queue. We confirm the time, come to your location, and get to work."
       }
     },
     {
@@ -1385,7 +1759,7 @@
       "name": "How do I avoid buying the wrong used car?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "We perform a full pre-purchase car inspection in Kelowna on-site before you hand over any money. You get a straight report on mechanical condition, hidden issues, and upcoming costs — not a sales pitch from the seller."
+        "text": "We do a full pre-purchase car inspection in Kelowna where the car is, at the seller or the dealership, before you hand over any money. You get a straight report on mechanical condition, hidden issues, and upcoming costs, not a sales pitch from the seller."
       }
     },
     {
@@ -1432,7 +1806,7 @@
   -->
   <!-- INICIO BOTÓN FLOTANTE CTA (RESTAURADO PARA CONTACTO DIRECTO) -->
   <div class="floating-cta-container" role="region" aria-label="Quick Contact">
-    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call Joseph for same-day car repair">
+    <a href="tel:+12508595467" id="main-cta-button" class="main-cta-button" aria-label="Call Kelowna Protech Elite Mobile Mechanic for same-day car repair">
       <span class="cta-main">Get My Car Fixed Today</span>
       <span class="cta-sub">Same-Day Service • Kelowna &amp; Area</span>
     </a>
@@ -1449,7 +1823,7 @@
       <!-- Icono actualizado: Gem (especialista certificado) -->
       <img
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLWdlbS1pY29uIGx1Y2lkZS1nZW0iPjxwYXRoIGQ9Ik0xMC41IDMgOCA5bDQgMTMgNC0xMy0yLjUtNiIvPjxwYXRoIGQ9Ik0xNyAzYTIgMiAwIDAgMSAxLjYuOGwzIDRhMiAyIDAgMCAxIC4wMTMgMi4zODJsLTcuOTkgMTAuOTg2YTIgMiAwIDAgMS0zLjI0NyAwbC03Ljk5LTEwLjk4NkEyIDIgMCAwIDEgMi40IDcuOGwyLjk5OC0zLjk5N0EyIDIgMCAwIDEgNyAzeiIvPjxwYXRoIGQ9Ik0yIDloMjAiLz48L3N2Zz4="
-        alt="Gem icon – Certified Mechanic" class="icon-achievement" width="28" height="28" loading="lazy" />
+        alt="Gem icon, certified mechanic" class="icon-achievement" width="28" height="28" loading="lazy" />
       <span>Certified<br>Mechanic</span>
     </div>
 
@@ -1457,8 +1831,8 @@
     <div class="achievement-item">
       <img
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9IiMxMTEiIHN0cm9rZS13aWR0aD0iMiIgc3Ryb2tlLWxpbmVjYXA9InJvdW5kIiBzdHJva2UtbGluZWpvaW49InJvdW5kIj48cGF0aCBkPSJtMTIgMTQgNC00Ii8+PHBhdGggZD0iTTMuMzQgMTlhMTAgMTAgMCAxIDEgMTcuMzIgMCIvPjwvc3ZnPg=="
-        alt="Gauge icon – Precision" class="icon-achievement" width="28" height="28" loading="lazy" />
-      <span>100+<br>Repairs</span>
+        alt="Gauge icon, Google reviews" class="icon-achievement" width="28" height="28" loading="lazy" />
+      <span>87 Google<br>Reviews</span>
     </div>
 
     <!-- Icono 3: Map Pin – On-Site Service -->
@@ -1466,8 +1840,8 @@
       <!-- Icono actualizado: Wrench (reparación experta) -->
       <img
         src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0IiBmaWxsPSJub25lIiBzdHJva2U9ImN1cnJlbnRDb2xvciIgc3Ryb2tlLXdpZHRoPSIyIiBzdHJva2UtbGluZWNhcD0icm91bmQiIHN0cm9rZS1saW5lam9pbj0icm91bmQiIGNsYXNzPSJsdWNpZGUgbHVjaWRlLXdyZW5jaC1pY29uIGx1Y2lkZS13cmVuY2giPjxwYXRoIGQ9Ik0xNC43IDYuM2ExIDEgMCAwIDAgMCAxLjRsMS42IDEuNmExIDEgMCAwIDAgMS40IDBsMy4xMDYtMy4xMDVjLjMyLS4zMjIuODYzLS4yMi45ODMuMjE4YTYgNiAwIDAgMS04LjI1OSA3LjA1N2wtNy45MSA3LjkxYTEgMSAwIDAgMS0zLjk5OS0zbDcuOTEtNy45MWE2IDYgMCAwIDEgNy4wNTctOC4yNTljLjQzOC4xMi41NC42NjIuMjE5Ljk4NHoiLz48L3N2Zz4="
-        alt="Wrench icon – Expert On-Site Service" class="icon-achievement" width="28" height="28" loading="lazy" />
-      <span>Expert<br>On-Site</span>
+        alt="Wrench icon, mobile service" class="icon-achievement" width="28" height="28" loading="lazy" />
+      <span>Mobile<br>Service</span>
     </div>
   </div>
 
