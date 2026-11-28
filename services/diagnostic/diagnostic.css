@@ -299,6 +299,10 @@
         object-fit: cover;
         object-position: 50% 62%;
       }
+      /* Wider phones: keep the same crop ratio so the mechanic is not cut off. */
+      @media (min-width: 481px) {
+        .services-hero__hero-img { height: auto; aspect-ratio: 375 / 260; }
+      }
     }
 
     /* Keep the approved hero copy readable on mobile after the image,
