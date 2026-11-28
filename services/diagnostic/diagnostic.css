@@ -280,7 +280,15 @@
         margin: 10px auto 0;
         background: var(--premium-gold);
       }
-      .services-hero__service-line { display: none; }
+      /* Phones: the intro sits above the photo, as on pre-purchase, so it shows on the first screen. */
+      .services-hero__service-line {
+        display: block;
+        max-width: 36ch;
+        margin: 4px auto 0;
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: center;
+      }
       .services-hero__service-transform { display: none; }
       .services-hero__image-wrap {
         margin-left: -20px;
