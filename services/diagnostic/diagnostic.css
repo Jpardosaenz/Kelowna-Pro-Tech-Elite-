@@ -280,7 +280,15 @@
         margin: 10px auto 0;
         background: var(--premium-gold);
       }
-      .services-hero__service-line { display: none; }
+      /* Phones: the intro sits above the photo, as on pre-purchase, so it shows on the first screen. */
+      .services-hero__service-line {
+        display: block;
+        max-width: 36ch;
+        margin: 4px auto 0;
+        font-size: 15px;
+        line-height: 1.6;
+        text-align: center;
+      }
       .services-hero__service-transform { display: none; }
       .services-hero__image-wrap {
         margin-left: -20px;
@@ -292,10 +300,16 @@
         height: 32px;
         background: linear-gradient(to bottom, transparent, #ffffff);
       }
+      /* Shorter photo on phones so the first sentence reaches the first screen;
+         crop keeps the mechanic, the Ranger and the tools in view. */
       .services-hero__hero-img {
-        height: auto;
-        object-fit: initial;
-        object-position: initial;
+        height: 260px;
+        object-fit: cover;
+        object-position: 50% 62%;
+      }
+      /* Wider phones: keep the same crop ratio so the mechanic is not cut off. */
+      @media (min-width: 481px) {
+        .services-hero__hero-img { height: auto; aspect-ratio: 375 / 260; }
       }
     }
 
